@@ -1,8 +1,8 @@
 {
- "ts": "2026-11-20T00:39:44.803718+05:30",
+ "ts": "2026-11-20T01:39:51.662813+05:30",
  "crypto": {
-  "score": -0.216,
-  "n_headlines": 178,
+  "score": -0.169,
+  "n_headlines": 179,
   "n_sources": 6,
   "top": [
    "Bitcoin price extends gains, briefly tops $81,000 as crypto rally gathers pace - CNBC",
@@ -16,8 +16,9 @@
   ],
   "headlines": [
    "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+   "Sky's USDS stablecoin shrinks 35% as $1.5 billion exits reserves after illicit-finance report",
    "Trump's Democratic SEC pick suggests tokenization policy deserves full rule process",
-   "Anthropic opens for trade at $111.50, up 34% from IPO price",
+   "Anthropic gains after IPO, but pulls off highest levels",
    "Crypto for Advisors: Falling prices drove October\u2019s 10% drop in institutional crypto exposure",
    "Binance wins $6.5 billion feezing order against hackers behind crypto's largest theft",
    "Crypto traders vs. Wall Street: OKX\u2019s Anthropic markets put IPO pricing to the test",
@@ -40,7 +41,6 @@
    "Crypto Long & Short: Crypto exchanges shouldn\u2019t double as the vault",
    "German judge proposes dropping Movie2k case if operator hands over $2.56 billion in bitcoin",
    "Hong Kong wants banks to use AI to catch crypto crime before money disappears",
-   "Bitcoin miner MARA raises $185 million in debt after selling $1 billion BTC to repay loans",
    "Cointelegraph.com News",
    "Ethereum\u2019s Glamsterdam upgrade could slip to May 2027 over compatibility concerns",
    "Why higher rates could slow Bitcoin buying at treasury firms",
@@ -79,8 +79,8 @@
   "fear_greed": 10
  },
  "india": {
-  "score": 0.88,
-  "n_headlines": 225,
+  "score": 0.924,
+  "n_headlines": 224,
   "n_sources": 6,
   "top": [
    "Auto stocks hit the accelerator! Nifty Auto jumps 4%; Maruti, M&amp;M, Hyundai lead the rally | What's behind the surge?",
@@ -133,6 +133,8 @@
    "Eicher Motors Share Price Highlights: Eicher Motors Stock Price History",
    "RIL Share Price Highlights: RIL Stock Price History",
    "Cipla Share Price Highlights: Cipla Stock Price History",
+   "Japanese investors sought $9.4 billion of shares in Anthropic IPO, sources say",
+   "Canadian dollar steadies near 19-month low as stocks slide",
    "Offshore Chinese Yuan Drops to Weakest Level in Over a Month",
    "Oil prices inch up as tanker disruptions offset surplus supply outlook",
    "Goldman Sachs turns bullish on India stock market, upgrades rating to Overweight; sets Nifty target of 28,500",
@@ -150,14 +152,12 @@
    "Anthropic IPO breaks all records, even SpaceX! What $81.3 billion means for India's IT and AI stocks? Experts decode",
    "Coal India vs NMDC vs MOIL: Which mining PSU stock deserves a place in your portfolio for long-term gains? Check target",
    "MRF faces a long road to margin recovery as costs stay high",
-   "ABB India\u2019s margin recovery in spotlight amid record order inflow",
-   "114 Rafales, 6 submarines! Defence stocks HAL, BEL, BDL shares jump up to 3% - Is a mega defence order boom coming?",
-   "Auto stocks hit the accelerator! Nifty Auto jumps 4%; Maruti, M&amp;M, Hyundai lead the rally | What's behind the surge?"
+   "ABB India\u2019s margin recovery in spotlight amid record order inflow"
   ]
  },
  "us": {
-  "score": 0.0,
-  "n_headlines": 191,
+  "score": -0.125,
+  "n_headlines": 192,
   "n_sources": 6,
   "top": [
    "Dow Drops Nearly 860 Points as Stock Market Selloff Deepens Ahead of Nvidia Earnings - Yahoo Finance",
@@ -165,9 +165,9 @@
    "Fed\u2019s Waller says central bank may need to \u2018shock people\u2019 with half-point rate hike - CNBC",
    "Gold drops to 14-month low as dollar, yields rise on hawkish Fed rhetoric - CNBC",
    "Nvidia Stock Could Soar 90% After Jensen Huang's Exit, According to One Wall Street Firm. Is It Time to Buy? - The Motley Fool",
+   "Nvidia, Intel, Micron and Dell Stocks Jump as Anthropic Massive IPO Sparks Rally - TradingView",
    "US Banks Near Bearish \u2018Death Cross\u2019 Signal as Shares Tumble - Bloomberg.com",
-   "Palo Alto stock jumps on earnings beat and company&apos;s big bet on securing open-weight models",
-   "Walmart hikes outlook as CEO tells CNBC retailer aims to keep prices low despite soaring fuel costs"
+   "Palo Alto stock jumps on earnings beat and company&apos;s big bet on securing open-weight models"
   ],
   "headlines": [
    "AMD dives on short-seller report of alleged China exposure",
@@ -176,16 +176,17 @@
    "Trump bought Nvidia, Palantir, SpaceX in September as federal deals, White House ties grew",
    "Walmart hikes outlook as CEO tells CNBC retailer aims to keep prices low despite soaring fuel costs",
    "Amazon launches in-app push against Mamdani-backed delivery bill in New York City",
-   "As Sanofi&apos;s Pompe drug shortage drags on, some patients struggle to access treatments",
+   "Kraken parent&apos;s acquisition of Tribe Capital flags new chapter in evolution of crypto exchanges",
    "Anthropic IPO: Investors who flip the stock may face brokerage penalty",
    "Amid recent banking outages, should you start carrying cash again? Top advisors weigh in",
+   "As Sanofi&apos;s Pompe drug shortage drags on, some patients struggle to access treatments",
    "Netflix, Amazon, Fox to bid for 2030 men&apos;s World Cup rights; Disney out",
    "Jensen Huang&apos;s \u2014 and Nvidia&apos;s \u2014 legal exposure balloons",
    "Gold&apos;s bad year is getting worse. Why its price keeps falling",
    "Trump, Xi, Putin said they plan to boost oil production, revamp UN after trilateral talks",
    "Denmark ratifies Trump security deal over Greenland after months of diplomatic tensions",
    "Anthropic IPO, AI wealth spawn a new, leaner kind of family office",
-   "Anthropic&apos;s historic IPO is a boon to these 12 portfolio stocks. Here&apos;s how they benefit",
+   "S&amp;P 500 heads for 6th straight decline. Plus, J&amp;J advances two key products",
    "Microsoft CEO Satya Nadella calls Outlook outage a &apos;perfect storm.&apos; Here&apos;s what went wrong",
    "Intel signs first external customer for advanced 18A chips",
    "Takaichi gets chilly reception in China on first Japan leader visit since 2019",
@@ -199,8 +200,10 @@
    "CEO turned informant: How the FDA built a case against executives promising cheap medications",
    "Investigators make progress in hunt for cause of FAA ground stop",
    "Big bets against AI debt, from CoreWeave to Oracle and the Mag 7, could soon hit the ETF market",
-   "Nvidia interim CEO Kress tells employees \u2018let\u2019s move forward\u2019 at first all-hands meeting since Jensen Huang exit",
    "MarketWatch.com - Top Stories",
+   "Why Micron, Broadcom and other AI stocks have given up their gains",
+   "We&#x2019;re in our 50s and terrified of a market crash. Should we put $400,000 of our $1 million retirement savings into an annuity?",
+   "The surprising reason the U.S. economy is speeding up &#x2014; and might have more room to run",
    "Medicare beneficiaries could skip the nursing home for cheaper care at home under new bill",
    "Social Security should be shut down, this Republican senator says",
    "Elon Musk becomes the latest tech billionaire to make a peace offering to Democrats after the midterms",
@@ -208,28 +211,25 @@
    "&#x2018;Rockets are hard&#x2019; &#x2014; yet this analyst thinks AST SpaceMobile&#x2019;s stock is ready to rebound",
    "UnitedHealth&#x2019;s stock keeps plunging after government signals crackdown on Medicare Advantage fraud",
    "Forget data centers. The next great AI stocks are hiding in plain sight in these four sectors.",
-   "A CoreWeave co-founder just made an unconventional $30 million wager on its battered bonds",
-   "&#x2018;I&#x2019;ve been a stay-at-home mom&#x2019;: I&#x2019;m 50 and have a chronic illness. My husband lost his job. Should he raid his 401(k)?",
-   "Anthropic is coming to your 401(k). Love it or hate it, AI is becoming a bigger part of your financial plan.",
    "Google News",
-   "US Futures Rally as Anthropic Fuels AI Enthusiasm: Markets Wrap - Bloomberg.com",
-   "Dow Jones Futures Rise, Nasdaq Jumps: Anthropic To Debut After Record IPO; Palo Alto, Everpure Rally, Walmart Falls - Investor's Business Daily",
+   "Stocks Fall as Anthropic Debut Not an AI All-Clear: Markets Wrap - Bloomberg.com",
    "Wall Street ends mixed after Nvidia earnings, Fed minutes - Reuters",
+   "The Stock Market Is Flashing a Warning Sign for Only the 6th Time in 156 Years, and History Is Clear What Direction Stocks Could Go Next - The Motley Fool",
    "Stock Market Today: Dow, S&amp;P 500 Futures Rise as Wall Street Awaits Anthropic's Listing\u2014 PANW, NTES, SLS in Focus - TradingView",
    "Stocks Erase Early Gains as Anthropic Optimism Fades - Barchart.com",
-   "If a Stock Market Crash Is Coming, History Says This 1 Investing Move Has Never Once Failed - The Motley Fool",
-   "Stock Market: Will S&amp;P 500 Open Up or Down Today? - Benzinga",
-   "U.S. stocks lower at close of trade; Dow Jones Industrial Average down 1.64% - Investing.com",
-   "Wall Street looks set to halt its losing streak after Anthropic's IPO revives AI stocks - WPLG Local 10",
-   "Stocks Fall as Nvidia\u2019s Earnings Rally Sputters: Markets Wrap - Bloomberg.com",
-   "Stock Market Today: Stock Market News And Analysis - Investor's Business Daily",
-   "Dow Jones and Nasdaq Index: US Stocks Give Up Gains Ahead of Anthropic Debut - FXEmpire",
    "Anthropic Jumps 27% in Record Debut, S&amp;P 500 Eyes Sixth Straight Loss: Stock Market Today - Benzinga",
-   "U.S. Stocks Extend Slide on Nvidia, China Fears - WSJ",
-   "Stock Market Today: Dow, S&amp;P 500, Nasdaq 100 Futures Rise as Wall Street Awaits Anthropic\u2019s Listing\u2014 PANW - Benzinga",
+   "A strong debut for Anthropic\u2019s stock is not enough to carry Wall Street, and indexes drop - Boston Herald",
+   "Wall Street looks set to halt its losing streak after Anthropic's IPO revives AI stocks - WPLG Local 10",
+   "Dow Drops More Than 800 Points on a Shaky Day for AI - Newser",
+   "US Tech Stocks Are Set to Rally as Anthropic IPO Boosts AI Trade - Bloomberg.com",
+   "Dow Jones and Nasdaq Index: US Stocks Give Up Gains Ahead of Anthropic Debut - FXEmpire",
+   "U.S. Stocks Fall as AI Doubts Fester - WSJ",
    "US Stock Futures Rise as Anthropic Prepares for Record IPO, Fed Signals Rate Hikes and Oil Prices Advance: Dow Jones, S&amp;P, Nasdaq, Wall Street - Yahoo Finance",
    "Wall Street Futures Rise as Anthropic IPO Revives Interest in AI Stocks: Dow Jones, S&amp;P, Nasdaq - Yahoo Finance",
-   "U.S. Stocks Fall as AI Doubts Fester - WSJ"
+   "Stocks slip as Anthropic gains on market debut and oil prices rise - Yahoo Finance",
+   "U.S. Stocks Extend Slide on Nvidia, China Fears - WSJ",
+   "Stock Market Today: Dow, S&amp;P 500, Nasdaq 100 Futures Rise as Wall Street Awaits Anthropic\u2019s Listing\u2014 PANW - Benzinga",
+   "US Stock Futures Mixed as Nasdaq Looks to Recover While Dow Faces Pressure From Home Depot: Dow Jones, S&amp;P, Wall Street - Yahoo Finance"
   ]
  }
 }
