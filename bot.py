@@ -33,8 +33,8 @@ CYCLE_SEC = 5 * 60
 NEWS_EVERY_SEC = 60 * 60
 
 MARKETS = {
-    "crypto": {"source": "binance", "symbols": ["BTCUSDT", "ETHUSDT", "SOLUSDT"],
-               "regime": "BTCUSDT", "ccy": "₹", "capital": 10000.0, "min_cost": 100, "usd_priced": True,
+    "crypto": {"source": "yahoo", "symbols": ["BTC-USD", "ETH-USD", "SOL-USD"],
+               "regime": "BTC-USD", "ccy": "₹", "capital": 10000.0, "min_cost": 100, "usd_priced": True,
                "feeds": ["https://www.coindesk.com/arc/outboundfeeds/rss/",
                          "https://cointelegraph.com/rss",
                          "https://decrypt.co/feed",
@@ -699,6 +699,14 @@ if __name__ == "__main__":
     elif mode == "once":
         # one cycle then exit — for cloud cron (GitHub Actions etc.)
         st = load_state()
+        try:                                   # keep decisions.log repo-friendly
+            with open(LOG_F, encoding="utf-8") as f:
+                lines = f.readlines()
+            if len(lines) > 5000:
+                with open(LOG_F, "w", encoding="utf-8") as f:
+                    f.writelines(lines[-3000:])
+        except Exception:
+            pass
         if news_age_sec() > NEWS_EVERY_SEC:
             try:
                 fetch_news()

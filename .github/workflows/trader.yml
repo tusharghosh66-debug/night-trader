@@ -23,6 +23,6 @@ jobs:
         run: |
           git config user.name "night-trader-bot"
           git config user.email "actions@github.com"
-          git add state.json news.json report.md dashboard.html trades.csv decisions.log backtest.json 2>/dev/null || true
+          git add -A
           git diff --cached --quiet || git commit -m "cycle $(date -u +%FT%TZ) [skip ci]"
           git push
