@@ -1,8 +1,8 @@
 # Night Trader v2 — Paper Trading Report (3 markets)
-_Updated: 2026-11-19 13:05 IST_
+_Updated: 2026-11-19 13:09 IST_
 
 ## CRYPTO (OPEN) — ₹10,000.00 | P&L +0.00 (+0.00%)
-Cash ₹10,000.00 | cycles 27 | capital ₹10,000
+Cash ₹10,000.00 | cycles 28 | capital ₹10,000
 _No open positions — all cash._
 News sentiment: -0.58 (181 headlines, 6 sources, Fear&Greed 10)
 - Fed's Hawkish Signals Weigh on Markets as Bitcoin Falls Below $63,000, Fear Index Hits Bottom - BigGo Finance
@@ -10,7 +10,7 @@ News sentiment: -0.58 (181 headlines, 6 sources, Fear&Greed 10)
 - Bitcoin outpaces gold even as both assets tumble ahead of a likely Fed rate hike
 
 ## INDIA (OPEN) — ₹10,000.00 | P&L +0.00 (+0.00%)
-Cash ₹10,000.00 | cycles 25 | capital ₹10,000
+Cash ₹10,000.00 | cycles 26 | capital ₹10,000
 _No open positions — all cash._
 News sentiment: +0.22 (222 headlines, 6 sources)
 - BLS Polymers shares hit record high! Up 106% from IPO price, recently-listed multibagger stock soars 8% today | Buy?
