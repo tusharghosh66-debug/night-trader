@@ -1010,3 +1010,17 @@
 [2026-11-19 20:33:45 IST] WAIT [us] NVDA px=14549.81 rsi=48 regime_ok=False
 [2026-11-19 20:33:45 IST] WAIT [us] GOOGL px=27423.39 rsi=65 regime_ok=False
 [2026-11-19 20:33:45 IST] once: cycle complete
+[2026-11-19 20:38:08 IST] news feed failed (crypto) https://news.google.com/rss/search?q=crypto+regulation+OR+bitcoin+ETF+: HTTP Error 429: Too Many Requests
+[2026-11-19 20:38:08 IST] NEWS crypto: 143 unique headlines from 5 sources, sentiment=-0.55, F&G=10
+[2026-11-19 20:38:10 IST] NEWS india: 225 unique headlines from 6 sources, sentiment=+0.85
+[2026-11-19 20:38:10 IST] news feed failed (us) https://feeds.marketwatch.com/marketwatch/topstories/: HTTP Error 400: Bad Request
+[2026-11-19 20:38:12 IST] NEWS us: 182 unique headlines from 5 sources, sentiment=-0.20
+[2026-11-19 20:38:13 IST] WAIT [crypto] BTC-USD px=5946960.99 rsi=52 regime_ok=False
+[2026-11-19 20:38:13 IST] WAIT [crypto] ETH-USD px=168696.88 rsi=57 regime_ok=False
+[2026-11-19 20:38:13 IST] WAIT [crypto] SOL-USD px=7026.78 rsi=62 regime_ok=False
+[2026-11-19 20:38:13 IST] [india] market closed — skipping
+[2026-11-19 20:38:13 IST] WAIT [us] AAPL px=32592.50 rsi=36 regime_ok=False
+[2026-11-19 20:38:14 IST] WAIT [us] MSFT px=48820.42 rsi=62 regime_ok=False
+[2026-11-19 20:38:14 IST] WAIT [us] NVDA px=14538.15 rsi=48 regime_ok=False
+[2026-11-19 20:38:14 IST] WAIT [us] GOOGL px=27338.50 rsi=64 regime_ok=False
+[2026-11-19 20:38:14 IST] once: cycle complete
