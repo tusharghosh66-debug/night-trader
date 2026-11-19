@@ -1,17 +1,18 @@
 name: night-trader
 on:
   schedule:
-    - cron: '*/5 * * * *'
+    - cron: '*/15 * * * *'   # backup reviver if the chain ever breaks
   workflow_dispatch:
 permissions:
   contents: write
+  actions: write
 concurrency:
   group: night-trader
   cancel-in-progress: false
 jobs:
   cycle:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 12
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -26,3 +27,17 @@ jobs:
           git add -A
           git diff --cached --quiet || git commit -m "cycle $(date -u +%FT%TZ) [skip ci]"
           git push
+      - name: Keep the chain alive
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          sleep 240
+          queued=$(gh run list --repo "$GITHUB_REPOSITORY" --workflow=trader.yml --status queued --json databaseId --jq 'length')
+          running=$(gh run list --repo "$GITHUB_REPOSITORY" --workflow=trader.yml --status in_progress --json databaseId --jq "[.[] | select(.databaseId != $GITHUB_RUN_ID)] | length")
+          if [ "$queued" = "0" ] && [ "$running" = "0" ]; then
+            gh workflow run trader.yml --repo "$GITHUB_REPOSITORY"
+            echo "next run dispatched"
+          else
+            echo "next run already pending - skipping"
+          fi
