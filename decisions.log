@@ -1345,3 +1345,12 @@
 [2026-11-19 23:09:50 IST] WAIT [us] NVDA px=13969.61 rsi=33 regime_ok=False
 [2026-11-19 23:09:50 IST] WAIT [us] GOOGL px=26567.08 rsi=48 regime_ok=False
 [2026-11-19 23:09:50 IST] once: cycle complete
+[2026-11-19 23:14:03 IST] WAIT [crypto] BTC-USD px=5868103.01 rsi=42 regime_ok=False
+[2026-11-19 23:14:03 IST] WAIT [crypto] ETH-USD px=165601.85 rsi=43 regime_ok=False
+[2026-11-19 23:14:04 IST] WAIT [crypto] SOL-USD px=6892.46 rsi=48 regime_ok=False
+[2026-11-19 23:14:04 IST] [india] market closed — skipping
+[2026-11-19 23:14:05 IST] WAIT [us] AAPL px=32648.00 rsi=40 regime_ok=False
+[2026-11-19 23:14:05 IST] WAIT [us] MSFT px=47492.11 rsi=46 regime_ok=False
+[2026-11-19 23:14:05 IST] WAIT [us] NVDA px=13930.90 rsi=32 regime_ok=False
+[2026-11-19 23:14:06 IST] WAIT [us] GOOGL px=26426.22 rsi=45 regime_ok=False
+[2026-11-19 23:14:06 IST] once: cycle complete
