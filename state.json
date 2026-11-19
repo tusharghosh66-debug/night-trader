@@ -1,0 +1,49 @@
+{
+ "created": "2026-11-19T03:41:38.026356+05:30",
+ "markets": {
+  "crypto": {
+   "cash": 10000.0,
+   "start_equity": 10000.0,
+   "positions": {},
+   "closed_trades": [],
+   "cycles": 2,
+   "last_prices": {
+    "BTCUSDT": 5816457.5553,
+    "ETHUSDT": 164219.1081,
+    "SOLUSDT": 6780.215099999999
+   }
+  },
+  "india": {
+   "cash": 10000.0,
+   "start_equity": 10000.0,
+   "positions": {},
+   "closed_trades": [],
+   "cycles": 0,
+   "last_prices": {}
+  },
+  "us": {
+   "cash": 10000.0,
+   "start_equity": 10000.0,
+   "positions": {},
+   "closed_trades": [],
+   "cycles": 0,
+   "last_prices": {}
+  }
+ },
+ "equity_history": [
+  [
+   "2026-11-19T04:26:34.555818+05:30",
+   10000.0,
+   10000.0,
+   10000.0
+  ],
+  [
+   "2026-11-19T04:40:15.229749+05:30",
+   10000.0,
+   10000.0,
+   10000.0
+  ]
+ ],
+ "version": 3,
+ "usdinr": 93.43
+}
