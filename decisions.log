@@ -1876,3 +1876,9 @@
 [2026-11-20 03:40:43 IST] [india] market closed — skipping
 [2026-11-20 03:40:43 IST] [us] market closed — skipping
 [2026-11-20 03:40:43 IST] once: cycle complete
+[2026-11-20 03:44:56 IST] WAIT [crypto] BTC-USD px=5759763.89 rsi=33 regime_ok=False
+[2026-11-20 03:44:56 IST] WAIT [crypto] ETH-USD px=162797.85 rsi=35 regime_ok=False
+[2026-11-20 03:44:57 IST] WAIT [crypto] SOL-USD px=6757.20 rsi=38 regime_ok=False
+[2026-11-20 03:44:57 IST] [india] market closed — skipping
+[2026-11-20 03:44:57 IST] [us] market closed — skipping
+[2026-11-20 03:44:57 IST] once: cycle complete
