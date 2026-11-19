@@ -1,8 +1,8 @@
 # Night Trader v2 — Paper Trading Report (3 markets)
-_Updated: 2026-11-19 15:17 IST_
+_Updated: 2026-11-19 15:21 IST_
 
 ## CRYPTO (OPEN) — ₹10,000.00 | P&L +0.00 (+0.00%)
-Cash ₹10,000.00 | cycles 58 | capital ₹10,000
+Cash ₹10,000.00 | cycles 59 | capital ₹10,000
 _No open positions — all cash._
 News sentiment: -0.52 (180 headlines, 6 sources, Fear&Greed 10)
 - Fed's Hawkish Signals Weigh on Markets as Bitcoin Falls Below $63,000, Fear Index Hits Bottom - BigGo Finance
@@ -10,7 +10,7 @@ News sentiment: -0.52 (180 headlines, 6 sources, Fear&Greed 10)
 - Crypto Elite Gather in Singapore as Bitcoin’s Rally Buoys Bulls - Bloomberg.com
 
 ## INDIA (OPEN) — ₹9,988.80 | P&L -11.20 (-0.11%)
-Cash ₹3,996.67 | cycles 56 | capital ₹10,000
+Cash ₹3,996.67 | cycles 57 | capital ₹10,000
 | Symbol | Qty | Entry | Last | Unrealized |
 |---|---|---|---|---|
 | RELIANCE.NS | 2.1772 | 1377.90 | 1376.60 | -5.83 |
