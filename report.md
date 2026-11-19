@@ -1,8 +1,8 @@
 # Night Trader v2 — Paper Trading Report (3 markets)
-_Updated: 2026-11-20 02:27 IST_
+_Updated: 2026-11-20 02:31 IST_
 
 ## CRYPTO (OPEN) — ₹10,000.00 | P&L +0.00 (+0.00%)
-Cash ₹10,000.00 | cycles 214 | capital ₹10,000
+Cash ₹10,000.00 | cycles 215 | capital ₹10,000
 _No open positions — all cash._
 News sentiment: -0.17 (179 headlines, 6 sources, Fear&Greed 10)
 - Bitcoin price extends gains, briefly tops $81,000 as crypto rally gathers pace - CNBC
@@ -23,7 +23,7 @@ News sentiment: +0.92 (224 headlines, 6 sources)
 - BLS Polymers shares hit record high! Up 106% from IPO price, recently-listed multibagger stock soars 8% today | Buy?
 - Bulls take charge of D-Street: Autos lead rally, Bank Nifty hits record high as Sensex rebounds 1,177 points - Fortune India
 
-## US (OPEN) — ₹10,000.00 | P&L +0.00 (+0.00%)
+## US (CLOSED) — ₹10,000.00 | P&L +0.00 (+0.00%)
 Cash ₹10,000.00 | cycles 90 | capital ₹10,000
 _No open positions — all cash._
 News sentiment: -0.12 (192 headlines, 6 sources)
