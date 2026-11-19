@@ -1,15 +1,15 @@
 # Night Trader v2 — Paper Trading Report (3 markets)
-_Updated: 2026-11-19 15:26 IST_
+_Updated: 2026-11-19 15:30 IST_
 
 ## CRYPTO (OPEN) — ₹10,000.00 | P&L +0.00 (+0.00%)
-Cash ₹10,000.00 | cycles 60 | capital ₹10,000
+Cash ₹10,000.00 | cycles 61 | capital ₹10,000
 _No open positions — all cash._
 News sentiment: -0.53 (180 headlines, 6 sources, Fear&Greed 10)
 - Fed's Hawkish Signals Weigh on Markets as Bitcoin Falls Below $63,000, Fear Index Hits Bottom - BigGo Finance
 - Bitcoin price extends gains, briefly tops $81,000 as crypto rally gathers pace - CNBC
 - Crypto Elite Gather in Singapore as Bitcoin’s Rally Buoys Bulls - Bloomberg.com
 
-## INDIA (OPEN) — ₹9,988.80 | P&L -11.20 (-0.11%)
+## INDIA (CLOSED) — ₹9,988.80 | P&L -11.20 (-0.11%)
 Cash ₹3,996.67 | cycles 58 | capital ₹10,000
 | Symbol | Qty | Entry | Last | Unrealized |
 |---|---|---|---|---|
