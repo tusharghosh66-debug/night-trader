@@ -6,14 +6,14 @@
    "start_equity": 10000.0,
    "positions": {},
    "closed_trades": [],
-   "cycles": 33,
+   "cycles": 34,
    "last_prices": {
     "BTCUSDT": 5816457.5553,
     "ETHUSDT": 164219.1081,
     "SOLUSDT": 6780.215099999999,
-    "BTC-USD": 5934093.548049999,
-    "ETH-USD": 168034.64345,
-    "SOL-USD": 6977.7074
+    "BTC-USD": 5926464.2183,
+    "ETH-USD": 167951.0481,
+    "SOL-USD": 6964.281000000001
    }
   },
   "india": {
@@ -21,12 +21,12 @@
    "start_equity": 10000.0,
    "positions": {},
    "closed_trades": [],
-   "cycles": 31,
+   "cycles": 32,
    "last_prices": {
-    "RELIANCE.NS": 1367.1,
-    "TCS.NS": 2332.0,
-    "HDFCBANK.NS": 815.65,
-    "INFY.NS": 1075.4
+    "RELIANCE.NS": 1366.6,
+    "TCS.NS": 2332.5,
+    "HDFCBANK.NS": 816.6,
+    "INFY.NS": 1075.8
    }
   },
   "us": {
@@ -236,8 +236,14 @@
    10000.0,
    10000.0,
    10000.0
+  ],
+  [
+   "2026-11-19T13:35:04.658170+05:30",
+   10000.0,
+   10000.0,
+   10000.0
   ]
  ],
  "version": 3,
- "usdinr": 93.235
+ "usdinr": 93.23
 }
