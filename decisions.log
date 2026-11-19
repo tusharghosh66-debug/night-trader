@@ -1780,3 +1780,12 @@
 [2026-11-20 02:36:05 IST] [india] market closed — skipping
 [2026-11-20 02:36:05 IST] [us] market closed — skipping
 [2026-11-20 02:36:05 IST] once: cycle complete
+[2026-11-20 02:40:20 IST] NEWS crypto: 180 unique headlines from 6 sources, sentiment=-0.20, F&G=10
+[2026-11-20 02:40:23 IST] NEWS india: 223 unique headlines from 6 sources, sentiment=+1.00
+[2026-11-20 02:40:25 IST] NEWS us: 192 unique headlines from 6 sources, sentiment=-0.19
+[2026-11-20 02:40:26 IST] WAIT [crypto] BTC-USD px=5776801.33 rsi=31 regime_ok=False
+[2026-11-20 02:40:27 IST] WAIT [crypto] ETH-USD px=163752.87 rsi=36 regime_ok=False
+[2026-11-20 02:40:27 IST] WAIT [crypto] SOL-USD px=6785.91 rsi=39 regime_ok=False
+[2026-11-20 02:40:27 IST] [india] market closed — skipping
+[2026-11-20 02:40:27 IST] [us] market closed — skipping
+[2026-11-20 02:40:27 IST] once: cycle complete
