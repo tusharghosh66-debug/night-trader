@@ -439,3 +439,12 @@
 [2026-11-19 14:39:20 IST] WAIT [india] INFY.NS px=1082.80 rsi=29 regime_ok=True
 [2026-11-19 14:39:20 IST] [us] market closed — skipping
 [2026-11-19 14:39:20 IST] once: cycle complete
+[2026-11-19 14:43:34 IST] WAIT [crypto] BTC-USD px=5942795.99 rsi=54 regime_ok=False
+[2026-11-19 14:43:34 IST] WAIT [crypto] ETH-USD px=168150.06 rsi=57 regime_ok=False
+[2026-11-19 14:43:34 IST] WAIT [crypto] SOL-USD px=6948.05 rsi=55 regime_ok=False
+[2026-11-19 14:43:35 IST] HOLD [india] RELIANCE.NS px=1375.10 stop=1361.20 rsi=69
+[2026-11-19 14:43:36 IST] WAIT [india] TCS.NS px=2340.80 rsi=33 regime_ok=True
+[2026-11-19 14:43:36 IST] HOLD [india] HDFCBANK.NS px=821.50 stop=812.16 rsi=66
+[2026-11-19 14:43:36 IST] WAIT [india] INFY.NS px=1081.50 rsi=29 regime_ok=True
+[2026-11-19 14:43:36 IST] [us] market closed — skipping
+[2026-11-19 14:43:36 IST] once: cycle complete
