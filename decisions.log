@@ -898,3 +898,13 @@
 [2026-11-19 19:33:52 IST] [india] market closed — skipping
 [2026-11-19 19:33:52 IST] [us] market closed — skipping
 [2026-11-19 19:33:52 IST] once: cycle complete
+[2026-11-19 19:38:06 IST] NEWS crypto: 178 unique headlines from 6 sources, sentiment=-0.30, F&G=10
+[2026-11-19 19:38:09 IST] NEWS india: 226 unique headlines from 6 sources, sentiment=+0.78
+[2026-11-19 19:38:10 IST] news feed failed (us) https://news.google.com/rss/search?q=federal+reserve+OR+wall+street+OR: HTTP Error 429: Too Many Requests
+[2026-11-19 19:38:11 IST] NEWS us: 155 unique headlines from 5 sources, sentiment=-0.08
+[2026-11-19 19:38:12 IST] WAIT [crypto] BTC-USD px=5958426.70 rsi=55 regime_ok=False
+[2026-11-19 19:38:12 IST] WAIT [crypto] ETH-USD px=168774.67 rsi=59 regime_ok=False
+[2026-11-19 19:38:12 IST] WAIT [crypto] SOL-USD px=6994.88 rsi=60 regime_ok=False
+[2026-11-19 19:38:12 IST] [india] market closed — skipping
+[2026-11-19 19:38:12 IST] [us] market closed — skipping
+[2026-11-19 19:38:12 IST] once: cycle complete
