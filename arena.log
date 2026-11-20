@@ -40,3 +40,6 @@
 [2026-11-20 11:49:08 IST] cycle done. total equity = Rs 100,036.43
 [2026-11-20 11:53:21 IST] === ARENA CYCLE  USDINR=93.02  US_open=False ===
 [2026-11-20 11:53:35 IST] cycle done. total equity = Rs 100,036.01
+[2026-11-20 11:57:48 IST] === ARENA CYCLE  USDINR=93.00  US_open=False ===
+[2026-11-20 11:57:48 IST]   OPEN NIFTYBEES.NS LONG qty=32.5365 @ 291.98 stop=290.67 (noise-band-break-up)
+[2026-11-20 11:57:57 IST] cycle done. total equity = Rs 100,026.27
