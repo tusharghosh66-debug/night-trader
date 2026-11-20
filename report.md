@@ -1,8 +1,8 @@
 # Night Trader v2 — Paper Trading Report (3 markets)
-_Updated: 2026-11-20 22:41 IST_
+_Updated: 2026-11-20 22:44 IST_
 
 ## CRYPTO (OPEN) — ₹10,000.00 | P&L +0.00 (+0.00%)
-Cash ₹10,000.00 | cycles 836 | capital ₹10,000
+Cash ₹10,000.00 | cycles 841 | capital ₹10,000
 _No open positions — all cash._
 News sentiment: -0.34 (182 headlines, 6 sources, Fear&Greed 12)
 - Bitcoin price extends gains, briefly tops $81,000 as crypto rally gathers pace - CNBC
@@ -23,7 +23,7 @@ News sentiment: +0.57 (217 headlines, 6 sources)
 - Bull run gathers pace! IndusInd Bank shares surge 8.5%, head for best week in over a year; Should investors still buy?
 
 ## US (OPEN) — ₹10,000.00 | P&L +0.00 (+0.00%)
-Cash ₹10,000.00 | cycles 290 | capital ₹10,000
+Cash ₹10,000.00 | cycles 295 | capital ₹10,000
 _No open positions — all cash._
 News sentiment: -0.62 (154 headlines, 5 sources)
 - Cathie Wood’s Ark Invest was a big buyer of Anthropic as she tells CNBC she’s ‘quite optimistic’
