@@ -1,11 +1,11 @@
 # Strategy Arena — Leaderboard
-_Updated: 2026-11-20 19:32 IST_
+_Updated: 2026-11-20 19:34 IST_
 
-**Total equity: Rs 100,618.06** / Rs 100,000 start (+0.62%)
+**Total equity: Rs 100,660.11** / Rs 100,000 start (+0.66%)
 
 | Rank | Bot | Strategy | Equity | P&L | % | Trades | Win% | Open |
 |---|---|---|---|---|---|---|---|---|
-| 1 | s09 | Statistical Arbitrage Pairs | Rs 10,610.35 | +610.35 | +6.10% | 16 | 100% | 0 |
+| 1 | s09 | Statistical Arbitrage Pairs | Rs 10,652.40 | +652.40 | +6.52% | 16 | 100% | 1 |
 | 2 | s01 | St. Gallen ORB Noise-Band | Rs 10,049.72 | +49.72 | +0.50% | 0 | 0% | 1 |
 | 3 | s02 | Trend-Filtered Mean Reversion | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 4 | s03 | ETF Dual Momentum Rotation | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
@@ -16,4 +16,4 @@ _Updated: 2026-11-20 19:32 IST_
 | 9 | s04 | Multi-Market Trend Following | Rs 9,991.51 | -8.49 | -0.08% | 0 | 0% | 3 |
 | 10 | s06 | Prev-Day High/Low Retest | Rs 9,966.49 | -33.51 | -0.34% | 1 | 0% | 1 |
 
-**Best so far: s09 — Statistical Arbitrage Pairs (+6.10%)**
+**Best so far: s09 — Statistical Arbitrage Pairs (+6.52%)**
