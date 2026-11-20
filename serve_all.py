@@ -1,7 +1,7 @@
 """
 serve_all.py — ONE Render free web service running BOTH engines:
   * Night-Trader (bot.py)   : 3 markets, Rs 30,000 paper
-  * Strategy Arena (arena.py): 10 bots, Rs 1,00,000 paper
+  * Strategy Arena (arena.py): 13 bots, Rs 1,30,000 paper
 60-second cycles, /health HTTP endpoint (keep-alive target), GitHub state
 sync every 5 cycles so Pages dashboards stay fresh and restarts lose nothing.
 Why combined: Render free = 750 instance-hours/month; one 24/7 service ~744h.
