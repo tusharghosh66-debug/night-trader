@@ -854,12 +854,46 @@ def write_dashboard(st):
     for i, r in enumerate(lb, 1):
         cls = "pos" if r["pnl"] >= 0 else "neg"
         medal = {1: "🥇", 2: "🥈", 3: "🥉"}.get(i, str(i))
+        b = st["bots"][r["id"]]
+        inv = sum(p["qty"] if "legs" in p else p["qty"] * p["entry"]
+                  for p in b["positions"].values())
         rows_html += (f"<tr><td>{medal}</td><td><b>{r['id']}</b><br><span class='sub'>{r['name']}</span></td>"
                       f"<td class='num'>Rs {r['equity']:,.2f}</td>"
                       f"<td class='num {cls}'>{r['pnl']:+,.2f}</td>"
                       f"<td class='num {cls}'>{r['pct']:+.2f}%</td>"
                       f"<td class='num'>{r['trades']}</td><td class='num'>{r['win_rate']:.0f}%</td>"
-                      f"<td class='num'>{r['open']}</td></tr>")
+                      f"<td class='num'>{r['open']}</td><td class='num'>Rs {inv:,.0f}</td></tr>")
+    # ---- holdings: kon bot kothay koto invest koreche ----
+    names = {b["id"]: b["name"] for b in BOTS}
+    hold_html = ""
+    for sid in sorted(st["bots"]):
+        b = st["bots"][sid]
+        pos = list(b["positions"].items())
+        inv = sum(p["qty"] if "legs" in p else p["qty"] * p["entry"] for _, p in pos)
+        hold_html += (f"<div class='hold'><div class='hhead'><b>{sid} · {names[sid]}</b>"
+                      f"<span class='sub'>invested Rs {inv:,.0f} · cash Rs {b['cash']:,.0f}</span></div>")
+        if not pos:
+            hold_html += "<div class='sub' style='padding:6px 0'>kono open position nei — puro cash-e</div></div>"
+            continue
+        hold_html += ("<table><thead><tr><th>Symbol</th><th>Side</th><th>Qty</th><th>Entry</th>"
+                      "<th>Invested</th><th>Now</th><th>Value</th><th>Unrealized</th><th>Since</th></tr></thead><tbody>")
+        for sym, p in pos:
+            px = b["last_prices"].get(sym, p["entry"])
+            is_pair = "legs" in p
+            inv_p = p["qty"] if is_pair else p["qty"] * p["entry"]
+            upnl = p["side"] * p["qty"] * (px - p["entry"])
+            val = p["qty"] + upnl if is_pair else p["qty"] * px
+            ucls = "pos" if upnl >= 0 else "neg"
+            entry_txt = f"{p['entry']:.3f} <span class='sub'>(spread)</span>" if is_pair else f"Rs {p['entry']:,.2f}"
+            now_txt = f"{px:.3f}" if is_pair else f"Rs {px:,.2f}"
+            hold_html += (f"<tr><td><b>{sym}</b></td>"
+                          f"<td class='{'pos' if p['side'] > 0 else 'neg'}'>{'LONG' if p['side'] > 0 else 'SHORT'}</td>"
+                          f"<td class='num'>{p['qty']:.4f}</td><td class='num'>{entry_txt}</td>"
+                          f"<td class='num'>Rs {inv_p:,.0f}</td><td class='num'>{now_txt}</td>"
+                          f"<td class='num'>Rs {val:,.0f}</td>"
+                          f"<td class='num {ucls}'>{upnl:+,.2f}</td>"
+                          f"<td class='sub'>{(p.get('opened') or '—')[5:16]}</td></tr>")
+        hold_html += "</tbody></table></div>"
     best = lb[0]
     html = f"""<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -879,6 +913,10 @@ th{{color:var(--mute);font-size:12px;text-transform:uppercase}}
 .num{{font-variant-numeric:tabular-nums;text-align:right}}
 svg{{width:100%;height:90px;background:var(--card);border:1px solid var(--line);border-radius:10px;margin:12px 0}}
 .best{{background:var(--card);border:1px solid var(--acc);border-radius:10px;padding:14px 18px;margin:12px 0}}
+.hold{{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin:10px 0}}
+.hhead{{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:6px}}
+.hold table{{border:none;margin:0}}
+h2{{font-size:17px;margin:22px 0 8px}}
 footer{{color:var(--mute);font-size:12px;margin-top:16px}}
 </style></head><body>
 <h1>📊 Strategy Arena — 10 Autonomous Paper Bots</h1>
@@ -890,8 +928,10 @@ footer{{color:var(--mute);font-size:12px;margin-top:16px}}
 </div>
 <svg viewBox="0 0 600 90" preserveAspectRatio="none"><polyline points="{pts}" fill="none" stroke="var(--acc)" stroke-width="2"/></svg>
 <div class="best">🏆 <b>Best so far: {best['id']} — {best['name']}</b> · {best['pct']:+.2f}% · Rs {best['pnl']:+,.2f}</div>
-<table><thead><tr><th>#</th><th>Bot / Strategy</th><th>Equity</th><th>P&L</th><th>%</th><th>Trades</th><th>Win%</th><th>Open</th></tr></thead>
+<table><thead><tr><th>#</th><th>Bot / Strategy</th><th>Equity</th><th>P&L</th><th>%</th><th>Trades</th><th>Win%</th><th>Open</th><th>Invested</th></tr></thead>
 <tbody>{rows_html}</tbody></table>
+<h2>💼 Holdings — kon bot kothay koto invest koreche</h2>
+{hold_html}
 <footer>Paper trading only — no real money. Data: Yahoo (delayed). Fees 0.1%/side. Not financial advice.</footer>
 </body></html>"""
     with open(DASH_F, "w", encoding="utf-8") as f:
