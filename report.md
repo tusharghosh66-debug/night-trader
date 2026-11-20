@@ -1,10 +1,10 @@
 # Night Trader v2 — Paper Trading Report (3 markets)
-_Updated: 2026-11-21 04:59 IST_
+_Updated: 2026-11-21 05:02 IST_
 
 ## CRYPTO (OPEN) — ₹10,000.00 | P&L +0.00 (+0.00%)
-Cash ₹10,000.00 | cycles 1591 | capital ₹10,000
+Cash ₹10,000.00 | cycles 1596 | capital ₹10,000
 _No open positions — all cash._
-News sentiment: -0.51 (182 headlines, 6 sources, Fear&Greed 12)
+News sentiment: -0.45 (182 headlines, 6 sources, Fear&Greed 12)
 - Bitcoin price extends gains, briefly tops $81,000 as crypto rally gathers pace - CNBC
 - Bitcoin plunges below $59,000 as rush to cash puts new bear market lows back in play
 - Cathie Wood's Ark Invest piled into Anthropic IPO, buying $90 million worth of shares
@@ -25,8 +25,8 @@ News sentiment: +0.57 (220 headlines, 6 sources)
 ## US (CLOSED) — ₹10,000.00 | P&L +0.00 (+0.00%)
 Cash ₹10,000.00 | cycles 746 | capital ₹10,000
 _No open positions — all cash._
-News sentiment: -0.91 (192 headlines, 6 sources)
-- US stocks tumble, and the S&amp;P 500 drops as the sell-off for AI stocks accelerates - news8000.com
+News sentiment: -0.92 (192 headlines, 6 sources)
+- U.S. stocks tumble, and the S&amp;P 500 drops as the sell-off for AI stocks accelerates - NBC Bay Area
 - Nvidia stock plunges 10% amid potential SEC probe, market selloff - Crypto Briefing
 - Zscaler stock jumps 18% on report that CrowdStrike in talks to buy security vendor
 
