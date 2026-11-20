@@ -1,16 +1,16 @@
 # Strategy Arena — Leaderboard
-_Updated: 2026-11-20 21:24 IST_
+_Updated: 2026-11-20 21:27 IST_
 
-**Total equity: Rs 130,698.41** / Rs 130,000 start (+0.54%)
+**Total equity: Rs 130,705.01** / Rs 130,000 start (+0.54%)
 
 | Rank | Bot | Strategy | Equity | P&L | % | Trades | Win% | Open |
 |---|---|---|---|---|---|---|---|---|
 | 1 | s09 | Statistical Arbitrage Pairs | Rs 10,633.13 | +633.13 | +6.33% | 17 | 100% | 0 |
 | 2 | s01 | St. Gallen ORB Noise-Band | Rs 10,049.72 | +49.72 | +0.50% | 0 | 0% | 1 |
-| 3 | s04 | Multi-Market Trend Following | Rs 10,031.36 | +31.36 | +0.31% | 0 | 0% | 3 |
-| 4 | s07 | First-Candle ORB 15m | Rs 10,008.63 | +8.63 | +0.09% | 0 | 0% | 3 |
-| 5 | s12 | OHL + CPR Breakdown Short | Rs 10,005.41 | +5.41 | +0.05% | 0 | 0% | 1 |
-| 6 | s08 | Pre-Market High/Low Break | Rs 10,003.68 | +3.68 | +0.04% | 0 | 0% | 3 |
+| 3 | s04 | Multi-Market Trend Following | Rs 10,034.44 | +34.44 | +0.34% | 0 | 0% | 3 |
+| 4 | s07 | First-Candle ORB 15m | Rs 10,015.61 | +15.61 | +0.16% | 0 | 0% | 3 |
+| 5 | s12 | OHL + CPR Breakdown Short | Rs 10,004.97 | +4.97 | +0.05% | 0 | 0% | 1 |
+| 6 | s08 | Pre-Market High/Low Break | Rs 10,000.65 | +0.65 | +0.01% | 0 | 0% | 3 |
 | 7 | s02 | Trend-Filtered Mean Reversion | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 8 | s03 | ETF Dual Momentum Rotation | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 9 | s05 | Connors RSI(2) Pullback | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
