@@ -1,8 +1,8 @@
 {
- "ts": "2026-11-20T04:44:29.528461+05:30",
+ "ts": "2026-11-20T05:48:32.979426+05:30",
  "crypto": {
-  "score": -0.228,
-  "n_headlines": 180,
+  "score": -0.193,
+  "n_headlines": 181,
   "n_sources": 6,
   "top": [
    "Bitcoin price extends gains, briefly tops $81,000 as crypto rally gathers pace - CNBC",
@@ -12,7 +12,7 @@
    "Citi Says Customers Are Responsible When AI Banking Agents Go Rogue\u2014Even After a Hack",
    "Fed&#39;s Waller Calls for 50-Basis-Point Rate Hike, Says Tokenized Finance Still Needs Traditional Banks",
    "Cathie Wood&#39;s ARK Sells $85 Million in Nvidia, Buys $40 Million in Crypto Stocks",
-   "Dow Drops 1,000 Points as Bitcoin Falls 2.6% Amid Market Volatility - KuCoin"
+   "H100 Group asks shareholders to approve buybacks funded by its Bitcoin trading pool - TradingView"
   ],
   "headlines": [
    "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
@@ -42,6 +42,7 @@
    "German judge proposes dropping Movie2k case if operator hands over $2.56 billion in bitcoin",
    "Hong Kong wants banks to use AI to catch crypto crime before money disappears",
    "Cointelegraph.com News",
+   "Ledger CTO Charles Guillemet to leave after nine years at company",
    "Binance\u2019s $6.5B freeze order, Hong Kong \u2018suspicious\u2019 of HYPE: Asia Express",
    "Here\u2019s what happened in crypto today",
    "MoonPay seeks US bank charter for stablecoin, custody services",
@@ -71,16 +72,15 @@
    "Binance says it obtained $6.5B worldwide freezing order after hack",
    "MARA prices $185M debt offering after $1.1B Bitcoin sale",
    "$25M Ethereum MEV acquittal tests criminal enforcement limits",
-   "Polymarket US takes rapid-fire crypto trading format to oil, natural gas",
    "Citi Says Customers Are Responsible When AI Banking Agents Go Rogue\u2014Even After a Hack",
    "Nvidia, AMD, Micron Sink as Anthropic Closes 17% Above IPO Price",
    "Meet SHRINCS: Bitcoin&#39;s Emerging Frontrunner for a Post-Quantum Signature"
   ],
-  "fear_greed": 10
+  "fear_greed": 12
  },
  "india": {
-  "score": 0.96,
-  "n_headlines": 225,
+  "score": 0.965,
+  "n_headlines": 227,
   "n_sources": 6,
   "top": [
    "Auto stocks hit the accelerator! Nifty Auto jumps 4%; Maruti, M&amp;M, Hyundai lead the rally | What's behind the surge?",
@@ -156,24 +156,25 @@
   ]
  },
  "us": {
-  "score": -0.528,
-  "n_headlines": 193,
+  "score": -0.597,
+  "n_headlines": 191,
   "n_sources": 6,
   "top": [
    "UnitedHealth&#x2019;s stock tumbles after government signals crackdown on Medicare Advantage fraud",
    "Why Is the US Stock Market Crashing Today? Dow Drops 1,000 Points Despite Anthropic IPO - Stocks Down Under",
    "Wall Street tumbles to its longest losing streak since 2024 as the Dow drops 1,100 points - WRAL",
    "Dow Drops Nearly 860 Points as Stock Market Selloff Deepens Ahead of Nvidia Earnings - Yahoo Finance",
-   "S&amp;P 500 Drops Nearly 2% at the Close as Rate Hike Talk Hits Markets - 24/7 Wall St.",
    "Fed\u2019s Waller says central bank may need to \u2018shock people\u2019 with half-point rate hike - CNBC",
-   "Gold prices could fall another 5% to $3,500 as Fed tightening fears grow \u2013 Razaqzada - Kitco",
-   "Gold Price Hits 14-Month Low as Fed Rate Hike Fears Strengthen US Dollar - Investing News Network"
+   "Gold Price Hits 14-Month Low as Fed Rate Hike Fears Strengthen US Dollar - Investing News Network",
+   "Gold falls below $3,650, silver tumbles as Fed rate concerns pressure metals - Kitco PM Report - Kitco",
+   "Gold prices could fall another 5% to $3,500 as Fed tightening fears grow \u2013 Razaqzada - Kitco"
   ],
   "headlines": [
-   "AMD dives on short-seller report of alleged China exposure",
+   "AMD dives on short seller report of alleged China exposure",
    "California attorney general issues Nvidia subpoena in probe of China chip diversion",
    "Commerce approved sales of more than 879,000 AI chips to Chinese companies, Rep. Mast says",
-   "Kash Patel skips House hearing after Mar-a-Lago gala with $50,000 access",
+   "Japan core inflation soars to highest this year as energy subsidy expiry pushes up consumer prices",
+   "Anthropic was supposed to save the AI trade. What went wrong?",
    "Congress passes bill to protect older investors from financial fraud",
    "Trump bought Nvidia, Palantir, SpaceX in September as federal deals, White House ties grew",
    "Jensen Huang&apos;s \u2014 and Nvidia&apos;s \u2014 legal exposure balloons",
@@ -199,8 +200,8 @@
    "Family offices move more money into stocks, hedge AI risk, according to CNBC Family Office Portfolio Tracker",
    "Musk accuses Zelenskyy of lying about Starshield restrictions in Ukraine",
    "Trump praises \u2018great relationship\u2019 with Putin after meeting, as Ukraine war takes center stage",
-   "Novartis raises blockbuster drug forecasts to $18 billion as it seeks to prove growth can last",
    "MarketWatch.com - Top Stories",
+   "After Anthropic&#x2019;s &#x2018;bittersweet&#x2019; IPO, here&#x2019;s what lies ahead",
    "These were the only stocks that rose amid the stock market&#x2019;s wipeout Thursday",
    "Intuit&#x2019;s downbeat outlook deepens Wall Street&#x2019;s anxiety about software companies",
    "A CoreWeave co-founder just made an unconventional $30 million wager on its battered bonds",
@@ -210,26 +211,25 @@
    "Nvidia&#x2019;s stock falls further. It has lost $669 billion in six trading days.",
    "Why Micron, Broadcom and other AI stocks gave up their gains Thursday",
    "UnitedHealth&#x2019;s stock tumbles after government signals crackdown on Medicare Advantage fraud",
-   "Why Walmart is making a bigger bet on fast-food delivery",
    "Google News",
    "Stocks plunge as investors take cover amid growing uncertainty - CBS News",
-   "Stock futures are flat after Dow closes below 50,000 for first time since June: Live updates - CNBC",
    "Wall Street ends sharply lower as Anthropic's debut fails to revive AI fervor - Reuters",
    "US Tech Stocks Are Set to Rally as Anthropic IPO Boosts AI Trade - Bloomberg.com",
-   "Dow Jones Futures Rise, Nasdaq Jumps: Anthropic To Debut After Record IPO; Palo Alto, Everpure Rally, Walmart Falls - Investor's Business Daily",
+   "Dow Jones Futures Fall After Ugly Market Reversal To New Lows; Anthropic IPO Debuts, AMD Dives - Investor's Business Daily",
    "The Stock Market Is Flashing a Warning Sign for Only the 6th Time in 156 Years, and History Is Clear What Direction Stocks Could Go Next - The Motley Fool",
-   "Why Is the US Stock Market Crashing Today? Dow Drops 1,000 Points Despite Anthropic IPO - Stocks Down Under",
-   "How major US stock indexes fared Thursday 11/19/2026 - 10TV",
    "Anthropic Jumps 27% in Record Debut, S&amp;P 500 Eyes Sixth Straight Loss: Stock Market Today - Benzinga",
-   "Stock Market Today: Dow, S&amp;P 500 Futures Rise as Wall Street Awaits Anthropic's Listing\u2014 PANW, NTES, SLS in Focus - TradingView",
    "Stock Indices Plunge Amid Broad Market Weakness - Barchart.com",
+   "How major US stock indexes fared Thursday 11/19/2026 - 10TV",
+   "Stock Market Today: Dow, S&amp;P 500 Futures Rise as Wall Street Awaits Anthropic's Listing\u2014 PANW, NTES, SLS in Focus - TradingView",
    "Three Reasons Why US Stock Markets Are Falling: Dow Sinks 950 Points From Day's Highs, Nasdaq In Red - NDTV Profit",
-   "Nasdaq sell-off deepens as investors search for a bottom - Yahoo Finance",
+   "Dow Jones and Nasdaq Index: US Stocks Give Up Gains Ahead of Anthropic Debut - FXEmpire",
+   "Dow Drops 1,100 Points as Anthropic Pops 17%: Stock Market Today - Kiplinger",
+   "Stock market today: Dow, S&amp;P 500 slip ahead of Anthropic IPO, Nvidia stock extends decline - AOL.com",
    "Stock Market Today, November 19, 2026: Dow Sinks 1,084 Points, Nasdaq Drops 2.2% After Anthropic Debut - Eurasia Business News",
    "Stock Market Today, Nov. 19: Dow Plunges 1,100 Points as the S&amp;P 500 Suffers Its 6th Straight Day of Losses - The Motley Fool",
-   "How major US stock indexes fared Thursday 11/19/2026 - The Washington Post",
-   "Dow Jones and Nasdaq Index: US Stocks Give Up Gains Ahead of Anthropic Debut - FXEmpire",
-   "US Stock Futures Rise as Anthropic Prepares for Record IPO, Fed Signals Rate Hikes and Oil Prices Advance: Dow Jones, S&amp;P, Nasdaq, Wall Street - Yahoo Finance"
+   "Why the Stock Market Fell Today: Dow Drops 1,100 Points - Around Prague",
+   "Why Is the US Stock Market Crashing Today? Dow Drops 1,000 Points Despite Anthropic IPO - Stocks Down Under",
+   "How major US stock indexes fared Thursday 11/19/2026 - The Washington Post"
   ]
  }
 }
