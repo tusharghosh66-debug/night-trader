@@ -1,14 +1,14 @@
 # Strategy Arena — Leaderboard
-_Updated: 2026-11-21 01:54 IST_
+_Updated: 2026-11-21 01:57 IST_
 
-**Total equity: Rs 131,293.04** / Rs 130,000 start (+0.99%)
+**Total equity: Rs 131,303.84** / Rs 130,000 start (+1.00%)
 
 | Rank | Bot | Strategy | Equity | P&L | % | Trades | Win% | Open |
 |---|---|---|---|---|---|---|---|---|
 | 1 | s09 | Statistical Arbitrage Pairs | Rs 10,633.13 | +633.13 | +6.33% | 17 | 100% | 0 |
-| 2 | s08 | Pre-Market High/Low Break | Rs 10,338.85 | +338.85 | +3.39% | 1 | 0% | 3 |
-| 3 | s07 | First-Candle ORB 15m | Rs 10,189.39 | +189.39 | +1.89% | 0 | 0% | 3 |
-| 4 | s04 | Multi-Market Trend Following | Rs 10,050.71 | +50.71 | +0.51% | 0 | 0% | 3 |
+| 2 | s08 | Pre-Market High/Low Break | Rs 10,337.96 | +337.96 | +3.38% | 1 | 0% | 3 |
+| 3 | s07 | First-Candle ORB 15m | Rs 10,196.48 | +196.48 | +1.96% | 0 | 0% | 3 |
+| 4 | s04 | Multi-Market Trend Following | Rs 10,051.08 | +51.08 | +0.51% | 0 | 0% | 3 |
 | 5 | s01 | St. Gallen ORB Noise-Band | Rs 10,049.72 | +49.72 | +0.50% | 0 | 0% | 1 |
 | 6 | s12 | OHL + CPR Breakdown Short | Rs 10,047.03 | +47.03 | +0.47% | 1 | 100% | 0 |
 | 7 | s13 | Afternoon Sell-the-Rip Short | Rs 10,001.50 | +1.50 | +0.01% | 1 | 100% | 0 |
@@ -17,6 +17,6 @@ _Updated: 2026-11-21 01:54 IST_
 | 10 | s05 | Connors RSI(2) Pullback | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 11 | s10 | Overnight Edge + Turnaround Tue | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 12 | s11 | Spike & VWAP Rejection Short | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
-| 13 | s06 | Prev-Day High/Low Retest | Rs 9,982.71 | -17.29 | -0.17% | 1 | 0% | 2 |
+| 13 | s06 | Prev-Day High/Low Retest | Rs 9,986.94 | -13.06 | -0.13% | 1 | 0% | 2 |
 
 **Best so far: s09 — Statistical Arbitrage Pairs (+6.33%)**
