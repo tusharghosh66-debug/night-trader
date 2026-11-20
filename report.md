@@ -1,23 +1,22 @@
 # Night Trader v2 — Paper Trading Report (3 markets)
-_Updated: 2026-11-20 12:34 IST_
+_Updated: 2026-11-20 12:38 IST_
 
 ## CRYPTO (OPEN) — ₹10,000.00 | P&L +0.00 (+0.00%)
-Cash ₹10,000.00 | cycles 356 | capital ₹10,000
+Cash ₹10,000.00 | cycles 357 | capital ₹10,000
 _No open positions — all cash._
 News sentiment: -0.24 (181 headlines, 6 sources, Fear&Greed 12)
 - Bitcoin price extends gains, briefly tops $81,000 as crypto rally gathers pace - CNBC
 - Crypto Elite Gather in Singapore as Bitcoin’s Rally Buoys Bulls - Bloomberg.com
 - Crypto for Advisors: Falling prices drove October’s 10% drop in institutional crypto exposure
 
-## INDIA (OPEN) — ₹10,010.28 | P&L +10.28 (+0.10%)
-Cash ₹6,956.04 | cycles 105 | capital ₹10,000
-| Symbol | Qty | Entry | Last | Unrealized |
-|---|---|---|---|---|
-| HDFCBANK.NS | 3.6479 | 821.65 | 837.25 | +53.91 |
-Closed: 3 (0 wins), realized -43.63
+## INDIA (OPEN) — ₹10,016.34 | P&L +16.34 (+0.16%)
+Cash ₹10,016.34 | cycles 106 | capital ₹10,000
+_No open positions — all cash._
+Closed: 4 (1 wins), realized +16.34
 - 14:26 BUY RELIANCE.NS @ 1377.9 pnl +0.00 (breakout+EMA trend, RSI=70, regime_ok=True, news=+0.30)
 - 14:39 BUY HDFCBANK.NS @ 821.65 pnl +0.00 (breakout+EMA trend, RSI=67, regime_ok=True, news=+0.30)
 - 09:26 SELL RELIANCE.NS @ 1360.6 pnl -43.63 (stop/trail hit (1360.60<=1361.20))
+- 12:38 SELL HDFCBANK.NS @ 839.75 pnl +59.97 (RSI 79 overbought take-profit)
 News sentiment: +0.45 (220 headlines, 6 sources)
 - SELLAS Life Sciences shares plunge 19%: What triggered the sharp sell-off?
 - Stock Market Live Updates: Sensex gains over 300 pts, Nifty above 25,550; IT stocks rally
