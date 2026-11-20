@@ -1,0 +1,2 @@
+time,bot,symbol,side,qty,entry,exit,pnl,reason,equity_after
+2026-11-20T12:02:08.849897+05:30,s09,HD/LOW,LONG,3000.0,0.4158,0.4294,38.34,time-exit,10037.1
