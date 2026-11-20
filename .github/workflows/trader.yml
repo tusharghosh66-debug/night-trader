@@ -1,11 +1,12 @@
 name: night-trader
+# PRIMARY ENGINE IS NOW RENDER: `python serve_all.py` runs BOTH this bot and
+# the Strategy Arena in one service (1-min loops, 24/7). This workflow is a
+# MANUAL-ONLY fallback (Run workflow button) — no cron, no self-chain, so it
+# never trades concurrently with the Render service.
 on:
-  schedule:
-    - cron: '*/15 * * * *'   # backup reviver if the chain ever breaks
   workflow_dispatch:
 permissions:
   contents: write
-  actions: write
 concurrency:
   group: night-trader
   cancel-in-progress: false
@@ -24,20 +25,8 @@ jobs:
         run: |
           git config user.name "night-trader-bot"
           git config user.email "actions@github.com"
-          git add -A
-          git diff --cached --quiet || git commit -m "cycle $(date -u +%FT%TZ) [skip ci]"
+          git add state.json trades.csv report.md dashboard.html news.json
+          git diff --cached --quiet || git commit -m "night-trader manual $(date -u +%FT%TZ) [skip ci][skip render]"
+          git checkout -- decisions.log arena.log 2>/dev/null || true
+          git pull --rebase
           git push
-      - name: Keep the chain alive
-        if: always()
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          sleep 240
-          queued=$(gh run list --repo "$GITHUB_REPOSITORY" --workflow=trader.yml --status queued --json databaseId --jq 'length')
-          running=$(gh run list --repo "$GITHUB_REPOSITORY" --workflow=trader.yml --status in_progress --json databaseId --jq "[.[] | select(.databaseId != $GITHUB_RUN_ID)] | length")
-          if [ "$queued" = "0" ] && [ "$running" = "0" ]; then
-            gh workflow run trader.yml --repo "$GITHUB_REPOSITORY"
-            echo "next run dispatched"
-          else
-            echo "next run already pending - skipping"
-          fi

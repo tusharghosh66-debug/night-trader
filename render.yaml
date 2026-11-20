@@ -9,7 +9,7 @@ services:
     plan: free
     region: singapore
     buildCommand: "echo stdlib-only, no deps"
-    startCommand: "python arena.py serve"
+    startCommand: python serve_all.py
     healthCheckPath: /health
     autoDeploy: false   # state commits must not redeploy; deploy manually via API
     envVars:

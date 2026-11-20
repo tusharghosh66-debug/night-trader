@@ -686,6 +686,41 @@ def run():
         time.sleep(CYCLE_SEC)
 
 
+def cycle_once(st=None):
+    """One full cycle: news (hourly), open markets, save state/report/dashboard.
+    Used by `once` mode (cloud cron fallback) and serve_all.py (Render 1-min loop)."""
+    if st is None:
+        st = load_state()
+    try:                                   # keep decisions.log repo-friendly
+        with open(LOG_F, encoding="utf-8") as f:
+            lines = f.readlines()
+        if len(lines) > 5000:
+            with open(LOG_F, "w", encoding="utf-8") as f:
+                f.writelines(lines[-3000:])
+    except Exception:
+        pass
+    if news_age_sec() > NEWS_EVERY_SEC:
+        try:
+            fetch_news()
+        except Exception as e:
+            log(f"news error: {e}")
+    fx = get_usdinr(st)
+    for mkt in MARKETS:
+        if market_open(mkt):
+            market_cycle(mkt, st["markets"][mkt], fx)
+        else:
+            log(f"[{mkt}] market closed — skipping")
+    hist = st.setdefault("equity_history", [])
+    hist.append([datetime.now(IST).isoformat()] +
+                [round(equity(st["markets"][m]), 2) for m in MARKETS])
+    del hist[:-1440]                       # keep 24h at 1-min cycles
+    save_state(st)
+    write_report(st)
+    write_dashboard(st)
+    log("once: cycle complete")
+    return st
+
+
 if __name__ == "__main__":
     mode = sys.argv[1] if len(sys.argv) > 1 else "run"
     if mode == "backtest":
@@ -698,33 +733,6 @@ if __name__ == "__main__":
         print("dashboard.html written")
     elif mode == "once":
         # one cycle then exit — for cloud cron (GitHub Actions etc.)
-        st = load_state()
-        try:                                   # keep decisions.log repo-friendly
-            with open(LOG_F, encoding="utf-8") as f:
-                lines = f.readlines()
-            if len(lines) > 5000:
-                with open(LOG_F, "w", encoding="utf-8") as f:
-                    f.writelines(lines[-3000:])
-        except Exception:
-            pass
-        if news_age_sec() > NEWS_EVERY_SEC:
-            try:
-                fetch_news()
-            except Exception as e:
-                log(f"news error: {e}")
-        fx = get_usdinr(st)
-        for mkt in MARKETS:
-            if market_open(mkt):
-                market_cycle(mkt, st["markets"][mkt], fx)
-            else:
-                log(f"[{mkt}] market closed — skipping")
-        hist = st.setdefault("equity_history", [])
-        hist.append([datetime.now(IST).isoformat()] +
-                    [round(equity(st["markets"][m]), 2) for m in MARKETS])
-        del hist[:-672]
-        save_state(st)
-        write_report(st)
-        write_dashboard(st)
-        log("once: cycle complete")
+        cycle_once()
     else:
         run()
