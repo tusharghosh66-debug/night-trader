@@ -1,0 +1,6 @@
+[2026-11-20 10:35:31 IST] === ARENA CYCLE  USDINR=93.01  US_open=False ===
+[2026-11-20 10:35:35 IST]   OPEN GLD SHORT qty=0.0258 @ 31174.25 stop=35056.20 (donchian200-low)
+[2026-11-20 10:35:35 IST]   OPEN SLV SHORT qty=0.1138 @ 3686.82 stop=4565.76 (donchian200-low)
+[2026-11-20 10:35:36 IST]   OPEN UUP LONG qty=0.9071 @ 2755.81 stop=2687.77 (donchian200-high)
+[2026-11-20 10:35:40 IST]   OPEN HD/LOW LONG qty=3000.0000 @ 0.42 stop=0.32 (z<-2-long-spread)
+[2026-11-20 10:35:41 IST] cycle done. total equity = Rs 100,035.91
