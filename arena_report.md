@@ -1,7 +1,7 @@
 # Strategy Arena — Leaderboard
-_Updated: 2026-11-20 17:52 IST_
+_Updated: 2026-11-20 17:55 IST_
 
-**Total equity: Rs 100,477.37** / Rs 100,000 start (+0.48%)
+**Total equity: Rs 100,475.76** / Rs 100,000 start (+0.48%)
 
 | Rank | Bot | Strategy | Equity | P&L | % | Trades | Win% | Open |
 |---|---|---|---|---|---|---|---|---|
@@ -14,6 +14,6 @@ _Updated: 2026-11-20 17:52 IST_
 | 7 | s08 | Pre-Market High/Low Break | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 8 | s10 | Overnight Edge + Turnaround Tue | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 9 | s04 | Multi-Market Trend Following | Rs 9,991.92 | -8.08 | -0.08% | 0 | 0% | 3 |
-| 10 | s06 | Prev-Day High/Low Retest | Rs 9,978.74 | -21.26 | -0.21% | 0 | 0% | 2 |
+| 10 | s06 | Prev-Day High/Low Retest | Rs 9,977.13 | -22.87 | -0.23% | 0 | 0% | 2 |
 
 **Best so far: s09 — Statistical Arbitrage Pairs (+4.57%)**
