@@ -1,0 +1,22 @@
+name: arena-keepalive
+# Pings the Render free service every 5 min so it never hits the 15-min idle
+# sleep. No UptimeRobot account needed — GitHub's own cron does the job.
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - name: Ping Render /health (wake if sleeping, keep awake otherwise)
+        run: |
+          code=000
+          for i in 1 2 3; do
+            code=$(curl -s -o /tmp/health.json -w "%{http_code}" --max-time 95 https://strategy-arena-m3sk.onrender.com/health) && break
+            sleep 10
+          done
+          cat /tmp/health.json || true
+          echo "HTTP $code"
+          test "$code" = "200"

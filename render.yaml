@@ -11,6 +11,7 @@ services:
     buildCommand: "echo stdlib-only, no deps"
     startCommand: "python arena.py serve"
     healthCheckPath: /health
+    autoDeploy: no   # state commits must not redeploy; deploy manually via API
     envVars:
       - key: PYTHON_VERSION
         value: "3.12.7"

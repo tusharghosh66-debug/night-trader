@@ -1096,7 +1096,7 @@ def git_sync():
                            capture_output=True)
         if r.returncode != 0:
             _git("commit", "-m",
-                 f"arena serve {datetime.now(IST).strftime('%Y-%m-%dT%H:%M:%S%z')} [skip ci]")
+                 f"arena serve {datetime.now(IST).strftime('%Y-%m-%dT%H:%M:%S%z')} [skip ci][skip render]")
         # arena.log is tracked but never committed from serve mode; restore so rebase is clean
         subprocess.run(["git", "-C", BASE, "checkout", "--", "arena.log"],
                        capture_output=True)
