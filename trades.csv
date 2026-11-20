@@ -1,3 +1,4 @@
 time,market,symbol,side,qty,price,pnl,reason,equity_after
 2026-11-19T14:26:29.427614+05:30,india,RELIANCE.NS,BUY,2.177226,1377.9,0.0,"breakout+EMA trend, RSI=70, regime_ok=True, news=+0.30",9997.0
 2026-11-19T14:39:19.899771+05:30,india,HDFCBANK.NS,BUY,3.647948,821.65,0.0,"breakout+EMA trend, RSI=67, regime_ok=True, news=+0.30",9988.12
+2026-11-20T09:26:22.741713+05:30,india,RELIANCE.NS,SELL,2.177226,1360.6,-43.63,stop/trail hit (1360.60<=1361.20),12937.96

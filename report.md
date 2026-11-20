@@ -1,23 +1,23 @@
 # Night Trader v2 — Paper Trading Report (3 markets)
-_Updated: 2026-11-20 09:22 IST_
+_Updated: 2026-11-20 09:26 IST_
 
 ## CRYPTO (OPEN) — ₹10,000.00 | P&L +0.00 (+0.00%)
-Cash ₹10,000.00 | cycles 311 | capital ₹10,000
+Cash ₹10,000.00 | cycles 312 | capital ₹10,000
 _No open positions — all cash._
 News sentiment: -0.24 (182 headlines, 6 sources, Fear&Greed 12)
 - Bitcoin price extends gains, briefly tops $81,000 as crypto rally gathers pace - CNBC
 - Crypto for Advisors: Falling prices drove October’s 10% drop in institutional crypto exposure
 - Bitcoin ETF assets fall to three-month low as 2026 net outflows top $2.5B
 
-## INDIA (OPEN) — ₹9,984.47 | P&L -15.53 (-0.16%)
-Cash ₹3,996.67 | cycles 60 | capital ₹10,000
+## INDIA (OPEN) — ₹9,959.03 | P&L -40.97 (-0.41%)
+Cash ₹6,956.04 | cycles 61 | capital ₹10,000
 | Symbol | Qty | Entry | Last | Unrealized |
 |---|---|---|---|---|
-| RELIANCE.NS | 2.1772 | 1377.90 | 1363.30 | -34.79 |
-| HDFCBANK.NS | 3.6479 | 821.65 | 827.75 | +19.26 |
-Closed: 2 (0 wins), realized +0.00
+| HDFCBANK.NS | 3.6479 | 821.65 | 823.20 | +2.66 |
+Closed: 3 (0 wins), realized -43.63
 - 14:26 BUY RELIANCE.NS @ 1377.9 pnl +0.00 (breakout+EMA trend, RSI=70, regime_ok=True, news=+0.30)
 - 14:39 BUY HDFCBANK.NS @ 821.65 pnl +0.00 (breakout+EMA trend, RSI=67, regime_ok=True, news=+0.30)
+- 09:26 SELL RELIANCE.NS @ 1360.6 pnl -43.63 (stop/trail hit (1360.60<=1361.20))
 News sentiment: +0.77 (222 headlines, 6 sources)
 - Bulls take charge of D-Street: Autos lead rally, Bank Nifty hits record high as Sensex rebounds 1,177 points - Fortune India
 - Global Market Today: Asian stocks slide as AI fears trigger selloff
