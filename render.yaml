@@ -1,0 +1,18 @@
+# Render Blueprint — Strategy Arena always-on paper trading (free tier)
+# Deploy: render.com -> New -> Blueprint -> connect tusharghosh66-debug/night-trader
+# Then set GITHUB_TOKEN (fine-grained PAT, contents:write on this repo) in the
+# service Environment tab, and point UptimeRobot at https://<service>.onrender.com/health
+services:
+  - type: web
+    name: strategy-arena
+    runtime: python
+    plan: free
+    region: singapore
+    buildCommand: "echo stdlib-only, no deps"
+    startCommand: "python arena.py serve"
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.12.7"
+      - key: GITHUB_TOKEN
+        sync: false

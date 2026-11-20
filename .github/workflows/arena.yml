@@ -1,11 +1,11 @@
 name: strategy-arena
+# PRIMARY ENGINE IS NOW RENDER: `python arena.py serve` (1-min loop, 24/7).
+# This workflow is a MANUAL-ONLY fallback (Run workflow button) — no cron, no
+# self-chain, so it never trades concurrently with the Render service.
 on:
-  schedule:
-    - cron: '*/15 * * * *'   # backup reviver if the chain ever breaks
   workflow_dispatch:
 permissions:
   contents: write
-  actions: write
 concurrency:
   group: strategy-arena
   cancel-in-progress: false
@@ -25,19 +25,7 @@ jobs:
           git config user.name "strategy-arena-bot"
           git config user.email "actions@github.com"
           git add -A
-          git diff --cached --quiet || git commit -m "arena $(date -u +%FT%TZ) [skip ci]"
+          git diff --cached --quiet || git commit -m "arena manual $(date -u +%FT%TZ) [skip ci]"
+          git pull --rebase
           git push
-      - name: Keep the chain alive
-        if: always()
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          sleep 240
-          queued=$(gh run list --repo "$GITHUB_REPOSITORY" --workflow=arena.yml --status queued --json databaseId --jq 'length')
-          running=$(gh run list --repo "$GITHUB_REPOSITORY" --workflow=arena.yml --status in_progress --json databaseId --jq "[.[] | select(.databaseId != $GITHUB_RUN_ID)] | length")
-          if [ "$queued" = "0" ] && [ "$running" = "0" ]; then
-            gh workflow run arena.yml --repo "$GITHUB_REPOSITORY"
-            echo "next arena run dispatched"
-          else
-            echo "next arena run already pending - skipping"
-          fi
+

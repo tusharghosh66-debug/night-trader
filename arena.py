@@ -1058,8 +1058,107 @@ def backtest():
     log("backtest saved -> arena_backtest.json")
 
 # ---------------- main ----------------
+# ---------------- serve mode: always-on web service (Render free + UptimeRobot keep-alive) ----------------
+import subprocess, threading
+from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+
+SERVE_CYCLE_SEC = 60      # 1-minute trading loop
+SYNC_EVERY = 5            # push state/dashboard to GitHub every N cycles (~5 min)
+REPO_URL = "https://github.com/tusharghosh66-debug/night-trader.git"
+SERVE_FILES = ["arena_state.json", "arena_trades.csv", "arena_report.md", "arena_dashboard.html"]
+SERVE_STATUS = {"started": None, "last_cycle": None, "cycles": 0,
+                "equity": 0.0, "sync": "not-run", "last_sync": None}
+
+def _auth_url():
+    token = os.environ.get("GITHUB_TOKEN", "").strip()
+    if token:
+        return REPO_URL.replace("https://", f"https://x-access-token:{token}@")
+    return REPO_URL
+
+def _git(*args, timeout=120):
+    r = subprocess.run(["git", "-C", BASE] + list(args),
+                       capture_output=True, text=True, timeout=timeout)
+    if r.returncode != 0:
+        raise RuntimeError((r.stderr or r.stdout).strip()[:300])
+    return r.stdout
+
+def git_sync():
+    """Commit state files and push to GitHub so Pages dashboard + daily verdict stay fresh.
+    Without GITHUB_TOKEN the loop still trades, but state is local-only (lost on restart)."""
+    if not os.environ.get("GITHUB_TOKEN", "").strip():
+        SERVE_STATUS["sync"] = "no-token (state local only)"
+        return
+    try:
+        _git("config", "user.email", "arena-bot@users.noreply.github.com")
+        _git("config", "user.name", "strategy-arena")
+        _git("add", *SERVE_FILES)
+        r = subprocess.run(["git", "-C", BASE, "diff", "--cached", "--quiet"],
+                           capture_output=True)
+        if r.returncode != 0:
+            _git("commit", "-m",
+                 f"arena serve {datetime.now(IST).strftime('%Y-%m-%dT%H:%M:%S%z')} [skip ci]")
+        # arena.log is tracked but never committed from serve mode; restore so rebase is clean
+        subprocess.run(["git", "-C", BASE, "checkout", "--", "arena.log"],
+                       capture_output=True)
+        _git("pull", "--rebase", _auth_url(), "main")
+        _git("push", _auth_url(), "HEAD:main")
+        SERVE_STATUS["sync"] = "ok"
+        SERVE_STATUS["last_sync"] = datetime.now(IST).isoformat()
+    except Exception as e:
+        SERVE_STATUS["sync"] = f"error: {e}"
+        log(f"git sync failed: {e}")
+
+def serve_boot():
+    """Pull latest state from GitHub before trading (Render disk is ephemeral)."""
+    if os.path.isdir(os.path.join(BASE, ".git")):
+        try:
+            subprocess.run(["git", "-C", BASE, "checkout", "--", "arena.log"],
+                           capture_output=True)
+            _git("pull", "--rebase", _auth_url(), "main")
+            log("serve boot: pulled latest state from GitHub")
+        except Exception as e:
+            log(f"serve boot pull failed (using local state): {e}")
+
+class HealthHandler(BaseHTTPRequestHandler):
+    def do_GET(self):
+        body = json.dumps({"status": "ok", **SERVE_STATUS}, default=str).encode()
+        self.send_response(200)
+        self.send_header("Content-Type", "application/json")
+        self.send_header("Content-Length", str(len(body)))
+        self.end_headers()
+        self.wfile.write(body)
+    def log_message(self, *a):
+        pass
+
+def serve_loop():
+    st = load_state()
+    SERVE_STATUS["started"] = datetime.now(IST).isoformat()
+    n = 0
+    while True:
+        t0 = time.time()
+        try:
+            run_cycle(st)
+            n += 1
+            SERVE_STATUS.update(
+                cycles=n, last_cycle=datetime.now(IST).isoformat(),
+                equity=round(sum(bot_equity(st["bots"][b["id"]]) for b in BOTS), 2))
+            if n % SYNC_EVERY == 0:
+                git_sync()
+        except Exception as e:
+            log(f"serve cycle error: {e}\n{traceback.format_exc()}")
+        time.sleep(max(5, SERVE_CYCLE_SEC - (time.time() - t0)))
+
 def main():
     mode = sys.argv[1] if len(sys.argv) > 1 else "once"
+    if mode == "serve":
+        serve_boot()
+        port = int(os.environ.get("PORT", "10000"))
+        srv = ThreadingHTTPServer(("0.0.0.0", port), HealthHandler)
+        threading.Thread(target=srv.serve_forever, daemon=True).start()
+        log(f"serve mode: HTTP on :{port}, cycle every {SERVE_CYCLE_SEC}s, "
+            f"GitHub sync every {SYNC_EVERY} cycles")
+        serve_loop()
+        return
     if mode == "backtest":
         backtest(); return
     if mode == "dashboard":
