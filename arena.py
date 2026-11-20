@@ -1,6 +1,6 @@
 """
-Strategy Arena — 10 autonomous PAPER-trading bots, one per proven strategy.
-Each bot starts with Rs 10,000 (total Rs 1,00,000). No real money, no keys.
+Strategy Arena — 13 autonomous PAPER-trading bots, one per proven strategy.
+Each bot starts with Rs 10,000 (total Rs 1,30,000). No real money, no keys.
 Data: Yahoo v8 chart API (works from India + GitHub runners, no keys).
 All P&L in INR (USD symbols converted via live USDINR). 0.1% fees per side.
 
@@ -15,6 +15,9 @@ The 10 bots (from the data-backed top-10 research):
   s08  Pre-Market High/Low Breakout & Retest          (15m, liquid stocks)
   s09  Statistical Arbitrage / Pairs Trading          (daily, cointegrated pairs)
   s10  Overnight Edge + Turnaround Tuesday            (daily, SPY)
+  s11  Spike & VWAP Rejection Short                   (5m, top movers, Pine port)
+  s12  OHL (Open=High) + CPR Breakdown Short          (5m, top movers, Pine port)
+  s13  Afternoon Sell-the-Rip Short, 1h bear regime   (5m, top movers, Pine port)
 
 Modes:  python arena.py once | run | backtest | report | dashboard
 """
@@ -56,7 +59,7 @@ def http_json(url, timeout=25):
 # ---------------- data ----------------
 def get_candles(symbol, interval="1d", rng="1y", prepost=False, drop_last=True):
     """OHLC candles oldest first. interval: 1m,5m,15m,30m,60m,1d. drop_last removes open bar."""
-    sym = symbol.replace("^", "%5E")
+    sym = symbol.replace("^", "%5E").replace("&", "%26")
     pp = "&includePrePost=true" if prepost else ""
     d = http_json(f"https://query1.finance.yahoo.com/v8/finance/chart/{sym}?interval={interval}&range={rng}{pp}")
     res = d["chart"]["result"][0]
@@ -74,7 +77,7 @@ def get_candles(symbol, interval="1d", rng="1y", prepost=False, drop_last=True):
     return out
 
 def get_live_price(symbol, fx=1.0):
-    sym = symbol.replace("^", "%5E")
+    sym = symbol.replace("^", "%5E").replace("&", "%26")
     d = http_json(f"https://query1.finance.yahoo.com/v8/finance/chart/{sym}?interval=1d&range=1d")
     return float(d["chart"]["result"][0]["meta"]["regularMarketPrice"]) * fx
 
@@ -829,6 +832,264 @@ def s10(bs, ctx):
                 bs["positions"][sym]["day"] = today_key
                 bs["meta"][day_meta] = today_key
 
+# =====================================================================
+#  INTRADAY SHORT SUITE (s11-s13) — ported from TradingView Pine v5
+#  Universe = top movers per OPEN market, ranked by RVOL x |day-move|
+#  (port of top_movers_scanner.py, stdlib only). Pine params kept:
+#  10% equity per trade, max 1 position, RR 2:1, entry sessions
+#  09:30-15:00 / 13:00-15:05 exchange-local, EOD flatten 15:15.
+#  Crypto = 24x7 "exchange" in UTC (same windows, UTC clock).
+# =====================================================================
+NIFTY_50 = [
+    "RELIANCE.NS", "TCS.NS", "HDFCBANK.NS", "ICICIBANK.NS", "INFY.NS",
+    "HINDUNILVR.NS", "ITC.NS", "SBIN.NS", "BHARTIARTL.NS", "KOTAKBANK.NS",
+    "LT.NS", "AXISBANK.NS", "ASIANPAINT.NS", "MARUTI.NS", "TITAN.NS",
+    "SUNPHARMA.NS", "BAJFINANCE.NS", "WIPRO.NS", "ULTRACEMCO.NS", "NTPC.NS",
+    "POWERGRID.NS", "M&M.NS", "TATAMOTORS.NS", "TATASTEEL.NS", "ADANIENT.NS",
+    "ADANIPORTS.NS", "JSWSTEEL.NS", "COALINDIA.NS", "HCLTECH.NS", "TECHM.NS",
+    "ONGC.NS", "INDUSINDBK.NS", "BAJAJFINSV.NS", "GRASIM.NS", "DRREDDY.NS",
+    "CIPLA.NS", "BRITANNIA.NS", "NESTLEIND.NS", "EICHERMOT.NS", "HEROMOTOCO.NS",
+]
+US_TOP_LIQUID = [
+    "NVDA", "TSLA", "AAPL", "MSFT", "AMZN", "META", "GOOGL", "AMD",
+    "NFLX", "AVGO", "JPM", "BAC", "GS", "XOM", "CVX", "LLY",
+    "UNH", "COIN", "MSTR", "PLTR", "SMCI", "ARM", "MU", "QCOM",
+    "INTC", "BA", "DIS", "CRM", "ORCL", "ADBE",
+]
+CRYPTO_TOP_20 = [
+    "BTC-USD", "ETH-USD", "SOL-USD", "BNB-USD", "XRP-USD",
+    "DOGE-USD", "ADA-USD", "AVAX-USD", "LINK-USD", "DOT-USD",
+    "TRX-USD", "MATIC-USD", "SHIB-USD", "LTC-USD", "BCH-USD",
+    "UNI-USD", "ATOM-USD", "NEAR-USD", "APT-USD", "ARB-USD",
+]
+MOVER_UNIVERSES = {"nifty": NIFTY_50, "us": US_TOP_LIQUID, "crypto": CRYPTO_TOP_20}
+_MOVERS_CACHE = {}      # market -> (ts, [sym,...])
+_INTRADAY_CACHE = {}    # (sym, interval, rng) -> (ts, kl)
+MOVERS_TTL = 300        # rescan movers every 5 min
+INTRA_TTL = {"5m": 120, "60m": 3600}
+
+def top_movers(market, ctx, top_n=8):
+    """Mover_Score = RVOL x |Day_Move_%| on liquid universe (daily bars)."""
+    hit = _MOVERS_CACHE.get(market)
+    if hit and time.time() - hit[0] < MOVERS_TTL:
+        return hit[1]
+    rows = []
+    for sym in MOVER_UNIVERSES[market]:
+        try:
+            kl = ctx.candles(sym, "1d", "2mo", drop_last=False)
+            if len(kl) < 22:
+                continue
+            prev_c = kl[-2]["c"]
+            cur = kl[-1]
+            if prev_c <= 0:
+                continue
+            avg_vol = sum(k["v"] for k in kl[-21:-1]) / 20.0
+            if avg_vol <= 0:
+                continue
+            rvol = cur["v"] / avg_vol
+            move = (cur["c"] - prev_c) / prev_c * 100.0
+            rows.append((rvol * abs(move), sym))
+        except Exception:
+            continue
+    rows.sort(reverse=True)
+    syms = [s for _, s in rows[:top_n]]
+    _MOVERS_CACHE[market] = (time.time(), syms)
+    return syms
+
+def mover_universe(ctx):
+    syms = []
+    if mkt_open("RELIANCE.NS"):
+        syms += top_movers("nifty", ctx)
+    if us_open():
+        syms += top_movers("us", ctx)
+    syms += top_movers("crypto", ctx)
+    return syms
+
+def intraday(sym, interval, rng, ctx):
+    """Cross-cycle TTL cache for intraday bars (Ctx cache is per-cycle)."""
+    key = (sym, interval, rng)
+    hit = _INTRADAY_CACHE.get(key)
+    if hit and time.time() - hit[0] < INTRA_TTL.get(interval, 120):
+        return hit[1]
+    kl = ctx.candles(sym, interval, rng)
+    if kl:
+        _INTRADAY_CACHE[key] = (time.time(), kl)
+    return kl
+
+def vwap_series(kl, sym):
+    """Day-anchored VWAP on hlc3 (Pine ta.vwap), resets each market-local day."""
+    out = [None] * len(kl)
+    day, pv, vv = None, 0.0, 0.0
+    for i, k in enumerate(kl):
+        d = mkt_day(k["t"], sym)
+        if d != day:
+            day, pv, vv = d, 0.0, 0.0
+        pv += (k["h"] + k["l"] + k["c"]) / 3.0 * k["v"]
+        vv += k["v"]
+        out[i] = pv / vv if vv > 0 else k["c"]
+    return out
+
+def _pine_short_exit(bid, bs, sym, px, ctx, mean_exit=False):
+    """Stop / 2R target / mean-revert / EOD-15:15 (exchange-local) exit."""
+    p = bs["positions"][sym]
+    p["bars"] += 1
+    hit = px >= p["stop"]
+    tgt = p.get("target") is not None and px <= p["target"]
+    eod = mkt_hm(time.time() * 1000, sym) >= 15 * 60 + 15
+    if hit or tgt or mean_exit or eod:
+        reason = "stop" if hit else ("target-2R" if tgt else ("mean-revert" if mean_exit else "eod"))
+        row = close_position(bs, sym, px, reason, ctx.now)
+        row[1] = bid
+        record_trade(bid, bs, row)
+        return True
+    return False
+
+def _pine_short_entry(bs, sym, px, stop, reason, ctx, target=None):
+    """10% of equity, single position (Pine default_qty_value=10)."""
+    if stop <= px or len(bs["positions"]) >= 1:
+        return False
+    eq = bot_equity(bs)
+    qty = (eq * 0.10) / px
+    if qty <= 0:
+        return False
+    open_position(bs, sym, -1, qty, px, stop, reason, ctx.now)
+    if target is not None:
+        bs["positions"][sym]["target"] = target
+    return True
+
+def s11(bs, ctx):
+    """01. Programmatic Spike & VWAP Rejection Short (5m, top movers).
+    Short when a volume-spiked bar crosses back below VWAP after poking
+    above VWAP/PDH; stop = 10-bar spike high, target = 2R."""
+    for sym in mover_universe(ctx):
+        if not mkt_open(sym):
+            continue
+        px = ctx.live(sym)
+        if px is None:
+            continue
+        bs["last_prices"][sym] = px
+        if sym in bs["positions"]:
+            _pine_short_exit("s11", bs, sym, px, ctx)
+            continue
+        hm = mkt_hm(time.time() * 1000, sym)
+        if not (9 * 60 + 30 <= hm < 15 * 60):
+            continue
+        kl = intraday(sym, "5m", "5d", ctx)
+        daily = ctx.candles(sym, "1d", "1mo")
+        if len(kl) < 30 or len(daily) < 2:
+            continue
+        vw = vwap_series(kl, sym)
+        c = [k["c"] for k in kl]
+        v = [k["v"] for k in kl]
+        vs = sma(v, 20)
+        i = len(kl) - 1
+        if vw[i] is None or vw[i - 1] is None or vs[i] is None or vs[i - 1] is None:
+            continue
+        pdh = daily[-1]["h"]
+        cross_dn = c[i] < vw[i] and c[i - 1] >= vw[i - 1]
+        bearish = c[i] < kl[i]["o"]
+        spiked = kl[i - 1]["h"] > vw[i - 1] or kl[i]["h"] > pdh
+        vol_sp = v[i] > 1.5 * vs[i] or v[i - 1] > 1.5 * vs[i - 1]
+        if cross_dn and bearish and spiked and vol_sp:
+            stop = max(k["h"] for k in kl[-10:]) * 1.0005
+            risk = max(stop - px, px * 0.001)
+            tgt = px - 2 * risk
+            if _pine_short_entry(bs, sym, px, stop, "vwap-reject-spike-short", ctx, target=tgt):
+                log(f"s11 SHORT {sym} @ {px:.2f} stop {stop:.2f} tgt {tgt:.2f} (VWAP reject + vol spike)")
+
+def s12(bs, ctx):
+    """02. OHL (Open=High) + CPR Bearish Breakdown Short (5m, top movers).
+    First bar Open=High (0.05% tol) arms the day; short on close below
+    CPR bottom + prev close; stop = day high, target = 2R, 1 entry/day."""
+    for sym in mover_universe(ctx):
+        if not mkt_open(sym):
+            continue
+        px = ctx.live(sym)
+        if px is None:
+            continue
+        bs["last_prices"][sym] = px
+        if sym in bs["positions"]:
+            _pine_short_exit("s12", bs, sym, px, ctx)
+            continue
+        if mkt_hm(time.time() * 1000, sym) >= 15 * 60 + 15:
+            continue
+        kl = intraday(sym, "5m", "5d", ctx)
+        daily = ctx.candles(sym, "1d", "1mo")
+        if len(kl) < 5 or len(daily) < 2:
+            continue
+        today = mkt_day(time.time() * 1000, sym)
+        tb = [k for k in kl if mkt_day(k["t"], sym) == today]
+        if not tb:
+            continue
+        meta = bs["meta"].setdefault("ohl", {}).setdefault(sym, {})
+        if meta.get("day") != today:
+            f = tb[0]
+            meta.update(day=today, armed=abs(f["o"] - f["h"]) <= f["o"] * 0.0005, traded=False)
+        meta["dayHigh"] = max(k["h"] for k in tb)
+        if not meta.get("armed") or meta.get("traded"):
+            continue
+        pd = daily[-1]
+        pivot = (pd["h"] + pd["l"] + pd["c"]) / 3.0
+        bc = (pd["h"] + pd["l"]) / 2.0
+        tc = 2.0 * pivot - bc
+        cpr_bot = min(bc, tc)
+        last = kl[-1]
+        if mkt_day(last["t"], sym) != today:
+            continue
+        if last["c"] < cpr_bot and last["c"] < pd["c"] and last["c"] < last["o"]:
+            stop = meta["dayHigh"] * 1.0005
+            risk = max(stop - px, px * 0.001)
+            tgt = px - 2 * risk
+            if _pine_short_entry(bs, sym, px, stop, "ohl-cpr-breakdown-short", ctx, target=tgt):
+                meta["traded"] = True
+                log(f"s12 SHORT {sym} @ {px:.2f} stop {stop:.2f} tgt {tgt:.2f} (OHL + CPR breakdown)")
+
+def s13(bs, ctx):
+    """03. Afternoon Reversal / Sell-the-Rip Short (5m + 1h regime).
+    Bear regime = 1h close < 1h EMA200. 13:00-15:05: RSI(3)>75 poke above
+    BB(20,2) upper + bearish close -> short; stop = bar high + 1.5 ATR;
+    exit at VWAP / BB-mid mean reversion, stop, or 15:15 EOD."""
+    for sym in mover_universe(ctx):
+        if not mkt_open(sym):
+            continue
+        px = ctx.live(sym)
+        if px is None:
+            continue
+        bs["last_prices"][sym] = px
+        if sym in bs["positions"]:
+            mean_exit = False
+            kl = intraday(sym, "5m", "5d", ctx)
+            if len(kl) >= 21:
+                vw = vwap_series(kl, sym)
+                mid = sma([k["c"] for k in kl], 20)
+                if (vw[-1] is not None and px <= vw[-1]) or (mid[-1] is not None and px <= mid[-1]):
+                    mean_exit = True
+            _pine_short_exit("s13", bs, sym, px, ctx, mean_exit=mean_exit)
+            continue
+        hm = mkt_hm(time.time() * 1000, sym)
+        if not (13 * 60 <= hm < 15 * 60 + 5):
+            continue
+        h1 = intraday(sym, "60m", "3mo", ctx)
+        if len(h1) < 201:
+            continue
+        e200 = ema([k["c"] for k in h1], 200)
+        if e200[-1] is None or h1[-1]["c"] >= e200[-1]:
+            continue    # bearish HTF regime only
+        kl = intraday(sym, "5m", "5d", ctx)
+        if len(kl) < 30:
+            continue
+        c = [k["c"] for k in kl]
+        r3 = rsi(c, 3)
+        _, _, up = bollinger(c, 20, 2.0)
+        i = len(kl) - 1
+        if r3[i] is None or up[i] is None:
+            continue
+        if r3[i] > 75 and kl[i]["h"] >= up[i] and c[i] < kl[i]["o"]:
+            a = atr(kl, 14)[-1] or px * 0.004
+            stop = max(kl[i]["h"], kl[i - 1]["h"]) + 1.5 * a
+            if _pine_short_entry(bs, sym, px, stop, "afternoon-rip-short", ctx):
+                log(f"s13 SHORT {sym} @ {px:.2f} stop {stop:.2f} (RSI3 {r3[i]:.0f} > BB upper, bear regime)")
+
 # ---------------- bot registry ----------------
 BOTS = [
     {"id": "s01", "name": "St. Gallen ORB Noise-Band", "tf": "30m", "market": "US + India + Crypto", "fn": s01},
@@ -841,6 +1102,9 @@ BOTS = [
     {"id": "s08", "name": "Pre-Market High/Low Break", "tf": "15m", "market": "US (pre-market)", "fn": s08},
     {"id": "s09", "name": "Statistical Arbitrage Pairs", "tf": "daily", "market": "US + India + Crypto", "fn": s09},
     {"id": "s10", "name": "Overnight Edge + Turnaround Tue", "tf": "daily", "market": "US + India", "fn": s10},
+    {"id": "s11", "name": "Spike & VWAP Rejection Short", "tf": "5m intraday", "market": "Top movers (NSE+US+Crypto)", "fn": s11},
+    {"id": "s12", "name": "OHL + CPR Breakdown Short", "tf": "5m intraday", "market": "Top movers (NSE+US+Crypto)", "fn": s12},
+    {"id": "s13", "name": "Afternoon Sell-the-Rip Short", "tf": "5m + 1h regime", "market": "Top movers (NSE+US+Crypto)", "fn": s13},
 ]
 
 # ---------------- cycle ----------------
@@ -962,7 +1226,7 @@ def write_dashboard(st):
     html = f"""<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta http-equiv="refresh" content="60">
-<title>Strategy Arena — 10 Bot Leaderboard</title>
+<title>Strategy Arena — {len(BOTS)} Bot Leaderboard</title>
 <style>
 :root{{--bg:#0d1117;--card:#161b22;--ink:#e6edf3;--mute:#8b949e;--line:#30363d;--pos:#3fb950;--neg:#f85149;--acc:#58a6ff}}
 *{{box-sizing:border-box}}body{{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,'Segoe UI',sans-serif;padding:20px}}
@@ -983,7 +1247,7 @@ svg{{width:100%;height:90px;background:var(--card);border:1px solid var(--line);
 h2{{font-size:17px;margin:22px 0 8px}}
 footer{{color:var(--mute);font-size:12px;margin-top:16px}}
 </style></head><body>
-<h1>📊 Strategy Arena — 10 Autonomous Paper Bots</h1>
+<h1>📊 Strategy Arena — {len(BOTS)} Autonomous Paper Bots</h1>
 <div class="sub">Each bot Rs 10,000 start · total Rs {start:,.0f} · auto-refresh 60s · {datetime.now(IST).strftime('%Y-%m-%d %H:%M IST')}</div>
 <div class="top">
 <div class="kpi"><div class="v">Rs {total:,.2f}</div><div class="l">Total equity</div></div>

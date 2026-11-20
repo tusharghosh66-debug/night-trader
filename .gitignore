@@ -1,0 +1,15 @@
+# secrets — never commit
+github_token.txt
+render_key.txt
+*.key
+*.token
+
+# runtime / scratch
+__pycache__/
+*.pyc
+stdout.log
+cloud/
+cloud-review/
+bot_v1.py
+backtest*.json
+*.tmp
