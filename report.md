@@ -1,32 +1,32 @@
 # Night Trader v2 — Paper Trading Report (3 markets)
-_Updated: 2026-11-20 11:00 IST_
+_Updated: 2026-11-20 11:04 IST_
 
 ## CRYPTO (OPEN) — ₹10,000.00 | P&L +0.00 (+0.00%)
-Cash ₹10,000.00 | cycles 334 | capital ₹10,000
+Cash ₹10,000.00 | cycles 335 | capital ₹10,000
 _No open positions — all cash._
-News sentiment: -0.25 (183 headlines, 6 sources, Fear&Greed 12)
+News sentiment: -0.20 (182 headlines, 6 sources, Fear&Greed 12)
 - Bitcoin price extends gains, briefly tops $81,000 as crypto rally gathers pace - CNBC
+- Crypto Elite Gather in Singapore as Bitcoin’s Rally Buoys Bulls - Bloomberg.com
 - Crypto for Advisors: Falling prices drove October’s 10% drop in institutional crypto exposure
-- Bitcoin ETF assets fall to three-month low as 2026 net outflows top $2.5B
 
-## INDIA (OPEN) — ₹9,989.67 | P&L -10.33 (-0.10%)
-Cash ₹6,956.04 | cycles 83 | capital ₹10,000
+## INDIA (OPEN) — ₹9,986.94 | P&L -13.06 (-0.13%)
+Cash ₹6,956.04 | cycles 84 | capital ₹10,000
 | Symbol | Qty | Entry | Last | Unrealized |
 |---|---|---|---|---|
-| HDFCBANK.NS | 3.6479 | 821.65 | 831.60 | +33.30 |
+| HDFCBANK.NS | 3.6479 | 821.65 | 830.85 | +30.56 |
 Closed: 3 (0 wins), realized -43.63
 - 14:26 BUY RELIANCE.NS @ 1377.9 pnl +0.00 (breakout+EMA trend, RSI=70, regime_ok=True, news=+0.30)
 - 14:39 BUY HDFCBANK.NS @ 821.65 pnl +0.00 (breakout+EMA trend, RSI=67, regime_ok=True, news=+0.30)
 - 09:26 SELL RELIANCE.NS @ 1360.6 pnl -43.63 (stop/trail hit (1360.60<=1361.20))
-News sentiment: +0.51 (222 headlines, 6 sources)
+News sentiment: +0.47 (223 headlines, 6 sources)
+- SELLAS Life Sciences shares plunge 19%: What triggered the sharp sell-off?
 - Gold Rate Today Live: Gold slides 4%, silver tumbles 5% on MCX as dollar strengthens, Fed rate hike bets rise
 - Global Market Today: Asian stocks slide as AI fears trigger selloff
-- Goldman Sachs turns bullish on India stock market, upgrades rating to Overweight; sets Nifty target of 28,500
 
 ## US (CLOSED) — ₹10,000.00 | P&L +0.00 (+0.00%)
 Cash ₹10,000.00 | cycles 90 | capital ₹10,000
 _No open positions — all cash._
-News sentiment: -0.71 (191 headlines, 6 sources)
+News sentiment: -0.70 (180 headlines, 5 sources)
 - SoftBank plunges over 16% as AI sell-off hits Asian tech stocks following Anthropic debut
 - Wall Street tumbles to its longest losing streak since 2024 as the Dow drops 1,100 points - Los Angeles Times
 - Why Is the US Stock Market Crashing Today? Dow Drops 1,000 Points Despite Anthropic IPO - Stocks Down Under
