@@ -195,6 +195,54 @@ def et_hm(t_ms):
 def weekday_et(t_ms):
     return datetime.fromtimestamp(t_ms / 1000, ET).weekday()
 
+# ---------------- per-market session helpers (US / India / crypto) ----------------
+def is_india(sym):
+    return sym.endswith(".NS") or sym.endswith(".BO")
+
+def is_crypto(sym):
+    return sym.endswith("-USD")
+
+def mkt_tz(sym):
+    if is_india(sym):
+        return IST
+    if is_crypto(sym):
+        return timezone.utc
+    return ET
+
+def mkt_open(sym):
+    if is_crypto(sym):
+        return True   # 24x7
+    n = datetime.now(mkt_tz(sym))
+    if n.weekday() >= 5:
+        return False
+    hm = (n.hour, n.minute)
+    if is_india(sym):
+        return (9, 15) <= hm < (15, 30)
+    return (9, 30) <= hm < (16, 0)
+
+def mkt_day(t_ms, sym):
+    return datetime.fromtimestamp(t_ms / 1000, mkt_tz(sym)).strftime("%Y-%m-%d")
+
+def mkt_hm(t_ms, sym):
+    d = datetime.fromtimestamp(t_ms / 1000, mkt_tz(sym))
+    return d.hour * 60 + d.minute
+
+def mkt_eod_min(sym):
+    """minutes-from-midnight for end-of-day exit; None for 24x7 crypto"""
+    if is_india(sym):
+        return 15 * 60 + 15
+    if is_crypto(sym):
+        return None
+    return 15 * 60 + 45
+
+def mkt_orb_cutoff(sym):
+    """ORB entry window ends (minutes from midnight, market tz)"""
+    if is_india(sym):
+        return 10 * 60 + 45   # first 90 min after 9:15
+    if is_crypto(sym):
+        return 90             # first 90 min of UTC day
+    return 11 * 60            # first 90 min after 9:30 ET
+
 # ---------------- market hours ----------------
 def us_open():
     n = datetime.now(ET)
@@ -333,50 +381,58 @@ class Ctx:
                 self._live[sym] = None
         return self._live[sym]
 
-# ---- s01: St. Gallen Opening-Range Noise-Band Breakout (NQ=F, 30m) ----
+# ---- s01: St. Gallen Opening-Range Noise-Band Breakout (30m, US+India+crypto) ----
+S01_SYMS = ["NQ=F", "NIFTYBEES.NS", "BTC-USD"]
 def s01(bs, ctx):
-    sym = "NQ=F"
-    if not us_open():
-        return
-    kl = ctx.candles(sym, "30m", "5d", drop_last=True)
-    daily = ctx.candles(sym, "1d", "1mo")
-    if len(kl) < 3 or len(daily) < 15:
-        return
-    # noise band = avg daily range over last 14 days * 0.5, around today's open
-    avg_rng = sum(d["h"] - d["l"] for d in daily[-14:]) / 14
-    band = avg_rng * 0.5
-    today = day_of(kl[-1]["t"])
-    today_bars = [k for k in kl if day_of(k["t"]) == today]
-    if not today_bars:
-        return
-    day_open = today_bars[0]["o"]
-    upper, lower = day_open + band, day_open - band
-    px = ctx.live(sym) or kl[-1]["c"]
-    bs["last_prices"][sym] = px
-    a = atr(kl, 14)[-1] or (avg_rng / 4)
-    # manage existing: exit if price back inside band, or EOD
-    for s in list(bs["positions"]):
-        p = bs["positions"][s]
-        inside = lower < px < upper
-        eod = et_hm(kl[-1]["t"]) >= 15 * 60 + 45
-        if inside or eod:
-            row = close_position(bs, s, px, "band-revert" if inside else "eod", ctx.now)
-            row[1] = "s01"; record_trade("s01", bs, row)
-    if sym in bs["positions"] or len(bs["positions"]) >= 1:
-        return
-    eq = bot_equity(bs)
-    last_c = kl[-1]["c"]
-    if last_c > upper:
-        qty = size_by_risk(eq, px, a, 0.95, 0.01)
-        if qty > 0:
-            open_position(bs, sym, 1, qty, px, px - 2 * a, "noise-band-break-up", ctx.now)
-    elif last_c < lower:
-        qty = size_by_risk(eq, px, a, 0.95, 0.01)
-        if qty > 0:
-            open_position(bs, sym, -1, qty, px, px + 2 * a, "noise-band-break-down", ctx.now)
+    for sym in S01_SYMS:
+        if not mkt_open(sym):
+            continue
+        kl = ctx.candles(sym, "30m", "5d", drop_last=True)
+        daily = ctx.candles(sym, "1d", "1mo")
+        if len(kl) < 3 or len(daily) < 15:
+            continue
+        # noise band = avg daily range over last 14 days * 0.5, around today's open
+        avg_rng = sum(d["h"] - d["l"] for d in daily[-14:]) / 14
+        band = avg_rng * 0.5
+        today = mkt_day(kl[-1]["t"], sym)
+        today_bars = [k for k in kl if mkt_day(k["t"], sym) == today]
+        if not today_bars:
+            continue
+        day_open = today_bars[0]["o"]
+        upper, lower = day_open + band, day_open - band
+        px = ctx.live(sym) or kl[-1]["c"]
+        bs["last_prices"][sym] = px
+        a = atr(kl, 14)[-1] or (avg_rng / 4)
+        # manage this symbol's position: exit if price back inside band, stop, or EOD
+        if sym in bs["positions"]:
+            p = bs["positions"][sym]
+            p["bars"] += 1
+            inside = lower < px < upper
+            em = mkt_eod_min(sym)
+            eod = em is not None and mkt_hm(kl[-1]["t"], sym) >= em
+            hit = (p["side"] > 0 and px <= p["stop"]) or (p["side"] < 0 and px >= p["stop"])
+            time_exit = is_crypto(sym) and p["bars"] >= 16   # 8h max hold, 24x7 market
+            if inside or eod or hit or time_exit:
+                reason = "band-revert" if inside else ("stop" if hit else ("eod" if eod else "time-exit"))
+                row = close_position(bs, sym, px, reason, ctx.now)
+                row[1] = "s01"; record_trade("s01", bs, row)
+            continue
+        if len(bs["positions"]) >= 1:
+            return
+        eq = bot_equity(bs)
+        last_c = kl[-1]["c"]
+        if last_c > upper:
+            qty = size_by_risk(eq, px, a, 0.95, 0.01)
+            if qty > 0:
+                open_position(bs, sym, 1, qty, px, px - 2 * a, "noise-band-break-up", ctx.now)
+        elif last_c < lower:
+            qty = size_by_risk(eq, px, a, 0.95, 0.01)
+            if qty > 0:
+                open_position(bs, sym, -1, qty, px, px + 2 * a, "noise-band-break-down", ctx.now)
 
 # ---- s02: Trend-Filtered Mean Reversion (200SMA + BB2.5, daily) ----
-S02_SYMS = ["AAPL", "MSFT", "NVDA", "GOOGL", "AMZN", "META"]
+S02_SYMS = ["AAPL", "MSFT", "NVDA", "GOOGL", "AMZN", "META",
+            "RELIANCE.NS", "TCS.NS", "HDFCBANK.NS", "INFY.NS", "BTC-USD", "ETH-USD"]
 def s02(bs, ctx):
     for sym in S02_SYMS:
         kl = ctx.candles(sym, "1d", "2y")
@@ -410,7 +466,7 @@ def s02(bs, ctx):
                 open_position(bs, sym, 1, qty, px, stop, "bb2.5-lower+200sma", ctx.now)
 
 # ---- s03: Multi-Asset ETF Dual Momentum Rotation (monthly) ----
-S03_SYMS = ["SPY", "GLD", "TLT", "DBC"]
+S03_SYMS = ["SPY", "GLD", "TLT", "DBC", "NIFTYBEES.NS", "BTC-USD"]
 def s03(bs, ctx):
     data = {}
     for sym in S03_SYMS:
@@ -449,7 +505,8 @@ def s03(bs, ctx):
     bs["meta"]["rebal_month"] = month_key
 
 # ---- s04: Multi-Market Trend Following (Donchian 200 + 6ATR chandelier, L+S) ----
-S04_SYMS = ["SPY", "QQQ", "GLD", "SLV", "TLT", "DBC", "UUP", "BTC-USD"]
+S04_SYMS = ["SPY", "QQQ", "GLD", "SLV", "TLT", "DBC", "UUP", "BTC-USD", "ETH-USD",
+            "RELIANCE.NS", "TCS.NS", "NIFTYBEES.NS"]
 def s04(bs, ctx):
     for sym in S04_SYMS:
         kl = ctx.candles(sym, "1d", "2y")
@@ -493,7 +550,7 @@ def s04(bs, ctx):
                 bs["positions"][sym]["extreme"] = px
 
 # ---- s05: Larry Connors RSI(2) Pullback (daily, index ETFs) ----
-S05_SYMS = ["SPY", "QQQ"]
+S05_SYMS = ["SPY", "QQQ", "NIFTYBEES.NS", "BTC-USD"]
 def s05(bs, ctx):
     for sym in S05_SYMS:
         kl = ctx.candles(sym, "1d", "2y")
@@ -524,11 +581,11 @@ def s05(bs, ctx):
                 open_position(bs, sym, 1, qty, px, stop, "rsi2<5+200sma", ctx.now)
 
 # ---- s06: Previous-Day High/Low Break & Retest (15m) ----
-S06_SYMS = ["QQQ", "AAPL", "MSFT", "NVDA"]
-def _prev_day_hl(kl):
+S06_SYMS = ["QQQ", "AAPL", "MSFT", "NVDA", "RELIANCE.NS", "TCS.NS", "BTC-USD"]
+def _prev_day_hl(kl, sym):
     days = {}
     for k in kl:
-        d = day_of(k["t"])
+        d = mkt_day(k["t"], sym)
         if d not in days:
             days[d] = {"h": k["h"], "l": k["l"]}
         else:
@@ -540,13 +597,13 @@ def _prev_day_hl(kl):
     return days[ds[-2]]
 
 def s06(bs, ctx):
-    if not us_open():
-        return
     for sym in S06_SYMS:
+        if not mkt_open(sym):
+            continue
         kl = ctx.candles(sym, "15m", "5d")
         if len(kl) < 10:
             continue
-        pd = _prev_day_hl(kl)
+        pd = _prev_day_hl(kl, sym)
         if not pd:
             continue
         px = ctx.live(sym) or kl[-1]["c"]
@@ -556,9 +613,12 @@ def s06(bs, ctx):
             p = bs["positions"][sym]
             p["bars"] += 1
             hit = (p["side"] > 0 and px <= p["stop"]) or (p["side"] < 0 and px >= p["stop"])
-            eod = et_hm(kl[-1]["t"]) >= 15 * 60 + 45
-            if hit or eod:
-                row = close_position(bs, sym, px, "stop" if hit else "eod", ctx.now)
+            em = mkt_eod_min(sym)
+            eod = em is not None and mkt_hm(kl[-1]["t"], sym) >= em
+            time_exit = is_crypto(sym) and p["bars"] >= 26   # 6.5h max hold, 24x7
+            if hit or eod or time_exit:
+                reason = "stop" if hit else ("eod" if eod else "time-exit")
+                row = close_position(bs, sym, px, reason, ctx.now)
                 row[1] = "s06"; record_trade("s06", bs, row)
             continue
         if len(bs["positions"]) >= 3:
@@ -577,24 +637,21 @@ def s06(bs, ctx):
                 open_position(bs, sym, -1, qty, px, pd["l"] + a, "pd-low-retest", ctx.now)
 
 # ---- s07: First-Candle ORB 15m Break & Retest (NY open) ----
-S07_SYMS = ["QQQ", "SPY", "AAPL", "NVDA"]
+S07_SYMS = ["QQQ", "SPY", "AAPL", "NVDA", "NIFTYBEES.NS", "RELIANCE.NS", "BTC-USD"]
 def s07(bs, ctx):
-    if not us_open():
-        return
-    n = datetime.now(ET)
-    mins = n.hour * 60 + n.minute
-    if mins > 11 * 60:   # only first ~90 min
-        # manage EOD exit below still runs via positions
-        pass
+    now_ms = time.time() * 1000
     for sym in S07_SYMS:
+        if not mkt_open(sym):
+            continue
+        mins = mkt_hm(now_ms, sym)
         kl = ctx.candles(sym, "15m", "5d")
         if len(kl) < 5:
             continue
-        today = day_of(kl[-1]["t"])
-        tb = [k for k in kl if day_of(k["t"]) == today]
+        today = mkt_day(kl[-1]["t"], sym)
+        tb = [k for k in kl if mkt_day(k["t"], sym) == today]
         if not tb:
             continue
-        orb = tb[0]   # first 15m candle
+        orb = tb[0]   # first 15m candle of the market's day
         px = ctx.live(sym) or kl[-1]["c"]
         bs["last_prices"][sym] = px
         a = atr(kl, 14)[-1] or (px * 0.004)
@@ -602,12 +659,15 @@ def s07(bs, ctx):
             p = bs["positions"][sym]
             p["bars"] += 1
             hit = (p["side"] > 0 and px <= p["stop"]) or (p["side"] < 0 and px >= p["stop"])
-            eod = et_hm(kl[-1]["t"]) >= 15 * 60 + 45
-            if hit or eod:
-                row = close_position(bs, sym, px, "stop" if hit else "eod", ctx.now)
+            em = mkt_eod_min(sym)
+            eod = em is not None and mkt_hm(kl[-1]["t"], sym) >= em
+            time_exit = is_crypto(sym) and p["bars"] >= 26   # 6.5h max hold, 24x7
+            if hit or eod or time_exit:
+                reason = "stop" if hit else ("eod" if eod else "time-exit")
+                row = close_position(bs, sym, px, reason, ctx.now)
                 row[1] = "s07"; record_trade("s07", bs, row)
             continue
-        if len(bs["positions"]) >= 3 or mins > 11 * 60:
+        if len(bs["positions"]) >= 3 or mins > mkt_orb_cutoff(sym):
             continue
         eq = bot_equity(bs)
         last_c = kl[-1]["c"]
@@ -663,7 +723,8 @@ def s08(bs, ctx):
                 open_position(bs, sym, -1, qty, px, pm_l + a, "pm-low-break", ctx.now)
 
 # ---- s09: Statistical Arbitrage / Pairs Trading (daily, z-score) ----
-S09_PAIRS = [("KO", "PEP"), ("XOM", "CVX"), ("MA", "V"), ("HD", "LOW"), ("JPM", "BAC")]
+S09_PAIRS = [("KO", "PEP"), ("XOM", "CVX"), ("MA", "V"), ("HD", "LOW"), ("JPM", "BAC"),
+             ("HDFCBANK.NS", "ICICIBANK.NS"), ("TCS.NS", "INFY.NS"), ("BTC-USD", "ETH-USD")]
 def s09(bs, ctx):
     for a_sym, b_sym in S09_PAIRS:
         ka = ctx.candles(a_sym, "1d", "1y")
@@ -722,61 +783,64 @@ def s09(bs, ctx):
                 cur = math.log(pa / pb)
                 bs["last_prices"][key] = cur
 
-# ---- s10: Overnight Edge + Turnaround Tuesday (daily, SPY) ----
+# ---- s10: Overnight Edge + Turnaround Tuesday (daily, US + India) ----
+S10_SYMS = ["SPY", "NIFTYBEES.NS"]
 def s10(bs, ctx):
-    sym = "SPY"
-    kl = ctx.candles(sym, "1d", "1y")
-    if len(kl) < 10:
-        return
-    c = [k["c"] for k in kl]
-    px = ctx.live(sym) or c[-1]
-    bs["last_prices"][sym] = px
-    today = datetime.now(ET)
-    today_key = today.strftime("%Y-%m-%d")
-    # Overnight edge: buy at close, sell next open. Daily cadence: one entry per day,
-    # exit on the next trading day's first cycle.
-    if sym in bs["positions"]:
-        p = bs["positions"][sym]
-        # sell at next day's open (first cycle after 9:30 ET on a later day)
-        if p.get("day") != today_key and us_open():
-            row = close_position(bs, sym, px, "overnight-exit", ctx.now)
-            row[1] = "s10"; record_trade("s10", bs, row)
-        return
-    if len(bs["positions"]) >= 1 or bs["meta"].get("last_day") == today_key:
-        return
-    # enter only near the close (>=15:45 ET) to approximate buy-at-close
-    if not us_open() or (today.hour * 60 + today.minute) < 15 * 60 + 45:
-        return
-    eq = bot_equity(bs)
-    # Turnaround Tuesday: Tuesday after >=2 consecutive down days
-    consec_down = 0
-    for j in range(len(c) - 1, 0, -1):
-        if c[j] < c[j - 1]:
-            consec_down += 1
-        else:
-            break
-    is_tuesday = today.weekday() == 1
-    overnight = True   # always run overnight edge
-    if overnight or (is_tuesday and consec_down >= 2):
-        qty = (eq * 0.95) / px
-        reason = "turnaround-tuesday" if (is_tuesday and consec_down >= 2) else "overnight-edge"
-        if qty > 0:
-            open_position(bs, sym, 1, qty, px, px * 0.95, reason, ctx.now)
-            bs["positions"][sym]["day"] = today_key
-            bs["meta"]["last_day"] = today_key
+    for sym in S10_SYMS:
+        kl = ctx.candles(sym, "1d", "1y")
+        if len(kl) < 10:
+            continue
+        c = [k["c"] for k in kl]
+        px = ctx.live(sym) or c[-1]
+        bs["last_prices"][sym] = px
+        today = datetime.now(mkt_tz(sym))
+        today_key = today.strftime("%Y-%m-%d")
+        day_meta = f"last_day_{sym}"
+        # Overnight edge: buy at close, sell next open. Daily cadence: one entry per day,
+        # exit on the next trading day's first cycle.
+        if sym in bs["positions"]:
+            p = bs["positions"][sym]
+            # sell at next day's open (first cycle after market open on a later day)
+            if p.get("day") != today_key and mkt_open(sym):
+                row = close_position(bs, sym, px, "overnight-exit", ctx.now)
+                row[1] = "s10"; record_trade("s10", bs, row)
+            continue
+        if len(bs["positions"]) >= 2 or bs["meta"].get(day_meta) == today_key:
+            continue
+        # enter only near the close to approximate buy-at-close
+        entry_min = 15 * 60 + 15 if is_india(sym) else 15 * 60 + 45
+        if not mkt_open(sym) or (today.hour * 60 + today.minute) < entry_min:
+            continue
+        eq = bot_equity(bs)
+        # Turnaround Tuesday: Tuesday after >=2 consecutive down days
+        consec_down = 0
+        for j in range(len(c) - 1, 0, -1):
+            if c[j] < c[j - 1]:
+                consec_down += 1
+            else:
+                break
+        is_tuesday = today.weekday() == 1
+        overnight = True   # always run overnight edge
+        if overnight or (is_tuesday and consec_down >= 2):
+            qty = (eq * 0.45) / px
+            reason = "turnaround-tuesday" if (is_tuesday and consec_down >= 2) else "overnight-edge"
+            if qty > 0:
+                open_position(bs, sym, 1, qty, px, px * 0.95, reason, ctx.now)
+                bs["positions"][sym]["day"] = today_key
+                bs["meta"][day_meta] = today_key
 
 # ---------------- bot registry ----------------
 BOTS = [
-    {"id": "s01", "name": "St. Gallen ORB Noise-Band", "tf": "30m", "market": "NQ futures", "fn": s01},
-    {"id": "s02", "name": "Trend-Filtered Mean Reversion", "tf": "daily", "market": "US big stocks", "fn": s02},
-    {"id": "s03", "name": "ETF Dual Momentum Rotation", "tf": "monthly", "market": "SPY/GLD/TLT/DBC", "fn": s03},
-    {"id": "s04", "name": "Multi-Market Trend Following", "tf": "daily", "market": "multi-asset L+S", "fn": s04},
-    {"id": "s05", "name": "Connors RSI(2) Pullback", "tf": "daily", "market": "SPY/QQQ", "fn": s05},
-    {"id": "s06", "name": "Prev-Day High/Low Retest", "tf": "15m", "market": "QQQ+stocks", "fn": s06},
-    {"id": "s07", "name": "First-Candle ORB 15m", "tf": "15m", "market": "NY open", "fn": s07},
-    {"id": "s08", "name": "Pre-Market High/Low Break", "tf": "15m", "market": "liquid stocks", "fn": s08},
-    {"id": "s09", "name": "Statistical Arbitrage Pairs", "tf": "daily", "market": "cointegrated pairs", "fn": s09},
-    {"id": "s10", "name": "Overnight Edge + Turnaround Tue", "tf": "daily", "market": "SPY", "fn": s10},
+    {"id": "s01", "name": "St. Gallen ORB Noise-Band", "tf": "30m", "market": "US + India + Crypto", "fn": s01},
+    {"id": "s02", "name": "Trend-Filtered Mean Reversion", "tf": "daily", "market": "US + India + Crypto", "fn": s02},
+    {"id": "s03", "name": "ETF Dual Momentum Rotation", "tf": "monthly", "market": "US + India + Crypto", "fn": s03},
+    {"id": "s04", "name": "Multi-Market Trend Following", "tf": "daily", "market": "US + India + Crypto", "fn": s04},
+    {"id": "s05", "name": "Connors RSI(2) Pullback", "tf": "daily", "market": "US + India + Crypto", "fn": s05},
+    {"id": "s06", "name": "Prev-Day High/Low Retest", "tf": "15m", "market": "US + India + Crypto", "fn": s06},
+    {"id": "s07", "name": "First-Candle ORB 15m", "tf": "15m", "market": "US + India + Crypto", "fn": s07},
+    {"id": "s08", "name": "Pre-Market High/Low Break", "tf": "15m", "market": "US (pre-market)", "fn": s08},
+    {"id": "s09", "name": "Statistical Arbitrage Pairs", "tf": "daily", "market": "US + India + Crypto", "fn": s09},
+    {"id": "s10", "name": "Overnight Edge + Turnaround Tue", "tf": "daily", "market": "US + India", "fn": s10},
 ]
 
 # ---------------- cycle ----------------
