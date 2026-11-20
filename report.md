@@ -1,13 +1,13 @@
 # Night Trader v2 — Paper Trading Report (3 markets)
-_Updated: 2026-11-20 08:56 IST_
+_Updated: 2026-11-20 09:00 IST_
 
 ## CRYPTO (OPEN) — ₹10,000.00 | P&L +0.00 (+0.00%)
-Cash ₹10,000.00 | cycles 305 | capital ₹10,000
+Cash ₹10,000.00 | cycles 306 | capital ₹10,000
 _No open positions — all cash._
-News sentiment: -0.24 (181 headlines, 6 sources, Fear&Greed 12)
+News sentiment: -0.24 (182 headlines, 6 sources, Fear&Greed 12)
 - Bitcoin price extends gains, briefly tops $81,000 as crypto rally gathers pace - CNBC
-- Crypto Elite Gather in Singapore as Bitcoin’s Rally Buoys Bulls - Bloomberg.com
 - Crypto for Advisors: Falling prices drove October’s 10% drop in institutional crypto exposure
+- Bitcoin ETF assets fall to three-month low as 2026 net outflows top $2.5B
 
 ## INDIA (CLOSED) — ₹9,988.80 | P&L -11.20 (-0.11%)
 Cash ₹3,996.67 | cycles 58 | capital ₹10,000
@@ -18,15 +18,15 @@ Cash ₹3,996.67 | cycles 58 | capital ₹10,000
 Closed: 2 (0 wins), realized +0.00
 - 14:26 BUY RELIANCE.NS @ 1377.9 pnl +0.00 (breakout+EMA trend, RSI=70, regime_ok=True, news=+0.30)
 - 14:39 BUY HDFCBANK.NS @ 821.65 pnl +0.00 (breakout+EMA trend, RSI=67, regime_ok=True, news=+0.30)
-News sentiment: +0.93 (227 headlines, 6 sources)
-- Auto stocks hit the accelerator! Nifty Auto jumps 4%; Maruti, M&amp;M, Hyundai lead the rally | What's behind the surge?
+News sentiment: +0.77 (222 headlines, 6 sources)
 - Bulls take charge of D-Street: Autos lead rally, Bank Nifty hits record high as Sensex rebounds 1,177 points - Fortune India
-- Maruti Suzuki shares jump 5%, M&amp;M, Tata Motors, Eicher Motors rally as Nifty Auto surges 2.6% - Moneycontrol.com
+- Global Market Today: Asian stocks slide as AI fears trigger selloff
+- Goldman Sachs turns bullish on India stock market, upgrades rating to Overweight; sets Nifty target of 28,500
 
 ## US (CLOSED) — ₹10,000.00 | P&L +0.00 (+0.00%)
 Cash ₹10,000.00 | cycles 90 | capital ₹10,000
 _No open positions — all cash._
-News sentiment: -0.67 (179 headlines, 5 sources)
+News sentiment: -0.64 (191 headlines, 6 sources)
 - SoftBank plunges over 16% as AI sell-off hits Asian tech stocks following Anthropic debut
 - Wall Street tumbles to its longest losing streak since 2024 as the Dow drops 1,100 points - Los Angeles Times
 - Why Is the US Stock Market Crashing Today? Dow Drops 1,000 Points Despite Anthropic IPO - Stocks Down Under
