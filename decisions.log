@@ -2239,3 +2239,13 @@
 [2026-11-20 07:51:57 IST] [india] market closed — skipping
 [2026-11-20 07:51:57 IST] [us] market closed — skipping
 [2026-11-20 07:51:57 IST] once: cycle complete
+[2026-11-20 07:56:13 IST] NEWS crypto: 181 unique headlines from 6 sources, sentiment=-0.24, F&G=12
+[2026-11-20 07:56:17 IST] NEWS india: 227 unique headlines from 6 sources, sentiment=+0.93
+[2026-11-20 07:56:17 IST] news feed failed (us) https://feeds.marketwatch.com/marketwatch/topstories/: HTTP Error 400: Bad Request
+[2026-11-20 07:56:20 IST] NEWS us: 179 unique headlines from 5 sources, sentiment=-0.67
+[2026-11-20 07:56:21 IST] WAIT [crypto] BTC-USD px=5736671.49 rsi=33 regime_ok=False
+[2026-11-20 07:56:21 IST] WAIT [crypto] ETH-USD px=161542.30 rsi=33 regime_ok=False
+[2026-11-20 07:56:22 IST] WAIT [crypto] SOL-USD px=6699.37 rsi=36 regime_ok=False
+[2026-11-20 07:56:22 IST] [india] market closed — skipping
+[2026-11-20 07:56:22 IST] [us] market closed — skipping
+[2026-11-20 07:56:22 IST] once: cycle complete
