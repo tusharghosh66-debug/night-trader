@@ -1,12 +1,12 @@
 # Strategy Arena — Leaderboard
-_Updated: 2026-11-20 13:16 IST_
+_Updated: 2026-11-20 13:21 IST_
 
-**Total equity: Rs 100,101.37** / Rs 100,000 start (+0.10%)
+**Total equity: Rs 100,094.85** / Rs 100,000 start (+0.09%)
 
 | Rank | Bot | Strategy | Equity | P&L | % | Trades | Win% | Open |
 |---|---|---|---|---|---|---|---|---|
 | 1 | s09 | Statistical Arbitrage Pairs | Rs 10,076.88 | +76.88 | +0.77% | 1 | 100% | 1 |
-| 2 | s01 | St. Gallen ORB Noise-Band | Rs 10,030.52 | +30.52 | +0.31% | 0 | 0% | 1 |
+| 2 | s01 | St. Gallen ORB Noise-Band | Rs 10,024.34 | +24.34 | +0.24% | 0 | 0% | 1 |
 | 3 | s02 | Trend-Filtered Mean Reversion | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 4 | s03 | ETF Dual Momentum Rotation | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 5 | s05 | Connors RSI(2) Pullback | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
@@ -14,6 +14,6 @@ _Updated: 2026-11-20 13:16 IST_
 | 7 | s07 | First-Candle ORB 15m | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 8 | s08 | Pre-Market High/Low Break | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 9 | s10 | Overnight Edge + Turnaround Tue | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
-| 10 | s04 | Multi-Market Trend Following | Rs 9,993.98 | -6.02 | -0.06% | 0 | 0% | 3 |
+| 10 | s04 | Multi-Market Trend Following | Rs 9,993.63 | -6.37 | -0.06% | 0 | 0% | 3 |
 
 **Best so far: s09 — Statistical Arbitrage Pairs (+0.77%)**
