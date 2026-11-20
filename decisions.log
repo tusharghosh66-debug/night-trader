@@ -2867,3 +2867,25 @@
 [2026-11-20 13:08:53 IST] WAIT [india] INFY.NS px=1108.10 rsi=48 regime_ok=True
 [2026-11-20 13:08:53 IST] [us] market closed — skipping
 [2026-11-20 13:08:53 IST] once: cycle complete
+[2026-11-20 13:13:25 IST] news feed failed (crypto) https://news.google.com/rss/search?q=bitcoin+OR+ethereum+OR+cryptocurr: HTTP Error 503: Service Unavailable
+[2026-11-20 13:13:33 IST] news feed failed (crypto) https://news.google.com/rss/search?q=crypto+regulation+OR+bitcoin+ETF+: HTTP Error 503: Service Unavailable
+[2026-11-20 13:13:33 IST] NEWS crypto: 105 unique headlines from 4 sources, sentiment=-0.51, F&G=12
+[2026-11-20 13:13:33 IST] news feed failed (india) https://news.google.com/rss/search?q=NSE+OR+BSE+OR+sensex+OR+nifty&hl=: HTTP Error 429: Too Many Requests
+[2026-11-20 13:13:40 IST] news feed failed (india) https://news.google.com/rss/search?q=indian+stock+market+OR+RBI+OR+SEB: HTTP Error 503: Service Unavailable
+[2026-11-20 13:13:50 IST] news feed failed (india) https://news.google.com/rss/search?q=india+economy+OR+GDP+OR+inflation: HTTP Error 503: Service Unavailable
+[2026-11-20 13:13:51 IST] news feed failed (india) https://news.google.com/rss/search?q=site%3Amoneycontrol.com+OR+site%3: HTTP Error 429: Too Many Requests
+[2026-11-20 13:13:51 IST] NEWS india: 75 unique headlines from 2 sources, sentiment=+0.48
+[2026-11-20 13:13:57 IST] news feed failed (us) https://news.google.com/rss/search?q=US+stock+market+OR+nasdaq+OR+S%26: HTTP Error 503: Service Unavailable
+[2026-11-20 13:14:05 IST] news feed failed (us) https://news.google.com/rss/search?q=federal+reserve+OR+wall+street+OR: HTTP Error 503: Service Unavailable
+[2026-11-20 13:14:13 IST] news feed failed (us) https://news.google.com/rss/search?q=apple+OR+microsoft+OR+nvidia+OR+g: HTTP Error 503: Service Unavailable
+[2026-11-20 13:14:19 IST] news feed failed (us) https://news.google.com/rss/search?q=site%3Areuters.com+OR+site%3Abloo: HTTP Error 503: Service Unavailable
+[2026-11-20 13:14:19 IST] NEWS us: 41 unique headlines from 2 sources, sentiment=-0.15
+[2026-11-20 13:14:19 IST] WAIT [crypto] BTC-USD px=5727707.04 rsi=41 regime_ok=False
+[2026-11-20 13:14:19 IST] WAIT [crypto] ETH-USD px=161967.70 rsi=43 regime_ok=False
+[2026-11-20 13:14:19 IST] WAIT [crypto] SOL-USD px=6724.35 rsi=43 regime_ok=False
+[2026-11-20 13:14:19 IST] WAIT [india] RELIANCE.NS px=1360.00 rsi=51 regime_ok=True
+[2026-11-20 13:14:20 IST] WAIT [india] TCS.NS px=2395.50 rsi=53 regime_ok=True
+[2026-11-20 13:14:20 IST] WAIT [india] HDFCBANK.NS px=843.55 rsi=81 regime_ok=True
+[2026-11-20 13:14:20 IST] WAIT [india] INFY.NS px=1104.60 rsi=47 regime_ok=True
+[2026-11-20 13:14:20 IST] [us] market closed — skipping
+[2026-11-20 13:14:20 IST] once: cycle complete
