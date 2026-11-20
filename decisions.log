@@ -3165,3 +3165,9 @@
 [2026-11-20 15:26:29 IST] WAIT [india] INFY.NS px=1093.00 rsi=40 regime_ok=True
 [2026-11-20 15:26:29 IST] [us] market closed — skipping
 [2026-11-20 15:26:29 IST] once: cycle complete
+[2026-11-20 15:30:45 IST] WAIT [crypto] BTC-USD px=5706169.25 rsi=40 regime_ok=False
+[2026-11-20 15:30:45 IST] WAIT [crypto] ETH-USD px=161637.52 rsi=43 regime_ok=False
+[2026-11-20 15:30:45 IST] WAIT [crypto] SOL-USD px=6669.64 rsi=40 regime_ok=False
+[2026-11-20 15:30:45 IST] [india] market closed — skipping
+[2026-11-20 15:30:45 IST] [us] market closed — skipping
+[2026-11-20 15:30:45 IST] once: cycle complete
