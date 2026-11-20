@@ -91,3 +91,6 @@
 [2026-11-20 13:34:10 IST] === ARENA CYCLE  USDINR=92.84  US_open=False ===
 [2026-11-20 13:34:19 IST]   CLOSE HD/LOW @ 0.43 pnl=+38.49 (time-exit)
 [2026-11-20 13:34:21 IST] cycle done. total equity = Rs 100,086.45
+[2026-11-20 13:38:34 IST] === ARENA CYCLE  USDINR=92.81  US_open=False ===
+[2026-11-20 13:38:39 IST]   OPEN HD/LOW LONG qty=3022.2993 @ 0.42 stop=0.32 (z<-2-long-spread)
+[2026-11-20 13:38:40 IST] cycle done. total equity = Rs 100,128.16
