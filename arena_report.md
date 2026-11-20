@@ -1,22 +1,22 @@
 # Strategy Arena — Leaderboard
-_Updated: 2026-11-20 22:39 IST_
+_Updated: 2026-11-20 22:42 IST_
 
-**Total equity: Rs 130,842.50** / Rs 130,000 start (+0.65%)
+**Total equity: Rs 130,855.43** / Rs 130,000 start (+0.66%)
 
 | Rank | Bot | Strategy | Equity | P&L | % | Trades | Win% | Open |
 |---|---|---|---|---|---|---|---|---|
 | 1 | s09 | Statistical Arbitrage Pairs | Rs 10,633.13 | +633.13 | +6.33% | 17 | 100% | 0 |
-| 2 | s07 | First-Candle ORB 15m | Rs 10,070.28 | +70.28 | +0.70% | 0 | 0% | 3 |
-| 3 | s08 | Pre-Market High/Low Break | Rs 10,068.38 | +68.38 | +0.68% | 1 | 0% | 3 |
+| 2 | s08 | Pre-Market High/Low Break | Rs 10,075.61 | +75.61 | +0.76% | 1 | 0% | 3 |
+| 3 | s07 | First-Candle ORB 15m | Rs 10,072.87 | +72.87 | +0.73% | 0 | 0% | 3 |
 | 4 | s01 | St. Gallen ORB Noise-Band | Rs 10,049.72 | +49.72 | +0.50% | 0 | 0% | 1 |
-| 5 | s04 | Multi-Market Trend Following | Rs 10,039.84 | +39.84 | +0.40% | 0 | 0% | 3 |
-| 6 | s12 | OHL + CPR Breakdown Short | Rs 10,024.81 | +24.81 | +0.25% | 0 | 0% | 1 |
+| 5 | s04 | Multi-Market Trend Following | Rs 10,041.17 | +41.17 | +0.41% | 0 | 0% | 3 |
+| 6 | s12 | OHL + CPR Breakdown Short | Rs 10,026.08 | +26.08 | +0.26% | 0 | 0% | 1 |
 | 7 | s02 | Trend-Filtered Mean Reversion | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 8 | s03 | ETF Dual Momentum Rotation | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 9 | s05 | Connors RSI(2) Pullback | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 10 | s10 | Overnight Edge + Turnaround Tue | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 11 | s11 | Spike & VWAP Rejection Short | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 12 | s13 | Afternoon Sell-the-Rip Short | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
-| 13 | s06 | Prev-Day High/Low Retest | Rs 9,956.33 | -43.67 | -0.44% | 1 | 0% | 2 |
+| 13 | s06 | Prev-Day High/Low Retest | Rs 9,956.84 | -43.16 | -0.43% | 1 | 0% | 2 |
 
 **Best so far: s09 — Statistical Arbitrage Pairs (+6.33%)**
