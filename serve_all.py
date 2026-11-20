@@ -70,6 +70,13 @@ def git_sync():
 
 
 class HealthHandler(BaseHTTPRequestHandler):
+    def do_HEAD(self):
+        body = json.dumps({"status": "ok", **STATUS}, default=str).encode()
+        self.send_response(200)
+        self.send_header("Content-Type", "application/json")
+        self.send_header("Content-Length", str(len(body)))
+        self.end_headers()
+
     def do_GET(self):
         body = json.dumps({"status": "ok", **STATUS}, default=str).encode()
         self.send_response(200)
