@@ -1,8 +1,8 @@
 # Night Trader v2 — Paper Trading Report (3 markets)
-_Updated: 2026-11-20 13:27 IST_
+_Updated: 2026-11-20 13:31 IST_
 
 ## CRYPTO (OPEN) — ₹10,000.00 | P&L +0.00 (+0.00%)
-Cash ₹10,000.00 | cycles 368 | capital ₹10,000
+Cash ₹10,000.00 | cycles 369 | capital ₹10,000
 _No open positions — all cash._
 News sentiment: -0.51 (105 headlines, 4 sources, Fear&Greed 12)
 - Crypto for Advisors: Falling prices drove October’s 10% drop in institutional crypto exposure
@@ -10,7 +10,7 @@ News sentiment: -0.51 (105 headlines, 4 sources, Fear&Greed 12)
 - Citi Says Customers Are Responsible When AI Banking Agents Go Rogue—Even After a Hack
 
 ## INDIA (OPEN) — ₹10,016.34 | P&L +16.34 (+0.16%)
-Cash ₹10,016.34 | cycles 117 | capital ₹10,000
+Cash ₹10,016.34 | cycles 118 | capital ₹10,000
 _No open positions — all cash._
 Closed: 4 (1 wins), realized +16.34
 - 14:26 BUY RELIANCE.NS @ 1377.9 pnl +0.00 (breakout+EMA trend, RSI=70, regime_ok=True, news=+0.30)
