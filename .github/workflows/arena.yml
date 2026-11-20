@@ -1,0 +1,43 @@
+name: strategy-arena
+on:
+  schedule:
+    - cron: '*/15 * * * *'   # backup reviver if the chain ever breaks
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: write
+concurrency:
+  group: strategy-arena
+  cancel-in-progress: false
+jobs:
+  cycle:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run one arena cycle (10 bots)
+        run: python arena.py once
+      - name: Commit updated state
+        run: |
+          git config user.name "strategy-arena-bot"
+          git config user.email "actions@github.com"
+          git add -A
+          git diff --cached --quiet || git commit -m "arena $(date -u +%FT%TZ) [skip ci]"
+          git push
+      - name: Keep the chain alive
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          sleep 240
+          queued=$(gh run list --repo "$GITHUB_REPOSITORY" --workflow=arena.yml --status queued --json databaseId --jq 'length')
+          running=$(gh run list --repo "$GITHUB_REPOSITORY" --workflow=arena.yml --status in_progress --json databaseId --jq "[.[] | select(.databaseId != $GITHUB_RUN_ID)] | length")
+          if [ "$queued" = "0" ] && [ "$running" = "0" ]; then
+            gh workflow run arena.yml --repo "$GITHUB_REPOSITORY"
+            echo "next arena run dispatched"
+          else
+            echo "next arena run already pending - skipping"
+          fi
