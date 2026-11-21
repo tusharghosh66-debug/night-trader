@@ -1,10 +1,10 @@
 # Night Trader v2 — Paper Trading Report (3 markets)
-_Updated: 2026-11-21 06:59 IST_
+_Updated: 2026-11-21 07:02 IST_
 
 ## CRYPTO (OPEN) — ₹10,000.00 | P&L +0.00 (+0.00%)
-Cash ₹10,000.00 | cycles 1831 | capital ₹10,000
+Cash ₹10,000.00 | cycles 1836 | capital ₹10,000
 _No open positions — all cash._
-News sentiment: -0.47 (182 headlines, 6 sources, Fear&Greed 12)
+News sentiment: -0.53 (182 headlines, 6 sources, Fear&Greed 12)
 - Bitcoin price extends gains, briefly tops $81,000 as crypto rally gathers pace - CNBC
 - Bitcoin plunges below $59,000 as rush to cash puts new bear market lows back in play
 - Cathie Wood's Ark Invest piled into Anthropic IPO, buying $90 million worth of shares
@@ -17,7 +17,7 @@ Closed: 4 (1 wins), realized +16.34
 - 14:39 BUY HDFCBANK.NS @ 821.65 pnl +0.00 (breakout+EMA trend, RSI=67, regime_ok=True, news=+0.30)
 - 09:26 SELL RELIANCE.NS @ 1360.6 pnl -43.63 (stop/trail hit (1360.60<=1361.20))
 - 12:38 SELL HDFCBANK.NS @ 839.75 pnl +59.97 (RSI 79 overbought take-profit)
-News sentiment: +0.59 (220 headlines, 6 sources)
+News sentiment: +0.56 (220 headlines, 6 sources)
 - SoftBank shares crash 14.5%, biggest 1-day fall in 2 years: Why Anthropic's strong IPO debut failed to revive AI trade
 - NSE share price target: Up 37% from low, stock hits record high! Anand Rathi sees further upside, initiates with 'buy'
 - Bull run gathers pace! IndusInd Bank shares surge 8.5%, head for best week in over a year; Should investors still buy?
@@ -25,7 +25,7 @@ News sentiment: +0.59 (220 headlines, 6 sources)
 ## US (CLOSED) — ₹10,000.00 | P&L +0.00 (+0.00%)
 Cash ₹10,000.00 | cycles 746 | capital ₹10,000
 _No open positions — all cash._
-News sentiment: -0.92 (182 headlines, 5 sources)
+News sentiment: -0.90 (193 headlines, 6 sources)
 - Watch Nvidia Plunges as SEC Probe Deepens AI Market Selloff | Closing Bell - Bloomberg.com
 - Zscaler stock jumps 18% on report that CrowdStrike in talks to buy security vendor
 - Cathie Wood’s Ark Invest was a big buyer of Anthropic as she tells CNBC she’s ‘quite optimistic’
