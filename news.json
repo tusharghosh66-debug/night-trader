@@ -1,18 +1,18 @@
 {
- "ts": "2026-11-21T21:03:00.231938+05:30",
+ "ts": "2026-11-21T22:03:00.245146+05:30",
  "crypto": {
-  "score": -0.423,
+  "score": -0.469,
   "n_headlines": 183,
   "n_sources": 6,
   "top": [
    "Bitcoin price extends gains, briefly tops $81,000 as crypto rally gathers pace - CNBC",
-   "Crypto Elite Gather in Singapore as Bitcoin\u2019s Rally Buoys Bulls - Bloomberg.com",
    "Bitcoin plunges below $59,000 as rush to cash puts new bear market lows back in play",
    "Cathie Wood's Ark Invest piled into Anthropic IPO, buying $90 million worth of shares",
    "Wrapped Monero token crashes 99.8% amid suspected $13.5M exploit",
    "Bitcoin falls below $60K for first time since July amid broader market selloff",
    "Bitcoin price drops to $60K as Anthropic drops to $87 in tech sell-off",
-   "Citi Says Customers Are Responsible When AI Banking Agents Go Rogue\u2014Even After a Hack"
+   "Citi Says Customers Are Responsible When AI Banking Agents Go Rogue\u2014Even After a Hack",
+   "Bitcoin Price Crashes to $59,000 as Market Selloff Deepens"
   ],
   "headlines": [
    "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
@@ -72,15 +72,15 @@
    "Ethereum\u2019s new DeFi security tool raises questions over censorship",
    "Hong Kong adds Hyperliquid to list of \u2018suspicious\u2019 crypto platforms",
    "GTA VI publisher racks up nearly 3x Nvidia\u2019s tokenized stock volume",
+   "Signal Calls OS-Level AI an &#39;Existential Threat&#39; and Blocks Screenshots to Fight It",
    "Is the AI Bubble Finally Popping? Nvidia Crashes 48% as Wall Street Experts Sound the Alarm",
-   "Claude Claims Historic Math Breakthrough One Day After Anthropic IPO",
-   "Nvidia Shares Sink to 52-Week Low After Report SEC Is Probing Accounting"
+   "Claude Claims Historic Math Breakthrough One Day After Anthropic IPO"
   ],
   "fear_greed": 12
  },
  "india": {
-  "score": 0.538,
-  "n_headlines": 223,
+  "score": 0.489,
+  "n_headlines": 221,
   "n_sources": 6,
   "top": [
    "Indian Stocks Surge Against Global Market Tide as Nifty 50 Nears Record High on Foreign Inflows of Over 1 Trillion Rupees - BigGo Finance",
@@ -133,6 +133,7 @@
    "Tata Motors PV Share Price Highlights: Tata Motors PV Stock Price History",
    "LTIMindtree Share Price Highlights: LTIMindtree Stock Price History",
    "Grasim Inds Share Price Highlights: Grasim Inds. Stock Price History",
+   "Dividend jackpot in chemicals: Indo Borax, GOCL and Bayer CropScience offer yields of up to 10% | Check details",
    "Max Healthcare, Fortis, Apollo, Aster: Hospital stocks steal show on D-Street with up to 14% rally - Buy now or wait?",
    "Bitcoin price crash: \u200bFalls to lowest level in two years - What\u2019s behind plunge of world\u2019s largest cryptocurrency",
    "Stock split reset: SanDisk stock crashes 87.5% overnight? Here's what investors need to know about its 8-for-1 split",
@@ -151,23 +152,22 @@
    "Missed 50% rally in Samvardhana Motherson? Choice's Sumeet Bagadia spots another buying opportunity | Target, stop loss",
    "Nasdaq 100 sinks 5.6% in worst week since Covid, S&amp;P 500 corrects to 3.7% as investors sell off AI, tech stocks",
    "Five pharma CDMO stocks with robust revenue growth in Q2FY27",
-   "Best 3 stocks to buy under \u20b9200: Jammu and Kashmir Bank, Canara Bank, Bank of India by Mehul Kothari of Anand Rathi",
-   "Gold Logs Worst Week Since March on Hawkish Fed, AI Selloff"
+   "Best 3 stocks to buy under \u20b9200: Jammu and Kashmir Bank, Canara Bank, Bank of India by Mehul Kothari of Anand Rathi"
   ]
  },
  "us": {
-  "score": -0.933,
-  "n_headlines": 180,
-  "n_sources": 5,
+  "score": -0.87,
+  "n_headlines": 193,
+  "n_sources": 6,
   "top": [
    "Watch Nvidia Plunges as SEC Probe Deepens AI Market Selloff | Closing Bell - Bloomberg.com",
    "Zscaler stock jumps 18% on report that CrowdStrike in talks to buy security vendor",
+   "Wall Street tumbles to its longest losing streak since 2024 as the Dow drops 1,100 points - NBC10 Philadelphia",
    "Dow, S&amp;P 500 enter correction as Nasdaq plunges in AI stock sell-off - upi",
    "Fed\u2019s Waller says central bank may need to \u2018shock people\u2019 with half-point rate hike - CNBC",
    "This Stock Market Selloff Could Block the Fed\u2019s Rate Hikes - 24/7 Wall St.",
-   "Nvidia Stock Plunge Wipes Out Nearly $500 Billion in One Day as SEC Reportedly Probes Its Accounting - Yahoo Finance",
    "Nvidia Stock Plunges 12% After Reuters Reports an SEC Probe of Its Accounting. It\u2019s Nvidia\u2019s Worst Day Since DeepSeek and It Has Lost $2.7 Trillion Since October - Yahoo Finance",
-   "Closing Bell panel assesses sharp selloff as Nvidia, AI stocks tumble - CNBC"
+   "Nvidia Stock Plunge Wipes Out Nearly $500 Billion in One Day as SEC Reportedly Probes Its Accounting - The Motley Fool"
   ],
   "headlines": [
    "S&amp;P 500 correction: Five forces behind the market sell-off",
@@ -200,36 +200,36 @@
    "Gap names new Athleta CEO, says Old Navy turnaround is seeing signs of progress",
    "Anthropic raises $93.5 billion total as underwriters scoop up \u2018greenshoe\u2019 overallotment",
    "Forget Anthropic: In Europe, the IPO hype is about a blue lagoon",
+   "MarketWatch.com - Top Stories",
+   "Micron and Sandisk stocks might look like bargains, but analysts say that&#x2019;s actually a red flag",
+   "&#x2018;Nvidia&#x2019;s turmoil has me spooked&#x2019;: Is it time to sell my stocks?",
+   "I&#x2019;m terrified of a market crash. Should I put $400,000 of my $1 million retirement savings into an annuity?",
+   "Here&#x2019;s what&#x2019;s been proven to help GLP-1 users from losing too much muscle from the drug",
+   "One thing Thanksgiving travelers can be thankful for: Gas prices are down 75 cents from this year&#x2019;s peak",
+   "&#x2018;Never too late to start&#x2019;: Practical investing advice from some of the top women in finance",
+   "My husband spent $80,000 on a boat, yet says my plans for a $100,000 pottery studio are irresponsible. Who&#x2019;s right?",
+   "How a brutal week for stocks almost wiped out their gains for the entire year",
+   "Grocery stores have &#x2018;staggering deals&#x2019; for Thanksgiving &#x2014; but don&#x2019;t get used to these lower prices just yet",
+   "Nvidia&#x2019;s nonstop drama is keeping buyers away from a historically cheap stock",
    "Google News",
    "We May Be Witnessing Wall Street's Biggest Bubble Burst in Real Time (and I'm Not Talking About Artificial Intelligence) - The Motley Fool",
-   "The Stock Market Just Had Its Worst Week of 2026. Here's Why Long-Term Investors Shouldn't Flinch. - The Motley Fool",
    "Nasdaq wipes out gains for the year as Anthropic IPO fails to quell AI nerves - CNN",
    "6 reasons stocks are falling, and what you should do about it - CBS News",
    "Wall St ends sharply lower on AI selloff, S&amp;P 500, Dow in correction - Reuters",
+   "The AI boom had a really bad week \u2014 and it's raising loud alarms - NPR",
    "Tech stock sell-off drags markets down as Anthropic shares slide - BBC",
+   "How a brutal week for stocks almost wiped out their gains for the entire year - MarketWatch",
    "Wall Street suffers historic losses as Dow, S&amp;P 500 plunge into correction territory - Fox Business",
-   "S&amp;P 500 sinks 3.7% and the Nasdaq composite goes negative for the year as rout in tech stocks tanks the market - ABC News - Breaking News, Latest News and Videos",
    "U.S. stocks slump into correction territory amid tech and AI worries - The Washington Post",
+   "S&amp;P 500 sinks 3.7% and the Nasdaq composite goes negative for the year as rout in tech stocks tanks the market - ABC News - Breaking News, Latest News and Videos",
    "S&amp;P 500 Is Set for Longest Losing Run Since 2020: Markets Wrap - Bloomberg.com",
    "Nasdaq erases all 2026 gains as AI sell-off dampens Anthropic\u2019s second day of trading - The Guardian",
-   "Dow, S&amp;P 500 enter correction as Nasdaq suffers worst week since 2020 - MarketWatch",
    "Markets plunge: Nasdaq erases 2026 gains, S&amp;P and Dow enter corrections - NBC News",
-   "Nasdaq wipes out 2026 gains, TSX, Dow and S&amp;P 500 fall into correction territory - CBC",
    "The Nasdaq is red for the year after Anthropic IPO fails to spark a turnaround - Business Insider",
+   "Nasdaq wipes out 2026 gains, TSX, Dow and S&amp;P 500 fall into correction territory - CBC",
+   "Gold falls toward $3,500, silver slides as stock markets enter correction territory - Kitco PM Report - Kitco",
    "Stocks close sharply lower as tech rout deepens, with S&amp;P 500, Dow and TSX sliding into technical corrections - The Globe and Mail",
-   "S&amp;P 500 sinks 3.7% and the Nasdaq composite goes negative for the year - NPR",
-   "Stock Market Today: Dow Jones, S&amp;P 500, Nasdaq 100 Futures Fall as Trump Weighs Iran Decision\u2014 INTU, ROST - Benzinga",
-   "Wall Street rout pushes S&amp;P 500, Dow into correction - Honolulu Star-Advertiser",
-   "Why the Stock Market Fell Today: Dow Drops 1,100 Points - Around Prague",
-   "US Stock Market Today: Dow Jones, S&amp;P 500, Nasdaq 100 sink on AI selloff after Anthropic IPO - Beinsure",
-   "Nasdaq Dives 1,261 Points as Anthropic, AI Stocks Sink: Stock Market Today - Kiplinger",
-   "Market Has Worst Week Since 2020. Look For These Absolute Losers. - Investor's Business Daily",
-   "Why a top economist says the stock market will remain volatile - CNN",
-   "Stocks enter correction territory, driven by a deepening tech rout - CBS News",
-   "News Wrap: Stocks tumble as worries about AI rattle market - PBS",
-   "S&amp;P 500 correction: Five forces behind the market sell-off - CNBC",
-   "Tech stocks analyst on worst stock market week in over a year: 'Dark day in tech' - CNN",
-   "U.S. Stocks Extend Plunge as AI Boom Turns to Bust - WSJ"
+   "Stock Market Today: Dow Jones, S&amp;P 500, Nasdaq 100 Futures Fall as Trump Weighs Iran Decision\u2014 INTU, ROST - Benzinga"
   ]
  }
 }
