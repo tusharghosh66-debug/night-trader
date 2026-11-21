@@ -1,7 +1,7 @@
 {
- "ts": "2026-11-21T14:02:07.725483+05:30",
+ "ts": "2026-11-21T15:02:07.748130+05:30",
  "crypto": {
-  "score": -0.367,
+  "score": -0.401,
   "n_headlines": 182,
   "n_sources": 6,
   "top": [
@@ -79,18 +79,18 @@
   "fear_greed": 12
  },
  "india": {
-  "score": 0.695,
-  "n_headlines": 220,
+  "score": 0.605,
+  "n_headlines": 223,
   "n_sources": 6,
   "top": [
    "Indian Stocks Surge Against Global Market Tide as Nifty 50 Nears Record High on Foreign Inflows of Over 1 Trillion Rupees - BigGo Finance",
+   "KOSPI plunges nearly 5%, Nikkei crashes over 4%; Hang Seng nears bear market as AI selloff deepens - Moneycontrol.com",
    "SoftBank shares crash 14.5%, biggest 1-day fall in 2 years: Why Anthropic's strong IPO debut failed to revive AI trade",
    "NSE share price target: Up 37% from low, stock hits record high! Anand Rathi sees further upside, initiates with 'buy'",
    "Bull run gathers pace! IndusInd Bank shares surge 8.5%, head for best week in over a year; Should investors still buy?",
    "Markets gain 2.6% on FPI inflows, rupee rally and cooling crude oil prices - Business Standard",
-   "Stocks to buy: HSBC lists 19 Indian stocks that saw FY27 earnings upgrades, check target prices",
-   "UK stocks sink as global selloff weighs on banks and miners",
-   "SELLAS Life Sciences shares plunge 19%: What triggered the sharp sell-off?"
+   "Rupee surges 76 paise to seven-month high of 92.68 against US dollar on equity inflows, softer crude - Moneycontrol.com",
+   "Stocks to buy: HSBC lists 19 Indian stocks that saw FY27 earnings upgrades, check target prices"
   ],
   "headlines": [
    "Economic Times",
@@ -133,6 +133,7 @@
    "LTIMindtree Share Price Highlights: LTIMindtree Stock Price History",
    "Grasim Inds Share Price Highlights: Grasim Inds. Stock Price History",
    "Bajaj Auto Share Price Highlights: Bajaj Auto Stock Price History",
+   "Patanjali Foods dividend 2026 announcement news: Board to consider 2nd interim dividend on Nov 26 - Check history, yield",
    "GREED &amp; fear Report: Jefferies Chris Wood hikes India exposure for 2nd time in 3 weeks, cuts Taiwan| New Allocations",
    "Upcoming dividend, split, rights issue record dates next week, Nov 23-27: Pashupati Cotspin, Zee Ent, Varvee, and more",
    "Gold vs silver price crash compared: White metal loses 65%, gold sheds 37% from record highs| Wealth wiped, returns",
@@ -151,13 +152,12 @@
    "Pulse of the Street: Dalal Street extends winning run as global markets slide",
    "SEBI proposes big relief for FPIs: Additional disclosure rules may go - What it means for NSE and BSE",
    "Anthropic shares tumble 10% after blockbuster IPO, erase debut gains; why are investors turning cautious on AI?",
-   "StockGro expert explains: WeWork India share price target - should investors buy, sell or hold?",
-   "Sebi proposes easing disclosure rules for foreign funds"
+   "StockGro expert explains: WeWork India share price target - should investors buy, sell or hold?"
   ]
  },
  "us": {
-  "score": -0.953,
-  "n_headlines": 192,
+  "score": -0.942,
+  "n_headlines": 191,
   "n_sources": 6,
   "top": [
    "Watch Nvidia Plunges as SEC Probe Deepens AI Market Selloff | Closing Bell - Bloomberg.com",
@@ -167,7 +167,7 @@
    "US stocks open lower as tech sell-off continues and Anthropic falls 9 percent - The Boston Globe",
    "Dow, S&amp;P 500 enter correction as Nasdaq plunges in AI stock sell-off - upi",
    "Dow and S&amp;P 500 Plunge Into Correction as Tech Sell-Off Deepens - Realtor.com",
-   "Fed\u2019s Waller says central bank may need to \u2018shock people\u2019 with half-point rate hike - CNBC"
+   "Wall Street tumbles to its longest losing streak since 2024 as the Dow drops 1,100 points - NBC10 Philadelphia"
   ],
   "headlines": [
    "Nvidia stock plunges 14%, wraps up longest weekly losing streak since 2008 financial crisis",
@@ -175,16 +175,16 @@
    "An early breakdown in the polar vortex is threatening already depleted gas stocks",
    "A massive bearish trade just happened in the chip stocks",
    "Europe&apos;s cyber weak spot is the everyday businesses nobody thought to protect",
-   "Zscaler stock jumps 18% on report that CrowdStrike in talks to buy security vendor",
    "Trump says he still has confidence in Lutnick",
    "Jensen Huang to testify publicly before Senate banking panel, Chairman Scott says",
+   "Zscaler stock jumps 18% on report that CrowdStrike in talks to buy security vendor",
    "AI is changing software engineering \u2014 and some developers miss the struggle",
    "The bull market has a new problem. The &apos;smart money&apos; is selling",
    "Trump vows to stop U.S. companies from building data centers abroad, threatens &apos;tremendous tax&apos;",
    "Prediction markets outlook for stocks in 2026 dims amid AI sell-off",
    "As Anthropic shares tank, investors scramble to hedge. It could be very expensive",
-   "Data center construction costs soar 13% in 2026",
    "Intensifying AI rout wipes out Nasdaq&apos;s 2026 gains. Alphabet is a tech bright spot",
+   "Data center construction costs soar 13% in 2026",
    "Warsh wants Fed officials to talk less. Instead, they\u2019re talking more",
    "Ex-GM CEO on Mary Barra succession planning: &apos;It&apos;s going to be tough&apos;",
    "Trump says he discussed Jensen Huang with Xi; Bessent tells CNBC Nvidia chip export policy is unchanged",
@@ -218,18 +218,18 @@
    "Wall St ends sharply lower on AI selloff, S&amp;P 500, Dow in correction - Reuters",
    "S&amp;P 500 sinks 3.7% and the Nasdaq composite goes negative for the year as rout in tech stocks tanks the market - ABC News - Breaking News, Latest News and Videos",
    "Wall Street suffers historic losses as Dow, S&amp;P 500 plunge into correction territory - Fox Business",
-   "U.S. stocks slump into correction territory amid tech and AI worries - The Washington Post",
    "S&amp;P 500 Is Set for Longest Losing Run Since 2020: Markets Wrap - Bloomberg.com",
    "Nasdaq erases all 2026 gains as AI sell-off dampens Anthropic\u2019s second day of trading - The Guardian",
-   "Why stock market is tanking despite massive Anthropic IPO - The Hill",
-   "Gold falls toward $3,500, silver slides as stock markets enter correction territory - Kitco PM Report - Kitco",
+   "U.S. stocks slump into correction territory amid tech and AI worries - The Washington Post",
    "Markets plunge: Nasdaq erases 2026 gains, S&amp;P and Dow enter corrections - NBC News",
    "Dow Jones Futures: Market Has Worst Week Since Covid Amid Nvidia, Anthropic. Does Fear Gauge Offer Hope? - Investor's Business Daily",
+   "Gold falls toward $3,500, silver slides as stock markets enter correction territory - Kitco PM Report - Kitco",
    "The Nasdaq is red for the year after Anthropic IPO fails to spark a turnaround - Business Insider",
    "The Nasdaq Just Had Its 6th Correction in 4 Years. History Says This Is the Likelihood of a Full-Blown Bear Market - The Motley Fool",
    "Stocks close sharply lower as tech rout deepens, with S&amp;P 500, Dow and TSX sliding into technical corrections - The Globe and Mail",
-   "News by CNBC TV18 on TradingView, 2026-11-21 \u2014 cnbctv:2618fe25f094b:0 - TradingView",
-   "Nasdaq wipes out 2026 gains, TSX, Dow and S&amp;P 500 fall into correction territory - CBC"
+   "Nasdaq wipes out 2026 gains, TSX, Dow and S&amp;P 500 fall into correction territory - CBC",
+   "US stocks open lower as tech sell-off continues and Anthropic falls 9 percent - The Boston Globe",
+   "Stock Market Today: Dow Jones, S&amp;P 500, Nasdaq 100 Futures Fall as Trump Weighs Iran Decision\u2014 INTU, ROST - Benzinga"
   ]
  }
 }
