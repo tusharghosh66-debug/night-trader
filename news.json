@@ -1,18 +1,18 @@
 {
- "ts": "2026-11-21T10:01:57.525757+05:30",
+ "ts": "2026-11-21T11:02:07.639518+05:30",
  "crypto": {
-  "score": -0.39,
+  "score": -0.367,
   "n_headlines": 182,
   "n_sources": 6,
   "top": [
    "Bitcoin price extends gains, briefly tops $81,000 as crypto rally gathers pace - CNBC",
+   "Crypto Elite Gather in Singapore as Bitcoin\u2019s Rally Buoys Bulls - Bloomberg.com",
    "Bitcoin plunges below $59,000 as rush to cash puts new bear market lows back in play",
    "Cathie Wood's Ark Invest piled into Anthropic IPO, buying $90 million worth of shares",
    "Wrapped Monero token crashes 99.8% amid suspected $13.5M exploit",
    "Bitcoin falls below $60K for first time since July amid broader market selloff",
    "Bitcoin price drops to $60K as Anthropic drops to $87 in tech sell-off",
-   "Citi Says Customers Are Responsible When AI Banking Agents Go Rogue\u2014Even After a Hack",
-   "Fed&#39;s Waller Calls for 50-Basis-Point Rate Hike, Says Tokenized Finance Still Needs Traditional Banks"
+   "Citi Says Customers Are Responsible When AI Banking Agents Go Rogue\u2014Even After a Hack"
   ],
   "headlines": [
    "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
@@ -79,23 +79,25 @@
   "fear_greed": 12
  },
  "india": {
-  "score": 0.584,
-  "n_headlines": 221,
+  "score": 0.581,
+  "n_headlines": 222,
   "n_sources": 6,
   "top": [
    "SoftBank shares crash 14.5%, biggest 1-day fall in 2 years: Why Anthropic's strong IPO debut failed to revive AI trade",
    "NSE share price target: Up 37% from low, stock hits record high! Anand Rathi sees further upside, initiates with 'buy'",
    "Bull run gathers pace! IndusInd Bank shares surge 8.5%, head for best week in over a year; Should investors still buy?",
-   "Sensex rebounds 1,400 pts from day's low, Nifty recovers 400 pts to reclaim 25,700; key factors behind rally - Fortune India",
    "Markets gain 2.6% on FPI inflows, rupee rally and cooling crude oil prices - Business Standard",
    "SELLAS Life Sciences shares plunge 19%: What triggered the sharp sell-off?",
    "Missed 50% rally in Samvardhana Motherson? Choice's Sumeet Bagadia spots another buying opportunity | Target, stop loss",
-   "Gold Logs Worst Week Since March on Hawkish Fed, AI Selloff"
+   "Gold Logs Worst Week Since March on Hawkish Fed, AI Selloff",
+   "Adani Green Energy, Adani Power to Adani Ports: Jefferies bullish on 5 Adani shares; sees up to 43% rally | Target price"
   ],
   "headlines": [
    "Economic Times",
+   "European shares post worst week in over a year as AI trade unravels",
+   "Tech leads global stocks rout, Treasury yields fall",
    "Wall Street Week Ahead: 'Black Friday' brings consumer spending into focus for AI-rocked market",
-   "Sebi proposes limiting tenure of chief executives, independent directors at exchanges",
+   "Sebi proposes limiting tenure of chief executives, independent directors of stock exchanges, market infrastruction institutions",
    "Nasdaq tumbles 2% as Anthropic retreat deepens AI trade concerns",
    "Nasdaq crashes 5% at close, erasing 2026 gains; S&amp;P 500, Dow in correction: Stock Market Highlights",
    "Rupee climbs past 93/USD as investors seek shelter in Indian stocks, shorts unwind",
@@ -131,8 +133,7 @@
    "UPL Share Price Highlights: UPL Stock Price History",
    "TCS Share Price Highlights: TCS Stock Price History",
    "BPCL Share Price Highlights: BPCL Stock Price History",
-   "Asian Paints Share Price Highlights: Asian Paints Stock Price History",
-   "Dr Reddys Share Price Highlights: Dr. Reddys Stock Price History",
+   "Top 3 stocks to buy: Axis Bank, Bajaj Finance, HDFC Life by Sumeet Bagadia | Targets, stop-loss, stock market prediction",
    "Missed 50% rally in Samvardhana Motherson? Choice's Sumeet Bagadia spots another buying opportunity | Target, stop loss",
    "Nasdaq 100 sinks 5.6% in worst week since Covid, S&amp;P 500 corrects to 3.7% as investors sell off AI, tech stocks",
    "Five pharma CDMO stocks with robust revenue growth in Q2FY27",
@@ -151,20 +152,19 @@
    "HDFC Bank shares recover 22% in Nov, adds \u20b92.38 lakh crore in market value. What's fuelling the rebound?",
    "BSE Sensex rejig: Shriram Finance to replace Trent; Which stocks are entering and exiting other BSE indices? Check list",
    "SoftBank shares crash 14.5%, biggest 1-day fall in 2 years: Why Anthropic's strong IPO debut failed to revive AI trade",
-   "Missed Anthropic's record IPO? Shares cool off after Nasdaq debut - Here's how Indians can invest",
-   "Adani Green Energy, Adani Power to Adani Ports: Jefferies bullish on 5 Adani shares; sees up to 43% rally | Target price"
+   "Missed Anthropic's record IPO? Shares cool off after Nasdaq debut - Here's how Indians can invest"
   ]
  },
  "us": {
-  "score": -0.906,
+  "score": -1.0,
   "n_headlines": 192,
   "n_sources": 6,
   "top": [
+   "U.S. Stock Market Close: AI Trades Face Heavy Sell-Off, Nasdaq Plunges 5%, Philadelphia Semiconductor Index Drops Double Digits, NVIDIA Slides 14% - Moomoo",
    "Watch Nvidia Plunges as SEC Probe Deepens AI Market Selloff | Closing Bell - Bloomberg.com",
    "Zscaler stock jumps 18% on report that CrowdStrike in talks to buy security vendor",
    "Cathie Wood\u2019s Ark Invest was a big buyer of Anthropic as she tells CNBC she\u2019s \u2018quite optimistic\u2019",
    "Bitcoin&apos;s regulation bull case is played out. What could drive crypto gains moving forward",
-   "A brutal sell-off for AI stocks sends Wall Street reeling, and the S&amp;P 500 tumbles 4.4% - AP News",
    "Dow, S&amp;P 500 enter correction as Nasdaq plunges in AI stock sell-off - upi",
    "Dow and S&amp;P 500 Plunge Into Correction as Tech Sell-Off Deepens - Realtor.com",
    "Wall Street tumbles to its longest losing streak since 2024 as the Dow drops 1,100 points - NBC10 Philadelphia"
@@ -215,20 +215,20 @@
    "Nasdaq wipes out gains for the year as Anthropic IPO fails to quell AI nerves - CNN",
    "6 reasons stocks are falling, and what you should do about it - CBS News",
    "Tech stock sell-off drags markets down as Anthropic shares slide - BBC",
-   "Wall Street suffers historic losses as Dow, S&amp;P 500 plunge into correction territory - Fox Business",
    "Wall St ends sharply lower on AI selloff, S&amp;P 500, Dow in correction - Reuters",
+   "Wall Street suffers historic losses as Dow, S&amp;P 500 plunge into correction territory - Fox Business",
    "U.S. stocks slump into correction territory amid tech and AI worries - The Washington Post",
    "S&amp;P 500 sinks 3.7% and the Nasdaq composite goes negative for the year as rout in tech stocks tanks the market - ABC News - Breaking News, Latest News and Videos",
    "S&amp;P 500 Is Set for Longest Losing Run Since 2020: Markets Wrap - Bloomberg.com",
    "Nasdaq erases all 2026 gains as AI sell-off dampens Anthropic\u2019s second day of trading - The Guardian",
-   "Dow Jones Futures: Market Has Worst Week Since Covid Amid Nvidia, Anthropic. Does Fear Gauge Offer Hope? - Investor's Business Daily",
    "Markets plunge: Nasdaq erases 2026 gains, S&amp;P and Dow enter corrections - NBC News",
+   "Dow Jones Futures: Market Has Worst Week Since Covid Amid Nvidia, Anthropic. Does Fear Gauge Offer Hope? - Investor's Business Daily",
    "Gold falls toward $3,500, silver slides as stock markets enter correction territory - Kitco PM Report - Kitco",
    "The Nasdaq is red for the year after Anthropic IPO fails to spark a turnaround - Business Insider",
-   "The Nasdaq Just Had Its 6th Correction in 4 Years. History Says This Is the Likelihood of a Full-Blown Bear Market - The Motley Fool",
    "Nasdaq wipes out 2026 gains, TSX, Dow and S&amp;P 500 fall into correction territory - CBC",
    "Stocks close sharply lower as tech rout deepens, with S&amp;P 500, Dow and TSX sliding into technical corrections - The Globe and Mail",
-   "Wall Street rout pushes S&amp;P 500, Dow into correction - Honolulu Star-Advertiser",
+   "The Nasdaq Just Had Its 6th Correction in 4 Years. History Says This Is the Likelihood of a Full-Blown Bear Market - The Motley Fool",
+   "U.S. Stock Market Close: AI Trades Face Heavy Sell-Off, Nasdaq Plunges 5%, Philadelphia Semiconductor Index Drops Double Digits, NVIDIA Slides 14% - Moomoo",
    "Stock Market Today: Dow Jones, S&amp;P 500, Nasdaq 100 Futures Fall as Trump Weighs Iran Decision\u2014 INTU, ROST - Benzinga"
   ]
  }
