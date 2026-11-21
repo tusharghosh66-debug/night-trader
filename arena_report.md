@@ -1,7 +1,7 @@
 # Strategy Arena — Leaderboard
-_Updated: 2026-11-21 15:55 IST_
+_Updated: 2026-11-21 15:57 IST_
 
-**Total equity: Rs 260,131.89** / Rs 260,000 start (+0.05%)
+**Total equity: Rs 260,131.58** / Rs 260,000 start (+0.05%)
 
 | Rank | Bot | Strategy | Equity | P&L | % | Trades | Win% | Open |
 |---|---|---|---|---|---|---|---|---|
@@ -10,23 +10,23 @@ _Updated: 2026-11-21 15:55 IST_
 | 3 | s04 | Multi-Market Trend Following | Rs 10,048.34 | +48.34 | +0.48% | 0 | 0% | 3 |
 | 4 | s12 | OHL + CPR Breakdown Short | Rs 10,031.07 | +31.07 | +0.31% | 5 | 40% | 0 |
 | 5 | s13 | Afternoon Sell-the-Rip Short | Rs 10,001.50 | +1.50 | +0.01% | 1 | 100% | 0 |
-| 6 | s11 | Spike & VWAP Rejection Short | Rs 10,001.15 | +1.15 | +0.01% | 0 | 0% | 1 |
-| 7 | s02 | Trend-Filtered Mean Reversion | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
-| 8 | s03 | ETF Dual Momentum Rotation | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
-| 9 | s05 | Connors RSI(2) Pullback | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
-| 10 | s09 | Statistical Arbitrage Pairs | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
-| 11 | smart_01 | St. Gallen ORB (Smart v2) | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
-| 12 | smart_02 | Trend-Filtered Mean Rev (Smart v2) | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
-| 13 | smart_05 | Connors RSI(2) (Smart v2) | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
-| 14 | smart_06 | Prev-Day Retest (Smart v2) | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
-| 15 | smart_07 | First-Candle ORB (Smart v2) | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
-| 16 | smart_08 | Pre-Market Breakout (Smart v2) | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
-| 17 | smart_09 | Statistical Arbitrage (Smart v2) | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
-| 18 | smart_10 | Overnight Edge (Smart v2) | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
-| 19 | smart_11 | Spike & VWAP Short (Smart v2) | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
-| 20 | smart_13 | Afternoon Sell-the-Rip Short (Smart v2) | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
-| 21 | smart_04 | Multi-Market Trend (Smart v2) | Rs 9,996.33 | -3.67 | -0.04% | 0 | 0% | 3 |
-| 22 | smart_12 | OHL + CPR Short (Smart v2) | Rs 9,996.13 | -3.87 | -0.04% | 0 | 0% | 1 |
+| 6 | s02 | Trend-Filtered Mean Reversion | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
+| 7 | s03 | ETF Dual Momentum Rotation | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
+| 8 | s05 | Connors RSI(2) Pullback | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
+| 9 | s09 | Statistical Arbitrage Pairs | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
+| 10 | smart_01 | St. Gallen ORB (Smart v2) | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
+| 11 | smart_02 | Trend-Filtered Mean Rev (Smart v2) | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
+| 12 | smart_05 | Connors RSI(2) (Smart v2) | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
+| 13 | smart_06 | Prev-Day Retest (Smart v2) | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
+| 14 | smart_07 | First-Candle ORB (Smart v2) | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
+| 15 | smart_08 | Pre-Market Breakout (Smart v2) | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
+| 16 | smart_09 | Statistical Arbitrage (Smart v2) | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
+| 17 | smart_10 | Overnight Edge (Smart v2) | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
+| 18 | smart_11 | Spike & VWAP Short (Smart v2) | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
+| 19 | smart_13 | Afternoon Sell-the-Rip Short (Smart v2) | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
+| 20 | smart_12 | OHL + CPR Short (Smart v2) | Rs 9,999.00 | -1.00 | -0.01% | 0 | 0% | 1 |
+| 21 | s11 | Spike & VWAP Rejection Short | Rs 9,997.97 | -2.03 | -0.02% | 0 | 0% | 1 |
+| 22 | smart_04 | Multi-Market Trend (Smart v2) | Rs 9,996.33 | -3.67 | -0.04% | 0 | 0% | 3 |
 | 23 | s10 | Overnight Edge + Turnaround Tue | Rs 9,995.20 | -4.80 | -0.05% | 0 | 0% | 1 |
 | 24 | smart_03 | ETF Dual Momentum (Smart v2) | Rs 9,995.00 | -5.00 | -0.05% | 0 | 0% | 1 |
 | 25 | s08 | Pre-Market High/Low Break | Rs 9,967.17 | -32.83 | -0.33% | 45 | 24% | 1 |
