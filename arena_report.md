@@ -1,7 +1,7 @@
 # Strategy Arena — Leaderboard
-_Updated: 2026-11-21 20:35 IST_
+_Updated: 2026-11-21 20:37 IST_
 
-**Total equity: Rs 259,356.81** / Rs 260,000 start (-0.25%)
+**Total equity: Rs 259,340.55** / Rs 260,000 start (-0.25%)
 
 | Rank | Bot | Strategy | Equity | P&L | % | Trades | Win% | Open |
 |---|---|---|---|---|---|---|---|---|
@@ -23,13 +23,13 @@ _Updated: 2026-11-21 20:35 IST_
 | 16 | smart_04 | Multi-Market Trend (Smart v2) | Rs 9,996.33 | -3.67 | -0.04% | 0 | 0% | 3 |
 | 17 | s10 | Overnight Edge + Turnaround Tue | Rs 9,995.20 | -4.80 | -0.05% | 0 | 0% | 1 |
 | 18 | smart_03 | ETF Dual Momentum (Smart v2) | Rs 9,995.00 | -5.00 | -0.05% | 0 | 0% | 1 |
-| 19 | smart_11 | Spike & VWAP Short (Smart v2) | Rs 9,979.55 | -20.45 | -0.20% | 1 | 0% | 0 |
-| 20 | s13 | Afternoon Sell-the-Rip Short | Rs 9,979.05 | -20.95 | -0.21% | 2 | 50% | 1 |
-| 21 | smart_13 | Afternoon Sell-the-Rip Short (Smart v2) | Rs 9,976.28 | -23.72 | -0.24% | 1 | 0% | 1 |
+| 19 | s13 | Afternoon Sell-the-Rip Short | Rs 9,980.21 | -19.79 | -0.20% | 2 | 50% | 1 |
+| 20 | smart_11 | Spike & VWAP Short (Smart v2) | Rs 9,979.55 | -20.45 | -0.20% | 1 | 0% | 0 |
+| 21 | smart_13 | Afternoon Sell-the-Rip Short (Smart v2) | Rs 9,977.44 | -22.56 | -0.23% | 1 | 0% | 1 |
 | 22 | s11 | Spike & VWAP Rejection Short | Rs 9,973.02 | -26.98 | -0.27% | 2 | 0% | 0 |
 | 23 | s08 | Pre-Market High/Low Break | Rs 9,967.17 | -32.83 | -0.33% | 45 | 24% | 1 |
 | 24 | smart_12 | OHL + CPR Short (Smart v2) | Rs 9,962.48 | -37.52 | -0.38% | 1 | 0% | 0 |
 | 25 | s06 | Prev-Day High/Low Retest | Rs 9,939.34 | -60.66 | -0.61% | 5 | 20% | 1 |
-| 26 | smart_01 | St. Gallen ORB (Smart v2) | Rs 9,353.31 | -646.69 | -6.47% | 19 | 11% | 0 |
+| 26 | smart_01 | St. Gallen ORB (Smart v2) | Rs 9,334.74 | -665.26 | -6.65% | 19 | 11% | 1 |
 
 **Best so far: s07 — First-Candle ORB 15m (+1.11%)**
