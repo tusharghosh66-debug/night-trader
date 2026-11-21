@@ -71,13 +71,45 @@ def git_sync():
 
 class HealthHandler(BaseHTTPRequestHandler):
     def do_HEAD(self):
-        body = json.dumps({"status": "ok", **STATUS}, default=str).encode()
         self.send_response(200)
-        self.send_header("Content-Type", "application/json")
-        self.send_header("Content-Length", str(len(body)))
+        content_type = "application/json" if self.path == "/health" else "text/html; charset=utf-8"
+        self.send_header("Content-Type", content_type)
         self.end_headers()
 
     def do_GET(self):
+        # Health check endpoint for uptime monitors
+        if self.path == "/health":
+            body = json.dumps({"status": "ok", **STATUS}, default=str).encode()
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json")
+            self.send_header("Content-Length", str(len(body)))
+            self.end_headers()
+            self.wfile.write(body)
+            return
+
+        # Serve Strategy Arena visual dashboard at root / or /arena
+        if self.path in ["/", "/arena", "/arena_dashboard.html", "/index.html"]:
+            dash_file = os.path.join(BASE, "arena_dashboard.html")
+            if os.path.exists(dash_file):
+                self.send_response(200)
+                self.send_header("Content-Type", "text/html; charset=utf-8")
+                self.end_headers()
+                with open(dash_file, "rb") as f:
+                    self.wfile.write(f.read())
+                return
+
+        # Serve Night-Trader dashboard at /night
+        if self.path in ["/night", "/dashboard.html"]:
+            dash_file = os.path.join(BASE, "dashboard.html")
+            if os.path.exists(dash_file):
+                self.send_response(200)
+                self.send_header("Content-Type", "text/html; charset=utf-8")
+                self.end_headers()
+                with open(dash_file, "rb") as f:
+                    self.wfile.write(f.read())
+                return
+
+        # Fallback JSON response
         body = json.dumps({"status": "ok", **STATUS}, default=str).encode()
         self.send_response(200)
         self.send_header("Content-Type", "application/json")
