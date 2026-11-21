@@ -1,14 +1,14 @@
 # Strategy Arena — Leaderboard
-_Updated: 2026-11-21 06:14 IST_
+_Updated: 2026-11-21 06:17 IST_
 
-**Total equity: Rs 130,872.08** / Rs 130,000 start (+0.67%)
+**Total equity: Rs 130,874.97** / Rs 130,000 start (+0.67%)
 
 | Rank | Bot | Strategy | Equity | P&L | % | Trades | Win% | Open |
 |---|---|---|---|---|---|---|---|---|
 | 1 | s09 | Statistical Arbitrage Pairs | Rs 10,633.13 | +633.13 | +6.33% | 17 | 100% | 0 |
-| 2 | s07 | First-Candle ORB 15m | Rs 10,151.01 | +151.01 | +1.51% | 5 | 60% | 1 |
-| 3 | s12 | OHL + CPR Breakdown Short | Rs 10,049.85 | +49.85 | +0.50% | 2 | 100% | 1 |
-| 4 | s01 | St. Gallen ORB Noise-Band | Rs 10,049.72 | +49.72 | +0.50% | 0 | 0% | 1 |
+| 2 | s07 | First-Candle ORB 15m | Rs 10,154.81 | +154.81 | +1.55% | 5 | 60% | 1 |
+| 3 | s01 | St. Gallen ORB Noise-Band | Rs 10,049.72 | +49.72 | +0.50% | 0 | 0% | 1 |
+| 4 | s12 | OHL + CPR Breakdown Short | Rs 10,048.94 | +48.94 | +0.49% | 2 | 100% | 1 |
 | 5 | s04 | Multi-Market Trend Following | Rs 10,048.19 | +48.19 | +0.48% | 0 | 0% | 3 |
 | 6 | s13 | Afternoon Sell-the-Rip Short | Rs 10,001.50 | +1.50 | +0.01% | 1 | 100% | 0 |
 | 7 | s02 | Trend-Filtered Mean Reversion | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
