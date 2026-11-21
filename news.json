@@ -1,7 +1,7 @@
 {
- "ts": "2026-11-22T03:03:00.322419+05:30",
+ "ts": "2026-11-22T04:03:29.017746+05:30",
  "crypto": {
-  "score": -0.366,
+  "score": -0.4,
   "n_headlines": 183,
   "n_sources": 6,
   "top": [
@@ -79,18 +79,18 @@
   "fear_greed": 12
  },
  "india": {
-  "score": 0.455,
+  "score": 0.509,
   "n_headlines": 224,
   "n_sources": 6,
   "top": [
+   "Indian Stocks Surge Against Global Market Tide as Nifty 50 Nears Record High on Foreign Inflows of Over 1 Trillion Rupees - BigGo Finance",
    "Bitcoin price crash: \u200bFalls to lowest level in two years - What\u2019s behind plunge of world\u2019s largest cryptocurrency",
    "SoftBank shares crash 14.5%, biggest 1-day fall in 2 years: Why Anthropic's strong IPO debut failed to revive AI trade",
+   "Sensex rebounds 1,400 pts from day's low, Nifty recovers 400 pts to reclaim 25,700; key factors behind rally - Fortune India",
    "Markets gain 2.6% on FPI inflows, rupee rally and cooling crude oil prices - Business Standard",
    "Stocks to buy: HSBC lists 19 Indian stocks that saw FY27 earnings upgrades, check target prices",
    "UK stocks sink as global selloff weighs on banks and miners",
-   "SELLAS Life Sciences shares plunge 19%: What triggered the sharp sell-off?",
-   "Max Healthcare, Fortis, Apollo, Aster: Hospital stocks steal show on D-Street with up to 14% rally - Buy now or wait?",
-   "Missed 50% rally in Samvardhana Motherson? Choice's Sumeet Bagadia spots another buying opportunity | Target, stop loss"
+   "SELLAS Life Sciences shares plunge 19%: What triggered the sharp sell-off?"
   ],
   "headlines": [
    "Economic Times",
@@ -156,18 +156,18 @@
   ]
  },
  "us": {
-  "score": -0.978,
+  "score": -1.0,
   "n_headlines": 184,
   "n_sources": 5,
   "top": [
    "Watch Nvidia Plunges as SEC Probe Deepens AI Market Selloff | Closing Bell - Bloomberg.com",
    "Zscaler stock jumps 18% on report that CrowdStrike in talks to buy security vendor",
    "Dow, S&amp;P 500 enter correction as Nasdaq plunges in AI stock sell-off - upi",
+   "A brutal sell-off for AI stocks sends Wall Street reeling, and the S&amp;P 500 tumbles 4.4% - AP News",
    "Fed\u2019s Waller says central bank may need to \u2018shock people\u2019 with half-point rate hike - CNBC",
    "This Stock Market Selloff Could Block the Fed\u2019s Rate Hikes - 24/7 Wall St.",
    "Nvidia Stock Plunge Wipes Out Nearly $500 Billion in One Day as SEC Reportedly Probes Its Accounting - The Motley Fool",
-   "Closing Bell panel assesses sharp selloff as Nvidia, AI stocks tumble - CNBC",
-   "US Banks Near Bearish \u2018Death Cross\u2019 Signal as Shares Tumble - Bloomberg.com"
+   "Closing Bell panel assesses sharp selloff as Nvidia, AI stocks tumble - CNBC"
   ],
   "headlines": [
    "Anthropic\u2019s record IPO collides with tech\u2019s worst week on Wall Street since 2020",
@@ -220,16 +220,16 @@
    "Stocks close sharply lower as tech rout deepens, with S&amp;P 500, Dow and TSX sliding into technical corrections - The Globe and Mail",
    "Nasdaq Dives 1,261 Points as Anthropic, AI Stocks Sink: Stock Market Today - Kiplinger",
    "Dow, S&amp;P 500 enter correction as Nasdaq plunges in AI stock sell-off - upi",
-   "US Stock Market Today: Dow Jones, S&amp;P 500, Nasdaq 100 sink on AI selloff after Anthropic IPO - Beinsure",
    "Wall Street rout pushes S&amp;P 500, Dow into correction - Honolulu Star-Advertiser",
+   "US Stock Market Today: Dow Jones, S&amp;P 500, Nasdaq 100 sink on AI selloff after Anthropic IPO - Beinsure",
+   "A brutal sell-off for AI stocks sends Wall Street reeling, and the S&amp;P 500 tumbles 4.4% - AP News",
    "Tech stocks analyst on worst stock market week in over a year: 'Dark day in tech' - CNN",
    "Stock Market Under the Trump Administration: What is Driving Markets in 2026? - US Bank",
-   "US Tech Stocks Are Set to Rally as Anthropic IPO Boosts AI Trade - Bloomberg.com",
    "Why a top economist says the stock market will remain volatile - CNN",
    "S&amp;P 500 correction: Five forces behind the market sell-off - CNBC",
+   "Stock Market Today, Nov. 19: Dow Plunges 1,100 Points as the S&amp;P 500 Suffers Its 6th Straight Day of Losses - Yahoo Finance",
    "US Stock Futures Fall as Anthropic Shares Retreat and AI Concerns Weigh on Global Markets: Dow Jones, S&amp;P, Nasdaq, Wall Street - Yahoo Finance",
-   "Stocks enter correction territory, driven by a deepening tech rout - CBS News",
-   "S&amp;P 500 forecast for 2027: Wall Street expects a rebound after an 11.6% drop fueled by AI fears - Beinsure"
+   "Dow Jones today: What\u2019s next for stocks in 2027 after an 8% weekly crash? - Beinsure"
   ]
  }
 }
