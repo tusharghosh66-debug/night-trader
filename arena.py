@@ -745,20 +745,25 @@ def s09(bs, ctx):
         bs["last_prices"][a_sym] = pa
         bs["last_prices"][b_sym] = pb
         key = f"{a_sym}/{b_sym}"
+        live_spread = math.log(pa / pb) if (pa and pb and pa > 0 and pb > 0) else spread[i]
+        bs["last_prices"][key] = live_spread
+
         if key in bs["positions"]:
             p = bs["positions"][key]
             p["bars"] += 1
-            # exit when z reverts to 0
-            cur = bs["last_prices"].get(key, p["entry"])
+            cur = live_spread
             stop_hit = (p["side"] > 0 and cur <= p["stop"]) or (p["side"] < 0 and cur >= p["stop"])
+            # Exit when spread mean-reverts to within 0.5 std dev, or stop hit, or max 10 days
+            opened_dt = datetime.fromisoformat(p.get("opened", ctx.now))
+            days_held = (datetime.fromisoformat(ctx.now) - opened_dt).total_seconds() / 86400.0
             if z[i] is not None and abs(z[i]) < 0.5:
                 row = close_position(bs, key, cur, "z-revert", ctx.now)
                 row[1] = "s09"; record_trade("s09", bs, row)
             elif stop_hit:
                 row = close_position(bs, key, cur, "spread-stop", ctx.now)
                 row[1] = "s09"; record_trade("s09", bs, row)
-            elif p["bars"] >= 20:
-                row = close_position(bs, key, cur, "time-exit", ctx.now)
+            elif days_held >= 10.0:
+                row = close_position(bs, key, cur, "time-exit-10d", ctx.now)
                 row[1] = "s09"; record_trade("s09", bs, row)
             continue
         if len(bs["positions"]) >= 3 or z[i] is None:
@@ -766,13 +771,13 @@ def s09(bs, ctx):
         eq = bot_equity(bs)
         notional = eq * 0.30
         if z[i] > 2:      # spread rich: short A, long B
-            entry = spread[i]
+            entry = live_spread
             qty = notional   # pnl = notional * delta(log-spread)
             open_position(bs, key, -1, qty, entry, entry + 0.10, "z>2-short-spread", ctx.now)
             bs["positions"][key]["legs"] = (a_sym, b_sym, -1)
             bs["positions"][key]["mark"] = entry
         elif z[i] < -2:   # spread cheap: long A, short B
-            entry = spread[i]
+            entry = live_spread
             qty = notional
             open_position(bs, key, 1, qty, entry, entry - 0.10, "z<-2-long-spread", ctx.now)
             bs["positions"][key]["legs"] = (a_sym, b_sym, 1)
