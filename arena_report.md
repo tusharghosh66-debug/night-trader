@@ -1,12 +1,12 @@
 # Strategy Arena — Leaderboard
-_Updated: 2026-11-21 05:39 IST_
+_Updated: 2026-11-21 05:42 IST_
 
-**Total equity: Rs 130,889.20** / Rs 130,000 start (+0.68%)
+**Total equity: Rs 130,886.40** / Rs 130,000 start (+0.68%)
 
 | Rank | Bot | Strategy | Equity | P&L | % | Trades | Win% | Open |
 |---|---|---|---|---|---|---|---|---|
 | 1 | s09 | Statistical Arbitrage Pairs | Rs 10,633.13 | +633.13 | +6.33% | 17 | 100% | 0 |
-| 2 | s07 | First-Candle ORB 15m | Rs 10,170.32 | +170.32 | +1.70% | 3 | 100% | 1 |
+| 2 | s07 | First-Candle ORB 15m | Rs 10,167.52 | +167.52 | +1.68% | 3 | 100% | 1 |
 | 3 | s01 | St. Gallen ORB Noise-Band | Rs 10,049.72 | +49.72 | +0.50% | 0 | 0% | 1 |
 | 4 | s04 | Multi-Market Trend Following | Rs 10,048.19 | +48.19 | +0.48% | 0 | 0% | 3 |
 | 5 | s12 | OHL + CPR Breakdown Short | Rs 10,047.66 | +47.66 | +0.48% | 1 | 100% | 1 |
