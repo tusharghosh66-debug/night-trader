@@ -1,7 +1,7 @@
 # Strategy Arena — Leaderboard
-_Updated: 2026-11-21 17:53 IST_
+_Updated: 2026-11-21 17:56 IST_
 
-**Total equity: Rs 260,066.06** / Rs 260,000 start (+0.03%)
+**Total equity: Rs 260,063.19** / Rs 260,000 start (+0.02%)
 
 | Rank | Bot | Strategy | Equity | P&L | % | Trades | Win% | Open |
 |---|---|---|---|---|---|---|---|---|
@@ -27,7 +27,7 @@ _Updated: 2026-11-21 17:53 IST_
 | 20 | s10 | Overnight Edge + Turnaround Tue | Rs 9,995.20 | -4.80 | -0.05% | 0 | 0% | 1 |
 | 21 | smart_03 | ETF Dual Momentum (Smart v2) | Rs 9,995.00 | -5.00 | -0.05% | 0 | 0% | 1 |
 | 22 | smart_11 | Spike & VWAP Short (Smart v2) | Rs 9,979.55 | -20.45 | -0.20% | 1 | 0% | 0 |
-| 23 | smart_12 | OHL + CPR Short (Smart v2) | Rs 9,978.89 | -21.11 | -0.21% | 0 | 0% | 1 |
+| 23 | smart_12 | OHL + CPR Short (Smart v2) | Rs 9,976.01 | -23.99 | -0.24% | 0 | 0% | 1 |
 | 24 | s11 | Spike & VWAP Rejection Short | Rs 9,973.02 | -26.98 | -0.27% | 2 | 0% | 0 |
 | 25 | s08 | Pre-Market High/Low Break | Rs 9,967.17 | -32.83 | -0.33% | 45 | 24% | 1 |
 | 26 | s06 | Prev-Day High/Low Retest | Rs 9,939.34 | -60.66 | -0.61% | 5 | 20% | 1 |
