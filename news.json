@@ -1,7 +1,7 @@
 {
- "ts": "2026-11-21T07:01:57.472568+05:30",
+ "ts": "2026-11-21T08:01:57.493430+05:30",
  "crypto": {
-  "score": -0.528,
+  "score": -0.47,
   "n_headlines": 182,
   "n_sources": 6,
   "top": [
@@ -79,8 +79,8 @@
   "fear_greed": 12
  },
  "india": {
-  "score": 0.559,
-  "n_headlines": 220,
+  "score": 0.638,
+  "n_headlines": 221,
   "n_sources": 6,
   "top": [
    "SoftBank shares crash 14.5%, biggest 1-day fall in 2 years: Why Anthropic's strong IPO debut failed to revive AI trade",
@@ -133,6 +133,8 @@
    "Asian Paints Share Price Highlights: Asian Paints Stock Price History",
    "Dr Reddys Share Price Highlights: Dr. Reddys Stock Price History",
    "Tech Mahindra Share Price Highlights: Tech Mahindra Stock Price History",
+   "Nasdaq 100 sinks 5.6% in worst week since Covid, S&amp;P 500 corrects to 3.7% as investors sell off AI, tech stocks",
+   "Five pharma CDMO stocks with robust revenue growth in Q2FY27",
    "Best 3 stocks to buy under \u20b9200: Jammu and Kashmir Bank, Canara Bank, Bank of India by Mehul Kothari of Anand Rathi",
    "Gold Logs Worst Week Since March on Hawkish Fed, AI Selloff",
    "Asset-Backed Debt Sales Top Post-GFC Record on AI Strength",
@@ -150,9 +152,7 @@
    "SoftBank shares crash 14.5%, biggest 1-day fall in 2 years: Why Anthropic's strong IPO debut failed to revive AI trade",
    "Missed Anthropic's record IPO? Shares cool off after Nasdaq debut - Here's how Indians can invest",
    "Adani Green Energy, Adani Power to Adani Ports: Jefferies bullish on 5 Adani shares; sees up to 43% rally | Target price",
-   "Nifty set to test record high in a month after toppling key hurdle",
-   "Power stocks to buy: Why Axis Sec is betting on NTPC and JSW Energy shares post Q2 results? Check targets, rationale",
-   "NSE record: With \u20b95.6 lakh cr mcap, overtakes HKEX, Nasdaq to become world's 5th-largest listed exchange \u200b- top 5 list"
+   "Nifty set to test record high in a month after toppling key hurdle"
   ]
  },
  "us": {
@@ -164,10 +164,10 @@
    "Zscaler stock jumps 18% on report that CrowdStrike in talks to buy security vendor",
    "Cathie Wood\u2019s Ark Invest was a big buyer of Anthropic as she tells CNBC she\u2019s \u2018quite optimistic\u2019",
    "Bitcoin&apos;s regulation bull case is played out. What could drive crypto gains moving forward",
-   "Why Is the US Stock Market Crashing Today? Dow Drops 1,000 Points Despite Anthropic IPO - Stocks Down Under",
-   "Dow and S&amp;P 500 Plunge Into Correction as Tech Sell-Off Deepens - Realtor.com",
    "Dow, S&amp;P 500 enter correction as Nasdaq plunges in AI stock sell-off - upi",
-   "Anthropic Shares Slide After IPO as US Futures Fall and Global Technology Sell-Off Continues: Dow Jones, S&amp;P, Nasdaq, Wall Street - Yahoo Finance UK"
+   "Dow and S&amp;P 500 Plunge Into Correction as Tech Sell-Off Deepens - Realtor.com",
+   "Anthropic Shares Slide After IPO as US Futures Fall and Global Technology Sell-Off Continues: Dow Jones, S&amp;P, Nasdaq, Wall Street - Yahoo Finance UK",
+   "Fed\u2019s Waller says central bank may need to \u2018shock people\u2019 with half-point rate hike - CNBC"
   ],
   "headlines": [
    "Nvidia stock plunges 14%, wraps up longest weekly losing streak since 2008 financial crisis",
@@ -212,24 +212,24 @@
    "Anthropic&#x2019;s stock sees dramatic slide but manages to stay above its IPO price",
    "Here&#x2019;s what&#x2019;s been proven to help GLP-1 users from losing too much muscle from the drug",
    "Google News",
-   "Tech stocks analyst on worst stock market week in over a year: 'Dark day in tech' - CNN",
+   "Wall Street suffers historic losses as Dow, S&amp;P 500 plunge into correction territory - Fox Business",
+   "Nasdaq 100 Ends Worst Week Since 2020, S&amp;P 500 In Correction Territory As AI Rout Sours Sentiment \u2014 ANT, NVDA, TTWO, ZS, CRWD In Focus - Yahoo Finance",
+   "Nasdaq wipes out gains for the year as Anthropic IPO fails to quell AI nerves - CNN",
    "6 reasons stocks are falling, and what you should do about it - CBS News",
-   "Wall St ends sharply lower on AI selloff, S&amp;P 500, Dow in correction - Reuters",
    "Tech stock sell-off drags markets down as Anthropic shares slide - BBC",
+   "Wall St ends sharply lower on AI selloff, S&amp;P 500, Dow in correction - Reuters",
    "U.S. stocks slump into correction territory amid tech and AI worries - The Washington Post",
    "S&amp;P 500 sinks 3.7% and the Nasdaq composite goes negative for the year as rout in tech stocks tanks the market - ABC News - Breaking News, Latest News and Videos",
    "S&amp;P 500 Is Set for Longest Losing Run Since 2020: Markets Wrap - Bloomberg.com",
    "Nasdaq erases all 2026 gains as AI sell-off dampens Anthropic\u2019s second day of trading - The Guardian",
    "Dow Jones Futures: Market Has Worst Week Since Covid Amid Nvidia, Anthropic. Does Fear Gauge Offer Hope? - Investor's Business Daily",
+   "Markets plunge: Nasdaq erases 2026 gains, S&amp;P and Dow enter corrections - NBC News",
    "The Nasdaq is red for the year after Anthropic IPO fails to spark a turnaround - Business Insider",
+   "Gold falls toward $3,500, silver slides as stock markets enter correction territory - Kitco PM Report - Kitco",
+   "Wall Street rout pushes S&amp;P 500, Dow into correction - Honolulu Star-Advertiser",
    "Nasdaq wipes out 2026 gains, TSX, Dow and S&amp;P 500 fall into correction territory - CBC",
    "The Nasdaq Just Had Its 6th Correction in 4 Years. History Says This Is the Likelihood of a Full-Blown Bear Market - The Motley Fool",
-   "Stocks close sharply lower as tech rout deepens, with S&amp;P 500, Dow and TSX sliding into technical corrections - The Globe and Mail",
-   "Stock Market Today: Dow Jones, S&amp;P 500, Nasdaq 100 Futures Fall as Trump Weighs Iran Decision\u2014 INTU, ROST - Benzinga",
-   "Wall Street rout pushes S&amp;P 500, Dow into correction - Honolulu Star-Advertiser",
-   "US Stock Market Today: Dow Jones, S&amp;P 500, Nasdaq 100 sink on AI selloff after Anthropic IPO - Beinsure",
-   "S&amp;P 500, Dow on track for correction as Anthropic retreat weighs on AI stocks - Global News",
-   "Why the Stock Market Fell Today: Dow Drops 1,100 Points - Around Prague"
+   "Stocks close sharply lower as tech rout deepens, with S&amp;P 500, Dow and TSX sliding into technical corrections - The Globe and Mail"
   ]
  }
 }
