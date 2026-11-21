@@ -1,7 +1,7 @@
 # Strategy Arena — Leaderboard
-_Updated: 2026-11-21 19:02 IST_
+_Updated: 2026-11-21 19:05 IST_
 
-**Total equity: Rs 260,033.49** / Rs 260,000 start (+0.01%)
+**Total equity: Rs 260,030.62** / Rs 260,000 start (+0.01%)
 
 | Rank | Bot | Strategy | Equity | P&L | % | Trades | Win% | Open |
 |---|---|---|---|---|---|---|---|---|
@@ -28,7 +28,7 @@ _Updated: 2026-11-21 19:02 IST_
 | 21 | smart_13 | Afternoon Sell-the-Rip Short (Smart v2) | Rs 9,988.03 | -11.97 | -0.12% | 1 | 0% | 0 |
 | 22 | smart_11 | Spike & VWAP Short (Smart v2) | Rs 9,979.55 | -20.45 | -0.20% | 1 | 0% | 0 |
 | 23 | s11 | Spike & VWAP Rejection Short | Rs 9,973.02 | -26.98 | -0.27% | 2 | 0% | 0 |
-| 24 | smart_12 | OHL + CPR Short (Smart v2) | Rs 9,970.26 | -29.74 | -0.30% | 0 | 0% | 1 |
+| 24 | smart_12 | OHL + CPR Short (Smart v2) | Rs 9,967.39 | -32.61 | -0.33% | 0 | 0% | 1 |
 | 25 | s08 | Pre-Market High/Low Break | Rs 9,967.17 | -32.83 | -0.33% | 45 | 24% | 1 |
 | 26 | s06 | Prev-Day High/Low Retest | Rs 9,939.34 | -60.66 | -0.61% | 5 | 20% | 1 |
 
