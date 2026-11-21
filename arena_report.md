@@ -1,7 +1,7 @@
 # Strategy Arena — Leaderboard
-_Updated: 2026-11-21 12:20 IST_
+_Updated: 2026-11-21 12:22 IST_
 
-**Total equity: Rs 130,174.12** / Rs 130,000 start (+0.13%)
+**Total equity: Rs 130,159.53** / Rs 130,000 start (+0.12%)
 
 | Rank | Bot | Strategy | Equity | P&L | % | Trades | Win% | Open |
 |---|---|---|---|---|---|---|---|---|
@@ -16,7 +16,7 @@ _Updated: 2026-11-21 12:20 IST_
 | 9 | s09 | Statistical Arbitrage Pairs | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 10 | s11 | Spike & VWAP Rejection Short | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 11 | s10 | Overnight Edge + Turnaround Tue | Rs 9,995.20 | -4.80 | -0.05% | 0 | 0% | 1 |
-| 12 | s06 | Prev-Day High/Low Retest | Rs 9,970.17 | -29.83 | -0.30% | 2 | 50% | 2 |
-| 13 | s08 | Pre-Market High/Low Break | Rs 9,967.17 | -32.83 | -0.33% | 45 | 24% | 1 |
+| 12 | s08 | Pre-Market High/Low Break | Rs 9,967.17 | -32.83 | -0.33% | 45 | 24% | 1 |
+| 13 | s06 | Prev-Day High/Low Retest | Rs 9,955.58 | -44.42 | -0.44% | 2 | 50% | 2 |
 
 **Best so far: s07 — First-Candle ORB 15m (+1.11%)**
