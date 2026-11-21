@@ -1,5 +1,5 @@
 # Strategy Arena — Leaderboard
-_Updated: 2026-11-21 14:57 IST_
+_Updated: 2026-11-21 15:00 IST_
 
 **Total equity: Rs 130,143.29** / Rs 130,000 start (+0.11%)
 
