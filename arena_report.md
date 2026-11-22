@@ -1,11 +1,11 @@
 # Strategy Arena — Leaderboard
-_Updated: 2026-11-22 06:37 IST_
+_Updated: 2026-11-22 06:40 IST_
 
-**Total equity: Rs 258,517.20** / Rs 260,000 start (-0.57%)
+**Total equity: Rs 258,503.31** / Rs 260,000 start (-0.58%)
 
 | Rank | Bot | Strategy | Equity | P&L | % | Trades | Win% | Open |
 |---|---|---|---|---|---|---|---|---|
-| 1 | s07 | First-Candle ORB 15m | Rs 10,087.66 | +87.66 | +0.88% | 11 | 27% | 1 |
+| 1 | s07 | First-Candle ORB 15m | Rs 10,080.68 | +80.68 | +0.81% | 12 | 25% | 0 |
 | 2 | s01 | St. Gallen ORB Noise-Band | Rs 10,049.72 | +49.72 | +0.50% | 0 | 0% | 1 |
 | 3 | s04 | Multi-Market Trend Following | Rs 10,048.34 | +48.34 | +0.48% | 0 | 0% | 3 |
 | 4 | s12 | OHL + CPR Breakdown Short | Rs 10,027.75 | +27.75 | +0.28% | 5 | 40% | 1 |
@@ -24,12 +24,12 @@ _Updated: 2026-11-22 06:37 IST_
 | 17 | smart_03 | ETF Dual Momentum (Smart v2) | Rs 9,995.00 | -5.00 | -0.05% | 0 | 0% | 1 |
 | 18 | smart_11 | Spike & VWAP Short (Smart v2) | Rs 9,979.55 | -20.45 | -0.20% | 1 | 0% | 0 |
 | 19 | s13 | Afternoon Sell-the-Rip Short | Rs 9,977.45 | -22.55 | -0.23% | 3 | 33% | 0 |
-| 20 | smart_07 | First-Candle ORB (Smart v2) | Rs 9,976.96 | -23.04 | -0.23% | 2 | 0% | 1 |
-| 21 | smart_13 | Afternoon Sell-the-Rip Short (Smart v2) | Rs 9,974.68 | -25.32 | -0.25% | 2 | 0% | 0 |
-| 22 | s11 | Spike & VWAP Rejection Short | Rs 9,973.02 | -26.98 | -0.27% | 2 | 0% | 0 |
+| 20 | smart_13 | Afternoon Sell-the-Rip Short (Smart v2) | Rs 9,974.68 | -25.32 | -0.25% | 2 | 0% | 0 |
+| 21 | s11 | Spike & VWAP Rejection Short | Rs 9,973.02 | -26.98 | -0.27% | 2 | 0% | 0 |
+| 22 | smart_07 | First-Candle ORB (Smart v2) | Rs 9,970.05 | -29.95 | -0.30% | 3 | 0% | 0 |
 | 23 | s08 | Pre-Market High/Low Break | Rs 9,967.17 | -32.83 | -0.33% | 45 | 24% | 1 |
 | 24 | smart_12 | OHL + CPR Short (Smart v2) | Rs 9,956.29 | -43.71 | -0.44% | 2 | 0% | 1 |
 | 25 | s06 | Prev-Day High/Low Retest | Rs 9,939.34 | -60.66 | -0.61% | 5 | 20% | 1 |
 | 26 | smart_01 | St. Gallen ORB (Smart v2) | Rs 8,572.75 | -1,427.25 | -14.27% | 47 | 4% | 0 |
 
-**Best so far: s07 — First-Candle ORB 15m (+0.88%)**
+**Best so far: s07 — First-Candle ORB 15m (+0.81%)**
