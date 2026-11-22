@@ -1,8 +1,8 @@
 # Night Trader v2 — Paper Trading Report (3 markets)
-_Updated: 2026-11-22 15:15 IST_
+_Updated: 2026-11-22 15:17 IST_
 
 ## CRYPTO (OPEN) — ₹10,000.00 | P&L +0.00 (+0.00%)
-Cash ₹10,000.00 | cycles 5681 | capital ₹10,000
+Cash ₹10,000.00 | cycles 5686 | capital ₹10,000
 _No open positions — all cash._
 News sentiment: -0.38 (183 headlines, 6 sources, Fear&Greed 11)
 - August Crypto Market Review and Outlook: Bitcoin Surge Above $80,000 Sparks Broad Crypto Rally, Fed Decision to Determine If Gains Continue - TradingKey
