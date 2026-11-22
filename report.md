@@ -1,13 +1,13 @@
 # Night Trader v2 — Paper Trading Report (3 markets)
-_Updated: 2026-11-22 12:02 IST_
+_Updated: 2026-11-22 12:04 IST_
 
 ## CRYPTO (OPEN) — ₹10,000.00 | P&L +0.00 (+0.00%)
-Cash ₹10,000.00 | cycles 5296 | capital ₹10,000
+Cash ₹10,000.00 | cycles 5301 | capital ₹10,000
 _No open positions — all cash._
 News sentiment: -0.43 (183 headlines, 6 sources, Fear&Greed 11)
-- August Crypto Market Review and Outlook: Bitcoin Surge Above $80,000 Sparks Broad Crypto Rally, Fed Decision to Determine If Gains Continue - TradingKey
 - Bitcoin price extends gains, briefly tops $81,000 as crypto rally gathers pace - CNBC
-- Crypto Elite Gather in Singapore as Bitcoin’s Rally Buoys Bulls - Bloomberg.com
+- Bitcoin plunges below $59,000 as rush to cash puts new bear market lows back in play
+- Cathie Wood's Ark Invest piled into Anthropic IPO, buying $90 million worth of shares
 
 ## INDIA (CLOSED) — ₹10,016.34 | P&L +16.34 (+0.16%)
 Cash ₹10,016.34 | cycles 144 | capital ₹10,000
@@ -17,7 +17,7 @@ Closed: 4 (1 wins), realized +16.34
 - 14:39 BUY HDFCBANK.NS @ 821.65 pnl +0.00 (breakout+EMA trend, RSI=67, regime_ok=True, news=+0.30)
 - 09:26 SELL RELIANCE.NS @ 1360.6 pnl -43.63 (stop/trail hit (1360.60<=1361.20))
 - 12:38 SELL HDFCBANK.NS @ 839.75 pnl +59.97 (RSI 79 overbought take-profit)
-News sentiment: +0.46 (223 headlines, 6 sources)
+News sentiment: +0.40 (223 headlines, 6 sources)
 - Indian Stocks Surge Against Global Market Tide as Nifty 50 Nears Record High on Foreign Inflows of Over 1 Trillion Rupees - BigGo Finance
 - Bitcoin price crash: ​Falls to lowest level in two years - What’s behind plunge of world’s largest cryptocurrency
 - Sensex rebounds 1,400 pts from day's low, Nifty recovers 400 pts to reclaim 25,700; key factors behind rally - Fortune India
@@ -25,7 +25,7 @@ News sentiment: +0.46 (223 headlines, 6 sources)
 ## US (CLOSED) — ₹10,000.00 | P&L +0.00 (+0.00%)
 Cash ₹10,000.00 | cycles 746 | capital ₹10,000
 _No open positions — all cash._
-News sentiment: -1.00 (182 headlines, 5 sources)
+News sentiment: -1.00 (194 headlines, 6 sources)
 - U.S. Stock Market Close: AI Trades Face Heavy Sell-Off, Nasdaq Plunges 5%, Philadelphia Semiconductor Index Drops Double Digits, NVIDIA Slides 14% - Moomoo
 - Watch Nvidia Plunges as SEC Probe Deepens AI Market Selloff | Closing Bell - Bloomberg.com
 - Zscaler stock jumps 18% on report that CrowdStrike in talks to buy security vendor
