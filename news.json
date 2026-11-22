@@ -1,18 +1,18 @@
 {
- "ts": "2026-11-22T14:03:29.368044+05:30",
+ "ts": "2026-11-22T15:03:29.390592+05:30",
  "crypto": {
-  "score": -0.475,
+  "score": -0.383,
   "n_headlines": 183,
   "n_sources": 6,
   "top": [
+   "August Crypto Market Review and Outlook: Bitcoin Surge Above $80,000 Sparks Broad Crypto Rally, Fed Decision to Determine If Gains Continue - TradingKey",
    "Bitcoin price extends gains, briefly tops $81,000 as crypto rally gathers pace - CNBC",
+   "Crypto Elite Gather in Singapore as Bitcoin\u2019s Rally Buoys Bulls - Bloomberg.com",
    "Bitcoin plunges below $59,000 as rush to cash puts new bear market lows back in play",
    "Cathie Wood's Ark Invest piled into Anthropic IPO, buying $90 million worth of shares",
    "Wrapped Monero token crashes 99.8% amid suspected $13.5M exploit",
    "Bitcoin falls below $60K for first time since July amid broader market selloff",
-   "Bitcoin price drops to $60K as Anthropic drops to $87 in tech sell-off",
-   "Citi Says Customers Are Responsible When AI Banking Agents Go Rogue\u2014Even After a Hack",
-   "Bitcoin Price Crashes to $59,000 as Market Selloff Deepens"
+   "Bitcoin price drops to $60K as Anthropic drops to $87 in tech sell-off"
   ],
   "headlines": [
    "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
@@ -79,21 +79,22 @@
   "fear_greed": 11
  },
  "india": {
-  "score": 0.475,
+  "score": 0.421,
   "n_headlines": 221,
   "n_sources": 6,
   "top": [
-   "Indian Stocks Surge Against Global Market Tide as Nifty 50 Nears Record High on Foreign Inflows of Over 1 Trillion Rupees - BigGo Finance",
    "WeWork India share price jumps 40% in 6 months; ICICI Direct sees 37% more gains ahead - Buy? Check Target",
    "Bitcoin price crash: \u200bFalls to lowest level in two years - What\u2019s behind plunge of world\u2019s largest cryptocurrency",
-   "Sensex rebounds 1,400 pts from day's low, Nifty recovers 400 pts to reclaim 25,700; key factors behind rally - Fortune India",
    "Markets gain 2.6% on FPI inflows, rupee rally and cooling crude oil prices - Business Standard",
    "Stocks to buy: HSBC lists 19 Indian stocks that saw FY27 earnings upgrades, check target prices",
    "UK stocks sink as global selloff weighs on banks and miners",
-   "SELLAS Life Sciences shares plunge 19%: What triggered the sharp sell-off?"
+   "SELLAS Life Sciences shares plunge 19%: What triggered the sharp sell-off?",
+   "What is future of gold rates? Price crash continues as AI selloff, Fed rate-hike concerns weigh on investors' sentiment",
+   "Top 3 stocks to buy: Swiggy, Tata Chemicals, Amber Enterprises by Ganesh Dongre of Anand Rathi | Targets, stop-loss"
   ],
   "headlines": [
    "Economic Times",
+   "Why gold\u2019s five-year winning streak is under threat after dramatic selloff",
    "InvIT IPO rush gathers pace; 4-5 private trusts likely to go public by Mar 2027",
    "5 penny stocks plunge up to 68% in six months. Do you own any?",
    "Reliance Brands FY26 revenue up 3.8% to Rs 3,390.9 crore; loss narrows to Rs 137 crore",
@@ -132,7 +133,9 @@
    "Adani Ent Share Price Highlights: Adani Ent. Stock Price History",
    "HUL Share Price Highlights: HUL Stock Price History",
    "Adani Ports SEZ Share Price Highlights: Adani Ports SEZ Stock Price History",
-   "Infosys Share Price Highlights: Infosys Stock Price History",
+   "PBOC Anchors Yuan With Stable Fix as Volatility Jumps After APEC",
+   "Anthropic and SpaceX IPOs bring Bitcoin prices down? Is investor money shifting from crypto to AI stocks? What\u2019s next?",
+   "Mint Explainer| How Sebi\u2019s margin tweaks may boost agri commodities",
    "WeWork India share price jumps 40% in 6 months; ICICI Direct sees 37% more gains ahead - Buy? Check Target",
    "What is future of gold rates? Price crash continues as AI selloff, Fed rate-hike concerns weigh on investors' sentiment",
    "Top 3 stocks to buy: Swiggy, Tata Chemicals, Amber Enterprises by Ganesh Dongre of Anand Rathi | Targets, stop-loss",
@@ -149,16 +152,13 @@
    "Gold, silver price crash: DSP Mutual Fund turns bullish on bullion, reveals new buying strategy; check price levels",
    "Mahanadi CoalFields IPO GMP Check: Down 92% from \u20b99.25 to \u20b90.7, issue struggles to attract bids- Subscribe or avoid?",
    "Taiwan Widens Short Sale Curbs After Shares Plunge on AI Concern",
-   "Hindalco vs NALCO vs Vedanta Aluminium vs Hindustan Zinc: Which metal stocks to buy for good returns? Target, SL",
-   "Patanjali Foods dividend 2026 announcement news: Board to consider 2nd interim dividend on Nov 26 - Check history, yield",
-   "GREED &amp; fear Report: Jefferies Chris Wood hikes India exposure for 2nd time in 3 weeks, cuts Taiwan| New Allocations",
-   "Upcoming dividend, split, rights issue record dates next week, Nov 23-27: Pashupati Cotspin, Zee Ent, Varvee, and more"
+   "Hindalco vs NALCO vs Vedanta Aluminium vs Hindustan Zinc: Which metal stocks to buy for good returns? Target, SL"
   ]
  },
  "us": {
-  "score": -0.94,
-  "n_headlines": 182,
-  "n_sources": 5,
+  "score": -0.902,
+  "n_headlines": 193,
+  "n_sources": 6,
   "top": [
    "U.S. Stock Market Close: AI Trades Face Heavy Sell-Off, Nasdaq Plunges 5%, Philadelphia Semiconductor Index Drops Double Digits, NVIDIA Slides 14% - Moomoo",
    "Watch Nvidia Plunges as SEC Probe Deepens AI Market Selloff | Closing Bell - Bloomberg.com",
@@ -200,11 +200,22 @@
    "Trump says he discussed Jensen Huang with Xi; Bessent tells CNBC Nvidia chip export policy is unchanged",
    "Anthropic was supposed to save the AI trade. What went wrong?",
    "Gap names new Athleta CEO, says Old Navy turnaround is seeing signs of progress",
+   "MarketWatch.com - Top Stories",
+   "My husband is happily retired at 64 and thinks I should keep working. Is he being fair?",
+   "My wife is bankrolling her family&#x2019;s trips to New York and it&#x2019;s draining our savings. Should I ask her to stop?",
+   "I&#x2019;m in my 40s. Should I accept a lower pension in exchange for naming my husband or child as a beneficiary?",
+   "&#x2018;It&#x2019;s downright dirty&#x2019;: My brother moved in with our ailing mother and closed her bank account. What can I do?",
+   "&#x2018;I&#x2019;ve been a stay-at-home mom&#x2019;: I&#x2019;m 50 and have a chronic illness. My husband lost his job. Should he raid his 401(k)?",
+   "&#x2018;Buyers are out for blood&#x2019;: With home sales at a record low, buyers are calling the shots",
+   "America is definitely rich enough to fix Social Security and Medicare. Here&#x2019;s how.",
+   "&#x2018;Never too late to start&#x2019;: Practical investing advice from some of the top women in finance",
+   "Is Social Security a Ponzi scheme? No. Don&#x2019;t get carried away with 1930s-era prophecies of doom.",
+   "&#x2018;I&#x2019;m sick of flying&#x2019;: I paid for priority boarding, but the overhead bins were full. Was I duped?",
    "Google News",
    "Nasdaq wipes out gains for the year as Anthropic IPO fails to quell AI nerves - CNN",
-   "We May Be Witnessing Wall Street's Biggest Bubble Burst in Real Time (and I'm Not Talking About Artificial Intelligence) - The Motley Fool",
-   "6 reasons stocks are falling, and what you should do about it - CBS News",
    "Stock market correction? This chief investment officer sees the S&amp;P 500 soaring 45% to 10,000 - Fortune",
+   "6 reasons stocks are falling, and what you should do about it - CBS News",
+   "We May Be Witnessing Wall Street's Biggest Bubble Burst in Real Time (and I'm Not Talking About Artificial Intelligence) - The Motley Fool",
    "Tech stock sell-off drags markets down as Anthropic shares slide - BBC",
    "Wall St ends sharply lower on AI selloff, S&amp;P 500, Dow in correction - Reuters",
    "The AI boom had a really bad week \u2014 and it's raising loud alarms - NPR",
@@ -217,19 +228,8 @@
    "Dow, S&amp;P 500 enter correction as Nasdaq suffers worst week since 2020 - MarketWatch",
    "Nasdaq erases all 2026 gains as AI sell-off dampens Anthropic\u2019s second day of trading - The Guardian",
    "Markets plunge: Nasdaq erases 2026 gains, S&amp;P and Dow enter corrections - NBC News",
-   "U.S. Stock Market Close: AI Trades Face Heavy Sell-Off, Nasdaq Plunges 5%, Philadelphia Semiconductor Index Drops Double Digits, NVIDIA Slides 14% - Moomoo",
-   "Wall Street rout pushes S&amp;P 500, Dow into correction - Honolulu Star-Advertiser",
-   "Nasdaq Dives 1,261 Points as Anthropic, AI Stocks Sink: Stock Market Today - Kiplinger",
-   "Nasdaq wipes out 2026 gains, TSX, Dow and S&amp;P 500 fall into correction territory - CBC",
-   "Stock Market Today: Dow Jones, S&amp;P 500, Nasdaq 100 Futures Fall as Trump Weighs Iran Decision\u2014 INTU, ROST - Benzinga",
-   "US Stock Market Today: Dow Jones, S&amp;P 500, Nasdaq 100 sink on AI selloff after Anthropic IPO - Beinsure",
-   "Stock Market Under the Trump Administration: What is Driving Markets in 2026? - U.S. Bank",
-   "Why a top economist says the stock market will remain volatile - CNN",
-   "US Tech Stocks Are Set to Rally as Anthropic IPO Boosts AI Trade - Bloomberg.com",
-   "Tech stocks analyst on worst stock market week in over a year: 'Dark day in tech' - CNN",
-   "S&amp;P 500 correction: Five forces behind the market sell-off - CNBC",
-   "US Stock Futures Fall as Anthropic Shares Retreat and AI Concerns Weigh on Global Markets: Dow Jones, S&amp;P, Nasdaq, Wall Street - Yahoo Finance",
-   "Stocks enter correction territory, driven by a deepening tech rout - CBS News"
+   "Gold falls toward $3,500, silver slides as stock markets enter correction territory - Kitco PM Report - Kitco",
+   "U.S. Stock Market Close: AI Trades Face Heavy Sell-Off, Nasdaq Plunges 5%, Philadelphia Semiconductor Index Drops Double Digits, NVIDIA Slides 14% - Moomoo"
   ]
  }
 }
