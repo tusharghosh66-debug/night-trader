@@ -1,15 +1,15 @@
 # Strategy Arena — Leaderboard
-_Updated: 2026-11-22 05:40 IST_
+_Updated: 2026-11-22 05:42 IST_
 
-**Total equity: Rs 258,574.07** / Rs 260,000 start (-0.55%)
+**Total equity: Rs 258,573.88** / Rs 260,000 start (-0.55%)
 
 | Rank | Bot | Strategy | Equity | P&L | % | Trades | Win% | Open |
 |---|---|---|---|---|---|---|---|---|
-| 1 | s07 | First-Candle ORB 15m | Rs 10,113.21 | +113.21 | +1.13% | 9 | 33% | 1 |
+| 1 | s07 | First-Candle ORB 15m | Rs 10,112.92 | +112.92 | +1.13% | 9 | 33% | 1 |
 | 2 | s01 | St. Gallen ORB Noise-Band | Rs 10,049.72 | +49.72 | +0.50% | 0 | 0% | 1 |
 | 3 | s04 | Multi-Market Trend Following | Rs 10,048.34 | +48.34 | +0.48% | 0 | 0% | 3 |
 | 4 | s12 | OHL + CPR Breakdown Short | Rs 10,027.75 | +27.75 | +0.28% | 5 | 40% | 1 |
-| 5 | smart_07 | First-Candle ORB (Smart v2) | Rs 10,002.23 | +2.23 | +0.02% | 0 | 0% | 1 |
+| 5 | smart_07 | First-Candle ORB (Smart v2) | Rs 10,001.94 | +1.94 | +0.02% | 0 | 0% | 1 |
 | 6 | s02 | Trend-Filtered Mean Reversion | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 7 | s03 | ETF Dual Momentum Rotation | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 8 | s05 | Connors RSI(2) Pullback | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
@@ -28,7 +28,7 @@ _Updated: 2026-11-22 05:40 IST_
 | 21 | smart_13 | Afternoon Sell-the-Rip Short (Smart v2) | Rs 9,974.68 | -25.32 | -0.25% | 2 | 0% | 0 |
 | 22 | s11 | Spike & VWAP Rejection Short | Rs 9,973.02 | -26.98 | -0.27% | 2 | 0% | 0 |
 | 23 | s08 | Pre-Market High/Low Break | Rs 9,967.17 | -32.83 | -0.33% | 45 | 24% | 1 |
-| 24 | smart_12 | OHL + CPR Short (Smart v2) | Rs 9,962.34 | -37.66 | -0.38% | 1 | 0% | 1 |
+| 24 | smart_12 | OHL + CPR Short (Smart v2) | Rs 9,962.74 | -37.26 | -0.37% | 1 | 0% | 1 |
 | 25 | s06 | Prev-Day High/Low Retest | Rs 9,939.34 | -60.66 | -0.61% | 5 | 20% | 1 |
 | 26 | smart_01 | St. Gallen ORB (Smart v2) | Rs 8,572.75 | -1,427.25 | -14.27% | 47 | 4% | 0 |
 
