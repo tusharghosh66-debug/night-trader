@@ -1,7 +1,7 @@
 # Strategy Arena — Leaderboard
-_Updated: 2026-11-22 17:12 IST_
+_Updated: 2026-11-22 17:15 IST_
 
-**Total equity: Rs 258,261.58** / Rs 260,000 start (-0.67%)
+**Total equity: Rs 258,246.93** / Rs 260,000 start (-0.67%)
 
 | Rank | Bot | Strategy | Equity | P&L | % | Trades | Win% | Open |
 |---|---|---|---|---|---|---|---|---|
@@ -27,9 +27,9 @@ _Updated: 2026-11-22 17:12 IST_
 | 20 | s08 | Pre-Market High/Low Break | Rs 9,967.17 | -32.83 | -0.33% | 45 | 24% | 1 |
 | 21 | smart_07 | First-Candle ORB (Smart v2) | Rs 9,966.95 | -33.05 | -0.33% | 4 | 0% | 0 |
 | 22 | s11 | Spike & VWAP Rejection Short | Rs 9,961.70 | -38.30 | -0.38% | 3 | 0% | 0 |
-| 23 | smart_06 | Prev-Day Retest (Smart v2) | Rs 9,954.09 | -45.91 | -0.46% | 4 | 0% | 1 |
+| 23 | smart_06 | Prev-Day Retest (Smart v2) | Rs 9,946.74 | -53.26 | -0.53% | 5 | 0% | 1 |
 | 24 | smart_12 | OHL + CPR Short (Smart v2) | Rs 9,946.30 | -53.70 | -0.54% | 4 | 25% | 0 |
-| 25 | s06 | Prev-Day High/Low Retest | Rs 9,893.71 | -106.29 | -1.06% | 9 | 11% | 2 |
+| 25 | s06 | Prev-Day High/Low Retest | Rs 9,886.40 | -113.60 | -1.14% | 10 | 10% | 2 |
 | 26 | smart_01 | St. Gallen ORB (Smart v2) | Rs 8,461.28 | -1,538.72 | -15.39% | 51 | 4% | 0 |
 
 **Best so far: s07 — First-Candle ORB 15m (+0.78%)**
