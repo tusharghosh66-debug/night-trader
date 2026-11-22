@@ -1,7 +1,7 @@
 # Strategy Arena — Leaderboard
-_Updated: 2026-11-22 07:57 IST_
+_Updated: 2026-11-22 08:00 IST_
 
-**Total equity: Rs 258,500.33** / Rs 260,000 start (-0.58%)
+**Total equity: Rs 258,501.86** / Rs 260,000 start (-0.58%)
 
 | Rank | Bot | Strategy | Equity | P&L | % | Trades | Win% | Open |
 |---|---|---|---|---|---|---|---|---|
@@ -28,7 +28,7 @@ _Updated: 2026-11-22 07:57 IST_
 | 21 | s11 | Spike & VWAP Rejection Short | Rs 9,973.02 | -26.98 | -0.27% | 2 | 0% | 0 |
 | 22 | s08 | Pre-Market High/Low Break | Rs 9,967.17 | -32.83 | -0.33% | 45 | 24% | 1 |
 | 23 | smart_07 | First-Candle ORB (Smart v2) | Rs 9,966.95 | -33.05 | -0.33% | 4 | 0% | 0 |
-| 24 | smart_12 | OHL + CPR Short (Smart v2) | Rs 9,959.54 | -40.46 | -0.40% | 2 | 0% | 1 |
+| 24 | smart_12 | OHL + CPR Short (Smart v2) | Rs 9,961.08 | -38.92 | -0.39% | 2 | 0% | 1 |
 | 25 | s06 | Prev-Day High/Low Retest | Rs 9,939.34 | -60.66 | -0.61% | 5 | 20% | 1 |
 | 26 | smart_01 | St. Gallen ORB (Smart v2) | Rs 8,572.75 | -1,427.25 | -14.27% | 47 | 4% | 0 |
 
