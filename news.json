@@ -1,7 +1,7 @@
 {
- "ts": "2026-11-22T05:03:29.033575+05:30",
+ "ts": "2026-11-22T06:03:29.126407+05:30",
  "crypto": {
-  "score": -0.4,
+  "score": -0.441,
   "n_headlines": 183,
   "n_sources": 6,
   "top": [
@@ -76,11 +76,11 @@
    "Fraudsters Used Fake Crypto Exchanges to Steal $37 Million, SEC Alleges",
    "Signal Calls OS-Level AI an &#39;Existential Threat&#39; and Blocks Screenshots to Fight It"
   ],
-  "fear_greed": 12
+  "fear_greed": 11
  },
  "india": {
-  "score": 0.536,
-  "n_headlines": 224,
+  "score": 0.542,
+  "n_headlines": 227,
   "n_sources": 6,
   "top": [
    "Indian Stocks Surge Against Global Market Tide as Nifty 50 Nears Record High on Foreign Inflows of Over 1 Trillion Rupees - BigGo Finance",
@@ -133,6 +133,7 @@
    "Tata Motors PV Share Price Highlights: Tata Motors PV Stock Price History",
    "LTIMindtree Share Price Highlights: LTIMindtree Stock Price History",
    "Grasim Inds Share Price Highlights: Grasim Inds. Stock Price History",
+   "Gold rate today in India at 14-month low; will it hit \u20b91 lakh? Experts list out 3 reasons for gold price drop in 2026",
    "Dividend jackpot in chemicals: Indo Borax, GOCL and Bayer CropScience offer yields of up to 10% | Check details",
    "Max Healthcare, Fortis, Apollo, Aster: Hospital stocks steal show on D-Street with up to 14% rally - Buy now or wait?",
    "Bitcoin price crash: \u200bFalls to lowest level in two years - What\u2019s behind plunge of world\u2019s largest cryptocurrency",
@@ -151,23 +152,22 @@
    "Top 3 stocks to buy: Axis Bank, Bajaj Finance, HDFC Life by Sumeet Bagadia | Targets, stop-loss, stock market prediction",
    "Missed 50% rally in Samvardhana Motherson? Choice's Sumeet Bagadia spots another buying opportunity | Target, stop loss",
    "Nasdaq 100 sinks 5.6% in worst week since Covid, S&amp;P 500 corrects to 3.7% as investors sell off AI, tech stocks",
-   "Five pharma CDMO stocks with robust revenue growth in Q2FY27",
-   "Best 3 stocks to buy under \u20b9200: Jammu and Kashmir Bank, Canara Bank, Bank of India by Mehul Kothari of Anand Rathi"
+   "Five pharma CDMO stocks with robust revenue growth in Q2FY27"
   ]
  },
  "us": {
-  "score": -1.0,
-  "n_headlines": 194,
-  "n_sources": 6,
+  "score": -0.929,
+  "n_headlines": 184,
+  "n_sources": 5,
   "top": [
    "U.S. Stock Market Close: AI Trades Face Heavy Sell-Off, Nasdaq Plunges 5%, Philadelphia Semiconductor Index Drops Double Digits, NVIDIA Slides 14% - Moomoo",
+   "Watch Nvidia Plunges as SEC Probe Deepens AI Market Selloff | Closing Bell - Bloomberg.com",
    "Zscaler stock jumps 18% on report that CrowdStrike in talks to buy security vendor",
    "Dow, S&amp;P 500 enter correction as Nasdaq plunges in AI stock sell-off - upi",
    "Fed\u2019s Waller says central bank may need to \u2018shock people\u2019 with half-point rate hike - CNBC",
    "This Stock Market Selloff Could Block the Fed\u2019s Rate Hikes - 24/7 Wall St.",
-   "Nvidia Stock Plunge Wipes Out Nearly $500 Billion in One Day as SEC Reportedly Probes Its Accounting - Yahoo Finance",
-   "Closing Bell panel assesses sharp selloff as Nvidia, AI stocks tumble - CNBC",
-   "Hong Kong Stocks Fall 20% From 2026 High as AI Selloff Spreads - Bloomberg.com"
+   "Nvidia Stock Plunge Wipes Out Nearly $500 Billion in One Day as SEC Reportedly Probes Its Accounting - The Motley Fool",
+   "Closing Bell panel assesses sharp selloff as Nvidia, AI stocks tumble - CNBC"
   ],
   "headlines": [
    "Anthropic\u2019s record IPO collides with tech\u2019s worst week on Wall Street since 2020",
@@ -200,36 +200,36 @@
    "Anthropic was supposed to save the AI trade. What went wrong?",
    "Gap names new Athleta CEO, says Old Navy turnaround is seeing signs of progress",
    "Anthropic raises $93.5 billion total as underwriters scoop up \u2018greenshoe\u2019 overallotment",
-   "MarketWatch.com - Top Stories",
-   "I&#x2019;m in my 40s. Should I accept a lower pension in exchange for naming my husband or child as a beneficiary?",
-   "&#x2018;It&#x2019;s downright dirty&#x2019;: My brother moved in with our ailing mother and closed her bank account. What can I do?",
-   "&#x2018;I&#x2019;ve been a stay-at-home mom&#x2019;: I&#x2019;m 50 and have a chronic illness. My husband lost his job. Should he raid his 401(k)?",
-   "&#x2018;Buyers are out for blood&#x2019;: With home sales at a record low, buyers are calling the shots",
-   "My husband is happily retired at 64 and thinks I should keep working. Is he being fair?",
-   "America is definitely rich enough to fix Social Security and Medicare. Here&#x2019;s how.",
-   "&#x2018;Never too late to start&#x2019;: Practical investing advice from some of the top women in finance",
-   "Is Social Security a Ponzi scheme? No. Don&#x2019;t get carried away with 1930s-era prophecies of doom.",
-   "&#x2018;I&#x2019;m sick of flying&#x2019;: I paid for priority boarding, but the overhead bins were full. Was I duped?",
-   "Micron and Sandisk stocks might look like bargains, but analysts say that&#x2019;s actually a red flag",
    "Google News",
+   "Stock market correction? This chief investment officer sees the S&amp;P 500 soaring 45% to 10,000 - Fortune",
    "Nasdaq wipes out gains for the year as Anthropic IPO fails to quell AI nerves - CNN",
    "6 reasons stocks are falling, and what you should do about it - CBS News",
    "We May Be Witnessing Wall Street's Biggest Bubble Burst in Real Time (and I'm Not Talking About Artificial Intelligence) - The Motley Fool",
    "Wall St ends sharply lower on AI selloff, S&amp;P 500, Dow in correction - Reuters",
    "The AI boom had a really bad week \u2014 and it's raising loud alarms - NPR",
    "Tech stock sell-off drags markets down as Anthropic shares slide - BBC",
-   "Dow, S&amp;P 500 enter correction as Nasdaq suffers worst week since 2020 - MarketWatch",
+   "Worried About Black Monday? What Wall Street Says Could Happen. - Barron's",
    "Wall Street suffers historic losses as Dow, S&amp;P 500 plunge into correction territory - Fox Business",
-   "After Worst Week Since Covid, Look For These Absolute Losers - Investor's Business Daily",
+   "Dow Jones Futures: After Nvidia, Anthropic Fuel Worst Week Since Covid, Look For These 'Absolute Losers' - Investor's Business Daily",
+   "S&amp;P 500 sinks 3.7% and Nasdaq composite goes negative for the year as tech sell-off worsens - ABC News - Breaking News, Latest News and Videos",
    "S&amp;P 500 Is Set for Longest Losing Run Since 2020: Markets Wrap - Bloomberg.com",
    "U.S. stocks slump into correction territory amid tech and AI worries - The Washington Post",
-   "S&amp;P 500 sinks 3.7% and Nasdaq composite goes negative for the year as tech sell-off worsens - ABC News - Breaking News, Latest News and Videos",
    "Nasdaq erases all 2026 gains as AI sell-off dampens Anthropic\u2019s second day of trading - The Guardian",
-   "Markets plunge: Nasdaq erases 2026 gains, S&amp;P and Dow enter corrections - NBC News",
+   "Dow, S&amp;P 500 enter correction as Nasdaq suffers worst week since 2020 - MarketWatch",
    "Gold falls toward $3,500, silver slides as stock markets enter correction territory - Kitco PM Report - Kitco",
-   "Wall Street rout pushes S&amp;P 500, Dow into correction - Honolulu Star-Advertiser",
+   "Markets plunge: Nasdaq erases 2026 gains, S&amp;P and Dow enter corrections - NBC News",
    "U.S. Stock Market Close: AI Trades Face Heavy Sell-Off, Nasdaq Plunges 5%, Philadelphia Semiconductor Index Drops Double Digits, NVIDIA Slides 14% - Moomoo",
-   "US Stock Market Today: Dow Jones, S&amp;P 500, Nasdaq 100 sink on AI selloff after Anthropic IPO - Beinsure"
+   "Nasdaq wipes out 2026 gains, TSX, Dow and S&amp;P 500 fall into correction territory - CBC",
+   "Nasdaq Dives 1,261 Points as Anthropic, AI Stocks Sink: Stock Market Today - Kiplinger",
+   "Dow, S&amp;P 500 enter correction as Nasdaq plunges in AI stock sell-off - upi",
+   "Wall Street rout pushes S&amp;P 500, Dow into correction - Honolulu Star-Advertiser",
+   "US Stock Market Today: Dow Jones, S&amp;P 500, Nasdaq 100 sink on AI selloff after Anthropic IPO - Beinsure",
+   "Stock Market Under the Trump Administration: What is Driving Markets in 2026? - US Bank",
+   "Why a top economist says the stock market will remain volatile - CNN",
+   "Tech stocks analyst on worst stock market week in over a year: 'Dark day in tech' - CNN",
+   "S&amp;P 500 correction: Five forces behind the market sell-off - CNBC",
+   "Stock Market Today, Nov. 19: Dow Plunges 1,100 Points as the S&amp;P 500 Suffers Its 6th Straight Day of Losses - Yahoo Finance",
+   "US Stock Futures Fall as Anthropic Shares Retreat and AI Concerns Weigh on Global Markets: Dow Jones, S&amp;P, Nasdaq, Wall Street - Yahoo Finance"
   ]
  }
 }
