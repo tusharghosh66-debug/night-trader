@@ -1,5 +1,5 @@
 {
- "ts": "2026-11-22T21:03:29.497780+05:30",
+ "ts": "2026-11-22T22:03:29.514735+05:30",
  "crypto": {
   "score": -0.498,
   "n_headlines": 183,
@@ -79,8 +79,8 @@
   "fear_greed": 11
  },
  "india": {
-  "score": 0.434,
-  "n_headlines": 221,
+  "score": 0.464,
+  "n_headlines": 220,
   "n_sources": 6,
   "top": [
    "WeWork India share price jumps 40% in 6 months; ICICI Direct sees 37% more gains ahead - Buy? Check Target",
@@ -156,21 +156,21 @@
   ]
  },
  "us": {
-  "score": -0.913,
-  "n_headlines": 184,
-  "n_sources": 5,
+  "score": -1.0,
+  "n_headlines": 195,
+  "n_sources": 6,
   "top": [
    "U.S. Stock Market Close: AI Trades Face Heavy Sell-Off, Nasdaq Plunges 5%, Philadelphia Semiconductor Index Drops Double Digits, NVIDIA Slides 14% - Moomoo",
    "Watch Nvidia Plunges as SEC Probe Deepens AI Market Selloff | Closing Bell - Bloomberg.com",
    "Zscaler stock jumps 18% on report that CrowdStrike in talks to buy security vendor",
-   "Trump's Economic Policies Fuel Inflation Fears As Wall Street Faces Growing Risk of Major Sell-Off - \u062a\u0633\u0646\u06cc\u0645",
+   "Dow and S&amp;P 500 Plunge Into Correction as Tech Sell-Off Deepens - Realtor.com",
    "This Stock Market Selloff Could Block the Fed\u2019s Rate Hikes - 24/7 Wall St.",
-   "Only 5% of Cryptocurrencies Are Rising as Fed Rate Hike Fears Grow - BeInCrypto",
-   "Nvidia Stock Plunge Wipes Out Nearly $500 Billion in One Day as SEC Reportedly Probes Its Accounting - The Motley Fool",
-   "Canadian dollar falls for third straight week as stock market selloff deepens - Reuters"
+   "Fed\u2019s Waller says central bank may need to \u2018shock people\u2019 with half-point rate hike - CNBC",
+   "Trump's Economic Policies Fuel Inflation Fears As Wall Street Faces Growing Risk of Major Sell-Off - \u062a\u0633\u0646\u06cc\u0645",
+   "Only 5% of Cryptocurrencies Are Rising as Fed Rate Hike Fears Grow - BeInCrypto"
   ],
   "headlines": [
-   "Tech outages are fueling a new doomsday economy",
+   "Director of National Intelligence Jay Clayton warns Americans of &apos;bumps in the road&apos; after tech outages",
    "Pizza chains are under pressure. GLP-1 use is only one part of the problem",
    "Quantum computing\u2019s first real-world payoff may come in energy, not drug discovery",
    "Anthropic\u2019s record IPO collides with tech\u2019s worst week on Wall Street since 2020",
@@ -200,36 +200,36 @@
    "A massive bearish trade just happened in the chip stocks",
    "Europe&apos;s cyber weak spot is the everyday businesses nobody thought to protect",
    "AI is changing software engineering \u2014 and some developers miss the struggle",
+   "MarketWatch.com - Top Stories",
+   "I&#x2019;m terrified of a market crash. Should I put $400,000 of my $1 million retirement savings into an annuity?",
+   "&#x2018;I felt so seen&#x2019;: Why families across America are laughing &#x2014; and crying &#x2014; over SNL&#x2019;s &#x2018;Sister&#x2019; sketch",
+   "&#x2018;Never too late to start&#x2019;: Practical investing advice from some of the top women in finance",
+   "My husband spent $80,000 on a boat, yet says my plans for a $100,000 pottery studio are irresponsible. Who&#x2019;s right?",
+   "America is definitely rich enough to fix Social Security and Medicare. Here&#x2019;s how.",
+   "Corporate America hunts for &#x2018;generational&#x2019; growth in AI, trading cards and the L.A. airport",
+   "Stocks are in a correction heading into the Thanksgiving holiday. What to brace for next.",
+   "Can stocks bounce back after a brutal week? This timing model says history is on the market&#x2019;s side.",
+   "My husband is happily retired at 64 and thinks I should keep working. Is he being fair?",
+   "My wife is bankrolling her family&#x2019;s trips to New York and it&#x2019;s draining our savings. Should I ask her to stop?",
    "Google News",
-   "Stocks are in a correction heading into the Thanksgiving holiday. What to brace for next. - MarketWatch",
-   "We May Be Witnessing Wall Street's Biggest Bubble Burst in Real Time (and I'm Not Talking About Artificial Intelligence) - The Motley Fool",
+   "The Stock Market Is Doing Something for Only the 5th Time This Century, and History Says It's Obvious What Comes Next for Stocks - The Motley Fool",
    "6 reasons stocks are falling, and what you should do about it - CBS News",
    "Nasdaq wipes out gains for the year as Anthropic IPO fails to quell AI nerves - CNN",
-   "Stock market correction? This chief investment officer sees the S&amp;P 500 soaring 45% to 10,000 - Fortune",
    "Worried About Black Monday? What Wall Street Says Could Happen. - Barron's",
+   "Stock market correction? This chief investment officer sees the S&amp;P 500 soaring 45% to 10,000 - Fortune",
    "Wall St ends sharply lower on AI selloff, S&amp;P 500, Dow in correction - Reuters",
    "Tech stock sell-off drags markets down as Anthropic shares slide - BBC",
    "S&amp;P 500 Is Set for Longest Losing Run Since 2020: Markets Wrap - Bloomberg.com",
-   "Dow Jones Futures: After Nvidia, Anthropic Fuel Worst Week Since Covid, Look For These 'Absolute Losers' - Investor's Business Daily",
    "The AI boom had a really bad week \u2014 and it's raising loud alarms - NPR",
    "U.S. stocks slump into correction territory amid tech and AI worries - The Washington Post",
    "Wall Street suffers historic losses as Dow, S&amp;P 500 plunge into correction territory - Fox Business",
-   "S&amp;P 500 sinks 3.7% and Nasdaq composite goes negative for the year as tech sell-off worsens - ABC News - Breaking News, Latest News and Videos",
-   "Nasdaq erases all 2026 gains as AI sell-off dampens Anthropic\u2019s second day of trading - The Guardian",
-   "US Stock Market Next Week: Will Stocks Crash Again After Nasdaq\u2019s 10% Plunge? - Stocks Down Under",
-   "Markets plunge: Nasdaq erases 2026 gains, S&amp;P and Dow enter corrections - NBC News",
    "Gold falls toward $3,500, silver slides as stock markets enter correction territory - Kitco PM Report - Kitco",
-   "Wall Street rout pushes S&amp;P 500, Dow into correction - Honolulu Star-Advertiser",
-   "Nasdaq wipes out 2026 gains, TSX, Dow and S&amp;P 500 fall into correction territory - CBC",
-   "Stock Market Today: Dow Jones, S&amp;P 500, Nasdaq 100 Futures Fall as Trump Weighs Iran Decision\u2014 INTU, ROST - Benzinga",
-   "Nasdaq Dives 1,261 Points as Anthropic, AI Stocks Sink: Stock Market Today - Kiplinger",
-   "U.S. Stock Market Close: AI Trades Face Heavy Sell-Off, Nasdaq Plunges 5%, Philadelphia Semiconductor Index Drops Double Digits, NVIDIA Slides 14% - Moomoo",
-   "U.S. Stocks Extend Plunge as AI Boom Turns to Bust - WSJ",
-   "Dow Jones and S&amp;P 500 Outlook: Top Stock Market Headlines and Data This Week - Benzinga",
-   "Stock Market Under the Trump Administration: What is Driving Markets in 2026? - U.S. Bank",
-   "Why a top economist says the stock market will remain volatile - CNN",
-   "US Stock Market Today: Dow Jones, S&amp;P 500, Nasdaq 100 sink on AI selloff after Anthropic IPO - Beinsure",
-   "US Tech Stocks Are Set to Rally as Anthropic IPO Boosts AI Trade - Bloomberg.com"
+   "Stock Market Week Ahead: A Matter Of Pressure And Time - Investor's Business Daily",
+   "Dow, S&amp;P 500 enter correction as Nasdaq suffers worst week since 2020 - MarketWatch",
+   "Nasdaq erases all 2026 gains as AI sell-off dampens Anthropic\u2019s second day of trading - The Guardian",
+   "S&amp;P 500 sinks 3.7% and the Nasdaq composite goes negative for the year as rout in tech stocks tanks the market - ABC News - Breaking News, Latest News and Videos",
+   "Markets plunge: Nasdaq erases 2026 gains, S&amp;P and Dow enter corrections - NBC News",
+   "Nasdaq wipes out 2026 gains, TSX, Dow and S&amp;P 500 fall into correction territory - CBC"
   ]
  }
 }
