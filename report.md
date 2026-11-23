@@ -1,10 +1,10 @@
 # Night Trader v2 — Paper Trading Report (3 markets)
-_Updated: 2026-11-23 21:02 IST_
+_Updated: 2026-11-23 21:04 IST_
 
 ## CRYPTO (OPEN) — ₹10,000.00 | P&L +0.00 (+0.00%)
-Cash ₹10,000.00 | cycles 9251 | capital ₹10,000
+Cash ₹10,000.00 | cycles 9256 | capital ₹10,000
 _No open positions — all cash._
-News sentiment: -0.09 (178 headlines, 6 sources, Fear&Greed 11)
+News sentiment: -0.08 (176 headlines, 6 sources, Fear&Greed 11)
 - Strategy and Crypto Stocks Rally as Bitcoin Rebounds Past $61,000. Is the Jump Temporary? - Barron's
 - Bitcoin price extends gains, briefly tops $81,000 as crypto rally gathers pace - CNBC
 - Bitcoin rebounds from 2-year low as Wall Street futures recover
@@ -18,15 +18,15 @@ Closed: 6 (1 wins), realized -30.35
 - 12:38 SELL HDFCBANK.NS @ 839.75 pnl +59.97 (RSI 79 overbought take-profit)
 - 09:16 BUY RELIANCE.NS @ 1387.2 pnl +0.00 (breakout+EMA trend, RSI=68, regime_ok=True, news=+0.46)
 - 09:33 SELL RELIANCE.NS @ 1368.4 pnl -46.69 (stop/trail hit (1368.40<=1370.00))
-News sentiment: -0.11 (218 headlines, 6 sources)
+News sentiment: +0.03 (218 headlines, 6 sources)
+- Nvidia stock adds massive m-cap as Jensen Huang becomes CEO again! From year low to 33% surge, all losses recovered
 - Manic Monday for Bank Nifty as index crashes over 2000 points — Check worst hit shares and reasons behind mega plunge
 - PSU bank stocks tumble up to 5% after five-day rally, Nifty PSU Bank index crashes 3.2%; what's behind the sell-off?
-- Bank Nifty crashes over 2,000 points, plunges 3.1%; HDFC Bank, ICICI Bank, Axis Bank, SBI among top losers - Moneycontrol.com
 
 ## US (OPEN) — ₹10,000.00 | P&L +0.00 (+0.00%)
-Cash ₹10,000.00 | cycles 871 | capital ₹10,000
+Cash ₹10,000.00 | cycles 876 | capital ₹10,000
 _No open positions — all cash._
-News sentiment: +0.19 (194 headlines, 6 sources)
+News sentiment: +0.36 (194 headlines, 6 sources)
 - Nasdaq-100 futures surge 7%, S&amp;P 500 gain 4.3%, Dow up 2.6% in Wall Street rebound - Beinsure
 - Stock market today: Dow futures jump 800 points and Nasdaq soars 3% after entering correction - Fortune
 - Stock Futures Are Rebounding After Last Week’s Bloodbath - Barron's
