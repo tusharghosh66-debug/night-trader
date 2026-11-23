@@ -1,10 +1,10 @@
 # Night Trader v2 — Paper Trading Report (3 markets)
-_Updated: 2026-11-24 03:03 IST_
+_Updated: 2026-11-24 03:06 IST_
 
 ## CRYPTO (OPEN) — ₹10,000.00 | P&L +0.00 (+0.00%)
-Cash ₹10,000.00 | cycles 9966 | capital ₹10,000
+Cash ₹10,000.00 | cycles 9971 | capital ₹10,000
 _No open positions — all cash._
-News sentiment: +0.13 (180 headlines, 6 sources, Fear&Greed 11)
+News sentiment: +0.15 (179 headlines, 6 sources, Fear&Greed 11)
 - Bitcoin Price Crash: Bitcoin Falls 25% in November; Solana, Avalanche Lose Up to 46% as Crypto Sell-Off Deepens - Kotak Neo
 - Strategy and Crypto Stocks Rally as Bitcoin Rebounds Past $63,000. Is the Jump Temporary? - Barron's
 - Crypto news: Bitcoin jumps to $64,000 and ether gains 7%. Will the rebound hold? - CryptoTicker.io
@@ -18,17 +18,17 @@ Closed: 6 (1 wins), realized -30.35
 - 12:38 SELL HDFCBANK.NS @ 839.75 pnl +59.97 (RSI 79 overbought take-profit)
 - 09:16 BUY RELIANCE.NS @ 1387.2 pnl +0.00 (breakout+EMA trend, RSI=68, regime_ok=True, news=+0.46)
 - 09:33 SELL RELIANCE.NS @ 1368.4 pnl -46.69 (stop/trail hit (1368.40<=1370.00))
-News sentiment: -0.07 (217 headlines, 6 sources)
+News sentiment: +0.04 (216 headlines, 6 sources)
+- Nasdaq surges 6%, Dow soars 1,400 pts as markets rebound on Huang’s return: Stock Market Live Updates
 - Nvidia stock adds nearly $ 1T m-cap as Jensen Huang becomes CEO again! From year low to 33% surge, all losses recovered
 - Manic Monday for Bank Nifty as index crashes over 2000 points — Check worst hit shares and reasons behind mega plunge
-- PSU bank stocks tumble up to 5% after five-day rally, Nifty PSU Bank index crashes 3.2%; what's behind the sell-off?
 
 ## US (CLOSED) — ₹10,000.00 | P&L +0.00 (+0.00%)
 Cash ₹10,000.00 | cycles 1518 | capital ₹10,000
 _No open positions — all cash._
-News sentiment: +0.61 (181 headlines, 5 sources)
+News sentiment: +0.86 (182 headlines, 5 sources)
 - Nasdaq-100 futures surge 7%, S&amp;P 500 gain 4.3%, Dow up 2.6% in Wall Street rebound - Beinsure
-- Tech stocks rally after Nvidia board approves Jensen Huang&apos;s return as CEO
+- Stock Market Today, November 23, 2026: Nvidia Surges on Jensen Huang’s Return, Nasdaq Jumps Nearly 7%, Dow Soars - Eurasia Business News
 - Stock market today: Dow futures jump 800 points and Nasdaq soars 3% after entering correction - Fortune
 
 Market hours: crypto 24/7 | NSE 9:15–15:30 IST Mon–Fri | US 9:30–16:00 ET (8:00 PM–2:30 AM IST) Mon–Fri.
