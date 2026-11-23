@@ -1,10 +1,10 @@
 # Night Trader v2 — Paper Trading Report (3 markets)
-_Updated: 2026-11-23 17:02 IST_
+_Updated: 2026-11-23 17:04 IST_
 
 ## CRYPTO (OPEN) — ₹10,000.00 | P&L +0.00 (+0.00%)
-Cash ₹10,000.00 | cycles 8771 | capital ₹10,000
+Cash ₹10,000.00 | cycles 8776 | capital ₹10,000
 _No open positions — all cash._
-News sentiment: -0.29 (180 headlines, 6 sources, Fear&Greed 11)
+News sentiment: -0.35 (180 headlines, 6 sources, Fear&Greed 11)
 - Bitcoin price extends gains, briefly tops $81,000 as crypto rally gathers pace - CNBC
 - Crypto Treasury Stocks Rally as Bitcoin Fund Jumps 5%: Strategy Surges 14%, Bitmine Climbs 12% - Yahoo Finance
 - Bitcoin plunges below $59,000 as rush to cash puts new bear market lows back in play
@@ -18,15 +18,15 @@ Closed: 6 (1 wins), realized -30.35
 - 12:38 SELL HDFCBANK.NS @ 839.75 pnl +59.97 (RSI 79 overbought take-profit)
 - 09:16 BUY RELIANCE.NS @ 1387.2 pnl +0.00 (breakout+EMA trend, RSI=68, regime_ok=True, news=+0.46)
 - 09:33 SELL RELIANCE.NS @ 1368.4 pnl -46.69 (stop/trail hit (1368.40<=1370.00))
-News sentiment: +0.07 (213 headlines, 6 sources)
+News sentiment: +0.01 (214 headlines, 6 sources)
+- Manic Monday for Bank Nifty as index crashes over 2000 points — Check worst hit shares and reasons behind mega plunge
 - PSU bank stocks tumble up to 5% after five-day rally, Nifty PSU Bank index crashes 3.2%; what's behind the sell-off?
 - Why did stock market fall today? Sensex crashes 1,484 points, Nifty posts biggest drop in 5 months - CNBC TV18 - LinkedIn
-- Stock Market Highlight: Sensex crashes 1,484 pts, Nifty ends below 25,350; Axis Bank slides 4%, Hindalco 3%
 
 ## US (CLOSED) — ₹10,000.00 | P&L +0.00 (+0.00%)
 Cash ₹10,000.00 | cycles 746 | capital ₹10,000
 _No open positions — all cash._
-News sentiment: -0.37 (194 headlines, 6 sources)
+News sentiment: -0.28 (182 headlines, 5 sources)
 - Treasury yields jump as stock futures rebound, investors await New York Fed President Williams speech
 - Stock market today: Dow futures jump 800 points and Nasdaq soars 3% after entering correction - Fortune
 - Stock Futures Are Rebounding After Last Week’s Bloodbath - Barron's
