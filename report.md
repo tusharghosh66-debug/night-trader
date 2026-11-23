@@ -1,13 +1,13 @@
 # Night Trader v2 — Paper Trading Report (3 markets)
-_Updated: 2026-11-23 20:02 IST_
+_Updated: 2026-11-23 20:04 IST_
 
 ## CRYPTO (OPEN) — ₹10,000.00 | P&L +0.00 (+0.00%)
-Cash ₹10,000.00 | cycles 9131 | capital ₹10,000
+Cash ₹10,000.00 | cycles 9136 | capital ₹10,000
 _No open positions — all cash._
-News sentiment: -0.10 (179 headlines, 6 sources, Fear&Greed 11)
-- Crypto Stocks Rally as Bitcoin Rebounds Past $61,000. Is the Jump Temporary? - Barron's
+News sentiment: -0.09 (178 headlines, 6 sources, Fear&Greed 11)
+- Strategy and Crypto Stocks Rally as Bitcoin Rebounds Past $61,000. Is the Jump Temporary? - Barron's
 - Bitcoin price extends gains, briefly tops $81,000 as crypto rally gathers pace - CNBC
-- Strategy Stock Rebounds as Bitcoin Recovers. These 2X ETFs Are Leading the Premarket Rally - Benzinga
+- Bitcoin rebounds from 2-year low as Wall Street futures recover
 
 ## INDIA (CLOSED) — ₹9,969.65 | P&L -30.35 (-0.30%)
 Cash ₹9,969.65 | cycles 890 | capital ₹10,000
@@ -18,18 +18,18 @@ Closed: 6 (1 wins), realized -30.35
 - 12:38 SELL HDFCBANK.NS @ 839.75 pnl +59.97 (RSI 79 overbought take-profit)
 - 09:16 BUY RELIANCE.NS @ 1387.2 pnl +0.00 (breakout+EMA trend, RSI=68, regime_ok=True, news=+0.46)
 - 09:33 SELL RELIANCE.NS @ 1368.4 pnl -46.69 (stop/trail hit (1368.40<=1370.00))
-News sentiment: -0.29 (217 headlines, 6 sources)
+News sentiment: -0.11 (218 headlines, 6 sources)
 - Manic Monday for Bank Nifty as index crashes over 2000 points — Check worst hit shares and reasons behind mega plunge
 - PSU bank stocks tumble up to 5% after five-day rally, Nifty PSU Bank index crashes 3.2%; what's behind the sell-off?
-- Why did stock market fall today? Sensex crashes 1,484 points, Nifty posts biggest drop in 5 months - CNBC TV18 - LinkedIn
+- Bank Nifty crashes over 2,000 points, plunges 3.1%; HDFC Bank, ICICI Bank, Axis Bank, SBI among top losers - Moneycontrol.com
 
 ## US (OPEN) — ₹10,000.00 | P&L +0.00 (+0.00%)
-Cash ₹10,000.00 | cycles 751 | capital ₹10,000
+Cash ₹10,000.00 | cycles 756 | capital ₹10,000
 _No open positions — all cash._
-News sentiment: -0.19 (194 headlines, 6 sources)
+News sentiment: +0.19 (194 headlines, 6 sources)
+- Nasdaq-100 futures surge 7%, S&amp;P 500 gain 4.3%, Dow up 2.6% in Wall Street rebound - Beinsure
 - Stock market today: Dow futures jump 800 points and Nasdaq soars 3% after entering correction - Fortune
 - Stock Futures Are Rebounding After Last Week’s Bloodbath - Barron's
-- Wall Street futures rebound as battered AI stocks gain ground - Yahoo Finance
 
 Market hours: crypto 24/7 | NSE 9:15–15:30 IST Mon–Fri | US 9:30–16:00 ET (8:00 PM–2:30 AM IST) Mon–Fri.
 > PAPER TRADING ONLY — simulated capital, no real orders placed.
