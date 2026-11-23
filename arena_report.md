@@ -1,12 +1,12 @@
 # Strategy Arena — Leaderboard
-_Updated: 2026-11-24 01:43 IST_
+_Updated: 2026-11-24 01:46 IST_
 
-**Total equity: Rs 256,831.70** / Rs 260,000 start (-1.22%)
+**Total equity: Rs 256,833.36** / Rs 260,000 start (-1.22%)
 
 | Rank | Bot | Strategy | Equity | P&L | % | Trades | Win% | Open |
 |---|---|---|---|---|---|---|---|---|
 | 1 | s10 | Overnight Edge + Turnaround Tue | Rs 10,215.90 | +215.90 | +2.16% | 1 | 100% | 1 |
-| 2 | s07 | First-Candle ORB 15m | Rs 10,003.11 | +3.11 | +0.03% | 28 | 25% | 3 |
+| 2 | s07 | First-Candle ORB 15m | Rs 10,013.97 | +13.97 | +0.14% | 28 | 25% | 3 |
 | 3 | s02 | Trend-Filtered Mean Reversion | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 4 | s03 | ETF Dual Momentum Rotation | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 5 | s05 | Connors RSI(2) Pullback | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
@@ -15,21 +15,21 @@ _Updated: 2026-11-24 01:43 IST_
 | 8 | smart_05 | Connors RSI(2) (Smart v2) | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 9 | smart_09 | Statistical Arbitrage (Smart v2) | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 10 | smart_10 | Overnight Edge (Smart v2) | Rs 9,995.19 | -4.81 | -0.05% | 0 | 0% | 1 |
-| 11 | s04 | Multi-Market Trend Following | Rs 9,991.80 | -8.20 | -0.08% | 0 | 0% | 4 |
+| 11 | s04 | Multi-Market Trend Following | Rs 9,992.10 | -7.90 | -0.08% | 0 | 0% | 4 |
 | 12 | smart_11 | Spike & VWAP Short (Smart v2) | Rs 9,988.45 | -11.55 | -0.12% | 6 | 33% | 0 |
 | 13 | s11 | Spike & VWAP Rejection Short | Rs 9,984.99 | -15.01 | -0.15% | 7 | 29% | 0 |
 | 14 | s13 | Afternoon Sell-the-Rip Short | Rs 9,976.69 | -23.31 | -0.23% | 5 | 40% | 0 |
 | 15 | s12 | OHL + CPR Breakdown Short | Rs 9,974.01 | -25.99 | -0.26% | 10 | 40% | 0 |
 | 16 | smart_13 | Afternoon Sell-the-Rip Short (Smart v2) | Rs 9,941.46 | -58.54 | -0.59% | 5 | 20% | 0 |
 | 17 | smart_12 | OHL + CPR Short (Smart v2) | Rs 9,940.63 | -59.37 | -0.59% | 9 | 33% | 0 |
-| 18 | smart_04 | Multi-Market Trend (Smart v2) | Rs 9,939.53 | -60.47 | -0.60% | 0 | 0% | 4 |
+| 18 | smart_04 | Multi-Market Trend (Smart v2) | Rs 9,939.84 | -60.16 | -0.60% | 0 | 0% | 4 |
 | 19 | smart_03 | ETF Dual Momentum (Smart v2) | Rs 9,912.26 | -87.74 | -0.88% | 0 | 0% | 1 |
-| 20 | smart_08 | Pre-Market Breakout (Smart v2) | Rs 9,873.82 | -126.18 | -1.26% | 6 | 33% | 2 |
-| 21 | smart_07 | First-Candle ORB (Smart v2) | Rs 9,856.54 | -143.46 | -1.43% | 21 | 19% | 3 |
-| 22 | s08 | Pre-Market High/Low Break | Rs 9,781.26 | -218.74 | -2.19% | 50 | 22% | 2 |
-| 23 | s01 | St. Gallen ORB Noise-Band | Rs 9,777.61 | -222.39 | -2.22% | 15 | 13% | 1 |
-| 24 | smart_06 | Prev-Day Retest (Smart v2) | Rs 9,717.83 | -282.17 | -2.82% | 31 | 19% | 1 |
-| 25 | s06 | Prev-Day High/Low Retest | Rs 9,715.34 | -284.66 | -2.85% | 35 | 17% | 2 |
-| 26 | smart_01 | St. Gallen ORB (Smart v2) | Rs 8,245.28 | -1,754.72 | -17.55% | 66 | 6% | 1 |
+| 20 | smart_08 | Pre-Market Breakout (Smart v2) | Rs 9,874.76 | -125.24 | -1.25% | 6 | 33% | 2 |
+| 21 | smart_07 | First-Candle ORB (Smart v2) | Rs 9,867.24 | -132.76 | -1.33% | 21 | 19% | 3 |
+| 22 | s08 | Pre-Market High/Low Break | Rs 9,782.21 | -217.79 | -2.18% | 50 | 22% | 2 |
+| 23 | s01 | St. Gallen ORB Noise-Band | Rs 9,763.90 | -236.10 | -2.36% | 15 | 13% | 1 |
+| 24 | s06 | Prev-Day High/Low Retest | Rs 9,718.21 | -281.79 | -2.82% | 35 | 17% | 2 |
+| 25 | smart_06 | Prev-Day Retest (Smart v2) | Rs 9,717.83 | -282.17 | -2.82% | 31 | 19% | 1 |
+| 26 | smart_01 | St. Gallen ORB (Smart v2) | Rs 8,233.72 | -1,766.28 | -17.66% | 66 | 6% | 1 |
 
 **Best so far: s10 — Overnight Edge + Turnaround Tue (+2.16%)**
