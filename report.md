@@ -1,8 +1,8 @@
 # Night Trader v2 — Paper Trading Report (3 markets)
-_Updated: 2026-11-24 02:28 IST_
+_Updated: 2026-11-24 02:31 IST_
 
 ## CRYPTO (OPEN) — ₹10,000.00 | P&L +0.00 (+0.00%)
-Cash ₹10,000.00 | cycles 9896 | capital ₹10,000
+Cash ₹10,000.00 | cycles 9901 | capital ₹10,000
 _No open positions — all cash._
 News sentiment: +0.13 (180 headlines, 6 sources, Fear&Greed 11)
 - Bitcoin Price Crash: Bitcoin Falls 25% in November; Solana, Avalanche Lose Up to 46% as Crypto Sell-Off Deepens - Kotak Neo
@@ -23,8 +23,8 @@ News sentiment: -0.07 (217 headlines, 6 sources)
 - Manic Monday for Bank Nifty as index crashes over 2000 points — Check worst hit shares and reasons behind mega plunge
 - PSU bank stocks tumble up to 5% after five-day rally, Nifty PSU Bank index crashes 3.2%; what's behind the sell-off?
 
-## US (OPEN) — ₹10,000.00 | P&L +0.00 (+0.00%)
-Cash ₹10,000.00 | cycles 1516 | capital ₹10,000
+## US (CLOSED) — ₹10,000.00 | P&L +0.00 (+0.00%)
+Cash ₹10,000.00 | cycles 1518 | capital ₹10,000
 _No open positions — all cash._
 News sentiment: +0.61 (181 headlines, 5 sources)
 - Nasdaq-100 futures surge 7%, S&amp;P 500 gain 4.3%, Dow up 2.6% in Wall Street rebound - Beinsure
