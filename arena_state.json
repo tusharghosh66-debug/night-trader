@@ -4,19 +4,9 @@
  "usdinr": 92.9,
  "bots": {
   "s01": {
-   "cash": 9765.58687213273,
+   "cash": 9770.229936808435,
    "start_equity": 10000.0,
-   "positions": {
-    "NIFTYBEES.NS": {
-     "side": -1,
-     "qty": 32.081980830575,
-     "entry": 289.45,
-     "stop": 291.08047587213775,
-     "opened": "2026-11-23T15:29:31.226365+05:30",
-     "reason": "noise-band-break-down",
-     "bars": 0
-    }
-   },
+   "positions": {},
    "closed_trades": [
     [
      "2026-11-23T09:15:01.010317+05:30",
@@ -2586,22 +2576,9 @@
    "id": "s13"
   },
   "smart_01": {
-   "cash": 8235.139080461238,
+   "cash": 8239.054491164625,
    "start_equity": 10000.0,
-   "positions": {
-    "NIFTYBEES.NS": {
-     "side": -1,
-     "qty": 27.05414201684095,
-     "entry": 289.45,
-     "stop": 291.08047587213775,
-     "opened": "2026-11-23T15:29:31.226365+05:30",
-     "reason": "noise-band-break-down",
-     "bars": 0,
-     "init_risk": 1.6304758721377652,
-     "extreme_px": 289.43,
-     "be_locked": false
-    }
-   },
+   "positions": {},
    "closed_trades": [
     [
      "2026-11-21T19:15:30.871118+05:30",

@@ -238,6 +238,14 @@ def mkt_eod_min(sym):
         return None
     return 15 * 60 + 45
 
+def mkt_entry_cutoff_min(sym):
+    """minutes-from-midnight after which NO new position can be entered.
+    Prevents entering right before or during EOD square-off (e.g. 15:00 IST for 15:15 EOD)."""
+    em = mkt_eod_min(sym)
+    if em is None:
+        return None
+    return em - 15
+
 def mkt_orb_cutoff(sym):
     """ORB entry window ends (minutes from midnight, market tz)"""
     if is_india(sym):
@@ -425,6 +433,9 @@ def s01(bs, ctx):
             continue
         if len(bs["positions"]) >= 1:
             return
+        cut = mkt_entry_cutoff_min(sym)
+        if cut is not None and mkt_hm(kl[-1]["t"], sym) >= cut:
+            continue
         eq = bot_equity(bs)
         last_c = kl[-1]["c"]
         if last_c > upper:
@@ -629,6 +640,9 @@ def s06(bs, ctx):
             continue
         if len(bs["positions"]) >= 3:
             continue
+        cut = mkt_entry_cutoff_min(sym)
+        if cut is not None and mkt_hm(kl[-1]["t"], sym) >= cut:
+            continue
         eq = bot_equity(bs)
         last_c = kl[-1]["c"]
         prev_c = kl[-2]["c"]
@@ -716,6 +730,9 @@ def s08(bs, ctx):
                 row[1] = "s08"; record_trade("s08", bs, row)
             continue
         if len(bs["positions"]) >= 3:
+            continue
+        cut = mkt_entry_cutoff_min(sym)
+        if cut is not None and mkt_hm(kl[-1]["t"], sym) >= cut:
             continue
         eq = bot_equity(bs)
         last_c = reg[-1]["c"]
