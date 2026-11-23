@@ -1,7 +1,7 @@
 # Strategy Arena — Leaderboard
-_Updated: 2026-11-24 02:33 IST_
+_Updated: 2026-11-24 02:36 IST_
 
-**Total equity: Rs 256,840.51** / Rs 260,000 start (-1.22%)
+**Total equity: Rs 256,830.64** / Rs 260,000 start (-1.22%)
 
 | Rank | Bot | Strategy | Equity | P&L | % | Trades | Win% | Open |
 |---|---|---|---|---|---|---|---|---|
@@ -30,6 +30,6 @@ _Updated: 2026-11-24 02:33 IST_
 | 23 | s08 | Pre-Market High/Low Break | Rs 9,779.89 | -220.11 | -2.20% | 52 | 25% | 0 |
 | 24 | s06 | Prev-Day High/Low Retest | Rs 9,718.31 | -281.69 | -2.82% | 36 | 19% | 1 |
 | 25 | smart_06 | Prev-Day Retest (Smart v2) | Rs 9,717.83 | -282.17 | -2.82% | 31 | 19% | 1 |
-| 26 | smart_01 | St. Gallen ORB (Smart v2) | Rs 8,252.01 | -1,747.99 | -17.48% | 66 | 6% | 1 |
+| 26 | smart_01 | St. Gallen ORB (Smart v2) | Rs 8,242.13 | -1,757.87 | -17.58% | 66 | 6% | 1 |
 
 **Best so far: s10 — Overnight Edge + Turnaround Tue (+2.00%)**
