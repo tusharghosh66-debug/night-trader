@@ -1,16 +1,16 @@
 # Night Trader v2 — Paper Trading Report (3 markets)
-_Updated: 2026-11-23 09:12 IST_
+_Updated: 2026-11-23 09:15 IST_
 
 ## CRYPTO (OPEN) — ₹10,000.00 | P&L +0.00 (+0.00%)
-Cash ₹10,000.00 | cycles 7836 | capital ₹10,000
+Cash ₹10,000.00 | cycles 7841 | capital ₹10,000
 _No open positions — all cash._
 News sentiment: -0.44 (181 headlines, 6 sources, Fear&Greed 11)
 - Bitcoin price extends gains, briefly tops $81,000 as crypto rally gathers pace - CNBC
 - Bitcoin plunges below $59,000 as rush to cash puts new bear market lows back in play
 - Cathie Wood's Ark Invest piled into Anthropic IPO, buying $90 million worth of shares
 
-## INDIA (CLOSED) — ₹10,016.34 | P&L +16.34 (+0.16%)
-Cash ₹10,016.34 | cycles 144 | capital ₹10,000
+## INDIA (OPEN) — ₹10,016.34 | P&L +16.34 (+0.16%)
+Cash ₹10,016.34 | cycles 145 | capital ₹10,000
 _No open positions — all cash._
 Closed: 4 (1 wins), realized +16.34
 - 14:26 BUY RELIANCE.NS @ 1377.9 pnl +0.00 (breakout+EMA trend, RSI=70, regime_ok=True, news=+0.30)
