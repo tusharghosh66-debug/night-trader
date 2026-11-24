@@ -324,7 +324,13 @@ def load_state():
             log("state reset v3: INR 10,000 per market (total 30,000)")
             save_state(st)
         return st
-    except Exception:
+    except Exception as e:
+        # keep the bad file: silently starting from Rs 30,000 hid a real reset
+        try:
+            os.replace(STATE_F, STATE_F + ".broken-" + datetime.now(IST).strftime("%Y%m%d%H%M%S"))
+        except Exception:
+            pass
+        log(f"STATE LOAD FAILED ({e}) -> fresh night-trader state; bad file kept as *.broken-*")
         return new_state()
 
 

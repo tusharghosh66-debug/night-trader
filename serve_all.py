@@ -36,10 +36,7 @@ def boot():
         say("no .git here — skipping boot pull (local test)")
         return
     try:
-        for f in ("arena.log", "decisions.log"):
-            subprocess.run(["git", "-C", BASE, "checkout", "--", f], capture_output=True)
-        arena._git("pull", "--rebase", arena._auth_url(), "main")
-        say("boot: pulled latest state from GitHub")
+        say(f"boot: pulled latest state from GitHub ({arena._boot_pull()})")
     except Exception as e:
         say(f"boot pull failed (using local state): {e}")
 
@@ -49,19 +46,13 @@ def git_sync():
         STATUS["sync"] = "no-token (state local only)"
         return
     try:
-        arena._git("config", "user.email", "arena-bot@users.noreply.github.com")
-        arena._git("config", "user.name", "night-trader-serve")
-        arena._git("add", *FILES)
-        r = subprocess.run(["git", "-C", BASE, "diff", "--cached", "--quiet"],
-                           capture_output=True)
-        if r.returncode != 0:
-            arena._git("commit", "-m",
-                       f"serve all {datetime.now(bot.IST).strftime('%Y-%m-%dT%H:%M:%S%z')} [skip ci][skip render]")
         # logs are tracked but never committed from serve mode; keep rebase clean
         for f in ("arena.log", "decisions.log"):
             subprocess.run(["git", "-C", BASE, "checkout", "--", f], capture_output=True)
-        arena._git("pull", "--rebase", arena._auth_url(), "main")
-        arena._git("push", arena._auth_url(), "HEAD:main")
+        # rebase with local-state-wins + abort/retry: a half-finished rebase from a
+        # killed instance used to block every later commit ("unmerged files")
+        arena._rebase_and_push(
+            FILES, f"serve all {datetime.now(bot.IST).strftime('%Y-%m-%dT%H:%M:%S%z')} [skip ci][skip render]")
         STATUS["sync"] = "ok"
         STATUS["last_sync"] = datetime.now(bot.IST).isoformat()
     except Exception as e:

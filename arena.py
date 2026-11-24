@@ -283,7 +283,14 @@ def load_state():
             st["bots"].setdefault(b["id"], new_bot_state())
             st["bots"][b["id"]]["id"] = b["id"]
         return st
-    except Exception:
+    except Exception as e:
+        # never wipe silently: a half-finished git rebase leaves '<<<<<<<' markers
+        # in the JSON, which used to reset the whole arena without a trace.
+        try:
+            os.replace(STATE_F, STATE_F + ".broken-" + datetime.now(IST).strftime("%Y%m%d%H%M%S"))
+        except Exception:
+            pass
+        log(f"STATE LOAD FAILED ({e}) -> fresh arena state; bad file kept as *.broken-*")
         return new_state()
 
 def save_state(st):
@@ -960,8 +967,10 @@ US_TOP_LIQUID = [
 CRYPTO_TOP_20 = [
     "BTC-USD", "ETH-USD", "SOL-USD", "BNB-USD", "XRP-USD",
     "DOGE-USD", "ADA-USD", "AVAX-USD", "LINK-USD", "DOT-USD",
-    "TRX-USD", "MATIC-USD", "SHIB-USD", "LTC-USD", "BCH-USD",
-    "UNI-USD", "ATOM-USD", "NEAR-USD", "APT-USD", "ARB-USD",
+    # MATIC/UNI/APT lost their plain "-USD" tickers on Yahoo (404 every cycle,
+    # so 3 of 20 movers were silently missing). These suffixed ids resolve.
+    "TRX-USD", "POL28321-USD", "SHIB-USD", "LTC-USD", "BCH-USD",
+    "UNI7083-USD", "ATOM-USD", "NEAR-USD", "APT21794-USD", "ARB-USD",
 ]
 MOVER_UNIVERSES = {"nifty": NIFTY_50, "us": US_TOP_LIQUID, "crypto": CRYPTO_TOP_20}
 _MOVERS_CACHE = {}      # market -> (ts, [sym,...])
@@ -1563,6 +1572,71 @@ def _git(*args, timeout=120):
         raise RuntimeError((r.stderr or r.stdout).strip()[:300])
     return r.stdout
 
+def _git_soft(*args, timeout=180):
+    """Run git and return the finished process instead of raising."""
+    return subprocess.run(["git", "-C", BASE] + list(args),
+                          capture_output=True, text=True, timeout=timeout)
+
+def _rebase_and_push(files, msg):
+    """Commit state files, merge origin/main keeping OUR state, push.
+
+    Two instances (old + new on deploy) can write state at the same time, so a
+    plain 'pull --rebase' conflicted on state.json and left the work tree with
+    '<<<<<<<' markers: json.load() then failed, the bot silently started from a
+    fresh Rs 30,000 state, and every later commit died with 'you have unmerged
+    files' - state sync stayed dead until the next deploy. So: always abort a
+    leftover rebase first, and on conflict keep the LIVE local state
+    (-X theirs = the commit being replayed) instead of dying.
+    """
+    _git("config", "user.email", "arena-bot@users.noreply.github.com")
+    _git("config", "user.name", "strategy-arena")
+    # 'rebase --abort' restores the work tree to the last commit, which would throw
+    # away state saved since then: keep the live bytes and write them back after.
+    keep = {}
+    for f in files:
+        p = os.path.join(BASE, f)
+        if os.path.exists(p):
+            try:
+                keep[f] = open(p, "rb").read()
+            except Exception:
+                pass
+    _git_soft("rebase", "--abort")
+    for f, b in keep.items():
+        try:
+            open(os.path.join(BASE, f), "wb").write(b)
+        except Exception:
+            pass
+    _git("add", *files)
+    if _git_soft("diff", "--cached", "--quiet").returncode != 0:
+        _git("commit", "-m", msg)
+    last = "no attempt"
+    for _ in range(3):
+        _git_soft("fetch", _auth_url(), "main")
+        r = _git_soft("rebase", "-X", "theirs", "FETCH_HEAD")
+        if r.returncode != 0:
+            _git_soft("rebase", "--abort")
+            last = (r.stderr or r.stdout).strip()[:200]
+            continue
+        p = _git_soft("push", _auth_url(), "HEAD:main")
+        if p.returncode == 0:
+            return
+        last = (p.stderr or p.stdout).strip()[:200]
+    raise RuntimeError(f"git sync failed after 3 tries: {last}")
+
+def _boot_pull():
+    """Pull origin/main at boot; if that conflicts, hard-reset to the pushed state."""
+    if not os.path.isdir(os.path.join(BASE, ".git")):
+        return "no .git"
+    _git_soft("rebase", "--abort")
+    _git_soft("checkout", "--", "arena.log", "decisions.log")
+    _git_soft("fetch", _auth_url(), "main")
+    r = _git_soft("rebase", "FETCH_HEAD")
+    if r.returncode != 0:
+        _git_soft("rebase", "--abort")
+        _git_soft("reset", "--hard", "FETCH_HEAD")
+        return "conflict -> hard reset to origin/main"
+    return "clean"
+
 def git_sync():
     """Commit state files and push to GitHub so Pages dashboard + daily verdict stay fresh.
     Without GITHUB_TOKEN the loop still trades, but state is local-only (lost on restart)."""
@@ -1570,19 +1644,10 @@ def git_sync():
         SERVE_STATUS["sync"] = "no-token (state local only)"
         return
     try:
-        _git("config", "user.email", "arena-bot@users.noreply.github.com")
-        _git("config", "user.name", "strategy-arena")
-        _git("add", *SERVE_FILES)
-        r = subprocess.run(["git", "-C", BASE, "diff", "--cached", "--quiet"],
-                           capture_output=True)
-        if r.returncode != 0:
-            _git("commit", "-m",
-                 f"arena serve {datetime.now(IST).strftime('%Y-%m-%dT%H:%M:%S%z')} [skip ci][skip render]")
         # arena.log is tracked but never committed from serve mode; restore so rebase is clean
-        subprocess.run(["git", "-C", BASE, "checkout", "--", "arena.log"],
-                       capture_output=True)
-        _git("pull", "--rebase", _auth_url(), "main")
-        _git("push", _auth_url(), "HEAD:main")
+        _git_soft("checkout", "--", "arena.log")
+        _rebase_and_push(SERVE_FILES,
+                         f"arena serve {datetime.now(IST).strftime('%Y-%m-%dT%H:%M:%S%z')} [skip ci][skip render]")
         SERVE_STATUS["sync"] = "ok"
         SERVE_STATUS["last_sync"] = datetime.now(IST).isoformat()
     except Exception as e:
@@ -1593,10 +1658,7 @@ def serve_boot():
     """Pull latest state from GitHub before trading (Render disk is ephemeral)."""
     if os.path.isdir(os.path.join(BASE, ".git")):
         try:
-            subprocess.run(["git", "-C", BASE, "checkout", "--", "arena.log"],
-                           capture_output=True)
-            _git("pull", "--rebase", _auth_url(), "main")
-            log("serve boot: pulled latest state from GitHub")
+            log(f"serve boot: pulled latest state from GitHub ({_boot_pull()})")
         except Exception as e:
             log(f"serve boot pull failed (using local state): {e}")
 
