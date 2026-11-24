@@ -1,7 +1,7 @@
 # Strategy Arena — Leaderboard
-_Updated: 2026-11-24 06:48 IST_
+_Updated: 2026-11-24 06:51 IST_
 
-**Total equity: Rs 256,763.00** / Rs 260,000 start (-1.24%)
+**Total equity: Rs 256,774.17** / Rs 260,000 start (-1.24%)
 
 | Rank | Bot | Strategy | Equity | P&L | % | Trades | Win% | Open |
 |---|---|---|---|---|---|---|---|---|
@@ -19,17 +19,17 @@ _Updated: 2026-11-24 06:48 IST_
 | 12 | smart_10 | Overnight Edge (Smart v2) | Rs 9,978.74 | -21.26 | -0.21% | 0 | 0% | 2 |
 | 13 | s13 | Afternoon Sell-the-Rip Short | Rs 9,976.69 | -23.31 | -0.23% | 5 | 40% | 0 |
 | 14 | s12 | OHL + CPR Breakdown Short | Rs 9,967.55 | -32.45 | -0.32% | 10 | 40% | 1 |
-| 15 | s07 | First-Candle ORB 15m | Rs 9,941.93 | -58.07 | -0.58% | 35 | 23% | 2 |
+| 15 | s07 | First-Candle ORB 15m | Rs 9,946.38 | -53.62 | -0.54% | 35 | 23% | 2 |
 | 16 | smart_13 | Afternoon Sell-the-Rip Short (Smart v2) | Rs 9,941.46 | -58.54 | -0.59% | 5 | 20% | 0 |
 | 17 | smart_04 | Multi-Market Trend (Smart v2) | Rs 9,941.08 | -58.92 | -0.59% | 0 | 0% | 4 |
 | 18 | smart_12 | OHL + CPR Short (Smart v2) | Rs 9,934.19 | -65.81 | -0.66% | 9 | 33% | 1 |
 | 19 | smart_03 | ETF Dual Momentum (Smart v2) | Rs 9,912.26 | -87.74 | -0.88% | 0 | 0% | 1 |
 | 20 | smart_08 | Pre-Market Breakout (Smart v2) | Rs 9,872.39 | -127.61 | -1.28% | 8 | 38% | 0 |
 | 21 | s01 | St. Gallen ORB Noise-Band | Rs 9,811.70 | -188.30 | -1.88% | 15 | 13% | 1 |
-| 22 | smart_07 | First-Candle ORB (Smart v2) | Rs 9,795.94 | -204.06 | -2.04% | 28 | 18% | 2 |
+| 22 | smart_07 | First-Candle ORB (Smart v2) | Rs 9,800.32 | -199.68 | -2.00% | 28 | 18% | 2 |
 | 23 | s08 | Pre-Market High/Low Break | Rs 9,779.89 | -220.11 | -2.20% | 52 | 25% | 0 |
 | 24 | s06 | Prev-Day High/Low Retest | Rs 9,718.31 | -281.69 | -2.82% | 36 | 19% | 1 |
 | 25 | smart_06 | Prev-Day Retest (Smart v2) | Rs 9,717.83 | -282.17 | -2.82% | 31 | 19% | 1 |
-| 26 | smart_01 | St. Gallen ORB (Smart v2) | Rs 8,307.17 | -1,692.83 | -16.93% | 66 | 6% | 1 |
+| 26 | smart_01 | St. Gallen ORB (Smart v2) | Rs 8,309.51 | -1,690.49 | -16.90% | 66 | 6% | 1 |
 
 **Best so far: s10 — Overnight Edge + Turnaround Tue (+1.99%)**
