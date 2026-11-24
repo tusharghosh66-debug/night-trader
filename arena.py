@@ -395,12 +395,14 @@ class Ctx:
                 self._live[sym] = None
         return self._live[sym]
 
-# ---- s01: St. Gallen Opening-Range Noise-Band Breakout (30m, US+India+crypto) ----
-S01_SYMS = ["NQ=F", "NIFTYBEES.NS", "BTC-USD"]
+# ---- s01: St. Gallen Opening-Range Noise-Band Breakout (30m, US+India) ----
+S01_SYMS = ["NQ=F", "NIFTYBEES.NS"]
 def s01(bs, ctx):
+    now_ms = time.time() * 1000
     for sym in S01_SYMS:
         if not mkt_open(sym):
             continue
+        mins = mkt_hm(now_ms, sym)
         kl = ctx.candles(sym, "30m", "5d", drop_last=True)
         daily = ctx.candles(sym, "1d", "1mo")
         if len(kl) < 3 or len(daily) < 15:
@@ -423,7 +425,7 @@ def s01(bs, ctx):
             p["bars"] += 1
             inside = lower < px < upper
             em = mkt_eod_min(sym)
-            eod = em is not None and mkt_hm(kl[-1]["t"], sym) >= em
+            eod = em is not None and mins >= em
             hit = (p["side"] > 0 and px <= p["stop"]) or (p["side"] < 0 and px >= p["stop"])
             time_exit = is_crypto(sym) and p["bars"] >= 16   # 8h max hold, 24x7 market
             if inside or eod or hit or time_exit:
@@ -434,7 +436,7 @@ def s01(bs, ctx):
         if len(bs["positions"]) >= 1:
             return
         cut = mkt_entry_cutoff_min(sym)
-        if cut is not None and mkt_hm(kl[-1]["t"], sym) >= cut:
+        if cut is not None and mins >= cut:
             continue
         eq = bot_equity(bs)
         last_c = kl[-1]["c"]
@@ -614,9 +616,11 @@ def _prev_day_hl(kl, sym):
     return days[ds[-2]]
 
 def s06(bs, ctx):
+    now_ms = time.time() * 1000
     for sym in S06_SYMS:
         if not mkt_open(sym):
             continue
+        mins = mkt_hm(now_ms, sym)
         kl = ctx.candles(sym, "15m", "5d")
         if len(kl) < 10:
             continue
@@ -631,7 +635,7 @@ def s06(bs, ctx):
             p["bars"] += 1
             hit = (p["side"] > 0 and px <= p["stop"]) or (p["side"] < 0 and px >= p["stop"])
             em = mkt_eod_min(sym)
-            eod = em is not None and mkt_hm(kl[-1]["t"], sym) >= em
+            eod = em is not None and mins >= em
             time_exit = is_crypto(sym) and p["bars"] >= 26   # 6.5h max hold, 24x7
             if hit or eod or time_exit:
                 reason = "stop" if hit else ("eod" if eod else "time-exit")
@@ -641,7 +645,7 @@ def s06(bs, ctx):
         if len(bs["positions"]) >= 3:
             continue
         cut = mkt_entry_cutoff_min(sym)
-        if cut is not None and mkt_hm(kl[-1]["t"], sym) >= cut:
+        if cut is not None and mins >= cut:
             continue
         eq = bot_equity(bs)
         last_c = kl[-1]["c"]
@@ -657,7 +661,7 @@ def s06(bs, ctx):
                 open_position(bs, sym, -1, qty, px, pd["l"] + a, "pd-low-retest", ctx.now)
 
 # ---- s07: First-Candle ORB 15m Break & Retest (NY open) ----
-S07_SYMS = ["QQQ", "SPY", "AAPL", "NVDA", "NIFTYBEES.NS", "RELIANCE.NS", "BTC-USD"]
+S07_SYMS = ["QQQ", "SPY", "AAPL", "NVDA", "NIFTYBEES.NS", "RELIANCE.NS"]
 def s07(bs, ctx):
     now_ms = time.time() * 1000
     for sym in S07_SYMS:
@@ -680,14 +684,15 @@ def s07(bs, ctx):
             p["bars"] += 1
             hit = (p["side"] > 0 and px <= p["stop"]) or (p["side"] < 0 and px >= p["stop"])
             em = mkt_eod_min(sym)
-            eod = em is not None and mkt_hm(kl[-1]["t"], sym) >= em
+            eod = em is not None and mins >= em
             time_exit = is_crypto(sym) and p["bars"] >= 26   # 6.5h max hold, 24x7
             if hit or eod or time_exit:
                 reason = "stop" if hit else ("eod" if eod else "time-exit")
                 row = close_position(bs, sym, px, reason, ctx.now)
                 row[1] = "s07"; record_trade("s07", bs, row)
             continue
-        if len(bs["positions"]) >= 3 or mins > mkt_orb_cutoff(sym):
+        cut = mkt_entry_cutoff_min(sym)
+        if len(bs["positions"]) >= 3 or mins > mkt_orb_cutoff(sym) or (cut is not None and mins >= cut):
             continue
         eq = bot_equity(bs)
         last_c = kl[-1]["c"]
@@ -705,6 +710,7 @@ S08_SYMS = ["AAPL", "MSFT", "NVDA", "TSLA"]
 def s08(bs, ctx):
     if not us_open():
         return
+    now_ms = time.time() * 1000
     for sym in S08_SYMS:
         kl = ctx.candles(sym, "15m", "5d", prepost=True)
         if len(kl) < 10:
@@ -724,7 +730,7 @@ def s08(bs, ctx):
             p = bs["positions"][sym]
             p["bars"] += 1
             hit = (p["side"] > 0 and px <= p["stop"]) or (p["side"] < 0 and px >= p["stop"])
-            eod = et_hm(kl[-1]["t"]) >= 15 * 60 + 45
+            eod = et_hm(now_ms) >= 15 * 60 + 45
             if hit or eod:
                 row = close_position(bs, sym, px, "stop" if hit else "eod", ctx.now)
                 row[1] = "s08"; record_trade("s08", bs, row)
@@ -732,7 +738,7 @@ def s08(bs, ctx):
         if len(bs["positions"]) >= 3:
             continue
         cut = mkt_entry_cutoff_min(sym)
-        if cut is not None and mkt_hm(kl[-1]["t"], sym) >= cut:
+        if cut is not None and mkt_hm(now_ms, sym) >= cut:
             continue
         eq = bot_equity(bs)
         last_c = reg[-1]["c"]
