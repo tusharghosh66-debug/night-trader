@@ -1,7 +1,7 @@
 # Strategy Arena — Leaderboard
-_Updated: 2026-11-24 18:43 IST_
+_Updated: 2026-11-24 18:46 IST_
 
-**Total equity: Rs 254,740.99** / Rs 260,000 start (-2.02%)
+**Total equity: Rs 254,732.77** / Rs 260,000 start (-2.03%)
 
 | Rank | Bot | Strategy | Equity | P&L | % | Trades | Win% | Open |
 |---|---|---|---|---|---|---|---|---|
@@ -13,15 +13,15 @@ _Updated: 2026-11-24 18:43 IST_
 | 6 | smart_02 | Trend-Filtered Mean Rev (Smart v2) | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 7 | smart_05 | Connors RSI(2) (Smart v2) | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 8 | smart_09 | Statistical Arbitrage (Smart v2) | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
-| 9 | smart_11 | Spike & VWAP Short (Smart v2) | Rs 9,998.38 | -1.62 | -0.02% | 6 | 33% | 1 |
-| 10 | s04 | Multi-Market Trend Following | Rs 9,993.33 | -6.67 | -0.07% | 0 | 0% | 4 |
+| 9 | s04 | Multi-Market Trend Following | Rs 9,993.33 | -6.67 | -0.07% | 0 | 0% | 4 |
+| 10 | smart_11 | Spike & VWAP Short (Smart v2) | Rs 9,992.77 | -7.23 | -0.07% | 7 | 43% | 0 |
 | 11 | s11 | Spike & VWAP Rejection Short | Rs 9,988.38 | -11.62 | -0.12% | 7 | 29% | 1 |
 | 12 | s13 | Afternoon Sell-the-Rip Short | Rs 9,976.69 | -23.31 | -0.23% | 5 | 40% | 0 |
 | 13 | smart_10 | Overnight Edge (Smart v2) | Rs 9,965.25 | -34.75 | -0.35% | 1 | 0% | 2 |
 | 14 | s12 | OHL + CPR Breakdown Short | Rs 9,957.22 | -42.78 | -0.43% | 11 | 36% | 1 |
 | 15 | smart_13 | Afternoon Sell-the-Rip Short (Smart v2) | Rs 9,941.46 | -58.54 | -0.59% | 5 | 20% | 0 |
 | 16 | smart_04 | Multi-Market Trend (Smart v2) | Rs 9,941.08 | -58.92 | -0.59% | 0 | 0% | 4 |
-| 17 | smart_12 | OHL + CPR Short (Smart v2) | Rs 9,932.96 | -67.04 | -0.67% | 10 | 30% | 1 |
+| 17 | smart_12 | OHL + CPR Short (Smart v2) | Rs 9,930.35 | -69.65 | -0.70% | 10 | 30% | 1 |
 | 18 | smart_03 | ETF Dual Momentum (Smart v2) | Rs 9,912.26 | -87.74 | -0.88% | 0 | 0% | 1 |
 | 19 | smart_08 | Pre-Market Breakout (Smart v2) | Rs 9,872.39 | -127.61 | -1.28% | 8 | 38% | 0 |
 | 20 | s01 | St. Gallen ORB Noise-Band | Rs 9,811.70 | -188.30 | -1.88% | 15 | 13% | 1 |
