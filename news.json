@@ -1,8 +1,8 @@
 {
- "ts": "2026-11-24T13:04:19.745981+05:30",
+ "ts": "2026-11-24T14:04:19.771190+05:30",
  "crypto": {
-  "score": 0.134,
-  "n_headlines": 177,
+  "score": 0.155,
+  "n_headlines": 178,
   "n_sources": 6,
   "top": [
    "Bitcoin Price Crash: Bitcoin Falls 25% in November; Solana, Avalanche Lose Up to 46% as Crypto Sell-Off Deepens - Kotak Neo",
@@ -10,9 +10,9 @@
    "Crypto news: Bitcoin jumps to $64,000 and ether gains 7%. Will the rebound hold? - CryptoTicker.io",
    "Bitcoin rebounds from 2-year low as Wall Street futures recover",
    "Citi Says Customers Are Responsible When AI Banking Agents Go Rogue\u2014Even After a Hack",
-   "Crypto Market Bloodbath: Bitcoin, Ethereum and XRP Crash Up to 10% as Bear Market Fears Grow - Coinpedia",
    "Binance Market Update | Bitcoin Rebounds to $61K as Nvidia Surges 9% and Traders Price Out a 50bp Fed Hike - TradingView",
-   "Bitcoin, Ethereum, XRP, Dogecoin Gain Amid Crypto\u2019s Relief Rally on Jensen Huang\u2019s Return: Analyst Says BTC\u2019s \u2018Big Move\u2019 Will Come - Cryptonews.net"
+   "Bitcoin Slips Back Toward $60K as Traders Pocket Altcoin Gains After Weekend Rebound - BigGo Finance",
+   "Bitcoin, Ethereum, XRP, Dogecoin Gain Amid Crypto\u2019s Relief Rally on Jensen Huang\u2019s Return: Analyst Says B - Benzinga"
   ],
   "headlines": [
    "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
@@ -42,6 +42,7 @@
    "Market rout kills 50 basis points December Fed rate hike bets",
    "More on the pending oversight hearings: State of Crypto",
    "Cointelegraph.com News",
+   "Bitcoin ETFs keep bleeding as BlackRock\u2019s IBIT shares gain nearly 5%",
    "Here\u2019s what happened in crypto today",
    "Why 42 Macro says it\u2019s waiting to buy the Bitcoin dip",
    "Google wants to make you the star of your own AI slop movies",
@@ -71,7 +72,6 @@
    "Will Bitcoin\u2019s big rebound hold? More tampered Ledgers found: Hodler\u2019s Digest",
    "The future of onchain FX could start with users, not institutional liquidity",
    "Bitcoin briefly drops to $17K on Kraken, exchange upholds trades",
-   "South Korean exchanges halt CYBER transfers amid suspected bridge exploit",
    "China&#39;s Z.ai Says Its New AI Model Can Think Like One Four Times Its Size",
    "OpenAI Will Pay You Up to $8K to Preach the AI Gospel to Small Businesses",
    "Why One Math Proof Has AI Experts Warning Humans Might Soon Lose Control"
@@ -79,8 +79,8 @@
   "fear_greed": 11
  },
  "india": {
-  "score": 0.363,
-  "n_headlines": 215,
+  "score": 0.417,
+  "n_headlines": 216,
   "n_sources": 6,
   "top": [
    "Nasdaq surges 6%, Dow soars 1,400 pts as markets rebound on Huang\u2019s return: Stock Market Live Updates",
@@ -94,6 +94,7 @@
   ],
   "headlines": [
    "Economic Times",
+   "Investors mint Rs 34.61 lakh cr in November as markets rally nearly 11%",
    "HDFC Bank, Reliance Industries among 10 stocks with highest DII holding in Q2. See full list",
    "The LTCG debate: Why markets need tax stability and not ad-hoc fixes",
    "Bitcoin fails to hold Nvidia bump with crypto headwinds in focus",
@@ -131,7 +132,8 @@
    "Kotak Bank Share Price Highlights: Kotak Bank Stock Price History",
    "Axis Bank Share Price Highlights: Axis Bank Stock Price History",
    "BPCL Share Price Highlights: BPCL Stock Price History",
-   "Bajaj Finance Share Price Highlights: Bajaj Finance Stock Price History",
+   "Is stock market open today? Thanksgiving, Black Friday holiday, US trading schedule - Nasdaq, New York Stock Exchange",
+   "RBI\u2019s Rohit Jain wants primary dealers to become architects of G-Sec market development",
    "Gold rate today, 24 November 2026: Gold price rebounds from 14-month low; is it the right time to buy? Experts' explain",
    "Jensen Huang is back $1 trn m-cap; Nvidia's \u20b992.84 lakh cr comeback - 70% losses recovered; Baird is bullish; target",
    "Of 30 Sensex stocks, 22 closed in the red - These 8 shares defied stock market crash | Full list of 22 red and 8 green",
@@ -150,9 +152,7 @@
    "Four AI stocks with multi-year growth plans to watch for the long term",
    "Nvidia\u2019s 31% Surge Exposes Wall Street\u2019s Growing Stock Trap",
    "Gold Rebounds as Huang\u2019s Return to Nvidia Revives Risk Appetite",
-   "Credit Fear Gauge Drops as Huang\u2019s Return Boosts AI Hopes",
-   "Taiwan Meets With TSMC, Financial Firms in Bid to Calm Markets",
-   "Nvidia\u2019s Big Rebound Hammers Leveraged Funds Betting on a Fall"
+   "Credit Fear Gauge Drops as Huang\u2019s Return Boosts AI Hopes"
   ]
  },
  "us": {
@@ -161,13 +161,13 @@
   "n_sources": 6,
   "top": [
    "Nasdaq-100 futures surge 7%, S&amp;P 500 gain 4.3%, Dow up 2.6% in Wall Street rebound - Beinsure",
+   "US recession fears rise as falling household wealth and market turmoil point to 25% risk: Report - www.indiagazette.com",
    "AI adoption grows in Asia, but measuring the gains remains tricky",
    "Nvidia&#x2019;s stock is surging again. What to know before chasing the AI rally.",
    "Stock market today: Dow futures jump 800 points and Nasdaq soars 3% after entering correction - Fortune",
    "Stocks surge and recover half of last week\u2019s plunge as tech stocks rebound - Los Angeles Times",
    "Stock Market Today: Dow, S&amp;P 500, and Nasdaq Surge as Nvidia Leads a Major AI Rebound - 24/7 Wall St.",
-   "Nasdaq, Dow, S&amp;P 500 Futures Gain As Jensen Huang\u2019s Return To Nvidia Sparks $3T Market Rally: SOXS, IBRX, HPE, TSM In Focus - Yahoo Finance",
-   "Stock Futures Are Rebounding After Last Week\u2019s Bloodbath - Barron's"
+   "Nasdaq, Dow, S&amp;P 500 Futures Gain As Jensen Huang\u2019s Return To Nvidia Sparks $3T Market Rally: SOXS, IBRX, HPE, TSM In Focus - Yahoo Finance"
   ],
   "headlines": [
    "Nvidia surge: What investors should do with the stock and the AI trade now",
@@ -178,14 +178,14 @@
    "Trump sealed deal for Nvidia to rehire Jensen Huang as CEO",
    "U.S. court orders to proceed with planned ammunition detonation in Iowa",
    "China has changed tactics but is still thwarting India&apos;s rise, a U.S. panel says",
-   "U.S. adds Megaspeed to trade blacklist over export control concerns amid Nvidia controversy",
    "CNBC&apos;s The China Connection newsletter: AI race spreads from robots to smartphones",
+   "U.S. adds Megaspeed to trade blacklist over export control concerns amid Nvidia controversy",
    "Peterson: Here\u2019s what Bessent\u2019s about-face on Jensen Huang reveals about Trump and China",
    "AI adoption grows in Asia, but measuring the gains remains tricky",
    "Six key questions raised by Jensen Huang&apos;s return to Nvidia",
    "Trump administration proposes rule that could curb ESG investing in 401(k)s",
-   "Asian Nvidia-related stocks jump after Huang&apos;s return, with Taiwan&apos;s near price limits",
    "Investors are missing the bigger picture in CrowdStrike&apos;s deal to buy Zscaler",
+   "Asian Nvidia-related stocks jump after Huang&apos;s return, with Taiwan&apos;s near price limits",
    "Congress shreds Nvidia&apos;s &apos;outrageous&apos; decision to bring back Huang: &apos;Failure of character&apos;",
    "Amazon faces FAA probe after delivery drone strikes Michigan fiber cable, garage",
    "Fed&apos;s John Williams indicates higher interest rates likely &apos;over time&apos; to address inflation",
@@ -213,23 +213,23 @@
    "Short sellers get smoked as Nvidia tallies biggest one-day gain in stock-market history",
    "Google News",
    "Stock futures rise, erasing some losses after tech rout - Yahoo Finance",
+   "Asian Stocks to Rally as Huang\u2019s Return Revives AI: Markets Wrap - Bloomberg.com",
    "Nvidia shares soar more than 30% after Huang reinstated as CEO - CNN",
    "Stock market today: Dow futures jump 800 points and Nasdaq soars 3% after entering correction - Fortune",
    "The S&amp;P 500 Just Had Its Worst Week in 18 Months. Is This a Buying Opportunity? - The Motley Fool",
    "How Good Was Monday\u2019s Stock Rally? Here\u2019s Where It Ranks in History - Investopedia",
-   "Wall Street Storms Back as AI Trade Rebounds With Huang\u2019s Return - Bloomberg.com",
    "Stock market rebounds sharply after sell-off, Nvidia closes up more than 31% - ABC News - Breaking News, Latest News and Videos",
    "Stock market recovers following reinstatement of Jensen Huang as Nvidia CEO - CBS News",
+   "Stocks surge and recover half of last week\u2019s plunge as tech stocks rebound - Los Angeles Times",
    "Stock Market Today, Nov. 23, 2026: Powerful Wall Street Rally - STL.News",
    "Wall Street's brutal week brought a string of ugly stock-market milestones. Here's the damage. - Business Insider",
    "Wall Street rebounds as Jensen Huang returns as Nvidia CEO - Reuters",
-   "Stocks surge and recover half of last week\u2019s plunge as tech stocks rebound - Los Angeles Times",
    "Stock Market Today: Dow Jones, S&amp;P 500, Nasdaq 100 Futures Rise After ANT IPO and Friday\u2019s AI Rout\u2014 ORCL - Benzinga",
-   "U.S. stocks higher at close of trade; Dow Jones Industrial Average up 3.01% - Investing.com",
-   "Stock Market Today: Dow, S&amp;P 500, and Nasdaq Surge as Nvidia Leads a Major AI Rebound - 24/7 Wall St.",
-   "Nasdaq, Dow, S&amp;P 500 Futures Jump Nearly 2% After Brutal Tech Selloff Last Week: GME, JNJ, ALNY, GAP In Focus - TradingView",
+   "U.S. stock futures tick higher after Nvidia-led Wall Street rally - Investing.com",
    "North American stocks soar, recovering half of last week's plunge after Jensen Huang returns as Nvidia's CEO - CBC",
-   "NASDAQ Index, SP500, Dow Jones Forecasts \u2013 NASDAQ Rallies As Nvidia Soars 31% - FXEmpire"
+   "Stock Market Today: Dow, S&amp;P 500, and Nasdaq Surge as Nvidia Leads a Major AI Rebound - 24/7 Wall St.",
+   "Stocks roar back as Jensen Huang makes stunning return as Nvidia CEO and investors go bargain hunting - The Globe and Mail",
+   "Dow Jones Futures: Tech Stocks, Nvidia Snap Back On Jensen Huang's Return; Elon Musk-Led SpaceX, Tesla Rally - Investor's Business Daily"
   ]
  }
 }
