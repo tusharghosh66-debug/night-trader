@@ -1,8 +1,8 @@
 # Night Trader v2 — Paper Trading Report (3 markets)
-_Updated: 2026-11-25 01:34 IST_
+_Updated: 2026-11-25 01:37 IST_
 
 ## CRYPTO (OPEN) — ₹10,000.00 | P&L +0.00 (+0.00%)
-Cash ₹10,000.00 | cycles 12536 | capital ₹10,000
+Cash ₹10,000.00 | cycles 12541 | capital ₹10,000
 _No open positions — all cash._
 News sentiment: -0.21 (180 headlines, 6 sources, Fear&Greed 11)
 - Bitcoin Price Crash: Bitcoin Falls 25% in November; Solana, Avalanche Lose Up to 46% as Crypto Sell-Off Deepens - Kotak Neo
@@ -24,7 +24,7 @@ News sentiment: +0.43 (222 headlines, 6 sources)
 - Indian Rupee rally takes a breather as India’s HSBC PMI posts another expansion - www.tmgm.com
 
 ## US (OPEN) — ₹10,000.00 | P&L +0.00 (+0.00%)
-Cash ₹10,000.00 | cycles 2060 | capital ₹10,000
+Cash ₹10,000.00 | cycles 2065 | capital ₹10,000
 _No open positions — all cash._
 News sentiment: +0.23 (180 headlines, 5 sources)
 - Nasdaq-100 futures surge 7%, S&amp;P 500 gain 4.3%, Dow up 2.6% in Wall Street rebound - Beinsure
