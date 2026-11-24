@@ -1,7 +1,7 @@
 # Strategy Arena — Leaderboard
-_Updated: 2026-11-24 09:08 IST_
+_Updated: 2026-11-24 09:11 IST_
 
-**Total equity: Rs 256,648.16** / Rs 260,000 start (-1.29%)
+**Total equity: Rs 256,644.36** / Rs 260,000 start (-1.29%)
 
 | Rank | Bot | Strategy | Equity | P&L | % | Trades | Win% | Open |
 |---|---|---|---|---|---|---|---|---|
@@ -22,14 +22,14 @@ _Updated: 2026-11-24 09:08 IST_
 | 15 | smart_13 | Afternoon Sell-the-Rip Short (Smart v2) | Rs 9,941.46 | -58.54 | -0.59% | 5 | 20% | 0 |
 | 16 | smart_04 | Multi-Market Trend (Smart v2) | Rs 9,941.08 | -58.92 | -0.59% | 0 | 0% | 4 |
 | 17 | s07 | First-Candle ORB 15m | Rs 9,926.64 | -73.36 | -0.73% | 37 | 22% | 1 |
-| 18 | smart_12 | OHL + CPR Short (Smart v2) | Rs 9,924.52 | -75.48 | -0.75% | 10 | 30% | 1 |
+| 18 | smart_12 | OHL + CPR Short (Smart v2) | Rs 9,924.44 | -75.56 | -0.76% | 10 | 30% | 1 |
 | 19 | smart_03 | ETF Dual Momentum (Smart v2) | Rs 9,912.26 | -87.74 | -0.88% | 0 | 0% | 1 |
 | 20 | smart_08 | Pre-Market Breakout (Smart v2) | Rs 9,872.39 | -127.61 | -1.28% | 8 | 38% | 0 |
 | 21 | s01 | St. Gallen ORB Noise-Band | Rs 9,811.70 | -188.30 | -1.88% | 15 | 13% | 1 |
 | 22 | smart_07 | First-Candle ORB (Smart v2) | Rs 9,780.87 | -219.13 | -2.19% | 30 | 17% | 1 |
 | 23 | s08 | Pre-Market High/Low Break | Rs 9,779.89 | -220.11 | -2.20% | 52 | 25% | 0 |
-| 24 | s06 | Prev-Day High/Low Retest | Rs 9,716.34 | -283.66 | -2.84% | 37 | 22% | 2 |
-| 25 | smart_06 | Prev-Day Retest (Smart v2) | Rs 9,715.87 | -284.13 | -2.84% | 32 | 22% | 2 |
-| 26 | smart_01 | St. Gallen ORB (Smart v2) | Rs 8,247.03 | -1,752.97 | -17.53% | 66 | 6% | 1 |
+| 24 | s06 | Prev-Day High/Low Retest | Rs 9,714.56 | -285.44 | -2.85% | 37 | 22% | 2 |
+| 25 | smart_06 | Prev-Day Retest (Smart v2) | Rs 9,714.08 | -285.92 | -2.86% | 32 | 22% | 2 |
+| 26 | smart_01 | St. Gallen ORB (Smart v2) | Rs 8,246.88 | -1,753.12 | -17.53% | 66 | 6% | 1 |
 
 **Best so far: s10 — Overnight Edge + Turnaround Tue (+1.99%)**
