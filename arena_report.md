@@ -1,7 +1,7 @@
 # Strategy Arena — Leaderboard
-_Updated: 2026-11-24 08:13 IST_
+_Updated: 2026-11-24 08:16 IST_
 
-**Total equity: Rs 256,676.87** / Rs 260,000 start (-1.28%)
+**Total equity: Rs 256,673.52** / Rs 260,000 start (-1.28%)
 
 | Rank | Bot | Strategy | Equity | P&L | % | Trades | Win% | Open |
 |---|---|---|---|---|---|---|---|---|
@@ -28,8 +28,8 @@ _Updated: 2026-11-24 08:13 IST_
 | 21 | s01 | St. Gallen ORB Noise-Band | Rs 9,811.70 | -188.30 | -1.88% | 15 | 13% | 1 |
 | 22 | smart_07 | First-Candle ORB (Smart v2) | Rs 9,780.87 | -219.13 | -2.19% | 30 | 17% | 1 |
 | 23 | s08 | Pre-Market High/Low Break | Rs 9,779.89 | -220.11 | -2.20% | 52 | 25% | 0 |
-| 24 | s06 | Prev-Day High/Low Retest | Rs 9,718.31 | -281.69 | -2.82% | 36 | 19% | 1 |
-| 25 | smart_06 | Prev-Day Retest (Smart v2) | Rs 9,717.83 | -282.17 | -2.82% | 31 | 19% | 1 |
-| 26 | smart_01 | St. Gallen ORB (Smart v2) | Rs 8,260.86 | -1,739.14 | -17.39% | 66 | 6% | 1 |
+| 24 | s06 | Prev-Day High/Low Retest | Rs 9,715.40 | -284.60 | -2.85% | 36 | 19% | 2 |
+| 25 | smart_06 | Prev-Day Retest (Smart v2) | Rs 9,714.92 | -285.08 | -2.85% | 31 | 19% | 2 |
+| 26 | smart_01 | St. Gallen ORB (Smart v2) | Rs 8,263.35 | -1,736.65 | -17.37% | 66 | 6% | 1 |
 
 **Best so far: s10 — Overnight Edge + Turnaround Tue (+1.99%)**
