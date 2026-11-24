@@ -1,8 +1,8 @@
 {
- "ts": "2026-11-24T07:04:11.337406+05:30",
+ "ts": "2026-11-24T08:04:11.353007+05:30",
  "crypto": {
-  "score": 0.141,
-  "n_headlines": 179,
+  "score": 0.167,
+  "n_headlines": 178,
   "n_sources": 6,
   "top": [
    "Bitcoin Price Crash: Bitcoin Falls 25% in November; Solana, Avalanche Lose Up to 46% as Crypto Sell-Off Deepens - Kotak Neo",
@@ -10,9 +10,9 @@
    "Crypto news: Bitcoin jumps to $64,000 and ether gains 7%. Will the rebound hold? - CryptoTicker.io",
    "Bitcoin rebounds from 2-year low as Wall Street futures recover",
    "Citi Says Customers Are Responsible When AI Banking Agents Go Rogue\u2014Even After a Hack",
+   "Bitcoin, Ethereum, XRP, Dogecoin Gain Amid Crypto\u2019s Relief Rally on Jensen Huang\u2019s Return: Analyst Says B - Benzinga",
    "Bitcoin News | Bitcoin's Rebound Fades in US Hours as Nvidia Soars 31% on Jensen Huang's Return - TradingView",
-   "Binance Market Update | Bitcoin Rebounds to $61K as Nvidia Surges 9% and Traders Price Out a 50bp Fed Hike - TradingView",
-   "The Great Cash Grab Is Crashing Gold, Silver And Bitcoin, Goldman Sachs Warns The Stock Selloff Isn't Over - Yahoo Finance"
+   "Binance Market Update | Bitcoin Rebounds to $61K as Nvidia Surges 9% and Traders Price Out a 50bp Fed Hike - TradingView"
   ],
   "headlines": [
    "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
@@ -79,8 +79,8 @@
   "fear_greed": 11
  },
  "india": {
-  "score": 0.139,
-  "n_headlines": 216,
+  "score": 0.166,
+  "n_headlines": 217,
   "n_sources": 6,
   "top": [
    "Nasdaq surges 6%, Dow soars 1,400 pts as markets rebound on Huang\u2019s return: Stock Market Live Updates",
@@ -90,10 +90,11 @@
    "Bank Nifty crashes over 2,000 points, plunges 3.1%; HDFC Bank, ICICI Bank, Axis Bank, SBI among top losers - Moneycontrol.com",
    "Nasdaq futures surge 3% as battered AI stocks gain ground",
    "Rupee retreats with stocks as rally takes a breather, positive bias lingers",
-   "Credit Fear Gauge Drops as Huang\u2019s Return Boosts AI Hopes"
+   "Asian markets follow Wall Street: Nikkei, Kospi jump up to 8% as Jensen Huang\u2019s return sparks rally in AI stocks"
   ],
   "headlines": [
    "Economic Times",
+   "India\u2019s rupee has become an accidental carry star",
    "Wall Street soars on Huang's return to Nvidia, Treasury yields rise",
    "NSEL releases Rs 1,950 crore in one-time settlement, ends 14-year payment default",
    "Nasdaq surges 6%, Dow soars 1,400 pts as markets rebound on Huang\u2019s return: Stock Market Live Updates",
@@ -131,7 +132,8 @@
    "Hero MotoCorp Share Price Highlights: Hero MotoCorp Stock Price History",
    "Tech Mahindra Share Price Highlights: Tech Mahindra Stock Price History",
    "M&amp;M Share Price Highlights: M&amp;M Stock Price History",
-   "HCL Tech Share Price Highlights: HCL Tech Stock Price History",
+   "Asian markets follow Wall Street: Nikkei, Kospi jump up to 8% as Jensen Huang\u2019s return sparks rally in AI stocks",
+   "AI Trade Resurgence Drives 9% Rally in Taiwanese Stock Index",
    "Stock market open today or not? BSE, NSE closed on 24 Nov for Guru Nanak Jayanti? Check holiday calendar",
    "334% return in 3 years! Smallcap textile stock's \u20b95 to \u20b92 stock split record date nears - Check eligibility, ratio",
    "Four AI stocks with multi-year growth plans to watch for the long term",
@@ -150,14 +152,12 @@
    "NSEL OTS payment update: 63 Moons Technologies-backed firm releases \u20b91,950 cr payout after 14 yrs - all about case",
    "Nifty\u2019s sharpest fall since July puts four-week rally under pressure",
    "Ashish Kacholia portfolio stock already up 36% in 2026, SBI Securities sees 15% more returns - Check target price",
-   "Nvidia stock adds nearly $ 1T m-cap as Jensen Huang becomes CEO again! From year low to 33% surge, all losses recovered",
-   "Sebi warns investors against relying on grey market premiums for IPOs",
-   "Nvidia stock skyrockets 30% after Jensen Huang becomes CEO again - Trump welcomes reinstatement"
+   "Nvidia stock adds nearly $ 1T m-cap as Jensen Huang becomes CEO again! From year low to 33% surge, all losses recovered"
   ]
  },
  "us": {
-  "score": 0.564,
-  "n_headlines": 181,
+  "score": 0.738,
+  "n_headlines": 183,
   "n_sources": 5,
   "top": [
    "Nasdaq-100 futures surge 7%, S&amp;P 500 gain 4.3%, Dow up 2.6% in Wall Street rebound - Beinsure",
@@ -171,21 +171,22 @@
   ],
   "headlines": [
    "Nvidia surge: What investors should do with the stock and the AI trade now",
+   "U.S. adds Megaspeed to trade blacklist over export control concerns amid Nvidia controversy",
    "Peterson: Here\u2019s what Bessent\u2019s about-face on Jensen Huang reveals about Trump and China",
+   "Trump sealed deal for Nvidia to rehire Jensen Huang as CEO",
    "Asian Nvidia-related stocks jump after Huang&apos;s return, with Taiwan&apos;s near price limits",
    "Congress shreds Nvidia&apos;s &apos;outrageous&apos; decision to bring back Huang: &apos;Failure of character&apos;",
-   "Amazon faces FAA probe after delivery drone strikes Michigan fiber cable, garage",
    "AI adoption grows in Asia, but measuring the gains remains tricky",
-   "Fed&apos;s John Williams indicates higher interest rates likely &apos;over time&apos; to address inflation",
-   "Trump sealed deal for Nvidia to rehire Jensen Huang as CEO",
    "Trump administration proposes rule that could curb ESG investing in 401(k)s",
    "CNBC&apos;s The China Connection newsletter: AI race spreads from robots to smartphones",
+   "Amazon faces FAA probe after delivery drone strikes Michigan fiber cable, garage",
+   "Fed&apos;s John Williams indicates higher interest rates likely &apos;over time&apos; to address inflation",
    "Nvidia sets options-trading record after CEO comeback. Here are the big trades",
    "Jim Cramer sees more upside for Nvidia stock with Jensen Huang back as CEO",
    "CrowdStrike CEO defends Zscaler acquisition, calls it a &apos;winning combination&apos;",
+   "Investors are missing the bigger picture in CrowdStrike&apos;s deal to buy Zscaler",
    "An options strategy for making even more of your money back in Nvidia",
    "Jensen Huang reinstated as Nvidia CEO. Stock skyrockets 31%",
-   "Investors are missing the bigger picture in CrowdStrike&apos;s deal to buy Zscaler",
    "\u2018This establishes a bottom\u2019: Jensen Huang\u2019s return seen as likely to stop market sell-off, for now",
    "More Americans pay this Obama-era investment tax every year \u2014 how to avoid it",
    "DNI Jay Clayton tapped as acting national cyber director",
@@ -199,37 +200,36 @@
    "Average 401(k), IRA balances fall as more workers tap their accounts, Fidelity says",
    "Trump hosts crypto gala as his meme coin falls below $1",
    "U.S. probes Megaspeed, Alice Huang as new figure emerges in Nvidia chip case",
-   "Netflix\u2019s \u2018The Altruists\u2019 sparks FTX portrayal debate among crypto bigwigs from CZ to Star Xu",
    "Google News",
+   "U.S. stock futures steady after Nvidia-led Wall Street rally - Yahoo Finance",
    "Stock market today: Dow futures jump 800 points and Nasdaq soars 3% after entering correction - Fortune",
-   "Stocks Soar as Huang\u2019s Nvidia Return Fuels AI Bets: Markets Wrap - Bloomberg.com",
-   "Stock Futures Are Rebounding After Last Week\u2019s Bloodbath - Barron's",
    "Nvidia shares soar more than 30% after Huang reinstated as CEO - CNN",
+   "Stock Futures Are Rebounding After Last Week\u2019s Bloodbath - Barron's",
    "The S&amp;P 500 Just Had Its Worst Week in 18 Months. Is This a Buying Opportunity? - The Motley Fool",
+   "Stocks Soar as Huang\u2019s Nvidia Return Fuels AI Bets: Markets Wrap - Bloomberg.com",
    "How Good Was Monday\u2019s Stock Rally? Here\u2019s Where It Ranks in History - Investopedia",
-   "U.S. Stock Market Today: Wall Street Roars Back - STL.News",
-   "Markets soar as Huang returns as Nvidia CEO - The Washington Post",
    "Stock market recovers following reinstatement of Jensen Huang as Nvidia CEO - CBS News",
+   "Wall Street's brutal week brought a string of ugly stock-market milestones. Here's the damage. - Business Insider",
+   "Markets soar as Huang returns as Nvidia CEO - The Washington Post",
+   "US stocks soar and recover more than half of last week\u2019s plunge after Jensen Huang returns to Nvidia - The Boston Globe",
    "Wall Street rebounds as Jensen Huang returns as Nvidia CEO - Reuters",
-   "U.S. stocks higher at close of trade; Dow Jones Industrial Average up 3.01% - Investing.com",
+   "S&amp;P 500 sinks 3.7% and the Nasdaq composite goes negative for the year - NPR",
    "Nasdaq, Dow, S&amp;P 500 Futures Jump Nearly 2% After Brutal Tech Selloff Last Week: GME, JNJ, ALNY, GAP In Focus - TradingView",
+   "U.S. stocks higher at close of trade; Dow Jones Industrial Average up 3.01% - Investing.com",
+   "How major US stock indexes fared Friday 11/20/2026 - AP News",
    "Stock Market Today: Dow, S&amp;P 500, and Nasdaq Surge as Nvidia Leads a Major AI Rebound - 24/7 Wall St.",
    "Dow Jones and S&amp;P 500 Outlook: Top Stock Market Headlines and Data This Week - Benzinga",
    "North American stocks soar, recovering half of last week's plunge after Jensen Huang returns as Nvidia's CEO - CBC",
-   "Wall St ends sharply lower on AI selloff, S&amp;P 500, Dow in correction - Reuters",
+   "Stock Market Today: Dow Jones, S&amp;P 500, Nasdaq 100 Futures Trade Fall as Scott Bessent Presses Nvidia Ove - Benzinga",
+   "Stock Market Today: S&amp;P 500, Dow, Nasdaq Futures Fall as 30-Year Treasury Yield Hits 2002 High; Iran Mock - Benzinga",
    "Stock market rebounds sharply after sell-off, Nvidia closes up more than 31% - ABC7 New York",
    "Stock Market Today: Stock Market News And Analysis - Investor's Business Daily",
    "Nasdaq-100 futures surge 7%, S&amp;P 500 gain 4.3%, Dow up 2.6% in Wall Street rebound - Beinsure",
    "S&amp;P 500 (^GSPC) Charts, Data &amp; News - Yahoo Finance - Yahoo! Finance Canada",
-   "Dow Jones Industrial Average (DJIA) today: Wall Street backs 2027 recovery - Beinsure",
    "Futures Jump After Meltdown. Don't Get Excited. - Investor's Business Daily",
+   "Dow Jones Industrial Average (DJIA) today: Wall Street backs 2027 recovery - Beinsure",
    "US Stock Futures Rebound After AI Sell-Off as Nvidia Investigation and Fed Outlook Remain in Focus: Dow Jones, S&amp;P, Nasdaq, Wall Street - Yahoo Finance",
-   "The Dow Jones, S&amp;P 500, and Nasdaq are all in correction territory and these 3 indicators scream \u2018buying opportunity\u2019 - Yahoo Finance UK",
-   "S&amp;P 500, Nasdaq End Best Session Since April Last Year On Optimism Led By Jensen Huang\u2019s Reinstatement \u2014 NVDA, NASA, TTWO, AMZN In Focus - Yahoo Finance",
-   "U.S. stock futures steady after Nvidia-led Wall Street rally - Yahoo Finance",
-   "Stock Market: Will S&amp;P 500 Open Up or Down Today? - Yahoo Finance",
-   "S&amp;P 500 correction: Five forces behind the market sell-off - CNBC",
-   "US stocks surge as Nvidia reinstates CEO Huang - Anadolu Ajans\u0131"
+   "The Dow Jones, S&amp;P 500, and Nasdaq are all in correction territory and these 3 indicators scream \u2018buying opportunity\u2019 - Yahoo Finance UK"
   ]
  }
 }
