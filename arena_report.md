@@ -1,7 +1,7 @@
 # Strategy Arena — Leaderboard
-_Updated: 2026-11-24 07:06 IST_
+_Updated: 2026-11-24 07:08 IST_
 
-**Total equity: Rs 256,721.93** / Rs 260,000 start (-1.26%)
+**Total equity: Rs 256,712.21** / Rs 260,000 start (-1.26%)
 
 | Rank | Bot | Strategy | Equity | P&L | % | Trades | Win% | Open |
 |---|---|---|---|---|---|---|---|---|
@@ -21,15 +21,15 @@ _Updated: 2026-11-24 07:06 IST_
 | 14 | s12 | OHL + CPR Breakdown Short | Rs 9,962.81 | -37.19 | -0.37% | 11 | 36% | 0 |
 | 15 | smart_13 | Afternoon Sell-the-Rip Short (Smart v2) | Rs 9,941.46 | -58.54 | -0.59% | 5 | 20% | 0 |
 | 16 | smart_04 | Multi-Market Trend (Smart v2) | Rs 9,941.08 | -58.92 | -0.59% | 0 | 0% | 4 |
-| 17 | s07 | First-Candle ORB 15m | Rs 9,933.49 | -66.51 | -0.67% | 36 | 22% | 2 |
-| 18 | smart_12 | OHL + CPR Short (Smart v2) | Rs 9,929.47 | -70.53 | -0.71% | 10 | 30% | 0 |
+| 17 | smart_12 | OHL + CPR Short (Smart v2) | Rs 9,929.47 | -70.53 | -0.71% | 10 | 30% | 0 |
+| 18 | s07 | First-Candle ORB 15m | Rs 9,926.64 | -73.36 | -0.73% | 37 | 22% | 1 |
 | 19 | smart_03 | ETF Dual Momentum (Smart v2) | Rs 9,912.26 | -87.74 | -0.88% | 0 | 0% | 1 |
 | 20 | smart_08 | Pre-Market Breakout (Smart v2) | Rs 9,872.39 | -127.61 | -1.28% | 8 | 38% | 0 |
 | 21 | s01 | St. Gallen ORB Noise-Band | Rs 9,811.70 | -188.30 | -1.88% | 15 | 13% | 1 |
-| 22 | smart_07 | First-Candle ORB (Smart v2) | Rs 9,787.62 | -212.38 | -2.12% | 29 | 17% | 2 |
+| 22 | smart_07 | First-Candle ORB (Smart v2) | Rs 9,780.87 | -219.13 | -2.19% | 30 | 17% | 1 |
 | 23 | s08 | Pre-Market High/Low Break | Rs 9,779.89 | -220.11 | -2.20% | 52 | 25% | 0 |
 | 24 | s06 | Prev-Day High/Low Retest | Rs 9,718.31 | -281.69 | -2.82% | 36 | 19% | 1 |
 | 25 | smart_06 | Prev-Day Retest (Smart v2) | Rs 9,717.83 | -282.17 | -2.82% | 31 | 19% | 1 |
-| 26 | smart_01 | St. Gallen ORB (Smart v2) | Rs 8,292.32 | -1,707.68 | -17.08% | 66 | 6% | 1 |
+| 26 | smart_01 | St. Gallen ORB (Smart v2) | Rs 8,296.20 | -1,703.80 | -17.04% | 66 | 6% | 1 |
 
 **Best so far: s10 — Overnight Edge + Turnaround Tue (+1.99%)**
