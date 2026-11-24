@@ -1,7 +1,7 @@
 # Strategy Arena — Leaderboard
-_Updated: 2026-11-24 10:13 IST_
+_Updated: 2026-11-24 10:16 IST_
 
-**Total equity: Rs 255,545.32** / Rs 260,000 start (-1.71%)
+**Total equity: Rs 255,506.11** / Rs 260,000 start (-1.73%)
 
 | Rank | Bot | Strategy | Equity | P&L | % | Trades | Win% | Open |
 |---|---|---|---|---|---|---|---|---|
@@ -21,15 +21,15 @@ _Updated: 2026-11-24 10:13 IST_
 | 14 | s12 | OHL + CPR Breakdown Short | Rs 9,956.20 | -43.80 | -0.44% | 11 | 36% | 1 |
 | 15 | smart_13 | Afternoon Sell-the-Rip Short (Smart v2) | Rs 9,941.46 | -58.54 | -0.59% | 5 | 20% | 0 |
 | 16 | smart_04 | Multi-Market Trend (Smart v2) | Rs 9,941.08 | -58.92 | -0.59% | 0 | 0% | 4 |
-| 17 | smart_12 | OHL + CPR Short (Smart v2) | Rs 9,919.80 | -80.20 | -0.80% | 10 | 30% | 1 |
+| 17 | smart_12 | OHL + CPR Short (Smart v2) | Rs 9,918.36 | -81.64 | -0.82% | 10 | 30% | 1 |
 | 18 | smart_03 | ETF Dual Momentum (Smart v2) | Rs 9,912.26 | -87.74 | -0.88% | 0 | 0% | 1 |
 | 19 | smart_08 | Pre-Market Breakout (Smart v2) | Rs 9,872.39 | -127.61 | -1.28% | 8 | 38% | 0 |
 | 20 | s01 | St. Gallen ORB Noise-Band | Rs 9,811.70 | -188.30 | -1.88% | 15 | 13% | 1 |
 | 21 | s08 | Pre-Market High/Low Break | Rs 9,779.89 | -220.11 | -2.20% | 52 | 25% | 0 |
 | 22 | s06 | Prev-Day High/Low Retest | Rs 9,683.85 | -316.15 | -3.16% | 41 | 20% | 1 |
 | 23 | smart_06 | Prev-Day Retest (Smart v2) | Rs 9,678.84 | -321.16 | -3.21% | 36 | 19% | 1 |
-| 24 | s07 | First-Candle ORB 15m | Rs 9,417.42 | -582.58 | -5.83% | 96 | 8% | 1 |
-| 25 | smart_07 | First-Candle ORB (Smart v2) | Rs 9,274.83 | -725.17 | -7.25% | 89 | 6% | 1 |
-| 26 | smart_01 | St. Gallen ORB (Smart v2) | Rs 8,252.30 | -1,747.70 | -17.48% | 66 | 6% | 1 |
+| 24 | s07 | First-Candle ORB 15m | Rs 9,397.66 | -602.34 | -6.02% | 98 | 8% | 2 |
+| 25 | smart_07 | First-Candle ORB (Smart v2) | Rs 9,255.37 | -744.63 | -7.45% | 91 | 5% | 2 |
+| 26 | smart_01 | St. Gallen ORB (Smart v2) | Rs 8,253.76 | -1,746.24 | -17.46% | 66 | 6% | 1 |
 
 **Best so far: s10 — Overnight Edge + Turnaround Tue (+1.90%)**
