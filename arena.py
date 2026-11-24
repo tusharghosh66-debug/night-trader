@@ -310,7 +310,15 @@ def record_trade(bot_id, bs, row):
             w.writerow(["time", "bot", "symbol", "side", "qty", "entry", "exit", "pnl", "reason", "equity_after"])
         w.writerow(row)
 
+_CLOSED_THIS_CYCLE = set()   # symbols closed since this cycle started
+
 def open_position(bs, sym, side, qty, price, stop, reason, now):
+    # A position that was closed earlier in THIS cycle must not be re-opened in the
+    # same cycle: the smart_* wrapper closes first and the strategy then re-reads
+    # the very same signal, which churned (close->re-open at the same price).
+    if (id(bs), sym) in _CLOSED_THIS_CYCLE:
+        log(f"  SKIP {sym} re-open ({reason}): closed earlier in this cycle")
+        return False
     # NOTE: no fee is taken here. close_position() already nets BOTH legs
     # (entry + exit) out of pnl, so charging the entry fee here as well
     # double-taxed every round trip by 0.1% of notional.
@@ -318,9 +326,11 @@ def open_position(bs, sym, side, qty, price, stop, reason, now):
                             "opened": now, "reason": reason, "bars": 0}
     bs["last_prices"][sym] = price
     log(f"  OPEN {sym} {'LONG' if side>0 else 'SHORT'} qty={qty:.4f} @ {price:.2f} stop={stop:.2f} ({reason})")
+    return True
 
 def close_position(bs, sym, price, reason, now):
     p = bs["positions"].pop(sym)
+    _CLOSED_THIS_CYCLE.add((id(bs), sym))   # per bot: bots must not block each other
     pnl = p["side"] * p["qty"] * (price - p["entry"]) - p["qty"] * price * FEE - p["qty"] * p["entry"] * FEE
     bs["cash"] += pnl
     bs["last_prices"][sym] = price
@@ -396,6 +406,14 @@ class Ctx:
                 self._live[sym] = None
         return self._live[sym]
 
+def session_slots(bs, key, today):
+    """Per-symbol 'already attempted today' record; resets itself on a new market day."""
+    s = bs["meta"].get(key) or {}
+    if s.get("date") != today:
+        s = {"date": today, "done": []}
+        bs["meta"][key] = s
+    return s
+
 # ---- s01: St. Gallen Opening-Range Noise-Band Breakout (30m, US+India) ----
 S01_SYMS = ["NQ=F", "NIFTYBEES.NS"]
 def s01(bs, ctx):
@@ -411,12 +429,11 @@ def s01(bs, ctx):
         # noise band = avg daily range over last 14 days * 0.5, around today's open
         avg_rng = sum(d["h"] - d["l"] for d in daily[-14:]) / 14
         band = avg_rng * 0.5
-        today = mkt_day(kl[-1]["t"], sym)
+        # today's day must come from the CLOCK. Taking it from kl[-1] (the last
+        # candle) meant a holiday or the first minutes of a session traded the
+        # PREVIOUS session's noise band - same bug s07 had.
+        today = mkt_day(now_ms, sym)
         today_bars = [k for k in kl if mkt_day(k["t"], sym) == today]
-        if not today_bars:
-            continue
-        day_open = today_bars[0]["o"]
-        upper, lower = day_open + band, day_open - band
         px = ctx.live(sym) or kl[-1]["c"]
         bs["last_prices"][sym] = px
         a = atr(kl, 14)[-1] or (avg_rng / 4)
@@ -424,7 +441,8 @@ def s01(bs, ctx):
         if sym in bs["positions"]:
             p = bs["positions"][sym]
             p["bars"] += 1
-            inside = lower < px < upper
+            up = p.get("upper"); lo = p.get("lower")
+            inside = up is not None and lo < px < up
             em = mkt_eod_min(sym)
             eod = em is not None and mins >= em
             hit = (p["side"] > 0 and px <= p["stop"]) or (p["side"] < 0 and px >= p["stop"])
@@ -434,21 +452,31 @@ def s01(bs, ctx):
                 row = close_position(bs, sym, px, reason, ctx.now)
                 row[1] = "s01"; record_trade("s01", bs, row)
             continue
+        if not today_bars:
+            continue
+        day_open = today_bars[0]["o"]
+        upper, lower = day_open + band, day_open - band
         if len(bs["positions"]) >= 1:
-            return
+            continue
+        sess = session_slots(bs, "s01_session", today)
+        if sym in sess["done"]:
+            continue
         cut = mkt_entry_cutoff_min(sym)
         if cut is not None and mins >= cut:
             continue
         eq = bot_equity(bs)
         last_c = kl[-1]["c"]
-        if last_c > upper:
-            qty = size_by_risk(eq, px, a, 0.95, 0.01)
-            if qty > 0:
-                open_position(bs, sym, 1, qty, px, px - 2 * a, "noise-band-break-up", ctx.now)
-        elif last_c < lower:
-            qty = size_by_risk(eq, px, a, 0.95, 0.01)
-            if qty > 0:
-                open_position(bs, sym, -1, qty, px, px + 2 * a, "noise-band-break-down", ctx.now)
+        if last_c > upper or last_c < lower:
+            side = 1 if last_c > upper else -1
+            stop = px - 2 * a if side > 0 else px + 2 * a
+            # size against the REAL stop distance (2 ATR), not 1 ATR: the old
+            # sizing risked 2% per trade instead of the intended 1%.
+            qty = size_by_risk(eq, px, 2 * a, 0.95, 0.01)
+            if qty > 0 and open_position(bs, sym, side, qty, px, stop,
+                                         "noise-band-break-up" if side > 0 else "noise-band-break-down",
+                                         ctx.now):
+                bs["positions"][sym].update(upper=upper, lower=lower)
+                sess["done"].append(sym)
 
 # ---- s02: Trend-Filtered Mean Reversion (200SMA + BB2.5, daily) ----
 S02_SYMS = ["AAPL", "MSFT", "NVDA", "GOOGL", "AMZN", "META",
@@ -478,10 +506,12 @@ def s02(bs, ctx):
         if len(bs["positions"]) >= 5:
             continue
         if sma200[i] and c[i] > sma200[i] and lower[i] and c[i] < lower[i]:
-            entry = c[i] * 0.97   # buy-limit 3% below close (approx fill at close)
-            stop = entry * 0.92
+            # size and stop off the price we actually pay (live), not a phantom
+            # 3%-below-close limit that is never used -> old stop sat 10.8% below
+            # the real entry instead of the intended 8%, and qty was 3% too big
+            stop = px * 0.92
             eq = bot_equity(bs)
-            qty = (eq * 0.20) / entry
+            qty = (eq * 0.20) / px
             if qty > 0:
                 open_position(bs, sym, 1, qty, px, stop, "bb2.5-lower+200sma", ctx.now)
 
@@ -543,12 +573,13 @@ def s04(bs, ctx):
             p = bs["positions"][sym]
             # chandelier trail 6*ATR from extreme since entry
             ext = p.get("extreme", p["entry"])
-            if p["side"] > 0:
+            av = a[i] if (a[i] is not None and a[i] > 0) else px * 0.02   # ATR=None must not
+            if p["side"] > 0:                                              # collapse the trail
                 ext = max(ext, px); p["extreme"] = ext
-                p["stop"] = max(p["stop"], ext - 6 * (a[i] or 0))
+                p["stop"] = max(p["stop"], ext - 6 * av)
             else:
                 ext = min(ext, px); p["extreme"] = ext
-                p["stop"] = min(p["stop"], ext + 6 * (a[i] or 0))
+                p["stop"] = min(p["stop"], ext + 6 * av)
             hit = (p["side"] > 0 and px <= p["stop"]) or (p["side"] < 0 and px >= p["stop"])
             if hit:
                 row = close_position(bs, sym, px, "chandelier-stop", ctx.now)
@@ -645,6 +676,15 @@ def s06(bs, ctx):
             continue
         if len(bs["positions"]) >= 3:
             continue
+        # no entry on a stale feed (holiday / before today's first candle):
+        # _prev_day_hl would then hand over the day BEFORE yesterday's range
+        today = mkt_day(now_ms, sym)
+        seen = sorted({mkt_day(k["t"], sym) for k in kl})
+        if not seen or seen[-1] != today:
+            continue
+        sess = session_slots(bs, "s06_session", today)
+        if sym in sess["done"]:
+            continue
         cut = mkt_entry_cutoff_min(sym)
         if cut is not None and mins >= cut:
             continue
@@ -653,13 +693,15 @@ def s06(bs, ctx):
         prev_c = kl[-2]["c"]
         # break then retest: prev bar broke level, last bar pulled back toward it
         if prev_c > pd["h"] and last_c <= pd["h"] * 1.002 and last_c > pd["h"] * 0.997:
-            qty = size_by_risk(eq, px, a, 0.30, 0.01)
-            if qty > 0:
-                open_position(bs, sym, 1, qty, px, pd["h"] - a, "pd-high-retest", ctx.now)
+            stop = pd["h"] - a
+            qty = size_by_risk(eq, px, abs(px - stop) or a, 0.30, 0.01)
+            if qty > 0 and open_position(bs, sym, 1, qty, px, stop, "pd-high-retest", ctx.now):
+                sess["done"].append(sym)
         elif prev_c < pd["l"] and last_c >= pd["l"] * 0.998 and last_c < pd["l"] * 1.003:
-            qty = size_by_risk(eq, px, a, 0.30, 0.01)
-            if qty > 0:
-                open_position(bs, sym, -1, qty, px, pd["l"] + a, "pd-low-retest", ctx.now)
+            stop = pd["l"] + a
+            qty = size_by_risk(eq, px, abs(px - stop) or a, 0.30, 0.01)
+            if qty > 0 and open_position(bs, sym, -1, qty, px, stop, "pd-low-retest", ctx.now):
+                sess["done"].append(sym)
 
 # ---- s07: First-Candle ORB 15m Break & Retest (NY open) ----
 S07_SYMS = ["QQQ", "SPY", "AAPL", "NVDA", "NIFTYBEES.NS", "RELIANCE.NS"]
@@ -703,10 +745,7 @@ def s07(bs, ctx):
             continue
         # one attempt per symbol per session - no re-entry loop after a stop-out
         # (the record self-resets on the next market day, so it never grows)
-        session = bs["meta"].get("orb_session") or {}
-        if session.get("date") != today:
-            session = {"date": today, "done": []}
-            bs["meta"]["orb_session"] = session
+        session = session_slots(bs, "orb_session", today)
         if sym in session["done"]:
             continue
         eq = bot_equity(bs)
@@ -720,8 +759,7 @@ def s07(bs, ctx):
         # risk the 1% against the ACTUAL stop (the ORB level), not a generic ATR
         stop_dist = abs(px - stop) or a
         qty = size_by_risk(eq, px, stop_dist, 0.30, 0.01)
-        if qty > 0:
-            open_position(bs, sym, side, qty, px, stop, why, ctx.now)
+        if qty > 0 and open_position(bs, sym, side, qty, px, stop, why, ctx.now):
             session["done"].append(sym)
 
 # ---- s08: Pre-Market High/Low Breakout & Retest (15m, prepost) ----
@@ -734,17 +772,10 @@ def s08(bs, ctx):
         kl = ctx.candles(sym, "15m", "5d", prepost=True)
         if len(kl) < 10:
             continue
-        today = day_of(kl[-1]["t"])
-        # pre-market bars: today, before 9:30 ET
-        pre = [k for k in kl if day_of(k["t"]) == today and et_hm(k["t"]) < 9 * 60 + 30]
-        reg = [k for k in kl if day_of(k["t"]) == today and et_hm(k["t"]) >= 9 * 60 + 30]
-        if len(pre) < 2 or not reg:
-            continue
-        pm_h = max(k["h"] for k in pre)
-        pm_l = min(k["l"] for k in pre)
         px = ctx.live(sym) or kl[-1]["c"]
         bs["last_prices"][sym] = px
         a = atr(kl, 14)[-1] or (px * 0.004)
+        # manage first: works even when today's pre-market/regular bars are missing
         if sym in bs["positions"]:
             p = bs["positions"][sym]
             p["bars"] += 1
@@ -754,7 +785,19 @@ def s08(bs, ctx):
                 row = close_position(bs, sym, px, "stop" if hit else "eod", ctx.now)
                 row[1] = "s08"; record_trade("s08", bs, row)
             continue
+        # today from the CLOCK, not from kl[-1]: on a holiday (or before 09:30 ET)
+        # the old code measured YESTERDAY's pre-market range.
+        today = day_of(now_ms)
+        pre = [k for k in kl if day_of(k["t"]) == today and et_hm(k["t"]) < 9 * 60 + 30]
+        reg = [k for k in kl if day_of(k["t"]) == today and et_hm(k["t"]) >= 9 * 60 + 30]
+        if len(pre) < 2 or not reg:
+            continue
+        pm_h = max(k["h"] for k in pre)
+        pm_l = min(k["l"] for k in pre)
         if len(bs["positions"]) >= 3:
+            continue
+        sess = session_slots(bs, "s08_session", today)
+        if sym in sess["done"]:
             continue
         cut = mkt_entry_cutoff_min(sym)
         if cut is not None and mkt_hm(now_ms, sym) >= cut:
@@ -762,13 +805,17 @@ def s08(bs, ctx):
         eq = bot_equity(bs)
         last_c = reg[-1]["c"]
         if last_c > pm_h:
-            qty = size_by_risk(eq, px, a, 0.30, 0.01)
-            if qty > 0:
-                open_position(bs, sym, 1, qty, px, pm_h - a, "pm-high-break", ctx.now)
+            stop = pm_h - a
+            # size on the stop we actually place (was 1 ATR while the stop sat
+            # a whole ATR away) - keeps risk at the intended 1%
+            qty = size_by_risk(eq, px, abs(px - stop) or a, 0.30, 0.01)
+            if qty > 0 and open_position(bs, sym, 1, qty, px, stop, "pm-high-break", ctx.now):
+                sess["done"].append(sym)
         elif last_c < pm_l:
-            qty = size_by_risk(eq, px, a, 0.30, 0.01)
-            if qty > 0:
-                open_position(bs, sym, -1, qty, px, pm_l + a, "pm-low-break", ctx.now)
+            stop = pm_l + a
+            qty = size_by_risk(eq, px, abs(px - stop) or a, 0.30, 0.01)
+            if qty > 0 and open_position(bs, sym, -1, qty, px, stop, "pm-low-break", ctx.now):
+                sess["done"].append(sym)
 
 # ---- s09: Statistical Arbitrage / Pairs Trading (daily, z-score) ----
 S09_PAIRS = [("KO", "PEP"), ("XOM", "CVX"), ("MA", "V"), ("HD", "LOW"), ("JPM", "BAC"),
@@ -818,15 +865,15 @@ def s09(bs, ctx):
         if z[i] > 2:      # spread rich: short A, long B
             entry = live_spread
             qty = notional   # pnl = notional * delta(log-spread)
-            open_position(bs, key, -1, qty, entry, entry + 0.10, "z>2-short-spread", ctx.now)
-            bs["positions"][key]["legs"] = (a_sym, b_sym, -1)
-            bs["positions"][key]["mark"] = entry
+            if open_position(bs, key, -1, qty, entry, entry + 0.10, "z>2-short-spread", ctx.now):
+                bs["positions"][key]["legs"] = (a_sym, b_sym, -1)
+                bs["positions"][key]["mark"] = entry
         elif z[i] < -2:   # spread cheap: long A, short B
             entry = live_spread
             qty = notional
-            open_position(bs, key, 1, qty, entry, entry - 0.10, "z<-2-long-spread", ctx.now)
-            bs["positions"][key]["legs"] = (a_sym, b_sym, 1)
-            bs["positions"][key]["mark"] = entry
+            if open_position(bs, key, 1, qty, entry, entry - 0.10, "z<-2-long-spread", ctx.now):
+                bs["positions"][key]["legs"] = (a_sym, b_sym, 1)
+                bs["positions"][key]["mark"] = entry
     # mark pair positions to current spread for equity
     for key, p in bs["positions"].items():
         if "legs" in p:
@@ -877,8 +924,7 @@ def s10(bs, ctx):
         if overnight or (is_tuesday and consec_down >= 2):
             qty = (eq * 0.45) / px
             reason = "turnaround-tuesday" if (is_tuesday and consec_down >= 2) else "overnight-edge"
-            if qty > 0:
-                open_position(bs, sym, 1, qty, px, px * 0.95, reason, ctx.now)
+            if qty > 0 and open_position(bs, sym, 1, qty, px, px * 0.95, reason, ctx.now):
                 bs["positions"][sym]["day"] = today_key
                 bs["meta"][day_meta] = today_key
 
@@ -1002,7 +1048,8 @@ def _pine_short_entry(bs, sym, px, stop, reason, ctx, target=None):
     qty = (eq * 0.10) / px
     if qty <= 0:
         return False
-    open_position(bs, sym, -1, qty, px, stop, reason, ctx.now)
+    if not open_position(bs, sym, -1, qty, px, stop, reason, ctx.now):
+        return False
     if target is not None:
         bs["positions"][sym]["target"] = target
     return True
@@ -1276,6 +1323,7 @@ def run_cycle(st):
     fx = get_usdinr(st)
     now = datetime.now(IST).isoformat()
     ctx = Ctx(fx, now)
+    _CLOSED_THIS_CYCLE.clear()   # same-cycle re-open guard is per cycle
     log(f"=== ARENA CYCLE  USDINR={fx:.2f}  US_open={us_open()} ===")
     for b in BOTS:
         bs = st["bots"][b["id"]]
@@ -1453,7 +1501,7 @@ def backtest():
             elif entry_fn(c, i):
                 qty = (cash * 0.95) / px
                 pos = {"entry": px, "qty": qty, "stop": px * 0.93, "bars": 0}
-                cash -= qty * px * FEE
+                # no separate entry fee here: the exit line already nets both legs
         eq = cash + (pos["qty"] * c[-1] if pos else 0)
         wins = sum(1 for t in trades if t > 0)
         return {"sym": sym, "equity": eq, "pnl": eq - capital, "trades": len(trades),
