@@ -331,7 +331,12 @@ def open_position(bs, sym, side, qty, price, stop, reason, now):
 def close_position(bs, sym, price, reason, now):
     p = bs["positions"].pop(sym)
     _CLOSED_THIS_CYCLE.add((id(bs), sym))   # per bot: bots must not block each other
-    pnl = p["side"] * p["qty"] * (price - p["entry"]) - p["qty"] * price * FEE - p["qty"] * p["entry"] * FEE
+    if "legs" in p:
+        # pairs (s09): qty is a rupee notional and "price" is a LOG-SPREAD, so the
+        # usual qty*price*FEE term is ~0.001 of nothing. Charge both legs on notional.
+        pnl = p["side"] * p["qty"] * (price - p["entry"]) - 2.0 * p["qty"] * FEE
+    else:
+        pnl = p["side"] * p["qty"] * (price - p["entry"]) - p["qty"] * price * FEE - p["qty"] * p["entry"] * FEE
     bs["cash"] += pnl
     bs["last_prices"][sym] = price
     eq = bot_equity(bs)
