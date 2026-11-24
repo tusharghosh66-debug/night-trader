@@ -1,7 +1,7 @@
 # Strategy Arena — Leaderboard
-_Updated: 2026-11-25 04:12 IST_
+_Updated: 2026-11-25 04:14 IST_
 
-**Total equity: Rs 253,904.12** / Rs 260,000 start (-2.34%)
+**Total equity: Rs 253,904.94** / Rs 260,000 start (-2.34%)
 
 | Rank | Bot | Strategy | Equity | P&L | % | Trades | Win% | Open |
 |---|---|---|---|---|---|---|---|---|
@@ -20,7 +20,7 @@ _Updated: 2026-11-25 04:12 IST_
 | 13 | smart_04 | Multi-Market Trend (Smart v2) | Rs 9,968.75 | -31.25 | -0.31% | 0 | 0% | 4 |
 | 14 | s12 | OHL + CPR Breakdown Short | Rs 9,957.22 | -42.78 | -0.43% | 11 | 36% | 1 |
 | 15 | smart_13 | Afternoon Sell-the-Rip Short (Smart v2) | Rs 9,943.00 | -57.00 | -0.57% | 6 | 33% | 0 |
-| 16 | smart_12 | OHL + CPR Short (Smart v2) | Rs 9,928.96 | -71.04 | -0.71% | 10 | 30% | 1 |
+| 16 | smart_12 | OHL + CPR Short (Smart v2) | Rs 9,929.77 | -70.23 | -0.70% | 10 | 30% | 1 |
 | 17 | smart_10 | Overnight Edge (Smart v2) | Rs 9,920.89 | -79.11 | -0.79% | 2 | 0% | 2 |
 | 18 | smart_03 | ETF Dual Momentum (Smart v2) | Rs 9,912.26 | -87.74 | -0.88% | 0 | 0% | 1 |
 | 19 | smart_08 | Pre-Market Breakout (Smart v2) | Rs 9,784.69 | -215.31 | -2.15% | 15 | 33% | 0 |
