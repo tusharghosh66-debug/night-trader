@@ -1,35 +1,35 @@
 # Strategy Arena — Leaderboard
-_Updated: 2026-11-24 21:52 IST_
+_Updated: 2026-11-24 21:54 IST_
 
-**Total equity: Rs 254,259.70** / Rs 260,000 start (-2.21%)
+**Total equity: Rs 254,300.06** / Rs 260,000 start (-2.19%)
 
 | Rank | Bot | Strategy | Equity | P&L | % | Trades | Win% | Open |
 |---|---|---|---|---|---|---|---|---|
 | 1 | s10 | Overnight Edge + Turnaround Tue | Rs 10,127.29 | +127.29 | +1.27% | 3 | 33% | 1 |
-| 2 | smart_11 | Spike & VWAP Short (Smart v2) | Rs 10,035.73 | +35.73 | +0.36% | 7 | 43% | 1 |
-| 3 | s04 | Multi-Market Trend Following | Rs 10,016.95 | +16.95 | +0.17% | 0 | 0% | 4 |
+| 2 | smart_11 | Spike & VWAP Short (Smart v2) | Rs 10,034.84 | +34.84 | +0.35% | 7 | 43% | 1 |
+| 3 | s04 | Multi-Market Trend Following | Rs 10,015.21 | +15.21 | +0.15% | 0 | 0% | 4 |
 | 4 | s02 | Trend-Filtered Mean Reversion | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 5 | s03 | ETF Dual Momentum Rotation | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 6 | s05 | Connors RSI(2) Pullback | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 7 | smart_02 | Trend-Filtered Mean Rev (Smart v2) | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 8 | smart_05 | Connors RSI(2) (Smart v2) | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
-| 9 | s09 | Statistical Arbitrage Pairs | Rs 9,993.79 | -6.21 | -0.06% | 0 | 0% | 1 |
-| 10 | smart_09 | Statistical Arbitrage (Smart v2) | Rs 9,993.79 | -6.21 | -0.06% | 0 | 0% | 1 |
+| 9 | s09 | Statistical Arbitrage Pairs | Rs 9,996.00 | -4.00 | -0.04% | 0 | 0% | 1 |
+| 10 | smart_09 | Statistical Arbitrage (Smart v2) | Rs 9,996.00 | -4.00 | -0.04% | 0 | 0% | 1 |
 | 11 | s11 | Spike & VWAP Rejection Short | Rs 9,988.38 | -11.62 | -0.12% | 7 | 29% | 1 |
 | 12 | s13 | Afternoon Sell-the-Rip Short | Rs 9,976.69 | -23.31 | -0.23% | 5 | 40% | 0 |
-| 13 | smart_04 | Multi-Market Trend (Smart v2) | Rs 9,964.97 | -35.03 | -0.35% | 0 | 0% | 4 |
+| 13 | smart_04 | Multi-Market Trend (Smart v2) | Rs 9,963.22 | -36.78 | -0.37% | 0 | 0% | 4 |
 | 14 | s12 | OHL + CPR Breakdown Short | Rs 9,957.22 | -42.78 | -0.43% | 11 | 36% | 1 |
 | 15 | smart_13 | Afternoon Sell-the-Rip Short (Smart v2) | Rs 9,941.46 | -58.54 | -0.59% | 5 | 20% | 0 |
-| 16 | smart_12 | OHL + CPR Short (Smart v2) | Rs 9,935.91 | -64.09 | -0.64% | 10 | 30% | 1 |
+| 16 | smart_12 | OHL + CPR Short (Smart v2) | Rs 9,935.23 | -64.77 | -0.65% | 10 | 30% | 1 |
 | 17 | smart_03 | ETF Dual Momentum (Smart v2) | Rs 9,912.26 | -87.74 | -0.88% | 0 | 0% | 1 |
 | 18 | smart_10 | Overnight Edge (Smart v2) | Rs 9,908.31 | -91.69 | -0.92% | 2 | 0% | 1 |
-| 19 | smart_08 | Pre-Market Breakout (Smart v2) | Rs 9,870.03 | -129.97 | -1.30% | 9 | 33% | 3 |
-| 20 | s08 | Pre-Market High/Low Break | Rs 9,777.55 | -222.45 | -2.22% | 53 | 25% | 3 |
-| 21 | s06 | Prev-Day High/Low Retest | Rs 9,633.30 | -366.70 | -3.67% | 51 | 22% | 1 |
-| 22 | smart_06 | Prev-Day Retest (Smart v2) | Rs 9,627.29 | -372.71 | -3.73% | 46 | 20% | 1 |
-| 23 | s01 | St. Gallen ORB Noise-Band | Rs 9,540.54 | -459.46 | -4.59% | 19 | 11% | 1 |
-| 24 | s07 | First-Candle ORB 15m | Rs 9,071.15 | -928.85 | -9.29% | 130 | 7% | 3 |
-| 25 | smart_07 | First-Candle ORB (Smart v2) | Rs 8,933.78 | -1,066.22 | -10.66% | 123 | 5% | 3 |
-| 26 | smart_01 | St. Gallen ORB (Smart v2) | Rs 8,053.30 | -1,946.70 | -19.47% | 70 | 6% | 1 |
+| 19 | smart_08 | Pre-Market Breakout (Smart v2) | Rs 9,871.86 | -128.14 | -1.28% | 9 | 33% | 3 |
+| 20 | s08 | Pre-Market High/Low Break | Rs 9,779.37 | -220.63 | -2.21% | 53 | 25% | 3 |
+| 21 | s06 | Prev-Day High/Low Retest | Rs 9,630.97 | -369.03 | -3.69% | 51 | 22% | 1 |
+| 22 | smart_06 | Prev-Day Retest (Smart v2) | Rs 9,624.96 | -375.04 | -3.75% | 46 | 20% | 1 |
+| 23 | s01 | St. Gallen ORB Noise-Band | Rs 9,560.73 | -439.27 | -4.39% | 19 | 11% | 1 |
+| 24 | s07 | First-Candle ORB 15m | Rs 9,073.56 | -926.44 | -9.26% | 130 | 7% | 3 |
+| 25 | smart_07 | First-Candle ORB (Smart v2) | Rs 8,936.15 | -1,063.85 | -10.64% | 123 | 5% | 3 |
+| 26 | smart_01 | St. Gallen ORB (Smart v2) | Rs 8,070.35 | -1,929.65 | -19.30% | 70 | 6% | 1 |
 
 **Best so far: s10 — Overnight Edge + Turnaround Tue (+1.27%)**
