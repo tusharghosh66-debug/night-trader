@@ -1,8 +1,8 @@
 # Night Trader v2 — Paper Trading Report (3 markets)
-_Updated: 2026-11-24 14:31 IST_
+_Updated: 2026-11-24 14:33 IST_
 
 ## CRYPTO (OPEN) — ₹10,000.00 | P&L +0.00 (+0.00%)
-Cash ₹10,000.00 | cycles 11341 | capital ₹10,000
+Cash ₹10,000.00 | cycles 11346 | capital ₹10,000
 _No open positions — all cash._
 News sentiment: +0.15 (178 headlines, 6 sources, Fear&Greed 11)
 - Bitcoin Price Crash: Bitcoin Falls 25% in November; Solana, Avalanche Lose Up to 46% as Crypto Sell-Off Deepens - Kotak Neo
@@ -10,7 +10,7 @@ News sentiment: +0.15 (178 headlines, 6 sources, Fear&Greed 11)
 - Crypto news: Bitcoin jumps to $64,000 and ether gains 7%. Will the rebound hold? - CryptoTicker.io
 
 ## INDIA (OPEN) — ₹9,969.65 | P&L -30.35 (-0.30%)
-Cash ₹9,969.65 | cycles 1523 | capital ₹10,000
+Cash ₹9,969.65 | cycles 1528 | capital ₹10,000
 _No open positions — all cash._
 Closed: 6 (1 wins), realized -30.35
 - 14:39 BUY HDFCBANK.NS @ 821.65 pnl +0.00 (breakout+EMA trend, RSI=67, regime_ok=True, news=+0.30)
