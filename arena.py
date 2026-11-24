@@ -311,8 +311,9 @@ def record_trade(bot_id, bs, row):
         w.writerow(row)
 
 def open_position(bs, sym, side, qty, price, stop, reason, now):
-    cost = qty * price * FEE
-    bs["cash"] -= cost
+    # NOTE: no fee is taken here. close_position() already nets BOTH legs
+    # (entry + exit) out of pnl, so charging the entry fee here as well
+    # double-taxed every round trip by 0.1% of notional.
     bs["positions"][sym] = {"side": side, "qty": qty, "entry": price, "stop": stop,
                             "opened": now, "reason": reason, "bars": 0}
     bs["last_prices"][sym] = price
@@ -671,14 +672,16 @@ def s07(bs, ctx):
         kl = ctx.candles(sym, "15m", "5d")
         if len(kl) < 5:
             continue
-        today = mkt_day(kl[-1]["t"], sym)
-        tb = [k for k in kl if mkt_day(k["t"], sym) == today]
-        if not tb:
-            continue
-        orb = tb[0]   # first 15m candle of the market's day
         px = ctx.live(sym) or kl[-1]["c"]
         bs["last_prices"][sym] = px
         a = atr(kl, 14)[-1] or (px * 0.004)
+        # The ORB level must be TODAY's first 15m bar. Taking the day from
+        # kl[-1] (the last *candle*) meant that before today's first bar
+        # existed - 09:15-09:30 IST, 09:30-09:45 ET, or any market holiday
+        # with a stale feed - the bot traded YESTERDAY's opening range.
+        today = mkt_day(now_ms, sym)
+        tb = [k for k in kl if mkt_day(k["t"], sym) == today]
+        # --- manage an open position first (clock-based: works even if candles lag) ---
         if sym in bs["positions"]:
             p = bs["positions"][sym]
             p["bars"] += 1
@@ -691,19 +694,35 @@ def s07(bs, ctx):
                 row = close_position(bs, sym, px, reason, ctx.now)
                 row[1] = "s07"; record_trade("s07", bs, row)
             continue
+        # --- entries: today's opening candle must exist (also blocks holidays / stale feed) ---
+        if not tb:
+            continue
+        orb = tb[0]   # first 15m candle of the market's day
         cut = mkt_entry_cutoff_min(sym)
         if len(bs["positions"]) >= 3 or mins > mkt_orb_cutoff(sym) or (cut is not None and mins >= cut):
+            continue
+        # one attempt per symbol per session - no re-entry loop after a stop-out
+        # (the record self-resets on the next market day, so it never grows)
+        session = bs["meta"].get("orb_session") or {}
+        if session.get("date") != today:
+            session = {"date": today, "done": []}
+            bs["meta"]["orb_session"] = session
+        if sym in session["done"]:
             continue
         eq = bot_equity(bs)
         last_c = kl[-1]["c"]
         if last_c > orb["h"]:
-            qty = size_by_risk(eq, px, a, 0.30, 0.01)
-            if qty > 0:
-                open_position(bs, sym, 1, qty, px, orb["l"], "orb15-break-up", ctx.now)
+            side, stop, why = 1, orb["l"], "orb15-break-up"
         elif last_c < orb["l"]:
-            qty = size_by_risk(eq, px, a, 0.30, 0.01)
-            if qty > 0:
-                open_position(bs, sym, -1, qty, px, orb["h"], "orb15-break-down", ctx.now)
+            side, stop, why = -1, orb["h"], "orb15-break-down"
+        else:
+            continue
+        # risk the 1% against the ACTUAL stop (the ORB level), not a generic ATR
+        stop_dist = abs(px - stop) or a
+        qty = size_by_risk(eq, px, stop_dist, 0.30, 0.01)
+        if qty > 0:
+            open_position(bs, sym, side, qty, px, stop, why, ctx.now)
+            session["done"].append(sym)
 
 # ---- s08: Pre-Market High/Low Breakout & Retest (15m, prepost) ----
 S08_SYMS = ["AAPL", "MSFT", "NVDA", "TSLA"]
