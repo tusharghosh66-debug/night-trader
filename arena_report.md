@@ -1,14 +1,14 @@
 # Strategy Arena — Leaderboard
-_Updated: 2026-11-26 00:25 IST_
+_Updated: 2026-11-26 00:28 IST_
 
-**Total equity: Rs 259,991.03** / Rs 260,000 start (-0.00%)
+**Total equity: Rs 259,985.24** / Rs 260,000 start (-0.01%)
 
 | Rank | Bot | Strategy | Equity | P&L | % | Trades | Win% | Open |
 |---|---|---|---|---|---|---|---|---|
-| 1 | s13 | Afternoon Sell-the-Rip Short | Rs 10,001.60 | +1.60 | +0.02% | 0 | 0% | 1 |
-| 2 | smart_13 | Afternoon Sell-the-Rip Short (Smart v2) | Rs 10,001.60 | +1.60 | +0.02% | 0 | 0% | 1 |
-| 3 | s09 | Statistical Arbitrage Pairs | Rs 10,001.57 | +1.57 | +0.02% | 0 | 0% | 1 |
-| 4 | smart_09 | Statistical Arbitrage (Smart v2) | Rs 10,001.57 | +1.57 | +0.02% | 0 | 0% | 1 |
+| 1 | s09 | Statistical Arbitrage Pairs | Rs 10,001.50 | +1.50 | +0.01% | 0 | 0% | 1 |
+| 2 | smart_09 | Statistical Arbitrage (Smart v2) | Rs 10,001.50 | +1.50 | +0.01% | 0 | 0% | 1 |
+| 3 | s13 | Afternoon Sell-the-Rip Short | Rs 10,000.04 | +0.04 | +0.00% | 0 | 0% | 1 |
+| 4 | smart_13 | Afternoon Sell-the-Rip Short (Smart v2) | Rs 10,000.04 | +0.04 | +0.00% | 0 | 0% | 1 |
 | 5 | s01 | St. Gallen ORB Noise-Band | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 6 | s02 | Trend-Filtered Mean Reversion | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 7 | s03 | ETF Dual Momentum Rotation | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 1 |
@@ -27,9 +27,9 @@ _Updated: 2026-11-26 00:25 IST_
 | 20 | smart_08 | Pre-Market Breakout (Smart v2) | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 21 | smart_10 | Overnight Edge (Smart v2) | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 22 | smart_11 | Spike & VWAP Short (Smart v2) | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
-| 23 | s04 | Multi-Market Trend Following | Rs 9,999.02 | -0.98 | -0.01% | 0 | 0% | 1 |
-| 24 | smart_04 | Multi-Market Trend (Smart v2) | Rs 9,999.02 | -0.98 | -0.01% | 0 | 0% | 1 |
-| 25 | s12 | OHL + CPR Breakdown Short | Rs 9,993.32 | -6.68 | -0.07% | 0 | 0% | 1 |
-| 26 | smart_12 | OHL + CPR Short (Smart v2) | Rs 9,993.32 | -6.68 | -0.07% | 0 | 0% | 1 |
+| 23 | s04 | Multi-Market Trend Following | Rs 9,999.16 | -0.84 | -0.01% | 0 | 0% | 1 |
+| 24 | smart_04 | Multi-Market Trend (Smart v2) | Rs 9,999.16 | -0.84 | -0.01% | 0 | 0% | 1 |
+| 25 | s12 | OHL + CPR Breakdown Short | Rs 9,991.92 | -8.08 | -0.08% | 0 | 0% | 1 |
+| 26 | smart_12 | OHL + CPR Short (Smart v2) | Rs 9,991.92 | -8.08 | -0.08% | 0 | 0% | 1 |
 
-**Best so far: s13 — Afternoon Sell-the-Rip Short (+0.02%)**
+**Best so far: s09 — Statistical Arbitrage Pairs (+0.01%)**
