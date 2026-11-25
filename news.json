@@ -1,7 +1,7 @@
 {
- "ts": "2026-11-26T04:25:51.488500+05:30",
+ "ts": "2026-11-26T05:25:51.588934+05:30",
  "crypto": {
-  "score": -0.529,
+  "score": -0.494,
   "n_headlines": 178,
   "n_sources": 6,
   "top": [
@@ -80,7 +80,7 @@
  },
  "india": {
   "score": 1.0,
-  "n_headlines": 215,
+  "n_headlines": 216,
   "n_sources": 6,
   "top": [
    "Nasdaq 100 plunges nearly 5%, briefly enters bear-market zone as AI fears and fresh tariffs hit sentiment",
@@ -156,20 +156,21 @@
   ]
  },
  "us": {
-  "score": 0.0,
-  "n_headlines": 195,
+  "score": -0.016,
+  "n_headlines": 193,
   "n_sources": 6,
   "top": [
    "S&amp;P 500, Nasdaq, Dow Forecast: Wall Street Rebound Faces Major Resistance\u2014Bull Trap or Breakout? - StoneX",
    "UK stocks fall as banks, miners track Wall Street selloff - Reuters",
    "Bullish hopes spring as traders bet against a higher VIX: Options Action Live",
    "Nvidia&#x2019;s stock has given back a big chunk of Monday&#x2019;s rally as dip buyers cash in",
+   "Asian Stocks Set for Gains After Late US Rebound: Markets Wrap - Bloomberg",
    "Nasdaq, S&amp;P 500 end down, but well off lows as investors buy bargains - Reuters",
-   "Stocks plummet as Jensen Huang rebound rally fades - CBS News",
-   "US stocks tumble as AI rout and Trump tariffs rattle markets - ABC News &amp; Headlines \u2013 Australian Broadcasting Corporation",
-   "Wall Street rebounds strongly after brutal rout, Dow turns green &amp; Nasdaq recovers - Investing.com"
+   "Stocks turn volatile as Jensen Huang rebound rally fades - CBS News",
+   "US stocks tumble as AI rout and Trump tariffs rattle markets - ABC News &amp; Headlines \u2013 Australian Broadcasting Corporation"
   ],
   "headlines": [
+   "Asia-Pacific markets set for subdued open as investors weigh fresh U.S. tariffs",
    "Vance says he was assured Jensen Huang was not under DOJ investigation",
    "SpaceX wins FCC approval to deploy 1 million orbital data center satellites",
    "Liesman: Why Greenspan could bet on productivity \u2014 and Warsh needs to hike",
@@ -199,8 +200,10 @@
    "AI debt worries grow as Nvidia rebound masks Big Tech spending squeeze",
    "Dell earnings beat on AI strength, company authorizes $25 billion buyback",
    "Utah drops criminal charges against Kalshi founders after company suspended operations in state",
-   "Trump Account contributions from friends and family pass $1 billion mark, Treasury says",
    "MarketWatch.com - Top Stories",
+   "A 66-year-old nurse is facing down retirement with just $500 saved. Who&#x2019;s to blame?",
+   "I&#x2019;m in my 70s and buying a new BMW X1. Should I put my only son on the title?",
+   "I&#x2019;ve been married for 58 years. It&#x2019;s &#x2018;our&#x2019; money, not &#x2018;his&#x2019; and &#x2018;hers.&#x2019; Why do so many couples keep their finances separate?",
    "I hate that Jensen Huang is back at Nvidia, but I love what it&#x2019;s done for my 401(k). Am I a hypocrite?",
    "We are living in perilous times if Nvidia&#x2019;s Jensen Huang dictates your 401(k) balance",
    "Oracle, CoreWeave and other tech stocks bounce back after selloff",
@@ -208,28 +211,25 @@
    "Elon Musk and SpaceX to donate roughly $17.8 billion to &#x2018;Trump accounts&#x2019;",
    "HP&#x2019;s stock is a standout gainer in the tech selloff, as an earnings beat still matters",
    "How to spot &#x2018;bogus boutiques&#x2019; and other Black Friday shopping scams",
-   "Nvidia is heading for its first &#x2018;death cross&#x2019; since March 2025 as stock continues to struggle",
-   "The Fed says inflation hasn&#x2019;t gotten any better ahead of its key December vote to raise rates",
-   "New-home sales just hit a 2026 high as builders dangle low mortgages and Black Friday deals",
    "Google News",
-   "Gut-Wrenching Volatility Grips Wall Street as AI Doubts Creep In - Bloomberg",
+   "Asian Stocks Set for Gains After Late US Rebound: Markets Wrap - Bloomberg",
    "U.S. Stocks Mixed as Nvidia, AI Rout Continues - WSJ",
-   "Dow Jones Futures: Market Goes On Wild Ride. Nasdaq, Nvidia Slash Losses While Anthropic Reverses Higher. - Investor's Business Daily",
    "Nasdaq, S&amp;P 500 end down, but well off lows as investors buy bargains - Reuters",
    "Dow closes higher after erasing 1,100-point loss as S&amp;P 500, Nasdaq slip - Fox Business",
-   "Stocks plummet as Jensen Huang rebound rally fades - CBS News",
-   "Even Without Warren Buffett as CEO, Berkshire Hathaway Is Outperforming the S&amp;P 500, Nasdaq, and Dow by the Widest Margin Since 2022. History Says This Is What Happens Next. - The Motley Fool",
-   "TSX notches one-week high as commodities rally - The Globe and Mail",
-   "Stocks mixed as Wall Street erases sharp decline: Nvidia down 6% - ABC News - Breaking News, Latest News and Videos",
+   "Stocks close mixed after Wall Street erases sharp decline: Nvidia drops 4% - ABC News - Breaking News, Latest News and Videos",
+   "Stocks turn volatile as Jensen Huang rebound rally fades - CBS News",
+   "The S&amp;P 500 Entered Correction Territory. Here\u2019s What History Says Happens Next. - The Motley Fool",
    "US stocks tumble as AI rout and Trump tariffs rattle markets - ABC News &amp; Headlines \u2013 Australian Broadcasting Corporation",
-   "Wall Street rebounds strongly after brutal rout, Dow turns green &amp; Nasdaq recovers - Investing.com",
    "Stock Market Today: Dow Jones, S&amp;P 500, Nasdaq 100 Futures Fall After Scott Bessent Unveils Fresh Iran Sa - Benzinga",
+   "Wall Street rebounds strongly after brutal rout, Dow ends higher &amp; Nasdaq recovers - Investing.com",
    "Nasdaq plunges 3% as tech stocks face renewed pressure (SP500:) - Seeking Alpha",
    "US stock market today: Nasdaq and S&amp;P 500 fall as Nvidia and AI stocks slide, Dow gains - Beinsure",
-   "The Dow Jones, S&amp;P 500, and Nasdaq are all in correction territory and these 3 indicators scream \u2018buying opportunity\u2019 - The Twelfth Magpie",
    "Stock market today: Dow futures jump 800 points and Nasdaq soars 3% after entering correction - Fortune",
-   "AI rout drags Wall Street lower, S&amp;P 500 slumps 3% - BNN Bloomberg",
-   "US Stock Market Today: 5 Critical Moves as Nasdaq Falls - STL.News"
+   "The Dow Jones, S&amp;P 500, and Nasdaq are all in correction territory and these 3 indicators scream \u2018buying opportunity\u2019 - The Twelfth Magpie",
+   "US Stock Market Today: 5 Critical Moves as Nasdaq Falls - STL.News",
+   "Stocks slide as inflation, Nvidia losses fuel Wall Street sell-off - upi",
+   "Stock Market Today: Huangover Is Causing Headache for Tech Stocks - 24/7 Wall St.",
+   "U.S. Stocks Extend Plunge as AI Boom Turns to Bust - WSJ"
   ]
  }
 }
