@@ -1,14 +1,14 @@
 # Strategy Arena — Leaderboard
-_Updated: 2026-11-25 22:27 IST_
+_Updated: 2026-11-25 22:30 IST_
 
-**Total equity: Rs 253,738.43** / Rs 260,000 start (-2.41%)
+**Total equity: Rs 253,741.61** / Rs 260,000 start (-2.41%)
 
 | Rank | Bot | Strategy | Equity | P&L | % | Trades | Win% | Open |
 |---|---|---|---|---|---|---|---|---|
 | 1 | s10 | Overnight Edge + Turnaround Tue | Rs 10,085.96 | +85.96 | +0.86% | 5 | 20% | 1 |
-| 2 | s04 | Multi-Market Trend Following | Rs 10,065.97 | +65.97 | +0.66% | 0 | 0% | 4 |
+| 2 | s04 | Multi-Market Trend Following | Rs 10,061.62 | +61.62 | +0.62% | 0 | 0% | 4 |
 | 3 | smart_11 | Spike & VWAP Short (Smart v2) | Rs 10,026.27 | +26.27 | +0.26% | 9 | 44% | 1 |
-| 4 | smart_04 | Multi-Market Trend (Smart v2) | Rs 10,014.31 | +14.31 | +0.14% | 0 | 0% | 4 |
+| 4 | smart_04 | Multi-Market Trend (Smart v2) | Rs 10,009.93 | +9.93 | +0.10% | 0 | 0% | 4 |
 | 5 | s02 | Trend-Filtered Mean Reversion | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 6 | s03 | ETF Dual Momentum Rotation | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 7 | s05 | Connors RSI(2) Pullback | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
@@ -17,10 +17,10 @@ _Updated: 2026-11-25 22:27 IST_
 | 10 | s12 | OHL + CPR Breakdown Short | Rs 9,997.15 | -2.85 | -0.03% | 11 | 36% | 1 |
 | 11 | smart_03 | ETF Dual Momentum (Smart v2) | Rs 9,991.09 | -8.91 | -0.09% | 0 | 0% | 1 |
 | 12 | s11 | Spike & VWAP Rejection Short | Rs 9,983.77 | -16.23 | -0.16% | 10 | 40% | 1 |
-| 13 | s09 | Statistical Arbitrage Pairs | Rs 9,982.23 | -17.77 | -0.18% | 0 | 0% | 2 |
-| 14 | smart_09 | Statistical Arbitrage (Smart v2) | Rs 9,982.23 | -17.77 | -0.18% | 0 | 0% | 2 |
+| 13 | s09 | Statistical Arbitrage Pairs | Rs 9,982.51 | -17.49 | -0.17% | 0 | 0% | 2 |
+| 14 | smart_09 | Statistical Arbitrage (Smart v2) | Rs 9,982.51 | -17.49 | -0.17% | 0 | 0% | 2 |
 | 15 | s13 | Afternoon Sell-the-Rip Short | Rs 9,978.67 | -21.33 | -0.21% | 6 | 50% | 0 |
-| 16 | smart_12 | OHL + CPR Short (Smart v2) | Rs 9,975.58 | -24.42 | -0.24% | 11 | 36% | 1 |
+| 16 | smart_12 | OHL + CPR Short (Smart v2) | Rs 9,971.67 | -28.33 | -0.28% | 11 | 36% | 1 |
 | 17 | smart_13 | Afternoon Sell-the-Rip Short (Smart v2) | Rs 9,943.00 | -57.00 | -0.57% | 6 | 33% | 0 |
 | 18 | smart_10 | Overnight Edge (Smart v2) | Rs 9,867.87 | -132.13 | -1.32% | 4 | 0% | 1 |
 | 19 | smart_08 | Pre-Market Breakout (Smart v2) | Rs 9,784.69 | -215.31 | -2.15% | 15 | 33% | 0 |
@@ -28,8 +28,8 @@ _Updated: 2026-11-25 22:27 IST_
 | 21 | s06 | Prev-Day High/Low Retest | Rs 9,606.63 | -393.37 | -3.93% | 55 | 24% | 0 |
 | 22 | smart_06 | Prev-Day Retest (Smart v2) | Rs 9,596.86 | -403.14 | -4.03% | 50 | 20% | 0 |
 | 23 | s01 | St. Gallen ORB Noise-Band | Rs 9,442.85 | -557.15 | -5.57% | 22 | 14% | 0 |
-| 24 | s07 | First-Candle ORB 15m | Rs 8,954.91 | -1,045.09 | -10.45% | 135 | 7% | 2 |
-| 25 | smart_07 | First-Candle ORB (Smart v2) | Rs 8,837.94 | -1,162.06 | -11.62% | 128 | 5% | 2 |
+| 24 | s07 | First-Candle ORB 15m | Rs 8,962.59 | -1,037.41 | -10.37% | 135 | 7% | 2 |
+| 25 | smart_07 | First-Candle ORB (Smart v2) | Rs 8,845.52 | -1,154.48 | -11.54% | 128 | 5% | 2 |
 | 26 | smart_01 | St. Gallen ORB (Smart v2) | Rs 7,942.45 | -2,057.55 | -20.58% | 73 | 5% | 0 |
 
 **Best so far: s10 — Overnight Edge + Turnaround Tue (+0.86%)**
