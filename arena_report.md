@@ -1,7 +1,7 @@
 # Strategy Arena — Leaderboard
-_Updated: 2026-11-25 07:34 IST_
+_Updated: 2026-11-25 07:37 IST_
 
-**Total equity: Rs 253,926.89** / Rs 260,000 start (-2.34%)
+**Total equity: Rs 253,922.74** / Rs 260,000 start (-2.34%)
 
 | Rank | Bot | Strategy | Equity | P&L | % | Trades | Win% | Open |
 |---|---|---|---|---|---|---|---|---|
@@ -19,14 +19,14 @@ _Updated: 2026-11-25 07:34 IST_
 | 12 | s13 | Afternoon Sell-the-Rip Short | Rs 9,978.67 | -21.33 | -0.21% | 6 | 50% | 0 |
 | 13 | smart_04 | Multi-Market Trend (Smart v2) | Rs 9,968.75 | -31.25 | -0.31% | 0 | 0% | 4 |
 | 14 | s12 | OHL + CPR Breakdown Short | Rs 9,957.22 | -42.78 | -0.43% | 11 | 36% | 1 |
-| 15 | smart_12 | OHL + CPR Short (Smart v2) | Rs 9,947.37 | -52.63 | -0.53% | 10 | 30% | 1 |
+| 15 | smart_12 | OHL + CPR Short (Smart v2) | Rs 9,947.74 | -52.26 | -0.52% | 10 | 30% | 1 |
 | 16 | smart_13 | Afternoon Sell-the-Rip Short (Smart v2) | Rs 9,943.00 | -57.00 | -0.57% | 6 | 33% | 0 |
 | 17 | smart_10 | Overnight Edge (Smart v2) | Rs 9,920.89 | -79.11 | -0.79% | 2 | 0% | 2 |
 | 18 | smart_03 | ETF Dual Momentum (Smart v2) | Rs 9,912.26 | -87.74 | -0.88% | 0 | 0% | 1 |
 | 19 | smart_08 | Pre-Market Breakout (Smart v2) | Rs 9,784.69 | -215.31 | -2.15% | 15 | 33% | 0 |
 | 20 | s08 | Pre-Market High/Low Break | Rs 9,677.99 | -322.01 | -3.22% | 57 | 25% | 0 |
-| 21 | s06 | Prev-Day High/Low Retest | Rs 9,609.73 | -390.27 | -3.90% | 53 | 23% | 1 |
-| 22 | smart_06 | Prev-Day Retest (Smart v2) | Rs 9,607.43 | -392.57 | -3.93% | 48 | 21% | 1 |
+| 21 | s06 | Prev-Day High/Low Retest | Rs 9,607.47 | -392.53 | -3.93% | 53 | 23% | 1 |
+| 22 | smart_06 | Prev-Day Retest (Smart v2) | Rs 9,605.17 | -394.83 | -3.95% | 48 | 21% | 1 |
 | 23 | s01 | St. Gallen ORB Noise-Band | Rs 9,492.69 | -507.31 | -5.07% | 20 | 15% | 0 |
 | 24 | s07 | First-Candle ORB 15m | Rs 9,056.11 | -943.89 | -9.44% | 133 | 7% | 0 |
 | 25 | smart_07 | First-Candle ORB (Smart v2) | Rs 8,918.97 | -1,081.03 | -10.81% | 126 | 5% | 0 |
