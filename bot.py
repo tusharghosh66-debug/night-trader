@@ -208,6 +208,7 @@ def indicators(kl):
            "rsi": rsi(c), "atr": atr(kl)}
     ind["_closes"] = c
     ind["_highs"] = [x["h"] for x in kl]
+    ind["_lows"] = [x["l"] for x in kl]
     return ind
 
 
@@ -301,6 +302,56 @@ def new_state():
             "markets": {m: new_market_state(c["capital"]) for m, c in MARKETS.items()}}
 
 
+# ---- one-off clean book (same pattern as arena.py) ----
+# On/after FRESH_START every market starts again at its capital. Open paper positions
+# are closed into the archive at the last known price and trades.csv is archived, never
+# deleted, so the old history stays readable.
+FRESH_START = "2026-11-26"
+
+def fresh_start_if_due(st):
+    if not FRESH_START or datetime.now(IST).strftime("%Y-%m-%d") < FRESH_START:
+        return False
+    if (st.get("created") or "")[:10] >= FRESH_START:
+        return False
+    now = datetime.now(IST).isoformat()
+    npos = 0
+    for mkt, ms in st["markets"].items():
+        for sym in list((ms.get("positions") or {}).keys()):
+            p = ms["positions"][sym]
+            px = ms["last_prices"].get(sym, p["entry"])
+            side = p.get("side", 1)
+            if side > 0:
+                proceeds = p["qty"] * px * (1 - FEE)
+                pnl = proceeds - p["cost"]
+                ms["cash"] += proceeds
+                tag = "SELL"
+            else:
+                gross = (p["entry"] - px) * p["qty"]
+                cover_fee = p["qty"] * px * FEE
+                pnl = gross - cover_fee - p.get("entry_fee", 0.0)
+                ms["cash"] += gross - cover_fee
+                tag = "COVER"
+            del ms["positions"][sym]
+            npos += 1
+            record_trade(mkt, ms, [now, mkt, sym, tag, round(p["qty"], 6), round(px, 2),
+                                   round(pnl, 2), "reset", round(equity(ms), 2)])
+    if os.path.exists(TRADES_F):
+        try:
+            os.replace(TRADES_F, os.path.join(BASE, "trades_archive.csv"))
+            with open(TRADES_F, "w", newline="", encoding="utf-8") as fh:
+                csv.writer(fh).writerow(["time", "market", "symbol", "side", "qty", "price",
+                                         "pnl", "reason", "equity_after"])
+        except Exception as e:
+            log(f"fresh start: could not archive trades: {e}")
+    st.clear()
+    st.update(new_state())
+    st["fresh_start"] = FRESH_START
+    st.setdefault("equity_history", [])
+    save_state(st)
+    log(f"FRESH START {FRESH_START}: 3 markets reset to Rs 10000 each, "
+        f"{npos} open positions closed into trades_archive.csv")
+    return True
+
 def load_state():
     try:
         with open(STATE_F, encoding="utf-8") as f:
@@ -342,14 +393,23 @@ def save_state(st):
 
 
 def equity(ms):
+    """Cash + open P&L. Longs hold their notional in cash, shorts do not: a short only
+    paid its entry fee up front, so its mark-to-market is the gross gain (entry-px)."""
     e = ms["cash"]
     for sym, p in ms["positions"].items():
-        e += p["qty"] * ms["last_prices"].get(sym, p["entry"])
+        px = ms["last_prices"].get(sym, p["entry"])
+        if p.get("side", 1) > 0:
+            e += p["qty"] * px
+        else:
+            e += p["qty"] * (p["entry"] - px)
     return e
 
 
-def record_trade(mkt, ms, row):
-    ms["closed_trades"].append(row)
+def record_trade(mkt, ms, row, closed=True):
+    """Append to the trade log. Only exits are 'closed trades': counting the entry row
+    too made the report say "Closed: 9 (1 wins)" for 4 round trips."""
+    if closed:
+        ms["closed_trades"].append(row)
     new = not os.path.exists(TRADES_F)
     with open(TRADES_F, "a", newline="", encoding="utf-8") as f:
         w = csv.writer(f)
@@ -368,6 +428,19 @@ def signal(ind, i, regime_ok, news_score):
         return "buy"
     return None
 
+
+_WAIT_LOGGED = {}          # (market, symbol) -> hour bucket, keeps WAIT logs hourly
+
+def signal_short(ind, i, regime_ok, news_score):
+    """Breakdown short, only while the market is BELOW its 200-EMA (the long rule is
+    off there, which is exactly when 2/3 of the capital used to sit idle)."""
+    e20, e50, r, a = ind["ema20"][i], ind["ema50"][i], ind["rsi"][i], ind["atr"][i]
+    if None in (e20, e50, r, a) or i < 20 or regime_ok or news_score > 0.35:
+        return None
+    ll = min(ind["_lows"][i - 20:i])
+    if e20 < e50 and ind["_closes"][i] < ll and 25 <= r <= 50:
+        return "short"
+    return None
 
 def size_position(eq, price, a, news_score):
     stop_dist = ATR_STOP_MULT * a
@@ -454,7 +527,8 @@ def market_cycle(mkt, ms, fx):
     except Exception as e:
         log(f"{mkt} regime fetch failed: {e}")
         regime_ok = True
-    for sym in cfg["symbols"]:
+    closed_now = set()          # arena.py's _CLOSED_THIS_CYCLE: never re-enter the
+    for sym in cfg["symbols"]:  # same symbol in the same cycle we just exited it
         try:
             kl = get_klines(cfg["source"], sym, 300)
             if cfg.get("usd_priced"):
@@ -470,46 +544,92 @@ def market_cycle(mkt, ms, fx):
             e20, e50, r = ind["ema20"][i], ind["ema50"][i], ind["rsi"][i]
             if sym in ms["positions"]:
                 p = ms["positions"][sym]
-                p["peak"] = max(p.get("peak", p["entry"]), px)
-                trail = p["peak"] - ATR_TRAIL_MULT * a if a else p["stop"]
-                stop = max(p["stop"], trail)
+                side = p.get("side", 1)
                 reason = None
-                if px <= stop:
-                    reason = f"stop/trail hit ({px:.2f}<={stop:.2f})"
-                elif e50 and px < e50:
-                    reason = "trend lost: close < EMA50"
-                elif r and r > 78:
-                    reason = f"RSI {r:.0f} overbought take-profit"
-                if reason:
-                    proceeds = p["qty"] * px * (1 - FEE)
-                    pnl = proceeds - p["cost"]
-                    ms["cash"] += proceeds
-                    row = [datetime.now(IST).isoformat(), mkt, sym, "SELL", round(p["qty"], 6),
-                           round(px, 2), round(pnl, 2), reason, round(equity(ms), 2)]
-                    record_trade(mkt, ms, row)
-                    del ms["positions"][sym]
-                    log(f"SELL [{mkt}] {sym} qty={p['qty']:.4f} @ {px:.2f} pnl={pnl:+.2f} — {reason}")
+                if side > 0:
+                    p["peak"] = max(p.get("peak", p["entry"]), px)
+                    trail = p["peak"] - ATR_TRAIL_MULT * a if a else p["stop"]
+                    stop = max(p["stop"], trail)
+                    if px <= stop:
+                        reason = f"stop/trail hit ({px:.2f}<={stop:.2f})"
+                    elif e50 and px < e50:
+                        reason = "trend lost: close < EMA50"
+                    elif r and r > 78:
+                        reason = f"RSI {r:.0f} overbought take-profit"
                 else:
-                    log(f"HOLD [{mkt}] {sym} px={px:.2f} stop={stop:.2f} rsi={r:.0f}")
-            if sym not in ms["positions"] and len(ms["positions"]) < MAX_POSITIONS and a:
+                    p["trough"] = min(p.get("trough", p["entry"]), px)
+                    trail = p["trough"] + ATR_TRAIL_MULT * a if a else p["stop"]
+                    stop = min(p["stop"], trail)
+                    if px >= stop:
+                        reason = f"stop/trail hit ({px:.2f}>={stop:.2f})"
+                    elif e50 and px > e50:
+                        reason = "trend back: close > EMA50"
+                    elif r and r < 22:
+                        reason = f"RSI {r:.0f} oversold take-profit"
+                if reason:
+                    if side > 0:
+                        proceeds = p["qty"] * px * (1 - FEE)
+                        pnl = proceeds - p["cost"]
+                        ms["cash"] += proceeds
+                        tag = "SELL"
+                    else:
+                        gross = (p["entry"] - px) * p["qty"]
+                        cover_fee = p["qty"] * px * FEE
+                        pnl = gross - cover_fee - p.get("entry_fee", 0.0)
+                        ms["cash"] += gross - cover_fee   # entry fee already left cash
+                        tag = "COVER"
+                    del ms["positions"][sym]      # BEFORE equity(): keeping it here counted
+                    closed_now.add(sym)
+                    row = [datetime.now(IST).isoformat(), mkt, sym, tag, round(p["qty"], 6),
+                           round(px, 2), round(pnl, 2), reason, round(equity(ms), 2)]
+                    record_trade(mkt, ms, row)    # the position twice in equity_after
+                    log(f"{tag} [{mkt}] {sym} qty={p['qty']:.4f} @ {px:.2f} pnl={pnl:+.2f} — {reason}")
+                else:
+                    log(f"HOLD [{mkt}] {sym} px={px:.2f} stop={stop:.2f} rsi={r and round(r)}")
+            if (sym not in ms["positions"] and sym not in closed_now
+                    and len(ms["positions"]) < MAX_POSITIONS and a):
                 if signal(ind, i, regime_ok, ns) == "buy":
                     eq = equity(ms)
                     qty = size_position(eq, px, a, ns)
                     cost = qty * px * (1 + FEE)
                     if cost >= cfg["min_cost"] and cost <= ms["cash"]:
                         ms["cash"] -= cost
-                        ms["positions"][sym] = {"qty": qty, "entry": px, "cost": cost,
+                        ms["positions"][sym] = {"qty": qty, "entry": px, "cost": cost, "side": 1,
                                                 "stop": px - ATR_STOP_MULT * a, "peak": px,
                                                 "opened": datetime.now(IST).isoformat()}
                         row = [datetime.now(IST).isoformat(), mkt, sym, "BUY", round(qty, 6),
                                round(px, 2), 0.0,
                                f"breakout+EMA trend, RSI={r:.0f}, regime_ok={regime_ok}, news={ns:+.2f}",
                                round(equity(ms), 2)]
-                        record_trade(mkt, ms, row)
+                        record_trade(mkt, ms, row, closed=False)
                         log(f"BUY [{mkt}] {sym} qty={qty:.4f} @ {px:.2f} "
                             f"stop={px - ATR_STOP_MULT * a:.2f} (rsi={r:.0f}, news={ns:+.2f})")
+                elif signal_short(ind, i, regime_ok, ns) == "short":
+                    eq = equity(ms)
+                    qty = size_position(eq, px, a, 0.0)   # fear is the short's friend
+                    notional = qty * px
+                    entry_fee = notional * FEE
+                    if notional >= cfg["min_cost"] and entry_fee <= ms["cash"]:
+                        ms["cash"] -= entry_fee
+                        ms["positions"][sym] = {"qty": qty, "entry": px, "side": -1,
+                                                "entry_fee": entry_fee,
+                                                "stop": px + ATR_STOP_MULT * a,
+                                                "peak": px, "trough": px,
+                                                "opened": datetime.now(IST).isoformat()}
+                        row = [datetime.now(IST).isoformat(), mkt, sym, "SHORT", round(qty, 6),
+                               round(px, 2), 0.0,
+                               f"breakdown+EMA down, RSI={r:.0f}, regime_ok={regime_ok}, news={ns:+.2f}",
+                               round(equity(ms), 2)]
+                        record_trade(mkt, ms, row, closed=False)
+                        log(f"SHORT [{mkt}] {sym} qty={qty:.4f} @ {px:.2f} "
+                            f"stop={px + ATR_STOP_MULT * a:.2f} (rsi={r and round(r)}, news={ns:+.2f})")
                 else:
-                    log(f"WAIT [{mkt}] {sym} px={px:.2f} rsi={r and round(r)} regime_ok={regime_ok}")
+                    # one line per symbol per hour instead of 288/day serial spam
+                    key = (mkt, sym)
+                    bucket = datetime.now(IST).strftime("%Y-%m-%d %H")
+                    if _WAIT_LOGGED.get(key) != bucket:
+                        _WAIT_LOGGED[key] = bucket
+                        log(f"WAIT [{mkt}] {sym} px={px:.2f} rsi={r and round(r)} regime_ok={regime_ok}")
         except Exception as e:
             log(f"[{mkt}] {sym} cycle error: {e}")
     ms["cycles"] += 1
@@ -527,11 +647,13 @@ def write_report(st):
         lines += [f"## {mkt.upper()} ({status}) — {c}{eq:,.2f} | P&L {pnl:+,.2f} ({pnl / ms['start_equity'] * 100:+.2f}%)",
                   f"Cash {c}{ms['cash']:,.2f} | cycles {ms['cycles']} | capital {c}{ms['start_equity']:,.0f}"]
         if ms["positions"]:
-            lines.append("| Symbol | Qty | Entry | Last | Unrealized |")
-            lines.append("|---|---|---|---|---|")
+            lines.append("| Symbol | Side | Qty | Entry | Last | Unrealized |")
+            lines.append("|---|---|---|---|---|---|")
             for sym, p in ms["positions"].items():
                 last = ms["last_prices"].get(sym, p["entry"])
-                lines.append(f"| {sym} | {p['qty']:.4f} | {p['entry']:.2f} | {last:.2f} | {p['qty'] * last - p['cost']:+.2f} |")
+                side = p.get("side", 1)
+                lines.append(f"| {sym} | {'SHORT' if side < 0 else 'LONG'} | {p['qty']:.4f} | "
+                             f"{p['entry']:.2f} | {last:.2f} | {(last - p['entry']) * p['qty'] * side:+.2f} |")
         else:
             lines.append("_No open positions — all cash._")
         ct = ms["closed_trades"]
@@ -547,7 +669,9 @@ def write_report(st):
         for t in news.get("top", [])[:3]:
             lines.append(f"- {t}")
         lines.append("")
-    lines += ["Market hours: crypto 24/7 | NSE 9:15–15:30 IST Mon–Fri | US 9:30–16:00 ET (8:00 PM–2:30 AM IST) Mon–Fri.",
+    lines += ["Strategy: LONG only while the market is above its 200-hour EMA, SHORT (breakdown) only while it is below —",
+              "so a falling market is traded instead of leaving two thirds of the capital idle.",
+              "Market hours: crypto 24/7 | NSE 9:15–15:30 IST Mon–Fri | US 9:30–16:00 ET (8:00 PM–2:30 AM IST) Mon–Fri.",
               "> PAPER TRADING ONLY — simulated capital, no real orders placed."]
     with open(REPORT_F, "w", encoding="utf-8") as f:
         f.write("\n".join(lines))
@@ -597,12 +721,14 @@ def write_dashboard(st):
         fng = f" · Fear&amp;Greed {news['fear_greed']}" if "fear_greed" in news else ""
         pos_rows = ""
         if ms["positions"]:
-            pos_rows = '<table class="nt-t"><tr><th>Symbol</th><th>Qty</th><th>Entry</th><th>Last</th><th>Unreal.</th></tr>'
+            pos_rows = '<table class="nt-t"><tr><th>Symbol</th><th>Side</th><th>Qty</th><th>Entry</th><th>Last</th><th>Unreal.</th></tr>'
             for sym, p in ms["positions"].items():
                 last = ms["last_prices"].get(sym, p["entry"])
-                u = p["qty"] * last - p["cost"]
+                side = p.get("side", 1)
+                u = (last - p["entry"]) * p["qty"] * side
                 uc = "up" if u >= 0 else "dn"
-                pos_rows += (f'<tr><td>{sym}</td><td>{p["qty"]:.4f}</td><td>{p["entry"]:.2f}</td>'
+                pos_rows += (f'<tr><td>{sym}</td><td>{"SHORT" if side < 0 else "LONG"}</td>'
+                             f'<td>{p["qty"]:.4f}</td><td>{p["entry"]:.2f}</td>'
                              f'<td>{last:.2f}</td><td class="{uc}">{u:+.2f}</td></tr>')
             pos_rows += "</table>"
         # sparkline from equity history
@@ -664,6 +790,7 @@ def write_dashboard(st):
 def run():
     log("=== Night Trader v3 starting (PAPER: INR 10,000 x 3 markets = 30,000 total) ===")
     st = load_state()
+    fresh_start_if_due(st)
     last_news = 0
     while True:
         try:
@@ -697,6 +824,7 @@ def cycle_once(st=None):
     Used by `once` mode (cloud cron fallback) and serve_all.py (Render 1-min loop)."""
     if st is None:
         st = load_state()
+    fresh_start_if_due(st)
     try:                                   # keep decisions.log repo-friendly
         with open(LOG_F, encoding="utf-8") as f:
             lines = f.readlines()

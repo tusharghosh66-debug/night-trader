@@ -20,7 +20,7 @@ CYCLE_SEC = int(os.environ.get("CYCLE_SEC", "60"))   # Render env: 30
 SYNC_EVERY = 5
 FILES = ["state.json", "trades.csv", "report.md", "dashboard.html", "news.json",
          "arena_state.json", "arena_trades.csv", "arena_report.md", "arena_dashboard.html",
-"arena_trades_archive.csv"]
+"arena_trades_archive.csv", "trades_archive.csv"]
 STATUS = {"started": None, "last_cycle": None, "cycles": 0,
           "night_trader": {"equity": 0.0, "error": None},
           "arena": {"equity": 0.0, "error": None},
