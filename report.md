@@ -1,8 +1,8 @@
 # Night Trader v2 — Paper Trading Report (3 markets)
-_Updated: 2026-11-25 19:59 IST_
+_Updated: 2026-11-25 20:02 IST_
 
 ## CRYPTO (OPEN) — ₹10,000.00 | P&L +0.00 (+0.00%)
-Cash ₹10,000.00 | cycles 14741 | capital ₹10,000
+Cash ₹10,000.00 | cycles 14746 | capital ₹10,000
 _No open positions — all cash._
 News sentiment: -0.34 (181 headlines, 6 sources, Fear&Greed 13)
 - 21Shares says bitcoin’s sustained recovery needs stablecoin supply, spot ETF inflows - ForkLog
@@ -25,8 +25,8 @@ News sentiment: +0.96 (216 headlines, 6 sources)
 - Why APL Apollo Tubes shares crashed 15% today to plunge at 52-week low; downgrade from brokerages after Tata Steel deal
 - Sensex Jumps 1,502 Points; Nifty Surges 470 on FII Buying - HDFC Sky
 
-## US (CLOSED) — ₹10,000.00 | P&L +0.00 (+0.00%)
-Cash ₹10,000.00 | cycles 2170 | capital ₹10,000
+## US (OPEN) — ₹10,000.00 | P&L +0.00 (+0.00%)
+Cash ₹10,000.00 | cycles 2175 | capital ₹10,000
 _No open positions — all cash._
 News sentiment: -0.03 (181 headlines, 5 sources)
 - Nasdaq futures fall 3% amid tech selloff, U.S. tariff reports - Investing.com
