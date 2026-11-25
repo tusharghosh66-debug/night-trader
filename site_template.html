@@ -42,6 +42,7 @@ section.grp{margin:0 0 22px}
 .card .nm{font-size:11px;color:var(--mute);margin:2px 0 7px;height:28px;overflow:hidden}
 .card .eq{font-size:17px;font-weight:700;letter-spacing:-.3px}
 .card .pct{font-size:12.5px;font-weight:600}
+.card.idle{opacity:.62}.card.idle:hover{opacity:1}
 .card .meta{display:flex;gap:10px;flex-wrap:wrap;font-size:10.5px;color:var(--mute);margin-top:7px}
 .card svg{display:block;width:100%;height:32px;margin-top:8px}
 .tag{font-size:9.5px;border:1px solid var(--line);border-radius:5px;padding:1px 5px;color:var(--mute);vertical-align:1px}
@@ -108,6 +109,8 @@ table.resp td.num{text-align:right}
 <button class="btn on" data-sort="pnl">P&amp;L অনুযায়ী</button>
 <button class="btn" data-sort="id">নাম অনুযায়ী</button>
 <button class="btn" data-sort="tr">ট্রেড সংখ্যা</button>
+<button class="btn" id="onlyActive">শুধু সক্রিয় বট</button>
+<button class="btn" id="showPaused">paused বট দেখাও</button>
 </div>
 <div id="overview"></div>
 <div id="detail" class="detail"></div>
@@ -139,12 +142,12 @@ function spark(vals, w, h, stroke){
 
 function card(b){
   const tags = (b.council ? "<span class='tag c'>council</span> " : "") + (b.paused ? "<span class='tag p'>paused</span>" : "");
-  return "<a class='card' href='#/bot/" + b.id + "' data-id='" + b.id + "' data-name='" + esc(b.name.toLowerCase()) + "' data-pnl='" + b.pnl.toFixed(2) + "' data-tr='" + b.trades + "'>" +
+  return "<a class='card" + (b.trades === 0 && b.open === 0 ? " idle" : "") + "' href='#/bot/" + b.id + "' data-id='" + b.id + "' data-name='" + esc(b.name.toLowerCase()) + "' data-pnl='" + b.pnl.toFixed(2) + "' data-tr='" + b.trades + "' data-op='" + b.open + "' data-paused='" + (b.paused ? 1 : 0) + "'>" +
     "<div class='crow'><span class='cid'>" + b.id + "</span><span class='pct " + cls(b.pnl) + "'>" + pct(b.pct) + "</span></div>" +
     "<div class='nm'>" + esc(b.name) + " " + tags + "</div>" +
     "<div class='crow'><span class='eq mono'>" + money(b.eq) + "</span><span class='pct mono " + cls(b.pnl) + "'>" + money(b.pnl, true) + "</span></div>" +
     spark(b.spark, 220, 32) +
-    "<div class='meta'><span>" + b.trades + "টি ট্রেড</span><span>" + (b.trades ? "win " + b.wr.toFixed(0) + "%" : "—") + "</span><span>" + b.open + " ওপেন</span></div></a>";
+    "<div class='meta'><span>" + b.trades + "টি ট্রেড</span><span title='10-এর কম ট্রেডে win% অর্থহীন'>" + (b.trades >= 5 ? "win " + b.wr.toFixed(0) + "%" : "win —") + "</span><span>" + b.open + " ওপেন</span></div></a>";
 }
 
 function renderOverview(){
@@ -153,8 +156,10 @@ function renderOverview(){
     const bots = g.bots.map(id => D.bots[id]);
     if(!bots.length) return;
     const eq = bots.reduce((a,b)=>a+b.eq,0), pnl = bots.reduce((a,b)=>a+b.pnl,0);
+    const pausedN = bots.filter(b => b.paused).length;
     h += "<section class='grp' id='g-" + g.key + "'><div class='ghead'><h2>" + esc(g.name) + "</h2>" +
-      "<div class='gsum mono'>" + bots.length + " bots · " + money(eq) + " · <span class='" + cls(pnl) + "'>" + money(pnl, true) + "</span></div></div>" +
+      "<div class='gsum mono'>" + bots.length + " bots · " + money(eq) + " · <span class='" + cls(pnl) + "'>" + money(pnl, true) + "</span>" +
+      (pausedN ? " · <span class='mute'>" + pausedN + " paused লুকানো</span>" : "") + "</div></div>" +
       "<div class='grid'>" + bots.map(card).join("") + "</div></section>";
   });
   $("#overview").innerHTML = h;
@@ -171,15 +176,19 @@ function renderNav(){
 function renderKpis(){
   const t = D.totals;
   $("#kpis").innerHTML = [
-    ["মোট সম্পদ", money(t.eq)], ["পুল থেকে", money(t.pnl, true) + " (" + ((t.pnl / D.pool) * 100).toFixed(2) + "%)"],
-    ["বাজারে", money(t.in_market)], ["ক্যাশ", money(t.cash)],
-    ["ওপেন পজিশন", t.open], ["মোট ট্রেড", t.trades]
-  ].map(([l,v]) => "<div class='kpi'><div class='v mono'>" + v + "</div><div class='l'>" + l + "</div></div>").join("");
-  $("#gen").textContent = "স্টেট: " + GEN + " IST · ২৯ বট · ৬০ সেকেন্ডে আপডেট";
+    ["মোট সম্পদ", money(t.eq), "২৯ বইয়ের মোট দাম"],
+    ["পুল থেকে", money(t.pnl, true) + " (" + ((t.pnl / D.pool) * 100).toFixed(2) + "%)", "₹২,৯০,০০০ শুরুর টাকা থেকে কত উপর/নিচে"],
+    ["বাজারে", money(t.in_market), "ওপেন পজিশনের মোট দাম"],
+    ["রিয়ালাইজড", money(t.cash), "বন্ধ ট্রেডের পরের টাকা — পজিশন খুললে কমে না"],
+    ["ওপেন পজিশন", t.open, "এখন কতগুলো পজিশন খোলা"],
+    ["ক্লোজড ট্রেড", t.trades, "শুরু থেকে কত ট্রেড শেষ হয়েছে"]
+  ].map(([l,v,tip]) => "<div class='kpi' title='" + tip + "'><div class='v mono'>" + v + "</div><div class='l'>" + l + "</div></div>").join("");
+  $("#gen").textContent = "স্টেট: " + GEN + " IST · " + D.groups.reduce((a,g)=>a+g.bots.length,0) + " বট · ৬০ সেকেন্ডে আপডেট";
+
 }
 
 function rows(pos){
-  if(!pos.length) return "<div class='empty'>কোনো ওপেন পজিশন নেই — পুরো টাকা ক্যাশে।</div>";
+  if(!pos.length) return "<div class='empty'>কোনো ওপেন পজিশন নেই — সব টাকা রিয়ালাইজড (বাইরে)।</div>";
   return "<table class='resp'><thead><tr><th>Symbol</th><th>Side</th><th class='num'>Qty</th><th class='num'>Entry</th>" +
     "<th class='num'>Now</th><th class='num'>Stop</th><th class='num'>P&amp;L</th></tr></thead><tbody>" +
     pos.map(p => "<tr><td data-l='symbol'><b>" + esc(p.sym) + "</b></td>" +
@@ -223,12 +232,12 @@ function renderBot(id){
     "<div class='kpi'><div class='v mono'>" + b.trades + "</div><div class='l'>closed trades</div></div>" +
     "<div class='kpi'><div class='v mono'>" + b.wr.toFixed(0) + "%</div><div class='l'>win rate</div></div></div></div>" +
     "<div class='big'>" + spark(b.spark, 900, 120) + "</div>" +
-    "<div class='pnlbar'><span>শুরু <b class='mono'>₹10,000</b></span><span>ক্যাশ <b class='mono'>" + money2(b.cash) + "</b></span>" +
+    "<div class='pnlbar'><span>শুরু <b class='mono'>₹10,000</b></span><span>রিয়ালাইজড <b class='mono'>" + money2(b.cash) + "</b></span>" +
     "<span>বাজারে <b class='mono'>" + money2(b.in_market) + "</b></span><span>আনরিয়ালাইজড <b class='mono " + cls(b.upnl) + "'>" + money2(b.upnl, true) + "</b></span>" +
     "<span>ফি (সব ট্রেডে) <b class='mono'>" + money2(b.fees) + "</b></span></div>" +
     "<div class='cols'><div class='panel'><h3>ওপেন পজিশন (" + b.open + ")</h3>" + rows(b.positions) + "</div>" +
     "<div class='panel'><h3>ডিটেইল</h3>" +
-    "<div class='kv'><span class='k'>ক্যাশ (রিয়ালাইজড)</span><span class='mono'>" + money2(b.cash) + "</span></div>" +
+    "<div class='kv'><span class='k'>রিয়ালাইজড ইক্যুইটি (পজিশন খুললে কমে না)</span><span class='mono'>" + money2(b.cash) + "</span></div>" +
     "<div class='kv'><span class='k'>পজিশনে</span><span class='mono'>" + money2(b.in_market) + "</span></div>" +
     "<div class='kv'><span class='k'>আনরিয়ালাইজড</span><span class='mono " + cls(b.upnl) + "'>" + money2(b.upnl, true) + "</span></div>" +
     "<div class='kv'><span class='k'>সর্বোচ্চ / সর্বনিম্ন</span><span class='mono'>" + money2(Math.max(...b.spark)) + " / " + money2(Math.min(...b.spark)) + "</span></div>" +
@@ -248,7 +257,7 @@ function route(){
   }
 }
 
-let sortBy = "pnl";
+let sortBy = "pnl", onlyActive = false, showPaused = false;
 function applySort(){
   document.querySelectorAll("section.grp .grid").forEach(grid => {
     const cards = [...grid.children];
@@ -265,7 +274,10 @@ function applySearch(){
   document.querySelectorAll("section.grp").forEach(sec => {
     let shown = 0;
     sec.querySelectorAll(".card").forEach(c => {
-      const hit = !q || c.dataset.id.toLowerCase().includes(q) || c.dataset.name.includes(q);
+      const hitQ = !q || c.dataset.id.toLowerCase().includes(q) || c.dataset.name.includes(q);
+      const hitA = !onlyActive || (+c.dataset.tr > 0 || +c.dataset.op > 0);
+      const hitP = showPaused || c.dataset.paused !== "1";
+      const hit = hitQ && hitA && hitP;
       c.style.display = hit ? "" : "none";
       if(hit) shown++;
     });
@@ -275,6 +287,17 @@ function applySearch(){
 
 renderKpis(); renderNav(); renderOverview(); route();
 $("#q").addEventListener("input", applySearch);
+$("#onlyActive").addEventListener("click", () => {
+  onlyActive = !onlyActive;
+  $("#onlyActive").classList.toggle("on", onlyActive);
+  applySearch();
+});
+$("#showPaused").addEventListener("click", () => {
+  showPaused = !showPaused;
+  $("#showPaused").classList.toggle("on", showPaused);
+  applySearch();
+});
+applySearch();
 document.querySelectorAll("[data-sort]").forEach(b => b.addEventListener("click", () => {
   document.querySelectorAll("[data-sort]").forEach(x => x.classList.remove("on"));
   b.classList.add("on"); sortBy = b.dataset.sort; applySort();
