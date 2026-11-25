@@ -23,6 +23,25 @@ FILES = ["state.json", "trades.csv", "report.md", "dashboard.html", "news.json",
          "arena_state.json", "arena_trades.csv", "arena_report.md", "arena_dashboard.html",
          "council_dashboard.html",
          "arena_trades_archive.csv", "trades_archive.csv", "events.json"]
+# Who is keeping the free instance awake? UptimeRobot sends HEAD / every few
+# minutes; Render spins a free web service down after 15 min with no inbound hit.
+PINGS = {"total": 0, "head": 0, "uptimerobot": 0, "first": None, "last": [], "by_ua": {}}
+
+
+def _hit(path, ua, method):
+    now = datetime.now(bot.IST)
+    ua = (ua or "no-ua")[:60]
+    PINGS["total"] += 1
+    if method == "HEAD":
+        PINGS["head"] += 1
+    if "uptimerobot" in ua.lower():
+        PINGS["uptimerobot"] += 1
+    PINGS["by_ua"][ua] = PINGS["by_ua"].get(ua, 0) + 1
+    PINGS["first"] = PINGS["first"] or now.isoformat(timespec="seconds")
+    PINGS["last"].append({"t": now.strftime("%H:%M:%S"), "m": method, "p": path[:30], "ua": ua[:32]})
+    del PINGS["last"][:-25]
+
+
 STATUS = {"started": None, "last_cycle": None, "cycles": 0,
           "night_trader": {"equity": 0.0, "error": None},
           "arena": {"equity": 0.0, "error": None},
@@ -69,15 +88,33 @@ def git_sync():
 
 class HealthHandler(BaseHTTPRequestHandler):
     def do_HEAD(self):
+        try:
+            _hit(self.path, self.headers.get("User-Agent"), "HEAD")
+        except Exception:
+            pass
         self.send_response(200)
         content_type = "application/json" if self.path == "/health" else "text/html; charset=utf-8"
         self.send_header("Content-Type", content_type)
         self.end_headers()
 
     def do_GET(self):
+        try:
+            _hit(self.path, self.headers.get("User-Agent"), "GET")
+        except Exception:
+            pass
         # Health check endpoint for uptime monitors
-        if self.path == "/health":
-            body = json.dumps({"status": "ok", **STATUS}, default=str).encode()
+        if self.path in ["/health", "/api/pings"]:
+            out = {"status": "ok", **STATUS}
+            try:
+                up_min = round((datetime.now(bot.IST) - datetime.fromisoformat(STATUS["started"])).total_seconds() / 60, 1)
+            except Exception:
+                up_min = None
+            out["pings"] = {"total": PINGS["total"], "head": PINGS["head"],
+                            "uptimerobot": PINGS["uptimerobot"], "first": PINGS["first"],
+                            "uptime_min": up_min, "unique_ua": len(PINGS["by_ua"]),
+                            "last": PINGS["last"][-6:], "by_ua_top": sorted(
+                                PINGS["by_ua"].items(), key=lambda kv: -kv[1])[:3]}
+            body = json.dumps(out, default=str).encode()
             self.send_response(200)
             self.send_header("Content-Type", "application/json")
             self.send_header("Content-Length", str(len(body)))
