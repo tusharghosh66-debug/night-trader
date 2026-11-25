@@ -1,8 +1,8 @@
 # Night Trader v2 — Paper Trading Report (3 markets)
-_Updated: 2026-11-25 23:10 IST_
+_Updated: 2026-11-25 23:12 IST_
 
 ## CRYPTO (OPEN) — ₹10,000.00 | P&L +0.00 (+0.00%)
-Cash ₹10,000.00 | cycles 15086 | capital ₹10,000
+Cash ₹10,000.00 | cycles 15091 | capital ₹10,000
 _No open positions — all cash._
 News sentiment: -0.40 (180 headlines, 6 sources, Fear&Greed 13)
 - Cathie Wood’s ARK Buys Anthropic as Ripple CEO Predicts Post-IPO Crypto Rally - CCN.com
@@ -26,7 +26,7 @@ News sentiment: +1.00 (215 headlines, 6 sources)
 - Sensex Jumps 1,502 Points; Nifty Surges 470 on FII Buying - HDFC Sky
 
 ## US (OPEN) — ₹10,000.00 | P&L +0.00 (+0.00%)
-Cash ₹10,000.00 | cycles 2515 | capital ₹10,000
+Cash ₹10,000.00 | cycles 2520 | capital ₹10,000
 _No open positions — all cash._
 News sentiment: -0.16 (191 headlines, 6 sources)
 - Nasdaq-100 futures surge 7%, S&amp;P 500 gain 4.3%, Dow up 2.6% in Wall Street rebound - Beinsure
