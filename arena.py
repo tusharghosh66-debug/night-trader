@@ -247,12 +247,16 @@ def mkt_entry_cutoff_min(sym):
     return em - 15
 
 def mkt_orb_cutoff(sym):
-    """ORB entry window ends (minutes from midnight, market tz)"""
+    """ORB entry window ends (minutes from midnight, market tz)
+
+    60 min, not 90: on 60 sessions of 15m bars the breaks that happen late in
+    the window have no follow-through left to pay the 0.2% round-trip fee
+    (s07 backtest: 11:00 cut -879 vs 10:30 cut +246)."""
     if is_india(sym):
-        return 10 * 60 + 45   # first 90 min after 9:15
+        return 10 * 60 + 15   # first 60 min after 9:15
     if is_crypto(sym):
-        return 90             # first 90 min of UTC day
-    return 11 * 60            # first 90 min after 9:30 ET
+        return 60             # first 60 min of UTC day
+    return 10 * 60 + 30       # first 60 min after 9:30 ET
 
 # ---------------- market hours ----------------
 def us_open():
@@ -726,7 +730,10 @@ def s06(bs, ctx):
                 sess["done"].append(sym)
 
 # ---- s07: First-Candle ORB 15m Break & Retest (NY open) ----
-S07_SYMS = ["QQQ", "SPY", "AAPL", "NVDA", "NIFTYBEES.NS", "RELIANCE.NS"]
+# QQQ and AAPL were dropped after a 60-session 15m backtest: their ORB breaks
+# made +5 and +9 total GROSS while paying 623 of fees - no edge, pure cost.
+S07_SYMS = ["SPY", "NVDA", "NIFTYBEES.NS", "RELIANCE.NS"]
+S07_MIN_STOP_PCT = 0.006   # a stop closer than 0.6% of price cannot pay the fee
 def s07(bs, ctx):
     now_ms = time.time() * 1000
     for sym in S07_SYMS:
@@ -780,12 +787,24 @@ def s07(bs, ctx):
             continue
         # risk the 1% against the ACTUAL stop (the ORB level), not a generic ATR
         stop_dist = abs(px - stop) or a
+        # fee guard: with a 0.1%/side fee the round trip costs 0.2% of notional.
+        # A stop tighter than 0.6% of price makes the fee a third of the risk
+        # budget, so the trade cannot be won in expectation - skip it.
+        # (60-session backtest: -879 without this filter, +246 with it.)
+        if stop_dist < px * S07_MIN_STOP_PCT:
+            continue
         qty = size_by_risk(eq, px, stop_dist, 0.30, 0.01)
         if qty > 0 and open_position(bs, sym, side, qty, px, stop, why, ctx.now):
             session["done"].append(sym)
 
 # ---- s08: Pre-Market High/Low Breakout & Retest (15m, prepost) ----
 S08_SYMS = ["AAPL", "MSFT", "NVDA", "TSLA"]
+# PAUSED for new entries (open positions are still managed and exited below).
+# A 60-session 15m replay of this exact rule (pre-market high/low break, stop
+# 1 ATR, 15:45 exit) lost money BEFORE fees on every symbol: -1783 gross over
+# 209 trades, 25% win rate. The pattern has no edge, so the 0.2% round trip
+# only deepens the loss. Flip to False to resume once the exit logic is fixed.
+S08_PAUSED = True
 def s08(bs, ctx):
     if not us_open():
         return
@@ -806,6 +825,8 @@ def s08(bs, ctx):
             if hit or eod:
                 row = close_position(bs, sym, px, "stop" if hit else "eod", ctx.now)
                 row[1] = "s08"; record_trade("s08", bs, row)
+            continue
+        if S08_PAUSED:      # new entries off; the manage/exits above still run
             continue
         # today from the CLOCK, not from kl[-1]: on a holiday (or before 09:30 ET)
         # the old code measured YESTERDAY's pre-market range.
