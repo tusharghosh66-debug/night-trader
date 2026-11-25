@@ -322,8 +322,17 @@ def record_trade(bot_id, bs, row):
         w.writerow(row)
 
 _CLOSED_THIS_CYCLE = set()   # symbols closed since this cycle started
+_ACTIVE_BOT = None           # bot id currently running (set by run_cycle)
 
 def open_position(bs, sym, side, qty, price, stop, reason, now):
+    # Global entry gates. Both live HERE so every strategy (plain and smart_*)
+    # goes through them, while exits/management stay untouched.
+    if _ACTIVE_BOT in PAUSED_BOTS:
+        log(f"  SKIP {sym} ({reason}): {_ACTIVE_BOT} entries paused")
+        return False
+    if not CRYPTO_TRADING and is_crypto(sym):
+        log(f"  SKIP {sym} ({reason}): crypto entries disabled")
+        return False
     # A position that was closed earlier in THIS cycle must not be re-opened in the
     # same cycle: the smart_* wrapper closes first and the strategy then re-reads
     # the very same signal, which churned (close->re-open at the same price).
@@ -1024,6 +1033,12 @@ CRYPTO_TOP_20 = [
     "UNI7083-USD", "ATOM-USD", "NEAR-USD", "APT21794-USD", "ARB-USD",
 ]
 MOVER_UNIVERSES = {"nifty": NIFTY_50, "us": US_TOP_LIQUID, "crypto": CRYPTO_TOP_20}
+# Crypto trading is OFF (the 24x7 mover universe is still scanned-in-name only when
+# this is True; open crypto positions are still managed and exited normally).
+# 6 sessions of live data: crypto 221 round trips, -572 gross and -2324 net, i.e.
+# NEGATIVE edge in the signal itself, while India (+595 gross) and US (+247 gross)
+# were positive. Flip back to True only after the mover signal proves an edge.
+CRYPTO_TRADING = False
 _MOVERS_CACHE = {}      # market -> (ts, [sym,...])
 _INTRADAY_CACHE = {}    # (sym, interval, rng) -> (ts, kl)
 MOVERS_TTL = 300        # rescan movers every 5 min
@@ -1063,7 +1078,8 @@ def mover_universe(ctx):
         syms += top_movers("nifty", ctx)
     if us_open():
         syms += top_movers("us", ctx)
-    syms += top_movers("crypto", ctx)
+    if CRYPTO_TRADING:
+        syms += top_movers("crypto", ctx)
     return syms
 
 def intraday(sym, interval, rng, ctx):
@@ -1383,6 +1399,13 @@ BOTS = [
     {"id": "smart_13", "name": "Afternoon Sell-the-Rip Short (Smart v2)", "tf": "5m + 1h regime", "market": "Top movers (NSE+US+Crypto)", "fn": smart_13},
 ]
 
+# Entries suspended, positions still managed/exited (same pattern as S08_PAUSED).
+# smart_01: over 6 sessions it made 73 round trips with a 5% win rate and -1450 net,
+# while its base rule s01 made 21 trips with 14% wins and -337. The smart trail is
+# cutting winners at breakeven and then re-entering, paying 0.2% each time. Plain
+# s01 keeps running, so the arena still tests the underlying idea.
+PAUSED_BOTS = {"smart_01"}
+
 # ---------------- cycle ----------------
 def run_cycle(st):
     fx = get_usdinr(st)
@@ -1390,13 +1413,16 @@ def run_cycle(st):
     ctx = Ctx(fx, now)
     _CLOSED_THIS_CYCLE.clear()   # same-cycle re-open guard is per cycle
     log(f"=== ARENA CYCLE  USDINR={fx:.2f}  US_open={us_open()} ===")
+    global _ACTIVE_BOT
     for b in BOTS:
         bs = st["bots"][b["id"]]
         bs["cycles"] += 1
+        _ACTIVE_BOT = b["id"]      # lets open_position apply PAUSED_BOTS / crypto gate
         try:
             b["fn"](bs, ctx)
         except Exception as e:
             log(f"{b['id']} ERROR: {e}\n{traceback.format_exc()}")
+    _ACTIVE_BOT = None
     # snapshot equity history
     tot = sum(bot_equity(st["bots"][b["id"]]) for b in BOTS)
     st["equity_history"].append({"t": now, "total": round(tot, 2),
