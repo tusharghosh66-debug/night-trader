@@ -381,6 +381,34 @@ def open_position(bs, sym, side, qty, price, stop, reason, now):
     if (id(bs), sym) in _CLOSED_THIS_CYCLE:
         log(f"  SKIP {sym} re-open ({reason}): closed earlier in this cycle")
         return False
+    # --- churn gates: measured on the 621 archived trades (see constants) ---
+    g = bs.setdefault("gates", {"cooldown": 0, "rfee": 0, "eod": 0})
+    last = (bs.get("last_exit") or {}).get(sym)
+    if last is not None:
+        try:
+            mins_since = (time.time() - float(last)) / 60.0
+        except Exception:
+            mins_since = 1e9
+        if mins_since < REENTRY_COOLDOWN_MIN:
+            g["cooldown"] += 1
+            log(f"  SKIP {sym} ({reason}): re-entry {mins_since:.0f}m after exit "
+                f"< {REENTRY_COOLDOWN_MIN}m cooldown")
+            return False
+    try:
+        rpct = abs(price - stop) / price * 100.0 if price > 0 else 0.0
+    except Exception:
+        rpct = 0.0
+    if rpct < MIN_RISK_PCT:
+        g["rfee"] += 1
+        log(f"  SKIP {sym} ({reason}): risk {rpct:.2f}% < {MIN_RISK_PCT}% fee hurdle")
+        return False
+    em = mkt_eod_min(sym)
+    if em is not None:
+        hm = mkt_hm(time.time() * 1000, sym)
+        if hm is not None and hm >= em - EOD_ENTRY_BLOCK_MIN:
+            g["eod"] += 1
+            log(f"  SKIP {sym} ({reason}): within {EOD_ENTRY_BLOCK_MIN}m of EOD flatten")
+            return False
     # NOTE: no fee is taken here. close_position() already nets BOTH legs
     # (entry + exit) out of pnl, so charging the entry fee here as well
     # double-taxed every round trip by 0.1% of notional.
@@ -401,6 +429,7 @@ def close_position(bs, sym, price, reason, now):
         pnl = p["side"] * p["qty"] * (price - p["entry"]) - p["qty"] * price * FEE - p["qty"] * p["entry"] * FEE
     bs["cash"] += pnl
     bs["last_prices"][sym] = price
+    bs.setdefault("last_exit", {})[sym] = time.time()   # feeds the re-entry cooldown
     eq = bot_equity(bs)
     row = [now, "", sym, "LONG" if p["side"] > 0 else "SHORT", round(p["qty"], 6),
            round(p["entry"], 4), round(price, 4), round(pnl, 2), reason, round(eq, 2)]
@@ -1161,6 +1190,17 @@ def vwap_series(kl, sym):
 # EOD_HOLD_PCT = 99 to turn the whole experiment off.
 EOD_HOLD_PCT = 0.25      # % move needed to justify holding through the close
 EOD_HOLD_MAX = 3         # at most 3 sessions, then flatten regardless
+
+# ---- churn gates (audit of the 621 archived trades) ----------------------
+# Gross was +Rs 74 across 599 trades while fees were Rs 4,389: each marginal
+# trade is worth about -Rs 7. Two habits fed that: (a) 76% of a bot's trades on
+# the same symbol came within 30 min of its previous exit (median gap 2 min), so
+# a forced exit was immediately re-bought at the same price, paying a new fee;
+# (b) 26% of stop-outs had a risk distance under 0.3%, i.e. smaller than the
+# 0.2% round trip. Both are now blocked at the single entry funnel.
+REENTRY_COOLDOWN_MIN = 30    # same bot, same symbol: no re-entry for 30 min
+MIN_RISK_PCT = 0.30          # risk distance must clear the fee (0.3% -> 2R = 0.6%)
+EOD_ENTRY_BLOCK_MIN = 20     # no new entries in the last 20 min before flatten
 
 
 def _day_now():
