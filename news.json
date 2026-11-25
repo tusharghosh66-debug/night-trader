@@ -1,7 +1,7 @@
 {
- "ts": "2026-11-25T13:22:44.302870+05:30",
+ "ts": "2026-11-25T14:22:44.329132+05:30",
  "crypto": {
-  "score": -0.28,
+  "score": -0.303,
   "n_headlines": 181,
   "n_sources": 6,
   "top": [
@@ -16,6 +16,7 @@
   ],
   "headlines": [
    "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+   "Live updates: Bitcoin slips back under $60,000 as HYPE leads altcoins lower",
    "Solana developers move to stop validators finishing work on blocks that already lost",
    "Just 10 accounts drove all of the XRP Ledger's trading growth last quarter",
    "Crypto traders can now hedge Nvidia, Anthropic and oil bets on Derive",
@@ -40,8 +41,8 @@
    "Nvidia's Jensen Huang faces Senate scrutiny despite Trump-backed return as CEO",
    "Bitcoin rebound already losing steam as AI trade returns with a bang",
    "Cathie Wood's ARK Invest pulls the plug on two planned crypto ETFs",
-   "Binance hackers push $247 million through transactions designed to cloud the source",
    "Cointelegraph.com News",
+   "EU seeks up to $55B for AI and quantum computing fund: Report",
    "South Korea\u2019s crypto bill could move stablecoin race beyond token issuance",
    "Here\u2019s what happened in crypto today",
    "Solana DEX Velocity halts trading over bug just months after relaunch",
@@ -71,7 +72,6 @@
    "US seeks to recover $1.1B in crypto stolen in North Korea-linked Binance hack",
    "Kalshi secures temporary win in New York gambling law dispute",
    "BTCS offloads $44M in ETH to reduce DeFi debt amid market downturn",
-   "Base makes quantum security a 2027 priority as regulators warn of risks",
    "OpenAI and Anthropic Insiders Fear Their Next AI Models Are Too Dangerous to Release",
    "Anthropic\u2019s Claude Ship Lets AI Write, Review and Approve Its Own Code",
    "Coldcard Bitcoin Exploit, Revisited: How a Hidden Flaw Survived Years of Audits"
@@ -79,8 +79,8 @@
   "fear_greed": 13
  },
  "india": {
-  "score": 0.972,
-  "n_headlines": 216,
+  "score": 0.743,
+  "n_headlines": 214,
   "n_sources": 6,
   "top": [
    "Nasdaq surges 6%, Dow soars 1,400 pts as markets rebound on Huang\u2019s return: Stock Market Highlights",
@@ -89,8 +89,8 @@
    "Markets rally in early trade on foreign fund inflows, lower crude oil; Sensex jumps 1,382 points - The Hindu",
    "Bulls regain control: Sensex gains 1,700 pts, Nifty near 25,850; key factors behind market rally - TradingView",
    "Sensex Jumps 1,400 Points, Nifty Gains 375 as Foreign Inflows, Softer Oil Lift Market Sentiment - APAC Media",
-   "Sensex, Nifty surge up to 1.7 pc in early deals as FII inflows power market rally - cfo.economictimes.indiatimes.com",
-   "Indian Markets Rally: Sensex Jumps 1,382 Pts on FII Inflows - Rediff MoneyWiz"
+   "Thomas Cook shares rally 14%, soar 62% in a month; what's driving gains? - Business Standard",
+   "HPE shares crash 17%, stock suffers its worst-ever single-day fall. Here's why"
   ],
   "headlines": [
    "Economic Times",
@@ -105,7 +105,7 @@
    "India pension funds pivot to bonds as equity exposure nears cap",
    "Dollar takes breather ahead of US data on Fed path; Aussie jumps on CPI",
    "Gold ticks lower ahead of US inflation data",
-   "Stock Market Live Updates: Sensex zooms over 1,250 points, Nifty tops 25,850; bank, IT stocks surges",
+   "Stock Market Live Updates: Sensex sheds 800 pts from day\u2019s high, Nifty holds 25,650; small, midcaps lose steam",
    "Market timers get schooled as S&amp;P 500 swings rip up playbooks",
    "Goldman Sachs, SocGen buy Rs 920 crore stake in Lenskart",
    "Global Market Today: Asian stocks fall as AI trade doubts resurface",
@@ -133,6 +133,8 @@
    "Adani Airport raises $300 mn from 360 ONE Asset, taking total equity infusion to $1.35 bn",
    "Nasdaq futures surge 3% as battered AI stocks gain ground",
    "Rupee reversal, debt supply drag India bonds in holiday-shortened week",
+   "Rollercoaster ride in stock market today: Nifty pares gains by 270 points, Sensex crashes over 800 from day's high",
+   "FIIs back with a bang! Inflows return to Indian stocks after 2-month sell-off; 14 sectors attracted foreign money | List",
    "MCX rates: Gold crashes 13%, silver plunges 20% in Nov 2026; is worst over? What should precious metals investors do?",
    "Jio Financial Services vs Reliance vs Jio Platforms shares: Which Mukesh Ambani's stock to buy amid Dalal Street rally?",
    "Traders pull back from closing auction ahead of Sebi\u2019s revised framework",
@@ -150,24 +152,22 @@
    "Indian shares may open higher as foreign inflows, lower oil prices aid sentiment",
    "Top stocks to watch today: Tata Steel, Lenskart, Adani Enterprises, PhysicsWallah, Hindalco, ABB, and 9 others in focus",
    "Stock market outlook today,25 Nov:Sensex, Nifty prediction-DJIA, S&amp;P, NASDAQ, GIFT Nifty, Kospi, Nikkei, Taiwan cues",
-   "Raja Venkatraman recommends three stocks for 25 November",
-   "Chalet Hotels: is the worst behind it?",
-   "Dalal Street may face test from AI trade revival"
+   "Raja Venkatraman recommends three stocks for 25 November"
   ]
  },
  "us": {
-  "score": -0.116,
+  "score": -0.166,
   "n_headlines": 181,
   "n_sources": 5,
   "top": [
    "SoftBank drops 15% as Wall Street AI sell-off ripples across Asian tech names",
    "Nasdaq-100 futures surge 7%, S&amp;P 500 gain 4.3%, Dow up 2.6% in Wall Street rebound - Beinsure",
    "Drugmaker Insmed shares rally 14% after Sanofi agrees to buy it in pharma\u2019s biggest deal in three years",
-   "Stock market today: Dow futures jump 800 points and Nasdaq soars 3% after entering correction - Fortune",
    "Stock Market Today: Dow, S&amp;P 500, and Nasdaq Surge as Nvidia Leads a Major AI Rebound - 24/7 Wall St.",
-   "NVIDIA Drops 6%, Nasdaq Falls 1.5% as Dow Reclaims 50,000 - \uc870\uc120\uc77c\ubcf4",
-   "Stock Futures Are Rebounding After Last Week\u2019s Bloodbath - Barron's",
-   "2-year Treasury yield jumps as stocks rebound, investors await New York Fed President Williams speech - CNBC"
+   "2-year Treasury yield jumps as stocks rebound, investors await New York Fed President Williams speech - CNBC",
+   "Get ready for 3 consecutive rate hikes starting next month, bank economist warns - Business Insider",
+   "Cathie Wood Sold $17 Million of Nvidia Stock the Day Before It Soared 31% - Yahoo Finance",
+   "Nasdaq 100 Tumbles as Nvidia Euphoria Fades, New Tariffs Floated - Bloomberg.com"
   ],
   "headlines": [
    "AI debt worries grow as Nvidia rebound masks Big Tech spending squeeze",
@@ -201,35 +201,35 @@
    "Congress shreds Nvidia&apos;s &apos;outrageous&apos; decision to bring back Huang: &apos;Failure of character&apos;",
    "Utah drops criminal charges against Kalshi founders after company suspended operations in state",
    "Google News",
-   "Stock Market Today: Dow Jones, S&amp;P 500, Nasdaq 100 Futures Fall After Scott Bessent Unveils Fresh Iran Sa - Benzinga",
    "Dow Jones Futures Fall; Trump Says 'Not Too Late' For U.S. To Take Nvidia Stake - Investor's Business Daily",
    "POLL Bruised S&amp;P 500 seen gaining more than 12% by end-2027: Reuters poll - Reuters",
    "Stocks Turn Lower as Nvidia Euphoria Wears Off: Markets Wrap - Bloomberg.com",
-   "Dow, S&amp;P 500, Nasdaq Futures Edge Lower Amid Tech Selloff Ahead Of Key Inflation Data: DELL, AMBA, SOXL, MSTR In Focus - TradingView",
    "The Stock Market Just Entered a Correction. History Says Investors Who Make This 1 Move Right Now Will Win Out. - The Motley Fool",
+   "Dow, S&amp;P 500, Nasdaq Futures Edge Lower Amid Tech Selloff Ahead Of Key Inflation Data: DELL, AMBA, SOXL, MSTR In Focus - TradingView",
    "Drops for Nvidia, Anthropic and other AI stocks drag the markets back down - CBC",
    "Nvidia shares soar more than 30% after Huang reinstated as CEO - CNN",
-   "Stock market today: Dow futures jump 800 points and Nasdaq soars 3% after entering correction - Fortune",
+   "Stock Market Today: Dow Jones, S&amp;P 500, Nasdaq 100 Futures Fall After Scott Bessent Unveils Fresh Iran Sa - Benzinga",
    "US stock market today: Nasdaq and S&amp;P 500 fall as Nvidia and AI stocks slide, Dow gains - Beinsure",
    "Wall Street's brutal week brought a string of ugly stock-market milestones. Here's the damage. - Business Insider",
    "US Stock Market Today: 5 Critical Moves as Nasdaq Falls - STL.News",
    "Wall St futures fall after S&amp;P 500, Nasdaq end lower; inflation data eyed - Investing.com",
+   "Stock market rebounds sharply after sell-off, Nvidia closes up more than 31% - ABC News - Breaking News, Latest News and Videos",
    "Stock Market Today: Dow, S&amp;P 500, and Nasdaq Surge as Nvidia Leads a Major AI Rebound - 24/7 Wall St.",
    "S&amp;P500 and Nasdaq Index: AI Stocks Slide as Nvidia and Anthropic Retreat - FXEmpire",
-   "S&amp;P 500 sinks 3.7% and Nasdaq composite goes negative for the year as tech sell-off worsens - AP News",
    "S&amp;P Dow Jones Indices - S&amp;P Global",
    "U.S. Stocks Mixed as Huang Relief Rally Fades - WSJ",
-   "E-mini Dow Jones U.S. Dividend 100 Index Futures Calendar - CME Group",
    "Wall St futures fall after S&amp;P 500, Nasdaq end lower; inflation data eyed - Yahoo Finance",
+   "S&amp;P 500 (^GSPC) Charts, Data &amp; News - Yahoo Finance - Yahoo! Finance Canada",
    "US Stock Futures Mixed After Nvidia-Led Rally as Investors Assess Federal Reserve Rate Outlook: Dow Jones, S&amp;P, Nasdaq, Wall Street - Yahoo Finance",
    "US Stock Futures Decline Following Wall Street Rally as Technology Shares Retreat: Dow Jones, S&amp;P, Nasdaq - Yahoo Finance",
-   "S&amp;P 500 (^GSPC) Charts, Data &amp; News - Yahoo Finance - Yahoo! Finance Canada",
    "How major US stock indexes fared Tuesday 11/24/2026 - KVUE",
-   "NVIDIA Drops 6%, Nasdaq Falls 1.5% as Dow Reclaims 50,000 - \uc870\uc120\uc77c\ubcf4",
-   "Stock Futures Are Rebounding After Last Week\u2019s Bloodbath - Barron's",
-   "S&amp;P 500, Nasdaq End Lower As AI Jitters Resurface With Nvidia\u2019s Governance Issues And Talks Of Fresh Import Tariffs \u2014 NVDA, DELL, TSLA, TGTX In Focus - Yahoo Finance",
+   "Stock market recovers following reinstatement of Jensen Huang as Nvidia CEO - CBS News",
    "Dow Jones Futures: Tech Stocks, Nvidia Snap Back On Jensen Huang's Return; Elon Musk-Led SpaceX, Tesla Rally - Investor's Business Daily",
-   "Stock Market: Will S&amp;P 500 Open Up or Down Today? - Benzinga"
+   "S&amp;P 500, Nasdaq End Lower As AI Jitters Resurface With Nvidia\u2019s Governance Issues And Talks Of Fresh Import Tariffs \u2014 NVDA, DELL, TSLA, TGTX In Focus - Yahoo Finance",
+   "US Stock Futures Rebound After AI Sell-Off as Nvidia Investigation and Fed Outlook Remain in Focus: Dow Jones, S&amp;P, Nasdaq, Wall Street - Yahoo Finance",
+   "Stock Market: Will S&amp;P 500 Open Up or Down Today? - State Street SPDR S&amp;P 500 ETF Trust (ARCA:SPY) - Benzinga",
+   "Dow Jones and US stock futures surge as Nasdaq rebounds after AI selloff - Beinsure",
+   "Wall Street Futures Fall as Nvidia Reverses Gains and Tariff Concerns Resurface: Dow Jones, S&amp;P, Nasdaq - Yahoo Finance UK"
   ]
  }
 }
