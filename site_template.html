@@ -81,6 +81,9 @@ html{scrollbar-color:#3b3b47 #0B1026}body{-webkit-font-smoothing:antialiased}
 
 <script>
 const D = __DATA__;
+// the engine pulls this template from git before arena.py is restarted, so an
+// older engine can post data without bots_all - derive it instead of going blank
+if(!D.bots_all) D.bots_all = Object.keys(D.bots).map(k => ({id:k, name:D.bots[k].name, pct:D.bots[k].pct, eq:D.bots[k].eq, paused:D.bots[k].paused}));
 const GEN = "__GEN__";
 const $ = s => document.querySelector(s);
 const POS = "#34D399", NEG = "#FB7185";
@@ -354,7 +357,12 @@ function setToggle(btn, on){
   th.classList.toggle("bg-[#C7C4D7]", !on);
 }
 
-hero(); renderGroups(); route();
+try { hero(); renderGroups(); route(); }
+catch(err){
+  document.getElementById("groups").innerHTML =
+    "<div class='rounded-2xl border border-[#FB7185]/50 bg-[#881337]/30 p-4 text-[13px]'>Dashboard data mismatch: " + esc(err.message) + "</div>";
+  console.error(err);
+}
 $("#gen").textContent = "state " + GEN + " IST";
 $("#live-pill").textContent = D.bots_all.length + " Bots Live";
 $("#q").addEventListener("input", applyFilters);
