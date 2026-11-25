@@ -1,202 +1,252 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Strategy Arena - all 29 bots</title>
+<!DOCTYPE html><html lang="en" class="dark"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Strategy Arena - all bots</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script id="tw-config">globalThis.tailwind=globalThis.tailwind||{};globalThis.tailwind.config={darkMode:"class",theme:{extend:{fontFamily:{display:['"Plus Jakarta Sans"',"sans-serif"],headline:['"Plus Jakarta Sans"',"sans-serif"],title:['"Plus Jakarta Sans"',"sans-serif"],body:['"Plus Jakarta Sans"',"sans-serif"],label:['"Plus Jakarta Sans"',"sans-serif"],mono:['"Fira Code"',"monospace"]},borderRadius:{sm:"6px",DEFAULT:"12px",md:"12px",lg:"16px",xl:"20px",full:"9999px"}}}};</script>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
 <style>
-:root{--bg:#0b0f16;--panel:#141b25;--ink:#e8eef6;--mute:#8b98a8;--line:#26313f;--pos:#34d399;--neg:#f87171;--acc:#60a5fa;--warn:#fbbf24}
-*{box-sizing:border-box}html,body{margin:0;padding:0}
-body{background:var(--bg);color:var(--ink);font:14px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased}
-a{color:inherit;text-decoration:none}
-.mono{font-variant-numeric:tabular-nums;font-feature-settings:"tnum"}
-.pos{color:var(--pos)}.neg{color:var(--neg)}.mute{color:var(--mute)}
-.wrap{display:grid;grid-template-columns:236px 1fr;min-height:100vh}
-aside{position:sticky;top:0;height:100vh;overflow:auto;background:#0e141d;border-right:1px solid var(--line);padding:16px 12px}
-.brand{font-weight:800;letter-spacing:.3px;font-size:15px;margin:2px 4px}
-.brand span{display:block;font-weight:400;font-size:11px;color:var(--mute);letter-spacing:.2px;margin-top:2px}
-.nav{margin-top:14px;display:flex;flex-direction:column;gap:2px}
-.nav a{display:flex;justify-content:space-between;gap:8px;padding:8px 10px;border-radius:8px;font-size:12.5px;color:#c4cedb}
-.nav a:hover{background:#16202b;color:#fff}.nav a b{font-weight:600}.nav .cnt{color:var(--mute);font-size:11px}
-main{padding:0 22px 60px;min-width:0}
-header.top{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-end;justify-content:space-between;position:sticky;top:0;z-index:6;background:var(--bg);padding:12px 0 12px;border-bottom:1px solid var(--line);margin-bottom:14px}
-h1{font-size:19px;margin:0}h1 small{display:block;font-weight:400;font-size:12px;color:var(--mute);margin-top:3px}
-.kpis{display:flex;gap:10px;flex-wrap:wrap}
-.kpi{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:9px 12px;min-width:112px}
-.kpi .v{font-size:16px;font-weight:700;letter-spacing:-.2px}.kpi .l{font-size:10.5px;color:var(--mute);margin-top:1px}
-.toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:0 0 18px}
-input.search{background:var(--panel);border:1px solid var(--line);border-radius:9px;color:var(--ink);padding:8px 11px;font-size:13px;min-width:210px;outline:none}
-input.search:focus{border-color:var(--acc)}
-.btn{background:var(--panel);border:1px solid var(--line);color:#c9d4e2;border-radius:9px;padding:7px 11px;font-size:12px;cursor:pointer}
-.btn.on{border-color:var(--acc);color:#fff;background:#17243a}
-section.grp{margin:0 0 22px}
-.ghead{display:flex;align-items:baseline;gap:10px;margin:0 0 9px;padding-bottom:7px;border-bottom:1px solid var(--line)}
-.ghead h2{font-size:13.5px;margin:0;letter-spacing:.2px}
-.ghead .gsum{font-size:11.5px;color:var(--mute);margin-left:auto;text-align:right}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(252px,1fr));gap:11px}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:11px 12px;cursor:pointer;transition:border-color .12s,transform .12s;position:relative;overflow:hidden}
-.card:hover{border-color:#3b4b60;transform:translateY(-1px)}
-.card .crow{display:flex;justify-content:space-between;gap:8px;align-items:baseline}
-.card .cid{font-weight:700;font-size:12.5px;letter-spacing:.3px}
-.card .nm{font-size:11px;color:var(--mute);margin:2px 0 7px;height:28px;overflow:hidden}
-.card .eq{font-size:17px;font-weight:700;letter-spacing:-.3px}
-.card .pct{font-size:12.5px;font-weight:600}
-.card .meta{display:flex;gap:10px;flex-wrap:wrap;font-size:10.5px;color:var(--mute);margin-top:7px}
-.card svg{display:block;width:100%;height:32px;margin-top:8px}
-.card.idle{opacity:.62}.card.idle:hover{opacity:1}
-.tag{font-size:9.5px;border:1px solid var(--line);border-radius:5px;padding:1px 5px;color:var(--mute);vertical-align:1px}
-.tag.c{border-color:#3b4b60;color:#9dc4ff}.tag.p{border-color:#4a3b1a;color:var(--warn)}
-.detail{display:none}.detail.show{display:block}
-.back{font-size:12px;color:var(--acc);cursor:pointer;display:inline-block;margin-bottom:8px}
-.dhead{display:flex;flex-wrap:wrap;gap:16px;align-items:flex-start;justify-content:space-between;margin-bottom:6px}
-.dhead h2{font-size:18px;margin:0}.dhead .sub{font-size:11.5px;color:var(--mute);margin-top:3px}
-.big{height:120px;width:100%;margin:12px 0 4px}
-.pnlbar{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--mute);margin-bottom:15px}
-.pnlbar b{color:var(--ink);font-weight:600}
-.cols{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.panel{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 13px;min-width:0}
-.panel h3{font-size:12.5px;margin:0 0 9px;color:#cfd9e6;letter-spacing:.2px}
-table{width:100%;border-collapse:collapse;font-size:12px}
-th,td{padding:6px 7px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
-th{color:var(--mute);font-size:10.5px;font-weight:600;text-transform:uppercase;letter-spacing:.4px}
-td.num,th.num{text-align:right;white-space:nowrap}
-tr:last-child td{border-bottom:none}
-.empty{color:var(--mute);font-size:12px;padding:10px 2px}
-.kv{display:flex;justify-content:space-between;gap:10px;font-size:12px;padding:5px 0;border-bottom:1px solid var(--line)}
-.kv:last-child{border-bottom:none}.kv .k{color:var(--mute)}
-.rules{font-size:12px;color:#c3cdd9;line-height:1.5}.rules b{color:#fff}
-footer{margin-top:26px;color:var(--mute);font-size:11px;border-top:1px solid var(--line);padding-top:12px}
-@media(max-width:900px){.wrap{grid-template-columns:1fr}
-aside{position:static;height:auto;display:flex;gap:8px;align-items:center;flex-wrap:wrap;padding:10px 12px;border-right:none;border-bottom:1px solid var(--line)}
-aside .brand{white-space:nowrap;margin:0}.brand span{display:none}
-.nav{flex-direction:row;margin:0;gap:6px;flex-wrap:wrap}
-.nav a{white-space:nowrap;padding:6px 9px;border:1px solid var(--line)}
-main{padding:0 13px 50px}.cols{grid-template-columns:1fr}.grid{grid-template-columns:repeat(auto-fill,minmax(210px,1fr))}}
-@media(max-width:560px){.grid{grid-template-columns:1fr 1fr;gap:9px}
-.card{padding:9px 10px}.card .nm{height:26px;font-size:10.5px}.card .eq{font-size:15px}
-.card .pct{font-size:11.5px}.card svg{height:24px}
-.kpi{min-width:calc(50% - 5px);flex:1}.kpi .v{font-size:14.5px}
-table.resp thead{display:none}
-table.resp tr{display:block;border:1px solid var(--line);border-radius:9px;margin-bottom:8px;padding:6px 8px}
-table.resp td{display:flex;justify-content:space-between;gap:12px;border:none;padding:3px 0;text-align:right}
-table.resp td:before{content:attr(data-l);color:var(--mute);font-size:10.5px;text-align:left;text-transform:uppercase;letter-spacing:.3px}}
-</style></head><body>
-<div class="wrap"><aside>
-<div class="brand">Strategy Arena<span>29 paper bots · ₹10,000 each</span></div>
-<nav class="nav" id="nav"></nav></aside>
-<main><header class="top">
-<h1>All bots<small id="gen"></small></h1>
-<div class="kpis" id="kpis"></div></header>
-<div class="toolbar">
-<input class="search" id="q" placeholder="Search bot (s07, x02, council)">
-<button class="btn on" data-sort="pnl">Best P&amp;L</button>
-<button class="btn" data-sort="id">By name</button>
-<button class="btn" data-sort="tr">Most trades</button>
-<button class="btn" id="onlyActive">Active only</button>
-<button class="btn" id="showPaused">Show paused</button></div>
-<div id="overview"></div><div id="detail" class="detail"></div>
-<footer>Paper trading only - no real money. Fees 0.1% per side are already inside every P&amp;L number. Equity = realized cash + open-position profit; cash does not shrink when a position opens, so "in market" is shown separately. Data refreshes every 60 s from the engine.</footer>
-</main></div>
+.ms{font-family:"Material Symbols Outlined";font-weight:400;font-style:normal;font-size:18px;line-height:1;letter-spacing:normal;text-transform:none;display:inline-block;white-space:nowrap;word-wrap:normal;direction:ltr;-webkit-font-feature-settings:"liga";-webkit-font-smoothing:antialiased}
+.mono{font-family:"Fira Code",monospace;font-variant-numeric:tabular-nums}
+html{scrollbar-color:#3b3b47 #0B1026}body{-webkit-font-smoothing:antialiased}
+</style></head>
+<body class="bg-[#0B1026] text-[#E4E1ED] font-body selection:bg-[#C0C1FF]/30">
+<div class="min-h-screen bg-gradient-to-br from-[#0B1026] via-[#131736] to-[#1E1242] flex flex-col">
+
+<header class="w-full border-b border-[#464554]/40 bg-[#0B1026]/60 backdrop-blur-md sticky top-0 z-40">
+<div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between gap-4">
+  <div class="flex items-center gap-3">
+    <div class="w-10 h-10 rounded-xl bg-[#8083FF]/20 border border-[#C0C1FF]/40 flex items-center justify-center shadow-lg shadow-black/40">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M4 17L9.5 11.5L13.5 14.5L20 7" stroke="#C0C1FF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path>
+        <path d="M16 7H20V11" stroke="#34D399" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path>
+        <circle cx="9.5" cy="11.5" r="1.75" fill="#D0BCFF"></circle></svg>
+    </div>
+    <div class="flex flex-col leading-tight">
+      <span class="font-headline text-[18px] font-semibold tracking-tight" data-home="1">Strategy Arena</span>
+      <span class="font-label text-[12px] text-[#C7C4D7]">Quantitative Bot Fleet</span>
+    </div>
+  </div>
+  <div class="flex items-center gap-2">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1F1F27]/70 border border-[#464554]/60">
+      <span class="w-2 h-2 rounded-full bg-[#34D399]"></span>
+      <span class="font-label text-[12px] tabular-nums" id="live-pill">29 Bots Live</span>
+    </div>
+  </div>
+</div></header>
+
+<main class="flex-1 w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col gap-8">
+  <section id="hero" class="grid grid-cols-1 md:grid-cols-3 gap-4"></section>
+
+  <section id="toolbar" class="sticky top-[68px] z-30 rounded-xl bg-[#1F1F27]/85 backdrop-blur-md border border-[#464554]/60 px-4 py-3 shadow-2xl shadow-black/50 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3">
+    <div class="flex flex-wrap items-center gap-2">
+      <span class="font-label text-[12px] text-[#C7C4D7] mr-1">Sort by</span>
+      <div role="tablist" class="inline-flex items-center p-1 rounded-lg bg-[#0D0D15]/80 border border-[#464554]/60 gap-1">
+        <button class="sort-tab px-3 py-1 rounded-md bg-[#8083FF] text-[#1000A9] font-label text-[13px] font-semibold" data-sort="pnl" aria-selected="true">Best P&amp;L</button>
+        <button class="sort-tab px-3 py-1 rounded-md text-[#C7C4D7] hover:text-white font-label text-[13px]" data-sort="id" aria-selected="false">Name</button>
+        <button class="sort-tab px-3 py-1 rounded-md text-[#C7C4D7] hover:text-white font-label text-[13px]" data-sort="tr" aria-selected="false">Most trades</button>
+      </div>
+      <input id="q" placeholder="Search bot" class="ml-1 w-40 sm:w-52 bg-[#0D0D15]/80 border border-[#464554]/60 rounded-lg px-3 py-1.5 text-[13px] placeholder-[#908FA0] outline-none focus:border-[#C0C1FF]">
+    </div>
+    <div class="flex flex-wrap items-center gap-5">
+      <label class="inline-flex items-center gap-2 cursor-pointer select-none">
+        <span class="font-label text-[13px]">Active only</span>
+        <button id="toggle-active-only" type="button" role="switch" aria-checked="false" class="relative inline-flex h-6 w-11 rounded-full border border-[#464554]/70 bg-[#34343D] transition-colors">
+          <span class="toggle-thumb pointer-events-none inline-block h-5 w-5 translate-x-0.5 translate-y-0.5 rounded-full bg-[#C7C4D7] shadow transition-transform"></span>
+        </button>
+      </label>
+      <label class="inline-flex items-center gap-2 cursor-pointer select-none">
+        <span class="font-label text-[13px]">Show paused</span>
+        <button id="toggle-show-paused" type="button" role="switch" aria-checked="false" class="relative inline-flex h-6 w-11 rounded-full border border-[#464554]/70 bg-[#34343D] transition-colors">
+          <span class="toggle-thumb pointer-events-none inline-block h-5 w-5 translate-x-0.5 translate-y-0.5 rounded-full bg-[#C7C4D7] shadow transition-transform"></span>
+        </button>
+      </label>
+      <div class="hidden sm:flex items-center pl-4 border-l border-[#464554]/60">
+        <span id="visible-count" class="font-label text-[12px] text-[#C7C4D7] tabular-nums">Showing 29 of 29 bots</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="groups" class="flex flex-col gap-8"></section>
+  <section id="detail" class="hidden"></section>
+</main>
+
+<footer class="w-full border-t border-[#464554]/40 bg-[#0B1026]/60 backdrop-blur-md mt-8">
+  <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-2">
+    <span class="font-body text-[13px] text-[#C7C4D7]">Paper trading only - no real money. Fees 0.1% per side are inside every P&amp;L. Cash does not shrink when a position opens, so "in market" is shown separately. Refreshes every 60 s.</span>
+    <span class="font-mono text-[12px] text-[#C0C1FF]" id="gen"></span>
+  </div>
+</footer>
+</div>
+
 <script>
 const D = __DATA__;
 const GEN = "__GEN__";
 const $ = s => document.querySelector(s);
-const money = (n, sign) => (sign && n > 0 ? "+" : "") + "₹" + Math.round(n).toLocaleString("en-IN");
-const money2 = (n, sign) => (sign && n > 0 ? "+" : "") + "₹" + (Math.round(n * 100) / 100).toLocaleString("en-IN", {minimumFractionDigits:2, maximumFractionDigits:2});
+const POS = "#34D399", NEG = "#FB7185";
+const money = n => "\u20b9" + Math.round(n).toLocaleString("en-IN");
+const money2 = n => "\u20b9" + (Math.round(n * 100) / 100).toLocaleString("en-IN", {minimumFractionDigits:2, maximumFractionDigits:2});
+const signed = (n, f) => (n > 0 ? "+" : "") + f(n);
 const pct = n => (n >= 0 ? "+" : "") + n.toFixed(2) + "%";
-const cls = n => n >= 0 ? "pos" : "neg";
+const cls = n => n >= 0 ? "text-[#34D399]" : "text-[#FB7185]";
+const col = n => n >= 0 ? POS : NEG;
 const esc = s => String(s == null ? "" : s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const code = id => id.indexOf("smart_") === 0 ? "M" + id.split("_")[1] : id[0].toUpperCase() + id.slice(1);
+const COLORS = ["#8083FF", "#D0BCFF", "#34D399", "#60A5FA", "#C084FC", "#2DD4BF", "#FBBF24"];
+const avatar = id => COLORS[(id.charCodeAt(0) + id.length * 3) % COLORS.length];
 
-function spark(vals, w, h, stroke){
-  if(!vals || vals.length < 2) return "<svg viewBox='0 0 " + w + " " + h + "'></svg>";
-  const lo = Math.min(...vals), hi = Math.max(...vals), rng = hi - lo;
-  const flat = rng < 1e-9;
-  const pts = vals.map((v, i) => (i / (vals.length - 1) * w).toFixed(1) + "," +
-    (flat ? h / 2 : h - (v - lo) / rng * (h - 3) - 1.5).toFixed(1)).join(" ");
-  const up = vals[vals.length - 1] >= vals[0];
-  const col = stroke || (up ? "var(--pos)" : "var(--neg)");
-  return "<svg viewBox='0 0 " + w + " " + h + "' preserveAspectRatio='none'>" +
-    "<polygon points='0," + h + " " + pts + " " + w + "," + h + "' fill='" + col + "' opacity='.10'></polygon>" +
-    "<polyline points='" + pts + "' fill='none' stroke='" + col + "' stroke-width='1.6' vector-effect='non-scaling-stroke'></polyline></svg>";
+function smoothPath(series, width, height){
+  const flat = (Math.max(...series) - Math.min(...series)) < 1e-9;
+  const min = Math.min(...series) - 4, max = Math.max(...series) + 4;
+  const range = (max - min) || 1, stepX = width / (series.length - 1);
+  const pts = series.map((v, i) => ({x: i * stepX, y: flat ? height / 2 : height - ((v - min) / range) * (height - 8) - 4}));
+  let line = "M " + pts[0].x.toFixed(1) + " " + pts[0].y.toFixed(1);
+  for(let i = 0; i < pts.length - 1; i++){
+    const a = pts[i], b = pts[i + 1], cx = ((a.x + b.x) / 2).toFixed(1);
+    line += " C " + cx + " " + a.y.toFixed(1) + ", " + cx + " " + b.y.toFixed(1) + ", " + b.x.toFixed(1) + " " + b.y.toFixed(1);
+  }
+  return {line: line, area: line + " L " + width + " " + height + " L 0 " + height + " Z"};
+}
+
+function chart(series, w, h, id){
+  if(!series || series.length < 2) return "<svg viewBox='0 0 " + w + " " + h + "' class='w-full h-full'></svg>";
+  const up = series[series.length - 1] >= series[0];
+  const c = up ? POS : NEG;
+  const p = smoothPath(series, w, h);
+  return "<svg viewBox='0 0 " + w + " " + h + "' class='w-full h-full overflow-visible' preserveAspectRatio='none' aria-hidden='true'>" +
+    "<defs><linearGradient id='g" + id + "' x1='0' y1='0' x2='0' y2='1'><stop offset='0%' stop-color='" + c + "' stop-opacity='0.35'/>" +
+    "<stop offset='100%' stop-color='" + c + "' stop-opacity='0'/></linearGradient></defs>" +
+    "<path d='" + p.area + "' fill='url(#g" + id + ")'/><path d='" + p.line + "' fill='none' stroke='" + c + "' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>";
+}
+
+function hero(){
+  const t = D.totals;
+  const live = D.bots_all.filter(b => !b.paused);
+  const best = live.slice().sort((a, b) => (b.pct - a.pct) || (b.eq - a.eq))[0];
+  const inMkt = t.eq > 0 ? (t.in_market / t.eq * 100) : 0;
+  $("#hero").innerHTML =
+    "<article class='h-full rounded-2xl bg-[#1F1F27]/60 backdrop-blur-md border border-[#464554]/40 p-5 shadow-xl shadow-black/40 flex flex-col justify-between gap-4'>" +
+      "<header class='flex items-center justify-between gap-2'><h2 class='font-label text-[13px] font-semibold text-[#C7C4D7]'>Total equity</h2>" +
+      "<span class='ms text-[#C0C1FF]'>account_balance_wallet</span></header>" +
+      "<div class='flex flex-col gap-1'><p class='font-headline text-[30px] lg:text-[38px] font-bold tracking-tight mono'>" + money(t.eq) + "</p>" +
+      "<div class='flex flex-wrap items-center gap-2'><span class='ms text-[18px] " + cls(t.pnl) + "'>" + (t.pnl >= 0 ? "arrow_upward" : "arrow_downward") + "</span>" +
+      "<span class='font-label text-[13px] font-semibold tabular-nums " + cls(t.pnl) + "'>" + signed(t.pnl, money) + " (" + pct(t.pnl / D.pool * 100) + ")</span>" +
+      "<span class='font-label text-[12px] text-[#C7C4D7]'>vs " + money(D.pool) + " pool</span></div></div></article>" +
+    "<article class='h-full rounded-2xl bg-[#1F1F27]/60 backdrop-blur-md border border-[#464554]/40 p-5 shadow-xl shadow-black/40 flex flex-col justify-between gap-4'>" +
+      "<header class='flex items-center justify-between gap-2'><h2 class='font-label text-[13px] font-semibold text-[#C7C4D7]'>Best bot</h2>" +
+      "<span class='ms text-[#34D399]'>emoji_events</span></header>" +
+      "<div class='flex flex-col gap-1'><p class='font-headline text-[24px] font-semibold truncate'>" + esc(best.id) + " \u00b7 " + esc(best.name) + "</p>" +
+      "<div class='flex items-center gap-2'><span class='inline-flex items-center gap-1 font-label text-[13px] font-semibold " + cls(best.pct) + "'>" +
+      "<span class='ms text-[16px]'>" + (best.pct >= 0 ? "arrow_upward" : "arrow_downward") + "</span>" + pct(best.pct) + "</span>" +
+      "<span class='font-label text-[12px] text-[#C7C4D7] tabular-nums'>" + money(best.eq) + " equity</span></div></div></article>" +
+    "<article class='h-full rounded-2xl bg-[#1F1F27]/60 backdrop-blur-md border border-[#464554]/40 p-5 shadow-xl shadow-black/40 flex flex-col justify-between gap-4'>" +
+      "<header class='flex items-center justify-between gap-2'><h2 class='font-label text-[13px] font-semibold text-[#C7C4D7]'>Active bots</h2>" +
+      "<span class='ms text-[#D0BCFF]'>smart_toy</span></header>" +
+      "<div class='flex flex-col gap-1'><p class='font-headline text-[30px] lg:text-[38px] font-bold tracking-tight mono'>" + live.length +
+      " <span class='text-[20px] text-[#C7C4D7]'>/ " + D.bots_all.length + "</span></p>" +
+      "<div class='flex flex-wrap items-center gap-2'><span class='font-label text-[12px] text-[#34D399] tabular-nums'>" + live.length + " running</span>" +
+      "<span class='font-label text-[12px] text-[#C7C4D7]'>\u00b7</span>" +
+      "<span class='font-label text-[12px] text-[#FBBF24] tabular-nums'>" + (D.bots_all.length - live.length) + " paused</span>" +
+      "<span class='font-label text-[12px] text-[#C7C4D7]'>\u00b7 " + money(t.in_market) + " in market (" + inMkt.toFixed(1) + "%)</span></div></div></article>";
 }
 
 function card(b){
-  const tags = (b.council ? "<span class='tag c'>council</span> " : "") + (b.paused ? "<span class='tag p'>paused</span>" : "");
-  return "<a class='card" + (b.trades === 0 && b.open === 0 ? " idle" : "") + "' href='#/bot/" + b.id + "' data-id='" + b.id + "'" +
-    " data-name='" + esc(b.name.toLowerCase()) + "' data-pnl='" + b.pnl.toFixed(2) + "' data-tr='" + b.trades +
-    "' data-op='" + b.open + "' data-paused='" + (b.paused ? 1 : 0) + "'>" +
-    "<div class='crow'><span class='cid'>" + b.id + "</span><span class='pct " + cls(b.pnl) + "'>" + pct(b.pct) + "</span></div>" +
-    "<div class='nm'>" + esc(b.name) + " " + tags + "</div>" +
-    "<div class='crow'><span class='eq mono'>" + money(b.eq) + "</span><span class='pct mono " + cls(b.pnl) + "'>" + money(b.pnl, true) + "</span></div>" +
-    spark(b.spark, 220, 32) +
-    "<div class='meta'><span>" + b.trades + " trades</span><span title='win rate is noise under 5 trades'>" + (b.trades >= 5 ? "win " + b.wr.toFixed(0) + "%" : "win -") + "</span>" +
-    "<span>" + b.open + " open</span></div></a>";
+  const up = b.pct >= 0;
+  const inMkt = b.eq > 0 ? Math.min(100, b.in_market / b.eq * 100) : 0;
+  const badge = b.paused
+    ? "<span class='font-label text-[11px] px-2 py-0.5 rounded-full bg-[#34343D] text-[#FBBF24] shrink-0'>Paused</span>"
+    : "<span class='font-label text-[11px] px-2 py-0.5 rounded-full bg-[#064E3B]/70 text-[#A7F3D0] shrink-0'>Active</span>";
+  return "<article data-id='" + b.id + "' data-name='" + esc(b.name.toLowerCase()) + "' data-pnl='" + b.pnl.toFixed(2) +
+    "' data-tr='" + b.trades + "' data-op='" + b.open + "' data-paused='" + (b.paused ? 1 : 0) + "' data-pct='" + b.pct.toFixed(2) + "'" +
+    " class='bot-card h-full rounded-2xl bg-[#1F1F27]/55 backdrop-blur-md border border-[#464554]/40 p-5 shadow-xl shadow-black/40 flex flex-col justify-between gap-4 transition-all duration-200 hover:-translate-y-1 hover:border-[#C0C1FF]/60 cursor-pointer" + (b.trades === 0 && b.open === 0 ? " opacity-70 hover:opacity-100" : "") + "'>" +
+    "<header class='flex items-center justify-between gap-2'><div class='flex items-center gap-2 min-w-0'>" +
+    "<div class='w-10 h-10 shrink-0 rounded-full flex items-center justify-center border border-[#464554]/50' style='background: radial-gradient(circle at 30% 30%, " + avatar(b.id) + "55, #13131B)'>" +
+    "<span class='font-headline text-[13px] font-semibold'>" + code(b.id) + "</span></div>" +
+    "<div class='min-w-0'><h3 class='font-title text-[15px] font-semibold truncate'>" + b.id + " \u00b7 " + esc(b.name) + "</h3>" +
+    "<div class='text-[11px] text-[#908FA0] truncate'>" + esc(b.tf) + " \u00b7 " + esc(b.market) + (b.council ? " \u00b7 council" : "") + "</div></div></div>" + badge + "</header>" +
+    "<div class='flex items-baseline justify-between gap-2'><span class='font-headline text-[24px] font-semibold mono'>" + money(b.eq) + "</span>" +
+    "<span class='inline-flex items-center gap-0.5 font-label text-[13px] font-semibold " + cls(b.pct) + " shrink-0'>" +
+    "<span class='ms text-[16px]'>" + (up ? "arrow_upward" : "arrow_downward") + "</span>" + pct(b.pct) + "</span></div>" +
+    "<div class='w-full h-14 overflow-hidden'>" + chart(b.spark, 220, 56, b.id) + "</div>" +
+    "<footer class='flex flex-col gap-1 pt-3 border-t border-[#464554]/30'>" +
+    "<div class='flex items-center justify-between gap-2 text-[12px] text-[#C7C4D7] tabular-nums'>" +
+    "<span>" + b.trades + " trades" + (b.open ? " \u00b7 " + b.open + " open" : "") + "</span><span>In market " + inMkt.toFixed(0) + "%</span></div>" +
+    "<div class='w-full h-1.5 rounded-full bg-[#34343D] overflow-hidden'><div class='h-full rounded-full " + (up ? "bg-[#8083FF]" : "bg-[#FB7185]") + "' style='width: " + inMkt.toFixed(1) + "%'></div></div>" +
+    "</footer></article>";
 }
 
-function renderOverview(){
-  let h = "";
+function groupSection(g){
+  const bots = g.bots.map(id => D.bots[id]);
+  const eq = bots.reduce((a, b) => a + b.eq, 0), pnl = bots.reduce((a, b) => a + b.pnl, 0);
+  const paused = bots.filter(b => b.paused).length;
+  return "<section class='group flex flex-col gap-4' data-key='" + g.key + "'>" +
+    "<div class='flex flex-wrap items-baseline gap-3 border-b border-[#464554]/40 pb-2'>" +
+    "<h2 class='font-headline text-[18px] font-semibold tracking-tight'>" + esc(g.name) + "</h2>" +
+    "<button class='ms text-[16px] text-[#908FA0] hover:text-white' title='scroll to top' onclick='window.scrollTo({top:0})'>arrow_upward</button>" +
+    "<div class='ml-auto font-mono text-[12px] text-[#C7C4D7] tabular-nums'>" + bots.length + " bots \u00b7 " + money(eq) +
+    " \u00b7 <span class='" + cls(pnl) + "'>" + signed(pnl, money) + "</span>" +
+    (paused ? " \u00b7 <span class='text-[#FBBF24]'>" + paused + " paused hidden</span>" : "") + "</div></div>" +
+    "<div class='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 items-stretch'>" +
+    bots.map(card).join("") + "</div></section>";
+}
+
+function renderGroups(){
   const ordered = D.groups.slice().sort((a, b) => {
     const pa = a.bots.reduce((s, id) => s + D.bots[id].pnl, 0);
     const pb = b.bots.reduce((s, id) => s + D.bots[id].pnl, 0);
     return pb - pa;
   });
-  ordered.forEach(g => {
-    const bots = g.bots.map(id => D.bots[id]);
-    if(!bots.length) return;
-    const eq = bots.reduce((a, b) => a + b.eq, 0), pnl = bots.reduce((a, b) => a + b.pnl, 0);
-    const pausedN = bots.filter(b => b.paused).length;
-    h += "<section class='grp' id='g-" + g.key + "'><div class='ghead'><h2>" + esc(g.name) + "</h2>" +
-      "<div class='gsum mono'>" + bots.length + " bots · " + money(eq) + " · <span class='" + cls(pnl) + "'>" + money(pnl, true) + "</span>" +
-      (pausedN ? " · <span class='mute'>" + pausedN + " paused hidden</span>" : "") + "</div></div>" +
-      "<div class='grid'>" + bots.map(card).join("") + "</div></section>";
-  });
-  $("#overview").innerHTML = h;
+  $("#groups").innerHTML = ordered.map(groupSection).join("");
 }
 
-function renderNav(){
-  $("#nav").innerHTML = D.groups.map(g => {
-    const bots = g.bots.map(id => D.bots[id]);
-    const pnl = bots.reduce((a, b) => a + b.pnl, 0);
-    return "<a href='#g-" + g.key + "'><b>" + esc(g.name) + "</b>" +
-      "<span class='cnt mono " + cls(pnl) + "'>" + (pnl >= 0 ? "+" : "") + Math.round(pnl) + "</span></a>";
-  }).join("");
+function panel(title, inner, extra){
+  return "<div class='rounded-2xl bg-[#1F1F27]/55 border border-[#464554]/40 p-4 " + (extra || "") + "'>" +
+    "<h3 class='font-title text-[14px] font-semibold mb-3 text-[#E4E1ED]'>" + title + "</h3>" + inner + "</div>";
 }
+const TH = "font-label text-[10.5px] uppercase tracking-wider text-[#908FA0] font-semibold";
+const TD = "py-2 border-b border-[#464554]/30 text-[12.5px]";
 
-function renderKpis(){
-  const t = D.totals;
-  $("#kpis").innerHTML = [
-    ["Total equity", money(t.eq), "sum of all 29 books"],
-    ["vs pool", money(t.pnl, true) + " (" + ((t.pnl / D.pool) * 100).toFixed(2) + "%)", "the ₹2,90,000 start"],
-    ["In market", money(t.in_market), "value of open positions"],
-    ["Realized", money(t.cash), "cash after closed trades - not reduced when a position opens"],
-    ["Open positions", t.open, "positions open right now"],
-    ["Up / down", t.up + " / " + t.down, "bots above / below their ₹10,000 start"],
-    ["Closed trades", t.trades, "trades finished since the fresh start"]
-  ].map(([l, v, tip]) => "<div class='kpi' title='" + tip + "'><div class='v mono'>" + v + "</div><div class='l'>" + l + "</div></div>").join("");
-  $("#gen").textContent = "state " + GEN + " IST · " + D.groups.reduce((a, g) => a + g.bots.length, 0) + " bots · refresh 60 s";
-}
-
-function rows(pos){
-  if(!pos.length) return "<div class='empty'>No open position - nothing in the market.</div>";
-  return "<table class='resp'><thead><tr><th>Symbol</th><th>Side</th><th class='num'>Qty</th><th class='num'>Entry</th>" +
-    "<th class='num'>Now</th><th class='num'>Stop</th><th class='num'>P&amp;L</th></tr></thead><tbody>" +
-    pos.map(p => "<tr><td data-l='symbol'><b>" + esc(p.sym) + "</b></td>" +
-      "<td data-l='side' class='" + (p.side > 0 ? "pos" : "neg") + "'>" + (p.side > 0 ? "LONG" : "SHORT") + "</td>" +
-      "<td data-l='qty' class='num mono'>" + p.qty.toFixed(4) + "</td>" +
-      "<td data-l='entry' class='num mono'>" + money2(p.entry) + "</td>" +
-      "<td data-l='now' class='num mono'>" + money2(p.now) + "</td>" +
-      "<td data-l='stop' class='num mono mute'>" + money2(p.stop) + "</td>" +
-      "<td data-l='p&amp;l' class='num mono " + cls(p.upnl) + "'>" + money2(p.upnl, true) + "</td></tr>").join("") +
-    "</tbody></table>";
+function posRows(list){
+  if(!list.length) return "<div class='text-[12.5px] text-[#908FA0] py-2'>No open position - nothing in the market.</div>";
+  return "<div class='overflow-x-auto'><table class='w-full border-collapse'><thead><tr>" +
+    ["Symbol","Side","Qty","Entry","Now","Stop","P&amp;L"].map((h, i) =>
+      "<th class='" + TH + " text-left py-1 " + (i > 1 ? "text-right" : "") + "'>" + h + "</th>").join("") +
+    "</tr></thead><tbody>" + list.map(p =>
+      "<tr><td class='" + TD + " font-semibold'>" + esc(p.sym) + "</td>" +
+      "<td class='" + TD + " " + (p.side > 0 ? "text-[#34D399]" : "text-[#FB7185]") + "'>" + (p.side > 0 ? "LONG" : "SHORT") + "</td>" +
+      "<td class='" + TD + " text-right mono'>" + p.qty.toFixed(4) + "</td>" +
+      "<td class='" + TD + " text-right mono'>" + money2(p.entry) + "</td>" +
+      "<td class='" + TD + " text-right mono'>" + money2(p.now) + "</td>" +
+      "<td class='" + TD + " text-right mono text-[#908FA0]'>" + money2(p.stop) + "</td>" +
+      "<td class='" + TD + " text-right mono " + cls(p.upnl) + "'>" + signed(p.upnl, money2) + "</td></tr>").join("") +
+    "</tbody></table></div>";
 }
 
 function tradeRows(list){
-  if(!list.length) return "<div class='empty'>No closed trade yet.</div>";
-  return "<table class='resp'><thead><tr><th>When</th><th>Symbol</th><th>Side</th><th class='num'>Entry</th>" +
-    "<th class='num'>Exit</th><th class='num'>P&amp;L</th><th>Reason</th></tr></thead><tbody>" +
-    list.map(t => "<tr><td data-l='when' class='mono mute'>" + esc(t.t) + "</td><td data-l='symbol'><b>" + esc(t.sym) + "</b></td>" +
-      "<td data-l='side'>" + (t.side > 0 ? "LONG" : "SHORT") + "</td>" +
-      "<td data-l='entry' class='num mono'>" + money2(t.entry) + "</td>" +
-      "<td data-l='exit' class='num mono'>" + money2(t.exit) + "</td>" +
-      "<td data-l='p&amp;l' class='num mono " + cls(t.pnl) + "'>" + money2(t.pnl, true) + "</td>" +
-      "<td data-l='reason' class='mute'>" + esc(t.reason) + "</td></tr>").join("") + "</tbody></table>";
+  if(!list.length) return "<div class='text-[12.5px] text-[#908FA0] py-2'>No closed trade yet.</div>";
+  return "<div class='overflow-x-auto'><table class='w-full border-collapse'><thead><tr>" +
+    ["When","Symbol","Side","Entry","Exit","P&amp;L","Reason"].map((h, i) =>
+      "<th class='" + TH + " text-left py-1 " + (i > 2 && i < 6 ? "text-right" : "") + "'>" + h + "</th>").join("") +
+    "</tr></thead><tbody>" + list.map(t =>
+      "<tr><td class='" + TD + " mono text-[#908FA0] whitespace-nowrap'>" + esc(t.t) + "</td>" +
+      "<td class='" + TD + " font-semibold'>" + esc(t.sym) + "</td>" +
+      "<td class='" + TD + "'>" + (t.side > 0 ? "LONG" : "SHORT") + "</td>" +
+      "<td class='" + TD + " text-right mono'>" + money2(t.entry) + "</td>" +
+      "<td class='" + TD + " text-right mono'>" + money2(t.exit) + "</td>" +
+      "<td class='" + TD + " text-right mono " + cls(t.pnl) + "'>" + signed(t.pnl, money2) + "</td>" +
+      "<td class='" + TD + " text-[#908FA0]'>" + esc(t.reason) + "</td></tr>").join("") +
+    "</tbody></table></div>";
+}
+
+function kv(k, v, klass){
+  return "<div class='flex items-center justify-between gap-3 py-1.5 border-b border-[#464554]/25 last:border-none'>" +
+    "<span class='text-[12.5px] text-[#C7C4D7]'>" + k + "</span><span class='text-[12.5px] mono " + (klass || "") + "'>" + v + "</span></div>";
+}
+
+function kpi(label, value, klass){
+  return "<div class='rounded-2xl bg-[#1F1F27]/55 border border-[#464554]/40 p-4'>" +
+    "<div class='font-label text-[12px] text-[#C7C4D7]'>" + label + "</div>" +
+    "<div class='font-headline text-[22px] font-semibold mono " + (klass || "") + " mt-1'>" + value + "</div></div>";
 }
 
 function goHome(){ location.hash = ""; }
@@ -204,48 +254,83 @@ function goHome(){ location.hash = ""; }
 function renderBot(id){
   const b = D.bots[id];
   if(!b){ location.hash = ""; return; }
-  $("#overview").style.display = "none";
-  const d = $("#detail"); d.classList.add("show");
-  const gates = b.gates ? ("<div class='kv'><span class='k'>Entries blocked (cooldown / small risk / EOD)</span><span class='mono'>" +
-    (b.gates.cooldown || 0) + " / " + (b.gates.rfee || 0) + " / " + (b.gates.eod || 0) + "</span></div>") : "";
-  const rules = b.rules ? "<div class='panel' style='margin-top:14px'><h3>How it works</h3><div class='rules'>" + b.rules +
-    (b.kill ? "<div class='kv' style='margin-top:10px'><span class='k'>Kill rule</span><span>" + esc(b.kill) + "</span></div>" : "") + "</div></div>" : "";
-  d.innerHTML = "<span class='back' onclick='goHome()'>&larr; All bots</span>" +
-    "<div class='dhead'><div><h2>" + b.id + " · " + esc(b.name) + "</h2>" +
-    "<div class='sub'>" + esc(b.tf) + " · " + esc(b.market) + " · book ₹10,000" + (b.council ? " · council experiment" : "") + "</div></div>" +
-    "<div class='kpis'><div class='kpi'><div class='v mono'>" + money2(b.eq) + "</div><div class='l'>equity</div></div>" +
-    "<div class='kpi'><div class='v mono " + cls(b.pnl) + "'>" + money2(b.pnl, true) + "</div><div class='l'>" + pct(b.pct) + " vs start</div></div>" +
-    "<div class='kpi'><div class='v mono'>" + b.trades + "</div><div class='l'>closed trades</div></div>" +
-    "<div class='kpi'><div class='v mono'>" + (b.trades >= 5 ? b.wr.toFixed(0) + "%" : "-") + "</div><div class='l'>win rate</div></div></div></div>" +
-    "<div class='big'>" + spark(b.spark, 900, 120) + "</div>" +
-    "<div class='pnlbar'><span>Start <b class='mono'>₹10,000</b></span><span>Realized <b class='mono'>" + money2(b.cash) + "</b></span>" +
-    "<span>In market <b class='mono'>" + money2(b.in_market) + "</b></span><span>Unrealized <b class='mono " + cls(b.upnl) + "'>" + money2(b.upnl, true) + "</b></span>" +
-    "<span>Fees paid <b class='mono'>" + money2(b.fees) + "</b></span></div>" +
-    "<div class='cols'><div class='panel'><h3>Open positions (" + b.open + ")</h3>" + rows(b.positions) + "</div>" +
-    "<div class='panel'><h3>Details</h3>" +
-    "<div class='kv'><span class='k'>Realized equity (not reduced by entries)</span><span class='mono'>" + money2(b.cash) + "</span></div>" +
-    "<div class='kv'><span class='k'>In positions</span><span class='mono'>" + money2(b.in_market) + "</span></div>" +
-    "<div class='kv'><span class='k'>Unrealized</span><span class='mono " + cls(b.upnl) + "'>" + money2(b.upnl, true) + "</span></div>" +
-    "<div class='kv'><span class='k'>Max / min equity</span><span class='mono'>" + money2(Math.max(...b.spark)) + " / " + money2(Math.min(...b.spark)) + "</span></div>" +
-    gates + "</div></div>" +
-    "<div class='panel' style='margin-top:14px'><h3>Last trades</h3>" + tradeRows(b.closed) + "</div>" + rules;
-  window.scrollTo({top:0, behavior:"instant"});
+  $("#hero").classList.add("hidden");
+  $("#toolbar").classList.add("hidden");
+  $("#groups").classList.add("hidden");
+  const d = $("#detail");
+  d.classList.remove("hidden");
+  const gates = b.gates ? kv("Entries blocked (cooldown / small risk / EOD)",
+    (b.gates.cooldown || 0) + " / " + (b.gates.rfee || 0) + " / " + (b.gates.eod || 0)) : "";
+  d.innerHTML =
+    "<div class='flex flex-col gap-6'>" +
+    "<div class='flex flex-wrap items-center gap-3'>" +
+      "<button onclick='goHome()' class='inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-[#1F1F27]/70 border border-[#464554]/60 text-[13px] hover:border-[#C0C1FF]/60'>" +
+      "<span class='ms text-[16px]'>arrow_back</span>All bots</button>" +
+      "<div class='w-11 h-11 rounded-full flex items-center justify-center border border-[#464554]/50' style='background: radial-gradient(circle at 30% 30%, " + avatar(b.id) + "55, #13131B)'>" +
+      "<span class='font-headline text-[14px] font-semibold'>" + code(b.id) + "</span></div>" +
+      "<div><h1 class='font-headline text-[22px] font-bold tracking-tight'>" + b.id + " \u00b7 " + esc(b.name) + "</h1>" +
+      "<div class='text-[12px] text-[#C7C4D7]'>" + esc(b.tf) + " \u00b7 " + esc(b.market) + " \u00b7 book " + money(10000) +
+      (b.council ? " \u00b7 council experiment" : "") + "</div></div>" +
+      "<span class='ml-auto font-label text-[11px] px-2 py-0.5 rounded-full " + (b.paused ? "bg-[#34343D] text-[#FBBF24]" : "bg-[#064E3B]/70 text-[#A7F3D0]") + "'>" +
+      (b.paused ? "Paused" : "Active") + "</span></div>" +
+    "<div class='grid grid-cols-2 lg:grid-cols-4 gap-4'>" +
+      kpi("Equity", money2(b.eq)) + kpi("vs start", pct(b.pct), cls(b.pct)) +
+      kpi("Closed trades", b.trades) + kpi("Win rate", b.trades >= 5 ? b.wr.toFixed(0) + "%" : "-") + "</div>" +
+    "<div class='rounded-2xl bg-[#1F1F27]/55 border border-[#464554]/40 p-4'><div class='w-full h-32'>" + chart(b.spark, 900, 120, "big" + b.id) + "</div>" +
+      "<div class='flex flex-wrap gap-5 mt-3 font-label text-[12px] text-[#C7C4D7]'>" +
+      "<span>Start <b class='mono text-[#E4E1ED]'>" + money(10000) + "</b></span>" +
+      "<span>Realized <b class='mono text-[#E4E1ED]'>" + money2(b.cash) + "</b></span>" +
+      "<span>In market <b class='mono text-[#E4E1ED]'>" + money2(b.in_market) + "</b></span>" +
+      "<span>Unrealized <b class='mono " + cls(b.upnl) + "'>" + signed(b.upnl, money2) + "</b></span>" +
+      "<span>Fees paid <b class='mono text-[#E4E1ED]'>" + money2(b.fees) + "</b></span></div></div>" +
+    "<div class='grid grid-cols-1 lg:grid-cols-2 gap-4'>" +
+      panel("Open positions (" + b.open + ")", posRows(b.positions)) +
+      panel("Details", kv("Realized equity (not reduced by entries)", money2(b.cash)) +
+        kv("In positions", money2(b.in_market)) + kv("Unrealized", signed(b.upnl, money2), cls(b.upnl)) +
+        kv("Max / min equity", money2(Math.max(...b.spark)) + " / " + money2(Math.min(...b.spark))) + gates) + "</div>" +
+    panel("Last trades", tradeRows(b.closed)) +
+    (b.rules ? panel("How it works", "<div class='text-[12.5px] leading-relaxed text-[#C7C4D7]'>" + b.rules +
+      (b.kill ? "<div class='mt-3 flex flex-wrap items-center justify-between gap-2 border-t border-[#464554]/30 pt-2'><span class='text-[12px] text-[#908FA0]'>Kill rule</span>" +
+      "<span class='text-[12.5px]'>" + esc(b.kill) + "</span></div>" : "") + "</div>") : "") +
+    "</div>";
+  window.scrollTo({top: 0, behavior: "instant"});
 }
 
 function route(){
   const h = location.hash || "";
   if(h.indexOf("#/bot/") === 0){ renderBot(h.slice(6)); }
   else {
-    $("#detail").classList.remove("show");
+    $("#detail").classList.add("hidden");
     $("#detail").innerHTML = "";
-    $("#overview").style.display = "";
-    if(h && h.length > 1){ const el = document.querySelector(h); if(el) el.scrollIntoView(); }
+    $("#hero").classList.remove("hidden");
+    $("#toolbar").classList.remove("hidden");
+    $("#groups").classList.remove("hidden");
   }
 }
 
-let sortBy = "pnl", onlyActive = false, showPaused = false;
+let sortBy = "pnl", activeOnly = false, showPaused = false;
+
+function applyFilters(){
+  const q = ($("#q").value || "").trim().toLowerCase();
+  let total = 0;
+  document.querySelectorAll("section.group").forEach(sec => {
+    let shown = 0;
+    sec.querySelectorAll(".bot-card").forEach(c => {
+      const hitQ = !q || c.dataset.id.toLowerCase().indexOf(q) >= 0 || c.dataset.name.indexOf(q) >= 0;
+      const hitA = !activeOnly || (+c.dataset.tr > 0 || +c.dataset.op > 0);
+      const hitP = showPaused || c.dataset.paused !== "1";
+      const hit = hitQ && hitA && hitP;
+      c.style.display = hit ? "" : "none";
+      if(hit) shown++;
+    });
+    sec.style.display = shown ? "" : "none";
+    total += shown;
+  });
+  $("#visible-count").textContent = "Showing " + total + " of " + D.bots_all.length + " bots";
+}
+
 function applySort(){
-  document.querySelectorAll("section.grp .grid").forEach(grid => {
+  document.querySelectorAll("section.group .grid").forEach(grid => {
     const cards = [...grid.children];
     cards.sort((a, b) => {
       if(sortBy === "id") return a.dataset.id.localeCompare(b.dataset.id);
@@ -255,39 +340,47 @@ function applySort(){
     cards.forEach(c => grid.appendChild(c));
   });
 }
-function applySearch(){
-  const q = ($("#q").value || "").trim().toLowerCase();
-  document.querySelectorAll("section.grp").forEach(sec => {
-    let shown = 0;
-    sec.querySelectorAll(".card").forEach(c => {
-      const hitQ = !q || c.dataset.id.toLowerCase().includes(q) || c.dataset.name.includes(q);
-      const hitA = !onlyActive || (+c.dataset.tr > 0 || +c.dataset.op > 0);
-      const hitP = showPaused || c.dataset.paused !== "1";
-      const hit = hitQ && hitA && hitP;
-      c.style.display = hit ? "" : "none";
-      if(hit) shown++;
-    });
-    sec.style.display = shown ? "" : "none";
-  });
+
+function setToggle(btn, on){
+  btn.setAttribute("aria-checked", String(on));
+  const th = btn.querySelector(".toggle-thumb");
+  btn.classList.toggle("border-[#C0C1FF]", on);
+  btn.classList.toggle("bg-[#8083FF]", on);
+  btn.classList.toggle("border-[#464554]/70", !on);
+  btn.classList.toggle("bg-[#34343D]", !on);
+  th.classList.toggle("translate-x-5", on);
+  th.classList.toggle("translate-x-0.5", !on);
+  th.classList.toggle("bg-[#1000A9]", on);
+  th.classList.toggle("bg-[#C7C4D7]", !on);
 }
 
-renderKpis(); renderNav(); renderOverview(); route();
-$("#q").addEventListener("input", applySearch);
-$("#onlyActive").addEventListener("click", () => {
-  onlyActive = !onlyActive;
-  $("#onlyActive").classList.toggle("on", onlyActive);
-  applySearch();
+hero(); renderGroups(); route();
+$("#gen").textContent = "state " + GEN + " IST";
+$("#live-pill").textContent = D.bots_all.length + " Bots Live";
+$("#q").addEventListener("input", applyFilters);
+$("#toggle-active-only").addEventListener("click", () => {
+  activeOnly = !activeOnly; setToggle($("#toggle-active-only"), activeOnly); applyFilters();
 });
-$("#showPaused").addEventListener("click", () => {
-  showPaused = !showPaused;
-  $("#showPaused").classList.toggle("on", showPaused);
-  applySearch();
+$("#toggle-show-paused").addEventListener("click", () => {
+  showPaused = !showPaused; setToggle($("#toggle-show-paused"), showPaused); applyFilters();
 });
-applySearch();
-document.querySelectorAll("[data-sort]").forEach(b => b.addEventListener("click", () => {
-  document.querySelectorAll("[data-sort]").forEach(x => x.classList.remove("on"));
-  b.classList.add("on"); sortBy = b.dataset.sort; applySort();
+document.querySelectorAll(".sort-tab").forEach(tab => tab.addEventListener("click", () => {
+  sortBy = tab.dataset.sort;
+  document.querySelectorAll(".sort-tab").forEach(t => {
+    const on = t === tab;
+    t.setAttribute("aria-selected", String(on));
+    t.classList.toggle("bg-[#8083FF]", on);
+    t.classList.toggle("text-[#1000A9]", on);
+    t.classList.toggle("font-semibold", on);
+    t.classList.toggle("text-[#C7C4D7]", !on);
+  });
+  applySort(); applyFilters();
 }));
-window.addEventListener("hashchange", route);
-applySort();
+document.addEventListener("click", e => {
+  const c = e.target.closest(".bot-card");
+  if(c) location.hash = "#/bot/" + c.dataset.id;
+});
+document.querySelectorAll("[data-home]").forEach(el => el.addEventListener("click", goHome));
+window.addEventListener("hashchange", () => { route(); window.scrollTo({top:0}); });
+applySort(); applyFilters();
 </script></body></html>

@@ -2051,6 +2051,8 @@ def write_site(st):
             bots[sid] = rec
     allb = list(bots.values())
     data = {"gen": now, "pool": CAPITAL * len(allb), "groups": groups, "bots": bots,
+            "bots_all": [{"id": b["id"], "name": b["name"], "pct": b["pct"], "eq": b["eq"],
+                          "paused": b["paused"]} for b in allb],
             "totals": {"eq": round(sum(b["eq"] for b in allb), 2),
                        "pnl": round(sum(b["pnl"] for b in allb), 2),
                        "cash": round(sum(b["cash"] for b in allb), 2),
