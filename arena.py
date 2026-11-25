@@ -810,6 +810,8 @@ def s07(bs, ctx):
             hit = (p["side"] > 0 and px <= p["stop"]) or (p["side"] < 0 and px >= p["stop"])
             em = mkt_eod_min(sym)
             eod = em is not None and mins >= em
+            if eod and hold_through_eod(p, px, _day_now()):
+                eod = False
             time_exit = is_crypto(sym) and p["bars"] >= 26   # 6.5h max hold, 24x7
             if hit or eod or time_exit:
                 reason = "stop" if hit else ("eod" if eod else "time-exit")
@@ -873,6 +875,8 @@ def s08(bs, ctx):
             p["bars"] += 1
             hit = (p["side"] > 0 and px <= p["stop"]) or (p["side"] < 0 and px >= p["stop"])
             eod = et_hm(now_ms) >= 15 * 60 + 45
+            if eod and hold_through_eod(p, px, _day_now()):
+                eod = False
             if hit or eod:
                 row = close_position(bs, sym, px, "stop" if hit else "eod", ctx.now)
                 row[1] = "s08"; record_trade("s08", bs, row)
@@ -1148,6 +1152,38 @@ def vwap_series(kl, sym):
         out[i] = pv / vv if vv > 0 else k["c"]
     return out
 
+# ---- clock-exit experiment (audit of 599 trades) -------------------------
+# 74% of all exits were clock-based (eod 307 + time-exit 138). Those 445 trades
+# made +Rs 1,539 gross and paid Rs 3,079 of fees: the bots were closing just to
+# close, then paying a fresh entry fee to re-enter. So at EOD a trade that is
+# already in profit by more than the round-trip fee is kept; the stop/target
+# still manages it overnight. Capped at EOD_HOLD_MAX sessions, and set
+# EOD_HOLD_PCT = 99 to turn the whole experiment off.
+EOD_HOLD_PCT = 0.25      # % move needed to justify holding through the close
+EOD_HOLD_MAX = 3         # at most 3 sessions, then flatten regardless
+
+
+def _day_now():
+    return str(datetime.now(IST).date())
+
+
+def hold_through_eod(p, px, day):
+    """True = do not flatten this position at EOD (decided once per session)."""
+    if p.get("eod_holds", 0) >= EOD_HOLD_MAX:
+        return False
+    if p.get("eod_held_day") == day:
+        return True
+    try:
+        move = p["side"] * (float(px) - p["entry"]) / p["entry"] * 100.0
+    except Exception:
+        return False
+    if move < EOD_HOLD_PCT:
+        return False
+    p["eod_holds"] = p.get("eod_holds", 0) + 1
+    p["eod_held_day"] = day
+    return True
+
+
 def _pine_short_exit(bid, bs, sym, px, ctx, mean_exit=False):
     """Stop / 2R target / mean-revert / EOD-15:15 (exchange-local) exit."""
     p = bs["positions"][sym]
@@ -1155,6 +1191,8 @@ def _pine_short_exit(bid, bs, sym, px, ctx, mean_exit=False):
     hit = px >= p["stop"]
     tgt = p.get("target") is not None and px <= p["target"]
     eod = mkt_hm(time.time() * 1000, sym) >= 15 * 60 + 15
+    if eod and hold_through_eod(p, px, _day_now()):
+        eod = False
     if hit or tgt or mean_exit or eod:
         reason = "stop" if hit else ("target-2R" if tgt else ("mean-revert" if mean_exit else "eod"))
         row = close_position(bs, sym, px, reason, ctx.now)
