@@ -1,1 +1,3 @@
 time,bot,symbol,side,qty,entry,exit,pnl,reason,equity_after
+2026-11-26T00:51:44.231424+05:30,s12,ORCL,SHORT,0.104256,9591.8022,9725.5212,-15.95,stop,9984.05
+2026-11-26T00:51:44.231424+05:30,smart_12,ORCL,SHORT,0.104256,9591.8022,9725.5212,-15.95,smart-trail-stop,9984.05
