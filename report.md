@@ -1,19 +1,19 @@
 # Night Trader v2 — Paper Trading Report (3 markets)
-_Updated: 2026-11-25 14:31 IST_
+_Updated: 2026-11-25 14:34 IST_
 
 ## CRYPTO (OPEN) — ₹10,000.00 | P&L +0.00 (+0.00%)
-Cash ₹10,000.00 | cycles 14086 | capital ₹10,000
+Cash ₹10,000.00 | cycles 14091 | capital ₹10,000
 _No open positions — all cash._
 News sentiment: -0.30 (181 headlines, 6 sources, Fear&Greed 13)
 - Strategy and Crypto Stocks Rally as Bitcoin Rebounds Past $63,000. Is the Jump Temporary? - Barron's
 - Crypto news: Bitcoin jumps to $64,000 and ether gains 7%. Will the rebound hold? - CryptoTicker.io
 - Bitcoin drops as November spot ETF outflows increase to record $4.71 billion
 
-## INDIA (OPEN) — ₹9,901.05 | P&L -98.95 (-0.99%)
-Cash ₹6,921.03 | cycles 2267 | capital ₹10,000
+## INDIA (OPEN) — ₹9,906.43 | P&L -93.57 (-0.94%)
+Cash ₹6,921.03 | cycles 2272 | capital ₹10,000
 | Symbol | Qty | Entry | Last | Unrealized |
 |---|---|---|---|---|
-| TCS.NS | 1.1949 | 2503.00 | 2493.90 | -13.86 |
+| TCS.NS | 1.1949 | 2503.00 | 2498.40 | -8.49 |
 Closed: 9 (1 wins), realized -85.08
 - 09:16 BUY RELIANCE.NS @ 1387.2 pnl +0.00 (breakout+EMA trend, RSI=68, regime_ok=True, news=+0.46)
 - 09:33 SELL RELIANCE.NS @ 1368.4 pnl -46.69 (stop/trail hit (1368.40<=1370.00))
