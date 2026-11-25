@@ -1,32 +1,24 @@
 # Night Trader v2 — Paper Trading Report (3 markets)
-_Updated: 2026-11-25 23:59 IST_
+_Updated: 2026-11-26 00:02 IST_
 
 ## CRYPTO (OPEN) — ₹10,000.00 | P&L +0.00 (+0.00%)
-Cash ₹10,000.00 | cycles 15181 | capital ₹10,000
+Cash ₹10,000.00 | cycles 5 | capital ₹10,000
 _No open positions — all cash._
 News sentiment: -0.53 (180 headlines, 6 sources, Fear&Greed 13)
 - Bitcoin falls toward $57K amid US tariff fears, hot PCE data as Nasdaq drops 4%
 - Bitcoin falls toward $57K amid US tariff fears, hot PCE data as Nasdaq drops 4% - TradingView
 - Bitcoin Falls Further as Inflation, Trump Tariffs and AI Selloff Rattle Markets
 
-## INDIA (CLOSED) — ₹9,929.01 | P&L -70.99 (-0.71%)
-Cash ₹6,921.03 | cycles 2383 | capital ₹10,000
-| Symbol | Side | Qty | Entry | Last | Unrealized |
-|---|---|---|---|---|---|
-| TCS.NS | LONG | 1.1949 | 2503.00 | 2517.30 | +17.09 |
-Closed: 9 (1 wins), realized -85.08
-- 09:16 BUY RELIANCE.NS @ 1387.2 pnl +0.00 (breakout+EMA trend, RSI=68, regime_ok=True, news=+0.46)
-- 09:33 SELL RELIANCE.NS @ 1368.4 pnl -46.69 (stop/trail hit (1368.40<=1370.00))
-- 09:16 BUY TCS.NS @ 2503.0 pnl +0.00 (breakout+EMA trend, RSI=68, regime_ok=True, news=+0.24)
-- 09:31 BUY RELIANCE.NS @ 1390.5 pnl +0.00 (breakout+EMA trend, RSI=66, regime_ok=True, news=+0.32)
-- 13:05 SELL RELIANCE.NS @ 1367.8 pnl -54.73 (stop/trail hit (1367.80<=1368.62))
+## INDIA (CLOSED) — ₹10,000.00 | P&L +0.00 (+0.00%)
+Cash ₹10,000.00 | cycles 0 | capital ₹10,000
+_No open positions — all cash._
 News sentiment: +0.98 (214 headlines, 6 sources)
 - Nasdaq 100 plunges nearly 5%, briefly enters bear-market zone as AI fears and fresh tariffs hit sentiment
 - Top Nifty Bank gainer today: HDFC Bank shares jump 4% as index soars 2%— Should you buy or book profit? Experts advice
 - Why APL Apollo Tubes shares crashed 15% today to plunge at 52-week low; downgrade from brokerages after Tata Steel deal
 
 ## US (OPEN) — ₹10,000.00 | P&L +0.00 (+0.00%)
-Cash ₹10,000.00 | cycles 2610 | capital ₹10,000
+Cash ₹10,000.00 | cycles 5 | capital ₹10,000
 _No open positions — all cash._
 News sentiment: -0.17 (180 headlines, 5 sources)
 - Stocks tumble as tech sell-off resumes; Nvidia falls 7% - ABC News - Breaking News, Latest News and Videos
