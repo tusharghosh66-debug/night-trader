@@ -1,8 +1,8 @@
 # Night Trader v2 — Paper Trading Report (3 markets)
-_Updated: 2026-11-25 15:19 IST_
+_Updated: 2026-11-25 15:21 IST_
 
 ## CRYPTO (OPEN) — ₹10,000.00 | P&L +0.00 (+0.00%)
-Cash ₹10,000.00 | cycles 14181 | capital ₹10,000
+Cash ₹10,000.00 | cycles 14186 | capital ₹10,000
 _No open positions — all cash._
 News sentiment: -0.30 (181 headlines, 6 sources, Fear&Greed 13)
 - Strategy and Crypto Stocks Rally as Bitcoin Rebounds Past $63,000. Is the Jump Temporary? - Barron's
@@ -10,7 +10,7 @@ News sentiment: -0.30 (181 headlines, 6 sources, Fear&Greed 13)
 - Bitcoin drops as November spot ETF outflows increase to record $4.71 billion
 
 ## INDIA (OPEN) — ₹9,917.18 | P&L -82.82 (-0.83%)
-Cash ₹6,921.03 | cycles 2362 | capital ₹10,000
+Cash ₹6,921.03 | cycles 2367 | capital ₹10,000
 | Symbol | Qty | Entry | Last | Unrealized |
 |---|---|---|---|---|
 | TCS.NS | 1.1949 | 2503.00 | 2507.40 | +2.27 |
