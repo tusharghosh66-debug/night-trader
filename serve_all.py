@@ -52,8 +52,12 @@ def git_sync():
             subprocess.run(["git", "-C", BASE, "checkout", "--", f], capture_output=True)
         # rebase with local-state-wins + abort/retry: a half-finished rebase from a
         # killed instance used to block every later commit ("unmerged files")
+        # only add files that exist: arena_trades_archive.csv appears at the
+        # 2026-11-26 fresh start, and 'git add' on a missing path aborted the whole
+        # sync (health showed sync error, state stopped reaching GitHub).
+        files = [f for f in FILES if os.path.exists(os.path.join(BASE, f))]
         arena._rebase_and_push(
-            FILES, f"serve all {datetime.now(bot.IST).strftime('%Y-%m-%dT%H:%M:%S%z')} [skip ci][skip render]")
+            files, f"serve all {datetime.now(bot.IST).strftime('%Y-%m-%dT%H:%M:%S%z')} [skip ci][skip render]")
         STATUS["sync"] = "ok"
         STATUS["last_sync"] = datetime.now(bot.IST).isoformat()
     except Exception as e:
