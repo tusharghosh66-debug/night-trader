@@ -1,10 +1,10 @@
 # Night Trader v2 — Paper Trading Report (3 markets)
-_Updated: 2026-11-26 04:25 IST_
+_Updated: 2026-11-26 04:27 IST_
 
 ## CRYPTO (OPEN) — ₹10,000.00 | P&L +0.00 (+0.00%)
-Cash ₹10,000.00 | cycles 520 | capital ₹10,000
+Cash ₹10,000.00 | cycles 525 | capital ₹10,000
 _No open positions — all cash._
-News sentiment: -0.57 (179 headlines, 6 sources, Fear&Greed 13)
+News sentiment: -0.53 (178 headlines, 6 sources, Fear&Greed 13)
 - Bitcoin falls toward $57K amid US tariff fears, hot PCE data as Nasdaq drops 4%
 - Bitcoin falls toward $57K amid US tariff fears, hot PCE data as Nasdaq drops 4% - TradingView
 - Bitcoin Falls Further as Inflation, Trump Tariffs and AI Selloff Rattle Markets
@@ -21,9 +21,9 @@ News sentiment: +1.00 (215 headlines, 6 sources)
 Cash ₹10,000.00 | cycles 289 | capital ₹10,000
 _No open positions — all cash._
 News sentiment: +0.00 (195 headlines, 6 sources)
+- S&amp;P 500, Nasdaq, Dow Forecast: Wall Street Rebound Faces Major Resistance—Bull Trap or Breakout? - StoneX
 - UK stocks fall as banks, miners track Wall Street selloff - Reuters
 - Bullish hopes spring as traders bet against a higher VIX: Options Action Live
-- Nvidia&#x2019;s stock has given back more than half of Monday&#x2019;s rally as dip buyers cash in
 
 Strategy: LONG only while the market is above its 200-hour EMA, SHORT (breakdown) only while it is below —
 so a falling market is traded instead of leaving two thirds of the capital idle.
