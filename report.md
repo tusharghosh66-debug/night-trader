@@ -1,10 +1,10 @@
 # Night Trader v2 — Paper Trading Report (3 markets)
-_Updated: 2026-11-26 00:23 IST_
+_Updated: 2026-11-26 00:25 IST_
 
 ## CRYPTO (OPEN) — ₹10,000.00 | P&L +0.00 (+0.00%)
-Cash ₹10,000.00 | cycles 45 | capital ₹10,000
+Cash ₹10,000.00 | cycles 50 | capital ₹10,000
 _No open positions — all cash._
-News sentiment: -0.53 (180 headlines, 6 sources, Fear&Greed 13)
+News sentiment: -0.59 (181 headlines, 6 sources, Fear&Greed 13)
 - Bitcoin falls toward $57K amid US tariff fears, hot PCE data as Nasdaq drops 4%
 - Bitcoin falls toward $57K amid US tariff fears, hot PCE data as Nasdaq drops 4% - TradingView
 - Bitcoin Falls Further as Inflation, Trump Tariffs and AI Selloff Rattle Markets
@@ -12,18 +12,18 @@ News sentiment: -0.53 (180 headlines, 6 sources, Fear&Greed 13)
 ## INDIA (CLOSED) — ₹10,000.00 | P&L +0.00 (+0.00%)
 Cash ₹10,000.00 | cycles 0 | capital ₹10,000
 _No open positions — all cash._
-News sentiment: +0.98 (214 headlines, 6 sources)
+News sentiment: +1.00 (215 headlines, 6 sources)
 - Nasdaq 100 plunges nearly 5%, briefly enters bear-market zone as AI fears and fresh tariffs hit sentiment
 - Top Nifty Bank gainer today: HDFC Bank shares jump 4% as index soars 2%— Should you buy or book profit? Experts advice
 - Why APL Apollo Tubes shares crashed 15% today to plunge at 52-week low; downgrade from brokerages after Tata Steel deal
 
 ## US (OPEN) — ₹10,000.00 | P&L +0.00 (+0.00%)
-Cash ₹10,000.00 | cycles 45 | capital ₹10,000
+Cash ₹10,000.00 | cycles 50 | capital ₹10,000
 _No open positions — all cash._
-News sentiment: -0.17 (180 headlines, 5 sources)
-- Stocks tumble as tech sell-off resumes; Nvidia falls 7% - ABC News - Breaking News, Latest News and Videos
+News sentiment: -0.31 (192 headlines, 6 sources)
 - Nasdaq-100 futures surge 7%, S&amp;P 500 gain 4.3%, Dow up 2.6% in Wall Street rebound - Beinsure
 - UK stocks fall as banks, miners track Wall Street selloff - Reuters
+- Tech stock sell-off deepens as AI fears outweigh Huang’s Nvidia return - CNN
 
 Strategy: LONG only while the market is above its 200-hour EMA, SHORT (breakdown) only while it is below —
 so a falling market is traded instead of leaving two thirds of the capital idle.
