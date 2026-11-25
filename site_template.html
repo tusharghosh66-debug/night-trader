@@ -19,7 +19,7 @@ aside{position:sticky;top:0;height:100vh;overflow:auto;background:#0e141d;border
 .nav a b{font-weight:600}
 .nav .cnt{color:var(--mute);font-size:11px}
 main{padding:18px 22px 60px;min-width:0}
-header.top{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-end;justify-content:space-between;margin-bottom:16px}
+header.top{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-end;justify-content:space-between;margin-bottom:16px;position:sticky;top:0;z-index:6;background:var(--bg);padding:10px 0 12px;border-bottom:1px solid var(--line)}
 h1{font-size:19px;margin:0}h1 small{display:block;font-weight:400;font-size:12px;color:var(--mute);margin-top:3px}
 .kpis{display:flex;gap:10px;flex-wrap:wrap}
 .kpi{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:9px 12px;min-width:118px}
@@ -152,7 +152,12 @@ function card(b){
 
 function renderOverview(){
   let h = "";
-  D.groups.forEach(g => {
+  const ordered = D.groups.slice().sort((a, b) => {
+    const pa = a.bots.reduce((s, id) => s + D.bots[id].pnl, 0);
+    const pb = b.bots.reduce((s, id) => s + D.bots[id].pnl, 0);
+    return pb - pa;
+  });
+  ordered.forEach(g => {
     const bots = g.bots.map(id => D.bots[id]);
     if(!bots.length) return;
     const eq = bots.reduce((a,b)=>a+b.eq,0), pnl = bots.reduce((a,b)=>a+b.pnl,0);
@@ -181,6 +186,7 @@ function renderKpis(){
     ["বাজারে", money(t.in_market), "ওপেন পজিশনের মোট দাম"],
     ["রিয়ালাইজড", money(t.cash), "বন্ধ ট্রেডের পরের টাকা — পজিশন খুললে কমে না"],
     ["ওপেন পজিশন", t.open, "এখন কতগুলো পজিশন খোলা"],
+    ["লাভে / লসে", t.up + " / " + t.down, "কত বট এখন শুরুর উপরে, কত নিচে"],
     ["ক্লোজড ট্রেড", t.trades, "শুরু থেকে কত ট্রেড শেষ হয়েছে"]
   ].map(([l,v,tip]) => "<div class='kpi' title='" + tip + "'><div class='v mono'>" + v + "</div><div class='l'>" + l + "</div></div>").join("");
   $("#gen").textContent = "স্টেট: " + GEN + " IST · " + D.groups.reduce((a,g)=>a+g.bots.length,0) + " বট · ৬০ সেকেন্ডে আপডেট";

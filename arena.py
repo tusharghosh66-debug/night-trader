@@ -2056,7 +2056,9 @@ def write_site(st):
                        "cash": round(sum(b["cash"] for b in allb), 2),
                        "in_market": round(sum(b["in_market"] for b in allb), 2),
                        "open": sum(b["open"] for b in allb),
-                       "trades": sum(b["trades"] for b in allb)}}
+                       "trades": sum(b["trades"] for b in allb),
+                       "up": sum(1 for b in allb if b["pnl"] > 0.005),
+                       "down": sum(1 for b in allb if b["pnl"] < -0.005)}}
     html = (open(SITE_TPL, encoding="utf-8").read()
             .replace("__DATA__", json.dumps(data, ensure_ascii=False))
             .replace("__GEN__", now))
