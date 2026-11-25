@@ -1984,19 +1984,19 @@ SITE_F = os.path.join(BASE, "site.html")
 SITE_TPL = os.path.join(BASE, "site_template.html")
 SITE_FAMILIES = [
     ("council", "Council experiments", ["x01", "x02", "x03"]),
-    ("orb", "ORB ও ব্রেকআউট", ["s01", "s07", "s08", "smart_01", "smart_07", "smart_08"]),
-    ("meanrev", "মিন-রিভার্সন", ["s02", "s05", "smart_02", "smart_05"]),
-    ("trend", "ট্রেন্ড ফলোয়িং", ["s04", "s06", "s13", "smart_04", "smart_06", "smart_13"]),
-    ("rotation", "রোটেশন ও ক্যালেন্ডার", ["s03", "s10", "smart_03", "smart_10"]),
-    ("arb", "আর্বিট্রাজ", ["s09", "smart_09"]),
-    ("short", "শর্ট সাইড ইন্ট্রাডে", ["s11", "s12", "smart_11", "smart_12"]),
+    ("orb", "ORB and breakout", ["s01", "s07", "s08", "smart_01", "smart_07", "smart_08"]),
+    ("meanrev", "Mean reversion", ["s02", "s05", "smart_02", "smart_05"]),
+    ("trend", "Trend following", ["s04", "s06", "s13", "smart_04", "smart_06", "smart_13"]),
+    ("rotation", "Rotation and calendar", ["s03", "s10", "smart_03", "smart_10"]),
+    ("arb", "Arbitrage", ["s09", "smart_09"]),
+    ("short", "Short-side intraday", ["s11", "s12", "smart_11", "smart_12"]),
 ]
 COUNCIL_RULES_HTML = {
-    "x01": "ATR(14)/দাম ৬০ দিনের নিচের ৩০%-এ থাকলে বাজার <b>চুপ</b>; তারপর ২০ দিনের হাই ভাঙলে ঢোকে। "
-           "স্টপ 2×ATR, ট্রেইল 3×ATR, ৪R-এ বেরোবে, সর্বোচ্চ ২৫ সেশন।",
-    "x02": "প্রতি সোমবার ১০টি নামের মধ্যে ১২০ দিনে সেরা ২টি, যদি ২০০ দিনের উপরে থাকে। "
-           "স্টপ/ট্রেইল 2.5×ATR, র‍্যাঙ্ক ৩-এর নিচে নামলে বেরোবে।",
-    "x03": "SMA50 &gt; SMA200 থাকলেই লং। স্টপ 3×ATR, ট্রেইল 4×ATR, রেজিম ফ্লিপে বেরোবে — ধীর কোরে হোল্ড।",
+    "x01": "Enters when ATR(14)/price sits in the bottom 30% of the last 60 days (<b>quiet market</b>) and price then breaks the 20-day high. "
+           "Stop 2xATR, trail 3xATR, target 4R, max 25 sessions.",
+    "x02": "Every Monday buys the top 2 of 10 names by 120-day return, but only if price is above the 200-day average. "
+           "Stop/trail 2.5xATR, exits when rank falls to 3 or worse.",
+    "x03": "Long only while SMA50 &gt; SMA200. Stop 3xATR, trail 4xATR, exits on a regime flip - a slow hold.",
 }
 
 

@@ -1,32 +1,28 @@
-<!DOCTYPE html><html lang="bn"><head><meta charset="utf-8">
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Arena - 29 bots</title>
+<title>Strategy Arena - all 29 bots</title>
 <style>
-:root{--bg:#0b0f16;--panel:#141b25;--panel2:#1a2330;--ink:#e8eef6;--mute:#8b98a8;--line:#26313f;--pos:#34d399;--neg:#f87171;--acc:#60a5fa;--warn:#fbbf24}
-*{box-sizing:border-box}
-html,body{margin:0;padding:0}
+:root{--bg:#0b0f16;--panel:#141b25;--ink:#e8eef6;--mute:#8b98a8;--line:#26313f;--pos:#34d399;--neg:#f87171;--acc:#60a5fa;--warn:#fbbf24}
+*{box-sizing:border-box}html,body{margin:0;padding:0}
 body{background:var(--bg);color:var(--ink);font:14px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
 .mono{font-variant-numeric:tabular-nums;font-feature-settings:"tnum"}
 .pos{color:var(--pos)}.neg{color:var(--neg)}.mute{color:var(--mute)}
 .wrap{display:grid;grid-template-columns:236px 1fr;min-height:100vh}
 aside{position:sticky;top:0;height:100vh;overflow:auto;background:#0e141d;border-right:1px solid var(--line);padding:16px 12px}
-.brand{font-weight:800;letter-spacing:.3px;font-size:15px;margin:2px 4px 2px}
-.brand span{display:block;font-weight:400;font-size:11px;color:var(--mute);letter-spacing:.2px}
+.brand{font-weight:800;letter-spacing:.3px;font-size:15px;margin:2px 4px}
+.brand span{display:block;font-weight:400;font-size:11px;color:var(--mute);letter-spacing:.2px;margin-top:2px}
 .nav{margin-top:14px;display:flex;flex-direction:column;gap:2px}
 .nav a{display:flex;justify-content:space-between;gap:8px;padding:8px 10px;border-radius:8px;font-size:12.5px;color:#c4cedb}
-.nav a:hover{background:#16202b;color:#fff}
-.nav a b{font-weight:600}
-.nav .cnt{color:var(--mute);font-size:11px}
-main{padding:18px 22px 60px;min-width:0}
-header.top{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-end;justify-content:space-between;margin-bottom:16px;position:sticky;top:0;z-index:6;background:var(--bg);padding:10px 0 12px;border-bottom:1px solid var(--line)}
+.nav a:hover{background:#16202b;color:#fff}.nav a b{font-weight:600}.nav .cnt{color:var(--mute);font-size:11px}
+main{padding:0 22px 60px;min-width:0}
+header.top{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-end;justify-content:space-between;position:sticky;top:0;z-index:6;background:var(--bg);padding:12px 0 12px;border-bottom:1px solid var(--line);margin-bottom:14px}
 h1{font-size:19px;margin:0}h1 small{display:block;font-weight:400;font-size:12px;color:var(--mute);margin-top:3px}
 .kpis{display:flex;gap:10px;flex-wrap:wrap}
-.kpi{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:9px 12px;min-width:118px}
-.kpi .v{font-size:16px;font-weight:700;letter-spacing:-.2px}
-.kpi .l{font-size:10.5px;color:var(--mute);margin-top:1px}
-.toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:10px 0 18px}
-input.search{background:var(--panel);border:1px solid var(--line);border-radius:9px;color:var(--ink);padding:8px 11px;font-size:13px;min-width:190px;outline:none}
+.kpi{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:9px 12px;min-width:112px}
+.kpi .v{font-size:16px;font-weight:700;letter-spacing:-.2px}.kpi .l{font-size:10.5px;color:var(--mute);margin-top:1px}
+.toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:0 0 18px}
+input.search{background:var(--panel);border:1px solid var(--line);border-radius:9px;color:var(--ink);padding:8px 11px;font-size:13px;min-width:210px;outline:none}
 input.search:focus{border-color:var(--acc)}
 .btn{background:var(--panel);border:1px solid var(--line);color:#c9d4e2;border-radius:9px;padding:7px 11px;font-size:12px;cursor:pointer}
 .btn.on{border-color:var(--acc);color:#fff;background:#17243a}
@@ -42,13 +38,12 @@ section.grp{margin:0 0 22px}
 .card .nm{font-size:11px;color:var(--mute);margin:2px 0 7px;height:28px;overflow:hidden}
 .card .eq{font-size:17px;font-weight:700;letter-spacing:-.3px}
 .card .pct{font-size:12.5px;font-weight:600}
-.card.idle{opacity:.62}.card.idle:hover{opacity:1}
 .card .meta{display:flex;gap:10px;flex-wrap:wrap;font-size:10.5px;color:var(--mute);margin-top:7px}
 .card svg{display:block;width:100%;height:32px;margin-top:8px}
+.card.idle{opacity:.62}.card.idle:hover{opacity:1}
 .tag{font-size:9.5px;border:1px solid var(--line);border-radius:5px;padding:1px 5px;color:var(--mute);vertical-align:1px}
 .tag.c{border-color:#3b4b60;color:#9dc4ff}.tag.p{border-color:#4a3b1a;color:var(--warn)}
-.detail{display:none}
-.detail.show{display:block}
+.detail{display:none}.detail.show{display:block}
 .back{font-size:12px;color:var(--acc);cursor:pointer;display:inline-block;margin-bottom:8px}
 .dhead{display:flex;flex-wrap:wrap;gap:16px;align-items:flex-start;justify-content:space-between;margin-bottom:6px}
 .dhead h2{font-size:18px;margin:0}.dhead .sub{font-size:11.5px;color:var(--mute);margin-top:3px}
@@ -64,64 +59,47 @@ th{color:var(--mute);font-size:10.5px;font-weight:600;text-transform:uppercase;l
 td.num,th.num{text-align:right;white-space:nowrap}
 tr:last-child td{border-bottom:none}
 .empty{color:var(--mute);font-size:12px;padding:10px 2px}
-.note{background:#101823;border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:11.5px;color:#b6c2d1;margin-top:14px}
-.note b{color:#dbe5f0}
 .kv{display:flex;justify-content:space-between;gap:10px;font-size:12px;padding:5px 0;border-bottom:1px solid var(--line)}
-.kv:last-child{border-bottom:none}
-.kv .k{color:var(--mute)}
-.rules{font-size:12px;color:#c3cdd9;line-height:1.5}
-.rules b{color:#fff}
+.kv:last-child{border-bottom:none}.kv .k{color:var(--mute)}
+.rules{font-size:12px;color:#c3cdd9;line-height:1.5}.rules b{color:#fff}
 footer{margin-top:26px;color:var(--mute);font-size:11px;border-top:1px solid var(--line);padding-top:12px}
-@media(max-width:900px){
-.wrap{grid-template-columns:1fr}
-aside{position:static;height:auto;display:flex;gap:10px;align-items:center;overflow-x:auto;padding:10px 12px;border-right:none;border-bottom:1px solid var(--line)}
+@media(max-width:900px){.wrap{grid-template-columns:1fr}
+aside{position:static;height:auto;display:flex;gap:8px;align-items:center;flex-wrap:wrap;padding:10px 12px;border-right:none;border-bottom:1px solid var(--line)}
 aside .brand{white-space:nowrap;margin:0}.brand span{display:none}
-.nav{flex-direction:row;margin:0;gap:6px;flex-wrap:nowrap}
+.nav{flex-direction:row;margin:0;gap:6px;flex-wrap:wrap}
 .nav a{white-space:nowrap;padding:6px 9px;border:1px solid var(--line)}
-main{padding:14px 13px 50px}
-.cols{grid-template-columns:1fr}
-.grid{grid-template-columns:repeat(auto-fill,minmax(210px,1fr))}
-}
-@media(max-width:560px){
-.grid{grid-template-columns:1fr 1fr;gap:9px}
+main{padding:0 13px 50px}.cols{grid-template-columns:1fr}.grid{grid-template-columns:repeat(auto-fill,minmax(210px,1fr))}}
+@media(max-width:560px){.grid{grid-template-columns:1fr 1fr;gap:9px}
 .card{padding:9px 10px}.card .nm{height:26px;font-size:10.5px}.card .eq{font-size:15px}
 .card .pct{font-size:11.5px}.card svg{height:24px}
 .kpi{min-width:calc(50% - 5px);flex:1}.kpi .v{font-size:14.5px}
 table.resp thead{display:none}
 table.resp tr{display:block;border:1px solid var(--line);border-radius:9px;margin-bottom:8px;padding:6px 8px}
 table.resp td{display:flex;justify-content:space-between;gap:12px;border:none;padding:3px 0;text-align:right}
-table.resp td:before{content:attr(data-l);color:var(--mute);font-size:10.5px;text-align:left;text-transform:uppercase;letter-spacing:.3px}
-table.resp td.num{text-align:right}
-}
+table.resp td:before{content:attr(data-l);color:var(--mute);font-size:10.5px;text-align:left;text-transform:uppercase;letter-spacing:.3px}}
 </style></head><body>
-<div class="wrap">
-<aside>
+<div class="wrap"><aside>
 <div class="brand">Strategy Arena<span>29 paper bots · ₹10,000 each</span></div>
-<nav class="nav" id="nav"></nav>
-</aside>
-<main>
-<header class="top">
-<h1>সব বট একসাথে <small id="gen"></small></h1>
-<div class="kpis" id="kpis"></div>
-</header>
+<nav class="nav" id="nav"></nav></aside>
+<main><header class="top">
+<h1>All bots<small id="gen"></small></h1>
+<div class="kpis" id="kpis"></div></header>
 <div class="toolbar">
-<input class="search" id="q" placeholder="বট খুঁজুন (s07, xsqueeze, council)">
-<button class="btn on" data-sort="pnl">P&amp;L অনুযায়ী</button>
-<button class="btn" data-sort="id">নাম অনুযায়ী</button>
-<button class="btn" data-sort="tr">ট্রেড সংখ্যা</button>
-<button class="btn" id="onlyActive">শুধু সক্রিয় বট</button>
-<button class="btn" id="showPaused">paused বট দেখাও</button>
-</div>
-<div id="overview"></div>
-<div id="detail" class="detail"></div>
-<footer>Paper trading only — no real money. Fees 0.1% per side are already inside every P&amp;L number. Equity = realized cash + open-position profit; cash does not shrink when a position opens, so "in market" is shown separately. Data refreshes every 60 s from the engine.</footer>
+<input class="search" id="q" placeholder="Search bot (s07, x02, council)">
+<button class="btn on" data-sort="pnl">Best P&amp;L</button>
+<button class="btn" data-sort="id">By name</button>
+<button class="btn" data-sort="tr">Most trades</button>
+<button class="btn" id="onlyActive">Active only</button>
+<button class="btn" id="showPaused">Show paused</button></div>
+<div id="overview"></div><div id="detail" class="detail"></div>
+<footer>Paper trading only - no real money. Fees 0.1% per side are already inside every P&amp;L number. Equity = realized cash + open-position profit; cash does not shrink when a position opens, so "in market" is shown separately. Data refreshes every 60 s from the engine.</footer>
 </main></div>
 <script>
 const D = __DATA__;
 const GEN = "__GEN__";
 const $ = s => document.querySelector(s);
 const money = (n, sign) => (sign && n > 0 ? "+" : "") + "₹" + Math.round(n).toLocaleString("en-IN");
-const money2 = (n, sign) => (sign && n > 0 ? "+" : "") + "₹" + (Math.round(n*100)/100).toLocaleString("en-IN", {minimumFractionDigits:2, maximumFractionDigits:2});
+const money2 = (n, sign) => (sign && n > 0 ? "+" : "") + "₹" + (Math.round(n * 100) / 100).toLocaleString("en-IN", {minimumFractionDigits:2, maximumFractionDigits:2});
 const pct = n => (n >= 0 ? "+" : "") + n.toFixed(2) + "%";
 const cls = n => n >= 0 ? "pos" : "neg";
 const esc = s => String(s == null ? "" : s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
@@ -130,24 +108,26 @@ function spark(vals, w, h, stroke){
   if(!vals || vals.length < 2) return "<svg viewBox='0 0 " + w + " " + h + "'></svg>";
   const lo = Math.min(...vals), hi = Math.max(...vals), rng = hi - lo;
   const flat = rng < 1e-9;
-  const pts = vals.map((v,i)=> (i/(vals.length-1)*w).toFixed(1) + "," +
-    (flat ? h/2 : h - (v-lo)/rng*(h-3) - 1.5).toFixed(1)).join(" ");
-  const up = vals[vals.length-1] >= vals[0];
+  const pts = vals.map((v, i) => (i / (vals.length - 1) * w).toFixed(1) + "," +
+    (flat ? h / 2 : h - (v - lo) / rng * (h - 3) - 1.5).toFixed(1)).join(" ");
+  const up = vals[vals.length - 1] >= vals[0];
   const col = stroke || (up ? "var(--pos)" : "var(--neg)");
-  const area = "0," + h + " " + pts + " " + w + "," + h;
   return "<svg viewBox='0 0 " + w + " " + h + "' preserveAspectRatio='none'>" +
-    "<polygon points='" + area + "' fill='" + col + "' opacity='.10'></polygon>" +
+    "<polygon points='0," + h + " " + pts + " " + w + "," + h + "' fill='" + col + "' opacity='.10'></polygon>" +
     "<polyline points='" + pts + "' fill='none' stroke='" + col + "' stroke-width='1.6' vector-effect='non-scaling-stroke'></polyline></svg>";
 }
 
 function card(b){
   const tags = (b.council ? "<span class='tag c'>council</span> " : "") + (b.paused ? "<span class='tag p'>paused</span>" : "");
-  return "<a class='card" + (b.trades === 0 && b.open === 0 ? " idle" : "") + "' href='#/bot/" + b.id + "' data-id='" + b.id + "' data-name='" + esc(b.name.toLowerCase()) + "' data-pnl='" + b.pnl.toFixed(2) + "' data-tr='" + b.trades + "' data-op='" + b.open + "' data-paused='" + (b.paused ? 1 : 0) + "'>" +
+  return "<a class='card" + (b.trades === 0 && b.open === 0 ? " idle" : "") + "' href='#/bot/" + b.id + "' data-id='" + b.id + "'" +
+    " data-name='" + esc(b.name.toLowerCase()) + "' data-pnl='" + b.pnl.toFixed(2) + "' data-tr='" + b.trades +
+    "' data-op='" + b.open + "' data-paused='" + (b.paused ? 1 : 0) + "'>" +
     "<div class='crow'><span class='cid'>" + b.id + "</span><span class='pct " + cls(b.pnl) + "'>" + pct(b.pct) + "</span></div>" +
     "<div class='nm'>" + esc(b.name) + " " + tags + "</div>" +
     "<div class='crow'><span class='eq mono'>" + money(b.eq) + "</span><span class='pct mono " + cls(b.pnl) + "'>" + money(b.pnl, true) + "</span></div>" +
     spark(b.spark, 220, 32) +
-    "<div class='meta'><span>" + b.trades + "টি ট্রেড</span><span title='10-এর কম ট্রেডে win% অর্থহীন'>" + (b.trades >= 5 ? "win " + b.wr.toFixed(0) + "%" : "win —") + "</span><span>" + b.open + " ওপেন</span></div></a>";
+    "<div class='meta'><span>" + b.trades + " trades</span><span title='win rate is noise under 5 trades'>" + (b.trades >= 5 ? "win " + b.wr.toFixed(0) + "%" : "win -") + "</span>" +
+    "<span>" + b.open + " open</span></div></a>";
 }
 
 function renderOverview(){
@@ -160,11 +140,11 @@ function renderOverview(){
   ordered.forEach(g => {
     const bots = g.bots.map(id => D.bots[id]);
     if(!bots.length) return;
-    const eq = bots.reduce((a,b)=>a+b.eq,0), pnl = bots.reduce((a,b)=>a+b.pnl,0);
+    const eq = bots.reduce((a, b) => a + b.eq, 0), pnl = bots.reduce((a, b) => a + b.pnl, 0);
     const pausedN = bots.filter(b => b.paused).length;
     h += "<section class='grp' id='g-" + g.key + "'><div class='ghead'><h2>" + esc(g.name) + "</h2>" +
       "<div class='gsum mono'>" + bots.length + " bots · " + money(eq) + " · <span class='" + cls(pnl) + "'>" + money(pnl, true) + "</span>" +
-      (pausedN ? " · <span class='mute'>" + pausedN + " paused লুকানো</span>" : "") + "</div></div>" +
+      (pausedN ? " · <span class='mute'>" + pausedN + " paused hidden</span>" : "") + "</div></div>" +
       "<div class='grid'>" + bots.map(card).join("") + "</div></section>";
   });
   $("#overview").innerHTML = h;
@@ -173,28 +153,28 @@ function renderOverview(){
 function renderNav(){
   $("#nav").innerHTML = D.groups.map(g => {
     const bots = g.bots.map(id => D.bots[id]);
-    const pnl = bots.reduce((a,b)=>a+b.pnl,0);
-    return "<a href='#g-" + g.key + "'><b>" + esc(g.name) + "</b><span class='cnt mono " + cls(pnl) + "'>" + (pnl>=0?"+":"") + Math.round(pnl) + "</span></a>";
+    const pnl = bots.reduce((a, b) => a + b.pnl, 0);
+    return "<a href='#g-" + g.key + "'><b>" + esc(g.name) + "</b>" +
+      "<span class='cnt mono " + cls(pnl) + "'>" + (pnl >= 0 ? "+" : "") + Math.round(pnl) + "</span></a>";
   }).join("");
 }
 
 function renderKpis(){
   const t = D.totals;
   $("#kpis").innerHTML = [
-    ["মোট সম্পদ", money(t.eq), "২৯ বইয়ের মোট দাম"],
-    ["পুল থেকে", money(t.pnl, true) + " (" + ((t.pnl / D.pool) * 100).toFixed(2) + "%)", "₹২,৯০,০০০ শুরুর টাকা থেকে কত উপর/নিচে"],
-    ["বাজারে", money(t.in_market), "ওপেন পজিশনের মোট দাম"],
-    ["রিয়ালাইজড", money(t.cash), "বন্ধ ট্রেডের পরের টাকা — পজিশন খুললে কমে না"],
-    ["ওপেন পজিশন", t.open, "এখন কতগুলো পজিশন খোলা"],
-    ["লাভে / লসে", t.up + " / " + t.down, "কত বট এখন শুরুর উপরে, কত নিচে"],
-    ["ক্লোজড ট্রেড", t.trades, "শুরু থেকে কত ট্রেড শেষ হয়েছে"]
-  ].map(([l,v,tip]) => "<div class='kpi' title='" + tip + "'><div class='v mono'>" + v + "</div><div class='l'>" + l + "</div></div>").join("");
-  $("#gen").textContent = "স্টেট: " + GEN + " IST · " + D.groups.reduce((a,g)=>a+g.bots.length,0) + " বট · ৬০ সেকেন্ডে আপডেট";
-
+    ["Total equity", money(t.eq), "sum of all 29 books"],
+    ["vs pool", money(t.pnl, true) + " (" + ((t.pnl / D.pool) * 100).toFixed(2) + "%)", "the ₹2,90,000 start"],
+    ["In market", money(t.in_market), "value of open positions"],
+    ["Realized", money(t.cash), "cash after closed trades - not reduced when a position opens"],
+    ["Open positions", t.open, "positions open right now"],
+    ["Up / down", t.up + " / " + t.down, "bots above / below their ₹10,000 start"],
+    ["Closed trades", t.trades, "trades finished since the fresh start"]
+  ].map(([l, v, tip]) => "<div class='kpi' title='" + tip + "'><div class='v mono'>" + v + "</div><div class='l'>" + l + "</div></div>").join("");
+  $("#gen").textContent = "state " + GEN + " IST · " + D.groups.reduce((a, g) => a + g.bots.length, 0) + " bots · refresh 60 s";
 }
 
 function rows(pos){
-  if(!pos.length) return "<div class='empty'>কোনো ওপেন পজিশন নেই — সব টাকা রিয়ালাইজড (বাইরে)।</div>";
+  if(!pos.length) return "<div class='empty'>No open position - nothing in the market.</div>";
   return "<table class='resp'><thead><tr><th>Symbol</th><th>Side</th><th class='num'>Qty</th><th class='num'>Entry</th>" +
     "<th class='num'>Now</th><th class='num'>Stop</th><th class='num'>P&amp;L</th></tr></thead><tbody>" +
     pos.map(p => "<tr><td data-l='symbol'><b>" + esc(p.sym) + "</b></td>" +
@@ -208,15 +188,15 @@ function rows(pos){
 }
 
 function tradeRows(list){
-  if(!list.length) return "<div class='empty'>এখনো কোনো ক্লোজড ট্রেড নেই।</div>";
-  return "<table class='resp'><thead><tr><th>কখন</th><th>Symbol</th><th>Side</th><th class='num'>Entry</th>" +
-    "<th class='num'>Exit</th><th class='num'>P&amp;L</th><th>কারণ</th></tr></thead><tbody>" +
-    list.map(t => "<tr><td data-l='কখন' class='mono mute'>" + esc(t.t) + "</td><td data-l='symbol'><b>" + esc(t.sym) + "</b></td>" +
+  if(!list.length) return "<div class='empty'>No closed trade yet.</div>";
+  return "<table class='resp'><thead><tr><th>When</th><th>Symbol</th><th>Side</th><th class='num'>Entry</th>" +
+    "<th class='num'>Exit</th><th class='num'>P&amp;L</th><th>Reason</th></tr></thead><tbody>" +
+    list.map(t => "<tr><td data-l='when' class='mono mute'>" + esc(t.t) + "</td><td data-l='symbol'><b>" + esc(t.sym) + "</b></td>" +
       "<td data-l='side'>" + (t.side > 0 ? "LONG" : "SHORT") + "</td>" +
       "<td data-l='entry' class='num mono'>" + money2(t.entry) + "</td>" +
       "<td data-l='exit' class='num mono'>" + money2(t.exit) + "</td>" +
       "<td data-l='p&amp;l' class='num mono " + cls(t.pnl) + "'>" + money2(t.pnl, true) + "</td>" +
-      "<td data-l='কারণ' class='mute'>" + esc(t.reason) + "</td></tr>").join("") + "</tbody></table>";
+      "<td data-l='reason' class='mute'>" + esc(t.reason) + "</td></tr>").join("") + "</tbody></table>";
 }
 
 function goHome(){ location.hash = ""; }
@@ -226,29 +206,29 @@ function renderBot(id){
   if(!b){ location.hash = ""; return; }
   $("#overview").style.display = "none";
   const d = $("#detail"); d.classList.add("show");
-  const gates = b.gates ? ("<div class='kv'><span class='k'>এন্ট্রি আটকানো (cooldown / ছোট রিস্ক / EOD)</span><span class='mono'>" +
-    (b.gates.cooldown||0) + " / " + (b.gates.rfee||0) + " / " + (b.gates.eod||0) + "</span></div>") : "";
-  const rules = b.rules ? "<div class='panel' style='margin-top:14px'><h3>নিয়ম (কীভাবে কাজ করে)</h3><div class='rules'>" + b.rules +
+  const gates = b.gates ? ("<div class='kv'><span class='k'>Entries blocked (cooldown / small risk / EOD)</span><span class='mono'>" +
+    (b.gates.cooldown || 0) + " / " + (b.gates.rfee || 0) + " / " + (b.gates.eod || 0) + "</span></div>") : "";
+  const rules = b.rules ? "<div class='panel' style='margin-top:14px'><h3>How it works</h3><div class='rules'>" + b.rules +
     (b.kill ? "<div class='kv' style='margin-top:10px'><span class='k'>Kill rule</span><span>" + esc(b.kill) + "</span></div>" : "") + "</div></div>" : "";
-  d.innerHTML = "<span class='back' onclick='goHome()'>&larr; সব বটে ফিরুন</span>" +
+  d.innerHTML = "<span class='back' onclick='goHome()'>&larr; All bots</span>" +
     "<div class='dhead'><div><h2>" + b.id + " · " + esc(b.name) + "</h2>" +
     "<div class='sub'>" + esc(b.tf) + " · " + esc(b.market) + " · book ₹10,000" + (b.council ? " · council experiment" : "") + "</div></div>" +
     "<div class='kpis'><div class='kpi'><div class='v mono'>" + money2(b.eq) + "</div><div class='l'>equity</div></div>" +
     "<div class='kpi'><div class='v mono " + cls(b.pnl) + "'>" + money2(b.pnl, true) + "</div><div class='l'>" + pct(b.pct) + " vs start</div></div>" +
     "<div class='kpi'><div class='v mono'>" + b.trades + "</div><div class='l'>closed trades</div></div>" +
-    "<div class='kpi'><div class='v mono'>" + b.wr.toFixed(0) + "%</div><div class='l'>win rate</div></div></div></div>" +
+    "<div class='kpi'><div class='v mono'>" + (b.trades >= 5 ? b.wr.toFixed(0) + "%" : "-") + "</div><div class='l'>win rate</div></div></div></div>" +
     "<div class='big'>" + spark(b.spark, 900, 120) + "</div>" +
-    "<div class='pnlbar'><span>শুরু <b class='mono'>₹10,000</b></span><span>রিয়ালাইজড <b class='mono'>" + money2(b.cash) + "</b></span>" +
-    "<span>বাজারে <b class='mono'>" + money2(b.in_market) + "</b></span><span>আনরিয়ালাইজড <b class='mono " + cls(b.upnl) + "'>" + money2(b.upnl, true) + "</b></span>" +
-    "<span>ফি (সব ট্রেডে) <b class='mono'>" + money2(b.fees) + "</b></span></div>" +
-    "<div class='cols'><div class='panel'><h3>ওপেন পজিশন (" + b.open + ")</h3>" + rows(b.positions) + "</div>" +
-    "<div class='panel'><h3>ডিটেইল</h3>" +
-    "<div class='kv'><span class='k'>রিয়ালাইজড ইক্যুইটি (পজিশন খুললে কমে না)</span><span class='mono'>" + money2(b.cash) + "</span></div>" +
-    "<div class='kv'><span class='k'>পজিশনে</span><span class='mono'>" + money2(b.in_market) + "</span></div>" +
-    "<div class='kv'><span class='k'>আনরিয়ালাইজড</span><span class='mono " + cls(b.upnl) + "'>" + money2(b.upnl, true) + "</span></div>" +
-    "<div class='kv'><span class='k'>সর্বোচ্চ / সর্বনিম্ন</span><span class='mono'>" + money2(Math.max(...b.spark)) + " / " + money2(Math.min(...b.spark)) + "</span></div>" +
+    "<div class='pnlbar'><span>Start <b class='mono'>₹10,000</b></span><span>Realized <b class='mono'>" + money2(b.cash) + "</b></span>" +
+    "<span>In market <b class='mono'>" + money2(b.in_market) + "</b></span><span>Unrealized <b class='mono " + cls(b.upnl) + "'>" + money2(b.upnl, true) + "</b></span>" +
+    "<span>Fees paid <b class='mono'>" + money2(b.fees) + "</b></span></div>" +
+    "<div class='cols'><div class='panel'><h3>Open positions (" + b.open + ")</h3>" + rows(b.positions) + "</div>" +
+    "<div class='panel'><h3>Details</h3>" +
+    "<div class='kv'><span class='k'>Realized equity (not reduced by entries)</span><span class='mono'>" + money2(b.cash) + "</span></div>" +
+    "<div class='kv'><span class='k'>In positions</span><span class='mono'>" + money2(b.in_market) + "</span></div>" +
+    "<div class='kv'><span class='k'>Unrealized</span><span class='mono " + cls(b.upnl) + "'>" + money2(b.upnl, true) + "</span></div>" +
+    "<div class='kv'><span class='k'>Max / min equity</span><span class='mono'>" + money2(Math.max(...b.spark)) + " / " + money2(Math.min(...b.spark)) + "</span></div>" +
     gates + "</div></div>" +
-    "<div class='panel' style='margin-top:14px'><h3>শেষ ট্রেডগুলো</h3>" + tradeRows(b.closed) + "</div>" + rules;
+    "<div class='panel' style='margin-top:14px'><h3>Last trades</h3>" + tradeRows(b.closed) + "</div>" + rules;
   window.scrollTo({top:0, behavior:"instant"});
 }
 
@@ -267,7 +247,7 @@ let sortBy = "pnl", onlyActive = false, showPaused = false;
 function applySort(){
   document.querySelectorAll("section.grp .grid").forEach(grid => {
     const cards = [...grid.children];
-    cards.sort((a,b) => {
+    cards.sort((a, b) => {
       if(sortBy === "id") return a.dataset.id.localeCompare(b.dataset.id);
       if(sortBy === "tr") return (+b.dataset.tr) - (+a.dataset.tr);
       return (+b.dataset.pnl) - (+a.dataset.pnl);
