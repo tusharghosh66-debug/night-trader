@@ -14,13 +14,14 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 
 import bot
 import arena
+import events
 
 BASE = os.path.dirname(os.path.abspath(__file__))
 CYCLE_SEC = int(os.environ.get("CYCLE_SEC", "60"))   # Render env: 30
 SYNC_EVERY = 5
 FILES = ["state.json", "trades.csv", "report.md", "dashboard.html", "news.json",
          "arena_state.json", "arena_trades.csv", "arena_report.md", "arena_dashboard.html",
-"arena_trades_archive.csv", "trades_archive.csv"]
+"arena_trades_archive.csv", "trades_archive.csv", "events.json"]
 STATUS = {"started": None, "last_cycle": None, "cycles": 0,
           "night_trader": {"equity": 0.0, "error": None},
           "arena": {"equity": 0.0, "error": None},
@@ -121,6 +122,10 @@ def loop():
     ast = arena.load_state()
     STATUS["started"] = datetime.now(bot.IST).isoformat()
     n = 0
+    try:                      # calendar collector: data only, first fill at boot
+        events.collect()
+    except Exception as e:
+        say(f"events collect failed: {e}")
     while True:
         t0 = time.time()
         # --- Night-Trader (old bot): one cycle, hourly news cache inside ---
@@ -143,6 +148,12 @@ def loop():
             say(f"arena cycle error: {e}\n{traceback.format_exc()}")
         n += 1
         STATUS.update(cycles=n, last_cycle=datetime.now(bot.IST).isoformat())
+        # calendar collector: data only (nothing reads it yet), one fetch per 6h
+        if n % 30 == 0:
+            try:
+                events.collect()
+            except Exception as e:
+                say(f"events collect failed: {e}")
         if n % SYNC_EVERY == 0:
             git_sync()
         time.sleep(max(5, CYCLE_SEC - (time.time() - t0)))
