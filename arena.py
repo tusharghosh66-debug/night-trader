@@ -463,6 +463,15 @@ def s01(bs, ctx):
                 reason = "band-revert" if inside else ("stop" if hit else ("eod" if eod else "time-exit"))
                 row = close_position(bs, sym, px, reason, ctx.now)
                 row[1] = "s01"; record_trade("s01", bs, row)
+                # A band-revert exit is the band saying "the break failed". Re-entering
+                # the same symbol later the same session (no cooldown) produced three
+                # cash-bleeding round trips in 12 minutes on 24 Nov (20:05 -29.74,
+                # 20:14 -17.79, 20:17 -33.68). One failed break per symbol per day.
+                if reason == "band-revert":
+                    cool = session_slots(bs, "s01_cool", mkt_day(now_ms, sym))
+                    if sym not in cool["done"]:
+                        cool["done"].append(sym)
+                        log(f"  s01 {sym} band-revert: no re-entry today")
             continue
         if not today_bars:
             continue
@@ -471,7 +480,8 @@ def s01(bs, ctx):
         if len(bs["positions"]) >= 1:
             continue
         sess = session_slots(bs, "s01_session", today)
-        if sym in sess["done"]:
+        cool = session_slots(bs, "s01_cool", today)
+        if sym in sess["done"] or sym in cool["done"]:
             continue
         cut = mkt_entry_cutoff_min(sym)
         if cut is not None and mins >= cut:
@@ -914,7 +924,27 @@ def s10(bs, ctx):
             p = bs["positions"][sym]
             # sell at next day's open (first cycle after market open on a later day)
             if p.get("day") != today_key and mkt_open(sym):
-                row = close_position(bs, sym, px, "overnight-exit", ctx.now)
+                exit_px = px
+                # Stale-quote guard: in the first minutes after the open Yahoo's meta
+                # still shows the PREVIOUS close, so "sell at the open" filled at
+                # yesterday's close == the entry price -> a fake flat trade that only
+                # pays fees (25 Nov: NIFTYBEES entered 289.43, "exited" 289.43 while
+                # the real open was 292.86, missing ~35 per bot).
+                # If the quote equals the entry, fall back to the day's first intraday
+                # print; if that is not available yet, wait one cycle and retry.
+                if exit_px and p.get("entry") and abs(exit_px - p["entry"]) <= max(1e-9, abs(p["entry"]) * 1e-6):
+                    try:
+                        m5 = ctx.candles(sym, "5m", "1d", drop_last=False)
+                    except Exception:
+                        m5 = []
+                    tday = mkt_day(time.time() * 1000, sym)
+                    tb5 = [k for k in m5 if mkt_day(k["t"], sym) == tday]
+                    if not tb5:
+                        continue   # no fresh price yet - retry next cycle
+                    exit_px = tb5[0]["o"] or tb5[0]["c"]
+                    bs["last_prices"][sym] = exit_px
+                    log(f"  s10 {sym} stale open quote {px}; using first 5m print {exit_px}")
+                row = close_position(bs, sym, exit_px, "overnight-exit", ctx.now)
                 row[1] = "s10"; record_trade("s10", bs, row)
             continue
         if len(bs["positions"]) >= 2 or bs["meta"].get(day_meta) == today_key:
