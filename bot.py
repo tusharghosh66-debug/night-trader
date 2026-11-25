@@ -54,7 +54,7 @@ MARKETS = {
     "us": {"source": "yahoo", "symbols": ["AAPL", "MSFT", "NVDA", "GOOGL"],
            "regime": "^GSPC", "ccy": "₹", "capital": 10000.0, "min_cost": 100, "usd_priced": True,
            "feeds": ["https://www.cnbc.com/id/100003114/device/rss/rss.html",
-                     "https://feeds.marketwatch.com/marketwatch/topstories/"],
+                     "https://feeds.content.dowjones.io/public/rss/mw_topstories"],
            "gnews": ["US stock market OR nasdaq OR S&P 500 OR dow jones",
                      "federal reserve OR wall street OR US economy OR interest rates",
                      "apple OR microsoft OR nvidia OR google stock",
