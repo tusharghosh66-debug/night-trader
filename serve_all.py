@@ -21,7 +21,8 @@ CYCLE_SEC = int(os.environ.get("CYCLE_SEC", "60"))   # Render env: 30
 SYNC_EVERY = 5
 FILES = ["state.json", "trades.csv", "report.md", "dashboard.html", "news.json",
          "arena_state.json", "arena_trades.csv", "arena_report.md", "arena_dashboard.html",
-"arena_trades_archive.csv", "trades_archive.csv", "events.json"]
+         "council_dashboard.html",
+         "arena_trades_archive.csv", "trades_archive.csv", "events.json"]
 STATUS = {"started": None, "last_cycle": None, "cycles": 0,
           "night_trader": {"equity": 0.0, "error": None},
           "arena": {"equity": 0.0, "error": None},
@@ -94,6 +95,48 @@ class HealthHandler(BaseHTTPRequestHandler):
                 with open(dash_file, "rb") as f:
                     self.wfile.write(f.read())
                 return
+
+        # Separate dashboard for the three council bots
+        if self.path in ["/council", "/council_dashboard.html"]:
+            dash_file = os.path.join(BASE, "council_dashboard.html")
+            if os.path.exists(dash_file):
+                self.send_response(200)
+                self.send_header("Content-Type", "text/html; charset=utf-8")
+                self.end_headers()
+                with open(dash_file, "rb") as f:
+                    self.wfile.write(f.read())
+                return
+
+        # Machine-readable council block, so the agent can answer without the page
+        if self.path == "/api/council":
+            try:
+                st = arena.load_state()
+                ids = set(arena.COUNCIL_IDS)
+                out = {"updated": STATUS.get("last_cycle"), "bots": {}}
+                for r in arena.leaderboard(st):
+                    if r["id"] not in ids:
+                        continue
+                    bs = st["bots"][r["id"]]
+                    out["bots"][r["id"]] = {
+                        "name": r["name"], "equity": round(r["equity"], 2),
+                        "pnl": round(r["pnl"], 2), "trades": r["trades"],
+                        "win_rate": round(r["win_rate"], 1),
+                        "positions": {s: {"side": p["side"], "qty": round(p["qty"], 6),
+                                          "entry": round(p["entry"], 2), "stop": round(p["stop"], 2),
+                                          "now": round(bs["last_prices"].get(s, p["entry"]), 2)}
+                                      for s, p in bs["positions"].items()},
+                        "gates": bs.get("gates", {}),
+                        "last_trades": bs["closed_trades"][-5:]}
+                out["total_equity"] = round(sum(v["equity"] for v in out["bots"].values()), 2)
+                body = json.dumps(out, default=str).encode()
+            except Exception as e:
+                body = json.dumps({"error": str(e)[:200]}).encode()
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json")
+            self.send_header("Content-Length", str(len(body)))
+            self.end_headers()
+            self.wfile.write(body)
+            return
 
         # Serve Night-Trader dashboard at /night
         if self.path in ["/night", "/dashboard.html"]:

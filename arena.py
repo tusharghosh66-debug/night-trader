@@ -1474,6 +1474,177 @@ def make_smart_bot(orig_fn, bot_id):
                 p["be_locked"] = False
     return smart_fn
 
+# ---------------- council bots (x01..x03) ----------------
+# Built from the AI-council review of the 621-trade audit. The one rule every
+# design obeys: the average winner must be many multiples of the 0.2% round
+# trip, so these trade weekly at most and never scalp. They are kept on their
+# own dashboard (/council) so their first weeks can be judged separately from
+# the s01..s13 / smart_* book.
+X_SYMS = ["AAPL", "MSFT", "NVDA", "TSLA", "AMZN", "META", "AMD",
+          "NIFTYBEES.NS", "RELIANCE.NS", "TCS.NS"]
+X_CORE_SYMS = ["AAPL", "GOOGL", "XOM", "MSFT", "NVDA", "JPM",
+               "NIFTYBEES.NS", "BANKBEES.NS"]
+COUNCIL_IDS = ("x01", "x02", "x03")
+COUNCIL_F = os.path.join(BASE, "council_dashboard.html")
+COUNCIL_RULES = {
+    "x01": "Quiet tape, then a 20-day high break. Stop 2xATR, trail 3xATR, take 4R, "
+           "25-session cap. ~1.5 trades/month.",
+    "x02": "Every Monday, hold the two strongest of ten names by 120-day return "
+           "(only above the 200-day). Stop 2.5xATR trail. ~2 trades/month.",
+    "x03": "Long only while SMA50 > SMA200. Stop 3xATR, trail 4xATR, exit on regime flip. "
+           "The slow core holding, ~1.4 trades/month.",
+}
+COUNCIL_KILL = {
+    "x01": "Kill if 12 closed trades finish with gross under 3x the fees paid.",
+    "x02": "Kill if equity is below Rs 9,700 after 8 weeks.",
+    "x03": "Kill if it underperforms simply holding cash for 8 weeks.",
+}
+
+def _sessions_held(kl, p):
+    """Trading days since entry. Counted from the daily bars, not from cycles:"""
+    t0 = p.get("entry_t")
+    return 0 if not t0 else sum(1 for k in kl if k["t"] > t0)
+
+def _squeeze_ok(c, a, i, win=60, q=0.30):
+    """True when today's ATR% sits in the quietest q of the last `win` days."""
+    vals = sorted(a[j] / c[j] for j in range(max(0, i - win), i) if a[j] and c[j])
+    if len(vals) < int(win * 0.7) or not a[i]:
+        return False
+    return a[i] / c[i] <= vals[int(len(vals) * q)]
+
+def x01(bs, ctx):
+    """Volatility-squeeze breakout: buy the 20-day high only after a quiet"""
+    for sym in X_SYMS:
+        kl = ctx.candles(sym, "1d", "2y")
+        if len(kl) < 80:
+            continue
+        c = [k["c"] for k in kl]
+        a = atr(kl, 14)
+        i = len(kl) - 1
+        px = ctx.live(sym) or c[i]
+        bs["last_prices"][sym] = px
+        if sym in bs["positions"]:
+            p = bs["positions"][sym]
+            av = a[i] if (a[i] and a[i] > 0) else px * 0.02
+            ir = p.get("init_risk") or 2 * av
+            ext = max(p.get("extreme", p["entry"]), px)
+            p["extreme"] = ext
+            p["stop"] = max(p["stop"], ext - 3 * av)
+            hit = px <= p["stop"]
+            tgt = px >= p["entry"] + 4 * ir
+            held = _sessions_held(kl, p)
+            if hit or tgt or held >= 25:
+                why = "squeeze-stop" if hit else ("target-4R" if tgt else "time-exit")
+                row = close_position(bs, sym, px, why, ctx.now)
+                row[1] = "x01"
+                record_trade("x01", bs, row)
+            continue
+        if len(bs["positions"]) >= 2 or i < 65 or not a[i]:
+            continue
+        if not _squeeze_ok(c, a, i):
+            continue
+        if c[i] <= max(k["h"] for k in kl[i - 20:i]):
+            continue
+        qty = size_by_risk(bot_equity(bs), px, 2 * a[i], 0.30, 0.01)
+        if qty > 0 and open_position(bs, sym, 1, qty, px, px - 2 * a[i], "squeeze-breakout", ctx.now):
+            p = bs["positions"][sym]
+            p["extreme"] = px
+            p["init_risk"] = 2 * a[i]
+            p["entry_t"] = kl[i]["t"]
+
+def x02(bs, ctx):
+    """Cross-sectional rotation: once a week, hold the two strongest of ten"""
+    data = {}
+    for sym in X_SYMS:
+        kl = ctx.candles(sym, "1d", "2y")
+        if len(kl) < 130:
+            continue
+        c = [k["c"] for k in kl]
+        a = atr(kl, 14)
+        i = len(kl) - 1
+        px = ctx.live(sym) or c[i]
+        bs["last_prices"][sym] = px
+        data[sym] = (kl, c, a, i, px)
+    if not data:
+        return
+    scored = []
+    for sym, (kl, c, a, i, px) in data.items():
+        s200 = sma(c, 200)[i]
+        if s200 is None or i < 121 or c[i - 120] <= 0:
+            continue
+        scored.append((c[i] / c[i - 120] - 1, sym, c[i] > s200))
+    scored.sort(reverse=True)
+    rank = {s: k for k, (m, s, up) in enumerate(scored)}
+    top = [s for m, s, up in scored[:2] if m > 0 and up]
+    for sym in list(bs["positions"]):
+        if sym not in data:
+            continue
+        kl, c, a, i, px = data[sym]
+        p = bs["positions"][sym]
+        av = a[i] if (a[i] and a[i] > 0) else px * 0.02
+        ext = max(p.get("extreme", p["entry"]), px)
+        p["extreme"] = ext
+        p["stop"] = max(p["stop"], ext - 2.5 * av)
+        held = _sessions_held(kl, p)
+        stop_hit = px <= p["stop"]
+        dropped = rank.get(sym, 99) >= 3
+        if stop_hit or dropped or held >= 40:
+            why = "rotation-stop" if stop_hit else ("rotated-out" if dropped else "time-exit")
+            row = close_position(bs, sym, px, why, ctx.now)
+            row[1] = "x02"
+            record_trade("x02", bs, row)
+    week = datetime.now(IST).strftime("%G-%V")
+    meta = bs.setdefault("meta", {})
+    if meta.get("rebal_week") == week:
+        return
+    meta["rebal_week"] = week
+    for sym in top:
+        if sym in bs["positions"] or len(bs["positions"]) >= 3:
+            continue
+        kl, c, a, i, px = data[sym]
+        if not a[i]:
+            continue
+        qty = size_by_risk(bot_equity(bs), px, 2.5 * a[i], 0.28, 0.01)
+        if qty > 0 and open_position(bs, sym, 1, qty, px, px - 2.5 * a[i], "rs-rotation-top2", ctx.now):
+            p = bs["positions"][sym]
+            p["extreme"] = px
+            p["init_risk"] = 2.5 * a[i]
+            p["entry_t"] = kl[i]["t"]
+
+def x03(bs, ctx):
+    """Core regime trend: long only while 50>200 SMA, 3ATR stop, 4ATR trail,"""
+    for sym in X_CORE_SYMS:
+        kl = ctx.candles(sym, "1d", "2y")
+        if len(kl) < 220:
+            continue
+        c = [k["c"] for k in kl]
+        a = atr(kl, 14)
+        i = len(kl) - 1
+        s50 = sma(c, 50)[i]
+        s200 = sma(c, 200)[i]
+        px = ctx.live(sym) or c[i]
+        bs["last_prices"][sym] = px
+        if sym in bs["positions"]:
+            p = bs["positions"][sym]
+            av = a[i] if (a[i] and a[i] > 0) else px * 0.02
+            ext = max(p.get("extreme", p["entry"]), px)
+            p["extreme"] = ext
+            p["stop"] = max(p["stop"], ext - 4 * av)
+            flip = s50 is not None and s200 is not None and s50 < s200
+            if px <= p["stop"] or flip:
+                row = close_position(bs, sym, px, "regime-flip" if flip else "trail-stop", ctx.now)
+                row[1] = "x03"
+                record_trade("x03", bs, row)
+            continue
+        if len(bs["positions"]) >= 3 or s50 is None or s200 is None or not a[i]:
+            continue
+        if s50 > s200 and c[i] > s50:
+            qty = size_by_risk(bot_equity(bs), px, 3 * a[i], 0.25, 0.01)
+            if qty > 0 and open_position(bs, sym, 1, qty, px, px - 3 * a[i], "core-regime-hold", ctx.now):
+                p = bs["positions"][sym]
+                p["extreme"] = px
+                p["init_risk"] = 3 * a[i]
+                p["entry_t"] = kl[i]["t"]
 smart_01 = make_smart_bot(s01, "smart_01")
 smart_02 = make_smart_bot(s02, "smart_02")
 smart_03 = make_smart_bot(s03, "smart_03")
@@ -1503,6 +1674,10 @@ BOTS = [
     {"id": "s11", "name": "Spike & VWAP Rejection Short", "tf": "5m intraday", "market": "Top movers (NSE+US+Crypto)", "fn": s11},
     {"id": "s12", "name": "OHL + CPR Breakdown Short", "tf": "5m intraday", "market": "Top movers (NSE+US+Crypto)", "fn": s12},
     {"id": "s13", "name": "Afternoon Sell-the-Rip Short", "tf": "5m + 1h regime", "market": "Top movers (NSE+US+Crypto)", "fn": s13},
+    # --- council bots: their own dashboard at /council ---
+    {"id": "x01", "name": "Vol Squeeze Breakout (council)", "tf": "daily", "market": "US + India", "fn": x01},
+    {"id": "x02", "name": "RS Rotation Top-2 (council)", "tf": "weekly", "market": "US + India", "fn": x02},
+    {"id": "x03", "name": "Core Regime Trend (council)", "tf": "daily", "market": "US + India", "fn": x03},
     # --- Intelligent v2 Clones ---
     {"id": "smart_01", "name": "St. Gallen ORB (Smart v2)", "tf": "30m", "market": "US + India + Crypto", "fn": smart_01},
     {"id": "smart_02", "name": "Trend-Filtered Mean Rev (Smart v2)", "tf": "daily", "market": "US + India + Crypto", "fn": smart_02},
@@ -1555,6 +1730,7 @@ def run_cycle(st):
     save_state(st)
     write_dashboard(st)
     write_report(st)
+    write_council_dashboard(st)
     log(f"cycle done. total equity = Rs {tot:,.2f}")
 
 # ---------------- leaderboard / report ----------------
@@ -1592,9 +1768,10 @@ def write_report(st):
         f.write("\n".join(lines))
 
 def write_dashboard(st):
-    lb = leaderboard(st)
+    # council bots live on their own page (/council) so the 26-bot book stays comparable
+    lb = [r for r in leaderboard(st) if r["id"] not in COUNCIL_IDS]
     total = sum(r["equity"] for r in lb)
-    start = CAPITAL * len(BOTS)
+    start = CAPITAL * len(lb)
     hist = st.get("equity_history", [])
     # sparkline points for total
     pts = ""
@@ -1622,6 +1799,8 @@ def write_dashboard(st):
     names = {b["id"]: b["name"] for b in BOTS}
     hold_html = ""
     for sid in sorted(st["bots"]):
+        if sid in COUNCIL_IDS:
+            continue
         b = st["bots"][sid]
         pos = list(b["positions"].items())
         inv = sum(p["qty"] if "legs" in p else p["qty"] * p["entry"] for _, p in pos)
@@ -1692,6 +1871,110 @@ footer{{color:var(--mute);font-size:12px;margin-top:16px}}
     with open(DASH_F, "w", encoding="utf-8") as f:
         f.write(html)
 
+def write_council_dashboard(st):
+    """Separate page for the three council bots (/council), so their first weeks
+    are judged on their own instead of being buried in the 26-bot leaderboard."""
+    rows = [r for r in leaderboard(st) if r["id"] in COUNCIL_IDS]
+    start = CAPITAL * len(rows)
+    total = sum(r["equity"] for r in rows)
+    pnl = total - start
+    cls = "pos" if pnl >= 0 else "neg"
+    cards = ""
+    for r in rows:
+        b = st["bots"][r["id"]]
+        inv = sum(p["qty"] if "legs" in p else p["qty"] * p["entry"]
+                  for p in b["positions"].values())
+        c = "pos" if r["pnl"] >= 0 else "neg"
+        cards += (f"<div class='card'><div class='head'><b>{r['id']}</b> "
+                  f"<span class='sub'>{r['name']}</span></div>"
+                  f"<div class='big {c}'>Rs {r['equity']:,.0f}</div>"
+                  f"<div class='{c}'>{r['pnl']:+,.0f} ({r['pct']:+.2f}%)</div>"
+                  f"<div class='sub'>{r['trades']} closed · {r['win_rate']:.0f}% win · "
+                  f"{r['open']} open · Rs {inv:,.0f} in market</div>"
+                  f"<div class='rule'>{COUNCIL_RULES.get(r['id'], '')}</div>"
+                  f"<div class='kill'>Stop rule: {COUNCIL_KILL.get(r['id'], '')}</div></div>")
+    pos_html = ""
+    for r in rows:
+        b = st["bots"][r["id"]]
+        if not b["positions"]:
+            continue
+        pos_html += (f"<h3>{r['id']} <span class='sub'>{r['name']}</span></h3>"
+                     "<table><thead><tr><th>Symbol</th><th>Side</th><th>Qty</th><th>Entry</th>"
+                     "<th>Stop</th><th>Now</th><th>Unrealized</th><th>Since</th></tr></thead><tbody>")
+        for sym, p in b["positions"].items():
+            px = b["last_prices"].get(sym, p["entry"])
+            upnl = p["side"] * p["qty"] * (px - p["entry"])
+            uc = "pos" if upnl >= 0 else "neg"
+            pos_html += (f"<tr><td><b>{sym}</b></td>"
+                         f"<td class='{'pos' if p['side'] > 0 else 'neg'}'>{'LONG' if p['side'] > 0 else 'SHORT'}</td>"
+                         f"<td class='num'>{p['qty']:.4f}</td><td class='num'>Rs {p['entry']:,.2f}</td>"
+                         f"<td class='num'>Rs {p['stop']:,.2f}</td><td class='num'>Rs {px:,.2f}</td>"
+                         f"<td class='num {uc}'>{upnl:+,.2f}</td>"
+                         f"<td class='sub'>{(p.get('opened') or '-')[5:16]}</td></tr>")
+        pos_html += "</tbody></table>"
+    if not pos_html:
+        pos_html = "<div class='sub'>No open position in any council bot right now.</div>"
+    trades = []
+    try:
+        with open(TRADES_F, encoding="utf-8") as fh:
+            rows_csv = list(csv.reader(fh))
+        for row in reversed(rows_csv[1:]):
+            if len(row) > 8 and row[1] in COUNCIL_IDS:
+                trades.append(row)
+                if len(trades) >= 15:
+                    break
+    except Exception as e:
+        log(f"council dashboard: could not read trades: {e}")
+    tr_html = ("<table><thead><tr><th>When</th><th>Bot</th><th>Symbol</th><th>Side</th><th>Entry</th>"
+               "<th>Exit</th><th>P&L</th><th>Why</th></tr></thead><tbody>")
+    for t in trades:
+        p = float(t[7])
+        c = "pos" if p >= 0 else "neg"
+        tr_html += (f"<tr><td class='sub'>{t[0][5:16]}</td><td><b>{t[1]}</b></td><td>{t[2]}</td>"
+                    f"<td>{'LONG' if t[3] == '1' else 'SHORT'}</td><td class='num'>Rs {float(t[5]):,.2f}</td>"
+                    f"<td class='num'>Rs {float(t[6]):,.2f}</td><td class='num {c}'>{p:+,.2f}</td>"
+                    f"<td class='sub'>{t[8]}</td></tr>")
+    tr_html += "</tbody></table>" if trades else "<div class='sub'>No closed trade yet — the first ones will appear here.</div>"
+    html = f"""<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="refresh" content="60">
+<title>Council Bots - 3 experiments</title>
+<style>
+:root{{--bg:#0d1117;--card:#161b22;--ink:#e6edf3;--mute:#8b949e;--line:#30363d;--pos:#3fb950;--neg:#f85149;--acc:#58a6ff}}
+*{{box-sizing:border-box}}body{{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,'Segoe UI',sans-serif;padding:20px}}
+h1{{font-size:22px;margin:0 0 4px}}h3{{font-size:15px;margin:22px 0 8px}}
+.sub{{color:var(--mute);font-size:12px}}.pos{{color:var(--pos)}}.neg{{color:var(--neg)}}
+.top{{display:flex;gap:16px;flex-wrap:wrap;margin:16px 0}}
+.kpi{{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 18px;min-width:150px}}
+.kpi .v{{font-size:24px;font-weight:700}}.kpi .l{{color:var(--mute);font-size:12px}}
+.grid{{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:14px;margin:14px 0}}
+.card{{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px}}
+.card .head{{margin-bottom:6px}}.big{{font-size:22px;font-weight:700}}
+.rule{{margin-top:10px;font-size:12px;color:var(--ink)}}.kill{{margin-top:6px;font-size:12px;color:var(--mute)}}
+table{{width:100%;border-collapse:collapse;font-size:13px;margin-bottom:10px}}
+th,td{{border-bottom:1px solid var(--line);padding:7px 8px;text-align:left}}
+th{{color:var(--mute);font-weight:600;font-size:12px}}.num{{text-align:right;white-space:nowrap}}
+footer{{color:var(--mute);font-size:12px;margin-top:22px}}
+</style></head><body>
+<h1>Council Bots - 3 experiments</h1>
+<div class="sub">Built after the 621-trade fee audit. Paper only, Rs {CAPITAL:,.0f} each, 0.1% fee per side, Yahoo daily bars.
+Updated {datetime.now(IST).strftime('%Y-%m-%d %H:%M IST')}</div>
+<div class="top">
+<div class="kpi"><div class="v {cls}">Rs {total:,.0f}</div><div class="l">total equity of the 3 ({pnl:+,.0f} vs Rs {start:,.0f})</div></div>
+<div class="kpi"><div class="v">{sum(r['trades'] for r in rows)}</div><div class="l">closed trades in total</div></div>
+<div class="kpi"><div class="v">{sum(r['open'] for r in rows)}</div><div class="l">open positions</div></div>
+</div>
+<div class="grid">{cards}</div>
+{pos_html}
+<h3>Last 15 closed trades</h3>
+{tr_html}
+<footer>Paper trading only - no real money. The other 26 bots stay on the main dashboard at /.
+Council design was reviewed by free AI models (GLM 5.3 Flash, Qwen 3.8 Flash, MiniMax M3.1 Flash and more);
+every rule was then backtested on 2 years of daily bars before being shipped.</footer>
+</body></html>"""
+    with open(COUNCIL_F, "w", encoding="utf-8") as f:
+        f.write(html)
+
 # ---------------- backtest (daily strategies, simplified) ----------------
 def backtest():
     log("=== ARENA BACKTEST (daily strategies on available history) ===")
@@ -1756,7 +2039,8 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 SERVE_CYCLE_SEC = 60      # 1-minute trading loop
 SYNC_EVERY = 5            # push state/dashboard to GitHub every N cycles (~5 min)
 REPO_URL = "https://github.com/tusharghosh66-debug/night-trader.git"
-SERVE_FILES = ["arena_state.json", "arena_trades.csv", "arena_report.md", "arena_dashboard.html"]
+SERVE_FILES = ["arena_state.json", "arena_trades.csv", "arena_report.md", "arena_dashboard.html",
+               "council_dashboard.html"]
 SERVE_STATUS = {"started": None, "last_cycle": None, "cycles": 0,
                 "equity": 0.0, "sync": "not-run", "last_sync": None}
 
