@@ -1,35 +1,35 @@
 # Strategy Arena — Leaderboard
-_Updated: 2026-11-25 10:32 IST_
+_Updated: 2026-11-25 10:34 IST_
 
-**Total equity: Rs 254,035.35** / Rs 260,000 start (-2.29%)
+**Total equity: Rs 254,047.75** / Rs 260,000 start (-2.29%)
 
 | Rank | Bot | Strategy | Equity | P&L | % | Trades | Win% | Open |
 |---|---|---|---|---|---|---|---|---|
-| 1 | s10 | Overnight Edge + Turnaround Tue | Rs 10,116.59 | +116.59 | +1.17% | 4 | 25% | 1 |
-| 2 | s09 | Statistical Arbitrage Pairs | Rs 10,048.52 | +48.52 | +0.49% | 0 | 0% | 2 |
-| 3 | smart_09 | Statistical Arbitrage (Smart v2) | Rs 10,048.52 | +48.52 | +0.49% | 0 | 0% | 2 |
-| 4 | s04 | Multi-Market Trend Following | Rs 10,034.60 | +34.60 | +0.35% | 0 | 0% | 4 |
-| 5 | smart_11 | Spike & VWAP Short (Smart v2) | Rs 10,024.34 | +24.34 | +0.24% | 9 | 44% | 1 |
+| 1 | s10 | Overnight Edge + Turnaround Tue | Rs 10,117.94 | +117.94 | +1.18% | 4 | 25% | 1 |
+| 2 | s09 | Statistical Arbitrage Pairs | Rs 10,051.45 | +51.45 | +0.51% | 0 | 0% | 2 |
+| 3 | smart_09 | Statistical Arbitrage (Smart v2) | Rs 10,051.45 | +51.45 | +0.51% | 0 | 0% | 2 |
+| 4 | s04 | Multi-Market Trend Following | Rs 10,035.19 | +35.19 | +0.35% | 0 | 0% | 4 |
+| 5 | smart_11 | Spike & VWAP Short (Smart v2) | Rs 10,024.60 | +24.60 | +0.25% | 9 | 44% | 1 |
 | 6 | s02 | Trend-Filtered Mean Reversion | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 7 | s03 | ETF Dual Momentum Rotation | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 8 | s05 | Connors RSI(2) Pullback | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 9 | smart_02 | Trend-Filtered Mean Rev (Smart v2) | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 10 | smart_05 | Connors RSI(2) (Smart v2) | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
-| 11 | smart_03 | ETF Dual Momentum (Smart v2) | Rs 9,991.60 | -8.40 | -0.08% | 0 | 0% | 1 |
+| 11 | smart_03 | ETF Dual Momentum (Smart v2) | Rs 9,992.45 | -7.55 | -0.08% | 0 | 0% | 1 |
 | 12 | s11 | Spike & VWAP Rejection Short | Rs 9,983.77 | -16.23 | -0.16% | 10 | 40% | 1 |
-| 13 | smart_04 | Multi-Market Trend (Smart v2) | Rs 9,982.57 | -17.43 | -0.17% | 0 | 0% | 4 |
+| 13 | smart_04 | Multi-Market Trend (Smart v2) | Rs 9,983.16 | -16.84 | -0.17% | 0 | 0% | 4 |
 | 14 | s13 | Afternoon Sell-the-Rip Short | Rs 9,978.67 | -21.33 | -0.21% | 6 | 50% | 0 |
 | 15 | s12 | OHL + CPR Breakdown Short | Rs 9,957.22 | -42.78 | -0.43% | 11 | 36% | 1 |
-| 16 | smart_12 | OHL + CPR Short (Smart v2) | Rs 9,947.40 | -52.60 | -0.53% | 10 | 30% | 1 |
+| 16 | smart_12 | OHL + CPR Short (Smart v2) | Rs 9,948.04 | -51.96 | -0.52% | 10 | 30% | 1 |
 | 17 | smart_13 | Afternoon Sell-the-Rip Short (Smart v2) | Rs 9,943.00 | -57.00 | -0.57% | 6 | 33% | 0 |
-| 18 | smart_10 | Overnight Edge (Smart v2) | Rs 9,897.84 | -102.16 | -1.02% | 3 | 0% | 1 |
+| 18 | smart_10 | Overnight Edge (Smart v2) | Rs 9,899.16 | -100.84 | -1.01% | 3 | 0% | 1 |
 | 19 | smart_08 | Pre-Market Breakout (Smart v2) | Rs 9,784.69 | -215.31 | -2.15% | 15 | 33% | 0 |
 | 20 | s08 | Pre-Market High/Low Break | Rs 9,677.99 | -322.01 | -3.22% | 57 | 25% | 0 |
-| 21 | s06 | Prev-Day High/Low Retest | Rs 9,608.37 | -391.63 | -3.92% | 54 | 22% | 1 |
-| 22 | smart_06 | Prev-Day Retest (Smart v2) | Rs 9,606.07 | -393.93 | -3.94% | 49 | 20% | 1 |
+| 21 | s06 | Prev-Day High/Low Retest | Rs 9,606.06 | -393.94 | -3.94% | 54 | 22% | 1 |
+| 22 | smart_06 | Prev-Day Retest (Smart v2) | Rs 9,603.77 | -396.23 | -3.96% | 49 | 20% | 1 |
 | 23 | s01 | St. Gallen ORB Noise-Band | Rs 9,492.69 | -507.31 | -5.07% | 20 | 15% | 0 |
-| 24 | s07 | First-Candle ORB 15m | Rs 9,043.46 | -956.54 | -9.57% | 133 | 7% | 2 |
-| 25 | smart_07 | First-Candle ORB (Smart v2) | Rs 8,906.51 | -1,093.49 | -10.93% | 126 | 5% | 2 |
+| 24 | s07 | First-Candle ORB 15m | Rs 9,046.26 | -953.74 | -9.54% | 133 | 7% | 2 |
+| 25 | smart_07 | First-Candle ORB (Smart v2) | Rs 8,909.27 | -1,090.73 | -10.91% | 126 | 5% | 2 |
 | 26 | smart_01 | St. Gallen ORB (Smart v2) | Rs 7,960.90 | -2,039.10 | -20.39% | 72 | 6% | 0 |
 
-**Best so far: s10 — Overnight Edge + Turnaround Tue (+1.17%)**
+**Best so far: s10 — Overnight Edge + Turnaround Tue (+1.18%)**
