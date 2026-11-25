@@ -1,19 +1,19 @@
 # Night Trader v2 — Paper Trading Report (3 markets)
-_Updated: 2026-11-25 09:24 IST_
+_Updated: 2026-11-25 09:27 IST_
 
 ## CRYPTO (OPEN) — ₹10,000.00 | P&L +0.00 (+0.00%)
-Cash ₹10,000.00 | cycles 13476 | capital ₹10,000
+Cash ₹10,000.00 | cycles 13481 | capital ₹10,000
 _No open positions — all cash._
 News sentiment: -0.27 (181 headlines, 6 sources, Fear&Greed 13)
 - Bitcoin Price Crash: Bitcoin Falls 25% in November; Solana, Avalanche Lose Up to 46% as Crypto Sell-Off Deepens - Kotak Neo
 - Strategy and Crypto Stocks Rally as Bitcoin Rebounds Past $63,000. Is the Jump Temporary? - Barron's
 - Crypto news: Bitcoin jumps to $64,000 and ether gains 7%. Will the rebound hold? - CryptoTicker.io
 
-## INDIA (OPEN) — ₹9,973.82 | P&L -26.18 (-0.26%)
-Cash ₹6,975.76 | cycles 1657 | capital ₹10,000
+## INDIA (OPEN) — ₹9,965.10 | P&L -34.90 (-0.35%)
+Cash ₹6,975.76 | cycles 1662 | capital ₹10,000
 | Symbol | Qty | Entry | Last | Unrealized |
 |---|---|---|---|---|
-| TCS.NS | 1.1949 | 2503.00 | 2509.00 | +4.18 |
+| TCS.NS | 1.1949 | 2503.00 | 2501.70 | -4.54 |
 Closed: 7 (1 wins), realized -30.35
 - 09:26 SELL RELIANCE.NS @ 1360.6 pnl -43.63 (stop/trail hit (1360.60<=1361.20))
 - 12:38 SELL HDFCBANK.NS @ 839.75 pnl +59.97 (RSI 79 overbought take-profit)
