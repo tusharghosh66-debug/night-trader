@@ -277,6 +277,46 @@ def new_state():
             "usdinr": 88.0, "bots": {b["id"]: new_bot_state() for b in BOTS},
             "equity_history": []}
 
+# ---- one-off clean book ----
+# On/after FRESH_START (IST) every bot starts again at CAPITAL. The old trade log is
+# ARCHIVED, not deleted, and any paper position still open is closed into it at the
+# last known price first, so the archived history stays honest.
+FRESH_START = "2026-11-26"
+
+def fresh_start_if_due(st):
+    """Reset the arena book once, mutating st in place. No-op before FRESH_START."""
+    if not FRESH_START or datetime.now(IST).strftime("%Y-%m-%d") < FRESH_START:
+        return False
+    if (st.get("created") or "")[:10] >= FRESH_START:
+        return False                      # already a fresh book
+    now = datetime.now(IST).isoformat()
+    npos = 0
+    for bid, bs in st["bots"].items():
+        for sym in list(bs["positions"].keys()):
+            px = bs["last_prices"].get(sym, bs["positions"][sym]["entry"])
+            try:
+                row = close_position(bs, sym, px, "reset", now)
+                record_trade(bid, bs, row)
+                npos += 1
+            except Exception as e:
+                log(f"reset: could not close {bid} {sym}: {e}")
+    if os.path.exists(TRADES_F):
+        arch = os.path.join(BASE, "arena_trades_archive.csv")
+        try:
+            os.replace(TRADES_F, arch)
+            # serve_all.py commits arena_trades.csv every cycle, so recreate it empty
+            # (header only) right away instead of letting a missing file break sync.
+            with open(TRADES_F, "w", newline="", encoding="utf-8") as fh:
+                csv.writer(fh).writerow(TRADE_HEADER)
+        except Exception as e:
+            log(f"reset: could not archive trades: {e}")
+    st.clear()
+    st.update(new_state())
+    st["fresh_start"] = FRESH_START
+    log(f"FRESH START {FRESH_START}: book reset to Rs {CAPITAL:.0f}/bot, "
+        f"{npos} open positions closed into arena_trades_archive.csv")
+    return True
+
 def load_state():
     try:
         with open(STATE_F, encoding="utf-8") as f:
@@ -310,6 +350,8 @@ def bot_equity(bs):
         e += p["side"] * p["qty"] * (px - p["entry"])
     return e
 
+TRADE_HEADER = ["time", "bot", "symbol", "side", "qty", "entry", "exit", "pnl", "reason", "equity_after"]
+
 def record_trade(bot_id, bs, row):
     actual_id = bs.get("id") or bot_id
     row[1] = actual_id
@@ -318,7 +360,7 @@ def record_trade(bot_id, bs, row):
     with open(TRADES_F, "a", newline="", encoding="utf-8") as f:
         w = csv.writer(f)
         if new:
-            w.writerow(["time", "bot", "symbol", "side", "qty", "entry", "exit", "pnl", "reason", "equity_after"])
+            w.writerow(TRADE_HEADER)
         w.writerow(row)
 
 _CLOSED_THIS_CYCLE = set()   # symbols closed since this cycle started
@@ -1400,14 +1442,18 @@ BOTS = [
 ]
 
 # Entries suspended, positions still managed/exited (same pattern as S08_PAUSED).
-# smart_01: over 6 sessions it made 73 round trips with a 5% win rate and -1450 net,
-# while its base rule s01 made 21 trips with 14% wins and -337. The smart trail is
-# cutting winners at breakeven and then re-entering, paying 0.2% each time. Plain
-# s01 keeps running, so the arena still tests the underlying idea.
-PAUSED_BOTS = {"smart_01"}
+# 6 sessions of live data (593 trades) showed the 15m/30m noise-band family is the
+# whole leak: these six bots account for -4714 of the -6166 total, while the other
+# 13 trading bots were about flat (-133). Within the family the smart_* clones were
+# consistently WORSE than their base rule (smart_01 -2058 vs s01 -529, smart_07
+# -1115 vs s07 -997, smart_06 -403 vs s06 -393) - the trail exits cut winners at
+# breakeven and re-entered, paying 0.2% each time. s07 keeps running on its new
+# fee-aware rules (60-session replay: -879 -> +246); s08 is also gated by S08_PAUSED.
+PAUSED_BOTS = {"smart_01", "smart_06", "smart_07", "smart_08", "s01", "s06"}
 
 # ---------------- cycle ----------------
 def run_cycle(st):
+    fresh_start_if_due(st)   # one-off clean book on/after FRESH_START
     fx = get_usdinr(st)
     now = datetime.now(IST).isoformat()
     ctx = Ctx(fx, now)
