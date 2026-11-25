@@ -1,7 +1,7 @@
 # Strategy Arena — Leaderboard
-_Updated: 2026-11-26 02:42 IST_
+_Updated: 2026-11-26 02:45 IST_
 
-**Total equity: Rs 289,917.36** / Rs 290,000 start (-0.03%)
+**Total equity: Rs 289,914.61** / Rs 290,000 start (-0.03%)
 
 | Rank | Bot | Strategy | Equity | P&L | % | Trades | Win% | Open |
 |---|---|---|---|---|---|---|---|---|
@@ -30,8 +30,8 @@ _Updated: 2026-11-26 02:42 IST_
 | 23 | smart_13 | Afternoon Sell-the-Rip Short (Smart v2) | Rs 9,995.22 | -4.78 | -0.05% | 1 | 0% | 0 |
 | 24 | s04 | Multi-Market Trend Following | Rs 9,994.30 | -5.70 | -0.06% | 0 | 0% | 1 |
 | 25 | smart_04 | Multi-Market Trend (Smart v2) | Rs 9,994.30 | -5.70 | -0.06% | 0 | 0% | 1 |
-| 26 | s09 | Statistical Arbitrage Pairs | Rs 9,985.77 | -14.23 | -0.14% | 0 | 0% | 1 |
-| 27 | smart_09 | Statistical Arbitrage (Smart v2) | Rs 9,985.77 | -14.23 | -0.14% | 0 | 0% | 1 |
+| 26 | s09 | Statistical Arbitrage Pairs | Rs 9,984.39 | -15.61 | -0.16% | 0 | 0% | 1 |
+| 27 | smart_09 | Statistical Arbitrage (Smart v2) | Rs 9,984.39 | -15.61 | -0.16% | 0 | 0% | 1 |
 | 28 | s12 | OHL + CPR Breakdown Short | Rs 9,984.05 | -15.95 | -0.16% | 1 | 0% | 0 |
 | 29 | smart_12 | OHL + CPR Short (Smart v2) | Rs 9,984.05 | -15.95 | -0.16% | 1 | 0% | 0 |
 
