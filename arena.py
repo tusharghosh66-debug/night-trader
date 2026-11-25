@@ -1545,7 +1545,8 @@ def x01(bs, ctx):
             continue
         if c[i] <= max(k["h"] for k in kl[i - 20:i]):
             continue
-        qty = size_by_risk(bot_equity(bs), px, 2 * a[i], 0.30, 0.01)
+        # 0.6% risk, not 1%: the 2-year test showed the squeeze edge leaned on AMD
+        qty = size_by_risk(bot_equity(bs), px, 2 * a[i], 0.22, 0.006)
         if qty > 0 and open_position(bs, sym, 1, qty, px, px - 2 * a[i], "squeeze-breakout", ctx.now):
             p = bs["positions"][sym]
             p["extreme"] = px
@@ -1604,7 +1605,7 @@ def x02(bs, ctx):
         kl, c, a, i, px = data[sym]
         if not a[i]:
             continue
-        qty = size_by_risk(bot_equity(bs), px, 2.5 * a[i], 0.28, 0.01)
+        qty = size_by_risk(bot_equity(bs), px, 2.5 * a[i], 0.22, 0.006)
         if qty > 0 and open_position(bs, sym, 1, qty, px, px - 2.5 * a[i], "rs-rotation-top2", ctx.now):
             p = bs["positions"][sym]
             p["extreme"] = px
@@ -1639,7 +1640,7 @@ def x03(bs, ctx):
         if len(bs["positions"]) >= 3 or s50 is None or s200 is None or not a[i]:
             continue
         if s50 > s200 and c[i] > s50:
-            qty = size_by_risk(bot_equity(bs), px, 3 * a[i], 0.25, 0.01)
+            qty = size_by_risk(bot_equity(bs), px, 3 * a[i], 0.22, 0.006)
             if qty > 0 and open_position(bs, sym, 1, qty, px, px - 3 * a[i], "core-regime-hold", ctx.now):
                 p = bs["positions"][sym]
                 p["extreme"] = px
