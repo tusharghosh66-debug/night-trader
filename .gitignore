@@ -13,3 +13,4 @@ cloud-review/
 bot_v1.py
 backtest*.json
 *.tmp
+site.html

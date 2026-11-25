@@ -85,7 +85,18 @@ class HealthHandler(BaseHTTPRequestHandler):
             self.wfile.write(body)
             return
 
-        # Serve Strategy Arena visual dashboard at root / or /arena
+        # New grouped site for all bots at root; old board keeps /arena
+        if self.path in ["/", "/site", "/site.html"]:
+            site_file = os.path.join(BASE, "site.html")
+            if os.path.exists(site_file):
+                self.send_response(200)
+                self.send_header("Content-Type", "text/html; charset=utf-8")
+                self.end_headers()
+                with open(site_file, "rb") as f:
+                    self.wfile.write(f.read())
+                return
+
+        # Serve Strategy Arena visual dashboard at /arena
         if self.path in ["/", "/arena", "/arena_dashboard.html", "/index.html"]:
             dash_file = os.path.join(BASE, "arena_dashboard.html")
             if os.path.exists(dash_file):

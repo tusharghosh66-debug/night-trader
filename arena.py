@@ -1732,6 +1732,7 @@ def run_cycle(st):
     write_dashboard(st)
     write_report(st)
     write_council_dashboard(st)
+    write_site(st)
     log(f"cycle done. total equity = Rs {tot:,.2f}")
 
 # ---------------- leaderboard / report ----------------
@@ -1978,6 +1979,90 @@ every rule was then backtested on 2 years of daily bars before being shipped.</f
 </body></html>"""
     with open(COUNCIL_F, "w", encoding="utf-8") as f:
         f.write(html)
+
+SITE_F = os.path.join(BASE, "site.html")
+SITE_TPL = os.path.join(BASE, "site_template.html")
+SITE_FAMILIES = [
+    ("council", "Council experiments", ["x01", "x02", "x03"]),
+    ("orb", "ORB ও ব্রেকআউট", ["s01", "s07", "s08", "smart_01", "smart_07", "smart_08"]),
+    ("meanrev", "মিন-রিভার্সন", ["s02", "s05", "smart_02", "smart_05"]),
+    ("trend", "ট্রেন্ড ফলোয়িং", ["s04", "s06", "s13", "smart_04", "smart_06", "smart_13"]),
+    ("rotation", "রোটেশন ও ক্যালেন্ডার", ["s03", "s10", "smart_03", "smart_10"]),
+    ("arb", "আর্বিট্রাজ", ["s09", "smart_09"]),
+    ("short", "শর্ট সাইড ইন্ট্রাডে", ["s11", "s12", "smart_11", "smart_12"]),
+]
+COUNCIL_RULES_HTML = {
+    "x01": "ATR(14)/দাম ৬০ দিনের নিচের ৩০%-এ থাকলে বাজার <b>চুপ</b>; তারপর ২০ দিনের হাই ভাঙলে ঢোকে। "
+           "স্টপ 2×ATR, ট্রেইল 3×ATR, ৪R-এ বেরোবে, সর্বোচ্চ ২৫ সেশন।",
+    "x02": "প্রতি সোমবার ১০টি নামের মধ্যে ১২০ দিনে সেরা ২টি, যদি ২০০ দিনের উপরে থাকে। "
+           "স্টপ/ট্রেইল 2.5×ATR, র‍্যাঙ্ক ৩-এর নিচে নামলে বেরোবে।",
+    "x03": "SMA50 &gt; SMA200 থাকলেই লং। স্টপ 3×ATR, ট্রেইল 4×ATR, রেজিম ফ্লিপে বেরোবে — ধীর কোরে হোল্ড।",
+}
+
+
+def write_site(st):
+    """One website-style page for all bots: grouped cards, per-bot detail view."""
+    if not os.path.exists(SITE_TPL):
+        return
+    now = datetime.now(IST).strftime("%Y-%m-%d %H:%M")
+    hist = st.get("equity_history", [])[-120:]
+    bots, groups = {}, []
+    for key, gname, ids in SITE_FAMILIES:
+        present = [i for i in ids if i in st["bots"]]
+        if not present:
+            continue
+        groups.append({"key": key, "name": gname, "bots": present})
+        for sid in present:
+            bs = st["bots"][sid]
+            eq = bot_equity(bs)
+            pos, upnl, inv = [], 0.0, 0.0
+            for sym, p in bs["positions"].items():
+                px = bs["last_prices"].get(sym, p["entry"])
+                u = p["side"] * p["qty"] * (px - p["entry"])
+                upnl += u
+                inv += p["qty"] if "legs" in p else p["qty"] * p["entry"]
+                pos.append({"sym": sym, "side": p["side"], "qty": p["qty"],
+                            "entry": p["entry"], "now": px, "stop": p.get("stop", p["entry"]),
+                            "upnl": round(u, 2)})
+            closed = bs.get("closed_trades", [])
+            fees = sum(0.001 * t[4] * (t[5] + t[6]) for t in closed if len(t) > 8)
+            wins = sum(1 for t in closed if t[7] > 0)
+            sparkv = [h.get(sid) for h in hist if h.get(sid) is not None]
+            if len(sparkv) < 2:
+                sparkv = [CAPITAL, eq]
+            sparkv = [round(v, 2) for v in sparkv]
+            meta = next((b for b in BOTS if b["id"] == sid), {})
+            rec = {"id": sid, "name": meta.get("name", sid), "tf": meta.get("tf", ""),
+                   "market": meta.get("market", ""), "eq": round(eq, 2),
+                   "pnl": round(eq - bs["start_equity"], 2),
+                   "pct": round((eq / bs["start_equity"] - 1) * 100, 2),
+                   "cash": round(bs["cash"], 2), "in_market": round(inv, 2),
+                   "upnl": round(upnl, 2), "fees": round(fees, 2),
+                   "trades": len(closed), "wr": round(100.0 * wins / len(closed), 1) if closed else 0.0,
+                   "open": len(pos), "positions": pos,
+                   "closed": [{"t": t[0][5:16], "sym": t[2], "side": t[3],
+                               "entry": t[5], "exit": t[6], "pnl": round(t[7], 2),
+                               "reason": t[8]} for t in closed[-15:]][::-1],
+                   "spark": sparkv, "council": sid in COUNCIL_IDS,
+                   "paused": sid in PAUSED_BOTS, "gates": bs.get("gates", {})}
+            if sid in COUNCIL_IDS:
+                rec["rules"] = COUNCIL_RULES_HTML.get(sid, "")
+                rec["kill"] = COUNCIL_KILL.get(sid, "")
+            bots[sid] = rec
+    allb = list(bots.values())
+    data = {"gen": now, "pool": CAPITAL * len(allb), "groups": groups, "bots": bots,
+            "totals": {"eq": round(sum(b["eq"] for b in allb), 2),
+                       "pnl": round(sum(b["pnl"] for b in allb), 2),
+                       "cash": round(sum(b["cash"] for b in allb), 2),
+                       "in_market": round(sum(b["in_market"] for b in allb), 2),
+                       "open": sum(b["open"] for b in allb),
+                       "trades": sum(b["trades"] for b in allb)}}
+    html = (open(SITE_TPL, encoding="utf-8").read()
+            .replace("__DATA__", json.dumps(data, ensure_ascii=False))
+            .replace("__GEN__", now))
+    with open(SITE_F, "w", encoding="utf-8") as f:
+        f.write(html)
+
 
 # ---------------- backtest (daily strategies, simplified) ----------------
 def backtest():
