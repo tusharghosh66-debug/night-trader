@@ -366,6 +366,32 @@ def record_trade(bot_id, bs, row):
 _CLOSED_THIS_CYCLE = set()   # symbols closed since this cycle started
 _ACTIVE_BOT = None           # bot id currently running (set by run_cycle)
 
+# ---- capital deployment ----
+# Bots used to risk only ~30% of their equity per idea, so a quiet book sat 85%
+# in cash. These two knobs fill the book instead: every entry may use up to
+# MAX_TRADE_PCT of equity, and the SUM of open notionals may never pass
+# EXPOSURE_CAP x equity (1.0 = fully invested, no leverage).
+EXPOSURE_CAP = float(os.environ.get("EXPOSURE_CAP", "1.0"))
+MAX_TRADE_PCT = float(os.environ.get("MAX_TRADE_PCT", "0.5"))
+
+def open_exposure(bs):
+    """Open notional in rupees. Pairs positions (legs) store qty as notional."""
+    tot = 0.0
+    for sym, p in bs["positions"].items():
+        if "legs" in p:
+            tot += abs(p["qty"])
+        else:
+            tot += abs(p["qty"]) * bs["last_prices"].get(sym, p["entry"])
+    return tot
+
+def clamp_qty(bs, price, qty):
+    """Cap an entry by the free exposure room and the single-trade cap."""
+    if price <= 0 or qty <= 0:
+        return 0.0
+    eq = bot_equity(bs)
+    room = max(0.0, EXPOSURE_CAP * eq - open_exposure(bs))
+    return max(0.0, min(qty, room / price, MAX_TRADE_PCT * eq / price))
+
 def open_position(bs, sym, side, qty, price, stop, reason, now):
     # Global entry gates. Both live HERE so every strategy (plain and smart_*)
     # goes through them, while exits/management stay untouched.
@@ -384,6 +410,10 @@ def open_position(bs, sym, side, qty, price, stop, reason, now):
     # NOTE: no fee is taken here. close_position() already nets BOTH legs
     # (entry + exit) out of pnl, so charging the entry fee here as well
     # double-taxed every round trip by 0.1% of notional.
+    qty = clamp_qty(bs, price, qty)
+    if qty <= 0:
+        log(f"  SKIP {sym} ({reason}): book full ({open_exposure(bs):.0f}/{EXPOSURE_CAP * bot_equity(bs):.0f})")
+        return False
     bs["positions"][sym] = {"side": side, "qty": qty, "entry": price, "stop": stop,
                             "opened": now, "reason": reason, "bars": 0}
     bs["last_prices"][sym] = price
@@ -407,7 +437,9 @@ def close_position(bs, sym, price, reason, now):
     log(f"  CLOSE {sym} @ {price:.2f} pnl={pnl:+.2f} ({reason})")
     return row
 
-def size_by_risk(eq, price, stop_dist, max_notional_pct=0.30, risk=0.01):
+def size_by_risk(eq, price, stop_dist, max_notional_pct=None, risk=0.01):
+    if max_notional_pct is None:
+        max_notional_pct = MAX_TRADE_PCT
     if stop_dist <= 0 or price <= 0:
         return 0.0
     qty = (eq * risk) / stop_dist
@@ -548,7 +580,7 @@ def s01(bs, ctx):
             stop = px - 2 * a if side > 0 else px + 2 * a
             # size against the REAL stop distance (2 ATR), not 1 ATR: the old
             # sizing risked 2% per trade instead of the intended 1%.
-            qty = size_by_risk(eq, px, 2 * a, 0.95, 0.01)
+            qty = size_by_risk(eq, px, 2 * a, EXPOSURE_CAP, 0.01)
             if qty > 0 and open_position(bs, sym, side, qty, px, stop,
                                          "noise-band-break-up" if side > 0 else "noise-band-break-down",
                                          ctx.now):
@@ -667,12 +699,12 @@ def s04(bs, ctx):
         eq = bot_equity(bs)
         av = a[i] or (c[i] * 0.02)
         if c[i] >= hi200:
-            qty = size_by_risk(eq, px, 6 * av, 0.25, 0.01)
+            qty = size_by_risk(eq, px, 6 * av, MAX_TRADE_PCT, 0.01)
             if qty > 0:
                 open_position(bs, sym, 1, qty, px, px - 6 * av, "donchian200-high", ctx.now)
                 bs["positions"][sym]["extreme"] = px
         elif c[i] <= lo200:
-            qty = size_by_risk(eq, px, 6 * av, 0.25, 0.01)
+            qty = size_by_risk(eq, px, 6 * av, MAX_TRADE_PCT, 0.01)
             if qty > 0:
                 open_position(bs, sym, -1, qty, px, px + 6 * av, "donchian200-low", ctx.now)
                 bs["positions"][sym]["extreme"] = px
@@ -771,12 +803,12 @@ def s06(bs, ctx):
         # break then retest: prev bar broke level, last bar pulled back toward it
         if prev_c > pd["h"] and last_c <= pd["h"] * 1.002 and last_c > pd["h"] * 0.997:
             stop = pd["h"] - a
-            qty = size_by_risk(eq, px, abs(px - stop) or a, 0.30, 0.01)
+            qty = size_by_risk(eq, px, abs(px - stop) or a, MAX_TRADE_PCT, 0.01)
             if qty > 0 and open_position(bs, sym, 1, qty, px, stop, "pd-high-retest", ctx.now):
                 sess["done"].append(sym)
         elif prev_c < pd["l"] and last_c >= pd["l"] * 0.998 and last_c < pd["l"] * 1.003:
             stop = pd["l"] + a
-            qty = size_by_risk(eq, px, abs(px - stop) or a, 0.30, 0.01)
+            qty = size_by_risk(eq, px, abs(px - stop) or a, MAX_TRADE_PCT, 0.01)
             if qty > 0 and open_position(bs, sym, -1, qty, px, stop, "pd-low-retest", ctx.now):
                 sess["done"].append(sym)
 
@@ -844,7 +876,7 @@ def s07(bs, ctx):
         # (60-session backtest: -879 without this filter, +246 with it.)
         if stop_dist < px * S07_MIN_STOP_PCT:
             continue
-        qty = size_by_risk(eq, px, stop_dist, 0.30, 0.01)
+        qty = size_by_risk(eq, px, stop_dist, MAX_TRADE_PCT, 0.01)
         if qty > 0 and open_position(bs, sym, side, qty, px, stop, why, ctx.now):
             session["done"].append(sym)
 
@@ -902,12 +934,12 @@ def s08(bs, ctx):
             stop = pm_h - a
             # size on the stop we actually place (was 1 ATR while the stop sat
             # a whole ATR away) - keeps risk at the intended 1%
-            qty = size_by_risk(eq, px, abs(px - stop) or a, 0.30, 0.01)
+            qty = size_by_risk(eq, px, abs(px - stop) or a, MAX_TRADE_PCT, 0.01)
             if qty > 0 and open_position(bs, sym, 1, qty, px, stop, "pm-high-break", ctx.now):
                 sess["done"].append(sym)
         elif last_c < pm_l:
             stop = pm_l + a
-            qty = size_by_risk(eq, px, abs(px - stop) or a, 0.30, 0.01)
+            qty = size_by_risk(eq, px, abs(px - stop) or a, MAX_TRADE_PCT, 0.01)
             if qty > 0 and open_position(bs, sym, -1, qty, px, stop, "pm-low-break", ctx.now):
                 sess["done"].append(sym)
 

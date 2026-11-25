@@ -25,7 +25,8 @@ IST = timezone(timedelta(hours=5, minutes=30))
 ET = ZoneInfo("America/New_York")
 RISK_PER_TRADE = 0.01
 MAX_POSITIONS = 3
-MAX_NOTIONAL_PCT = 0.30
+MAX_NOTIONAL_PCT = 0.50       # per idea, of equity
+MAX_EXPOSURE_PCT = 1.00      # all open idea value, of equity (1.0 = no leverage)
 ATR_STOP_MULT = 2.0
 ATR_TRAIL_MULT = 3.0
 FEE = 0.001
@@ -451,6 +452,17 @@ def size_position(eq, price, a, news_score):
         qty *= 0.5
     return min(qty, (eq * MAX_NOTIONAL_PCT) / price)
 
+def open_exposure(ms):
+    return sum(abs(p["qty"]) * ms["last_prices"].get(s, p["entry"]) for s, p in ms["positions"].items())
+
+
+def room_for(ms, eq, price, qty):
+    """Fill the book, never exceed it: free room = MAX_EXPOSURE_PCT x equity - open."""
+    if price <= 0:
+        return 0.0
+    room = max(0.0, MAX_EXPOSURE_PCT * eq - open_exposure(ms))
+    return max(0.0, min(qty, room / price))
+
 
 def backtest():
     log("=== BACKTEST v3 (INR, 1h candles, ~6mo stocks / ~1000h crypto) ===")
@@ -590,7 +602,7 @@ def market_cycle(mkt, ms, fx):
                     and len(ms["positions"]) < MAX_POSITIONS and a):
                 if signal(ind, i, regime_ok, ns) == "buy":
                     eq = equity(ms)
-                    qty = size_position(eq, px, a, ns)
+                    qty = room_for(ms, eq, px, size_position(eq, px, a, ns))
                     cost = qty * px * (1 + FEE)
                     if cost >= cfg["min_cost"] and cost <= ms["cash"]:
                         ms["cash"] -= cost
@@ -606,7 +618,7 @@ def market_cycle(mkt, ms, fx):
                             f"stop={px - ATR_STOP_MULT * a:.2f} (rsi={r:.0f}, news={ns:+.2f})")
                 elif signal_short(ind, i, regime_ok, ns) == "short":
                     eq = equity(ms)
-                    qty = size_position(eq, px, a, 0.0)   # fear is the short's friend
+                    qty = room_for(ms, eq, px, size_position(eq, px, a, 0.0))   # fear is the short's friend
                     notional = qty * px
                     entry_fee = notional * FEE
                     if notional >= cfg["min_cost"] and entry_fee <= ms["cash"]:
