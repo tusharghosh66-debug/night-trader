@@ -1,12 +1,12 @@
 # Strategy Arena — Leaderboard
-_Updated: 2026-11-26 00:14 IST_
+_Updated: 2026-11-26 00:18 IST_
 
-**Total equity: Rs 259,995.47** / Rs 260,000 start (-0.00%)
+**Total equity: Rs 259,983.83** / Rs 260,000 start (-0.01%)
 
 | Rank | Bot | Strategy | Equity | P&L | % | Trades | Win% | Open |
 |---|---|---|---|---|---|---|---|---|
-| 1 | s09 | Statistical Arbitrage Pairs | Rs 10,002.58 | +2.58 | +0.03% | 0 | 0% | 1 |
-| 2 | smart_09 | Statistical Arbitrage (Smart v2) | Rs 10,002.58 | +2.58 | +0.03% | 0 | 0% | 1 |
+| 1 | s09 | Statistical Arbitrage Pairs | Rs 10,002.15 | +2.15 | +0.02% | 0 | 0% | 1 |
+| 2 | smart_09 | Statistical Arbitrage (Smart v2) | Rs 10,002.15 | +2.15 | +0.02% | 0 | 0% | 1 |
 | 3 | s01 | St. Gallen ORB Noise-Band | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 4 | s02 | Trend-Filtered Mean Reversion | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 5 | s03 | ETF Dual Momentum Rotation | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 1 |
@@ -27,9 +27,9 @@ _Updated: 2026-11-26 00:14 IST_
 | 20 | smart_10 | Overnight Edge (Smart v2) | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 21 | smart_11 | Spike & VWAP Short (Smart v2) | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 22 | smart_13 | Afternoon Sell-the-Rip Short (Smart v2) | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
-| 23 | s04 | Multi-Market Trend Following | Rs 9,999.67 | -0.33 | -0.00% | 0 | 0% | 1 |
-| 24 | smart_04 | Multi-Market Trend (Smart v2) | Rs 9,999.67 | -0.33 | -0.00% | 0 | 0% | 1 |
-| 25 | s12 | OHL + CPR Breakdown Short | Rs 9,995.48 | -4.52 | -0.05% | 0 | 0% | 1 |
-| 26 | smart_12 | OHL + CPR Short (Smart v2) | Rs 9,995.48 | -4.52 | -0.05% | 0 | 0% | 1 |
+| 23 | s04 | Multi-Market Trend Following | Rs 9,998.13 | -1.87 | -0.02% | 0 | 0% | 1 |
+| 24 | smart_04 | Multi-Market Trend (Smart v2) | Rs 9,998.13 | -1.87 | -0.02% | 0 | 0% | 1 |
+| 25 | s12 | OHL + CPR Breakdown Short | Rs 9,991.64 | -8.36 | -0.08% | 0 | 0% | 1 |
+| 26 | smart_12 | OHL + CPR Short (Smart v2) | Rs 9,991.64 | -8.36 | -0.08% | 0 | 0% | 1 |
 
-**Best so far: s09 — Statistical Arbitrage Pairs (+0.03%)**
+**Best so far: s09 — Statistical Arbitrage Pairs (+0.02%)**
