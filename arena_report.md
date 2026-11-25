@@ -1,7 +1,7 @@
 # Strategy Arena — Leaderboard
-_Updated: 2026-11-26 01:50 IST_
+_Updated: 2026-11-26 01:53 IST_
 
-**Total equity: Rs 289,941.54** / Rs 290,000 start (-0.02%)
+**Total equity: Rs 289,942.19** / Rs 290,000 start (-0.02%)
 
 | Rank | Bot | Strategy | Equity | P&L | % | Trades | Win% | Open |
 |---|---|---|---|---|---|---|---|---|
@@ -24,14 +24,14 @@ _Updated: 2026-11-26 01:50 IST_
 | 17 | smart_08 | Pre-Market Breakout (Smart v2) | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 18 | smart_10 | Overnight Edge (Smart v2) | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 19 | smart_11 | Spike & VWAP Short (Smart v2) | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
-| 20 | x03 | Core Regime Trend (council) | Rs 9,998.94 | -1.06 | -0.01% | 0 | 0% | 2 |
-| 21 | s09 | Statistical Arbitrage Pairs | Rs 9,998.88 | -1.12 | -0.01% | 0 | 0% | 1 |
-| 22 | smart_09 | Statistical Arbitrage (Smart v2) | Rs 9,998.88 | -1.12 | -0.01% | 0 | 0% | 1 |
-| 23 | s04 | Multi-Market Trend Following | Rs 9,995.61 | -4.39 | -0.04% | 0 | 0% | 1 |
-| 24 | smart_04 | Multi-Market Trend (Smart v2) | Rs 9,995.61 | -4.39 | -0.04% | 0 | 0% | 1 |
-| 25 | s13 | Afternoon Sell-the-Rip Short | Rs 9,995.22 | -4.78 | -0.05% | 1 | 0% | 0 |
-| 26 | smart_13 | Afternoon Sell-the-Rip Short (Smart v2) | Rs 9,995.22 | -4.78 | -0.05% | 1 | 0% | 0 |
-| 27 | x02 | RS Rotation Top-2 (council) | Rs 9,995.08 | -4.92 | -0.05% | 0 | 0% | 2 |
+| 20 | s09 | Statistical Arbitrage Pairs | Rs 9,999.58 | -0.42 | -0.00% | 0 | 0% | 1 |
+| 21 | smart_09 | Statistical Arbitrage (Smart v2) | Rs 9,999.58 | -0.42 | -0.00% | 0 | 0% | 1 |
+| 22 | x03 | Core Regime Trend (council) | Rs 9,999.21 | -0.79 | -0.01% | 0 | 0% | 2 |
+| 23 | x02 | RS Rotation Top-2 (council) | Rs 9,995.56 | -4.44 | -0.04% | 0 | 0% | 2 |
+| 24 | s13 | Afternoon Sell-the-Rip Short | Rs 9,995.22 | -4.78 | -0.05% | 1 | 0% | 0 |
+| 25 | smart_13 | Afternoon Sell-the-Rip Short (Smart v2) | Rs 9,995.22 | -4.78 | -0.05% | 1 | 0% | 0 |
+| 26 | s04 | Multi-Market Trend Following | Rs 9,994.86 | -5.14 | -0.05% | 0 | 0% | 1 |
+| 27 | smart_04 | Multi-Market Trend (Smart v2) | Rs 9,994.86 | -5.14 | -0.05% | 0 | 0% | 1 |
 | 28 | s12 | OHL + CPR Breakdown Short | Rs 9,984.05 | -15.95 | -0.16% | 1 | 0% | 0 |
 | 29 | smart_12 | OHL + CPR Short (Smart v2) | Rs 9,984.05 | -15.95 | -0.16% | 1 | 0% | 0 |
 
