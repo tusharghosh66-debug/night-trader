@@ -1,7 +1,7 @@
 # Strategy Arena — Leaderboard
-_Updated: 2026-11-25 17:46 IST_
+_Updated: 2026-11-25 17:49 IST_
 
-**Total equity: Rs 253,832.56** / Rs 260,000 start (-2.37%)
+**Total equity: Rs 253,832.05** / Rs 260,000 start (-2.37%)
 
 | Rank | Bot | Strategy | Equity | P&L | % | Trades | Win% | Open |
 |---|---|---|---|---|---|---|---|---|
@@ -20,7 +20,7 @@ _Updated: 2026-11-25 17:46 IST_
 | 13 | s11 | Spike & VWAP Rejection Short | Rs 9,983.77 | -16.23 | -0.16% | 10 | 40% | 1 |
 | 14 | s13 | Afternoon Sell-the-Rip Short | Rs 9,978.67 | -21.33 | -0.21% | 6 | 50% | 0 |
 | 15 | smart_04 | Multi-Market Trend (Smart v2) | Rs 9,976.93 | -23.07 | -0.23% | 0 | 0% | 4 |
-| 16 | smart_12 | OHL + CPR Short (Smart v2) | Rs 9,963.29 | -36.71 | -0.37% | 10 | 30% | 1 |
+| 16 | smart_12 | OHL + CPR Short (Smart v2) | Rs 9,962.78 | -37.22 | -0.37% | 10 | 30% | 1 |
 | 17 | smart_13 | Afternoon Sell-the-Rip Short (Smart v2) | Rs 9,943.00 | -57.00 | -0.57% | 6 | 33% | 0 |
 | 18 | smart_10 | Overnight Edge (Smart v2) | Rs 9,876.77 | -123.23 | -1.23% | 3 | 0% | 2 |
 | 19 | smart_08 | Pre-Market Breakout (Smart v2) | Rs 9,784.69 | -215.31 | -2.15% | 15 | 33% | 0 |
