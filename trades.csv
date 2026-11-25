@@ -6,3 +6,4 @@ time,market,symbol,side,qty,price,pnl,reason,equity_after
 2026-11-23T09:16:00.635459+05:30,india,RELIANCE.NS,BUY,2.166163,1387.2,0.0,"breakout+EMA trend, RSI=68, regime_ok=True, news=+0.46",10013.33
 2026-11-23T09:33:00.584584+05:30,india,RELIANCE.NS,SELL,2.166163,1368.4,-46.69,stop/trail hit (1368.40<=1370.00),12933.82
 2026-11-25T09:16:05.030510+05:30,india,TCS.NS,BUY,1.194924,2503.0,0.0,"breakout+EMA trend, RSI=68, regime_ok=True, news=+0.24",9966.65
+2026-11-25T09:31:04.642681+05:30,india,RELIANCE.NS,BUY,2.149813,1390.5,0.0,"breakout+EMA trend, RSI=66, regime_ok=True, news=+0.32",9961.4
