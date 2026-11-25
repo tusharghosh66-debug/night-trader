@@ -1,10 +1,10 @@
 # Night Trader v2 — Paper Trading Report (3 markets)
-_Updated: 2026-11-25 18:21 IST_
+_Updated: 2026-11-25 18:24 IST_
 
 ## CRYPTO (OPEN) — ₹10,000.00 | P&L +0.00 (+0.00%)
-Cash ₹10,000.00 | cycles 14546 | capital ₹10,000
+Cash ₹10,000.00 | cycles 14551 | capital ₹10,000
 _No open positions — all cash._
-News sentiment: -0.38 (181 headlines, 6 sources, Fear&Greed 13)
+News sentiment: -0.42 (183 headlines, 6 sources, Fear&Greed 13)
 - 21Shares says bitcoin’s sustained recovery needs stablecoin supply, spot ETF inflows - ForkLog
 - Strategy and Crypto Stocks Rally as Bitcoin Rebounds Past $63,000. Is the Jump Temporary? - Barron's
 - Crypto news: Bitcoin jumps to $64,000 and ether gains 7%. Will the rebound hold? - CryptoTicker.io
@@ -20,7 +20,7 @@ Closed: 9 (1 wins), realized -85.08
 - 09:16 BUY TCS.NS @ 2503.0 pnl +0.00 (breakout+EMA trend, RSI=68, regime_ok=True, news=+0.24)
 - 09:31 BUY RELIANCE.NS @ 1390.5 pnl +0.00 (breakout+EMA trend, RSI=66, regime_ok=True, news=+0.32)
 - 13:05 SELL RELIANCE.NS @ 1367.8 pnl -54.73 (stop/trail hit (1367.80<=1368.62))
-News sentiment: +0.98 (217 headlines, 6 sources)
+News sentiment: +1.00 (216 headlines, 6 sources)
 - Top Nifty Bank gainer today: HDFC Bank shares jump 4% as index soars 2%— Should you buy or book profit? Experts advice
 - Why APL Apollo Tubes shares crashed 15% today to plunge at 52-week low; downgrade from brokerages after Tata Steel deal
 - Sensex Jumps 1,502 Points; Nifty Surges 470 on FII Buying - HDFC Sky
@@ -28,7 +28,7 @@ News sentiment: +0.98 (217 headlines, 6 sources)
 ## US (CLOSED) — ₹10,000.00 | P&L +0.00 (+0.00%)
 Cash ₹10,000.00 | cycles 2170 | capital ₹10,000
 _No open positions — all cash._
-News sentiment: -0.13 (191 headlines, 6 sources)
+News sentiment: +0.03 (191 headlines, 6 sources)
 - Wall St futures fall amid tech selloff, U.S. tariff reports - Investing.com
 - Nasdaq-100 futures surge 7%, S&amp;P 500 gain 4.3%, Dow up 2.6% in Wall Street rebound - Beinsure
 - Drugmaker Insmed shares rally 14% after Sanofi agrees to buy it in pharma’s biggest deal in three years
