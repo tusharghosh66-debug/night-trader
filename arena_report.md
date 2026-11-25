@@ -1,7 +1,7 @@
 # Strategy Arena — Leaderboard
-_Updated: 2026-11-26 00:53 IST_
+_Updated: 2026-11-26 00:55 IST_
 
-**Total equity: Rs 259,935.89** / Rs 260,000 start (-0.02%)
+**Total equity: Rs 259,946.24** / Rs 260,000 start (-0.02%)
 
 | Rank | Bot | Strategy | Equity | P&L | % | Trades | Win% | Open |
 |---|---|---|---|---|---|---|---|---|
@@ -23,12 +23,12 @@ _Updated: 2026-11-26 00:53 IST_
 | 16 | smart_08 | Pre-Market Breakout (Smart v2) | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 17 | smart_10 | Overnight Edge (Smart v2) | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 18 | smart_11 | Spike & VWAP Short (Smart v2) | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
-| 19 | s09 | Statistical Arbitrage Pairs | Rs 9,998.81 | -1.19 | -0.01% | 0 | 0% | 1 |
-| 20 | smart_09 | Statistical Arbitrage (Smart v2) | Rs 9,998.81 | -1.19 | -0.01% | 0 | 0% | 1 |
-| 21 | s04 | Multi-Market Trend Following | Rs 9,996.59 | -3.41 | -0.03% | 0 | 0% | 1 |
-| 22 | smart_04 | Multi-Market Trend (Smart v2) | Rs 9,996.59 | -3.41 | -0.03% | 0 | 0% | 1 |
-| 23 | s13 | Afternoon Sell-the-Rip Short | Rs 9,988.50 | -11.50 | -0.11% | 0 | 0% | 1 |
-| 24 | smart_13 | Afternoon Sell-the-Rip Short (Smart v2) | Rs 9,988.50 | -11.50 | -0.11% | 0 | 0% | 1 |
+| 19 | s09 | Statistical Arbitrage Pairs | Rs 9,999.72 | -0.28 | -0.00% | 0 | 0% | 1 |
+| 20 | smart_09 | Statistical Arbitrage (Smart v2) | Rs 9,999.72 | -0.28 | -0.00% | 0 | 0% | 1 |
+| 21 | s04 | Multi-Market Trend Following | Rs 9,997.29 | -2.71 | -0.03% | 0 | 0% | 1 |
+| 22 | smart_04 | Multi-Market Trend (Smart v2) | Rs 9,997.29 | -2.71 | -0.03% | 0 | 0% | 1 |
+| 23 | s13 | Afternoon Sell-the-Rip Short | Rs 9,992.06 | -7.94 | -0.08% | 0 | 0% | 1 |
+| 24 | smart_13 | Afternoon Sell-the-Rip Short (Smart v2) | Rs 9,992.06 | -7.94 | -0.08% | 0 | 0% | 1 |
 | 25 | s12 | OHL + CPR Breakdown Short | Rs 9,984.05 | -15.95 | -0.16% | 1 | 0% | 0 |
 | 26 | smart_12 | OHL + CPR Short (Smart v2) | Rs 9,984.05 | -15.95 | -0.16% | 1 | 0% | 0 |
 
