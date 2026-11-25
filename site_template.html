@@ -165,8 +165,8 @@ function card(b){
     "<header class='flex items-center justify-between gap-2'><div class='flex items-center gap-2 min-w-0'>" +
     "<div class='w-10 h-10 shrink-0 rounded-full flex items-center justify-center border border-[#464554]/50' style='background: radial-gradient(circle at 30% 30%, " + avatar(b.id) + "55, #13131B)'>" +
     "<span class='font-headline text-[13px] font-semibold'>" + code(b.id) + "</span></div>" +
-    "<div class='min-w-0'><h3 class='font-title text-[15px] font-semibold truncate'>" + b.id + " \u00b7 " + esc(b.name) + "</h3>" +
-    "<div class='text-[11px] text-[#908FA0] truncate'>" + esc(b.tf) + " \u00b7 " + esc(b.market) + (b.council ? " \u00b7 council" : "") + "</div></div></div>" + badge + "</header>" +
+    "<div class='min-w-0'><h3 class='font-title text-[15px] font-semibold truncate'>" + esc(b.name) + "</h3>" +
+    "<div class='text-[11px] text-[#908FA0] truncate'>" + esc(b.id) + " \u00b7 " + esc(b.tf) + " \u00b7 " + esc(b.market) + (b.council ? " \u00b7 council" : "") + "</div></div></div>" + badge + "</header>" +
     "<div class='flex items-baseline justify-between gap-2'><span class='font-headline text-[24px] font-semibold mono'>" + money(b.eq) + "</span>" +
     "<span class='inline-flex items-center gap-0.5 font-label text-[13px] font-semibold " + cls(b.pct) + " shrink-0'>" +
     "<span class='ms text-[16px]'>" + (up ? "arrow_upward" : "arrow_downward") + "</span>" + pct(b.pct) + "</span></div>" +
