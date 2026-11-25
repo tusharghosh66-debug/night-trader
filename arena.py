@@ -1926,8 +1926,10 @@ def write_council_dashboard(st):
                     break
     except Exception as e:
         log(f"council dashboard: could not read trades: {e}")
-    tr_html = ("<table><thead><tr><th>When</th><th>Bot</th><th>Symbol</th><th>Side</th><th>Entry</th>"
-               "<th>Exit</th><th>P&L</th><th>Why</th></tr></thead><tbody>")
+    tr_html = ""
+    if trades:
+        tr_html = ("<table><thead><tr><th>When</th><th>Bot</th><th>Symbol</th><th>Side</th><th>Entry</th>"
+                   "<th>Exit</th><th>P&L</th><th>Why</th></tr></thead><tbody>")
     for t in trades:
         p = float(t[7])
         c = "pos" if p >= 0 else "neg"
@@ -1935,7 +1937,8 @@ def write_council_dashboard(st):
                     f"<td>{'LONG' if t[3] == '1' else 'SHORT'}</td><td class='num'>Rs {float(t[5]):,.2f}</td>"
                     f"<td class='num'>Rs {float(t[6]):,.2f}</td><td class='num {c}'>{p:+,.2f}</td>"
                     f"<td class='sub'>{t[8]}</td></tr>")
-    tr_html += "</tbody></table>" if trades else "<div class='sub'>No closed trade yet — the first ones will appear here.</div>"
+    tr_html += ("</tbody></table>" if trades
+                else "<div class='sub'>No closed trade yet - the first ones will appear here.</div>")
     html = f"""<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta http-equiv="refresh" content="60">
