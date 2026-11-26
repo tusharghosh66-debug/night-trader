@@ -1011,7 +1011,7 @@ function deskApi(path, body){
 }
 function deskCompanies(){
   if(DESK.co) return Promise.resolve(DESK.co);
-  return deskApi("/api/companies").then(function(rows){ DESK.co = rows; return rows; })
+  return deskApi("/api/companies").then(function(rows){ if(!Array.isArray(rows)) throw new Error("api"); DESK.co = rows; return rows; })
     .catch(function(){ DESK.co = []; return []; });
 }
 function deskNum(v){ if(v===null||v===undefined||isNaN(v)) return "-"; return (v<0?"-":"") + money(Math.abs(v)); }
@@ -1288,16 +1288,16 @@ function renderDesk(){
     var qi = $("#desk-q");
     if(!DESK.book){
       deskApi("/api/desk").then(function(b){
-        if(b && !b.error){
+        if(b && typeof b.cash === "number"){
           DESK.book = b;
           $("#desk-body").innerHTML = deskBook();
           deskTicket(); deskWire();
           var cl = $("#desk-clock"); if(cl && b.now) cl.textContent = "updated " + b.now.slice(11,19);
         } else {
-          $("#desk-body").innerHTML = "<div class='rounded-2xl bg-[#1F1F27]/55 border border-[#FB7185]/40 p-5 text-[12.5px] text-[#C7C4D7]'>The desk API is not reachable from here. Open the live site (Render URL) to trade - local previews have no server.</div>";
+          $("#desk-body").innerHTML = "<div class='rounded-2xl bg-[#1F1F27]/55 border border-[#FB7185]/40 p-5 text-[12.5px] text-[#C7C4D7]'>The desk API is not live yet. If this is the Render site, the Python side needs one deploy (Manual Deploy - latest commit); local previews have no server at all.</div>";
         }
       }).catch(function(){
-        $("#desk-body").innerHTML = "<div class='rounded-2xl bg-[#1F1F27]/55 border border-[#FB7185]/40 p-5 text-[12.5px] text-[#C7C4D7]'>The desk API is not reachable from here. Open the live site (Render URL) to trade - local previews have no server.</div>";
+        $("#desk-body").innerHTML = "<div class='rounded-2xl bg-[#1F1F27]/55 border border-[#FB7185]/40 p-5 text-[12.5px] text-[#C7C4D7]'>The desk API is not live yet. If this is the Render site, the Python side needs one deploy (Manual Deploy - latest commit); local previews have no server at all.</div>";
       });
     } else {
       $("#desk-body").innerHTML = deskBook();
