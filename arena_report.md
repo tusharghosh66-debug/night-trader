@@ -1,14 +1,14 @@
 # Strategy Arena — Leaderboard
-_Updated: 2026-11-26 13:02 IST_
+_Updated: 2026-11-26 13:04 IST_
 
-**Total equity: Rs 160,019.53** / Rs 160,000 start (+0.01%)
+**Total equity: Rs 160,023.30** / Rs 160,000 start (+0.01%)
 
 | Rank | Bot | Strategy | Equity | P&L | % | Trades | Win% | Open |
 |---|---|---|---|---|---|---|---|---|
-| 1 | s09 | Statistical Arbitrage Pairs | Rs 10,025.05 | +25.05 | +0.25% | 0 | 0% | 2 |
-| 2 | s03 | ETF Dual Momentum Rotation | Rs 10,020.23 | +20.23 | +0.20% | 0 | 0% | 1 |
-| 3 | x03 | Core Regime Trend (council) | Rs 10,005.50 | +5.50 | +0.06% | 0 | 0% | 2 |
-| 4 | x02 | RS Rotation Top-2 (council) | Rs 10,002.02 | +2.02 | +0.02% | 0 | 0% | 2 |
+| 1 | s09 | Statistical Arbitrage Pairs | Rs 10,030.64 | +30.64 | +0.31% | 0 | 0% | 2 |
+| 2 | s03 | ETF Dual Momentum Rotation | Rs 10,019.04 | +19.04 | +0.19% | 0 | 0% | 1 |
+| 3 | x03 | Core Regime Trend (council) | Rs 10,004.99 | +4.99 | +0.05% | 0 | 0% | 2 |
+| 4 | x02 | RS Rotation Top-2 (council) | Rs 10,002.06 | +2.06 | +0.02% | 0 | 0% | 2 |
 | 5 | s01 | St. Gallen ORB Noise-Band | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 6 | s02 | Trend-Filtered Mean Reversion | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 7 | s05 | Connors RSI(2) Pullback | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
@@ -20,6 +20,6 @@ _Updated: 2026-11-26 13:02 IST_
 | 13 | s13 | Afternoon Sell-the-Rip Short | Rs 9,995.22 | -4.78 | -0.05% | 1 | 0% | 0 |
 | 14 | s11 | Spike & VWAP Rejection Short | Rs 9,993.64 | -6.36 | -0.06% | 1 | 0% | 1 |
 | 15 | s04 | Multi-Market Trend Following | Rs 9,993.44 | -6.56 | -0.07% | 0 | 0% | 1 |
-| 16 | s12 | OHL + CPR Breakdown Short | Rs 9,984.42 | -15.58 | -0.16% | 1 | 0% | 1 |
+| 16 | s12 | OHL + CPR Breakdown Short | Rs 9,984.27 | -15.73 | -0.16% | 1 | 0% | 1 |
 
-**Best so far: s09 — Statistical Arbitrage Pairs (+0.25%)**
+**Best so far: s09 — Statistical Arbitrage Pairs (+0.31%)**
