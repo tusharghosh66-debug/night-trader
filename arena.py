@@ -2050,7 +2050,15 @@ def write_site(st):
                 rec["kill"] = COUNCIL_KILL.get(sid, "")
             bots[sid] = rec
     allb = list(bots.values())
+    hp = st.get("equity_history", [])[-180:]
+    htotal = [round(sum(float(r_.get(i, CAPITAL)) for i in st["bots"]), 2) for r_ in hp]
+    hfam = {}
+    for key, gname, fam_ids in SITE_FAMILIES:
+        fids = [i for i in fam_ids if i in st["bots"]]
+        if fids:
+            hfam[key] = [round(sum(float(r_.get(i, CAPITAL)) for i in fids), 2) for r_ in hp]
     data = {"gen": now, "pool": CAPITAL * len(allb), "groups": groups, "bots": bots,
+            "hist": {"t": [r_.get("t", "")[11:16] for r_ in hp], "total": htotal, "fam": hfam},
             "bots_all": [{"id": b["id"], "name": b["name"], "pct": b["pct"], "eq": b["eq"],
                           "paused": b["paused"]} for b in allb],
             "totals": {"eq": round(sum(b["eq"] for b in allb), 2),

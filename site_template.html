@@ -23,12 +23,17 @@ html{scrollbar-color:#3b3b47 #0B1026}body{-webkit-font-smoothing:antialiased}
         <circle cx="9.5" cy="11.5" r="1.75" fill="#D0BCFF"></circle></svg>
     </div>
     <div class="flex flex-col leading-tight">
-      <span class="font-headline text-[18px] font-semibold tracking-tight" data-home="1">Strategy Arena</span>
-      <span class="font-label text-[12px] text-[#C7C4D7]">Quantitative Bot Fleet</span>
+      <span class="font-headline text-[16px] sm:text-[18px] font-semibold tracking-tight whitespace-nowrap" data-home="1">Strategy Arena</span>
+      <span class="font-label text-[12px] text-[#C7C4D7] hidden sm:block whitespace-nowrap">Quantitative Bot Fleet</span>
     </div>
   </div>
+  <nav class="flex items-center gap-1 p-1 rounded-lg bg-[#0D0D15]/70 border border-[#464554]/60 overflow-x-auto">
+    <a href="#/" data-nav="overview" class="px-2 sm:px-3 py-1.5 rounded-md font-label text-[11.5px] sm:text-[12.5px] text-[#C7C4D7] hover:text-white whitespace-nowrap">Overview</a>
+    <a href="#/analytics" data-nav="analytics" class="px-2 sm:px-3 py-1.5 rounded-md font-label text-[11.5px] sm:text-[12.5px] text-[#C7C4D7] hover:text-white whitespace-nowrap">Analytics</a>
+    <a href="#/wizard" data-nav="wizard" class="px-2 sm:px-3 py-1.5 rounded-md font-label text-[11.5px] sm:text-[12.5px] text-[#C7C4D7] hover:text-white whitespace-nowrap">New strategy</a>
+  </nav>
   <div class="flex items-center gap-2">
-    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1F1F27]/70 border border-[#464554]/60">
+    <div class="hidden sm:inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1F1F27]/70 border border-[#464554]/60">
       <span class="w-2 h-2 rounded-full bg-[#34D399]"></span>
       <span class="font-label text-[12px] tabular-nums" id="live-pill">29 Bots Live</span>
     </div>
@@ -69,6 +74,8 @@ html{scrollbar-color:#3b3b47 #0B1026}body{-webkit-font-smoothing:antialiased}
 
   <section id="groups" class="flex flex-col gap-8"></section>
   <section id="detail" class="hidden"></section>
+  <section id="analytics" class="hidden"></section>
+  <section id="wizard" class="hidden"></section>
 </main>
 
 <footer class="w-full border-t border-[#464554]/40 bg-[#0B1026]/60 backdrop-blur-md mt-8">
@@ -299,15 +306,45 @@ function renderBot(id){
   window.scrollTo({top: 0, behavior: "instant"});
 }
 
+function setNav(which){
+  document.querySelectorAll("[data-nav]").forEach(a => {
+    const on = a.getAttribute("data-nav") === which;
+    a.classList.toggle("bg-[#8083FF]", on);
+    a.classList.toggle("text-[#1000A9]", on);
+    a.classList.toggle("font-semibold", on);
+    a.classList.toggle("text-[#C7C4D7]", !on);
+  });
+}
+
+function hideViews(){
+  ["#hero", "#toolbar", "#groups", "#detail", "#analytics", "#wizard"].forEach(s => {
+    const el = $(s);
+    if(el) el.classList.add("hidden");
+  });
+}
+
 function route(){
   const h = location.hash || "";
-  if(h.indexOf("#/bot/") === 0){ renderBot(h.slice(6)); }
-  else {
-    $("#detail").classList.add("hidden");
+  if(h.indexOf("#/bot/") === 0){
+    hideViews();
+    $("#detail").classList.remove("hidden");
+    renderBot(h.slice(6));
+    setNav("");
+  } else if(h.indexOf("#/analytics") === 0){
+    hideViews();
+    renderAnalytics();
+    setNav("analytics");
+  } else if(h.indexOf("#/wizard") === 0){
+    hideViews();
+    renderWizard();
+    setNav("wizard");
+  } else {
+    hideViews();
     $("#detail").innerHTML = "";
     $("#hero").classList.remove("hidden");
     $("#toolbar").classList.remove("hidden");
     $("#groups").classList.remove("hidden");
+    setNav("overview");
   }
 }
 
@@ -355,6 +392,498 @@ function setToggle(btn, on){
   th.classList.toggle("translate-x-0.5", !on);
   th.classList.toggle("bg-[#1000A9]", on);
   th.classList.toggle("bg-[#C7C4D7]", !on);
+}
+
+
+// ---------------- shared analytics helpers ----------------
+function botsArr(){ return Object.keys(D.bots).map(k => D.bots[k]); }
+function twinOf(id){
+  if(id.indexOf("smart_") === 0 || id[0] !== "s") return null;
+  return D.bots["smart_" + id.slice(1)] || null;
+}
+function totalSeries(){
+  if(D.hist && D.hist.total && D.hist.total.length > 1) return D.hist.total.slice();
+  const arrs = botsArr().map(b => b.spark).filter(a => a && a.length > 1);
+  if(!arrs.length) return [D.totals.eq];
+  const n = Math.min.apply(null, arrs.map(a => a.length));
+  const out = [];
+  for(let i = 0; i < n; i++){
+    let s = 0;
+    for(const a of arrs) s += a[a.length - n + i];
+    out.push(+s.toFixed(2));
+  }
+  return out;
+}
+function ddOf(series){
+  if(!series || series.length < 2) return {abs:0, pct:0};
+  let peak = series[0], abs = 0, pct = 0;
+  for(const v of series){
+    if(v > peak) peak = v;
+    const d = peak - v;
+    if(d > abs){ abs = d; pct = peak ? d / peak * 100 : 0; }
+  }
+  return {abs: abs, pct: pct};
+}
+function sdOf(a){
+  if(a.length < 2) return 0;
+  const m = a.reduce((x, y) => x + y, 0) / a.length;
+  return Math.sqrt(a.reduce((s, x) => s + (x - m) * (x - m), 0) / a.length);
+}
+function sharpeOf(series){
+  const r = [];
+  for(let i = 1; i < series.length; i++) if(series[i - 1]) r.push(series[i] / series[i - 1] - 1);
+  if(r.length < 60) return null;
+  const sd = sdOf(r);
+  if(!sd) return null;
+  return (r.reduce((x, y) => x + y, 0) / r.length) / sd;
+}
+function sparkOf(b){ return b.spark && b.spark.length > 1 ? b.spark : [10000, b.eq]; }
+function pctOf(series){ return series.length > 1 && series[0] ? (series[series.length - 1] / series[0] - 1) * 100 : 0; }
+function barLine(pct, tone){
+  return "<div class='h-1.5 w-full rounded-full bg-[#34343D] overflow-hidden'><div class='h-full rounded-full " + tone + "' style='width:" + Math.max(0, Math.min(100, pct)).toFixed(1) + "%'></div></div>";
+}
+function kpiBox(label, value, klass, sub){
+  return "<div class='rounded-2xl bg-[#1F1F27]/60 backdrop-blur-md border border-[#464554]/40 p-4 shadow-lg shadow-black/30'>" +
+    "<div class='font-label text-[12px] text-[#C7C4D7]'>" + label + "</div>" +
+    "<div class='font-headline text-[22px] font-bold mono mt-1 " + (klass || "") + "'>" + value + "</div>" +
+    (sub ? "<div class='font-label text-[11px] text-[#908FA0] mt-1'>" + sub + "</div>" : "") + "</div>";
+}
+
+function seriesChart(series, w, h, opt){
+  opt = opt || {};
+  if(!series || series.length < 2) return "<div class='text-[12px] text-[#908FA0]'>No history yet.</div>";
+  const pad = 8;
+  const min = Math.min.apply(null, series), max = Math.max.apply(null, series);
+  const rng = (max - min) || 1;
+  const X = i => pad + i * (w - 2 * pad) / (series.length - 1);
+  const Y = v => pad + (max - v) / rng * (h - 2 * pad);
+  const line = series.map((v, i) => X(i).toFixed(1) + "," + Y(v).toFixed(1)).join(" ");
+  const area = pad + "," + (h - pad) + " " + line + " " + (w - pad) + "," + (h - pad);
+  const base = opt.base;
+  const baseLine = (base != null && base >= min && base <= max)
+    ? "<line x1='" + pad + "' y1='" + Y(base).toFixed(1) + "' x2='" + (w - pad) + "' y2='" + Y(base).toFixed(1) + "' stroke='#E4E1ED' stroke-opacity='.35' stroke-dasharray='4 4'/>" : "";
+  return "<svg viewBox='0 0 " + w + " " + h + "' preserveAspectRatio='none' class='w-full h-full' aria-hidden='true'>" +
+    "<defs><linearGradient id='sg" + (opt.id || "a") + "' x1='0' y1='0' x2='0' y2='1'>" +
+    "<stop offset='0%' stop-color='" + (opt.color || "#8083FF") + "' stop-opacity='.35'/>" +
+    "<stop offset='100%' stop-color='" + (opt.color || "#8083FF") + "' stop-opacity='0'/></linearGradient></defs>" +
+    baseLine +
+    "<polygon points='" + area + "' fill='url(#sg" + (opt.id || "a") + ")'/>" +
+    "<polyline points='" + line + "' fill='none' stroke='" + (opt.color || "#C0C1FF") + "' stroke-width='2' vector-effect='non-scaling-stroke' stroke-linejoin='round'/></svg>";
+}
+
+function renderAnalytics(){
+  ["#hero", "#toolbar", "#groups", "#detail", "#wizard"].forEach(s => $(s).classList.add("hidden"));
+  const a = $("#analytics");
+  a.classList.remove("hidden");
+  const bots = botsArr();
+  const tot = totalSeries();
+  const base = D.pool;
+  const d = ddOf(tot);
+  const sh = sharpeOf(tot);
+  const netPnl = D.totals.pnl;
+  const trades = [];
+  bots.forEach(b => (b.closed || []).forEach(t => trades.push({bot: b.id, t: t})));
+  const wins = trades.filter(x => x.t.pnl > 0), losses = trades.filter(x => x.t.pnl <= 0);
+  const fees = bots.reduce((s, b) => s + b.fees, 0);
+  const openN = bots.reduce((s, b) => s + b.open, 0);
+  const exposure = D.totals.eq ? D.totals.in_market / D.totals.eq * 100 : 0;
+
+  const fam = D.groups.map(g => {
+    const m = g.bots.map(id => D.bots[id]);
+    const eq = m.reduce((s, b) => s + b.eq, 0);
+    const pnl = m.reduce((s, b) => s + b.pnl, 0);
+    const tr = m.reduce((s, b) => s + b.trades, 0);
+    const w = m.reduce((s, b) => s + (b.trades ? b.wr / 100 * b.trades : 0), 0);
+    const im = m.reduce((s, b) => s + b.in_market, 0);
+    return {key: g.key, name: g.name, n: m.length, eq: eq, pnl: pnl, tr: tr, wr: tr ? w / tr * 100 : null,
+            im: im, share: eq / D.totals.eq * 100};
+  }).sort((x, y) => y.eq - x.eq);
+
+  const kpis =
+    kpiBox("Net portfolio equity", money(D.totals.eq), "", money(D.pool) + " pool")
+    + kpiBox("Cumulative return", pct(netPnl / D.pool * 100), cls(netPnl), signed(netPnl, money))
+    + kpiBox("Max drawdown", money(d.abs), d.abs > 0 ? "text-[#FB7185]" : "", d.pct.toFixed(2) + "% of peak")
+    + kpiBox("Sharpe (rough)", sh == null ? "n/a" : sh.toFixed(2), sh == null ? "text-[#908FA0]" : cls(sh), sh == null ? "needs a longer window" : "per-cycle returns")
+    + kpiBox("Closed trades", String(trades.length), "", wins.length + " W / " + losses.length + " L")
+    + kpiBox("Exposure", exposure.toFixed(1) + "%", "text-[#C0C1FF]", money(D.totals.in_market) + " in " + openN + " positions");
+
+  const alloc = fam.map(f =>
+    "<div class='flex items-center gap-3'>" +
+    "<span class='text-[12px] text-[#C7C4D7] flex-1 sm:w-40 sm:flex-none truncate'>" + esc(f.name) + "</span>" +
+    "<div class='hidden sm:block flex-1'>" + barLine(f.share, "bg-[#8083FF]") + "</div>" +
+    "<span class='font-mono text-[11.5px] text-[#C7C4D7] w-24 text-right shrink-0'>" + money(f.eq) + "</span>" +
+    "<span class='font-mono text-[11.5px] w-16 text-right shrink-0 " + cls(f.pnl) + "'>" + signed(f.pnl, money) + "</span></div>").join("");
+
+  const famRows = fam.map(f =>
+    "<tr><td class='" + TD + "'>" + esc(f.name) + "</td>" +
+    "<td class='" + TD + " num text-right mono'>" + money(f.eq) + "</td>" +
+    "<td class='" + TD + " num text-right mono " + cls(f.pnl) + "'>" + signed(f.pnl, money) + "</td>" +
+    "<td class='" + TD + " num text-right mono'>" + f.tr + "</td>" +
+    "<td class='" + TD + " num text-right mono'>" + (f.wr == null ? "-" : f.wr.toFixed(0) + "%") + "</td>" +
+    "<td class='" + TD + " num text-right mono'>" + money(f.im) + "</td>" +
+    "<td class='" + TD + " num text-right mono text-[#908FA0]'>" + f.share.toFixed(1) + "%</td></tr>").join("");
+
+  const ranked = bots.slice().sort((x, y) => y.pnl - x.pnl);
+  const topBot = ranked.slice(0, 5), lowBot = ranked.slice(-5).reverse();
+  const botLine = b => "<div class='flex items-center justify-between gap-2 py-1 border-b border-[#464554]/25 last:border-none'>" +
+    "<span class='text-[12.5px] truncate'>" + b.id + " <span class='text-[#908FA0]'>" + esc(b.name) + "</span></span>" +
+    "<span class='font-mono text-[12px] " + cls(b.pnl) + " shrink-0'>" + signed(b.pnl, money) + "</span></div>";
+
+  const riskRows = bots.map(b => {
+    const bd = ddOf(sparkOf(b));
+    const gross = b.pnl + b.fees;
+    const feeShare = gross > 0 ? b.fees / gross * 100 : null;
+    return {b: b, dd: bd, feeShare: feeShare};
+  }).sort((x, y) => y.dd.pct - x.dd.pct);
+  const riskTbl = riskRows.map(r =>
+    "<tr><td class='" + TD + "'>" + r.b.id + "</td>" +
+    "<td class='" + TD + " num text-right mono'>" + money(r.b.eq) + "</td>" +
+    "<td class='" + TD + " num text-right mono " + cls(r.b.pnl) + "'>" + signed(r.b.pnl, money) + "</td>" +
+    "<td class='" + TD + " num text-right mono'>" + r.dd.pct.toFixed(2) + "%</td>" +
+    "<td class='" + TD + " num text-right mono'>" + r.b.trades + "</td>" +
+    "<td class='" + TD + " num text-right mono'>" + (r.feeShare == null ? "-" : r.feeShare.toFixed(0) + "%") + "</td>" +
+    "<td class='" + TD + " num text-right mono'>" + (r.b.eq ? (r.b.in_market / r.b.eq * 100).toFixed(0) + "%" : "-") + "</td></tr>").join("");
+
+  const buckets = [[-1e9, -50], [-50, -20], [-20, -5], [-5, 0], [0, 5], [5, 20], [20, 50], [50, 1e9]];
+  const labels = ["-50 or worse", "-50..-20", "-20..-5", "-5..0", "0..5", "5..20", "20..50", "50+"];
+  const hist = buckets.map(([lo, hi]) => trades.filter(x => x.t.pnl > lo && x.t.pnl <= hi).length);
+  const hmax = Math.max.apply(null, hist.concat([1]));
+  const histBars = hist.map((c, i) =>
+    "<div class='flex flex-col items-center gap-1 flex-1'>" +
+    "<div class='w-full flex items-end justify-center' style='height:64px'>" +
+    "<div class='" + (i < 4 ? "bg-[#FB7185]" : "bg-[#34D399]") + " rounded-t w-3/4' style='height:" + (c / hmax * 100).toFixed(1) + "%; min-height:" + (c ? 3 : 0) + "px'></div></div>" +
+    "<span class='font-mono text-[10px] text-[#908FA0]'>" + c + "</span>" +
+    "<span class='font-label text-[9.5px] text-[#908FA0] text-center leading-tight'>" + labels[i] + "</span></div>").join("");
+
+  const dup = bots.filter(b => twinOf(b.id)).map(b => b.id + " / smart_" + b.id.slice(1));
+  const idle = bots.filter(b => !b.trades && !b.open);
+
+  a.innerHTML =
+    "<div class='flex flex-col gap-6'>" +
+    "<div class='flex flex-wrap items-end justify-between gap-3'>" +
+      "<div><h1 class='font-headline text-[22px] font-bold tracking-tight'>Portfolio analytics</h1>" +
+      "<div class='text-[12px] text-[#C7C4D7]'>All 29 books, " + money(D.pool) + " pool - paper money, fees 0.1%/side inside every P&L</div></div>" +
+      "<div class='font-mono text-[12px] text-[#908FA0]'>window " + tot.length + " points</div></div>" +
+    "<div class='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-3'>" + kpis + "</div>" +
+    panel("Portfolio equity vs break-even", "<div class='w-full h-52'>" + seriesChart(tot, 1100, 210, {id: "tot", base: base}) + "</div>" +
+      "<div class='flex flex-wrap gap-4 mt-2 font-label text-[11.5px] text-[#908FA0]'>" +
+      "<span>start " + money(base) + "</span><span>now " + money(tot[tot.length - 1]) + "</span>" +
+      "<span>peak " + money(Math.max.apply(null, tot)) + "</span><span>trough " + money(Math.min.apply(null, tot)) + "</span></div>") +
+    "<div class='grid grid-cols-1 lg:grid-cols-2 gap-4'>" +
+      panel("Capital allocation", alloc) +
+      "<div class='grid grid-cols-1 gap-4'>" +
+        panel("Best 5 bots", topBot.map(botLine).join("")) +
+        panel("Weakest 5 bots", lowBot.map(botLine).join("")) + "</div></div>" +
+    panel("By strategy family", "<div class='overflow-x-auto'><table class='w-full min-w-[620px] border-collapse'><thead><tr>" +
+      ["Family","Equity","P&L","Trades","Win rate","Exposure","Share"].map((h, i) =>
+        "<th class='" + TH + " py-1 " + (i ? "text-right" : "") + "'>" + h + "</th>").join("") +
+      "</tr></thead><tbody>" + famRows + "</tbody></table></div>") +
+    "<div class='grid grid-cols-1 lg:grid-cols-2 gap-4'>" +
+      panel("Trade outcome distribution (closed, Rs)", "<div class='flex items-end gap-1'>" + histBars + "</div>" +
+        "<div class='font-label text-[11.5px] text-[#908FA0] mt-2'>" + trades.length + " closed trades, " + wins.length + " wins, avg " +
+        (trades.length ? money(trades.reduce((s, x) => s + x.t.pnl, 0) / trades.length) : money(0)) + " per trade</div>") +
+      panel("Data integrity", "<div class='flex flex-col gap-2 text-[12.5px] text-[#C7C4D7]'>" +
+        "<div>Mirrored books (same strategy twice): <b class='text-[#FBBF24]'>" + dup.length + "</b>" +
+        (dup.length ? "<div class='font-mono text-[11px] text-[#908FA0] mt-1'>" + dup.join(", ") + "</div>" : "") + "</div>" +
+        "<div>Bots with no trade and no position: <b class='text-[#FBBF24]'>" + idle.length + "</b></div>" +
+        "<div>Fees paid so far: <b class='mono'>" + money(fees) + "</b> (" + (D.totals.eq ? (fees / D.totals.eq * 100).toFixed(3) : "0") + "% of equity)</div>" +
+        "<div>Open positions: <b class='mono'>" + openN + "</b> worth <b class='mono'>" + money(D.totals.in_market) + "</b></div>" +
+        "<div>History points: <b class='mono'>" + tot.length + "</b> - Sharpe and drawdown are only meaningful after a few sessions.</div></div>") +
+    "</div>" +
+    panel("Per-bot risk (worst drawdown first)", "<div class='overflow-x-auto'><table class='w-full min-w-[560px] border-collapse'><thead><tr>" +
+      ["Bot","Equity","P&L","Max DD","Trades","Fee/gross","Exposure"].map((h, i) =>
+        "<th class='" + TH + " py-1 " + (i ? "text-right" : "") + "'>" + h + "</th>").join("") +
+      "</tr></thead><tbody>" + riskTbl + "</tbody></table></div>") +
+    "</div>";
+  window.scrollTo({top: 0});
+}
+
+
+// ---------------- new strategy wizard ----------------
+const WIZ_RULES = {
+  council: {name: "Vol Squeeze Breakout", thesis: "Volatility contraction then expansion - plays the first real range break after a quiet stretch.",
+    entry: "On 1h bars: 20-bar range width under the 25th percentile of the last 200 bars, then a close outside that range with volume > 1.5x the 20-bar mean. One attempt per symbol per day.",
+    exit: "Stop at the opposite edge of the squeeze range; take half at 1R, trail the rest by 1.2 ATR; hard flat at 15:10 IST."},
+  orb: {name: "Opening Range Breakout", thesis: "The first 15 minutes set the day's reference; a clean break with volume tends to follow through.",
+    entry: "First 15-minute high/low after 09:30 IST; long above the high, short below the low, only if the range is between 0.4% and 1.5% wide and volume > 1.3x average.",
+    exit: "Stop at the other side of the opening range; 1R partial, trail 1.2 ATR; flat by 15:10 IST."},
+  meanrev: {name: "RSI(2) Pullback", thesis: "Short-term over-extension tends to snap back to the mean in a trending index universe.",
+    entry: "Daily: close above the 200-day average, RSI(2) under 10, entry at next open. One position per symbol.",
+    exit: "Exit when RSI(2) closes above 60, or stop at 2 ATR below entry, or 10 bars."},
+  trend: {name: "Multi-Market Trend", thesis: "Trends persist where liquidity is deep; a slow filter plus a fast trigger keeps turnover low.",
+    entry: "Daily: 50-day above 200-day average, price closes at a 20-day high with ATR expanding; enter next open.",
+    exit: "Chandelier stop at 3 ATR, exit on a close under the 50-day average."},
+  rotation: {name: "Dual Momentum Rotation", thesis: "Rotating into the strongest index while avoiding the weak one beats standing still.",
+    entry: "Monthly: rank NIFTYBEES vs GOLDBEES by 120-day return; hold the leader only if it is above its 200-day average, else cash.",
+    exit: "Switch at the next monthly rebalance, or stop if the holding falls 8% from entry."},
+  arb: {name: "Statistical Pairs", thesis: "Two correlated names drift apart and revert; the edge is in the spread, not the direction.",
+    entry: "Daily: z-score of the log spread over 60 days; enter at |z| > 2, both legs sized by beta so the book is rupee-neutral.",
+    exit: "Exit at |z| < 0.5, or stop if |z| > 3.5, or 20 bars."},
+  short: {name: "VWAP Rejection Short", thesis: "Weak names that fail at VWAP in a soft tape keep sliding intraday.",
+    entry: "Intraday: price below the 20-EMA, rally into VWAP, rejection candle with volume; short on the break of that candle's low.",
+    exit: "Stop above the rejection high; target 1.5R or VWAP -1 ATR; flat by 15:10 IST."}
+};
+const WIZ_GOALS = [
+  {id: "gap", label: "Fill a gap", note: "Pick a family that has not traded yet"},
+  {id: "worst", label: "Repair the worst family", note: "Attack the biggest live loss"},
+  {id: "new", label: "New market or timeframe", note: "Cover what the fleet misses"},
+  {id: "dedup", label: "Replace a duplicate", note: "Two books run the same rules"}
+];
+const W = {step: 1, goal: "gap", risk: 1.0, freq: 6, tf: "1h", market: "India", universe: "Nifty 50", approved: false, candidate: null, seats: null};
+
+function famStats(){
+  return D.groups.map(g => {
+    const m = g.bots.map(id => D.bots[id]);
+    const tr = m.reduce((s, b) => s + b.trades, 0);
+    const pnl = m.reduce((s, b) => s + b.pnl, 0);
+    const open = m.reduce((s, b) => s + b.open, 0);
+    const w = m.reduce((s, b) => s + (b.trades ? b.wr / 100 * b.trades : 0), 0);
+    return {key: g.key, name: g.name, n: m.length, tr: tr, pnl: pnl, open: open, wr: tr ? w / tr * 100 : null};
+  });
+}
+function coverage(){
+  const combos = {};
+  botsArr().forEach(b => { combos[b.tf + " | " + b.market] = (combos[b.tf + " | " + b.market] || 0) + 1; });
+  return combos;
+}
+function pickFamily(stats){
+  if(W.goal === "worst") return stats.slice().sort((a, b) => a.pnl - b.pnl)[0].key;
+  if(W.goal === "gap") return stats.slice().sort((a, b) => (a.tr - b.tr) || (a.open - b.open))[0].key;
+  if(W.goal === "dedup") return stats.slice().sort((a, b) => b.n - a.n)[0].key;
+  return "orb";
+}
+function buildCandidate(){
+  const stats = famStats();
+  const key = pickFamily(stats);
+  const r = WIZ_RULES[key];
+  const fam = stats.find(s => s.key === key);
+  const tfMap = {"15m": "15m", "1h": "1h", "daily": "daily", "weekly": "weekly"};
+  return {
+    key: key, family: fam.name, name: r.name, thesis: r.thesis, entry: r.entry, exit: r.exit,
+    tf: tfMap[W.tf] || "1h", market: W.market, universe: W.universe,
+    risk: W.risk, freq: W.freq, capital: 10000,
+    sizing: "qty = (" + W.risk.toFixed(2) + "% of equity) / stop distance, capped at 30% notional per position",
+    kill: "Stop the book if equity falls 6% below start, or after 20 closed trades if the edge is not positive",
+    evidence: fam, coverage: coverage()
+  };
+}
+function scoreSeats(c){
+  const ev = c.evidence;
+  const dupPairs = botsArr().filter(b => twinOf(b.id)).length;
+  const riskScore = Math.round(Math.max(0, Math.min(100,
+    86 - (c.risk > 1.5 ? 18 : c.risk < 0.5 ? 6 : 0) - c.freq * 0.6 + (c.key === "arb" ? 4 : 0))));
+  const evidenceScore = Math.round(Math.max(0, Math.min(100,
+    34 + Math.min(28, ev.tr * 4) + (ev.wr != null && ev.wr > 50 ? 12 : 0) + (ev.open > 0 ? 6 : 0) - (ev.tr < 5 ? 14 : 0))));
+  const execScore = Math.round(Math.max(0, Math.min(100,
+    84 - (c.freq > 10 ? 16 : 0) - (dupPairs ? 6 : 0) - (c.market === "Crypto" ? 8 : 0) + (c.key === "rotation" || c.key === "trend" ? 6 : 0))));
+  const seats = [
+    {name: "Risk chair", icon: "shield", score: riskScore,
+      notes: [c.risk.toFixed(2) + "% per trade means about " + money(10000 * c.risk / 100) + " at risk per position",
+              riskScore < 60 ? "sizing is aggressive for a book this young" : "sizing sits inside the 0.3-1.0% comfort band"]},
+    {name: "Evidence chair", icon: "query_stats", score: evidenceScore,
+      notes: [ev.tr + " live closed trades in " + ev.name.toLowerCase() + " (" + (ev.wr == null ? "no win rate yet" : ev.wr.toFixed(0) + "% wins") + ")",
+              ev.tr < 5 ? "sample too small - treat any edge as a hypothesis" : "sample is thin but usable as a first check"]},
+    {name: "Execution chair", icon: "bolt", score: execScore,
+      notes: ["about " + c.freq + " entries a day at 0.1% a side = " + (c.freq * 0.2).toFixed(1) + "% of the book in fees daily",
+              dupPairs ? dupPairs + " mirrored book pairs already exist - do not add another copy" : "no duplicate pair for this family"]}
+  ];
+  const avg = (riskScore + evidenceScore + execScore) / 3;
+  let verdict = "REVISE", tone = "text-[#FBBF24]", badge = "bg-[#78350F]/60 text-[#FDE68A]";
+  if(avg >= 72 && Math.min(riskScore, evidenceScore, execScore) >= 45){ verdict = "APPROVE"; tone = "text-[#34D399]"; badge = "bg-[#064E3B]/70 text-[#A7F3D0]"; }
+  else if(avg >= 58){ verdict = "PAPER TEST"; tone = "text-[#FBBF24]"; badge = "bg-[#78350F]/60 text-[#FDE68A]"; }
+  return {seats: seats, avg: avg, verdict: verdict, tone: tone, badge: badge};
+}
+function wizStepBar(){
+  const steps = ["1 · Objective", "2 · Evidence", "3 · Council", "4 · Spec"];
+  return "<nav class='rounded-xl bg-[#1F1F27]/70 border border-[#464554]/40 p-1.5 flex flex-wrap gap-1.5'>" +
+    steps.map((s, i) => {
+      const on = W.step === i + 1, done = W.step > i + 1;
+      return "<button data-step='" + (i + 1) + "' class='flex-1 min-w-[120px] px-3 py-2 rounded-lg font-label text-[12.5px] " +
+        (on ? "bg-[#8083FF] text-[#1000A9] font-semibold" : done ? "text-[#A7F3D0] bg-[#064E3B]/40" : "text-[#C7C4D7] hover:text-white") + "'>" +
+        (done ? "\u2713 " : "") + s + "</button>";
+    }).join("") + "</nav>";
+}
+function slider(id, label, min, max, step, val, unit){
+  return "<label class='flex flex-col gap-1'><span class='flex items-center justify-between font-label text-[12px] text-[#C7C4D7]'>" +
+    "<span>" + label + "</span><span class='mono text-[#E4E1ED]' id='v-" + id + "'>" + val + (unit || "") + "</span></span>" +
+    "<input id='" + id + "' type='range' min='" + min + "' max='" + max + "' step='" + step + "' value='" + val + "' class='w-full accent-[#8083FF]'>" +
+    "</label>";
+}
+function selectRow(id, label, opts, val){
+  return "<label class='flex flex-col gap-1'><span class='font-label text-[12px] text-[#C7C4D7]'>" + label + "</span>" +
+    "<select id='" + id + "' class='bg-[#0D0D15]/80 border border-[#464554]/60 rounded-lg px-3 py-2 text-[13px] outline-none focus:border-[#C0C1FF]'>" +
+    opts.map(o => "<option" + (o === val ? " selected" : "") + ">" + o + "</option>").join("") + "</select></label>";
+}
+function renderWizard(){
+  ["#hero", "#toolbar", "#groups", "#detail", "#analytics"].forEach(s => $(s).classList.add("hidden"));
+  const w = $("#wizard");
+  w.classList.remove("hidden");
+  const stats = famStats();
+  const cov = coverage();
+  let body = "";
+
+  if(W.step === 1){
+    const famCards = WIZ_GOALS.map(g =>
+      "<button data-goal='" + g.id + "' class='text-left rounded-2xl border p-4 transition-colors " +
+      (W.goal === g.id ? "border-[#C0C1FF] bg-[#1F1F27]/80" : "border-[#464554]/50 bg-[#1F1F27]/45 hover:border-[#C0C1FF]/50") + "'>" +
+      "<div class='font-title text-[14px] font-semibold'>" + g.label + "</div>" +
+      "<div class='text-[11.5px] text-[#908FA0] mt-1'>" + g.note + "</div></button>").join("");
+    body = panel("What should the council build?", "<div class='grid grid-cols-1 sm:grid-cols-2 gap-3'>" + famCards + "</div>" +
+      "<div class='grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4'>" +
+      slider("wiz-risk", "Risk per trade", 0.25, 2, 0.25, W.risk, "%") +
+      slider("wiz-freq", "Target entries per day", 1, 20, 1, W.freq, "") + "</div>" +
+      "<div class='grid grid-cols-1 sm:grid-cols-3 gap-3 mt-3'>" +
+      selectRow("wiz-tf", "Timeframe", ["15m", "1h", "daily", "weekly"], W.tf) +
+      selectRow("wiz-market", "Market", ["India", "US", "Crypto"], W.market) +
+      selectRow("wiz-uni", "Universe", ["Nifty 50", "Nifty 500", "Top movers (NSE)", "US large caps", "Crypto majors"], W.universe) +
+      "</div>") +
+      "<div class='flex justify-end'><button data-step='2' class='px-4 py-2 rounded-lg bg-[#8083FF] text-[#1000A9] font-label text-[13px] font-semibold'>Next: evidence</button></div>";
+  }
+
+  if(W.step === 2){
+    const rows = stats.map(s =>
+      "<tr><td class='" + TD + "'>" + esc(s.name) + "</td>" +
+      "<td class='" + TD + " num text-right mono'>" + s.n + "</td>" +
+      "<td class='" + TD + " num text-right mono'>" + s.tr + "</td>" +
+      "<td class='" + TD + " num text-right mono " + cls(s.pnl) + "'>" + signed(s.pnl, money) + "</td>" +
+      "<td class='" + TD + " num text-right mono'>" + (s.wr == null ? "-" : s.wr.toFixed(0) + "%") + "</td>" +
+      "<td class='" + TD + " num text-right mono'>" + s.open + "</td></tr>").join("");
+    const covRows = Object.keys(cov).sort((a, b) => cov[b] - cov[a]).slice(0, 10).map(k =>
+      "<div class='flex items-center justify-between gap-2 py-1 border-b border-[#464554]/25 last:border-none text-[12.5px]'>" +
+      "<span>" + esc(k) + "</span><span class='mono text-[#C7C4D7]'>" + cov[k] + " bots</span></div>").join("");
+    body = panel("What the fleet actually shows", "<div class='overflow-x-auto'><table class='w-full border-collapse'><thead><tr>" +
+      ["Family","Bots","Trades","P&L","Win rate","Open"].map((h, i) =>
+        "<th class='" + TH + " py-1 " + (i ? "text-right" : "") + "'>" + h + "</th>").join("") + "</tr></thead><tbody>" + rows + "</tbody></table></div>") +
+      "<div class='grid grid-cols-1 lg:grid-cols-2 gap-4'>" +
+      panel("Coverage (timeframe | market)", covRows) +
+      panel("Gaps the council can see", "<ul class='text-[12.5px] text-[#C7C4D7] flex flex-col gap-2 list-disc pl-4'>" +
+        "<li>" + stats.filter(s => s.tr === 0).length + " of 7 families have not closed a single trade yet.</li>" +
+        "<li>" + botsArr().filter(b => !b.trades && !b.open).length + " bots are idle (no trade, no position).</li>" +
+        "<li>" + botsArr().filter(b => twinOf(b.id)).length +
+        " strategy pairs run twice (sNN and smart_NN), so the fleet is narrower than 29 ideas.</li>" +
+        "<li>Every book is intraday or daily - nothing holds a weekend position deliberately.</li></ul>") +
+      "</div>" +
+      "<div class='flex justify-between'><button data-step='1' class='px-4 py-2 rounded-lg border border-[#464554]/60 font-label text-[13px]'>Back</button>" +
+      "<button data-step='3' class='px-4 py-2 rounded-lg bg-[#8083FF] text-[#1000A9] font-label text-[13px] font-semibold'>Next: council review</button></div>";
+  }
+
+  if(W.step === 3){
+    if(!W.candidate){ W.candidate = buildCandidate(); W.seats = scoreSeats(W.candidate); }
+    const c = W.candidate, s = W.seats;
+    const seatCards = s.seats.map(st =>
+      "<div class='rounded-2xl bg-[#1F1F27]/55 border border-[#464554]/40 p-4 flex flex-col gap-2'>" +
+      "<div class='flex items-center justify-between gap-2'><div class='flex items-center gap-2'>" +
+      "<span class='ms text-[#C0C1FF]'>" + st.icon + "</span>" +
+      "<span class='font-title text-[14px] font-semibold'>" + st.name + "</span></div>" +
+      "<span class='font-mono text-[16px] font-bold " + (st.score >= 70 ? "text-[#34D399]" : st.score >= 50 ? "text-[#FBBF24]" : "text-[#FB7185]") + "'>" + st.score + "</span></div>" +
+      barLine(st.score, st.score >= 70 ? "bg-[#34D399]" : st.score >= 50 ? "bg-[#FBBF24]" : "bg-[#FB7185]") +
+      "<ul class='text-[12px] text-[#C7C4D7] flex flex-col gap-1 mt-1'>" + st.notes.map(n => "<li>· " + n + "</li>").join("") + "</ul></div>").join("");
+    body = "<div class='rounded-2xl bg-[#1F1F27]/55 border border-[#464554]/40 p-4 flex flex-wrap items-center gap-3'>" +
+      "<div class='min-w-0'><div class='font-label text-[11.5px] text-[#908FA0]'>Candidate</div>" +
+      "<div class='font-headline text-[18px] font-semibold'>" + esc(c.name) + " · " + esc(c.family) + "</div>" +
+      "<div class='text-[12px] text-[#C7C4D7]'>" + esc(c.tf) + " · " + esc(c.market) + " · " + esc(c.universe) + " · " + c.risk.toFixed(2) + "% risk · " + c.freq + " entries/day</div></div>" +
+      "<div class='ml-auto text-right'><div class='font-label text-[11.5px] text-[#908FA0]'>Council verdict</div>" +
+      "<span class='inline-block mt-1 px-2.5 py-1 rounded-full font-label text-[12px] font-semibold " + s.badge + "'>" + s.verdict + "</span>" +
+      "<div class='font-mono text-[24px] font-bold " + s.tone + "'>" + s.avg.toFixed(0) + "<span class='text-[13px] text-[#908FA0]'>/100</span></div></div></div>" +
+      "<div class='grid grid-cols-1 md:grid-cols-3 gap-3'>" + seatCards + "</div>" +
+      "<div class='flex justify-between'><button data-step='2' class='px-4 py-2 rounded-lg border border-[#464554]/60 font-label text-[13px]'>Back</button>" +
+      "<button data-step='4' class='px-4 py-2 rounded-lg bg-[#8083FF] text-[#1000A9] font-label text-[13px] font-semibold'>Build the spec</button></div>";
+  }
+
+  if(W.step === 4){
+    if(!W.candidate){ W.candidate = buildCandidate(); W.seats = scoreSeats(W.candidate); }
+    const c = W.candidate, s = W.seats;
+    const id = "w01";
+    const json = {
+      id: id, name: c.name, family: c.key, tf: c.tf, market: c.market, universe: c.universe,
+      thesis: c.thesis, entry: c.entry, exit: c.exit,
+      sizing: c.sizing, risk_pct: c.risk, max_positions: 3,
+      fee_per_side: 0.001, start_equity: c.capital, kill: c.kill,
+      paper_test: "Run 20 closed trades (or 2 weeks) before judging; compare win rate and average R to the family median."
+    };
+    const brief = ["New strategy brief (Strategy Arena)", "generated " + GEN,
+      "goal: " + W.goal + " | evidence family: " + c.family,
+      "candidate: " + c.name + " (" + c.tf + ", " + c.market + ", " + c.universe + ")",
+      "risk per trade: " + c.risk + "% | target entries/day: " + c.freq,
+      "entry: " + c.entry, "exit: " + c.exit, "sizing: " + c.sizing, "kill: " + c.kill,
+      "council scores - risk " + s.seats[0].score + ", evidence " + s.seats[1].score + ", execution " + s.seats[2].score + " => " + s.verdict + " (" + s.avg.toFixed(0) + "/100)",
+      "family evidence: " + c.evidence.tr + " closed trades, pnl " + c.evidence.pnl + ", win rate " + (c.evidence.wr == null ? "n/a" : c.evidence.wr.toFixed(0) + "%"),
+      "note: these scores are computed from the live book with fixed rules - they are reproducible, not an LLM opinion. Hand this brief to an AI for a second read."].join("\n");
+    body = "<div class='grid grid-cols-1 lg:grid-cols-3 gap-4'>" +
+      "<div class='lg:col-span-2 flex flex-col gap-4'>" +
+      panel("Proposed strategy", "<div class='flex flex-col gap-3 text-[12.5px] text-[#C7C4D7]'>" +
+        "<div><div class='font-label text-[11px] text-[#908FA0]'>Name</div><div class='text-[15px] font-semibold text-[#E4E1ED]'>" + esc(c.name) + "</div></div>" +
+        "<div><div class='font-label text-[11px] text-[#908FA0]'>Thesis</div>" + esc(c.thesis) + "</div>" +
+        "<div><div class='font-label text-[11px] text-[#908FA0]'>Entry</div>" + esc(c.entry) + "</div>" +
+        "<div><div class='font-label text-[11px] text-[#908FA0]'>Exit</div>" + esc(c.exit) + "</div>" +
+        "<div><div class='font-label text-[11px] text-[#908FA0]'>Sizing</div>" + esc(c.sizing) + "</div>" +
+        "<div><div class='font-label text-[11px] text-[#908FA0]'>Kill rule</div>" + esc(c.kill) + "</div>" +
+        "<div><div class='font-label text-[11px] text-[#908FA0]'>Paper test</div>" + esc(json.paper_test) + "</div></div>") +
+      panel("Spec (paste into the engine)", "<pre class='text-[11px] leading-relaxed text-[#C7C4D7] whitespace-pre-wrap break-words font-mono'>" + esc(JSON.stringify(json, null, 2)) + "</pre>") +
+      "</div>" +
+      "<div class='flex flex-col gap-4'>" +
+      panel("Council read", "<div class='flex flex-col gap-2 text-[12px] text-[#C7C4D7]'>" +
+        "<div class='flex items-center justify-between'><span>Risk</span><b class='mono'>" + s.seats[0].score + "</b></div>" +
+        "<div class='flex items-center justify-between'><span>Evidence</span><b class='mono'>" + s.seats[1].score + "</b></div>" +
+        "<div class='flex items-center justify-between'><span>Execution</span><b class='mono'>" + s.seats[2].score + "</b></div>" +
+        "<div class='flex items-center justify-between border-t border-[#464554]/30 pt-2'><span>Verdict</span><b class='" + s.tone + "'>" + s.verdict + "</b></div>" +
+        "<div class='text-[11.5px] text-[#908FA0] mt-1'>Scores come from fixed rules over the live book, so the same data always gives the same answer. They are not a model's opinion.</div></div>") +
+      panel("Next steps", "<ol class='text-[12px] text-[#C7C4D7] flex flex-col gap-2 list-decimal pl-4'>" +
+        "<li>Add the spec to BOTS in arena.py as <span class='mono'>" + id + "</span>.</li>" +
+        "<li>Deploy, then let it run a paper book of " + money(c.capital) + ".</li>" +
+        "<li>Judge after 20 closed trades, not after one green day.</li>" +
+        "<li>If it fails the kill rule, retire it - do not average down.</li></ol>" +
+        "<button id='copy-brief' class='mt-3 w-full px-3 py-2 rounded-lg bg-[#8083FF] text-[#1000A9] font-label text-[12.5px] font-semibold'>Copy brief for the AI council</button>" +
+        "<div id='copy-ok' class='text-[11.5px] text-[#34D399] mt-1 hidden'>Copied.</div>") +
+      "</div></div>" +
+      "<div class='flex justify-between mt-4'><button data-step='3' class='px-4 py-2 rounded-lg border border-[#464554]/60 font-label text-[13px]'>Back</button>" +
+      "<button data-reset='1' class='px-4 py-2 rounded-lg border border-[#464554]/60 font-label text-[13px]'>Start over</button></div>";
+    setTimeout(() => {
+      const btn = document.getElementById("copy-brief");
+      if(btn) btn.onclick = () => {
+        navigator.clipboard.writeText(brief).then(() => {
+          const ok = document.getElementById("copy-ok");
+          if(ok) ok.classList.remove("hidden");
+        });
+      };
+    }, 0);
+  }
+
+  w.innerHTML = "<div class='flex flex-col gap-6'>" +
+    "<div><h1 class='font-headline text-[22px] font-bold tracking-tight'>New strategy wizard</h1>" +
+    "<div class='text-[12px] text-[#C7C4D7]'>Three council seats read the whole book, then agree a spec - evidence first, no promises</div></div>" +
+    wizStepBar() + body + "</div>";
+
+  w.querySelectorAll("[data-step]").forEach(b => b.onclick = () => {
+    W.step = +b.getAttribute("data-step");
+    if(W.step <= 3){ W.candidate = null; W.seats = null; }
+    renderWizard();
+  });
+  w.querySelectorAll("[data-goal]").forEach(b => b.onclick = () => {
+    W.goal = b.getAttribute("data-goal"); W.candidate = null; W.seats = null; renderWizard();
+  });
+  w.querySelectorAll("[data-reset]").forEach(b => b.onclick = () => {
+    W.step = 1; W.approved = false; W.candidate = null; W.seats = null; renderWizard();
+  });
+  const bindRange = (id, key) => {
+    const el = document.getElementById(id);
+    if(!el) return;
+    el.oninput = () => {
+      const v = parseFloat(el.value);
+      W[key] = v;
+      const out = document.getElementById("v-" + id);
+      if(out) out.textContent = v + (key === "risk" ? "%" : "");
+      W.candidate = null; W.seats = null;
+    };
+  };
+  bindRange("wiz-risk", "risk");
+  bindRange("wiz-freq", "freq");
+  ["tf", "market", "uni"].forEach(k => {
+    const el = document.getElementById("wiz-" + k);
+    if(!el) return;
+    el.onchange = () => { W[k === "uni" ? "universe" : k] = el.value; W.candidate = null; W.seats = null; };
+  });
+  window.scrollTo({top: 0});
 }
 
 try { hero(); renderGroups(); route(); }
