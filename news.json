@@ -1,21 +1,22 @@
 {
- "ts": "2026-11-26T22:26:45.000402+05:30",
+ "ts": "2026-11-26T23:26:45.017641+05:30",
  "crypto": {
-  "score": -0.35,
-  "n_headlines": 181,
+  "score": -0.432,
+  "n_headlines": 180,
   "n_sources": 6,
   "top": [
    "Bitcoin falls toward $57K amid US tariff fears, hot PCE data as Nasdaq drops 4%",
    "Ripple Price Forecast: XRP rises as bulls buy the dip, ETF inflows return and retail demand improves - www.tmgm.com",
    "Bitcoin Falls Further as Inflation, Trump Tariffs and AI Selloff Rattle Markets",
    "Strategy and Crypto Stocks Rally as Bitcoin Rebounds Past $63,000. Is the Jump Temporary? - Barron's",
-   "Bitcoin price extends gains, briefly tops $81,000 as crypto rally gathers pace - CNBC",
    "Ether, DeFi fall twice as hard as bitcoin as equities selloff resumes",
-   "Bitcoin price may fall below $53K if bear-market history repeats",
-   "Bithumb Says October Hack Exposed Passports, Bank Accounts and Wallet Addresses"
+   "Bithumb Says October Hack Exposed Passports, Bank Accounts and Wallet Addresses",
+   "Crypto markets today: What could stop the selloff after 29% drop in market cap? - Traders Union",
+   "MemeCore price surges 12% but can the rally hold through December? - Crypto News"
   ],
   "headlines": [
    "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+   "A tiny payment can expose the IP address behind a bitcoin wallet, developer finds",
    "Bitcoin\u2019s dormant supply rises, a behavior seen during previous bear-market bottoming phases",
    "Crypto for Advisors: Four questions to ask before trusting a crypto exchange",
    "Spain gives anti-laundering unit power to freeze crypto accounts without a judge",
@@ -40,8 +41,8 @@
    "Ether, DeFi fall twice as hard as bitcoin as equities selloff resumes",
    "Italy\u2019s UniCredit launches six-year bitcoin certificate with gains capped at 65%",
    "Gold's haven status has lost its edge over bitcoin, and the Fed's to blame",
-   "EU proposes $54.7 billion fund for AI, quantum startups alongside post-quantum security push",
    "Cointelegraph.com News",
+   "Crypto on notice as hawkish Fed risks December \u2018meltdown\u2019",
    "BIS chief Pablo Hern\u00e1ndez de Cos set to become next ECB president: FT",
    "How EU brokers could lose access to Kyrgyz crypto exchanges",
    "Nasdaq exec pushes for common EU rules on tokenized securities",
@@ -71,7 +72,6 @@
    "Japan\u2019s SBI, SMFG launch Solana venture for stablecoins, tokenization",
    "Hong Kong launches tokenized debt platform with 24-hour settlement",
    "Bitcoin ETFs near $5B in record monthly outflows amid AI stock rout",
-   "Bitcoin price may fall below $53K if bear-market history repeats",
    "Spain Lets Its Financial Intelligence Unit Freeze Crypto Accounts Without a Court Order",
    "OpenAI Fixes ChatGPT Billing Error, Promises to Make it 40% Worse",
    "Elon Musk Says \u2018Multiplanetary\u2019 SpaceX Could Be Worth $118 Quintillion. Yes, Quintillion"
@@ -79,8 +79,8 @@
   "fear_greed": 11
  },
  "india": {
-  "score": 0.904,
-  "n_headlines": 219,
+  "score": 0.832,
+  "n_headlines": 220,
   "n_sources": 6,
   "top": [
    "Gold price today in India \u20b958,500 away from record high; right time to buy amid rebound from 14-month low?",
@@ -132,6 +132,7 @@
    "Hindalco Share Price Highlights: Hindalco Stock Price History",
    "Tech Mahindra Share Price Highlights: Tech Mahindra Stock Price History",
    "Eicher Motors Share Price Highlights: Eicher Motors Stock Price History",
+   "Buyback alert! Supriya Lifescience sets December 2 board meeting to consider share buyback; details here",
    "Nifty 50 to hit 29,000? J.P. Morgan calls Indian stocks a 'safe haven' from AI trades; sees 12% upside. Key reasons",
    "What will happen to gold rates? Crash or surge after the US Fed FOMC meeting outcome - Scenarios explained",
    "Turned Nvidia CEO affair saga into a money machine? From $500 to $1 million: How a trader rode Huang's roller coaster",
@@ -151,12 +152,11 @@
    "Allied Blenders shares: After 50% jump in 6 months, Elara Securities sees 25% more returns; assigns Buy rating | Target",
    "Gold rate today in Chennai, Hyderabad, Bangalore: Check 26 November MCX yellow metal prices details",
    "NMDC battles weak offtake despite strong steel demand",
-   "Gold prices crash \u20b922,000 in a month: Is this the right time to buy to make profits when prices go up? Experts' advice",
-   "Trump Tariff Threat impact on Indian stocks: Gokaldas Exports to Welspun Living - Shares that could face biggest heat"
+   "Gold prices crash \u20b922,000 in a month: Is this the right time to buy to make profits when prices go up? Experts' advice"
   ]
  },
  "us": {
-  "score": -0.077,
+  "score": -0.046,
   "n_headlines": 195,
   "n_sources": 6,
   "top": [
@@ -173,12 +173,14 @@
    "Semiconductor chips are the new oil. Here&apos;s why",
    "Even the price of toys is on the rise. How Americans are scaling back holiday plans",
    "Spain\u2019s Pablo Hern\u00e1ndez de Cos set to lead European Central Bank",
+   "Microdrama apps chase profits as Hollywood moves into short-form, vertical video",
    "SpaceX, Musk pledge to donate a share each to active Trump Accounts",
    "Global stocks rally as investors shrug off U.S. tariffs and AI jitters to &apos;fish for bargains&apos;",
    "Trump, NATO chief caution Russia as attacks on Ukraine\u2019s energy infrastructure intensify",
    "What is \u2018texture-maxxing\u2019? The food trend putting crunch on the menu",
-   "Switzerland\u2019s biggest bank set for showdown with lawmakers as capital fight intensifies amid crisis planning",
+   "Planes, trains and automobiles: The best ways to beat travel fatigue\u2014so you can come home feeling rested and fulfilled",
    "Secondhand shopping is going mainstream this holiday season as consumers seek value",
+   "Switzerland\u2019s biggest bank set for showdown with lawmakers as capital fight intensifies amid crisis planning",
    "\u2018Your booth is waiting\u2019: Denny\u2019s welcomes Jensen Huang back as Nvidia CEO",
    "Nvidia sellers seek new buyers as U.S. curbs China AI chip access, sources tell CNBC",
    "Norse Atlantic suspends all flights, warns it may file for bankruptcy after share price collapse",
@@ -186,10 +188,10 @@
    "Wealthy Europeans look beyond stocks amid AI selloff. Here\u2019s where they\u2019re investing",
    "S&amp;P warns Nvidia credit rating could be cut over &apos;rising&apos; management and governance risk",
    "Latin America has the copper and energy the AI build-out needs. Infrastructure is the test",
-   "Taking on Starlink: Europe\u2019s largest satellite factory opens in push to rival Musk",
-   "U.S. proposes new tariffs on 14 trading partners, including China and the EU",
    "Anthropic&apos;s stock has been a clunker post-IPO. Why that matters for the AI trade",
    "\u2018Ready for any storm\u2019: UAE minister optimistic on economy as IMF lifts forecast",
+   "Taking on Starlink: Europe\u2019s largest satellite factory opens in push to rival Musk",
+   "U.S. proposes new tariffs on 14 trading partners, including China and the EU",
    "Vance says he was assured Jensen Huang was not under DOJ investigation",
    "How Trump\u2019s latest tariff moves hand India an edge over rival Asian exporters",
    "Judge blocks FCC early-renewal process for Disney-owned ABC stations, for now",
@@ -198,8 +200,6 @@
    "North Korea&apos;s Kim calls for nuclear arsenal expansion, says status &apos;will never change&apos;",
    "Inside India newsletter: Roaring economy, foreign investors\u2019 return and now record auto sales",
    "Beware higher correlation but nab high U.S. credit yields, fund managers say",
-   "South Korea upgrades growth forecast, raises benchmark rates to highest in two years",
-   "Hedge funds are no longer just for the rich. They\u2019re wooing everyday investors",
    "MarketWatch.com - Top Stories",
    "I hate that Jensen Huang is back at Nvidia, but I love what it&#x2019;s done for my 401(k). Am I a hypocrite?",
    "I&#x2019;m in my 70s and buying a new BMW X1. Should I put my only son on the title?",
@@ -227,9 +227,9 @@
    "US stock market today: Nasdaq and S&amp;P 500 fall as Nvidia and AI stocks slide, Dow gains - Beinsure",
    "The Dow Jones, S&amp;P 500, and Nasdaq are all in correction territory and these 3 indicators scream \u2018buying opportunity\u2019 - The Twelfth Magpie",
    "Nasdaq plunges 3% as tech stocks face renewed pressure (SP500:) - Seeking Alpha",
-   "investingLive Americas FX news wrap 25 Nov: It\u2019s a Wrap. S&amp;P 500 and Nasdaq pare steep losses - investingLive",
    "Nasdaq, S&amp;P 500 end down, but well off lows as investors buy bargains - StreetInsider",
-   "U.S. Stocks Extend Plunge as AI Boom Turns to Bust - WSJ"
+   "U.S. Stocks Extend Plunge as AI Boom Turns to Bust - WSJ",
+   "S&amp;P Dow Jones Indices - S&amp;P Global"
   ]
  }
 }
