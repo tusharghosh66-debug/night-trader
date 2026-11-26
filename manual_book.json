@@ -1,28 +1,8 @@
 {
- "cash": 997357.0597,
+ "cash": 1000000.0,
  "start_cash": 1000000.0,
- "positions": {
-  "TCS": {
-   "qty": 1,
-   "avg": 2640.3,
-   "last": 2640.3,
-   "name": "TATA CONSULTANCY SERV LT",
-   "y": "TCS.NS",
-   "opened": "2026-11-26 12:15"
-  }
- },
- "trades": [
-  {
-   "sym": "TCS",
-   "side": "BUY",
-   "qty": 1,
-   "px": 2640.3,
-   "fee": 2.64,
-   "note": "open position",
-   "t": "2026-11-26 12:15:30",
-   "value": 2640.3
-  }
- ],
+ "positions": {},
+ "trades": [],
  "realised": 0.0,
- "started": "2026-11-26T14:17:36"
+ "started": "2026-11-26T12:19:12"
 }
