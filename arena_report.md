@@ -1,16 +1,16 @@
 # Strategy Arena — Leaderboard
-_Updated: 2026-11-26 10:27 IST_
+_Updated: 2026-11-26 10:30 IST_
 
-**Total equity: Rs 290,014.07** / Rs 290,000 start (+0.00%)
+**Total equity: Rs 290,018.93** / Rs 290,000 start (+0.01%)
 
 | Rank | Bot | Strategy | Equity | P&L | % | Trades | Win% | Open |
 |---|---|---|---|---|---|---|---|---|
-| 1 | s09 | Statistical Arbitrage Pairs | Rs 10,027.03 | +27.03 | +0.27% | 0 | 0% | 2 |
-| 2 | smart_09 | Statistical Arbitrage (Smart v2) | Rs 10,027.03 | +27.03 | +0.27% | 0 | 0% | 2 |
-| 3 | smart_03 | ETF Dual Momentum (Smart v2) | Rs 10,013.26 | +13.26 | +0.13% | 0 | 0% | 1 |
-| 4 | s03 | ETF Dual Momentum Rotation | Rs 10,011.56 | +11.56 | +0.12% | 0 | 0% | 1 |
-| 5 | x03 | Core Regime Trend (council) | Rs 10,008.51 | +8.51 | +0.09% | 0 | 0% | 2 |
-| 6 | x02 | RS Rotation Top-2 (council) | Rs 10,004.31 | +4.31 | +0.04% | 0 | 0% | 2 |
+| 1 | s09 | Statistical Arbitrage Pairs | Rs 10,023.05 | +23.05 | +0.23% | 0 | 0% | 2 |
+| 2 | smart_09 | Statistical Arbitrage (Smart v2) | Rs 10,023.05 | +23.05 | +0.23% | 0 | 0% | 2 |
+| 3 | s03 | ETF Dual Momentum Rotation | Rs 10,019.89 | +19.89 | +0.20% | 0 | 0% | 1 |
+| 4 | smart_03 | ETF Dual Momentum (Smart v2) | Rs 10,019.89 | +19.89 | +0.20% | 0 | 0% | 1 |
+| 5 | x03 | Core Regime Trend (council) | Rs 10,009.33 | +9.33 | +0.09% | 0 | 0% | 2 |
+| 6 | x02 | RS Rotation Top-2 (council) | Rs 10,004.08 | +4.08 | +0.04% | 0 | 0% | 2 |
 | 7 | s01 | St. Gallen ORB Noise-Band | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 8 | s02 | Trend-Filtered Mean Reversion | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 9 | s05 | Connors RSI(2) Pullback | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
@@ -28,11 +28,11 @@ _Updated: 2026-11-26 10:27 IST_
 | 21 | smart_10 | Overnight Edge (Smart v2) | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 22 | s13 | Afternoon Sell-the-Rip Short | Rs 9,995.22 | -4.78 | -0.05% | 1 | 0% | 0 |
 | 23 | smart_13 | Afternoon Sell-the-Rip Short (Smart v2) | Rs 9,995.22 | -4.78 | -0.05% | 1 | 0% | 0 |
-| 24 | s04 | Multi-Market Trend Following | Rs 9,993.02 | -6.98 | -0.07% | 0 | 0% | 1 |
-| 25 | smart_04 | Multi-Market Trend (Smart v2) | Rs 9,993.02 | -6.98 | -0.07% | 0 | 0% | 1 |
-| 26 | smart_11 | Spike & VWAP Short (Smart v2) | Rs 9,992.93 | -7.07 | -0.07% | 1 | 0% | 1 |
-| 27 | s11 | Spike & VWAP Rejection Short | Rs 9,992.82 | -7.18 | -0.07% | 1 | 0% | 1 |
-| 28 | s12 | OHL + CPR Breakdown Short | Rs 9,980.07 | -19.93 | -0.20% | 1 | 0% | 1 |
-| 29 | smart_12 | OHL + CPR Short (Smart v2) | Rs 9,980.07 | -19.93 | -0.20% | 1 | 0% | 1 |
+| 24 | smart_11 | Spike & VWAP Short (Smart v2) | Rs 9,993.13 | -6.87 | -0.07% | 1 | 0% | 1 |
+| 25 | s04 | Multi-Market Trend Following | Rs 9,993.03 | -6.97 | -0.07% | 0 | 0% | 1 |
+| 26 | smart_04 | Multi-Market Trend (Smart v2) | Rs 9,993.03 | -6.97 | -0.07% | 0 | 0% | 1 |
+| 27 | s11 | Spike & VWAP Rejection Short | Rs 9,993.01 | -6.99 | -0.07% | 1 | 0% | 1 |
+| 28 | s12 | OHL + CPR Breakdown Short | Rs 9,978.49 | -21.51 | -0.22% | 1 | 0% | 1 |
+| 29 | smart_12 | OHL + CPR Short (Smart v2) | Rs 9,978.49 | -21.51 | -0.22% | 1 | 0% | 1 |
 
-**Best so far: s09 — Statistical Arbitrage Pairs (+0.27%)**
+**Best so far: s09 — Statistical Arbitrage Pairs (+0.23%)**
