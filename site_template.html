@@ -35,7 +35,7 @@ html{scrollbar-color:#3b3b47 #0B1026}body{-webkit-font-smoothing:antialiased}
   <div class="flex items-center gap-2">
     <div class="hidden sm:inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1F1F27]/70 border border-[#464554]/60">
       <span class="w-2 h-2 rounded-full bg-[#34D399]"></span>
-      <span class="font-label text-[12px] tabular-nums" id="live-pill">29 Bots Live</span>
+      <span class="font-label text-[12px] tabular-nums" id="live-pill">- bots</span>
     </div>
   </div>
 </div></header>
@@ -67,7 +67,7 @@ html{scrollbar-color:#3b3b47 #0B1026}body{-webkit-font-smoothing:antialiased}
         </button>
       </label>
       <div class="hidden sm:flex items-center pl-4 border-l border-[#464554]/60">
-        <span id="visible-count" class="font-label text-[12px] text-[#C7C4D7] tabular-nums">Showing 29 of 29 bots</span>
+        <span id="visible-count" class="font-label text-[12px] text-[#C7C4D7] tabular-nums">Showing - bots</span>
       </div>
     </div>
   </section>
@@ -193,7 +193,7 @@ function groupSection(g){
     "<div class='flex flex-wrap items-baseline gap-3 border-b border-[#464554]/40 pb-2'>" +
     "<h2 class='font-headline text-[18px] font-semibold tracking-tight'>" + esc(g.name) + "</h2>" +
     "<button class='ms text-[16px] text-[#908FA0] hover:text-white' title='scroll to top' onclick='window.scrollTo({top:0})'>arrow_upward</button>" +
-    "<div class='ml-auto font-mono text-[12px] text-[#C7C4D7] tabular-nums'>" + bots.length + " bots \u00b7 " + money(eq) +
+    "<div class='ml-auto font-mono text-[12px] text-[#C7C4D7] tabular-nums'>" + bots.length + (bots.length === 1 ? " bot \u00b7 " : " bots \u00b7 ") + money(eq) +
     " \u00b7 <span class='" + cls(pnl) + "'>" + signed(pnl, money) + "</span>" +
     (paused ? " \u00b7 <span class='text-[#FBBF24]'>" + paused + " paused hidden</span>" : "") + "</div></div>" +
     "<div class='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 items-stretch'>" +
@@ -562,7 +562,7 @@ function renderAnalytics(){
     "<div class='flex flex-col gap-6'>" +
     "<div class='flex flex-wrap items-end justify-between gap-3'>" +
       "<div><h1 class='font-headline text-[22px] font-bold tracking-tight'>Portfolio analytics</h1>" +
-      "<div class='text-[12px] text-[#C7C4D7]'>All 29 books, " + money(D.pool) + " pool - paper money, fees 0.1%/side inside every P&L</div></div>" +
+      "<div class='text-[12px] text-[#C7C4D7]'>All " + botsArr().length + " books, " + money(D.pool) + " pool - paper money, fees 0.1%/side inside every P&L</div></div>" +
       "<div class='font-mono text-[12px] text-[#908FA0]'>window " + tot.length + " points</div></div>" +
     "<div class='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-3'>" + kpis + "</div>" +
     panel("Portfolio equity vs break-even", "<div class='w-full h-52'>" + seriesChart(tot, 1100, 210, {id: "tot", base: base}) + "</div>" +
@@ -759,8 +759,9 @@ function renderWizard(){
       panel("Gaps the council can see", "<ul class='text-[12.5px] text-[#C7C4D7] flex flex-col gap-2 list-disc pl-4'>" +
         "<li>" + stats.filter(s => s.tr === 0).length + " of 7 families have not closed a single trade yet.</li>" +
         "<li>" + botsArr().filter(b => !b.trades && !b.open).length + " bots are idle (no trade, no position).</li>" +
-        "<li>" + botsArr().filter(b => twinOf(b.id)).length +
-        " strategy pairs run twice (sNN and smart_NN), so the fleet is narrower than 29 ideas.</li>" +
+        "<li>" + (function(){ const n = botsArr().filter(b => twinOf(b.id)).length;
+          return n ? n + " strategy pairs still run twice, so the fleet is narrower than the bot count."
+                   : "No strategy runs twice - the 13 sNN/smart_NN clones were removed, so each idea has one book."; })() + "</li>" +
         "<li>Every book is intraday or daily - nothing holds a weekend position deliberately.</li></ul>") +
       "</div>" +
       "<div class='flex justify-between'><button data-step='1' class='px-4 py-2 rounded-lg border border-[#464554]/60 font-label text-[13px]'>Back</button>" +

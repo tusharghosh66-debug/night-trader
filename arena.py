@@ -326,6 +326,14 @@ def load_state():
         for b in BOTS:
             st["bots"].setdefault(b["id"], new_bot_state())
             st["bots"][b["id"]]["id"] = b["id"]
+        # a bot removed from BOTS must not live on in the book: its equity would
+        # keep being summed by older code paths and it would still show in the
+        # website groups. Drop the book and its history columns on every load.
+        ids = {b["id"] for b in BOTS}
+        st["bots"] = {k: v for k, v in st["bots"].items() if k in ids}
+        for row in st.get("equity_history", []):
+            for k in [k for k in row if k not in ids and k not in ("t", "total")]:
+                row.pop(k, None)
         return st
     except Exception as e:
         # never wipe silently: a half-finished git rebase leaves '<<<<<<<' markers
@@ -1389,91 +1397,6 @@ def s13(bs, ctx):
                 log(f"s13 SHORT {sym} @ {px:.2f} stop {stop:.2f} (RSI3 {r3[i]:.0f} > BB upper, bear regime)")
 
 # =====================================================================
-# INTELLIGENT v2 SUITE (smart_01 - smart_13)
-# Advanced Quant Enhancements:
-# 1. Zero-Risk Breakeven Locker (stops moved to entry at +1.0R profit)
-# 2. Dynamic Trailing Chandelier Stop (protects 70%+ of peak gains at +1.5R+)
-# 3. Independent state and separate tracking from original s01-s13
-# =====================================================================
-
-def _smart_position_manager(bs, bot_id, ctx):
-    """Monitors positions for smart bots: locks breakeven at +1R and trails at +1.5R."""
-    for sym in list(bs["positions"].keys()):
-        p = bs["positions"][sym]
-        px = ctx.live(sym) or bs["last_prices"].get(sym, p["entry"])
-        bs["last_prices"][sym] = px
-        side = p["side"]
-        entry = p["entry"]
-        stop = p["stop"]
-
-        # Track initial risk
-        if "init_risk" not in p:
-            risk = abs(entry - stop)
-            p["init_risk"] = risk if risk > (entry * 0.002) else (entry * 0.01)
-            p["extreme_px"] = entry
-            p["be_locked"] = False
-
-        init_risk = p["init_risk"]
-
-        # Track peak favorable price
-        if side > 0:
-            p["extreme_px"] = max(p.get("extreme_px", entry), px)
-            profit = px - entry
-        else:
-            p["extreme_px"] = min(p.get("extreme_px", entry), px)
-            profit = entry - px
-
-        r_mult = profit / init_risk
-
-        # 1. Breakeven Lock at +1.0R (Risk becomes zero!)
-        if r_mult >= 1.0 and not p.get("be_locked"):
-            if side > 0 and p["stop"] < entry:
-                p["stop"] = entry
-                p["be_locked"] = True
-                log(f"[{bot_id}] {sym} ZERO-RISK: Breakeven locked @ {entry:.2f} (Profit: +{r_mult:.1f}R)")
-            elif side < 0 and p["stop"] > entry:
-                p["stop"] = entry
-                p["be_locked"] = True
-                log(f"[{bot_id}] {sym} ZERO-RISK: Breakeven locked @ {entry:.2f} (Profit: +{r_mult:.1f}R)")
-
-        # 2. Dynamic Chandelier Trailing at +1.5R+
-        if r_mult >= 1.5:
-            if side > 0:
-                trail = p["extreme_px"] - (0.8 * init_risk)
-                if trail > p["stop"]:
-                    p["stop"] = trail
-            else:
-                trail = p["extreme_px"] + (0.8 * init_risk)
-                if trail < p["stop"]:
-                    p["stop"] = trail
-
-        # 3. Check Stop / Breakeven Hit
-        hit = (side > 0 and px <= p["stop"]) or (side < 0 and px >= p["stop"])
-        if hit:
-            reason = "smart-breakeven" if p.get("be_locked") and abs(p["stop"] - entry) <= (entry * 0.002) else "smart-trail-stop"
-            row = close_position(bs, sym, px, reason, ctx.now)
-            row[1] = bot_id
-            record_trade(bot_id, bs, row)
-
-
-def make_smart_bot(orig_fn, bot_id):
-    def smart_fn(bs, ctx):
-        bs["id"] = bot_id
-        # Run smart position manager on existing open positions
-        _smart_position_manager(bs, bot_id, ctx)
-        # Execute underlying strategy logic
-        orig_fn(bs, ctx)
-        # Tag any newly opened positions with tracking metadata
-        for sym, p in bs["positions"].items():
-            if "init_risk" not in p:
-                entry = p["entry"]
-                stop = p["stop"]
-                risk = abs(entry - stop)
-                p["init_risk"] = risk if risk > (entry * 0.002) else (entry * 0.01)
-                p["extreme_px"] = entry
-                p["be_locked"] = False
-    return smart_fn
-
 # ---------------- council bots (x01..x03) ----------------
 # Built from the AI-council review of the 621-trade audit. The one rule every
 # design obeys: the average winner must be many multiples of the 0.2% round
@@ -1646,20 +1569,6 @@ def x03(bs, ctx):
                 p["extreme"] = px
                 p["init_risk"] = 3 * a[i]
                 p["entry_t"] = kl[i]["t"]
-smart_01 = make_smart_bot(s01, "smart_01")
-smart_02 = make_smart_bot(s02, "smart_02")
-smart_03 = make_smart_bot(s03, "smart_03")
-smart_04 = make_smart_bot(s04, "smart_04")
-smart_05 = make_smart_bot(s05, "smart_05")
-smart_06 = make_smart_bot(s06, "smart_06")
-smart_07 = make_smart_bot(s07, "smart_07")
-smart_08 = make_smart_bot(s08, "smart_08")
-smart_09 = make_smart_bot(s09, "smart_09")
-smart_10 = make_smart_bot(s10, "smart_10")
-smart_11 = make_smart_bot(s11, "smart_11")
-smart_12 = make_smart_bot(s12, "smart_12")
-smart_13 = make_smart_bot(s13, "smart_13")
-
 # ---------------- bot registry ----------------
 BOTS = [
     {"id": "s01", "name": "St. Gallen ORB Noise-Band", "tf": "30m", "market": "US + India + Crypto", "fn": s01},
@@ -1679,20 +1588,6 @@ BOTS = [
     {"id": "x01", "name": "Vol Squeeze Breakout (council)", "tf": "daily", "market": "US + India", "fn": x01},
     {"id": "x02", "name": "RS Rotation Top-2 (council)", "tf": "weekly", "market": "US + India", "fn": x02},
     {"id": "x03", "name": "Core Regime Trend (council)", "tf": "daily", "market": "US + India", "fn": x03},
-    # --- Intelligent v2 Clones ---
-    {"id": "smart_01", "name": "St. Gallen ORB (Smart v2)", "tf": "30m", "market": "US + India + Crypto", "fn": smart_01},
-    {"id": "smart_02", "name": "Trend-Filtered Mean Rev (Smart v2)", "tf": "daily", "market": "US + India + Crypto", "fn": smart_02},
-    {"id": "smart_03", "name": "ETF Dual Momentum (Smart v2)", "tf": "monthly", "market": "US + India + Crypto", "fn": smart_03},
-    {"id": "smart_04", "name": "Multi-Market Trend (Smart v2)", "tf": "daily", "market": "US + India + Crypto", "fn": smart_04},
-    {"id": "smart_05", "name": "Connors RSI(2) (Smart v2)", "tf": "daily", "market": "US + India + Crypto", "fn": smart_05},
-    {"id": "smart_06", "name": "Prev-Day Retest (Smart v2)", "tf": "15m", "market": "US + India + Crypto", "fn": smart_06},
-    {"id": "smart_07", "name": "First-Candle ORB (Smart v2)", "tf": "15m", "market": "US + India + Crypto", "fn": smart_07},
-    {"id": "smart_08", "name": "Pre-Market Breakout (Smart v2)", "tf": "15m", "market": "US (pre-market)", "fn": smart_08},
-    {"id": "smart_09", "name": "Statistical Arbitrage (Smart v2)", "tf": "daily", "market": "US + India + Crypto", "fn": smart_09},
-    {"id": "smart_10", "name": "Overnight Edge (Smart v2)", "tf": "daily", "market": "US + India", "fn": smart_10},
-    {"id": "smart_11", "name": "Spike & VWAP Short (Smart v2)", "tf": "5m intraday", "market": "Top movers (NSE+US+Crypto)", "fn": smart_11},
-    {"id": "smart_12", "name": "OHL + CPR Short (Smart v2)", "tf": "5m intraday", "market": "Top movers (NSE+US+Crypto)", "fn": smart_12},
-    {"id": "smart_13", "name": "Afternoon Sell-the-Rip Short (Smart v2)", "tf": "5m + 1h regime", "market": "Top movers (NSE+US+Crypto)", "fn": smart_13},
 ]
 
 # Entries suspended, positions still managed/exited (same pattern as S08_PAUSED).
@@ -1703,7 +1598,10 @@ BOTS = [
 # -1115 vs s07 -997, smart_06 -403 vs s06 -393) - the trail exits cut winners at
 # breakeven and re-entered, paying 0.2% each time. s07 keeps running on its new
 # fee-aware rules (60-session replay: -879 -> +246); s08 is also gated by S08_PAUSED.
-PAUSED_BOTS = {"smart_01", "smart_06", "smart_07", "smart_08", "s01", "s06"}
+# 2026-11-26: the 13 smart_* clones were DELETED (same entry rule as sNN, only the
+# exit manager differed, and it lost money). Keeping them doubled every position
+# and halved nothing: same idea, twice the fees.
+PAUSED_BOTS = {"s01", "s06"}
 
 # ---------------- cycle ----------------
 def run_cycle(st):
@@ -1984,12 +1882,12 @@ SITE_F = os.path.join(BASE, "site.html")
 SITE_TPL = os.path.join(BASE, "site_template.html")
 SITE_FAMILIES = [
     ("council", "Council experiments", ["x01", "x02", "x03"]),
-    ("orb", "ORB and breakout", ["s01", "s07", "s08", "smart_01", "smart_07", "smart_08"]),
-    ("meanrev", "Mean reversion", ["s02", "s05", "smart_02", "smart_05"]),
-    ("trend", "Trend following", ["s04", "s06", "s13", "smart_04", "smart_06", "smart_13"]),
-    ("rotation", "Rotation and calendar", ["s03", "s10", "smart_03", "smart_10"]),
-    ("arb", "Arbitrage", ["s09", "smart_09"]),
-    ("short", "Short-side intraday", ["s11", "s12", "smart_11", "smart_12"]),
+    ("orb", "ORB and breakout", ["s01", "s07", "s08"]),
+    ("meanrev", "Mean reversion", ["s02", "s05"]),
+    ("trend", "Trend following", ["s04", "s06", "s13"]),
+    ("rotation", "Rotation and calendar", ["s03", "s10"]),
+    ("arb", "Arbitrage", ["s09"]),
+    ("short", "Short-side intraday", ["s11", "s12"]),
 ]
 COUNCIL_RULES_HTML = {
     "x01": "Enters when ATR(14)/price sits in the bottom 30% of the last 60 days (<b>quiet market</b>) and price then breaks the 20-day high. "
