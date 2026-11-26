@@ -1,8 +1,8 @@
 # Night Trader v2 — Paper Trading Report (3 markets)
-_Updated: 2026-11-26 23:46 IST_
+_Updated: 2026-11-26 23:49 IST_
 
 ## CRYPTO (OPEN) — ₹10,000.00 | P&L +0.00 (+0.00%)
-Cash ₹10,000.00 | cycles 2835 | capital ₹10,000
+Cash ₹10,000.00 | cycles 2840 | capital ₹10,000
 _No open positions — all cash._
 News sentiment: -0.43 (180 headlines, 6 sources, Fear&Greed 11)
 - Bitcoin falls toward $57K amid US tariff fears, hot PCE data as Nasdaq drops 4%
@@ -22,7 +22,7 @@ News sentiment: +0.83 (220 headlines, 6 sources)
 - BSE shares jump 48% in 2026 so far: HDFC Securities upgrades to BUY, hikes target; sees 18% returns | Revised price
 
 ## US (OPEN) — ₹10,000.00 | P&L +0.00 (+0.00%)
-Cash ₹10,000.00 | cycles 743 | capital ₹10,000
+Cash ₹10,000.00 | cycles 748 | capital ₹10,000
 _No open positions — all cash._
 News sentiment: -0.05 (195 headlines, 6 sources)
 - S&amp;P 500, Nasdaq, Dow Forecast: Wall Street Rebound Faces Major Resistance—Bull Trap or Breakout? - StoneX
