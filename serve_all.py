@@ -15,6 +15,8 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 import bot
 import arena
 import events
+import desk
+from urllib.parse import urlparse, parse_qs
 
 BASE = os.path.dirname(os.path.abspath(__file__))
 CYCLE_SEC = int(os.environ.get("CYCLE_SEC", "60"))   # Render env: 30
@@ -22,7 +24,8 @@ SYNC_EVERY = 5
 FILES = ["state.json", "trades.csv", "report.md", "dashboard.html", "news.json",
          "arena_state.json", "arena_trades.csv", "arena_report.md", "arena_dashboard.html",
          "council_dashboard.html",
-         "arena_trades_archive.csv", "trades_archive.csv", "events.json"]
+         "arena_trades_archive.csv", "trades_archive.csv", "events.json",
+         "manual_book.json", "companies.json"]
 # Who is keeping the free instance awake? UptimeRobot sends HEAD / every few
 # minutes; Render spins a free web service down after 15 min with no inbound hit.
 PINGS = {"total": 0, "head": 0, "uptimerobot": 0, "first": None, "last": [], "by_ua": {}}
@@ -97,11 +100,70 @@ class HealthHandler(BaseHTTPRequestHandler):
         self.send_header("Content-Type", content_type)
         self.end_headers()
 
+    def _json(self, obj, code=200):
+        body = json.dumps(obj, default=str).encode()
+        self.send_response(code)
+        self.send_header("Content-Type", "application/json")
+        self.send_header("Cache-Control", "no-store")
+        self.send_header("Content-Length", str(len(body)))
+        self.end_headers()
+        self.wfile.write(body)
+
+    def _desk_get(self):
+        """Practice desk API: company list, live quotes, book state."""
+        try:
+            u = urlparse(self.path)
+            if u.path == "/api/companies":
+                path = os.path.join(BASE, "companies.json")
+                with open(path, "rb") as f:
+                    body = f.read()
+                self.send_response(200)
+                self.send_header("Content-Type", "application/json")
+                self.send_header("Cache-Control", "public, max-age=3600")
+                self.send_header("Content-Length", str(len(body)))
+                self.end_headers()
+                self.wfile.write(body)
+                return
+            if u.path == "/api/quote":
+                raw = (parse_qs(u.query).get("symbols") or [""])[0]
+                syms = [x.strip().upper() for x in raw.split(",") if x.strip()][:25]
+                return self._json({"quotes": desk.quotes(syms, max_age=15.0),
+                                   "at": datetime.now(bot.IST).strftime("%H:%M:%S")})
+            if u.path == "/api/desk":
+                return self._json(desk.state())
+            return self._json({"error": "unknown endpoint"}, 404)
+        except Exception as e:
+            return self._json({"error": str(e)[:200]}, 500)
+
+    def do_POST(self):
+        try:
+            _hit(self.path, self.headers.get("User-Agent"), "POST")
+        except Exception:
+            pass
+        try:
+            n = int(self.headers.get("Content-Length") or 0)
+            raw = self.rfile.read(n) if n > 0 else b"{}"
+            data = json.loads(raw.decode("utf-8") or "{}")
+            u = urlparse(self.path)
+            if u.path == "/api/order":
+                out = desk.order(data.get("sym"), data.get("side"), data.get("qty"))
+                return self._json(out, 200 if "error" not in out else 400)
+            if u.path == "/api/reset":
+                return self._json(desk.reset())
+            return self._json({"error": "unknown endpoint"}, 404)
+        except Exception as e:
+            return self._json({"error": str(e)[:200]}, 500)
+
     def do_GET(self):
         try:
             _hit(self.path, self.headers.get("User-Agent"), "GET")
         except Exception:
             pass
+        # Practice desk (manual paper trading) - JSON only, no HTML here
+        if self.path.startswith("/api/desk") or self.path.startswith("/api/quote") \
+                or self.path.startswith("/api/companies"):
+            return self._desk_get()
+
         # Health check endpoint for uptime monitors
         if self.path in ["/health", "/api/pings"]:
             out = {"status": "ok", **STATUS}

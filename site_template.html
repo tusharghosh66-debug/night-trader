@@ -31,7 +31,7 @@ html{scrollbar-color:#3b3b47 #0B1026}body{-webkit-font-smoothing:antialiased}
     <a href="#/" data-nav="overview" class="px-2 sm:px-3 py-1.5 rounded-md font-label text-[11.5px] sm:text-[12.5px] text-[#C7C4D7] hover:text-white whitespace-nowrap">Overview</a>
     <a href="#/analytics" data-nav="analytics" class="px-2 sm:px-3 py-1.5 rounded-md font-label text-[11.5px] sm:text-[12.5px] text-[#C7C4D7] hover:text-white whitespace-nowrap">Analytics</a>
     <a href="#/wizard" data-nav="wizard" class="px-2 sm:px-3 py-1.5 rounded-md font-label text-[11.5px] sm:text-[12.5px] text-[#C7C4D7] hover:text-white whitespace-nowrap"><span class="hidden sm:inline">New strategy</span><span class="sm:hidden">Wizard</span></a>
-    <a href="#/picks" data-nav="picks" class="px-2 sm:px-3 py-1.5 rounded-md font-label text-[11.5px] sm:text-[12.5px] text-[#C7C4D7] hover:text-white whitespace-nowrap">Picks</a>
+    <a href="#/picks" data-nav="picks" class="px-2 sm:px-3 py-1.5 rounded-md font-label text-[11.5px] sm:text-[12.5px] text-[#C7C4D7] hover:text-white whitespace-nowrap">Picks</a><a href="#/desk" data-nav="desk" class="px-2 sm:px-3 py-1.5 rounded-md font-label text-[11.5px] sm:text-[12.5px] text-[#C7C4D7] hover:text-white whitespace-nowrap"><span class="hidden sm:inline">Practice</span><span class="sm:hidden">Desk</span></a>
   </nav>
   <div class="flex items-center gap-2">
     <div class="hidden sm:inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1F1F27]/70 border border-[#464554]/60">
@@ -78,6 +78,7 @@ html{scrollbar-color:#3b3b47 #0B1026}body{-webkit-font-smoothing:antialiased}
   <section id="analytics" class="hidden"></section>
   <section id="wizard" class="hidden"></section>
   <section id="picks" class="hidden"></section>
+  <section id="desk" class="hidden"></section>
   <script id="picks-data" type="application/json">{"generated":"2026-11-26 13:26 IST","summary":{"tracked":0,"resolved":0,"targets":0,"stops":0,"pending":0,"hit_rate":null,"avg_r":null,"avg_r_mtm":null,"total_r_mtm":null,"best":null,"worst":null},"picks":[{"id":"demo-hal-2026-10-14","date":"2026-10-14","sym":"HAL.NS","side":"long","entry":4869.0,"stop":4725.0,"target":5150.0,"by":"Chandan Taparia, Motilal Oswal (levels quoted by Univest)","src":"https://univest.in/blogs/top-3-stocks-to-buy-tomorrow-mphasis-hal-indian-hotels-by-market-expert-check-stop-loss-target-price-for-mon-19-oct","note":"DEMO row: a third-party call quoted in a Univest blog post, used to test the scorer. Not a Univest advisory pick.","demo":true,"status":"STOP","r":-1.0,"mfe_r":0.99,"mae_r":-1.06,"exit_date":"2026-10-23","exit_px":4725.0,"bars":7,"last":4725.0},{"id":"demo-indhotel-2026-10-19","date":"2026-10-19","sym":"INDHOTEL.NS","side":"long","entry":755.0,"stop":710.0,"target":827.0,"by":"SMC Global (levels quoted by Univest)","src":"https://univest.in/blogs/top-3-stocks-to-buy-tomorrow-mphasis-hal-indian-hotels-by-market-expert-check-stop-loss-target-price-for-mon-19-oct","note":"DEMO row: entry is the mid of the quoted 750-760 accumulate band; not a Univest advisory pick.","demo":true,"status":"TARGET","r":1.6,"mfe_r":1.68,"mae_r":-0.26,"exit_date":"2026-11-02","exit_px":827.0,"bars":10,"last":822.5}]}</script>
 </main>
 
@@ -320,7 +321,7 @@ function setNav(which){
 }
 
 function hideViews(){
-  ["#hero", "#toolbar", "#groups", "#detail", "#analytics", "#wizard", "#picks"].forEach(s => {
+  ["#hero", "#toolbar", "#groups", "#detail", "#analytics", "#wizard", "#picks", "#desk"].forEach(s => {
     const el = $(s);
     if(el) el.classList.add("hidden");
   });
@@ -345,6 +346,10 @@ function route(){
     hideViews();
     renderPicks();
     setNav("picks");
+  } else if(h.indexOf("#/desk") === 0){
+    hideViews();
+    renderDesk();
+    setNav("desk");
   } else {
     hideViews();
     $("#detail").innerHTML = "";
@@ -995,6 +1000,313 @@ function renderPicks(){
   h += "</div>";
   $("#picks").innerHTML = h;
   $("#picks").classList.remove("hidden");
+  window.scrollTo({top: 0, behavior: "instant"});
+}
+
+// ---------------- practice desk: manual paper trading on live prices ----------------
+var DESK = { co: null, book: null, sel: null, busy: false, q: "", timer: null, msg: "" };
+function deskApi(path, body){
+  var opt = body ? {method:"POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify(body)} : {};
+  return fetch(path, opt).then(function(r){ return r.json(); });
+}
+function deskCompanies(){
+  if(DESK.co) return Promise.resolve(DESK.co);
+  return deskApi("/api/companies").then(function(rows){ DESK.co = rows; return rows; })
+    .catch(function(){ DESK.co = []; return []; });
+}
+function deskNum(v){ if(v===null||v===undefined||isNaN(v)) return "-"; return (v<0?"-":"") + money(Math.abs(v)); }
+function deskPct(v){
+  if(v===null||v===undefined) return "";
+  var c = v>0 ? "text-[#34D399]" : (v<0 ? "text-[#FB7185]" : "text-[#C7C4D7]");
+  return "<span class='"+c+" tabular-nums'>"+(v>0?"+":"")+v.toFixed(2)+"%</span>";
+}
+function deskMatches(q){
+  var all = DESK.co || [], out = [];
+  q = (q||"").trim().toUpperCase();
+  if(!q){
+    var seen = {};
+    for(var i=0;i<all.length && out.length<40;i++){
+      var c = all[i];
+      if(c.m==="US" && !seen[c.s]){ seen[c.s]=1; out.push(c); }
+    }
+    return out;
+  }
+  for(var j=0;j<all.length;j++){
+    var a = all[j];
+    if(a.s.indexOf(q)===0){ out.push(a); }
+  }
+  if(out.length<25){
+    for(var k=0;k<all.length;k++){
+      var b = all[k];
+      if(b.n.toUpperCase().indexOf(q)>=0 && out.indexOf(b)<0){ out.push(b); }
+      if(out.length>=40) break;
+    }
+  }
+  return out.slice(0,40);
+}
+function deskQuote(sym){
+  return deskApi("/api/quote?symbols="+encodeURIComponent(sym)).then(function(r){
+    return (r.quotes||{})[sym] || {};
+  });
+}
+function deskRenderResults(){
+  var box = $("#desk-results");
+  if(!box) return;
+  var rows = deskMatches(DESK.q), h = "";
+  if(!rows.length){
+    box.innerHTML = "<div class='px-3 py-6 text-center text-[12px] text-[#908FA0]'>"+(DESK.co&&DESK.co.length?"No company matches \""+esc(DESK.q)+"\"":"Loading the company list...")+"</div>";
+    return;
+  }
+  rows.forEach(function(c){
+    var on = DESK.sel && DESK.sel.s === c.s;
+    h += "<button data-sym='"+esc(c.s)+"' class='w-full text-left px-3 py-2 border-b border-[#464554]/25 last:border-0 hover:bg-[#2A2A38]/70 flex items-center justify-between gap-2 "+(on?"bg-[#2A2A38]":"")+"'>" +
+         "<span class='min-w-0'><span class='mono text-[12.5px] text-[#E6E1F5]'>"+esc(c.s)+"</span>" +
+         "<span class='block text-[10.5px] text-[#908FA0] truncate'>"+esc(c.n)+"</span></span>" +
+         "<span class='text-[10px] font-label text-[#908FA0] shrink-0'>"+esc(c.m)+"</span></button>";
+  });
+  box.innerHTML = h;
+  Array.prototype.forEach.call(box.querySelectorAll("button"), function(b){
+    b.onclick = function(){ deskSelect(this.getAttribute("data-sym")); };
+  });
+}
+function deskTicket(){
+  var s = DESK.sel;
+  var q = s ? (s.q || {}) : {};
+  var px = q.px || 0, prev = q.prev || px;
+  var chg = prev ? (px - prev) : 0;
+  var chgPct = prev ? (100 * chg / prev) : 0;
+  var cash = (DESK.book || {}).cash || 0;
+  var maxQ = px > 0 ? Math.floor(cash / (px * 1.001)) : 0;
+  var h = "";
+  h += "<div class='font-label text-[12px] text-[#908FA0] mb-2'>Pick any listed company - 2,439 NSE names plus US majors</div>";
+  h += "<input id='desk-q' value='"+esc(DESK.q)+"' placeholder='Search symbol or company name...' autocomplete='off'" +
+       " class='w-full bg-[#0B1026] border border-[#464554]/60 rounded-lg px-3 py-2 text-[13px] text-[#E6E1F5] placeholder-[#6E6C7E] focus:outline-none focus:border-[#C0C1FF]/70'>";
+  h += "<div id='desk-results' class='mt-2 max-h-[286px] overflow-y-auto rounded-lg bg-[#16161F] border border-[#464554]/40'></div>";
+  if(s){
+    h += "<div class='mt-4 rounded-xl bg-[#16161F] border border-[#464554]/40 p-3'>" +
+         "<div class='flex items-start justify-between gap-2'><div class='min-w-0'>" +
+         "<div class='mono text-[15px] text-[#E6E1F5]'>"+esc(s.s)+"</div>" +
+         "<div class='text-[11px] text-[#908FA0] truncate'>"+esc(q.name||"")+"</div></div>" +
+         "<div class='text-right shrink-0'><div class='mono text-[16px] tabular-nums'>"+(px?px.toFixed(2):"-")+"</div>" +
+         "<div class='text-[10.5px]'>"+deskPct(chgPct)+" <span class='text-[#908FA0]'>vs prev close</span></div></div></div>";
+    if(q.cur === "USD"){
+      h += "<div class='mt-1 text-[10.5px] text-[#908FA0]'>USD stock, converted at live rate "+(q.usdinr?q.usdinr.toFixed(2):"-")+"</div>";
+    }
+    h += "<div class='mt-3 flex items-center gap-2'>" +
+         "<span class='text-[11px] text-[#908FA0]'>Qty</span>" +
+         "<input id='desk-qty' type='number' min='1' step='1' value='"+((DESK.qty)||10)+"'" +
+         " class='w-24 bg-[#0B1026] border border-[#464554]/60 rounded-lg px-2 py-1.5 mono text-[13px] text-right focus:outline-none focus:border-[#C0C1FF]/70'>" +
+         "<button data-qty='10' class='desk-quick text-[11px] font-label px-2 py-1 rounded bg-[#2A2A38] hover:bg-[#353546]'>10</button>" +
+         "<button data-qty='50' class='desk-quick text-[11px] font-label px-2 py-1 rounded bg-[#2A2A38] hover:bg-[#353546]'>50</button>" +
+         "<button data-qty='max' class='desk-quick text-[11px] font-label px-2 py-1 rounded bg-[#2A2A38] hover:bg-[#353546]'>Max</button></div>";
+    h += "<div id='desk-cost' class='mt-2 text-[11.5px] text-[#C7C4D7]'></div>";
+    h += "<div class='mt-3 grid grid-cols-2 gap-2'>" +
+         "<button id='desk-buy' class='rounded-lg py-2 font-label text-[12.5px] font-semibold bg-[#34D399] text-[#06231A] hover:brightness-110'>Buy</button>" +
+         "<button id='desk-sell' class='rounded-lg py-2 font-label text-[12.5px] font-semibold bg-[#FB7185] text-[#2A0A10] hover:brightness-110'>Sell</button></div>";
+    h += "<div class='mt-2 text-[10.5px] text-[#908FA0]'>Fee 0.1% per side, added to the fill. Max " + maxQ + " shares with your cash.</div>";
+    h += "</div>";
+  }
+  if(DESK.msg){ h += "<div class='mt-3 text-[12px] "+(DESK.msg.indexOf("error")===0?"text-[#FB7185]":"text-[#34D399]")+"'>"+esc(DESK.msg.replace(/^error: /,""))+"</div>"; }
+  $("#desk-ticket").innerHTML = h;
+  deskRenderResults();
+  var qi = $("#desk-q");
+  if(qi){
+    qi.oninput = function(){ DESK.q = this.value; deskRenderResults(); };
+  }
+  var qn = $("#desk-qty");
+  if(qn){
+    qn.oninput = function(){ DESK.qty = parseInt(this.value||"0",10)||0; deskCostLine(); };
+  }
+  Array.prototype.forEach.call(document.querySelectorAll(".desk-quick"), function(b){
+    b.onclick = function(){
+      var v = this.getAttribute("data-qty");
+      var px = DESK.sel && DESK.sel.q ? DESK.sel.q.px : 0;
+      var cash = (DESK.book||{}).cash || 0;
+      DESK.qty = v === "max" ? Math.floor(cash / (px * 1.001)) : parseInt(v,10);
+      if(qn) qn.value = DESK.qty;
+      deskCostLine();
+    };
+  });
+  var bb = $("#desk-buy"), bs = $("#desk-sell");
+  if(bb) bb.onclick = function(){ deskOrder("BUY"); };
+  if(bs) bs.onclick = function(){ deskOrder("SELL"); };
+  deskCostLine();
+}
+function deskCostLine(){
+  var el = $("#desk-cost");
+  if(!el) return;
+  var px = DESK.sel && DESK.sel.q ? DESK.sel.q.px : 0;
+  var q = DESK.qty || 0;
+  if(!px || !q){ el.innerHTML = "<span class='text-[#908FA0]'>Enter a quantity to see the cost.</span>"; return; }
+  var gross = px * q, fee = gross * 0.001;
+  el.innerHTML = "Value " + deskNum(gross) + " + fee " + deskNum(fee) + " = <span class='text-[#E6E1F5]'>" + deskNum(gross + fee) + "</span>";
+}
+function deskBook(){
+  var b = DESK.book || {};
+  var h = "";
+  h += "<div class='grid grid-cols-2 lg:grid-cols-5 gap-3 mb-5'>" +
+       kpiBox("Equity", deskNum(b.equity||0), "started with "+deskNum(b.start_cash||0)) +
+       kpiBox("Cash free", deskNum(b.cash||0), "ready to deploy") +
+       kpiBox("Invested", deskNum(b.invested||0), (b.positions||[]).length+" open position(s)") +
+       kpiBox("Total P&amp;L", deskNum(b.pnl||0), ((b.pnl_pct||0)>0?"+":"")+(b.pnl_pct||0).toFixed(2)+"% vs start") +
+       kpiBox("Realised", deskNum(b.realised||0), "closed trades only") +
+       "</div>";
+  h += "<div class='grid lg:grid-cols-5 gap-4'>";
+  h += "<div class='lg:col-span-2 rounded-2xl bg-[#1F1F27]/55 border border-[#464554]/40 p-4'>";
+  h += "<div class='font-label text-[13px] mb-1'>Place a practice order</div><div id='desk-ticket'></div></div>";
+  h += "<div class='lg:col-span-3 space-y-4'>";
+  h += "<div class='rounded-2xl bg-[#1F1F27]/55 border border-[#464554]/40 overflow-hidden'>" +
+       "<div class='px-4 pt-4 pb-2 flex items-center justify-between'><div class='font-label text-[13px]'>Open positions</div>" +
+       "<div class='text-[11px] text-[#908FA0]'>live marks, fees already paid</div></div>";
+  var pos = b.positions || [];
+  if(!pos.length){
+    h += "<div class='px-4 pb-5 text-[12px] text-[#908FA0]'>No positions yet. Find a company above, set a quantity, press Buy.</div>";
+  } else {
+    h += "<div class='overflow-x-auto'><table class='w-full text-[12px] min-w-[560px]'><thead><tr class='border-y border-[#464554]/30'>" +
+         "<th class='text-left font-label text-[10.5px] uppercase tracking-wider text-[#908FA0] py-2 pl-4'>Stock</th>" +
+         "<th class='text-right font-label text-[10.5px] uppercase tracking-wider text-[#908FA0] py-2'>Qty</th>" +
+         "<th class='text-right font-label text-[10.5px] uppercase tracking-wider text-[#908FA0] py-2'>Avg</th>" +
+         "<th class='text-right font-label text-[10.5px] uppercase tracking-wider text-[#908FA0] py-2'>Now</th>" +
+         "<th class='text-right font-label text-[10.5px] uppercase tracking-wider text-[#908FA0] py-2'>P&amp;L</th>" +
+         "<th class='py-2 pr-4'></th></tr></thead><tbody>";
+    pos.forEach(function(p){
+      h += "<tr class='border-b border-[#464554]/20 last:border-0'>" +
+           "<td class='py-2 pl-4'><div class='mono text-[12.5px]'>"+esc(p.sym)+"</div>" +
+           "<div class='text-[10px] text-[#908FA0] truncate max-w-[150px]'>"+esc(p.name||"")+"</div></td>" +
+           "<td class='py-2 text-right mono tabular-nums'>"+p.qty+"</td>" +
+           "<td class='py-2 text-right mono tabular-nums'>"+p.avg.toFixed(2)+"</td>" +
+           "<td class='py-2 text-right mono tabular-nums'>"+p.px.toFixed(2)+"</td>" +
+           "<td class='py-2 text-right'><div class='mono tabular-nums "+(p.pnl>=0?"text-[#34D399]":"text-[#FB7185]")+"'>"+(p.pnl>0?"+":"")+deskNum(p.pnl)+"</div>" +
+           "<div class='text-[10px]'>"+deskPct(p.pnl_pct)+"</div></td>" +
+           "<td class='py-2 pr-4 text-right'><button data-close='"+esc(p.sym)+"' data-qty='"+p.qty+"' class='desk-close text-[10.5px] font-label px-2 py-1 rounded bg-[#2A2A38] hover:bg-[#3A3A4C] text-[#C7C4D7]'>Close</button></td></tr>";
+    });
+    h += "</tbody></table></div>";
+  }
+  h += "</div>";
+  h += "<div class='rounded-2xl bg-[#1F1F27]/55 border border-[#464554]/40 p-4'>" +
+       "<div class='flex items-center justify-between mb-2'><div class='font-label text-[13px]'>Recent fills</div>" +
+       "<button id='desk-reset' class='text-[10.5px] font-label px-2 py-1 rounded bg-[#2A2A38] hover:bg-[#3A3A4C] text-[#908FA0]'>Reset book</button></div>";
+  var tr = b.trades || [];
+  if(!tr.length){
+    h += "<div class='text-[12px] text-[#908FA0]'>Nothing filled yet. Every practice trade lands here.</div>";
+  } else {
+    tr.forEach(function(t){
+      var buy = t.side === "BUY";
+      h += "<div class='flex items-center justify-between gap-2 py-1.5 border-b border-[#464554]/20 last:border-0 text-[11.5px]'>" +
+           "<div class='min-w-0'><span class='font-label "+(buy?"text-[#34D399]":"text-[#FB7185]")+"'>"+esc(t.side)+"</span> " +
+           "<span class='mono'>"+esc(t.sym)+"</span> <span class='text-[#908FA0]'>"+t.qty+" @ "+t.px.toFixed(2)+"</span></div>" +
+           "<div class='text-right shrink-0'><div class='mono tabular-nums'>"+deskNum(t.value)+"</div>" +
+           "<div class='text-[10px] text-[#908FA0]'>"+esc(t.t.slice(5,16))+"</div></div></div>";
+    });
+  }
+  h += "</div>";
+  h += "<div class='text-[11px] text-[#908FA0] leading-relaxed'>Prices: Yahoo, the same feed the bots use. Book is ₹10,00,000 paper, 0.1% fee per side, no slippage. This is practice, not advice - nobody can trade this money.</div>";
+  h += "</div></div>";
+  return h;
+}
+function deskRefresh(){
+  if(!(location.hash||"").indexOf("#/desk")===0) return;
+  deskApi("/api/desk").then(function(b){
+    if(b && !b.error){ DESK.book = b; var el = $("#desk-body"); if(el) el.innerHTML = deskBook(); deskWire(); }
+  }).catch(function(){});
+}
+function deskWire(){
+  var b = $("#desk-buy"); if(b) b.onclick = function(){ deskOrder("BUY"); };
+  var s = $("#desk-sell"); if(s) s.onclick = function(){ deskOrder("SELL"); };
+  var r = $("#desk-reset"); if(r) r.onclick = function(){ deskReset(); };
+  Array.prototype.forEach.call(document.querySelectorAll(".desk-close"), function(x){
+    x.onclick = function(){ deskOrder("SELL", this.getAttribute("data-close"), parseInt(this.getAttribute("data-qty"),10)); };
+  });
+  var qi = $("#desk-q");
+  if(qi){
+    qi.oninput = function(){ DESK.q = this.value; deskRenderResults(); };
+    qi.onkeydown = function(e){
+      if(e.key === "Enter"){
+        var first = document.querySelector("#desk-results button");
+        if(first) first.click();
+      }
+    };
+  }
+  Array.prototype.forEach.call(document.querySelectorAll("#desk-results button"), function(btn){
+    btn.onclick = function(){ deskSelect(this.getAttribute("data-sym")); };
+  });
+}
+function deskSelect(sym){
+  var co = (DESK.co||[]).filter(function(c){ return c.s === sym; })[0] || {s:sym, n:""};
+  DESK.msg = "";
+  DESK.qty = DESK.qty || 10;
+  DESK.sel = { s: co.s, n: co.n, q: null };
+  deskQuote(co.s).then(function(q){ DESK.sel.q = q; deskTicket(); deskWire(); });
+  deskTicket();
+}
+function deskOrder(side, sym, qty){
+  if(DESK.busy) return;
+  sym = sym || (DESK.sel && DESK.sel.s);
+  qty = qty || DESK.qty || 0;
+  if(!sym){ DESK.msg = "error: pick a company first"; return deskTicket(); }
+  if(!qty || qty < 1){ DESK.msg = "error: quantity must be at least 1"; return deskTicket(); }
+  DESK.busy = true;
+  deskApi("/api/order", {sym:sym, side:side, qty:qty}).then(function(r){
+    DESK.busy = false;
+    if(r.error){ DESK.msg = "error: " + r.error; }
+    else {
+      DESK.book = r;
+      DESK.msg = r.fill.side + " " + r.fill.qty + " " + r.fill.sym + " at " + r.fill.px.toFixed(2);
+      var body = $("#desk-body"); if(body) body.innerHTML = deskBook();
+    }
+    deskTicket(); deskWire();
+  }).catch(function(e){ DESK.busy = false; DESK.msg = "error: " + e; deskTicket(); });
+}
+function deskReset(){
+  if(!confirm("Reset the practice book to ₹10,00,000 and delete all fills?")) return;
+  deskApi("/api/reset", {}).then(function(r){
+    DESK.book = r; DESK.msg = "book reset";
+    var body = $("#desk-body"); if(body) body.innerHTML = deskBook();
+    deskTicket(); deskWire();
+  });
+}
+function deskQuoteRefresh(){
+  if(!DESK.sel) return;
+  deskQuote(DESK.sel.s).then(function(q){
+    if(DESK.sel && q && q.px){ DESK.sel.q = q; deskTicket(); }
+  }).catch(function(){});
+}
+function renderDesk(){
+  if(location.hash.indexOf("#/desk") !== 0){ if(DESK.timer){ clearInterval(DESK.timer); DESK.timer = null; } return; }
+  var host = $("#desk");
+  if(!host) return;
+  if(!host.getAttribute("data-built")){
+    host.setAttribute("data-built","1");
+    host.innerHTML = "<div class='flex flex-wrap items-end justify-between gap-3 mb-5'>" +
+      "<div><h1 class='font-display text-[26px] sm:text-[30px] leading-tight'>Practice desk</h1>" +
+      "<div class='text-[12px] text-[#C7C4D7]'>Real market prices, paper money. Every listed company, your own calls.</div></div>" +
+      "<div class='text-[11.5px] text-[#908FA0] mono' id='desk-clock'>-</div></div>" +
+      "<div id='desk-body'><div class='rounded-2xl bg-[#1F1F27]/55 border border-[#464554]/40 p-6 text-[12.5px] text-[#908FA0]'>Connecting to the paper desk...</div></div>";
+  }
+  host.classList.remove("hidden");
+  deskCompanies().then(function(){
+    var qi = $("#desk-q");
+    if(!DESK.book){
+      deskApi("/api/desk").then(function(b){
+        if(b && !b.error){
+          DESK.book = b;
+          $("#desk-body").innerHTML = deskBook();
+          deskTicket(); deskWire();
+          var cl = $("#desk-clock"); if(cl && b.now) cl.textContent = "updated " + b.now.slice(11,19);
+        } else {
+          $("#desk-body").innerHTML = "<div class='rounded-2xl bg-[#1F1F27]/55 border border-[#FB7185]/40 p-5 text-[12.5px] text-[#C7C4D7]'>The desk API is not reachable from here. Open the live site (Render URL) to trade - local previews have no server.</div>";
+        }
+      }).catch(function(){
+        $("#desk-body").innerHTML = "<div class='rounded-2xl bg-[#1F1F27]/55 border border-[#FB7185]/40 p-5 text-[12.5px] text-[#C7C4D7]'>The desk API is not reachable from here. Open the live site (Render URL) to trade - local previews have no server.</div>";
+      });
+    } else {
+      $("#desk-body").innerHTML = deskBook();
+      deskTicket(); deskWire();
+    }
+    if(!DESK.timer){
+      DESK.timer = setInterval(function(){ deskQuoteRefresh(); }, 30000);
+    }
+  });
   window.scrollTo({top: 0, behavior: "instant"});
 }
 
