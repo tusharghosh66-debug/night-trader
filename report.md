@@ -1,32 +1,32 @@
 # Night Trader v2 — Paper Trading Report (3 markets)
-_Updated: 2026-11-26 09:25 IST_
+_Updated: 2026-11-26 09:27 IST_
 
 ## CRYPTO (OPEN) — ₹10,000.00 | P&L +0.00 (+0.00%)
-Cash ₹10,000.00 | cycles 1120 | capital ₹10,000
+Cash ₹10,000.00 | cycles 1125 | capital ₹10,000
 _No open positions — all cash._
-News sentiment: -0.57 (179 headlines, 6 sources, Fear&Greed 11)
+News sentiment: -0.50 (180 headlines, 6 sources, Fear&Greed 11)
 - Bitcoin falls toward $57K amid US tariff fears, hot PCE data as Nasdaq drops 4%
-- Bitcoin falls toward $57K amid US tariff fears, hot PCE data as Nasdaq drops 4% - TradingView
 - Bitcoin Falls Further as Inflation, Trump Tariffs and AI Selloff Rattle Markets
+- Strategy and Crypto Stocks Rally as Bitcoin Rebounds Past $63,000. Is the Jump Temporary? - Barron's
 
-## INDIA (OPEN) — ₹9,959.08 | P&L -40.92 (-0.41%)
-Cash ₹3,996.91 | cycles 21 | capital ₹10,000
+## INDIA (OPEN) — ₹9,984.43 | P&L -15.57 (-0.16%)
+Cash ₹3,996.91 | cycles 26 | capital ₹10,000
 | Symbol | Side | Qty | Entry | Last | Unrealized |
 |---|---|---|---|---|---|
-| INFY.NS | LONG | 2.5764 | 1164.40 | 1156.50 | -20.35 |
-| TCS.NS | LONG | 1.1655 | 2571.50 | 2559.00 | -14.57 |
-News sentiment: +0.99 (219 headlines, 6 sources)
+| INFY.NS | LONG | 2.5764 | 1164.40 | 1161.00 | -8.76 |
+| TCS.NS | LONG | 1.1655 | 2571.50 | 2570.80 | -0.82 |
+News sentiment: +1.00 (217 headlines, 6 sources)
 - Nasdaq 100 plunges nearly 5%, briefly enters bear-market zone as AI fears and fresh tariffs hit sentiment
-- Sensex Jumps 1,502 Points; Nifty Surges 470 on FII Buying - HDFC Sky
 - Sensex jumps 1,502 points, Nifty surges to 25,819 on foreign fund inflows, lower crude oil - The Hindu
+- Sensex Jumps 1,502 Points; Nifty Surges 470 on FII Buying - HDFC Sky
 
 ## US (CLOSED) — ₹10,000.00 | P&L +0.00 (+0.00%)
 Cash ₹10,000.00 | cycles 289 | capital ₹10,000
 _No open positions — all cash._
-News sentiment: +0.03 (194 headlines, 6 sources)
+News sentiment: +0.06 (195 headlines, 6 sources)
 - S&amp;P 500, Nasdaq, Dow Forecast: Wall Street Rebound Faces Major Resistance—Bull Trap or Breakout? - StoneX
-- Nasdaq-100 futures surge 7%, S&amp;P 500 gain 4.3%, Dow up 2.6% in Wall Street rebound - Beinsure
 - UK stocks fall as banks, miners track Wall Street selloff - Reuters
+- South Korea&apos;s Kospi leads gains as tech rebound lifts Asia markets
 
 Strategy: LONG only while the market is above its 200-hour EMA, SHORT (breakdown) only while it is below —
 so a falling market is traded instead of leaving two thirds of the capital idle.
