@@ -1,13 +1,13 @@
 # Night Trader v2 — Paper Trading Report (3 markets)
-_Updated: 2026-11-26 17:24 IST_
+_Updated: 2026-11-26 17:27 IST_
 
 ## CRYPTO (OPEN) — ₹10,000.00 | P&L +0.00 (+0.00%)
-Cash ₹10,000.00 | cycles 2075 | capital ₹10,000
+Cash ₹10,000.00 | cycles 2080 | capital ₹10,000
 _No open positions — all cash._
-News sentiment: -0.56 (182 headlines, 6 sources, Fear&Greed 11)
+News sentiment: -0.51 (183 headlines, 6 sources, Fear&Greed 11)
 - Bitcoin falls toward $57K amid US tariff fears, hot PCE data as Nasdaq drops 4%
 - Bitcoin Falls Further as Inflation, Trump Tariffs and AI Selloff Rattle Markets
-- BTC price falls to $76,400 Binance hack triggers $1.57 billion in liquidations: Crypto Markets Today - CoinDesk
+- Strategy and Crypto Stocks Rally as Bitcoin Rebounds Past $63,000. Is the Jump Temporary? - Barron's
 
 ## INDIA (CLOSED) — ₹10,115.65 | P&L +115.65 (+1.16%)
 Cash ₹1,002.91 | cycles 746 | capital ₹10,000
@@ -24,7 +24,7 @@ News sentiment: +1.00 (223 headlines, 6 sources)
 ## US (CLOSED) — ₹10,000.00 | P&L +0.00 (+0.00%)
 Cash ₹10,000.00 | cycles 289 | capital ₹10,000
 _No open positions — all cash._
-News sentiment: -0.03 (196 headlines, 6 sources)
+News sentiment: -0.12 (195 headlines, 6 sources)
 - S&amp;P 500, Nasdaq, Dow Forecast: Wall Street Rebound Faces Major Resistance—Bull Trap or Breakout? - StoneX
 - UK stocks fall as banks, miners track Wall Street selloff - Reuters
 - Norse Atlantic suspends all flights, warns it may file for bankruptcy after share price collapse
