@@ -1,16 +1,16 @@
 # Night Trader v2 — Paper Trading Report (3 markets)
-_Updated: 2026-11-26 09:12 IST_
+_Updated: 2026-11-26 09:15 IST_
 
 ## CRYPTO (OPEN) — ₹10,000.00 | P&L +0.00 (+0.00%)
-Cash ₹10,000.00 | cycles 1095 | capital ₹10,000
+Cash ₹10,000.00 | cycles 1100 | capital ₹10,000
 _No open positions — all cash._
 News sentiment: -0.57 (179 headlines, 6 sources, Fear&Greed 11)
 - Bitcoin falls toward $57K amid US tariff fears, hot PCE data as Nasdaq drops 4%
 - Bitcoin falls toward $57K amid US tariff fears, hot PCE data as Nasdaq drops 4% - TradingView
 - Bitcoin Falls Further as Inflation, Trump Tariffs and AI Selloff Rattle Markets
 
-## INDIA (CLOSED) — ₹10,000.00 | P&L +0.00 (+0.00%)
-Cash ₹10,000.00 | cycles 0 | capital ₹10,000
+## INDIA (OPEN) — ₹10,000.00 | P&L +0.00 (+0.00%)
+Cash ₹10,000.00 | cycles 1 | capital ₹10,000
 _No open positions — all cash._
 News sentiment: +0.99 (219 headlines, 6 sources)
 - Nasdaq 100 plunges nearly 5%, briefly enters bear-market zone as AI fears and fresh tariffs hit sentiment
