@@ -1,21 +1,21 @@
 # Night Trader v2 — Paper Trading Report (3 markets)
-_Updated: 2026-11-26 12:32 IST_
+_Updated: 2026-11-26 12:35 IST_
 
 ## CRYPTO (OPEN) — ₹10,000.00 | P&L +0.00 (+0.00%)
-Cash ₹10,000.00 | cycles 1495 | capital ₹10,000
+Cash ₹10,000.00 | cycles 1500 | capital ₹10,000
 _No open positions — all cash._
 News sentiment: -0.47 (181 headlines, 6 sources, Fear&Greed 11)
 - Bitcoin falls toward $57K amid US tariff fears, hot PCE data as Nasdaq drops 4%
 - Bitcoin Falls Further as Inflation, Trump Tariffs and AI Selloff Rattle Markets
 - Bitcoin Falls Further as Inflation, Trump Tariffs and AI Selloff Rattle Markets - Decrypt
 
-## INDIA (OPEN) — ₹10,000.88 | P&L +0.88 (+0.01%)
-Cash ₹1,002.91 | cycles 396 | capital ₹10,000
+## INDIA (OPEN) — ₹9,988.06 | P&L -11.94 (-0.12%)
+Cash ₹1,002.91 | cycles 401 | capital ₹10,000
 | Symbol | Side | Qty | Entry | Last | Unrealized |
 |---|---|---|---|---|---|
-| INFY.NS | LONG | 2.5764 | 1164.40 | 1164.90 | +1.29 |
-| TCS.NS | LONG | 1.1655 | 2571.50 | 2557.90 | -15.85 |
-| HDFCBANK.NS | LONG | 3.4658 | 863.00 | 870.05 | +24.43 |
+| INFY.NS | LONG | 2.5764 | 1164.40 | 1163.20 | -3.09 |
+| TCS.NS | LONG | 1.1655 | 2571.50 | 2551.70 | -23.08 |
+| HDFCBANK.NS | LONG | 3.4658 | 863.00 | 869.70 | +23.22 |
 News sentiment: +0.93 (220 headlines, 6 sources)
 - Nasdaq 100 plunges nearly 5%, briefly enters bear-market zone as AI fears and fresh tariffs hit sentiment
 - Stock Market Live Updates: Sensex jumps 300 points as IT bulls push D-Street rally further; Nifty tops 25,800
