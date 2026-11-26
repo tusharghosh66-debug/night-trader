@@ -1,13 +1,13 @@
 # Night Trader v2 — Paper Trading Report (3 markets)
-_Updated: 2026-11-26 16:24 IST_
+_Updated: 2026-11-26 16:27 IST_
 
 ## CRYPTO (OPEN) — ₹10,000.00 | P&L +0.00 (+0.00%)
-Cash ₹10,000.00 | cycles 1955 | capital ₹10,000
+Cash ₹10,000.00 | cycles 1960 | capital ₹10,000
 _No open positions — all cash._
-News sentiment: -0.45 (181 headlines, 6 sources, Fear&Greed 11)
+News sentiment: -0.56 (182 headlines, 6 sources, Fear&Greed 11)
 - Bitcoin falls toward $57K amid US tariff fears, hot PCE data as Nasdaq drops 4%
 - Bitcoin Falls Further as Inflation, Trump Tariffs and AI Selloff Rattle Markets
-- Strategy and Crypto Stocks Rally as Bitcoin Rebounds Past $63,000. Is the Jump Temporary? - Barron's
+- BTC price falls to $76,400 Binance hack triggers $1.57 billion in liquidations: Crypto Markets Today - CoinDesk
 
 ## INDIA (CLOSED) — ₹10,115.65 | P&L +115.65 (+1.16%)
 Cash ₹1,002.91 | cycles 746 | capital ₹10,000
@@ -16,7 +16,7 @@ Cash ₹1,002.91 | cycles 746 | capital ₹10,000
 | INFY.NS | LONG | 2.5764 | 1164.40 | 1183.00 | +47.92 |
 | TCS.NS | LONG | 1.1655 | 2571.50 | 2640.30 | +80.19 |
 | HDFCBANK.NS | LONG | 3.4658 | 863.00 | 862.00 | -3.47 |
-News sentiment: +0.99 (220 headlines, 6 sources)
+News sentiment: +1.00 (223 headlines, 6 sources)
 - Gold price today in India ₹58,500 away from record high; right time to buy amid rebound from 14-month low?
 - Sweet surge! Why sugar stocks jumped up to 14% today? Balrampur Chini, Shree Renuka, Bajaj Hindusthan - Rally reason?
 - BSE shares jump 48% in 2026 so far: HDFC Securities upgrades to BUY, hikes target; sees 18% returns | Revised price
@@ -24,7 +24,7 @@ News sentiment: +0.99 (220 headlines, 6 sources)
 ## US (CLOSED) — ₹10,000.00 | P&L +0.00 (+0.00%)
 Cash ₹10,000.00 | cycles 289 | capital ₹10,000
 _No open positions — all cash._
-News sentiment: -0.08 (194 headlines, 6 sources)
+News sentiment: -0.03 (196 headlines, 6 sources)
 - S&amp;P 500, Nasdaq, Dow Forecast: Wall Street Rebound Faces Major Resistance—Bull Trap or Breakout? - StoneX
 - UK stocks fall as banks, miners track Wall Street selloff - Reuters
 - Norse Atlantic suspends all flights, warns it may file for bankruptcy after share price collapse
