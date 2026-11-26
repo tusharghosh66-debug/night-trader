@@ -1,8 +1,8 @@
 {
- "ts": "2026-11-27T01:26:45.044258+05:30",
+ "ts": "2026-11-27T02:26:45.062683+05:30",
  "crypto": {
-  "score": -0.362,
-  "n_headlines": 180,
+  "score": -0.35,
+  "n_headlines": 181,
   "n_sources": 6,
   "top": [
    "Bitcoin falls toward $57K amid US tariff fears, hot PCE data as Nasdaq drops 4%",
@@ -12,7 +12,7 @@
    "Ether, DeFi fall twice as hard as bitcoin as equities selloff resumes",
    "Bitcoin Holds Above $60K as Death Cross Clouds Thanksgiving Recovery",
    "Bithumb Says October Hack Exposed Passports, Bank Accounts and Wallet Addresses",
-   "Crypto markets today: What could stop the selloff after 29% drop in market cap? - Traders Union"
+   "Bitcoin Holds Above $60K as Death Cross Clouds Thanksgiving Recovery - Decrypt"
   ],
   "headlines": [
    "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
@@ -42,6 +42,7 @@
    "Italy\u2019s UniCredit launches six-year bitcoin certificate with gains capped at 65%",
    "Gold's haven status has lost its edge over bitcoin, and the Fed's to blame",
    "Cointelegraph.com News",
+   "Japan weighs tighter oversight of DeFi, self-custodial wallets",
    "Spain moves to grant financial watchdog power to freeze crypto accounts",
    "Crypto on notice as hawkish Fed risks December \u2018meltdown\u2019",
    "BIS chief Pablo Hern\u00e1ndez de Cos set to become next ECB president: FT",
@@ -71,7 +72,6 @@
    "Ex-FTX COO calls out Netflix over CZ\u2019s \u2018Asian mafia\u2019 portrayal",
    "Ukraine passes bill to legalize crypto and tax profits at 23%",
    "Japan\u2019s SBI, SMFG launch Solana venture for stablecoins, tokenization",
-   "Hong Kong launches tokenized debt platform with 24-hour settlement",
    "Before the Sell-Off, AI Stocks Showed Dot-Com-Level Bubble Signals: Study",
    "Bitcoin Holds Above $60K as Death Cross Clouds Thanksgiving Recovery",
    "Spain Lets Its Financial Intelligence Unit Freeze Crypto Accounts Without a Court Order"
@@ -79,8 +79,8 @@
   "fear_greed": 11
  },
  "india": {
-  "score": 0.787,
-  "n_headlines": 221,
+  "score": 0.767,
+  "n_headlines": 219,
   "n_sources": 6,
   "top": [
    "Gold price today in India \u20b958,500 away from record high; right time to buy amid rebound from 14-month low?",
@@ -156,22 +156,23 @@
   ]
  },
  "us": {
-  "score": 0.046,
-  "n_headlines": 194,
+  "score": -0.062,
+  "n_headlines": 193,
   "n_sources": 6,
   "top": [
    "S&amp;P 500, Nasdaq, Dow Forecast: Wall Street Rebound Faces Major Resistance\u2014Bull Trap or Breakout? - StoneX",
-   "UK stocks fall as banks, miners track Wall Street selloff - Reuters",
    "Norse Atlantic suspends all flights, warns it may file for bankruptcy after share price collapse",
    "Nasdaq, S&amp;P 500 end down, but well off lows as investors buy bargains - Reuters",
    "US stocks tumble as AI rout and Trump tariffs rattle markets - ABC News &amp; Headlines \u2013 Australian Broadcasting Corporation",
-   "Wall Street rebounds strongly after brutal rout, Dow ends higher &amp; Nasdaq recovers - Investing.com",
    "Nasdaq, S&amp;P 500 end down, but well off lows as investors buy bargains - Yahoo Finance",
+   "The S&amp;P 500 and Dow Jones Are Dangerously Close to Joining the Nasdaq in a Correction. Here\u2019s the Level That Would Put the Nasdaq in a Bear Market, and What History Says Investors Should Do During a Stock Market Crash. - The Motley Fool",
+   "Fed rate hike odds rise to almost 100%: can AI selloff force a rethink? - TradingView",
    "European stocks end higher on easing tariff fears, ECB leadership continuity - Reuters"
   ],
   "headlines": [
    "Trump demands probe into \u2018record setting error\u2019 after third-quarter GDP data gets massive revision higher",
    "Semiconductor chips are the new oil. Here&apos;s why",
+   "Buyer beware? Nvidia&apos;s volatile swings expose risks of single-stock ETFs",
    "Even the price of toys is on the rise. How Americans are scaling back holiday plans",
    "Microdrama apps chase profits as Hollywood moves into short-form, vertical video",
    "Spain\u2019s Pablo Hern\u00e1ndez de Cos set to lead European Central Bank",
@@ -186,9 +187,9 @@
    "Nvidia sellers seek new buyers as U.S. curbs China AI chip access, sources tell CNBC",
    "Norse Atlantic suspends all flights, warns it may file for bankruptcy after share price collapse",
    "U.S. tariff-hike threats pile pressure on partners to sign trade deals",
-   "Wealthy Europeans look beyond stocks amid AI selloff. Here\u2019s where they\u2019re investing",
    "Anthropic&apos;s stock has been a clunker post-IPO. Why that matters for the AI trade",
    "\u2018Ready for any storm\u2019: UAE minister optimistic on economy as IMF lifts forecast",
+   "Wealthy Europeans look beyond stocks amid AI selloff. Here\u2019s where they\u2019re investing",
    "S&amp;P warns Nvidia credit rating could be cut over &apos;rising&apos; management and governance risk",
    "Latin America has the copper and energy the AI build-out needs. Infrastructure is the test",
    "Taking on Starlink: Europe\u2019s largest satellite factory opens in push to rival Musk",
@@ -199,7 +200,6 @@
    "Robots could be doing household chores in just 1-2 years, Chinese EV firm says",
    "K-beauty stocks rally as Korean brands top Amazon bestseller lists globally ahead of Black Friday",
    "North Korea&apos;s Kim calls for nuclear arsenal expansion, says status &apos;will never change&apos;",
-   "Inside India newsletter: Roaring economy, foreign investors\u2019 return and now record auto sales",
    "MarketWatch.com - Top Stories",
    "A 66-year-old nurse is facing down retirement with just $500 saved. Who&#x2019;s to blame?",
    "I&#x2019;ve been married for 58 years. It&#x2019;s &#x2018;our&#x2019; money, not &#x2018;his&#x2019; and &#x2018;hers.&#x2019; Why do so many couples keep their finances separate?",
@@ -216,20 +216,20 @@
    "Nasdaq, S&amp;P 500 end down, but well off lows as investors buy bargains - Reuters",
    "Dow Jones Futures Rise With U.S. Markets Shut; Look For This Bullish Signal - Investor's Business Daily",
    "Stock Futures Rise as Dow\u2019s Rebound Goes Global. It Bodes Well for Black Friday Trading. - Barron's",
-   "Dow closes higher after erasing 1,100-point loss as S&amp;P 500, Nasdaq slip - Fox Business",
    "Nasdaq, S&amp;P 500 close lower, giving up some Nvidia-fueled gains - NBC News",
    "The S&amp;P 500 Entered Correction Territory. Here\u2019s What History Says Happens Next. - The Motley Fool",
+   "Dow closes higher after erasing 1,100-point loss as S&amp;P 500, Nasdaq slip - Fox Business",
    "US stocks tumble as AI rout and Trump tariffs rattle markets - ABC News &amp; Headlines \u2013 Australian Broadcasting Corporation",
    "Stock Market Today: Dow, S&amp;P 500, Nasdaq Futures Fall as Traders Bet on December Fed Hike; Trump Tells Hu - Benzinga",
    "Dow, S&amp;P 500, Nasdaq Futures Edge Higher As Tech Rebounds After Selloff: DIS, VRTX, DE, CHTR In Focus - TradingView",
-   "US Stock Market Futures Rise Ahead of Black Friday as AI Stocks Rebound Globally - Stocks Down Under",
-   "Is the stock market closed? Thanksgiving, Black Friday trading hours - Detroit Free Press",
    "US stock market today: Nasdaq and S&amp;P 500 fall as Nvidia and AI stocks slide, Dow gains - Beinsure",
-   "Wall Street rebounds strongly after brutal rout, Dow ends higher &amp; Nasdaq recovers - Investing.com",
-   "Wall Street trades mixed as it pares earlier losses - Seeking Alpha",
+   "U.S. stock futures turn higher as tech rebound holds after wild swings on Wall St - Investing.com",
+   "The Dow Jones, S&amp;P 500, and Nasdaq are all in correction territory and these 3 indicators scream \u2018buying opportunity\u2019 - The Twelfth Magpie",
+   "Nasdaq plunges 3% as tech stocks face renewed pressure (SP500:) - Seeking Alpha",
    "Dow Reclaims 50,000 as Inflation and GDP Data Land Before Thanksgiving - Morningstar",
-   "Wall Street recovers most early losses as pullback in AI stocks eases - Inquirer.com",
-   "U.S. Stocks Extend Plunge as AI Boom Turns to Bust - WSJ"
+   "Stock Market Trading Hours For Thanksgiving And Black Friday - Investor's Business Daily",
+   "U.S. Stocks Extend Plunge as AI Boom Turns to Bust - WSJ",
+   "Is the stock market closed? Thanksgiving, Black Friday trading hours - Detroit Free Press"
   ]
  }
 }
