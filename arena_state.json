@@ -8,7 +8,7 @@
    "start_equity": 10000.0,
    "positions": {},
    "closed_trades": [],
-   "cycles": 1470,
+   "cycles": 1475,
    "last_prices": {
     "NQ=F": 2402653.77,
     "NIFTYBEES.NS": 295.69
@@ -30,7 +30,7 @@
    "start_equity": 10000.0,
    "positions": {},
    "closed_trades": [],
-   "cycles": 1470,
+   "cycles": 1475,
    "last_prices": {
     "AAPL": 32884.0384,
     "MSFT": 45308.7264,
@@ -38,12 +38,12 @@
     "GOOGL": 25256.288000000004,
     "AMZN": 22604.886400000003,
     "META": 56402.6272,
-    "RELIANCE.NS": 1378.0,
-    "TCS.NS": 2560.4,
-    "HDFCBANK.NS": 869.6,
-    "INFY.NS": 1164.4,
-    "BTC-USD": 5589249.8272,
-    "ETH-USD": 155765.9136
+    "RELIANCE.NS": 1379.0,
+    "TCS.NS": 2560.0,
+    "HDFCBANK.NS": 870.15,
+    "INFY.NS": 1165.0,
+    "BTC-USD": 5588656.1056,
+    "ETH-USD": 155751.11680000002
    },
    "meta": {},
    "id": "s02"
@@ -63,14 +63,14 @@
     }
    },
    "closed_trades": [],
-   "cycles": 1470,
+   "cycles": 1475,
    "last_prices": {
     "NIFTYBEES.NS": 295.69,
     "SPY": 66280.41600000001,
     "GLD": 30282.576,
     "TLT": 7605.5552,
     "DBC": 2706.8896,
-    "BTC-USD": 5589249.8272
+    "BTC-USD": 5588656.1056
    },
    "meta": {
     "rebal_month": "2026-11"
@@ -93,7 +93,7 @@
     }
    },
    "closed_trades": [],
-   "cycles": 1470,
+   "cycles": 1475,
    "last_prices": {
     "SPY": 66280.41600000001,
     "QQQ": 58625.846399999995,
@@ -102,10 +102,10 @@
     "TLT": 7605.5552,
     "DBC": 2706.8896,
     "UUP": 2737.4080000000004,
-    "BTC-USD": 5589249.8272,
-    "ETH-USD": 155765.9136,
-    "RELIANCE.NS": 1378.0,
-    "TCS.NS": 2560.4,
+    "BTC-USD": 5588656.1056,
+    "ETH-USD": 155751.11680000002,
+    "RELIANCE.NS": 1379.0,
+    "TCS.NS": 2560.0,
     "NIFTYBEES.NS": 295.69
    },
    "meta": {},
@@ -121,12 +121,12 @@
    "start_equity": 10000.0,
    "positions": {},
    "closed_trades": [],
-   "cycles": 1470,
+   "cycles": 1475,
    "last_prices": {
     "SPY": 66280.41600000001,
     "QQQ": 58625.846399999995,
     "NIFTYBEES.NS": 295.69,
-    "BTC-USD": 5589249.8272
+    "BTC-USD": 5588656.1056
    },
    "meta": {},
    "id": "s05"
@@ -136,15 +136,15 @@
    "start_equity": 10000.0,
    "positions": {},
    "closed_trades": [],
-   "cycles": 1470,
+   "cycles": 1475,
    "last_prices": {
     "QQQ": 58506.2124,
     "AAPL": 32820.1758,
     "MSFT": 45209.9328,
     "NVDA": 13782.278999999999,
-    "BTC-USD": 5589249.8272,
-    "RELIANCE.NS": 1378.0,
-    "TCS.NS": 2560.4
+    "BTC-USD": 5588656.1056,
+    "RELIANCE.NS": 1379.0,
+    "TCS.NS": 2560.0
    },
    "meta": {
     "s06_session": {
@@ -159,12 +159,12 @@
    "start_equity": 10000.0,
    "positions": {},
    "closed_trades": [],
-   "cycles": 1470,
+   "cycles": 1475,
    "last_prices": {
     "SPY": 66155.58473999999,
     "NVDA": 13782.278999999999,
     "NIFTYBEES.NS": 295.69,
-    "RELIANCE.NS": 1378.0
+    "RELIANCE.NS": 1379.0
    },
    "meta": {
     "orb_session": {
@@ -179,7 +179,7 @@
    "start_equity": 10000.0,
    "positions": {},
    "closed_trades": [],
-   "cycles": 1470,
+   "cycles": 1475,
    "last_prices": {
     "AAPL": 32820.1758,
     "MSFT": 45209.9328,
@@ -200,7 +200,7 @@
      "stop": -0.38357838989280835,
      "opened": "2026-11-26T00:00:10.143596+05:30",
      "reason": "z<-2-long-spread",
-     "bars": 1460,
+     "bars": 1465,
      "legs": [
       "XOM",
       "CVX",
@@ -215,7 +215,7 @@
      "stop": 0.9009692658377472,
      "opened": "2026-11-26T07:55:22.459441+05:30",
      "reason": "z>2-short-spread",
-     "bars": 520,
+     "bars": 525,
      "legs": [
       "TCS.NS",
       "INFY.NS",
@@ -225,7 +225,7 @@
     }
    },
    "closed_trades": [],
-   "cycles": 1470,
+   "cycles": 1475,
    "last_prices": {
     "KO": 9025.1232,
     "PEP": 13310.646400000001,
@@ -242,15 +242,15 @@
     "JPM": 29292.115200000004,
     "BAC": 4488.9792,
     "JPM/BAC": 1.8756930477651248,
-    "HDFCBANK.NS": 869.6,
-    "ICICIBANK.NS": 1626.0,
-    "HDFCBANK.NS/ICICIBANK.NS": -0.6258449543007563,
-    "TCS.NS": 2560.4,
-    "INFY.NS": 1164.4,
-    "TCS.NS/INFY.NS": 0.7879575633963802,
-    "BTC-USD": 5589249.8272,
-    "ETH-USD": 155765.9136,
-    "BTC-USD/ETH-USD": 3.5802460316289317
+    "HDFCBANK.NS": 870.15,
+    "ICICIBANK.NS": 1627.9,
+    "HDFCBANK.NS/ICICIBANK.NS": -0.6263805090342813,
+    "TCS.NS": 2560.0,
+    "INFY.NS": 1165.0,
+    "TCS.NS/INFY.NS": 0.7872861714738072,
+    "BTC-USD": 5588656.1056,
+    "ETH-USD": 155751.11680000002,
+    "BTC-USD/ETH-USD": 3.580234798691349
    },
    "meta": {},
    "id": "s09",
@@ -265,7 +265,7 @@
    "start_equity": 10000.0,
    "positions": {},
    "closed_trades": [],
-   "cycles": 1470,
+   "cycles": 1475,
    "last_prices": {
     "SPY": 66280.41600000001,
     "NIFTYBEES.NS": 295.69
@@ -289,7 +289,7 @@
      "stop": 2590.79475,
      "opened": "2026-11-26T09:43:52.715050+05:30",
      "reason": "vwap-reject-spike-short",
-     "bars": 224,
+     "bars": 229,
      "target": 2501.7104999999997
     }
    },
@@ -307,7 +307,7 @@
      9993.36
     ]
    ],
-   "cycles": 1470,
+   "cycles": 1475,
    "last_prices": {
     "MU": 55700.88,
     "NVDA": 13782.278999999999,
@@ -323,17 +323,17 @@
     "MSTR": 7380.8277,
     "SMCI": 2151.4926,
     "AXISBANK.NS": 1426.3,
-    "WIPRO.NS": 195.7,
+    "WIPRO.NS": 195.73,
     "HCLTECH.NS": 1419.0,
-    "INFY.NS": 1164.4,
-    "TCS.NS": 2560.4,
-    "TATASTEEL.NS": 162.9,
+    "INFY.NS": 1165.0,
+    "TCS.NS": 2560.0,
+    "TATASTEEL.NS": 162.84,
     "BAJAJFINSV.NS": 1895.9,
     "TECHM.NS": 1835.9,
-    "HDFCBANK.NS": 869.6,
+    "HDFCBANK.NS": 870.15,
     "NESTLEIND.NS": 1335.3,
-    "BRITANNIA.NS": 5195.9,
-    "CIPLA.NS": 1459.2,
+    "BRITANNIA.NS": 5190.0,
+    "CIPLA.NS": 1459.7,
     "ADANIENT.NS": 2699.0,
     "HINDUNILVR.NS": 2162.7
    },
@@ -377,7 +377,7 @@
      9984.05
     ]
    ],
-   "cycles": 1470,
+   "cycles": 1475,
    "last_prices": {
     "MU": 55700.88,
     "NVDA": 13782.278999999999,
@@ -393,17 +393,17 @@
     "MSTR": 7380.8277,
     "SMCI": 2151.4926,
     "AXISBANK.NS": 1426.3,
-    "WIPRO.NS": 195.7,
+    "WIPRO.NS": 195.73,
     "HCLTECH.NS": 1419.0,
-    "INFY.NS": 1164.4,
-    "TCS.NS": 2560.4,
-    "TATASTEEL.NS": 162.9,
+    "INFY.NS": 1165.0,
+    "TCS.NS": 2560.0,
+    "TATASTEEL.NS": 162.84,
     "BAJAJFINSV.NS": 1895.9,
     "TECHM.NS": 1835.9,
-    "HDFCBANK.NS": 869.6,
+    "HDFCBANK.NS": 870.15,
     "NESTLEIND.NS": 1335.3,
-    "BRITANNIA.NS": 5195.9,
-    "CIPLA.NS": 1459.2,
+    "BRITANNIA.NS": 5190.0,
+    "CIPLA.NS": 1459.7,
     "ADANIENT.NS": 2699.0,
     "HINDUNILVR.NS": 2162.7
    },
@@ -601,7 +601,7 @@
      9995.22
     ]
    ],
-   "cycles": 1470,
+   "cycles": 1475,
    "last_prices": {
     "MU": 55700.88,
     "NVDA": 13782.278999999999,
@@ -617,17 +617,17 @@
     "MSTR": 7380.8277,
     "SMCI": 2151.4926,
     "AXISBANK.NS": 1426.3,
-    "WIPRO.NS": 195.7,
+    "WIPRO.NS": 195.73,
     "HCLTECH.NS": 1419.0,
-    "INFY.NS": 1164.4,
-    "TCS.NS": 2560.4,
-    "TATASTEEL.NS": 162.9,
+    "INFY.NS": 1165.0,
+    "TCS.NS": 2560.0,
+    "TATASTEEL.NS": 162.84,
     "BAJAJFINSV.NS": 1895.9,
     "TECHM.NS": 1835.9,
-    "HDFCBANK.NS": 869.6,
+    "HDFCBANK.NS": 870.15,
     "NESTLEIND.NS": 1335.3,
-    "BRITANNIA.NS": 5195.9,
-    "CIPLA.NS": 1459.2,
+    "BRITANNIA.NS": 5190.0,
+    "CIPLA.NS": 1459.7,
     "ADANIENT.NS": 2699.0,
     "HINDUNILVR.NS": 2162.7
    },
@@ -647,7 +647,7 @@
    "start_equity": 10000.0,
    "positions": {},
    "closed_trades": [],
-   "cycles": 1470,
+   "cycles": 1475,
    "last_prices": {
     "NQ=F": 2402653.77,
     "NIFTYBEES.NS": 295.69
@@ -669,7 +669,7 @@
    "start_equity": 10000.0,
    "positions": {},
    "closed_trades": [],
-   "cycles": 1470,
+   "cycles": 1475,
    "last_prices": {
     "AAPL": 32884.0384,
     "MSFT": 45308.7264,
@@ -677,12 +677,12 @@
     "GOOGL": 25256.288000000004,
     "AMZN": 22604.886400000003,
     "META": 56402.6272,
-    "RELIANCE.NS": 1378.0,
-    "TCS.NS": 2560.4,
-    "HDFCBANK.NS": 869.6,
-    "INFY.NS": 1164.4,
-    "BTC-USD": 5589249.8272,
-    "ETH-USD": 155765.9136
+    "RELIANCE.NS": 1379.0,
+    "TCS.NS": 2560.0,
+    "HDFCBANK.NS": 870.15,
+    "INFY.NS": 1165.0,
+    "BTC-USD": 5588656.1056,
+    "ETH-USD": 155751.11680000002
    },
    "meta": {},
    "id": "smart_02"
@@ -705,14 +705,14 @@
     }
    },
    "closed_trades": [],
-   "cycles": 1470,
+   "cycles": 1475,
    "last_prices": {
     "NIFTYBEES.NS": 295.69,
     "SPY": 66280.41600000001,
     "GLD": 30282.576,
     "TLT": 7605.5552,
     "DBC": 2706.8896,
-    "BTC-USD": 5589249.8272
+    "BTC-USD": 5588656.1056
    },
    "meta": {
     "rebal_month": "2026-11"
@@ -738,7 +738,7 @@
     }
    },
    "closed_trades": [],
-   "cycles": 1470,
+   "cycles": 1475,
    "last_prices": {
     "SPY": 66280.41600000001,
     "QQQ": 58625.846399999995,
@@ -747,10 +747,10 @@
     "TLT": 7605.5552,
     "DBC": 2706.8896,
     "UUP": 2737.4080000000004,
-    "BTC-USD": 5589249.8272,
-    "ETH-USD": 155765.9136,
-    "RELIANCE.NS": 1378.0,
-    "TCS.NS": 2560.4,
+    "BTC-USD": 5588656.1056,
+    "ETH-USD": 155751.11680000002,
+    "RELIANCE.NS": 1379.0,
+    "TCS.NS": 2560.0,
     "NIFTYBEES.NS": 295.69
    },
    "meta": {},
@@ -766,12 +766,12 @@
    "start_equity": 10000.0,
    "positions": {},
    "closed_trades": [],
-   "cycles": 1470,
+   "cycles": 1475,
    "last_prices": {
     "SPY": 66280.41600000001,
     "QQQ": 58625.846399999995,
     "NIFTYBEES.NS": 295.69,
-    "BTC-USD": 5589249.8272
+    "BTC-USD": 5588656.1056
    },
    "meta": {},
    "id": "smart_05"
@@ -781,15 +781,15 @@
    "start_equity": 10000.0,
    "positions": {},
    "closed_trades": [],
-   "cycles": 1470,
+   "cycles": 1475,
    "last_prices": {
     "QQQ": 58506.2124,
     "AAPL": 32820.1758,
     "MSFT": 45209.9328,
     "NVDA": 13782.278999999999,
-    "BTC-USD": 5589249.8272,
-    "RELIANCE.NS": 1378.0,
-    "TCS.NS": 2560.4
+    "BTC-USD": 5588656.1056,
+    "RELIANCE.NS": 1379.0,
+    "TCS.NS": 2560.0
    },
    "meta": {
     "s06_session": {
@@ -804,12 +804,12 @@
    "start_equity": 10000.0,
    "positions": {},
    "closed_trades": [],
-   "cycles": 1470,
+   "cycles": 1475,
    "last_prices": {
     "SPY": 66155.58473999999,
     "NVDA": 13782.278999999999,
     "NIFTYBEES.NS": 295.69,
-    "RELIANCE.NS": 1378.0
+    "RELIANCE.NS": 1379.0
    },
    "meta": {
     "orb_session": {
@@ -824,7 +824,7 @@
    "start_equity": 10000.0,
    "positions": {},
    "closed_trades": [],
-   "cycles": 1470,
+   "cycles": 1475,
    "last_prices": {
     "AAPL": 32820.1758,
     "MSFT": 45209.9328,
@@ -845,7 +845,7 @@
      "stop": -0.38357838989280835,
      "opened": "2026-11-26T00:00:10.143596+05:30",
      "reason": "z<-2-long-spread",
-     "bars": 1460,
+     "bars": 1465,
      "legs": [
       "XOM",
       "CVX",
@@ -863,7 +863,7 @@
      "stop": 0.9009692658377472,
      "opened": "2026-11-26T07:55:22.459441+05:30",
      "reason": "z>2-short-spread",
-     "bars": 520,
+     "bars": 525,
      "legs": [
       "TCS.NS",
       "INFY.NS",
@@ -876,7 +876,7 @@
     }
    },
    "closed_trades": [],
-   "cycles": 1470,
+   "cycles": 1475,
    "last_prices": {
     "KO": 9025.1232,
     "PEP": 13310.646400000001,
@@ -893,15 +893,15 @@
     "JPM": 29292.115200000004,
     "BAC": 4488.9792,
     "JPM/BAC": 1.8756930477651248,
-    "HDFCBANK.NS": 869.6,
-    "ICICIBANK.NS": 1626.0,
-    "HDFCBANK.NS/ICICIBANK.NS": -0.6258449543007563,
-    "TCS.NS": 2560.4,
-    "INFY.NS": 1164.4,
-    "TCS.NS/INFY.NS": 0.7879575633963802,
-    "BTC-USD": 5589249.8272,
-    "ETH-USD": 155765.9136,
-    "BTC-USD/ETH-USD": 3.5802460316289317
+    "HDFCBANK.NS": 870.15,
+    "ICICIBANK.NS": 1627.9,
+    "HDFCBANK.NS/ICICIBANK.NS": -0.6263805090342813,
+    "TCS.NS": 2560.0,
+    "INFY.NS": 1165.0,
+    "TCS.NS/INFY.NS": 0.7872861714738072,
+    "BTC-USD": 5588656.1056,
+    "ETH-USD": 155751.11680000002,
+    "BTC-USD/ETH-USD": 3.580234798691349
    },
    "meta": {},
    "id": "smart_09",
@@ -916,7 +916,7 @@
    "start_equity": 10000.0,
    "positions": {},
    "closed_trades": [],
-   "cycles": 1470,
+   "cycles": 1475,
    "last_prices": {
     "SPY": 66280.41600000001,
     "NIFTYBEES.NS": 295.69
@@ -940,7 +940,7 @@
      "stop": 2590.79475,
      "opened": "2026-11-26T09:43:22.852325+05:30",
      "reason": "vwap-reject-spike-short",
-     "bars": 225,
+     "bars": 230,
      "target": 2502.6105000000002,
      "init_risk": 29.39474999999993,
      "extreme_px": 2544.5,
@@ -961,7 +961,7 @@
      9993.36
     ]
    ],
-   "cycles": 1470,
+   "cycles": 1475,
    "last_prices": {
     "MU": 55700.88,
     "NVDA": 13782.278999999999,
@@ -977,17 +977,17 @@
     "MSTR": 7380.8277,
     "SMCI": 2151.4926,
     "AXISBANK.NS": 1426.3,
-    "WIPRO.NS": 195.7,
+    "WIPRO.NS": 195.73,
     "HCLTECH.NS": 1419.0,
-    "INFY.NS": 1164.4,
-    "TCS.NS": 2560.4,
-    "TATASTEEL.NS": 162.9,
+    "INFY.NS": 1165.0,
+    "TCS.NS": 2560.0,
+    "TATASTEEL.NS": 162.84,
     "BAJAJFINSV.NS": 1895.9,
     "TECHM.NS": 1835.9,
-    "HDFCBANK.NS": 869.6,
+    "HDFCBANK.NS": 870.15,
     "NESTLEIND.NS": 1335.3,
-    "BRITANNIA.NS": 5195.9,
-    "CIPLA.NS": 1459.2,
+    "BRITANNIA.NS": 5190.0,
+    "CIPLA.NS": 1459.7,
     "ADANIENT.NS": 2699.8,
     "HINDUNILVR.NS": 2162.7
    },
@@ -1034,7 +1034,7 @@
      9984.05
     ]
    ],
-   "cycles": 1470,
+   "cycles": 1475,
    "last_prices": {
     "MU": 55700.88,
     "NVDA": 13782.278999999999,
@@ -1050,17 +1050,17 @@
     "MSTR": 7380.8277,
     "SMCI": 2151.4926,
     "AXISBANK.NS": 1426.3,
-    "WIPRO.NS": 195.7,
+    "WIPRO.NS": 195.73,
     "HCLTECH.NS": 1419.0,
-    "INFY.NS": 1164.4,
-    "TCS.NS": 2560.4,
-    "TATASTEEL.NS": 162.9,
+    "INFY.NS": 1165.0,
+    "TCS.NS": 2560.0,
+    "TATASTEEL.NS": 162.84,
     "BAJAJFINSV.NS": 1895.9,
     "TECHM.NS": 1835.9,
-    "HDFCBANK.NS": 869.6,
+    "HDFCBANK.NS": 870.15,
     "NESTLEIND.NS": 1335.8,
-    "BRITANNIA.NS": 5195.9,
-    "CIPLA.NS": 1459.2,
+    "BRITANNIA.NS": 5190.0,
+    "CIPLA.NS": 1459.7,
     "ADANIENT.NS": 2699.8,
     "HINDUNILVR.NS": 2162.7
    },
@@ -1258,7 +1258,7 @@
      9995.22
     ]
    ],
-   "cycles": 1470,
+   "cycles": 1475,
    "last_prices": {
     "MU": 55700.88,
     "NVDA": 13782.278999999999,
@@ -1274,17 +1274,17 @@
     "MSTR": 7380.8277,
     "SMCI": 2151.4926,
     "AXISBANK.NS": 1426.3,
-    "WIPRO.NS": 195.7,
+    "WIPRO.NS": 195.73,
     "HCLTECH.NS": 1419.0,
-    "INFY.NS": 1164.4,
-    "TCS.NS": 2560.4,
-    "TATASTEEL.NS": 162.9,
+    "INFY.NS": 1165.0,
+    "TCS.NS": 2560.0,
+    "TATASTEEL.NS": 162.84,
     "BAJAJFINSV.NS": 1895.9,
     "TECHM.NS": 1835.9,
-    "HDFCBANK.NS": 869.6,
+    "HDFCBANK.NS": 870.15,
     "NESTLEIND.NS": 1335.3,
-    "BRITANNIA.NS": 5195.9,
-    "CIPLA.NS": 1459.2,
+    "BRITANNIA.NS": 5190.0,
+    "CIPLA.NS": 1459.7,
     "ADANIENT.NS": 2699.8,
     "HINDUNILVR.NS": 2162.7
    },
@@ -1304,7 +1304,7 @@
    "start_equity": 10000.0,
    "positions": {},
    "closed_trades": [],
-   "cycles": 1360,
+   "cycles": 1365,
    "last_prices": {
     "AAPL": 32884.0384,
     "MSFT": 45308.7264,
@@ -1314,8 +1314,8 @@
     "META": 56402.6272,
     "AMD": 37549.6544,
     "NIFTYBEES.NS": 295.69,
-    "RELIANCE.NS": 1378.0,
-    "TCS.NS": 2560.4
+    "RELIANCE.NS": 1379.0,
+    "TCS.NS": 2560.0
    },
    "meta": {},
    "id": "x01"
@@ -1350,7 +1350,7 @@
     }
    },
    "closed_trades": [],
-   "cycles": 1360,
+   "cycles": 1365,
    "last_prices": {
     "AAPL": 32884.0384,
     "MSFT": 45308.7264,
@@ -1360,8 +1360,8 @@
     "META": 56402.6272,
     "AMD": 37549.6544,
     "NIFTYBEES.NS": 295.69,
-    "RELIANCE.NS": 1378.0,
-    "TCS.NS": 2560.4
+    "RELIANCE.NS": 1379.0,
+    "TCS.NS": 2560.0
    },
    "meta": {
     "rebal_week": "2026-48"
@@ -1403,7 +1403,7 @@
     }
    },
    "closed_trades": [],
-   "cycles": 1360,
+   "cycles": 1365,
    "last_prices": {
     "AAPL": 32884.0384,
     "GOOGL": 25256.288000000004,
@@ -1412,7 +1412,7 @@
     "NVDA": 13807.264000000001,
     "JPM": 29292.115200000004,
     "NIFTYBEES.NS": 295.69,
-    "BANKBEES.NS": 662.21
+    "BANKBEES.NS": 662.2
    },
    "meta": {},
    "id": "x03",
@@ -49601,6 +49601,171 @@
    "smart_09": 10024.15,
    "smart_10": 10000.0,
    "smart_11": 9993.75,
+   "smart_12": 9979.69,
+   "smart_13": 9995.22
+  },
+  {
+   "t": "2026-11-26T12:20:52.959413+05:30",
+   "total": 290033.86,
+   "s01": 10000.0,
+   "s02": 10000.0,
+   "s03": 10023.8,
+   "s04": 9993.38,
+   "s05": 10000.0,
+   "s06": 10000.0,
+   "s07": 10000.0,
+   "s08": 10000.0,
+   "s09": 10026.12,
+   "s10": 10000.0,
+   "s11": 9994.38,
+   "s12": 9980.07,
+   "s13": 9995.22,
+   "x01": 10000.0,
+   "x02": 10002.34,
+   "x03": 10005.77,
+   "smart_01": 10000.0,
+   "smart_02": 10000.0,
+   "smart_03": 10023.8,
+   "smart_04": 9993.38,
+   "smart_05": 10000.0,
+   "smart_06": 10000.0,
+   "smart_07": 10000.0,
+   "smart_08": 10000.0,
+   "smart_09": 10026.12,
+   "smart_10": 10000.0,
+   "smart_11": 9994.5,
+   "smart_12": 9979.77,
+   "smart_13": 9995.22
+  },
+  {
+   "t": "2026-11-26T12:21:22.848863+05:30",
+   "total": 290038.23,
+   "s01": 10000.0,
+   "s02": 10000.0,
+   "s03": 10026.01,
+   "s04": 9993.32,
+   "s05": 10000.0,
+   "s06": 10000.0,
+   "s07": 10000.0,
+   "s08": 10000.0,
+   "s09": 10026.37,
+   "s10": 10000.0,
+   "s11": 9993.95,
+   "s12": 9980.07,
+   "s13": 9995.22,
+   "x01": 10000.0,
+   "x02": 10002.62,
+   "x03": 10005.81,
+   "smart_01": 10000.0,
+   "smart_02": 10000.0,
+   "smart_03": 10026.01,
+   "smart_04": 9993.32,
+   "smart_05": 10000.0,
+   "smart_06": 10000.0,
+   "smart_07": 10000.0,
+   "smart_08": 10000.0,
+   "smart_09": 10026.37,
+   "smart_10": 10000.0,
+   "smart_11": 9994.07,
+   "smart_12": 9979.84,
+   "smart_13": 9995.22
+  },
+  {
+   "t": "2026-11-26T12:21:52.859030+05:30",
+   "total": 290033.29,
+   "s01": 10000.0,
+   "s02": 10000.0,
+   "s03": 10023.12,
+   "s04": 9993.32,
+   "s05": 10000.0,
+   "s06": 10000.0,
+   "s07": 10000.0,
+   "s08": 10000.0,
+   "s09": 10026.61,
+   "s10": 10000.0,
+   "s11": 9994.03,
+   "s12": 9980.07,
+   "s13": 9995.22,
+   "x01": 10000.0,
+   "x02": 10002.62,
+   "x03": 10005.74,
+   "smart_01": 10000.0,
+   "smart_02": 10000.0,
+   "smart_03": 10023.12,
+   "smart_04": 9993.32,
+   "smart_05": 10000.0,
+   "smart_06": 10000.0,
+   "smart_07": 10000.0,
+   "smart_08": 10000.0,
+   "smart_09": 10026.61,
+   "smart_10": 10000.0,
+   "smart_11": 9994.14,
+   "smart_12": 9980.14,
+   "smart_13": 9995.22
+  },
+  {
+   "t": "2026-11-26T12:22:22.855115+05:30",
+   "total": 290038.14,
+   "s01": 10000.0,
+   "s02": 10000.0,
+   "s03": 10026.01,
+   "s04": 9993.38,
+   "s05": 10000.0,
+   "s06": 10000.0,
+   "s07": 10000.0,
+   "s08": 10000.0,
+   "s09": 10026.37,
+   "s10": 10000.0,
+   "s11": 9993.95,
+   "s12": 9980.07,
+   "s13": 9995.22,
+   "x01": 10000.0,
+   "x02": 10002.34,
+   "x03": 10005.6,
+   "smart_01": 10000.0,
+   "smart_02": 10000.0,
+   "smart_03": 10026.01,
+   "smart_04": 9993.38,
+   "smart_05": 10000.0,
+   "smart_06": 10000.0,
+   "smart_07": 10000.0,
+   "smart_08": 10000.0,
+   "smart_09": 10026.37,
+   "smart_10": 10000.0,
+   "smart_11": 9994.07,
+   "smart_12": 9980.14,
+   "smart_13": 9995.22
+  },
+  {
+   "t": "2026-11-26T12:22:52.847737+05:30",
+   "total": 290040.56,
+   "s01": 10000.0,
+   "s02": 10000.0,
+   "s03": 10027.54,
+   "s04": 9993.32,
+   "s05": 10000.0,
+   "s06": 10000.0,
+   "s07": 10000.0,
+   "s08": 10000.0,
+   "s09": 10026.16,
+   "s10": 10000.0,
+   "s11": 9993.79,
+   "s12": 9980.07,
+   "s13": 9995.22,
+   "x01": 10000.0,
+   "x02": 10002.62,
+   "x03": 10005.97,
+   "smart_01": 10000.0,
+   "smart_02": 10000.0,
+   "smart_03": 10027.54,
+   "smart_04": 9993.32,
+   "smart_05": 10000.0,
+   "smart_06": 10000.0,
+   "smart_07": 10000.0,
+   "smart_08": 10000.0,
+   "smart_09": 10026.16,
+   "smart_10": 10000.0,
+   "smart_11": 9993.91,
    "smart_12": 9979.69,
    "smart_13": 9995.22
   }
