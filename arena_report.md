@@ -1,12 +1,12 @@
 # Strategy Arena — Leaderboard
-_Updated: 2026-11-26 15:09 IST_
+_Updated: 2026-11-26 15:12 IST_
 
-**Total equity: Rs 159,970.90** / Rs 160,000 start (-0.02%)
+**Total equity: Rs 159,975.40** / Rs 160,000 start (-0.02%)
 
 | Rank | Bot | Strategy | Equity | P&L | % | Trades | Win% | Open |
 |---|---|---|---|---|---|---|---|---|
-| 1 | s03 | ETF Dual Momentum Rotation | Rs 10,020.91 | +20.91 | +0.21% | 0 | 0% | 1 |
-| 2 | x02 | RS Rotation Top-2 (council) | Rs 10,002.19 | +2.19 | +0.02% | 0 | 0% | 2 |
+| 1 | s03 | ETF Dual Momentum Rotation | Rs 10,020.57 | +20.57 | +0.21% | 0 | 0% | 1 |
+| 2 | x02 | RS Rotation Top-2 (council) | Rs 10,002.34 | +2.34 | +0.02% | 0 | 0% | 2 |
 | 3 | s01 | St. Gallen ORB Noise-Band | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 4 | s02 | Trend-Filtered Mean Reversion | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 5 | s05 | Connors RSI(2) Pullback | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
@@ -15,11 +15,11 @@ _Updated: 2026-11-26 15:09 IST_
 | 8 | s08 | Pre-Market High/Low Break | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 9 | s10 | Overnight Edge + Turnaround Tue | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 10 | x01 | Vol Squeeze Breakout (council) | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
-| 11 | x03 | Core Regime Trend (council) | Rs 9,999.43 | -0.57 | -0.01% | 0 | 0% | 2 |
-| 12 | s13 | Afternoon Sell-the-Rip Short | Rs 9,996.26 | -3.74 | -0.04% | 1 | 0% | 1 |
-| 13 | s04 | Multi-Market Trend Following | Rs 9,993.41 | -6.59 | -0.07% | 0 | 0% | 1 |
-| 14 | s09 | Statistical Arbitrage Pairs | Rs 9,990.76 | -9.24 | -0.09% | 0 | 0% | 2 |
-| 15 | s12 | OHL + CPR Breakdown Short | Rs 9,988.40 | -11.60 | -0.12% | 1 | 0% | 1 |
+| 11 | x03 | Core Regime Trend (council) | Rs 9,999.54 | -0.46 | -0.00% | 0 | 0% | 2 |
+| 12 | s13 | Afternoon Sell-the-Rip Short | Rs 9,995.95 | -4.05 | -0.04% | 1 | 0% | 1 |
+| 13 | s09 | Statistical Arbitrage Pairs | Rs 9,995.46 | -4.54 | -0.05% | 0 | 0% | 2 |
+| 14 | s04 | Multi-Market Trend Following | Rs 9,993.38 | -6.62 | -0.07% | 0 | 0% | 1 |
+| 15 | s12 | OHL + CPR Breakdown Short | Rs 9,988.62 | -11.38 | -0.11% | 1 | 0% | 1 |
 | 16 | s11 | Spike & VWAP Rejection Short | Rs 9,979.53 | -20.47 | -0.20% | 2 | 0% | 0 |
 
 **Best so far: s03 — ETF Dual Momentum Rotation (+0.21%)**
