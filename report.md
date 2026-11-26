@@ -1,20 +1,20 @@
 # Night Trader v2 — Paper Trading Report (3 markets)
-_Updated: 2026-11-26 15:27 IST_
+_Updated: 2026-11-26 15:29 IST_
 
 ## CRYPTO (OPEN) — ₹10,000.00 | P&L +0.00 (+0.00%)
-Cash ₹10,000.00 | cycles 1840 | capital ₹10,000
+Cash ₹10,000.00 | cycles 1845 | capital ₹10,000
 _No open positions — all cash._
 News sentiment: -0.45 (181 headlines, 6 sources, Fear&Greed 11)
 - Bitcoin falls toward $57K amid US tariff fears, hot PCE data as Nasdaq drops 4%
 - Bitcoin Falls Further as Inflation, Trump Tariffs and AI Selloff Rattle Markets
 - Strategy and Crypto Stocks Rally as Bitcoin Rebounds Past $63,000. Is the Jump Temporary? - Barron's
 
-## INDIA (OPEN) — ₹10,092.02 | P&L +92.02 (+0.92%)
-Cash ₹1,002.91 | cycles 741 | capital ₹10,000
+## INDIA (OPEN) — ₹10,115.65 | P&L +115.65 (+1.16%)
+Cash ₹1,002.91 | cycles 746 | capital ₹10,000
 | Symbol | Side | Qty | Entry | Last | Unrealized |
 |---|---|---|---|---|---|
-| INFY.NS | LONG | 2.5764 | 1164.40 | 1181.20 | +43.28 |
-| TCS.NS | LONG | 1.1655 | 2571.50 | 2624.00 | +61.19 |
+| INFY.NS | LONG | 2.5764 | 1164.40 | 1183.00 | +47.92 |
+| TCS.NS | LONG | 1.1655 | 2571.50 | 2640.30 | +80.19 |
 | HDFCBANK.NS | LONG | 3.4658 | 863.00 | 862.00 | -3.47 |
 News sentiment: +0.99 (220 headlines, 6 sources)
 - Gold price today in India ₹58,500 away from record high; right time to buy amid rebound from 14-month low?
