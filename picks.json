@@ -1,0 +1,33 @@
+{
+  "_help": "Advisory pick log. One row per call. Run: python pick.py score  -> updates picks_scored.json and the Picks tab in site_template.html. Add with: python pick.py add --sym HAL.NS --entry 4869 --stop 4725 --target 5150 --date 2026-10-14 --by 'Analyst name' --src https://... ",
+  "picks": [
+    {
+      "id": "demo-hal-2026-10-14",
+      "date": "2026-10-14",
+      "sym": "HAL.NS",
+      "side": "long",
+      "entry": 4869.0,
+      "stop": 4725.0,
+      "target": 5150.0,
+      "horizon": 20,
+      "by": "Chandan Taparia, Motilal Oswal (levels quoted by Univest)",
+      "src": "https://univest.in/blogs/top-3-stocks-to-buy-tomorrow-mphasis-hal-indian-hotels-by-market-expert-check-stop-loss-target-price-for-mon-19-oct",
+      "note": "DEMO row: a third-party call quoted in a Univest blog post, used to test the scorer. Not a Univest advisory pick.",
+      "demo": true
+    },
+    {
+      "id": "demo-indhotel-2026-10-19",
+      "date": "2026-10-19",
+      "sym": "INDHOTEL.NS",
+      "side": "long",
+      "entry": 755.0,
+      "stop": 710.0,
+      "target": 827.0,
+      "horizon": 20,
+      "by": "SMC Global (levels quoted by Univest)",
+      "src": "https://univest.in/blogs/top-3-stocks-to-buy-tomorrow-mphasis-hal-indian-hotels-by-market-expert-check-stop-loss-target-price-for-mon-19-oct",
+      "note": "DEMO row: entry is the mid of the quoted 750-760 accumulate band; not a Univest advisory pick.",
+      "demo": true
+    }
+  ]
+}

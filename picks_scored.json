@@ -1,0 +1,60 @@
+{
+  "generated": "2026-11-26 13:26 IST",
+  "summary": {
+    "tracked": 0,
+    "resolved": 0,
+    "targets": 0,
+    "stops": 0,
+    "pending": 0,
+    "hit_rate": null,
+    "avg_r": null,
+    "avg_r_mtm": null,
+    "total_r_mtm": null,
+    "best": null,
+    "worst": null
+  },
+  "picks": [
+    {
+      "id": "demo-hal-2026-10-14",
+      "date": "2026-10-14",
+      "sym": "HAL.NS",
+      "side": "long",
+      "entry": 4869.0,
+      "stop": 4725.0,
+      "target": 5150.0,
+      "by": "Chandan Taparia, Motilal Oswal (levels quoted by Univest)",
+      "src": "https://univest.in/blogs/top-3-stocks-to-buy-tomorrow-mphasis-hal-indian-hotels-by-market-expert-check-stop-loss-target-price-for-mon-19-oct",
+      "note": "DEMO row: a third-party call quoted in a Univest blog post, used to test the scorer. Not a Univest advisory pick.",
+      "demo": true,
+      "status": "STOP",
+      "r": -1.0,
+      "mfe_r": 0.99,
+      "mae_r": -1.06,
+      "exit_date": "2026-10-23",
+      "exit_px": 4725.0,
+      "bars": 7,
+      "last": 4725.0
+    },
+    {
+      "id": "demo-indhotel-2026-10-19",
+      "date": "2026-10-19",
+      "sym": "INDHOTEL.NS",
+      "side": "long",
+      "entry": 755.0,
+      "stop": 710.0,
+      "target": 827.0,
+      "by": "SMC Global (levels quoted by Univest)",
+      "src": "https://univest.in/blogs/top-3-stocks-to-buy-tomorrow-mphasis-hal-indian-hotels-by-market-expert-check-stop-loss-target-price-for-mon-19-oct",
+      "note": "DEMO row: entry is the mid of the quoted 750-760 accumulate band; not a Univest advisory pick.",
+      "demo": true,
+      "status": "TARGET",
+      "r": 1.6,
+      "mfe_r": 1.68,
+      "mae_r": -0.26,
+      "exit_date": "2026-11-02",
+      "exit_px": 827.0,
+      "bars": 10,
+      "last": 822.5
+    }
+  ]
+}
