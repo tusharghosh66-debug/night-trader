@@ -7,12 +7,13 @@ converted to INR with the live USDINR rate so one book has one currency.
 """
 import io, json, os, threading, time
 from concurrent.futures import ThreadPoolExecutor
-from datetime import datetime
+from datetime import datetime, timedelta, timezone
 import arena
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 BOOK_FILE = os.path.join(HERE, "manual_book.json")
 CO_FILE = os.path.join(HERE, "companies.json")
+IST = timezone(timedelta(hours=5, minutes=30))
 FEE = 0.001          # 0.1% per side, same as the bot books
 START_CASH = 1000000.0
 LOCK = threading.Lock()
@@ -33,7 +34,7 @@ def _load_book():
     b.setdefault("positions", {})
     b.setdefault("trades", [])
     b.setdefault("realised", 0.0)
-    b.setdefault("started", datetime.now().isoformat(timespec="seconds"))
+    b.setdefault("started", datetime.now(IST).isoformat(timespec="seconds"))
     return b
 
 
@@ -83,15 +84,21 @@ def quote(sym, max_age=20.0):
         return hit[1]
     y = _yahoo(s)
     d = arena.http_json("https://query1.finance.yahoo.com/v8/finance/chart/%s?interval=1d&range=5d" % y.replace("^", "%5E").replace("&", "%26"))
-    m = d["chart"]["result"][0]["meta"]
+    res = d["chart"]["result"][0]
+    m = res["meta"]
     px = float(m.get("regularMarketPrice") or 0)
-    prev = float(m.get("chartPreviousClose") or m.get("previousClose") or px or 0)
+    closes = [c for c in ((res.get("indicators") or {}).get("quote") or [{}])[0].get("close") or [] if c]
+    prev = float(closes[-2]) if len(closes) > 1 else float(m.get("chartPreviousClose") or px or 0)
+    try:
+        asof = datetime.fromtimestamp(int(m.get("regularMarketTime") or 0), IST).strftime("%d %b %H:%M")
+    except Exception:
+        asof = ""
     cur = (m.get("currency") or "INR").upper()
     f = fx() if cur == "USD" else 1.0
     q = {"s": s, "y": y, "px": round(px * f, 2), "prev": round(prev * f, 2),
          "cur": cur, "inr": round(px * f, 2), "usdinr": f if cur == "USD" else None,
          "name": m.get("shortName") or m.get("longName") or s,
-         "state": m.get("marketState") or "", "t": int(time.time())}
+         "asof": asof, "state": m.get("marketState") or "", "t": int(time.time())}
     _quotes[s] = (time.time(), q)
     return q
 
@@ -143,7 +150,7 @@ def state():
             "realised": round(BOOK["realised"], 2), "fee_rate": FEE,
             "positions": sorted(pos, key=lambda x: -x["value"]),
             "trades": BOOK["trades"][-40:][::-1], "started": BOOK["started"],
-            "now": datetime.now().strftime("%Y-%m-%d %H:%M:%S")}
+            "now": datetime.now(IST).strftime("%Y-%m-%d %H:%M:%S")}
 
 
 def order(sym, side, qty):
@@ -171,7 +178,7 @@ def order(sym, side, qty):
                 p["last"] = px
             else:
                 p = {"qty": qty, "avg": px, "last": px, "name": q["name"], "y": q["y"],
-                     "opened": datetime.now().strftime("%Y-%m-%d %H:%M")}
+                     "opened": datetime.now(IST).strftime("%Y-%m-%d %H:%M")}
                 BOOK["positions"][key] = p
             BOOK["cash"] -= cost
             fill = {"sym": key, "side": "BUY", "qty": qty, "px": px, "fee": round(px * qty * FEE, 2),
@@ -181,7 +188,7 @@ def order(sym, side, qty):
                 return {"error": "you hold %s, cannot sell %d" % (p["qty"] if p else 0, qty)}
             proceeds = px * qty * (1 - FEE)
             BOOK["cash"] += proceeds
-            BOOK["realised"] += (px - p["avg"]) * qty - px * qty * FEE
+            BOOK["realised"] += (px - p["avg"]) * qty - px * qty * FEE - p["avg"] * qty * FEE
             p["qty"] -= qty
             if p["qty"] == 0:
                 BOOK["positions"].pop(key, None)

@@ -1088,7 +1088,7 @@ function deskTicket(){
          "<div class='mono text-[15px] text-[#E6E1F5]'>"+esc(s.s)+"</div>" +
          "<div class='text-[11px] text-[#908FA0] truncate'>"+esc(q.name||"")+"</div></div>" +
          "<div class='text-right shrink-0'><div class='mono text-[16px] tabular-nums'>"+(px?px.toFixed(2):"-")+"</div>" +
-         "<div class='text-[10.5px]'>"+deskPct(chgPct)+" <span class='text-[#908FA0]'>vs prev close</span></div></div></div>";
+         "<div class='text-[10.5px]'>"+deskPct(chgPct)+" <span class='text-[#908FA0]'>vs prev close</span></div>" + (q.asof ? "<div class='text-[10px] text-[#6E6C7E] mt-0.5'>price at "+esc(q.asof)+" IST</div>" : "") + "</div></div>";
     if(q.cur === "USD"){
       h += "<div class='mt-1 text-[10.5px] text-[#908FA0]'>USD stock, converted at live rate "+(q.usdinr?q.usdinr.toFixed(2):"-")+"</div>";
     }
