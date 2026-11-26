@@ -88,7 +88,12 @@ def quote(sym, max_age=20.0):
     m = res["meta"]
     px = float(m.get("regularMarketPrice") or 0)
     closes = [c for c in ((res.get("indicators") or {}).get("quote") or [{}])[0].get("close") or [] if c]
-    prev = float(closes[-2]) if len(closes) > 1 else float(m.get("chartPreviousClose") or px or 0)
+    try:
+        prev = float(m.get("previousClose") or 0.0)
+    except Exception:
+        prev = 0.0
+    if not prev:
+        prev = float(closes[-2]) if len(closes) > 1 else float(m.get("chartPreviousClose") or px or 0)
     try:
         asof = datetime.fromtimestamp(int(m.get("regularMarketTime") or 0), IST).strftime("%d %b %H:%M")
     except Exception:
@@ -98,7 +103,7 @@ def quote(sym, max_age=20.0):
     q = {"s": s, "y": y, "px": round(px * f, 2), "prev": round(prev * f, 2),
          "cur": cur, "inr": round(px * f, 2), "usdinr": f if cur == "USD" else None,
          "name": m.get("shortName") or m.get("longName") or s,
-         "asof": asof, "state": m.get("marketState") or "", "t": int(time.time())}
+         "asof": asof, "state": m.get("marketState") or "", "stale": False, "t": int(time.time())}
     _quotes[s] = (time.time(), q)
     return q
 
@@ -114,7 +119,11 @@ def quotes(syms, max_age=20.0):
             try:
                 out[s] = f.result(timeout=25)
             except Exception as e:
-                out[s] = {"s": s, "error": str(e)[:80]}
+                hit = _quotes.get(s)
+                if hit:
+                    out[s] = dict(hit[1], stale=True)
+                else:
+                    out[s] = {"s": s, "error": str(e)[:80]}
     return out
 
 
