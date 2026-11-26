@@ -1,12 +1,12 @@
 # Strategy Arena — Leaderboard
-_Updated: 2026-11-26 09:05 IST_
+_Updated: 2026-11-26 09:07 IST_
 
-**Total equity: Rs 289,921.70** / Rs 290,000 start (-0.03%)
+**Total equity: Rs 289,921.39** / Rs 290,000 start (-0.03%)
 
 | Rank | Bot | Strategy | Equity | P&L | % | Trades | Win% | Open |
 |---|---|---|---|---|---|---|---|---|
-| 1 | x03 | Core Regime Trend (council) | Rs 10,003.44 | +3.44 | +0.03% | 0 | 0% | 2 |
-| 2 | x02 | RS Rotation Top-2 (council) | Rs 10,002.81 | +2.81 | +0.03% | 0 | 0% | 2 |
+| 1 | x03 | Core Regime Trend (council) | Rs 10,003.30 | +3.30 | +0.03% | 0 | 0% | 2 |
+| 2 | x02 | RS Rotation Top-2 (council) | Rs 10,002.53 | +2.53 | +0.03% | 0 | 0% | 2 |
 | 3 | s01 | St. Gallen ORB Noise-Band | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 4 | s02 | Trend-Filtered Mean Reversion | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 5 | s03 | ETF Dual Momentum Rotation | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 1 |
@@ -28,8 +28,8 @@ _Updated: 2026-11-26 09:05 IST_
 | 21 | smart_11 | Spike & VWAP Short (Smart v2) | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 22 | s13 | Afternoon Sell-the-Rip Short | Rs 9,995.22 | -4.78 | -0.05% | 1 | 0% | 0 |
 | 23 | smart_13 | Afternoon Sell-the-Rip Short (Smart v2) | Rs 9,995.22 | -4.78 | -0.05% | 1 | 0% | 0 |
-| 24 | s04 | Multi-Market Trend Following | Rs 9,993.29 | -6.71 | -0.07% | 0 | 0% | 1 |
-| 25 | smart_04 | Multi-Market Trend (Smart v2) | Rs 9,993.29 | -6.71 | -0.07% | 0 | 0% | 1 |
+| 24 | s04 | Multi-Market Trend Following | Rs 9,993.34 | -6.66 | -0.07% | 0 | 0% | 1 |
+| 25 | smart_04 | Multi-Market Trend (Smart v2) | Rs 9,993.34 | -6.66 | -0.07% | 0 | 0% | 1 |
 | 26 | s09 | Statistical Arbitrage Pairs | Rs 9,985.18 | -14.82 | -0.15% | 0 | 0% | 2 |
 | 27 | smart_09 | Statistical Arbitrage (Smart v2) | Rs 9,985.18 | -14.82 | -0.15% | 0 | 0% | 2 |
 | 28 | s12 | OHL + CPR Breakdown Short | Rs 9,984.05 | -15.95 | -0.16% | 1 | 0% | 0 |
