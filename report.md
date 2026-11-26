@@ -1,20 +1,20 @@
 # Night Trader v2 — Paper Trading Report (3 markets)
-_Updated: 2026-11-26 09:55 IST_
+_Updated: 2026-11-26 09:57 IST_
 
 ## CRYPTO (OPEN) — ₹10,000.00 | P&L +0.00 (+0.00%)
-Cash ₹10,000.00 | cycles 1180 | capital ₹10,000
+Cash ₹10,000.00 | cycles 1185 | capital ₹10,000
 _No open positions — all cash._
 News sentiment: -0.50 (180 headlines, 6 sources, Fear&Greed 11)
 - Bitcoin falls toward $57K amid US tariff fears, hot PCE data as Nasdaq drops 4%
 - Bitcoin Falls Further as Inflation, Trump Tariffs and AI Selloff Rattle Markets
 - Strategy and Crypto Stocks Rally as Bitcoin Rebounds Past $63,000. Is the Jump Temporary? - Barron's
 
-## INDIA (OPEN) — ₹9,980.37 | P&L -19.63 (-0.20%)
-Cash ₹3,996.91 | cycles 81 | capital ₹10,000
+## INDIA (OPEN) — ₹9,977.90 | P&L -22.10 (-0.22%)
+Cash ₹3,996.91 | cycles 86 | capital ₹10,000
 | Symbol | Side | Qty | Entry | Last | Unrealized |
 |---|---|---|---|---|---|
-| INFY.NS | LONG | 2.5764 | 1164.40 | 1162.50 | -4.90 |
-| TCS.NS | LONG | 1.1655 | 2571.50 | 2564.00 | -8.74 |
+| INFY.NS | LONG | 2.5764 | 1164.40 | 1162.90 | -3.86 |
+| TCS.NS | LONG | 1.1655 | 2571.50 | 2561.00 | -12.24 |
 News sentiment: +1.00 (217 headlines, 6 sources)
 - Nasdaq 100 plunges nearly 5%, briefly enters bear-market zone as AI fears and fresh tariffs hit sentiment
 - Sensex jumps 1,502 points, Nifty surges to 25,819 on foreign fund inflows, lower crude oil - The Hindu
