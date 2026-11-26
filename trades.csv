@@ -1,1 +1,2 @@
 time,market,symbol,side,qty,price,pnl,reason,equity_after
+2026-11-26T09:17:22.733747+05:30,india,INFY.NS,BUY,2.576434,1164.4,0.0,"breakout+EMA trend, RSI=69, regime_ok=True, news=+0.99",9997.0
