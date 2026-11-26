@@ -1,14 +1,14 @@
 # Strategy Arena — Leaderboard
-_Updated: 2026-11-26 12:49 IST_
+_Updated: 2026-11-26 12:52 IST_
 
-**Total equity: Rs 160,023.24** / Rs 160,000 start (+0.01%)
+**Total equity: Rs 160,023.91** / Rs 160,000 start (+0.01%)
 
 | Rank | Bot | Strategy | Equity | P&L | % | Trades | Win% | Open |
 |---|---|---|---|---|---|---|---|---|
-| 1 | s09 | Statistical Arbitrage Pairs | Rs 10,025.59 | +25.59 | +0.26% | 0 | 0% | 2 |
-| 2 | s03 | ETF Dual Momentum Rotation | Rs 10,023.46 | +23.46 | +0.23% | 0 | 0% | 1 |
-| 3 | x03 | Core Regime Trend (council) | Rs 10,006.09 | +6.09 | +0.06% | 0 | 0% | 2 |
-| 4 | x02 | RS Rotation Top-2 (council) | Rs 10,003.19 | +3.19 | +0.03% | 0 | 0% | 2 |
+| 1 | s09 | Statistical Arbitrage Pairs | Rs 10,028.85 | +28.85 | +0.29% | 0 | 0% | 2 |
+| 2 | s03 | ETF Dual Momentum Rotation | Rs 10,021.42 | +21.42 | +0.21% | 0 | 0% | 1 |
+| 3 | x03 | Core Regime Trend (council) | Rs 10,005.46 | +5.46 | +0.05% | 0 | 0% | 2 |
+| 4 | x02 | RS Rotation Top-2 (council) | Rs 10,002.81 | +2.81 | +0.03% | 0 | 0% | 2 |
 | 5 | s01 | St. Gallen ORB Noise-Band | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 6 | s02 | Trend-Filtered Mean Reversion | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 7 | s05 | Connors RSI(2) Pullback | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
@@ -19,7 +19,7 @@ _Updated: 2026-11-26 12:49 IST_
 | 12 | x01 | Vol Squeeze Breakout (council) | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 13 | s13 | Afternoon Sell-the-Rip Short | Rs 9,995.22 | -4.78 | -0.05% | 1 | 0% | 0 |
 | 14 | s11 | Spike & VWAP Rejection Short | Rs 9,993.64 | -6.36 | -0.06% | 1 | 0% | 1 |
-| 15 | s04 | Multi-Market Trend Following | Rs 9,993.21 | -6.79 | -0.07% | 0 | 0% | 1 |
-| 16 | s12 | OHL + CPR Breakdown Short | Rs 9,982.84 | -17.16 | -0.17% | 1 | 0% | 1 |
+| 15 | s04 | Multi-Market Trend Following | Rs 9,993.29 | -6.71 | -0.07% | 0 | 0% | 1 |
+| 16 | s12 | OHL + CPR Breakdown Short | Rs 9,983.22 | -16.78 | -0.17% | 1 | 0% | 1 |
 
-**Best so far: s09 — Statistical Arbitrage Pairs (+0.26%)**
+**Best so far: s09 — Statistical Arbitrage Pairs (+0.29%)**
