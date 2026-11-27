@@ -1,14 +1,13 @@
 # Night Trader v2 — Paper Trading Report (3 markets)
-_Updated: 2026-11-27 20:03 IST_
+_Updated: 2026-11-27 20:06 IST_
 
-## CRYPTO (OPEN) — ₹10,070.75 | P&L +70.75 (+0.71%)
-Cash ₹4,059.56 | cycles 5265 | capital ₹10,000
-| Symbol | Side | Qty | Entry | Last | Unrealized |
-|---|---|---|---|---|---|
-| BTC-USD | LONG | 0.0005 | 5657841.90 | 5668501.53 | +5.65 |
-| ETH-USD | LONG | 0.0189 | 158549.13 | 158889.80 | +6.44 |
-Closed: 1 (1 wins), realized +64.65
+## CRYPTO (OPEN) — ₹10,040.26 | P&L +40.26 (+0.40%)
+Cash ₹10,040.26 | cycles 5270 | capital ₹10,000
+_No open positions — all cash._
+Closed: 3 (1 wins), realized +40.26
 - 13:49 SELL SOL-USD @ 6827.44 pnl +64.65 (RSI 78 overbought take-profit)
+- 20:04 SELL ETH-USD @ 158507.65 pnl -6.78 (stop/trail hit (158507.65<=158554.25))
+- 20:04 SELL BTC-USD @ 5635924.12 pnl -17.61 (stop/trail hit (5635924.12<=5653353.84))
 News sentiment: +0.03 (179 headlines, 6 sources, Fear&Greed 12)
 - Bitcoin Falls Further as Inflation, Trump Tariffs and AI Selloff Rattle Markets
 - Strategy and Crypto Stocks Rally as Bitcoin Rebounds Past $63,000. Is the Jump Temporary? - Barron's
@@ -28,7 +27,7 @@ News sentiment: +0.41 (224 headlines, 6 sources)
 - FPI Inflows Hit Record High in November 2026 as Foreign Investors Buy Indian Shares Worth over ₹1.22 Lakh Crore - Kotak Neo
 
 ## US (OPEN) — ₹10,000.00 | P&L +0.00 (+0.00%)
-Cash ₹10,000.00 | cycles 1077 | capital ₹10,000
+Cash ₹10,000.00 | cycles 1082 | capital ₹10,000
 _No open positions — all cash._
 News sentiment: +0.48 (193 headlines, 6 sources)
 - US Futures Rally as Tech Rebound Gains Momentum: Markets Wrap - Bloomberg.com
