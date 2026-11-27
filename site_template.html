@@ -1020,6 +1020,17 @@ function deskPct(v){
   var c = v>0 ? "text-[#34D399]" : (v<0 ? "text-[#FB7185]" : "text-[#C7C4D7]");
   return "<span class='"+c+" tabular-nums'>"+(v>0?"+":"")+v.toFixed(2)+"%</span>";
 }
+function deskAgeMin(q){
+  if(!q || !q.asof) return null;
+  var m = /^(\d{1,2}) ([A-Za-z]{3}) (\d{1,2}):(\d{2})$/.exec(q.asof);
+  if(!m) return null;
+  var mo = {Jan:0,Feb:1,Mar:2,Apr:3,May:4,Jun:5,Jul:6,Aug:7,Sep:8,Oct:9,Nov:10,Dec:11}[m[2]];
+  if(mo === undefined) return null;
+  var now = new Date();
+  var t = Date.UTC(now.getUTCFullYear(), mo, +m[1], +m[3] - 5, +m[4] - 30);
+  var d = (Date.now() - t) / 60000;
+  return d < -240 ? d + 1440 : d;
+}
 function deskMatches(q){
   var all = DESK.co || [], out = [];
   q = (q||"").trim().toUpperCase();
@@ -1089,6 +1100,11 @@ function deskTicket(){
          "<div class='text-[11px] text-[#908FA0] truncate'>"+esc(q.name||"")+"</div></div>" +
          "<div class='text-right shrink-0'><div class='mono text-[16px] tabular-nums'>"+(px?px.toFixed(2):"-")+"</div>" +
          "<div class='text-[10.5px]'>"+deskPct(chgPct)+" <span class='text-[#908FA0]'>vs prev close</span></div>" + (q.asof ? "<div class='text-[10px] text-[#6E6C7E] mt-0.5'>price at "+esc(q.asof)+" IST</div>" : "") + "</div></div>";
+    var _age = deskAgeMin(q);
+    if(_age !== null && _age > 25){
+      var _t = _age > 300 ? Math.round(_age/60) + " hours" : Math.round(_age) + " min";
+      h += "<div class='mt-2 rounded-lg bg-[#FBBF24]/10 border border-[#FBBF24]/40 px-2.5 py-1.5 text-[10.5px] text-[#FBBF24]'>Market closed - this price is "+_t+" old. A fill now is not a real market fill.</div>";
+    }
     if(q.cur === "USD"){
       h += "<div class='mt-1 text-[10.5px] text-[#908FA0]'>USD stock, converted at live rate "+(q.usdinr?q.usdinr.toFixed(2):"-")+"</div>";
     }
@@ -1245,6 +1261,11 @@ function deskOrder(side, sym, qty){
   qty = qty || DESK.qty || 0;
   if(!sym){ DESK.msg = "error: pick a company first"; return deskTicket(); }
   if(!qty || qty < 1){ DESK.msg = "error: quantity must be at least 1"; return deskTicket(); }
+  var age = deskAgeMin(DESK.sel && DESK.sel.q);
+  if(age !== null && age > 25){
+    var ageTxt = age > 300 ? Math.round(age / 60) + " hours" : Math.round(age) + " minutes";
+    if(!confirm("This market is closed: the last price is " + ageTxt + " old. The fill will use that stale price, so the P&L would be fake. Fill anyway?")) return;
+  }
   DESK.busy = true;
   deskApi("/api/order", {sym:sym, side:side, qty:qty}).then(function(r){
     DESK.busy = false;
