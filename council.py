@@ -129,8 +129,9 @@ def main():
     L.append('- US: Interactive Brokers schedule - USD 0.0035/share, min USD 0.35/order, 18% GST,')
     L.append('  FX 0.002% with a USD 2/conversion minimum that only bites if each trade converts')
     L.append('  cash (a funded USD float is assumed). Crypto: 0.1%/side. US min ticket Rs 15,000.')
-    L.append('- Entry gates: session must be open, stop move >= 0.30%, NSE notional lifted to')
-    L.append('  Rs 25000 (or US Rs 15000) when that would not risk >2% of the book, move >= 2x')
+    L.append('- Entry gates: session must be open AND the newest 5m bar fresh (US 20m, NSE 35m),')
+    L.append('  stop move >= 0.30%, NSE notional lifted to')
+    L.append('  Rs 25000 (or US Rs 15000) when that would not risk >2% of the book, a move >= 2x')
     L.append('  round-trip fee, no entry in the last 20 min, re-entry cooldown after a stop.')
     L.append('- Sizing: risk based (1% of book default), 30% notional cap per position,'
              ' 30% net exposure per market, 40% gross same-side per market.')

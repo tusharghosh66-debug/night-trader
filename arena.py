@@ -524,6 +524,16 @@ def open_position(bs, sym, side, qty, price, stop, reason, now):
             log(f"  SKIP {sym} ({reason}): {mk} same-side would be "
                 f"Rs {same_n:.0f} > {MAX_SAME_SIDE_MARKET_PCT:.0f}% of the book")
             return False
+    # --- is the feed still alive? (last check before the fill) ---------------
+    # Cheap: only runs when every other gate has already passed, and caches per
+    # symbol for 4 minutes so a busy bot cannot hammer the quote source.
+    age = feed_age_min(sym)
+    lim = stale_limit_min(sym)
+    if age is not None and age > lim:
+        g["stale"] = g.get("stale", 0) + 1
+        log(f"  SKIP {sym} ({reason}): newest bar is {age:.0f}m old "
+            f"(> {lim:.0f}m) - market closed early or feed is dead")
+        return False
     # NOTE: no fee is taken here. close_position() already nets BOTH legs
     # (entry + exit) out of pnl, so charging the entry fee here as well
     # double-taxed every round trip by 0.1% of notional.
@@ -540,6 +550,54 @@ def us_fee_side(qty, value_inr):
     comm = max(US_COMM_MIN, US_COMM_PS * abs(qty)) * (1.0 + US_GST)
     fx_cost = 0.0 if US_PRECONVERTED else max(US_FX_MIN, US_FX_BPS * usd_val)
     return (comm + fx_cost) * fx
+
+
+# --- feed freshness (council round 3) -------------------------------------
+# mkt_open() only knows weekday + clock hours, so a 13:00 ET early close or a
+# dead feed still looked tradeable: on 27 Nov 2026 the XOM/CVX pair filled at
+# the 13:00 close at 14:10 ET. Instead of an exchange calendar, ask the data:
+# how old is the newest CLOSED 5-minute bar?
+FEED_BAR_MIN = 5
+STALE_MULT = 2
+STALE_GRACE_MIN = 10
+# US quotes arrive near-live; NSE 5m bars on free feeds lag ~15 min, so India
+# gets a looser limit or every NSE entry would be refused as "stale".
+STALE_MAX_MIN_US = FEED_BAR_MIN * STALE_MULT + STALE_GRACE_MIN        # 20 min
+STALE_MAX_MIN_IN = FEED_BAR_MIN * STALE_MULT + STALE_GRACE_MIN + 15   # 35 min
+_FEED_CACHE = {}
+
+
+def feed_age_min(sym):
+    """Age (minutes) of the newest closed 5m bar; None = unknown, do not block."""
+    s = str(sym)
+    if "/" in s:
+        ages = [a for a in (feed_age_min(leg) for leg in s.split("/")) if a is not None]
+        return max(ages) if ages else None
+    if is_crypto(s):
+        return 0.0
+    hit = _FEED_CACHE.get(s)
+    now_ms = time.time() * 1000
+    if hit and now_ms - hit[0] < 240000:
+        return hit[1]
+    age = None
+    try:
+        kl = get_candles(s, "5m", "1d")
+        if kl:
+            last_close = kl[-1]["t"] + FEED_BAR_MIN * 60000
+            age = max(0.0, (now_ms - last_close) / 60000.0)
+    except Exception as e:
+        log(f"  feed check failed {s}: {e}")
+    _FEED_CACHE[s] = (now_ms, age)
+    return age
+
+
+def stale_limit_min(sym):
+    s = str(sym)
+    if "/" in s:
+        return max(stale_limit_min(leg) for leg in s.split("/"))
+    if is_india(s):
+        return STALE_MAX_MIN_IN
+    return STALE_MAX_MIN_US
 
 
 def market_of(sym):
