@@ -53,7 +53,11 @@ US_COMM_PS = 0.0035
 US_GST = 0.18
 US_FX_MIN = 2.0
 US_FX_BPS = 0.00002
-US_PRECONVERTED = True
+# Decision (28 Nov 2026): a funded USD float is assumed, because a Rs 15k-30k
+# ticket converting cash every trade pays the USD 2 minimum (0.7-1.3%/side) and
+# would have to be lifted to Rs 45k, i.e. 45% of a bot's book in one name.
+# Flip it on Render with env US_PRECONVERTED=0 and the ticket floor follows.
+US_PRECONVERTED = os.environ.get("US_PRECONVERTED", "1").strip() not in ("0", "false", "False")
 USDINR_FALLBACK = 93.0
 _FX = USDINR_FALLBACK
 import fees_in          # Upstox delivery charges for NSE cash trades
@@ -1367,7 +1371,10 @@ REENTRY_COOLDOWN_MIN = 30    # same bot, same symbol: no re-entry for 30 min
 MIN_RISK_PCT = 0.30          # absolute floor: risk distance must clear the fee
 FEE_TRIPLE = 2.0             # the planned move must be >= 2x the round-trip cost
 MIN_IN_NOTIONAL = 25000.0    # NSE cash: below this the Rs 60 fixed block eats 2-7%
-MIN_US_NOTIONAL = 15000.0    # US: the USD 0.35 order minimum is 0.26%/side at 15k, 0.6% at 7k
+# US ticket floor: with a funded USD float only the USD 0.35 order minimum applies
+# (0.26%/side at Rs 15k). Converting cash per trade adds USD 2 (~Rs 186) a side,
+# so the floor has to rise to Rs 45k to keep the fee near 0.5%/side.
+MIN_US_NOTIONAL = 15000.0 if US_PRECONVERTED else 45000.0
 MAX_TRADE_RISK_PCT = 2.0     # never lift a trade to the minimum if it risks more
 # Net-exposure caps, per bot, set by council round 2 (4 of 4 wanted a same-side
 # rule; the 30% net cap alone would NOT have stopped SPY short + NVDA short).
