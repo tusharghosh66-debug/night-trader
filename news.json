@@ -1,7 +1,7 @@
 {
- "ts": "2026-11-27T11:26:45.217486+05:30",
+ "ts": "2026-11-27T12:27:00.150586+05:30",
  "crypto": {
-  "score": -0.193,
+  "score": -0.204,
   "n_headlines": 179,
   "n_sources": 6,
   "top": [
@@ -12,7 +12,7 @@
    "Bithumb Says October Hack Exposed Passports, Bank Accounts and Wallet Addresses",
    "Bitcoin rises to $61,504 as total crypto market cap drops to $2.12T amid $135M liquidations - Pluang",
    "Bitcoin price may fall below $53K if bear-market history repeats - TradingView",
-   "Hunton Insurance Recovery Blog: Lloyds Jumps Into The Cryptocurrency Market, Insuring Part Of Kingdom Trust's $12 Billion Assets - Legal 500"
+   "Crypto Market Today, Nov. 24: Bitcoin Falls Below $60,000 as ETF Outflows Hit a Record $4.7 Billion - Yahoo Finance"
   ],
   "headlines": [
    "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
@@ -42,6 +42,7 @@
    "South Korean crypto exchange Bithumb warns of phishing after deeper October breach probe",
    "Fed\u2019s preferred inflation gauge lands with a December rate increase already priced in",
    "Cointelegraph.com News",
+   "Here\u2019s what happened in crypto today",
    "Japan\u2019s crypto security group taps SEAL to speed up hack response",
    "Ethereum devs set Glamsterdam\u2019s Hoodi rollout for mid-December after delays",
    "AI is driving a flood of crypto bug reports. Now it\u2019s helping sort them",
@@ -71,7 +72,6 @@
    "Switzerland clears 57 jurisdictions for crypto tax data sharing",
    "Braiins warns of Bitcoin mining attacks affecting over 1,000 sites",
    "Why ECB collateral eligibility could boost demand for tokenized bonds",
-   "Ethereum Foundation backs Keccak-256 to counter quantum, AI threats",
    "Vibecoded GTA 6 PC Ports Are Now Rendering In-Game Graphics Despite Take-Two Crackdown",
    "What Is Self-Custody? How to Hold Your Own Crypto Keys",
    "Before the Sell-Off, AI Stocks Showed Dot-Com-Level Bubble Signals: Study"
@@ -79,11 +79,11 @@
   "fear_greed": 12
  },
  "india": {
-  "score": 0.514,
-  "n_headlines": 222,
+  "score": 0.682,
+  "n_headlines": 220,
   "n_sources": 6,
   "top": [
-   "Gold jumps 1.5%, silver surges 4.5% as bullion rebounds from multi-month lows: Gold Silver Rates Live Updates",
+   "Gold jumps 2%, silver surges 5% as bullion rebounds from multi-month lows: Gold Silver Rates Live Updates",
    "Gold finance stocks rally! Manappuram, Muthoot Finance gain up to 4% as MCX gold prices recover - Which stock to buy?",
    "Gold price today 27 November 2026: MCX gold rate jumps but still 31% down from record high; is it the right time to buy?",
    "FPI Inflows Hit Record High in November 2026 as Foreign Investors Buy Indian Shares Worth over \u20b91.22 Lakh Crore - Kotak Neo",
@@ -94,19 +94,20 @@
   ],
   "headlines": [
    "Economic Times",
+   "India bonds decline ahead of fresh debt sale as elevated oil prices fan inflation worries",
    "Nvidia stock plunges 35% from record high: Is it a buying opportunity?",
    "HDFC Bank, SBI, 8 other stocks JPMorgan is bullish on as markets gear up to enter 2027. See full list",
    "HCL Technologies among 7 stocks showing White Marubozu Pattern",
    "Positive breakout: These 4 stocks close above their 200 DMAs",
    "Sun TV Network among 4 stocks closing above VWAP",
-   "Gold jumps 1.5%, silver surges 4.5% as bullion rebounds from multi-month lows: Gold Silver Rates Live Updates",
+   "Gold jumps 2%, silver surges 5% as bullion rebounds from multi-month lows: Gold Silver Rates Live Updates",
    "Bharat Coking Coal among 5 stocks showing RSI trending up",
    "Dubai seals deal for $159 billion Islamic banking giant",
    "Brent trades near month's high as Mideast conflict threatens supply",
    "Dollar lingers near 22-month peak as AI worries simmer",
    "Gold steady, heads for weekly gain as markets await Fed signals",
    "Gold Prices Fall: Is India\u2019s \u20b923 Lakh Crore Gold Loan Market at Risk? | The Morning Brief Decode",
-   "Stock Market Live Updates: Sensex tumbles over 600 points, Nifty below 25,750; IT, FMCG lead losses",
+   "Stock Market Live Updates | Sensex tumbles over 650 points, Nifty below 25,700; Sebi to look into the Tata-APL deal, says Tuhin kanta Pandey",
    "Global Market Today: Asian stocks rise for second day, crude oil gains",
    "SC asks HDFC Bank, three others to ok staff prosecution",
    "Ashiana Housing JV buys 10-acre land in Chennai for senior living project, eyes Rs 1,100 cr revenue",
@@ -131,7 +132,11 @@
    "Axis Bank Share Price Highlights: Axis Bank Stock Price History",
    "Divis Labs Share Price Highlights: Divis Labs Stock Price History",
    "M&amp;M Share Price Highlights: M&amp;M Stock Price History",
-   "Grasim Inds Share Price Highlights: Grasim Inds. Stock Price History",
+   "Railway stock Jupiter Wagons shares fall 7.5% after 29% surge in 2 days post Woojin JV: Should you buy the multibagger?",
+   "Siemens' expanding order book has margin, valuation hurdles",
+   "Banking stocks hit the accelerator! Nifty Bank index up 18% in 1 month; HDFC Bank, SBI, ICICI Bank- 9 best stocks to buy",
+   "BEML, BEL, HAL, Cochin Shipyard, Bharat Dynamics shares: Defence stocks rise up to 14%; here's why | Top 5 stocks to buy",
+   "APL Apollo Tubes shares jump 4% after 28% crash in a week as SEBI may scrutinise Tata Steel deal | Buy, sell or hold?",
    "Small-cap, big jump! Waaree Renewable shares rise 14% on this order win; energy stock still 35% below 52-week high",
    "Why IT stocks are down today? TCS, Infosys, Wipro lead losses as Sensex, Nifty fall | Time to buy for returns ahead?",
    "Gold price today 27 November 2026: MCX gold rate jumps but still 31% down from record high; is it the right time to buy?",
@@ -147,12 +152,7 @@
    "Australian shares set for best week since August as financials, WiseTech rally",
    "AI Risk Sets Dollar for Longest Winning Run Since 2024",
    "Raja Venkatraman recommends three stocks for 27 November",
-   "AI Rout Makes Kioxia Japan\u2019s Cheapest Blue Chip, Backing Bulls",
-   "ICE Maintains Flagship Gilt Futures Design After Market Feedback",
-   "Stock recommendations for 27 November from MarketSmith India",
-   "Gold drifts lower as Fed rate-hike fears loom",
-   "Bitcoin price today: World's largest crypto rebounds above $60,000, but remains down over 50% from peak",
-   "Buyback alert! Supriya Lifescience sets December 2 board meeting to consider share buyback; details here"
+   "AI Rout Makes Kioxia Japan\u2019s Cheapest Blue Chip, Backing Bulls"
   ]
  },
  "us": {
@@ -167,28 +167,29 @@
    "Fed rate hike odds rise to almost 100%: can AI selloff force a rethink? - TradingView",
    "Why Nvidia (NVDA) Stock Is Falling Today: Tech and Chip Selloff - Yahoo Finance",
    "European stocks end higher on easing tariff fears, ECB leadership continuity - Reuters",
-   "Rupee rally faces oil test; inflows, positive sentiment provide cushion - Reuters"
+   "SpaceX shares jump on alternative trading platform after Musk says he will expand share donations"
   ],
   "headlines": [
    "Two Italians killed in Kuwait drone attack; Trump says Iran war ends \u2018whenever I want it\u2019",
    "SpaceX shares jump on alternative trading platform after Musk says he will expand share donations",
    "Trump demands probe into \u2018record setting error\u2019 after third-quarter GDP data gets massive revision higher",
+   "German software major SAP weighs cutting at least 10,000 jobs in AI push: Bloomberg",
    "Sovereign wealth funds are acting more like private equity giants \u2014 and inheriting their risks",
-   "U.S. tariff-hike threats pile pressure on partners to sign trade deals",
    "Nvidia chip buyers told to rule out Chinese renters to purchase GPUs, sources say",
-   "China\u2019s factories are growing profits again, but the AI boom is picking the winners",
+   "U.S. tariff-hike threats pile pressure on partners to sign trade deals",
    "Fast cars, big money: Why sportswear races into Formula 1 as sponsorship spending soars 75%",
    "Planes, trains and automobiles: The best ways to beat travel fatigue\u2014so you can come home feeling rested and fulfilled",
+   "China\u2019s factories are growing profits again, but the AI boom is picking the winners",
    "How Trump\u2019s latest tariff moves hand India an edge over rival Asian exporters",
    "Semiconductor chips are the new oil. Here&apos;s why",
    "Buyer beware? Nvidia&apos;s volatile swings expose risks of single-stock ETFs",
    "Liesman: Why Greenspan could bet on productivity \u2014 and Warsh needs to hike",
    "Even the price of toys is on the rise. How Americans are scaling back holiday plans",
-   "Microdrama apps chase profits as Hollywood moves into short-form, vertical video",
    "Inside India newsletter: Roaring economy, foreign investors\u2019 return and now record auto sales",
+   "Microdrama apps chase profits as Hollywood moves into short-form, vertical video",
    "Spain\u2019s Pablo Hern\u00e1ndez de Cos set to lead European Central Bank",
-   "SpaceX, Musk pledge to donate a share each to active Trump Accounts",
    "Anthropic&apos;s stock has been a clunker post-IPO. Why that matters for the AI trade",
+   "SpaceX, Musk pledge to donate a share each to active Trump Accounts",
    "Trump, NATO chief caution Russia as attacks on Ukraine\u2019s energy infrastructure intensify",
    "Robots could be doing household chores in just 1-2 years, Chinese EV firm says",
    "What is \u2018texture-maxxing\u2019? The food trend putting crunch on the menu",
@@ -199,7 +200,6 @@
    "\u2018Ready for any storm\u2019: UAE minister optimistic on economy as IMF lifts forecast",
    "Wealthy Europeans look beyond stocks amid AI selloff. Here\u2019s where they\u2019re investing",
    "S&amp;P warns Nvidia credit rating could be cut over &apos;rising&apos; management and governance risk",
-   "Latin America has the copper and energy the AI build-out needs. Infrastructure is the test",
    "MarketWatch.com - Top Stories",
    "Is the stock market open on Black Friday?",
    "I hate that Jensen Huang is back at Nvidia, but I love what it&#x2019;s done for my 401(k). Am I a hypocrite?",
@@ -215,21 +215,21 @@
    "Stocks, Nasdaq Futures Climb as AI Trade Rebounds: Markets Wrap - Bloomberg.com",
    "Dow Jones Futures Rise; Look For This Bullish Market Signal On Black Friday - Investor's Business Daily",
    "Nasdaq, S&amp;P 500 end down, but well off lows as investors buy bargains - Reuters",
+   "Why this stock-market selloff is probably going to get worse before it gets better - MarketWatch",
    "Even Without Warren Buffett as CEO, Berkshire Hathaway Is Outperforming the S&amp;P 500, Nasdaq, and Dow by the Widest Margin Since 2022. History Says This Is What Happens Next. - The Motley Fool",
-   "U.S. stock futures rise sharply; Nasdaq up 1.7% in holiday-thinned trade - Investing.com",
-   "Nasdaq, S&amp;P 500 close lower, giving up some Nvidia-fueled gains - NBC News",
    "Dow closes higher after erasing 1,100-point loss as S&amp;P 500, Nasdaq slip - Fox Business",
+   "Nasdaq, S&amp;P 500 close lower, giving up some Nvidia-fueled gains - NBC News",
+   "Stock Indices Finish Off Their Lows as Dip Buyers Step In - Barchart.com",
+   "U.S. stock futures rise sharply; Nasdaq up 1.7% in holiday-thinned trade - Investing.com",
    "Stock Market Today: Dow, S&amp;P 500, Nasdaq Futures Fall as Traders Bet on December Fed Hike; Trump Tells Hu - Benzinga",
    "Dow, S&amp;P 500, Nasdaq Futures Edge Higher As Tech Rebounds After Selloff: DIS, VRTX, DE, CHTR In Focus - TradingView",
    "US Stock Market Futures Rise Ahead of Black Friday as AI Stocks Rebound Globally - Stocks Down Under",
    "US stock market today: Nasdaq and S&amp;P 500 fall as Nvidia and AI stocks slide, Dow gains - Beinsure",
    "Wall Street trades mixed as it pares earlier losses - Seeking Alpha",
-   "Dow Reclaims 50,000 as Inflation and GDP Data Land Before Thanksgiving - Morningstar",
    "Nasdaq Plunges 4.6% Before Dramatic Rebound. Wall Street Faces A Triple Threat From AI, Inflation And Trump Tariffs. - International Business Times",
    "S&amp;P Dow Jones Indices - S&amp;P Global",
    "U.S. Stocks Extend Plunge as AI Boom Turns to Bust - WSJ",
-   "Is the stock market closed? Thanksgiving, Black Friday trading hours - Detroit Free Press",
-   "Stock Market Trading Hours For Thanksgiving And Black Friday - Investor's Business Daily"
+   "Is the stock market closed? Thanksgiving, Black Friday trading hours - Detroit Free Press"
   ]
  }
 }
