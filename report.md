@@ -1,27 +1,27 @@
 # Night Trader v2 — Paper Trading Report (3 markets)
-_Updated: 2026-11-27 13:24 IST_
+_Updated: 2026-11-27 13:27 IST_
 
-## CRYPTO (OPEN) — ₹10,126.78 | P&L +126.78 (+1.27%)
-Cash ₹993.70 | cycles 4470 | capital ₹10,000
+## CRYPTO (OPEN) — ₹10,117.65 | P&L +117.65 (+1.18%)
+Cash ₹993.70 | cycles 4475 | capital ₹10,000
 | Symbol | Side | Qty | Entry | Last | Unrealized |
 |---|---|---|---|---|---|
-| BTC-USD | LONG | 0.0005 | 5657841.90 | 5724174.68 | +35.17 |
-| ETH-USD | LONG | 0.0189 | 158549.13 | 160872.44 | +43.95 |
-| SOL-USD | LONG | 0.4495 | 6670.11 | 6796.16 | +56.66 |
-News sentiment: -0.20 (179 headlines, 6 sources, Fear&Greed 12)
+| BTC-USD | LONG | 0.0005 | 5657841.90 | 5714414.27 | +30.00 |
+| ETH-USD | LONG | 0.0189 | 158549.13 | 160761.15 | +41.84 |
+| SOL-USD | LONG | 0.4495 | 6670.11 | 6792.03 | +54.80 |
+News sentiment: -0.16 (181 headlines, 6 sources, Fear&Greed 12)
 - Ripple Price Forecast: XRP rises as bulls buy the dip, ETF inflows return and retail demand improves - www.tmgm.com
 - Bitcoin Falls Further as Inflation, Trump Tariffs and AI Selloff Rattle Markets
 - Strategy and Crypto Stocks Rally as Bitcoin Rebounds Past $63,000. Is the Jump Temporary? - Barron's
 
-## INDIA (OPEN) — ₹9,976.88 | P&L -23.12 (-0.23%)
-Cash ₹4,005.04 | cycles 1245 | capital ₹10,000
+## INDIA (OPEN) — ₹9,974.63 | P&L -25.37 (-0.25%)
+Cash ₹4,005.04 | cycles 1250 | capital ₹10,000
 | Symbol | Side | Qty | Entry | Last | Unrealized |
 |---|---|---|---|---|---|
 | INFY.NS | LONG | 2.5764 | 1164.40 | 1157.70 | -17.26 |
-| HDFCBANK.NS | LONG | 3.4658 | 863.00 | 862.45 | -1.91 |
+| HDFCBANK.NS | LONG | 3.4658 | 863.00 | 861.80 | -4.16 |
 Closed: 1 (1 wins), realized +2.04
 - 09:15 SELL TCS.NS @ 2578.4 pnl +2.04 (RSI 79 overbought take-profit)
-News sentiment: +0.68 (220 headlines, 6 sources)
+News sentiment: +0.63 (218 headlines, 6 sources)
 - Gold jumps 2%, silver surges 5% as bullion rebounds from multi-month lows: Gold Silver Rates Live Updates
 - Gold finance stocks rally! Manappuram, Muthoot Finance gain up to 4% as MCX gold prices recover - Which stock to buy?
 - Gold price today 27 November 2026: MCX gold rate jumps but still 31% down from record high; is it the right time to buy?
@@ -29,7 +29,7 @@ News sentiment: +0.68 (220 headlines, 6 sources)
 ## US (CLOSED) — ₹10,000.00 | P&L +0.00 (+0.00%)
 Cash ₹10,000.00 | cycles 1069 | capital ₹10,000
 _No open positions — all cash._
-News sentiment: +0.11 (191 headlines, 6 sources)
+News sentiment: +0.14 (192 headlines, 6 sources)
 - S&amp;P 500, Nasdaq, Dow Forecast: Wall Street Rebound Faces Major Resistance—Bull Trap or Breakout? - StoneX
 - Norse Atlantic suspends all flights, warns it may file for bankruptcy after share price collapse
 - Nasdaq, S&amp;P 500 end down, but well off lows as investors buy bargains - Reuters
