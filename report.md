@@ -1,36 +1,36 @@
 # Night Trader v2 — Paper Trading Report (3 markets)
-_Updated: 2026-11-27 15:24 IST_
+_Updated: 2026-11-27 15:27 IST_
 
-## CRYPTO (OPEN) — ₹10,136.58 | P&L +136.58 (+1.37%)
-Cash ₹4,059.56 | cycles 4710 | capital ₹10,000
+## CRYPTO (OPEN) — ₹10,131.08 | P&L +131.08 (+1.31%)
+Cash ₹4,059.56 | cycles 4715 | capital ₹10,000
 | Symbol | Side | Qty | Entry | Last | Unrealized |
 |---|---|---|---|---|---|
-| BTC-USD | LONG | 0.0005 | 5657841.90 | 5727887.28 | +37.14 |
-| ETH-USD | LONG | 0.0189 | 158549.13 | 160705.15 | +40.78 |
+| BTC-USD | LONG | 0.0005 | 5657841.90 | 5722344.41 | +34.20 |
+| ETH-USD | LONG | 0.0189 | 158549.13 | 160569.68 | +38.22 |
 Closed: 1 (1 wins), realized +64.65
 - 13:49 SELL SOL-USD @ 6827.44 pnl +64.65 (RSI 78 overbought take-profit)
-News sentiment: -0.18 (181 headlines, 6 sources, Fear&Greed 12)
+News sentiment: -0.03 (179 headlines, 6 sources, Fear&Greed 12)
 - Bitcoin Falls Further as Inflation, Trump Tariffs and AI Selloff Rattle Markets
 - Strategy and Crypto Stocks Rally as Bitcoin Rebounds Past $63,000. Is the Jump Temporary? - Barron's
 - Bitcoin price extends gains, briefly tops $81,000 as crypto rally gathers pace - CNBC
 
 ## INDIA (OPEN) — ₹9,949.84 | P&L -50.16 (-0.50%)
-Cash ₹4,005.04 | cycles 1485 | capital ₹10,000
+Cash ₹4,005.04 | cycles 1490 | capital ₹10,000
 | Symbol | Side | Qty | Entry | Last | Unrealized |
 |---|---|---|---|---|---|
 | INFY.NS | LONG | 2.5764 | 1164.40 | 1154.20 | -26.28 |
 | HDFCBANK.NS | LONG | 3.4658 | 863.00 | 857.25 | -19.93 |
 Closed: 1 (1 wins), realized +2.04
 - 09:15 SELL TCS.NS @ 2578.4 pnl +2.04 (RSI 79 overbought take-profit)
-News sentiment: +0.64 (220 headlines, 6 sources)
-- Gold Silver Rate Today Live: Gold jumps 2%, silver surges 5% as bullion rebounds from multi-month lows: Gold Silver Rates Live Updates
+News sentiment: +0.61 (222 headlines, 6 sources)
 - Gold finance stocks rally! Manappuram, Muthoot Finance gain up to 4% as MCX gold prices recover - Which stock to buy?
+- Gold jumps 2%, silver hits 6% upper circuit on MCX as bullion rebounds from multi-month lows: Gold Silver Rates Live Updates
 - Gold price today 27 November 2026: MCX gold rate jumps but still 31% down from record high; is it the right time to buy?
 
 ## US (CLOSED) — ₹10,000.00 | P&L +0.00 (+0.00%)
 Cash ₹10,000.00 | cycles 1069 | capital ₹10,000
 _No open positions — all cash._
-News sentiment: +0.17 (192 headlines, 6 sources)
+News sentiment: +0.27 (192 headlines, 6 sources)
 - S&amp;P 500, Nasdaq, Dow Forecast: Wall Street Rebound Faces Major Resistance—Bull Trap or Breakout? - StoneX
 - Norse Atlantic suspends all flights, warns it may file for bankruptcy after share price collapse
 - Nasdaq, S&amp;P 500 end down, but well off lows as investors buy bargains - Reuters

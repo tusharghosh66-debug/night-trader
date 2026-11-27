@@ -1,21 +1,22 @@
 {
- "ts": "2026-11-27T14:27:03.183936+05:30",
+ "ts": "2026-11-27T15:27:03.227244+05:30",
  "crypto": {
-  "score": -0.182,
-  "n_headlines": 181,
+  "score": -0.029,
+  "n_headlines": 179,
   "n_sources": 6,
   "top": [
    "Bitcoin Falls Further as Inflation, Trump Tariffs and AI Selloff Rattle Markets",
    "Strategy and Crypto Stocks Rally as Bitcoin Rebounds Past $63,000. Is the Jump Temporary? - Barron's",
    "Bitcoin price extends gains, briefly tops $81,000 as crypto rally gathers pace - CNBC",
+   "Cathie Wood\u2019s ARK Buys Anthropic as Ripple CEO Predicts Post-IPO Crypto Rally - CCN.com",
    "Bitcoin Holds Above $60K as Death Cross Clouds Thanksgiving Recovery",
    "Bithumb Says October Hack Exposed Passports, Bank Accounts and Wallet Addresses",
    "Bitcoin rises to $61,504 as total crypto market cap drops to $2.12T amid $135M liquidations - Pluang",
-   "Hunton Insurance Recovery Blog: Lloyds Jumps Into The Cryptocurrency Market, Insuring Part Of Kingdom Trust's $12 Billion Assets - Legal 500",
-   "Crypto Market Today, Nov. 24: Bitcoin Falls Below $60,000 as ETF Outflows Hit a Record $4.7 Billion - Yahoo Finance"
+   "MemeCore price surges 12% but can the rally hold through December? - Crypto News"
   ],
   "headlines": [
    "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+   "Bitcoin tops $61,000 as Nasdaq futures extend Wednesday\u2019s rebound",
    "Monero suffers biggest single-day slide in over 5 months. Here\u2019s why",
    "Ripple's lending plan moves closer to tapping XRP Ledger's $800 million in stablecoins",
    "Binance says customer withdrawals are fully restored, four weeks after the $6.3 billion hack",
@@ -40,7 +41,6 @@
    "EU bank watchdog seeks European Commission rules for crypto firms offering DeFi lending",
    "Ukrainian lawmakers pass crypto tax and regulation bill expected to bring in $330 million",
    "Crypto Long & Short: Bitcoin investors can\u2019t keep ignoring Japan",
-   "South Korean crypto exchange Bithumb warns of phishing after deeper October breach probe",
    "Cointelegraph.com News",
    "ESMA to overhaul EU\u2019s MiCA crypto register in 2027",
    "New York AG secures $1.37B court judgment against NovaTech founders",
@@ -79,16 +79,16 @@
   "fear_greed": 12
  },
  "india": {
-  "score": 0.641,
-  "n_headlines": 220,
+  "score": 0.608,
+  "n_headlines": 222,
   "n_sources": 6,
   "top": [
-   "Gold Silver Rate Today Live: Gold jumps 2%, silver surges 5% as bullion rebounds from multi-month lows: Gold Silver Rates Live Updates",
    "Gold finance stocks rally! Manappuram, Muthoot Finance gain up to 4% as MCX gold prices recover - Which stock to buy?",
+   "Gold jumps 2%, silver hits 6% upper circuit on MCX as bullion rebounds from multi-month lows: Gold Silver Rates Live Updates",
    "Gold price today 27 November 2026: MCX gold rate jumps but still 31% down from record high; is it the right time to buy?",
    "FPI Inflows Hit Record High in November 2026 as Foreign Investors Buy Indian Shares Worth over \u20b91.22 Lakh Crore - Kotak Neo",
    "Spike in oil prices partly reverses rupee rally, forward premiums surge",
-   "Why is Indian stock market falling today? Nifty down to near 25,700, Sensex crashes 600 points | Top 3 reasons explained",
+   "Why is Indian stock market falling today? Nifty down to near 25,600, Sensex crashes 900 points | Top 3 reasons explained",
    "Small-cap, big jump! Waaree Renewable shares rise 14% on this order win; energy stock still 35% below 52-week high",
    "Indian shares set to open higher, eye fifth weekly gain as inflows boost momentum"
   ],
@@ -102,14 +102,14 @@
    "HCL Technologies among 7 stocks showing White Marubozu Pattern",
    "Positive breakout: These 4 stocks close above their 200 DMAs",
    "Sun TV Network among 4 stocks closing above VWAP",
-   "Gold Silver Rate Today Live: Gold jumps 2%, silver surges 5% as bullion rebounds from multi-month lows: Gold Silver Rates Live Updates",
+   "Gold jumps 2%, silver hits 6% upper circuit on MCX as bullion rebounds from multi-month lows: Gold Silver Rates Live Updates",
    "Bharat Coking Coal among 5 stocks showing RSI trending up",
    "Dubai seals deal for $159 billion Islamic banking giant",
    "Brent trades near month's high as Mideast conflict threatens supply",
    "Dollar lingers near 22-month peak as AI worries simmer",
    "Gold steady, heads for weekly gain as markets await Fed signals",
    "Gold Prices Fall: Is India\u2019s \u20b923 Lakh Crore Gold Loan Market at Risk? | The Morning Brief Decode",
-   "Stock Market Live Updates | Sensex tumbles over 750 points, Nifty below 25,650; IT, FMCG stocks lead losses",
+   "Stock Market Live Updates: Sensex tumbles over 900 points, Nifty below 25,650; IT, FMCG stocks lead losses",
    "Global Market Today: Asian stocks rise for second day, crude oil gains",
    "SC asks HDFC Bank, three others to ok staff prosecution",
    "Ashiana Housing JV buys 10-acre land in Chennai for senior living project, eyes Rs 1,100 cr revenue",
@@ -132,10 +132,13 @@
    "Bajaj Auto Share Price Highlights: Bajaj Auto Stock Price History",
    "RIL Share Price Highlights: RIL Stock Price History",
    "Axis Bank Share Price Highlights: Axis Bank Stock Price History",
+   "Gold ETFs vs Gold Mutual Funds: Amid ups and downs in rates, which is better instrument to buy for good returns?",
+   "Silver price prediction: After 67% crash from peak, is the white metal finally close to a bottom? Key levels to watch",
+   "Gold vs silver: Precious metals prices crashed and rebounded - which of them could deliver better returns in 2027?",
    "Up 57% YTD! Healthcare stock shows resilience against the Indian stock market crash; should you buy? Target, stop-loss",
    "Is a US Fed rate hike confirmed in Dec meet? How will it impact Sensex, Nifty, Gold as US PCE inflation rises in October",
    "Why Asahi India Glass may keep sparkling, irrespective of ICE or EV growth",
-   "Why is Indian stock market falling today? Nifty down to near 25,700, Sensex crashes 600 points | Top 3 reasons explained",
+   "Why is Indian stock market falling today? Nifty down to near 25,600, Sensex crashes 900 points | Top 3 reasons explained",
    "Railway stock Jupiter Wagons shares fall 7.5% after 29% surge in 2 days post Woojin JV: Should you buy the multibagger?",
    "Siemens' expanding order book has margin, valuation hurdles",
    "Banking stocks hit the accelerator! Nifty Bank index up 18% in 1 month; HDFC Bank, SBI, ICICI Bank- 9 best stocks to buy",
@@ -149,14 +152,11 @@
    "Sensex, Nifty down today but \u200bHindustan Zinc, Vedanta Aluminium to Vedanta Power are rising - Vedanta boost reason here",
    "Indian shares set to open higher, eye fifth weekly gain as inflows boost momentum",
    "Tata Power: Opportunity or value trap as ambitious growth plans meet execution risks?",
-   "Mahanadi Coalfields Set for Mumbai Debut After $969 Million IPO",
-   "Top stocks to watch today: NSE, Tata Group, Texmaco Rail, Tata Motors shares in focus on Friday, 27 November | Full list",
-   "Stock market outlook today, 27 Nov: Sensex, Nifty prediction-DJIA, S&amp;P, NASDAQ, GIFT Nifty, Kospi, Nikkei, Taiwan cues",
-   "Japan Bank Shares Risk Further Unwind as Funding Cost Bites"
+   "Mahanadi Coalfields Set for Mumbai Debut After $969 Million IPO"
   ]
  },
  "us": {
-  "score": 0.172,
+  "score": 0.266,
   "n_headlines": 192,
   "n_sources": 6,
   "top": [
@@ -164,10 +164,10 @@
    "Norse Atlantic suspends all flights, warns it may file for bankruptcy after share price collapse",
    "Nasdaq, S&amp;P 500 end down, but well off lows as investors buy bargains - Reuters",
    "Nasdaq, S&amp;P 500 end down, but well off lows as investors buy bargains - Yahoo Finance",
+   "US Stock Futures Surge After Thanksgiving Break as Nasdaq Jumps 2.5%, S&amp;P 500 Tops 7,300 - TradingView",
    "Fed rate hike odds rise to almost 100%: can AI selloff force a rethink? - TradingView",
-   "Why Nvidia (NVDA) Stock Is Falling Today: Tech and Chip Selloff - Yahoo Finance",
-   "European stocks end higher on easing tariff fears, ECB leadership continuity - Reuters",
-   "SpaceX shares jump on alternative trading platform after Musk says he will expand on Trump Account share donations"
+   "Stock Futures Jump as AI Trade Set for Rebound - WSJ",
+   "Why Nvidia (NVDA) Stock Is Falling Today: Tech and Chip Selloff - Yahoo Finance"
   ],
   "headlines": [
    "Sovereign wealth funds are acting more like private equity giants \u2014 and inheriting their risks",
@@ -185,11 +185,11 @@
    "How Trump\u2019s latest tariff moves hand India an edge over rival Asian exporters",
    "Semiconductor chips are the new oil. Here&apos;s why",
    "Buyer beware? Nvidia&apos;s volatile swings expose risks of single-stock ETFs",
-   "Liesman: Why Greenspan could bet on productivity \u2014 and Warsh needs to hike",
    "Inside India newsletter: Roaring economy, foreign investors\u2019 return and now record auto sales",
+   "Liesman: Why Greenspan could bet on productivity \u2014 and Warsh needs to hike",
    "Even the price of toys is on the rise. How Americans are scaling back holiday plans",
-   "Microdrama apps chase profits as Hollywood moves into short-form, vertical video",
    "Anthropic&apos;s stock has been a clunker post-IPO. Why that matters for the AI trade",
+   "Microdrama apps chase profits as Hollywood moves into short-form, vertical video",
    "Spain\u2019s Pablo Hern\u00e1ndez de Cos set to lead European Central Bank",
    "SpaceX, Musk pledge to donate a share each to active Trump Accounts",
    "Trump, NATO chief caution Russia as attacks on Ukraine\u2019s energy infrastructure intensify",
@@ -215,21 +215,21 @@
    "Dow Jones Futures Rise; Look For This Bullish Market Signal On Black Friday - Investor's Business Daily",
    "Asian Stocks Rise for Second Day, Treasuries Slip: Markets Wrap - Bloomberg.com",
    "Nasdaq, S&amp;P 500 end down, but well off lows as investors buy bargains - Reuters",
-   "Even Without Warren Buffett as CEO, Berkshire Hathaway Is Outperforming the S&amp;P 500, Nasdaq, and Dow by the Widest Margin Since 2022. History Says This Is What Happens Next. - The Motley Fool",
    "Dow closes higher after erasing 1,100-point loss as S&amp;P 500, Nasdaq slip - Fox Business",
-   "Nasdaq, S&amp;P 500 close lower, giving up some Nvidia-fueled gains - NBC News",
-   "Stock Indices Finish Off Their Lows as Dip Buyers Step In - Barchart.com",
+   "Even Without Warren Buffett as CEO, Berkshire Hathaway Is Outperforming the S&amp;P 500, Nasdaq, and Dow by the Widest Margin Since 2022. History Says This Is What Happens Next. - The Motley Fool",
+   "Tech stocks are volatile as AI fears overshadow Huang\u2019s Nvidia return - CNN",
    "Stock Market Today: Dow, S&amp;P 500, Nasdaq Futures Fall as Traders Bet on December Fed Hike; Trump Tells Hu - Benzinga",
+   "Stock Indices Finish Off Their Lows as Dip Buyers Step In - Barchart.com",
    "U.S. stock futures rise sharply; Nasdaq up 1.7% in holiday-thinned trade - Investing.com",
+   "Nasdaq, S&amp;P 500 close lower, giving up some Nvidia-fueled gains - NBC News",
    "US Stock Market Futures Rise Ahead of Black Friday as AI Stocks Rebound Globally - Stocks Down Under",
    "US stock market today: Nasdaq and S&amp;P 500 fall as Nvidia and AI stocks slide, Dow gains - Beinsure",
    "Wall Street trades mixed as it pares earlier losses - Seeking Alpha",
+   "Stocks Finish Mostly Lower Ahead of U.S. Thanksgiving - TipRanks",
    "Nasdaq Plunges 4.6% Before Dramatic Rebound. Wall Street Faces A Triple Threat From AI, Inflation And Trump Tariffs. - International Business Times",
    "Dow, S&amp;P 500, Nasdaq Futures Edge Higher As Tech Rebounds After Selloff: DIS, VRTX, DE, CHTR In Focus - Yahoo Finance",
-   "Stock Market Today, Nov. 25: Wall Street Braces for Inflation Data After Tech-Led Selloff - TipRanks",
    "S&amp;P Dow Jones Indices - S&amp;P Global",
-   "U.S. Stocks Extend Plunge as AI Boom Turns to Bust - WSJ",
-   "Is the stock market closed? Thanksgiving, Black Friday trading hours - Detroit Free Press"
+   "U.S. Stocks Extend Plunge as AI Boom Turns to Bust - WSJ"
   ]
  }
 }
