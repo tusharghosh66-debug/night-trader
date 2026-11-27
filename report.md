@@ -1,14 +1,14 @@
 # Night Trader v2 — Paper Trading Report (3 markets)
-_Updated: 2026-11-27 22:26 IST_
+_Updated: 2026-11-27 22:29 IST_
 
 ## CRYPTO (OPEN) — ₹10,040.26 | P&L +40.26 (+0.40%)
-Cash ₹10,040.26 | cycles 5550 | capital ₹10,000
+Cash ₹10,040.26 | cycles 5555 | capital ₹10,000
 _No open positions — all cash._
 Closed: 3 (1 wins), realized +40.26
 - 13:49 SELL SOL-USD @ 6827.44 pnl +64.65 (RSI 78 overbought take-profit)
 - 20:04 SELL ETH-USD @ 158507.65 pnl -6.78 (stop/trail hit (158507.65<=158554.25))
 - 20:04 SELL BTC-USD @ 5635924.12 pnl -17.61 (stop/trail hit (5635924.12<=5653353.84))
-News sentiment: +0.04 (178 headlines, 6 sources, Fear&Greed 12)
+News sentiment: +0.02 (178 headlines, 6 sources, Fear&Greed 12)
 - Bitcoin Falls Further as Inflation, Trump Tariffs and AI Selloff Rattle Markets
 - Strategy and Crypto Stocks Rally as Bitcoin Rebounds Past $63,000. Is the Jump Temporary? - Barron's
 - Bitcoin price extends gains, briefly tops $81,000 as crypto rally gathers pace - CNBC
@@ -21,15 +21,15 @@ Cash ₹6,968.32 | cycles 1495 | capital ₹10,000
 Closed: 2 (1 wins), realized -37.68
 - 09:15 SELL TCS.NS @ 2578.4 pnl +2.04 (RSI 79 overbought take-profit)
 - 15:29 SELL INFY.NS @ 1151.3 pnl -39.72 (stop/trail hit (1151.30<=1151.48))
-News sentiment: +0.40 (225 headlines, 6 sources)
+News sentiment: +0.49 (225 headlines, 6 sources)
 - Gold finance stocks rally! Manappuram, Muthoot Finance gain up to 4% as MCX gold prices recover - Which stock to buy?
 - Gold price today 27 November 2026: MCX gold rate jumps but still 31% down from record high; is it the right time to buy?
 - Stock market today: Sensex tumbles 1,000 points, Nifty drops 277 points as TCS, Infosys, Shriram Finance lead losses
 
 ## US (OPEN) — ₹10,000.00 | P&L +0.00 (+0.00%)
-Cash ₹10,000.00 | cycles 1362 | capital ₹10,000
+Cash ₹10,000.00 | cycles 1367 | capital ₹10,000
 _No open positions — all cash._
-News sentiment: +0.61 (191 headlines, 6 sources)
+News sentiment: +0.72 (192 headlines, 6 sources)
 - US Futures Rally as Tech Rebound Gains Momentum: Markets Wrap - Bloomberg.com
 - S&amp;P 500, Nasdaq, Dow Forecast: Wall Street Rebound Faces Major Resistance—Bull Trap or Breakout? - StoneX
 - The S&amp;P 500 is in a correction. Bear markets and recessions don&apos;t always follow
