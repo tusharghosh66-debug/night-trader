@@ -1,8 +1,8 @@
 # Night Trader v2 — Paper Trading Report (3 markets)
-_Updated: 2026-11-27 22:49 IST_
+_Updated: 2026-11-27 22:51 IST_
 
 ## CRYPTO (OPEN) — ₹10,040.26 | P&L +40.26 (+0.40%)
-Cash ₹10,040.26 | cycles 5595 | capital ₹10,000
+Cash ₹10,040.26 | cycles 5600 | capital ₹10,000
 _No open positions — all cash._
 Closed: 3 (1 wins), realized +40.26
 - 13:49 SELL SOL-USD @ 6827.44 pnl +64.65 (RSI 78 overbought take-profit)
@@ -27,7 +27,7 @@ News sentiment: +0.49 (225 headlines, 6 sources)
 - Stock market today: Sensex tumbles 1,000 points, Nifty drops 277 points as TCS, Infosys, Shriram Finance lead losses
 
 ## US (OPEN) — ₹10,000.00 | P&L +0.00 (+0.00%)
-Cash ₹10,000.00 | cycles 1407 | capital ₹10,000
+Cash ₹10,000.00 | cycles 1412 | capital ₹10,000
 _No open positions — all cash._
 News sentiment: +0.72 (192 headlines, 6 sources)
 - US Futures Rally as Tech Rebound Gains Momentum: Markets Wrap - Bloomberg.com
