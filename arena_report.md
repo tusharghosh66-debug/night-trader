@@ -1,13 +1,13 @@
 # Strategy Arena — Leaderboard
-_Updated: 2026-11-27 23:29 IST_
+_Updated: 2026-11-27 23:31 IST_
 
-**Total equity: Rs 1,598,906.08** / Rs 1,600,000 start (-0.07%)
+**Total equity: Rs 1,598,891.76** / Rs 1,600,000 start (-0.07%)
 
 | Rank | Bot | Strategy | Equity | P&L | % | Trades | Win% | Open |
 |---|---|---|---|---|---|---|---|---|
-| 1 | x03 | Core Regime Trend (council) | Rs 100,064.33 | +64.33 | +0.06% | 0 | 0% | 1 |
-| 2 | s11 | Spike & VWAP Rejection Short | Rs 100,040.44 | +40.44 | +0.04% | 0 | 0% | 1 |
-| 3 | x02 | RS Rotation Top-2 (council) | Rs 100,036.82 | +36.82 | +0.04% | 0 | 0% | 1 |
+| 1 | x03 | Core Regime Trend (council) | Rs 100,081.28 | +81.28 | +0.08% | 0 | 0% | 1 |
+| 2 | x02 | RS Rotation Top-2 (council) | Rs 100,050.24 | +50.24 | +0.05% | 0 | 0% | 1 |
+| 3 | s11 | Spike & VWAP Rejection Short | Rs 100,040.44 | +40.44 | +0.04% | 0 | 0% | 1 |
 | 4 | s01 | St. Gallen ORB Noise-Band | Rs 100,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 5 | s02 | Trend-Filtered Mean Reversion | Rs 100,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 6 | s03 | ETF Dual Momentum Rotation | Rs 100,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
@@ -19,7 +19,7 @@ _Updated: 2026-11-27 23:29 IST_
 | 12 | s12 | OHL + CPR Breakdown Short | Rs 100,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 13 | s13 | Afternoon Sell-the-Rip Short | Rs 100,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 14 | x01 | Vol Squeeze Breakout (council) | Rs 100,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
-| 15 | s04 | Multi-Market Trend Following | Rs 99,781.68 | -218.32 | -0.22% | 0 | 0% | 1 |
-| 16 | s07 | First-Candle ORB 15m | Rs 98,982.82 | -1,017.18 | -1.02% | 1 | 0% | 1 |
+| 15 | s04 | Multi-Market Trend Following | Rs 99,780.74 | -219.26 | -0.22% | 0 | 0% | 1 |
+| 16 | s07 | First-Candle ORB 15m | Rs 98,939.06 | -1,060.94 | -1.06% | 1 | 0% | 1 |
 
-**Best so far: x03 — Core Regime Trend (council) (+0.06%)**
+**Best so far: x03 — Core Regime Trend (council) (+0.08%)**
