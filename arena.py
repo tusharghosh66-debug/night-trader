@@ -407,7 +407,13 @@ def open_position(bs, sym, side, qty, price, stop, reason, now):
                 f"< {REENTRY_COOLDOWN_MIN}m cooldown")
             return False
     try:
-        rpct = abs(price - stop) / price * 100.0 if price > 0 else 0.0
+        if "/" in str(sym):
+            # pairs trade a LOG-SPREAD, which is negative half the time; dividing
+            # by it gave rpct=0 and silently blocked every such pair entry.
+            # The stop is a log-spread distance, so x100 is the % move it allows.
+            rpct = abs(price - stop) * 100.0
+        else:
+            rpct = abs(price - stop) / price * 100.0 if price > 0 else 0.0
     except Exception:
         rpct = 0.0
     if rpct < MIN_RISK_PCT:
@@ -461,7 +467,16 @@ def open_position(bs, sym, side, qty, price, stop, reason, now):
 
 def trade_fee_for(sym, qty, entry, exit_px, side):
     q = abs(qty)
-    if str(sym).endswith(".NS"):
+    s = str(sym)
+    if "/" in s:
+        # pairs (s09): qty is the rupee notional of each leg, not a share count,
+        # and the price is a log-spread -- so charge both legs on the notional.
+        # A pair can mix markets ("XOM/CVX" has no .NS suffix at all).
+        if any(leg.endswith(".NS") for leg in s.split("/")):
+            return 2.0 * (fees_in.delivery_charges("BUY", q)["total"]
+                          + fees_in.delivery_charges("SELL", q)["total"])
+        return 2.0 * q * FEE
+    if s.endswith(".NS"):
         buy_v = q * (entry if side > 0 else exit_px)
         sell_v = q * (exit_px if side > 0 else entry)
         return (fees_in.delivery_charges("BUY", buy_v)["total"]
@@ -479,18 +494,10 @@ def trade_fee(sym, qty, entry, exit_px, side):
 def close_position(bs, sym, price, reason, now):
     p = bs["positions"].pop(sym)
     _CLOSED_THIS_CYCLE.add((id(bs), sym))   # per bot: bots must not block each other
-    if "legs" in p:
-        # pairs (s09): qty is a rupee notional and "price" is a LOG-SPREAD, so a
-        # qty*price*FEE term is ~0.001 of nothing. Charge both legs on notional.
-        if str(sym).endswith(".NS"):
-            fee = 2.0 * (fees_in.delivery_charges("BUY", p["qty"])["total"]
-                         + fees_in.delivery_charges("SELL", p["qty"])["total"])
-        else:
-            fee = 2.0 * p["qty"] * FEE
-        pnl = p["side"] * p["qty"] * (price - p["entry"]) - fee
-    else:
-        pnl = (p["side"] * p["qty"] * (price - p["entry"])
-               - trade_fee(sym, p["qty"], p["entry"], price, p["side"]))
+    # trade_fee() knows how to charge a pair (notional per leg) and a single
+    # position (share count x price), so one formula covers both.
+    pnl = (p["side"] * p["qty"] * (price - p["entry"])
+           - trade_fee(sym, p["qty"], p["entry"], price, p["side"]))
     bs["cash"] += pnl
     bs["last_prices"][sym] = price
     bs.setdefault("last_exit", {})[sym] = time.time()   # feeds the re-entry cooldown
@@ -1988,13 +1995,8 @@ def write_site(st):
             for t in closed:
                 if len(t) <= 8:
                     continue
-                if "/" in str(t[2]) and str(t[2]).endswith(".NS"):
-                    # pair row: qty is rupee notional per leg, so charge both legs
-                    fees += 2.0 * (fees_in.delivery_charges("BUY", t[4])["total"]
-                                   + fees_in.delivery_charges("SELL", t[4])["total"])
-                else:
-                    side = 1 if t[3] == "LONG" else -1
-                    fees += trade_fee_for(t[2], t[4], t[5], t[6], side)
+                side = 1 if t[3] == "LONG" else -1
+                fees += trade_fee_for(t[2], t[4], t[5], t[6], side)
             wins = sum(1 for t in closed if t[7] > 0)
             sparkv = [h.get(sid) for h in hist if h.get(sid) is not None]
             if len(sparkv) < 2:
