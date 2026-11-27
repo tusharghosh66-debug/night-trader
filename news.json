@@ -1,18 +1,18 @@
 {
- "ts": "2026-11-27T22:28:05.518784+05:30",
+ "ts": "2026-11-27T23:28:05.541087+05:30",
  "crypto": {
-  "score": 0.02,
-  "n_headlines": 178,
+  "score": 0.089,
+  "n_headlines": 179,
   "n_sources": 6,
   "top": [
    "Bitcoin Falls Further as Inflation, Trump Tariffs and AI Selloff Rattle Markets",
    "Strategy and Crypto Stocks Rally as Bitcoin Rebounds Past $63,000. Is the Jump Temporary? - Barron's",
-   "Bitcoin price extends gains, briefly tops $81,000 as crypto rally gathers pace - CNBC",
    "Cathie Wood\u2019s ARK Buys Anthropic as Ripple CEO Predicts Post-IPO Crypto Rally - CCN.com",
+   "Bitcoin price extends gains, briefly tops $81,000 as crypto rally gathers pace - CNBC",
    "Bitcoin Holds Above $60K as Death Cross Clouds Thanksgiving Recovery",
    "USDT Supply Shrinks With Its Steepest Drop Since Bitcoin\u2019s 2022 Bear Market - CCN.com",
-   "Bitcoin price prediction: Post-expiry selloff raises risk of a drop to $58,000 - Traders Union",
-   "Why Is Bitcoin Crashing Today? Bitcoin Falls Below $59K After $7 Billion Options Expiry - Coinpaper"
+   "Crypto Stocks Gain After Bitcoin Tops $61K In Tech Rebound, But Analysts Want A Move Above $62K - Yahoo Finance",
+   "Bitcoin, crypto and tech stocks rally as Nvidia reinstates Jensen Huang as CEO; NVDA jumps 30% - The Block"
   ],
   "headlines": [
    "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
@@ -42,6 +42,7 @@
    "$7 billion of bitcoin options expire Friday, and the biggest bets look starkly different from October",
    "Zcash developers want to phase out older privacy system as a precaution against future attacks",
    "Cointelegraph.com News",
+   "China sets March 2027 rollout for blockchain identity regulations",
    "Bitcoin price drops below $59K as Anthropic joins tech stock rebound",
    "What was Coinbase worth while Nasdaq was closed?",
    "Binance to launch tokenized IPO program after regulatory approval: Yi He",
@@ -71,32 +72,31 @@
    "Standard Chartered\u2019s Zodia Custody suffers data breach",
    "Bitcoin price eyes $61K as Talos warns of thin Thanksgiving liquidity",
    "Zcash devs urge users to migrate 2% of ZEC supply to accelerate Sapling pool retirement",
-   "Bitcoin ETF November outflows top $5B, Morgan Stanley bucks trend",
-   "AI-Powered GTA 6 PC Ports Now Have Multiplayer as Modders Unlock 30 and 60 FPS",
-   "What&#39;s on the Ethereum Roadmap: Glamsterdam, Hegot\u00e1 and Beyond",
-   "Binance Fully Lifts Withdrawal Suspension Four Weeks After $6.4B Hack"
+   "Hackers Hit US Air Force Cloud System Running Air-Defense and Munitions Data",
+   "Nvidia&#39;s Blackwell Chips Turn Up in China as Trump Floats Government Stake",
+   "AI-Powered GTA 6 PC Ports Now Have Multiplayer as Modders Unlock 30 and 60 FPS"
   ],
   "fear_greed": 12
  },
  "india": {
-  "score": 0.493,
-  "n_headlines": 225,
+  "score": 0.498,
+  "n_headlines": 223,
   "n_sources": 6,
   "top": [
    "Gold finance stocks rally! Manappuram, Muthoot Finance gain up to 4% as MCX gold prices recover - Which stock to buy?",
    "Gold price today 27 November 2026: MCX gold rate jumps but still 31% down from record high; is it the right time to buy?",
+   "Dow jumps 600 points, heads for weekly gains after volatile trading: Stock Market Live Updates",
    "Stock market today: Sensex tumbles 1,000 points, Nifty drops 277 points as TCS, Infosys, Shriram Finance lead losses",
    "Why is Indian stock market falling today? Nifty down to near 25,600, Sensex crashes 900 points | Top 3 reasons explained",
    "Small-cap, big jump! Waaree Renewable shares rise 14% on this order win; energy stock still 35% below 52-week high",
    "Indian shares set to open higher, eye fifth weekly gain as inflows boost momentum",
-   "Black Friday Turns Red: Nifty Slips After a 15% Rally in Four Weeks. Is the Market Just Catching Its Breath? - NiftyTrader",
-   "Stock Market This Week: Why Sensex Lost 580 Pts Despite Strong FII Inflows and Defence Rally - The Indian Awaaz"
+   "Black Friday Turns Red: Nifty Slips After a 15% Rally in Four Weeks. Is the Market Just Catching Its Breath? - NiftyTrader"
   ],
   "headlines": [
    "Economic Times",
    "Blackstone sells 1.55% stake in IGI for Rs 280 crore to meet public shareholding norms",
    "Capital market industry hopes for relief in capital gains taxation in Budget 2027-28: Axis Capital MD",
-   "US stocks edge higher as battered AI shares claw back losses: Stock Market Live Updates",
+   "Dow jumps 600 points, heads for weekly gains after volatile trading: Stock Market Live Updates",
    "India bonds slump as oil spike adds to RBI hike bets",
    "Ion Exchange India among 6 stocks hitting 52-week low; shares slipped up to 20% in a month",
    "Eurozone bond yields rise as investors return to riskier assets, oil prices rebound",
@@ -133,6 +133,7 @@
    "Asian Paints Share Price Highlights: Asian Paints Stock Price History",
    "HDFC Life Share Price Highlights: HDFC Life Stock Price History",
    "Tech Mahindra Share Price Highlights: Tech Mahindra Stock Price History",
+   "Zee Entertainment \u20b9600 crore buyback opens on December 1; what eligible shareholders need to know",
    "Sebi to recast rulebook to fund India's growth: Tuhin Kanta Pandey",
    "Pulse of the Street: Profit booking snaps four-week rally; markets brace consolidation?",
    "SanDisk, AMD and Broadcom shares rebound as investors return to battered AI shares; what changed on Wall Street?",
@@ -151,20 +152,19 @@
    "Silver price prediction: After 67% crash from peak, is the white metal finally close to a bottom? Key levels to watch",
    "Gold vs silver: Precious metals prices crashed and rebounded - which of them could deliver better returns in 2027?",
    "Up 57% YTD! Healthcare stock shows resilience against the Indian stock market crash; should you buy? Target, stop-loss",
-   "Is a US Fed rate hike confirmed in Dec meet? How will it impact Sensex, Nifty, Gold as US PCE inflation rises in October",
-   "Why Asahi India Glass may keep sparkling, irrespective of ICE or EV growth"
+   "Is a US Fed rate hike confirmed in Dec meet? How will it impact Sensex, Nifty, Gold as US PCE inflation rises in October"
   ]
  },
  "us": {
-  "score": 0.719,
-  "n_headlines": 192,
+  "score": 0.557,
+  "n_headlines": 194,
   "n_sources": 6,
   "top": [
+   "Tariff Risks vs Rate Hike Fears in the Latest U.S. Stock Selloff - StoneX",
    "US Futures Rally as Tech Rebound Gains Momentum: Markets Wrap - Bloomberg.com",
-   "S&amp;P 500, Nasdaq, Dow Forecast: Wall Street Rebound Faces Major Resistance\u2014Bull Trap or Breakout? - StoneX",
    "The S&amp;P 500 is in a correction. Bear markets and recessions don&apos;t always follow",
    "Budget airline Norse Atlantic files for bankruptcy in Europe after failing to secure funding",
-   "SpaceX shares jump 4% amid tech rally and after Musk says he will expand on Trump Account share donations",
+   "SpaceX shares jump over 3% amid tech rally and after Musk says he will expand on Trump Account share donations",
    "Nasdaq, S&amp;P 500 end down, but well off lows as investors buy bargains - Reuters",
    "Nasdaq, S&amp;P 500 end down, but well off lows as investors buy bargains - StreetInsider",
    "Stock Futures Jump as AI Trade Set for Rebound - WSJ"
@@ -174,7 +174,7 @@
    "The S&amp;P 500 is in a correction. Bear markets and recessions don&apos;t always follow",
    "AI shopping agents are having a moment, but Amazon and a growing number of sites threaten to stunt their growth",
    "Budget airline Norse Atlantic files for bankruptcy in Europe after failing to secure funding",
-   "SpaceX shares jump 4% amid tech rally and after Musk says he will expand on Trump Account share donations",
+   "SpaceX shares jump over 3% amid tech rally and after Musk says he will expand on Trump Account share donations",
    "EU leaders fail to break $1.7 trillion budget deadlock as political pressure mounts",
    "Liesman: Why Greenspan could bet on productivity \u2014 and Warsh needs to hike",
    "Even the price of toys is on the rise. How Americans are scaling back holiday plans",
@@ -184,8 +184,8 @@
    "&apos;The Traitors&apos; ended with a $246,300 prize\u2014here&apos;s who won and what they told us about spending it",
    "It\u2019s not just you: Durable goods are getting less reliable, from sputtering cars to glitching smart TVs",
    "Two Italians killed in Kuwait drone attack; Trump says Iran war ends \u2018whenever I want it\u2019",
-   "What is \u2018texture-maxxing\u2019? The food trend putting crunch on the menu",
    "Top 10 things to watch in the stock market on Black Friday",
+   "What is \u2018texture-maxxing\u2019? The food trend putting crunch on the menu",
    "Planes, trains and automobiles: The best ways to beat travel fatigue\u2014so you can come home feeling rested and fulfilled",
    "German software firm SAP is reportedly cutting at least 10,000 jobs in AI push",
    "Rheinmetall reins in growth ambitions as Europe&apos;s rearmament boom hits hurdles",
@@ -201,6 +201,8 @@
    "Sovereign wealth funds are acting more like private equity giants \u2014 and inheriting their risks",
    "Microdrama apps chase profits as Hollywood moves into short-form, vertical video",
    "MarketWatch.com - Top Stories",
+   "Clearing out my parents&#x2019; house was a legal nightmare. How can I downsize without putting my kids through the same ordeal?",
+   "12 days of sardines and Croc charms: Are Advent calendars getting out of control?",
    "A 66-year-old nurse is facing down retirement with just $500 saved. Who&#x2019;s to blame?",
    "These stocks soared the most during a wild week highlighted by Huang&#x2019;s return to Nvidia",
    "I&#x2019;ve been married for 58 years. It&#x2019;s &#x2018;our&#x2019; money, not &#x2018;his&#x2019; and &#x2018;hers.&#x2019; Why do so many couples keep their finances separate?",
@@ -209,27 +211,25 @@
    "Artificial intelligence usage is exploding, yet spending is stalling. Why a foundational rule of economics is breaking.",
    "Nvidia&#x2019;s stock has tumbled 28% over one chaotic month. The next big test lies in the week ahead",
    "How much more are richest Americans spending on the holidays compared to everyone else?",
-   "Clearing out my parents&#x2019; house was a legal nightmare. How can I downsize without putting my kids through the same ordeal?",
-   "Renters are now a national political constituency that can influence elections",
    "Google News",
    "US Futures Rally as Tech Rebound Gains Momentum: Markets Wrap - Bloomberg.com",
-   "Dow Jones Futures Rise; Look For This Bullish Market Signal On Black Friday - Investor's Business Daily",
    "Nasdaq, S&amp;P 500 end down, but well off lows as investors buy bargains - Reuters",
-   "U.S. Stocks Mixed as Nvidia, AI Rout Continues - WSJ",
-   "How Far Could the Dow Jones Industrial Average, S&amp;P 500, and Nasdaq Composite Plunge? Nearly 156 Years of History Offers an Answer. - The Motley Fool",
+   "Dow Jones Futures Rise; Look For This Bullish Market Signal On Black Friday - Investor's Business Daily",
    "Wall Street rallies as tech stocks rebound, putting indexes on course for big week - Investing.com",
+   "Stock Market Today, Nov. 25: Dow Erases 1,100-Point Loss as Wall Street Stages Dramatic Late-Day Comeback - The Motley Fool",
    "Stock Market Today: Dow, S&amp;P 500, Nasdaq 100 Futures Rise as Wall Street Returns to Wrap Up Holiday-Short - Benzinga",
    "US stocks set for weekly advance as battered AI shares hold their ground - The Detroit News",
+   "Dow, S&amp;P 500, Nasdaq Futures Edge Higher As Tech Rebounds After Selloff: DIS, VRTX, DE, CHTR In Focus - TradingView",
+   "Stocks rise in abbreviated Black Friday trading as AI concerns ease - upi",
    "S&amp;P 500, Nasdaq and Dow set for winning week despite AI turbulence - Quartz",
-   "Wall Street firmly in green as it looks to end volatile week on a high - Seeking Alpha",
+   "Stocks rise and keep Wall Street on track to close out an erratic week with big gains - BNN Bloomberg",
+   "US stock market today: Nasdaq and S&amp;P 500 fall as Nvidia and AI stocks slide, Dow gains - Beinsure",
+   "Dow Reclaims 50,000 as Inflation and GDP Data Land Before Thanksgiving - Morningstar",
    "Nasdaq Plunges 4.6% Before Dramatic Rebound. Wall Street Faces A Triple Threat From AI, Inflation And Trump Tariffs. - International Business Times",
    "Nasdaq, S&amp;P 500 end down, but well off lows as investors buy bargains - StreetInsider",
-   "Dow, S&amp;P 500, Nasdaq Futures Edge Higher As Tech Rebounds After Selloff: DIS, VRTX, DE, CHTR In Focus - Yahoo Finance",
-   "Stock Futures Jump as AI Trade Set for Rebound - WSJ",
    "Stock Market Today: S&amp;P 500, Nasdaq and Dow Jones Rally on Black Friday - Coinpaper",
-   "US stock market today: Dow Jones jumps 510 points, S&amp;P 500 rises 1.2%, Nasdaq gains 1.7% - CNBC TV18 - LinkedIn",
-   "U.S. Stocks Extend Plunge as AI Boom Turns to Bust - WSJ",
-   "Wall Street Futures Signal Strong Opening as Technology Stocks Continue Recovery: Dow Jones, S&amp;P, Nasdaq - Yahoo Finance"
+   "Stock Futures Jump as AI Trade Set for Rebound - WSJ",
+   "US stock market today: Dow Jones jumps 510 points, S&amp;P 500 rises 1.2%, Nasdaq gains 1.7% - CNBC TV18 - LinkedIn"
   ]
  }
 }
