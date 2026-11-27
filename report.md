@@ -1,18 +1,18 @@
 # Night Trader v2 — Paper Trading Report (3 markets)
-_Updated: 2026-11-27 17:24 IST_
+_Updated: 2026-11-27 17:28 IST_
 
-## CRYPTO (OPEN) — ₹10,112.46 | P&L +112.46 (+1.12%)
-Cash ₹4,059.56 | cycles 4950 | capital ₹10,000
+## CRYPTO (OPEN) — ₹10,122.05 | P&L +122.05 (+1.22%)
+Cash ₹4,059.56 | cycles 4955 | capital ₹10,000
 | Symbol | Side | Qty | Entry | Last | Unrealized |
 |---|---|---|---|---|---|
-| BTC-USD | LONG | 0.0005 | 5657841.90 | 5714927.37 | +30.27 |
-| ETH-USD | LONG | 0.0189 | 158549.13 | 159793.57 | +23.54 |
+| BTC-USD | LONG | 0.0005 | 5657841.90 | 5723528.95 | +34.83 |
+| ETH-USD | LONG | 0.0189 | 158549.13 | 160059.49 | +28.57 |
 Closed: 1 (1 wins), realized +64.65
 - 13:49 SELL SOL-USD @ 6827.44 pnl +64.65 (RSI 78 overbought take-profit)
-News sentiment: -0.11 (179 headlines, 6 sources, Fear&Greed 12)
+News sentiment: -0.04 (179 headlines, 6 sources, Fear&Greed 12)
 - Bitcoin Falls Further as Inflation, Trump Tariffs and AI Selloff Rattle Markets
 - Strategy and Crypto Stocks Rally as Bitcoin Rebounds Past $63,000. Is the Jump Temporary? - Barron's
-- Bitcoin Holds Above $60K as Death Cross Clouds Thanksgiving Recovery
+- Bitcoin price extends gains, briefly tops $81,000 as crypto rally gathers pace - CNBC
 
 ## INDIA (CLOSED) — ₹9,939.40 | P&L -60.60 (-0.61%)
 Cash ₹6,968.32 | cycles 1495 | capital ₹10,000
@@ -22,7 +22,7 @@ Cash ₹6,968.32 | cycles 1495 | capital ₹10,000
 Closed: 2 (1 wins), realized -37.68
 - 09:15 SELL TCS.NS @ 2578.4 pnl +2.04 (RSI 79 overbought take-profit)
 - 15:29 SELL INFY.NS @ 1151.3 pnl -39.72 (stop/trail hit (1151.30<=1151.48))
-News sentiment: +0.57 (220 headlines, 6 sources)
+News sentiment: +0.42 (223 headlines, 6 sources)
 - Gold finance stocks rally! Manappuram, Muthoot Finance gain up to 4% as MCX gold prices recover - Which stock to buy?
 - Gold jumps 3%, silver hits 6% upper circuit on MCX as bullion rebounds from multi-month lows: Gold Silver Rates Live Updates
 - Gold price today 27 November 2026: MCX gold rate jumps but still 31% down from record high; is it the right time to buy?
@@ -30,7 +30,7 @@ News sentiment: +0.57 (220 headlines, 6 sources)
 ## US (CLOSED) — ₹10,000.00 | P&L +0.00 (+0.00%)
 Cash ₹10,000.00 | cycles 1069 | capital ₹10,000
 _No open positions — all cash._
-News sentiment: +0.52 (192 headlines, 6 sources)
+News sentiment: +0.58 (191 headlines, 6 sources)
 - US Futures Rally as Tech Rebound Gains Momentum: Markets Wrap - Bloomberg.com
 - S&amp;P 500, Nasdaq, Dow Forecast: Wall Street Rebound Faces Major Resistance—Bull Trap or Breakout? - StoneX
 - SpaceX shares jump 4% amid tech rally and after Musk says he will expand on Trump Account share donations
