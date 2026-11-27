@@ -1,14 +1,14 @@
 # Night Trader v2 — Paper Trading Report (3 markets)
-_Updated: 2026-11-27 08:24 IST_
+_Updated: 2026-11-27 08:26 IST_
 
-## CRYPTO (OPEN) — ₹10,007.58 | P&L +7.58 (+0.08%)
-Cash ₹993.70 | cycles 3870 | capital ₹10,000
+## CRYPTO (OPEN) — ₹10,006.08 | P&L +6.08 (+0.06%)
+Cash ₹993.70 | cycles 3875 | capital ₹10,000
 | Symbol | Side | Qty | Entry | Last | Unrealized |
 |---|---|---|---|---|---|
-| BTC-USD | LONG | 0.0005 | 5657841.90 | 5662628.18 | +2.54 |
-| ETH-USD | LONG | 0.0189 | 158549.13 | 159005.76 | +8.64 |
+| BTC-USD | LONG | 0.0005 | 5657841.90 | 5661080.82 | +1.72 |
+| ETH-USD | LONG | 0.0189 | 158549.13 | 158969.71 | +7.96 |
 | SOL-USD | LONG | 0.4495 | 6670.11 | 6682.13 | +5.40 |
-News sentiment: -0.29 (180 headlines, 6 sources, Fear&Greed 12)
+News sentiment: -0.22 (179 headlines, 6 sources, Fear&Greed 12)
 - Ripple Price Forecast: XRP rises as bulls buy the dip, ETF inflows return and retail demand improves - www.tmgm.com
 - Bitcoin Falls Further as Inflation, Trump Tariffs and AI Selloff Rattle Markets
 - Strategy and Crypto Stocks Rally as Bitcoin Rebounds Past $63,000. Is the Jump Temporary? - Barron's
@@ -20,15 +20,15 @@ Cash ₹1,002.91 | cycles 746 | capital ₹10,000
 | INFY.NS | LONG | 2.5764 | 1164.40 | 1183.00 | +47.92 |
 | TCS.NS | LONG | 1.1655 | 2571.50 | 2640.30 | +80.19 |
 | HDFCBANK.NS | LONG | 3.4658 | 863.00 | 862.00 | -3.47 |
-News sentiment: +0.56 (221 headlines, 6 sources)
+News sentiment: +0.55 (219 headlines, 6 sources)
 - Gold price today in India ₹58,500 away from record high; right time to buy amid rebound from 14-month low?
-- Sensex Jumps 1,502 Points; Nifty Surges 470 on FII Buying - HDFC Sky
+- Sensex jumps 1,502 points, Nifty surges to 25,819 on foreign fund inflows, lower crude oil - DD News
 - FPI Inflows Hit Record High in November 2026 as Foreign Investors Buy Indian Shares Worth over ₹1.22 Lakh Crore - Kotak Neo
 
 ## US (CLOSED) — ₹10,000.00 | P&L +0.00 (+0.00%)
 Cash ₹10,000.00 | cycles 1069 | capital ₹10,000
 _No open positions — all cash._
-News sentiment: -0.06 (193 headlines, 6 sources)
+News sentiment: +0.06 (192 headlines, 6 sources)
 - S&amp;P 500, Nasdaq, Dow Forecast: Wall Street Rebound Faces Major Resistance—Bull Trap or Breakout? - StoneX
 - Norse Atlantic suspends all flights, warns it may file for bankruptcy after share price collapse
 - Nasdaq, S&amp;P 500 end down, but well off lows as investors buy bargains - Reuters
