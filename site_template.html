@@ -84,7 +84,7 @@ html{scrollbar-color:#3b3b47 #0B1026}body{-webkit-font-smoothing:antialiased}
 
 <footer class="w-full border-t border-[#464554]/40 bg-[#0B1026]/60 backdrop-blur-md mt-8">
   <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-2">
-    <span class="font-body text-[13px] text-[#C7C4D7]">Paper trading only - no real money. Fees 0.1% per side are inside every P&amp;L. Cash does not shrink when a position opens, so "in market" is shown separately. Refreshes every 60 s.</span>
+    <span class="font-body text-[13px] text-[#C7C4D7]">Paper trading only - no real money. NSE fills pay real Upstox delivery charges; US fills 0.1% per side. Fees are inside every P&amp;L. Cash does not shrink when a position opens, so "in market" is shown separately. Refreshes every 60 s.</span>
     <span class="font-mono text-[12px] text-[#C0C1FF]" id="gen"></span>
   </div>
 </footer>
@@ -1119,7 +1119,7 @@ function deskTicket(){
     h += "<div class='mt-3 grid grid-cols-2 gap-2'>" +
          "<button id='desk-buy' class='rounded-lg py-2 font-label text-[12.5px] font-semibold bg-[#34D399] text-[#06231A] hover:brightness-110'>Buy</button>" +
          "<button id='desk-sell' class='rounded-lg py-2 font-label text-[12.5px] font-semibold bg-[#FB7185] text-[#2A0A10] hover:brightness-110'>Sell</button></div>";
-    h += "<div class='mt-2 text-[10.5px] text-[#908FA0]'>Fee 0.1% per side, added to the fill. Max " + maxQ + " shares with your cash.</div>";
+    h += "<div class='mt-2 text-[10.5px] text-[#908FA0]'>NSE stocks: real Upstox delivery charges (₹20/order + 0.1% STT + stamp + DP ₹20 on sell + 18% GST). US stocks: 0.1% per side. Max " + maxQ + " shares with your cash.</div>";
     h += "</div>";
   }
   if(DESK.msg){ h += "<div class='mt-3 text-[12px] "+(DESK.msg.indexOf("error")===0?"text-[#FB7185]":"text-[#34D399]")+"'>"+esc(DESK.msg.replace(/^error: /,""))+"</div>"; }
@@ -1148,14 +1148,45 @@ function deskTicket(){
   if(bs) bs.onclick = function(){ deskOrder("SELL"); };
   deskCostLine();
 }
+function deskIsIndia(sym, ysym){
+  var probe = String(ysym || sym || "").toUpperCase();
+  if(/\.(NS|BO)$/.test(probe)) return true;
+  var co = (DESK.co || []).filter(function(c){ return c.s === sym; })[0];
+  if(co) return (co.m || "NSE") !== "US";
+  return true;
+}
+function deskCharges(sym, side, v, ysym){
+  // mirror of fees_in.py: NSE cash trades pay real Upstox delivery charges
+  v = Math.abs(v || 0);
+  if(!deskIsIndia(sym, ysym)){
+    return {in:false, total: v * 0.001, brokerage:0, stt:0, dp:0, gst:0, stamp:0};
+  }
+  var brokerage = v > 0 ? 20 : 0;
+  var stt = v * 0.001;
+  var stamp = (side === 'BUY') ? v * 0.00015 : 0;
+  var exch = v * 0.0000297;
+  var ipft = v * 0.000001;
+  var sebi = v * 0.000001;
+  var dp = (side === 'SELL' && v > 0) ? 20 : 0;
+  var gst = 0.18 * (brokerage + exch + ipft + dp);
+  return {in:true, total: brokerage + stt + stamp + exch + ipft + sebi + dp + gst,
+          brokerage:brokerage, stt:stt, stamp:stamp, dp:dp, gst:gst};
+}
 function deskCostLine(){
   var el = $("#desk-cost");
   if(!el) return;
   var px = DESK.sel && DESK.sel.q ? DESK.sel.q.px : 0;
   var q = DESK.qty || 0;
   if(!px || !q){ el.innerHTML = "<span class='text-[#908FA0]'>Enter a quantity to see the cost.</span>"; return; }
-  var gross = px * q, fee = gross * 0.001;
-  el.innerHTML = "Value " + deskNum(gross) + " + fee " + deskNum(fee) + " = <span class='text-[#E6E1F5]'>" + deskNum(gross + fee) + "</span>";
+  var sym = (DESK.sel && DESK.sel.s) || "";
+  var gross = px * q;
+  var side = ((DESK.book && DESK.book.positions || []).some(function(p){ return p.sym === sym; })) ? "SELL" : "BUY";
+  var ch = deskCharges(sym, side, gross, DESK.sel && DESK.sel.q ? DESK.sel.q.y : "");
+  var head = ch.in ? ("Charges " + deskNum(ch.total) + " = ₹20 brokerage + " + deskNum(ch.stt) + " STT")
+                   : ("Fee " + deskNum(ch.total) + " (0.1% per side)");
+  if(ch.in && ch.dp) head += " + ₹20 DP";
+  if(ch.in) head += " + " + deskNum(ch.stamp) + " stamp + " + deskNum(ch.gst) + " GST";
+  el.innerHTML = "Value " + deskNum(gross) + " | " + head + " | <span class='text-[#E6E1F5]'>" + deskNum(gross + (side === "SELL" ? -ch.total : ch.total)) + "</span> " + (side === "SELL" ? "in hand" : "to pay");
 }
 function deskBook(){
   var b = DESK.book || {};

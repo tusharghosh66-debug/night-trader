@@ -14,7 +14,8 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 BOOK_FILE = os.path.join(HERE, "manual_book.json")
 CO_FILE = os.path.join(HERE, "companies.json")
 IST = timezone(timedelta(hours=5, minutes=30))
-FEE = 0.001          # 0.1% per side, same as the bot books
+FEE = 0.001          # 0.1% per side, used only for US stocks now
+import fees_in        # Upstox delivery charges for NSE cash trades
 START_CASH = 1000000.0
 LOCK = threading.Lock()
 
@@ -138,6 +139,31 @@ def _pos_px(p):
         return p.get("last", p["avg"])
 
 
+def _market_of(sym):
+    # companies.json carries the market tag: "NSE" for Indian cash, "US" for the
+    # American majors. Anything unknown falls back to NSE (the default list).
+    s = str(sym or "").strip().upper()
+    if s.endswith(".NS") or s.endswith(".BO"):
+        return "NSE"
+    try:
+        for c in companies():
+            if c.get("s") == s:
+                return c.get("m") or "NSE"
+    except Exception:
+        pass
+    return "NSE"
+
+
+def _charges(key, side, value, ysym=None):
+    # NSE cash trades pay real Upstox delivery charges; US stocks keep 0.1%/side.
+    # key is the desk symbol ("TCS"); ysym is the Yahoo one ("TCS.NS").
+    if _market_of(ysym or key) == "NSE":
+        return fees_in.delivery_charges(side, value)
+    fee = abs(value) * FEE
+    return {"brokerage": round(fee, 2), "stt": 0.0, "stamp": 0.0, "exchange": 0.0,
+            "ipft": 0.0, "sebi": 0.0, "dp": 0.0, "gst": 0.0, "total": round(fee, 2)}
+
+
 def state():
     pos, mtm, cost = [], 0.0, 0.0
     live = quotes(list(BOOK["positions"].keys()), max_age=60.0)
@@ -157,6 +183,7 @@ def state():
             "equity": round(equity, 2), "pnl": round(equity - BOOK["start_cash"], 2),
             "pnl_pct": round(100.0 * (equity / BOOK["start_cash"] - 1), 3),
             "realised": round(BOOK["realised"], 2), "fee_rate": FEE,
+            "fee_model": "Upstox delivery charges on NSE (.NS); 0.1%/side on US",
             "positions": sorted(pos, key=lambda x: -x["value"]),
             "trades": BOOK["trades"][-40:][::-1], "started": BOOK["started"],
             "now": datetime.now(IST).strftime("%Y-%m-%d %H:%M:%S")}
@@ -177,35 +204,43 @@ def order(sym, side, qty):
     with LOCK:
         p = BOOK["positions"].get(key)
         if side == "BUY":
-            cost = px * qty * (1 + FEE)
+            ch = _charges(key, "BUY", px * qty, q.get("y"))
+            cost = px * qty + ch["total"]
             if cost > BOOK["cash"] + 1e-6:
                 return {"error": "not enough cash: need ₹%.0f, have ₹%.0f" % (cost, BOOK["cash"])}
             if p:
                 tot = p["qty"] + qty
                 p["avg"] = (p["avg"] * p["qty"] + px * qty) / tot
                 p["qty"] = tot
+                p["fees"] = p.get("fees", 0.0) + ch["total"]
                 p["last"] = px
             else:
                 p = {"qty": qty, "avg": px, "last": px, "name": q["name"], "y": q["y"],
+                     "fees": ch["total"],
                      "opened": datetime.now(IST).strftime("%Y-%m-%d %H:%M")}
                 BOOK["positions"][key] = p
             BOOK["cash"] -= cost
-            fill = {"sym": key, "side": "BUY", "qty": qty, "px": px, "fee": round(px * qty * FEE, 2),
+            fill = {"sym": key, "side": "BUY", "qty": qty, "px": px, "fee": ch["total"],
+                    "charges": ch,
                     "note": "add to position" if p["qty"] > qty else "open position"}
         else:
             if not p or p["qty"] < qty:
                 return {"error": "you hold %s, cannot sell %d" % (p["qty"] if p else 0, qty)}
-            proceeds = px * qty * (1 - FEE)
+            ch = _charges(key, "SELL", px * qty, q.get("y"))
+            proceeds = px * qty - ch["total"]
             BOOK["cash"] += proceeds
-            BOOK["realised"] += (px - p["avg"]) * qty - px * qty * FEE - p["avg"] * qty * FEE
+            entry_fee = p.get("fees", 0.0) * (float(qty) / p["qty"]) if p["qty"] else 0.0
+            BOOK["realised"] += (px - p["avg"]) * qty - entry_fee - ch["total"]
+            p["fees"] = max(0.0, p.get("fees", 0.0) - entry_fee)
             p["qty"] -= qty
             if p["qty"] == 0:
                 BOOK["positions"].pop(key, None)
             else:
                 p["last"] = px
-            fill = {"sym": key, "side": "SELL", "qty": qty, "px": px, "fee": round(px * qty * FEE, 2),
+            fill = {"sym": key, "side": "SELL", "qty": qty, "px": px, "fee": ch["total"],
+                    "charges": ch,
                     "note": ("close position" if p["qty"] == 0 else "partial exit") if p else "close position"}
-        fill["t"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        fill["t"] = datetime.now(IST).strftime("%Y-%m-%d %H:%M:%S")
         fill["value"] = round(px * qty, 2)
         BOOK["trades"].append(fill)
         del BOOK["trades"][:-400]

@@ -2,7 +2,10 @@
 Strategy Arena — 13 autonomous PAPER-trading bots, one per proven strategy.
 Each bot starts with Rs 10,000 (total Rs 1,30,000). No real money, no keys.
 Data: Yahoo v8 chart API (works from India + GitHub runners, no keys).
-All P&L in INR (USD symbols converted via live USDINR). 0.1% fees per side.
+All P&L in INR (USD symbols converted via live USDINR).
+Fees: NSE cash trades pay real Upstox delivery charges (Rs 20/order + 0.1% STT +
+stamp + exchange + IPFT + SEBI + Rs 20 DP on sell + 18% GST, see fees_in.py);
+US and crypto keep the flat 0.1%/side model. s02/s03/s05 stay on the old model.
 
 The 10 bots (from the data-backed top-10 research):
   s01  St. Gallen Opening-Range Noise-Band Breakout   (30m, NQ=F, long+short)
@@ -36,7 +39,9 @@ DASH_F = os.path.join(BASE, "arena_dashboard.html")
 
 IST = timezone(timedelta(hours=5, minutes=30))
 ET = ZoneInfo("America/New_York")
-FEE = 0.001            # 0.1% per side
+FEE = 0.001            # 0.1% per side (US / crypto, and the frozen daily bots)
+import fees_in          # Upstox delivery charges for NSE cash trades
+FROZEN_FEE_BOTS = {"s02", "s03", "s05"}   # user asked: do not touch these books
 CAPITAL = 10000.0      # per bot
 CYCLE_SEC = 5 * 60
 VERSION = 1
@@ -426,15 +431,38 @@ def open_position(bs, sym, side, qty, price, stop, reason, now):
     log(f"  OPEN {sym} {'LONG' if side>0 else 'SHORT'} qty={qty:.4f} @ {price:.2f} stop={stop:.2f} ({reason})")
     return True
 
+def trade_fee_for(sym, qty, entry, exit_px, side, frozen=False):
+    q = abs(qty)
+    if str(sym).endswith(".NS") and not frozen:
+        buy_v = q * (entry if side > 0 else exit_px)
+        sell_v = q * (exit_px if side > 0 else entry)
+        return (fees_in.delivery_charges("BUY", buy_v)["total"]
+                + fees_in.delivery_charges("SELL", sell_v)["total"])
+    return q * (entry + exit_px) * FEE
+
+
+def trade_fee(sym, qty, entry, exit_px, side):
+    # round-trip cost of one position. NSE cash = real Upstox delivery charges
+    # (brokerage 20/order + STT 0.1% + stamp + exchange + IPFT + SEBI + DP 20 on
+    # sell + GST); everything else keeps the flat 0.1%/side model.
+    return trade_fee_for(sym, qty, entry, exit_px, side, _ACTIVE_BOT in FROZEN_FEE_BOTS)
+
+
 def close_position(bs, sym, price, reason, now):
     p = bs["positions"].pop(sym)
     _CLOSED_THIS_CYCLE.add((id(bs), sym))   # per bot: bots must not block each other
     if "legs" in p:
-        # pairs (s09): qty is a rupee notional and "price" is a LOG-SPREAD, so the
-        # usual qty*price*FEE term is ~0.001 of nothing. Charge both legs on notional.
-        pnl = p["side"] * p["qty"] * (price - p["entry"]) - 2.0 * p["qty"] * FEE
+        # pairs (s09): qty is a rupee notional and "price" is a LOG-SPREAD, so a
+        # qty*price*FEE term is ~0.001 of nothing. Charge both legs on notional.
+        if str(sym).endswith(".NS") and _ACTIVE_BOT not in FROZEN_FEE_BOTS:
+            fee = 2.0 * (fees_in.delivery_charges("BUY", p["qty"])["total"]
+                         + fees_in.delivery_charges("SELL", p["qty"])["total"])
+        else:
+            fee = 2.0 * p["qty"] * FEE
+        pnl = p["side"] * p["qty"] * (price - p["entry"]) - fee
     else:
-        pnl = p["side"] * p["qty"] * (price - p["entry"]) - p["qty"] * price * FEE - p["qty"] * p["entry"] * FEE
+        pnl = (p["side"] * p["qty"] * (price - p["entry"])
+               - trade_fee(sym, p["qty"], p["entry"], price, p["side"]))
     bs["cash"] += pnl
     bs["last_prices"][sym] = price
     bs.setdefault("last_exit", {})[sym] = time.time()   # feeds the re-entry cooldown
@@ -1860,7 +1888,7 @@ th{{color:var(--mute);font-weight:600;font-size:12px}}.num{{text-align:right;whi
 footer{{color:var(--mute);font-size:12px;margin-top:22px}}
 </style></head><body>
 <h1>Council Bots - 3 experiments</h1>
-<div class="sub">Built after the 621-trade fee audit. Paper only, Rs {CAPITAL:,.0f} each, 0.1% fee per side, Yahoo daily bars.
+<div class="sub">Built after the 621-trade fee audit. Paper only, Rs {CAPITAL:,.0f} each, Upstox delivery charges on NSE, Yahoo daily bars.
 Updated {datetime.now(IST).strftime('%Y-%m-%d %H:%M IST')}</div>
 <div class="top">
 <div class="kpi"><div class="v {cls}">Rs {total:,.0f}</div><div class="l">total equity of the 3 ({pnl:+,.0f} vs Rs {start:,.0f})</div></div>
@@ -1923,7 +1951,18 @@ def write_site(st):
                             "entry": p["entry"], "now": px, "stop": p.get("stop", p["entry"]),
                             "upnl": round(u, 2)})
             closed = bs.get("closed_trades", [])
-            fees = sum(0.001 * t[4] * (t[5] + t[6]) for t in closed if len(t) > 8)
+            # same model as the fills: Upstox delivery charges on NSE unless the
+            # book is one of the frozen daily bots, flat 0.1%/side elsewhere.
+            frozen = sid in FROZEN_FEE_BOTS
+            fees = 0.0
+            for t in closed:
+                if len(t) <= 8:
+                    continue
+                if str(t[2]).endswith(".NS"):
+                    side = 1 if t[3] == "LONG" else -1
+                    fees += trade_fee_for(t[2], t[4], t[5], t[6], side, frozen)
+                else:
+                    fees += 0.001 * t[4] * (t[5] + t[6])
             wins = sum(1 for t in closed if t[7] > 0)
             sparkv = [h.get(sid) for h in hist if h.get(sid) is not None]
             if len(sparkv) < 2:
