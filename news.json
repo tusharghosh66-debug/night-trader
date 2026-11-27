@@ -1,7 +1,7 @@
 {
- "ts": "2026-11-27T09:26:45.185586+05:30",
+ "ts": "2026-11-27T10:26:45.200056+05:30",
  "crypto": {
-  "score": -0.192,
+  "score": -0.204,
   "n_headlines": 178,
   "n_sources": 6,
   "top": [
@@ -16,6 +16,8 @@
   ],
   "headlines": [
    "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+   "Binance says customer withdrawals are fully restored, four weeks after the $6.3 billion hack",
+   "Ethereum's much-awaited Glamsterdam upgrade cleared for December test. Here's what to know",
    "A tiny payment can expose the IP address behind a bitcoin wallet, developer finds",
    "Bitcoin\u2019s dormant supply rises, a behavior seen during previous bear-market bottoming phases",
    "Crypto for Advisors: Four questions to ask before trusting a crypto exchange",
@@ -39,9 +41,8 @@
    "South Korean crypto exchange Bithumb warns of phishing after deeper October breach probe",
    "Fed\u2019s preferred inflation gauge lands with a December rate increase already priced in",
    "Ether, DeFi fall twice as hard as bitcoin as equities selloff resumes",
-   "Italy\u2019s UniCredit launches six-year bitcoin certificate with gains capped at 65%",
-   "Gold's haven status has lost its edge over bitcoin, and the Fed's to blame",
    "Cointelegraph.com News",
+   "Ethereum devs set Glamsterdam\u2019s Hoodi rollout for mid-December after delays",
    "AI is driving a flood of crypto bug reports. Now it\u2019s helping sort them",
    "Privacy coins face diverging fortunes as KuCoin moves to drop Monero",
    "\u2018Very racist\u2019 Netflix SBF series, BitMart\u2019s $319M shortfall: Asia Express",
@@ -71,7 +72,6 @@
    "Braiins warns of Bitcoin mining attacks affecting over 1,000 sites",
    "Why ECB collateral eligibility could boost demand for tokenized bonds",
    "Ethereum Foundation backs Keccak-256 to counter quantum, AI threats",
-   "US inflation rises to 3.8% ahead of December Fed meeting, clouding crypto outlook",
    "Vibecoded GTA 6 PC Ports Are Now Rendering In-Game Graphics Despite Take-Two Crackdown",
    "What Is Self-Custody? How to Hold Your Own Crypto Keys",
    "Before the Sell-Off, AI Stocks Showed Dot-Com-Level Bubble Signals: Study"
@@ -79,28 +79,33 @@
   "fear_greed": 12
  },
  "india": {
-  "score": 0.584,
+  "score": 0.475,
   "n_headlines": 221,
   "n_sources": 6,
   "top": [
+   "Gold jumps 1.5%, silver surges 4.5% as bullion rebounds from multi-month lows: Gold Silver Rates Live Updates",
    "Gold price today in India \u20b958,500 away from record high; right time to buy amid rebound from 14-month low?",
-   "Sensex jumps 1,502 points, Nifty surges to 25,819 on foreign fund inflows, lower crude oil - DD News",
    "FPI Inflows Hit Record High in November 2026 as Foreign Investors Buy Indian Shares Worth over \u20b91.22 Lakh Crore - Kotak Neo",
+   "Stock Market Live Updates: Sensex falls over 300 pts, Nifty below 25,800; HDFC Bank, BEL slip up to 1%",
    "Spike in oil prices partly reverses rupee rally, forward premiums surge",
    "Indian shares set to open higher, eye fifth weekly gain as inflows boost momentum",
    "Nifty surges over 12% in November, eyes biggest monthly gain in six years; BSE, Eternal, Trent among top gainers",
-   "Small-cap stock under \u20b9100: Metal stock jumps following stock market rally; do you own?",
-   "Allied Blenders shares: After 50% jump in 6 months, Elara Securities sees 25% more returns; assigns Buy rating | Target"
+   "Small-cap stock under \u20b9100: Metal stock jumps following stock market rally; do you own?"
   ],
   "headlines": [
    "Economic Times",
+   "HDFC Bank, SBI, 8 other stocks JPMorgan is bullish on as markets gear up to enter 2027. See full list",
+   "HCL Technologies among 7 stocks showing White Marubozu Pattern",
+   "Positive breakout: These 4 stocks close above their 200 DMAs",
+   "Sun TV Network among 4 stocks closing above VWAP",
+   "Gold jumps 1.5%, silver surges 4.5% as bullion rebounds from multi-month lows: Gold Silver Rates Live Updates",
    "Bharat Coking Coal among 5 stocks showing RSI trending up",
    "Dubai seals deal for $159 billion Islamic banking giant",
    "Brent trades near month's high as Mideast conflict threatens supply",
    "Dollar lingers near 22-month peak as AI worries simmer",
    "Gold steady, heads for weekly gain as markets await Fed signals",
    "Gold Prices Fall: Is India\u2019s \u20b923 Lakh Crore Gold Loan Market at Risk? | The Morning Brief Decode",
-   "Stock Market Live Updates: GIFT Nifty signals a negative start; Asian shares trade higher",
+   "Stock Market Live Updates: Sensex falls over 300 pts, Nifty below 25,800; HDFC Bank, BEL slip up to 1%",
    "Global Market Today: Asian stocks rise for second day, crude oil gains",
    "SC asks HDFC Bank, three others to ok staff prosecution",
    "Ashiana Housing JV buys 10-acre land in Chennai for senior living project, eyes Rs 1,100 cr revenue",
@@ -127,11 +132,8 @@
    "M&amp;M Share Price Highlights: M&amp;M Stock Price History",
    "Grasim Inds Share Price Highlights: Grasim Inds. Stock Price History",
    "Cipla Share Price Highlights: Cipla Stock Price History",
-   "Bharti Airtel Share Price Highlights: Bharti Airtel Stock Price History",
-   "HCL Tech Share Price Highlights: HCL Tech Stock Price History",
-   "ONGC Share Price Highlights: ONGC Stock Price History",
-   "IndusInd Bank Share Price Highlights: IndusInd Bank Stock Price History",
-   "Hero MotoCorp Share Price Highlights: Hero MotoCorp Stock Price History",
+   "MCX gold price impact on jewellery stocks: Why Titan, PC Jeweller, Kalyan Jewellers shares are shining up to 4% today?",
+   "Sensex, Nifty down today but \u200bHindustan Zinc, Vedanta Aluminium to Vedanta Power are rising - Vedanta boost reason here",
    "Indian shares set to open higher, eye fifth weekly gain as inflows boost momentum",
    "Tata Power: Opportunity or value trap as ambitious growth plans meet execution risks?",
    "Mahanadi Coalfields Set for Mumbai Debut After $969 Million IPO",
@@ -150,13 +152,11 @@
    "Nifty 50 to hit 29,000? J.P. Morgan calls Indian stocks a 'safe haven' from AI trades; sees 12% upside. Key reasons",
    "What will happen to gold rates? Crash or surge after the US Fed FOMC meeting outcome - Scenarios explained",
    "Turned Nvidia CEO affair saga into a money machine? From $500 to $1 million: How a trader rode Huang's roller coaster",
-   "A big shift for gold trading? JPMorgan, HSBC and StoneX complete first digital gold deals- What to know",
-   "NSE is now world's third-largest listed exchange by market cap, overtakes Nasdaq, LSE: Which two exchanges are ahead?",
-   "Circuit-to-circuit stock finds no seller for 21 days in a row | Bonus, stock split, dividend record date awaited"
+   "A big shift for gold trading? JPMorgan, HSBC and StoneX complete first digital gold deals- What to know"
   ]
  },
  "us": {
-  "score": 0.094,
+  "score": 0.11,
   "n_headlines": 191,
   "n_sources": 6,
   "top": [
@@ -167,28 +167,28 @@
    "Fed rate hike odds rise to almost 100%: can AI selloff force a rethink? - TradingView",
    "Why Nvidia (NVDA) Stock Is Falling Today: Tech and Chip Selloff - Yahoo Finance",
    "European stocks end higher on easing tariff fears, ECB leadership continuity - Reuters",
-   "Trump demands probe into \u2018record setting error\u2019 after third-quarter GDP data gets massive revision higher"
+   "Spike in oil prices partly reverses rupee rally, forward premiums surge - Reuters"
   ],
   "headlines": [
    "Two Italians killed in Kuwait drone attack; Trump says Iran war ends \u2018whenever I want it\u2019",
-   "Sovereign wealth funds are acting more like private equity giants \u2014 and inheriting their risks",
+   "SpaceX shares jump on alternative trading platform after Musk says he will expand share donations",
    "Trump demands probe into \u2018record setting error\u2019 after third-quarter GDP data gets massive revision higher",
+   "Sovereign wealth funds are acting more like private equity giants \u2014 and inheriting their risks",
    "U.S. tariff-hike threats pile pressure on partners to sign trade deals",
    "Nvidia chip buyers told to rule out Chinese renters to purchase GPUs, sources say",
    "China industrial profits growth surges to a 5-month high of 20.1% in October",
-   "Semiconductor chips are the new oil. Here&apos;s why",
-   "How Trump\u2019s latest tariff moves hand India an edge over rival Asian exporters",
    "Planes, trains and automobiles: The best ways to beat travel fatigue\u2014so you can come home feeling rested and fulfilled",
+   "How Trump\u2019s latest tariff moves hand India an edge over rival Asian exporters",
+   "Semiconductor chips are the new oil. Here&apos;s why",
    "Buyer beware? Nvidia&apos;s volatile swings expose risks of single-stock ETFs",
    "Liesman: Why Greenspan could bet on productivity \u2014 and Warsh needs to hike",
    "Even the price of toys is on the rise. How Americans are scaling back holiday plans",
    "Microdrama apps chase profits as Hollywood moves into short-form, vertical video",
-   "Spain\u2019s Pablo Hern\u00e1ndez de Cos set to lead European Central Bank",
-   "Nvidia sellers seek new buyers as U.S. curbs China AI chip access, sources tell CNBC",
    "Inside India newsletter: Roaring economy, foreign investors\u2019 return and now record auto sales",
+   "Spain\u2019s Pablo Hern\u00e1ndez de Cos set to lead European Central Bank",
    "SpaceX, Musk pledge to donate a share each to active Trump Accounts",
-   "Trump, NATO chief caution Russia as attacks on Ukraine\u2019s energy infrastructure intensify",
    "Anthropic&apos;s stock has been a clunker post-IPO. Why that matters for the AI trade",
+   "Trump, NATO chief caution Russia as attacks on Ukraine\u2019s energy infrastructure intensify",
    "Robots could be doing household chores in just 1-2 years, Chinese EV firm says",
    "What is \u2018texture-maxxing\u2019? The food trend putting crunch on the menu",
    "Secondhand shopping is going mainstream this holiday season as consumers seek value",
@@ -216,20 +216,20 @@
    "Dow Jones Futures Rise; Look For This Bullish Market Signal On Black Friday - Investor's Business Daily",
    "Nasdaq, S&amp;P 500 end down, but well off lows as investors buy bargains - Reuters",
    "Even Without Warren Buffett as CEO, Berkshire Hathaway Is Outperforming the S&amp;P 500, Nasdaq, and Dow by the Widest Margin Since 2022. History Says This Is What Happens Next. - The Motley Fool",
+   "U.S. stock futures rise sharply; Nasdaq up 1.7% in holiday-thinned trade - Investing.com",
    "Nasdaq, S&amp;P 500 close lower, giving up some Nvidia-fueled gains - NBC News",
    "Dow closes higher after erasing 1,100-point loss as S&amp;P 500, Nasdaq slip - Fox Business",
-   "U.S. stock futures rise sharply; Nasdaq up 1.7% in holiday-thinned trade - Investing.com",
    "Stock Market Today: Dow, S&amp;P 500, Nasdaq Futures Fall as Traders Bet on December Fed Hike; Trump Tells Hu - Benzinga",
    "Dow, S&amp;P 500, Nasdaq Futures Edge Higher As Tech Rebounds After Selloff: DIS, VRTX, DE, CHTR In Focus - TradingView",
    "US Stock Market Futures Rise Ahead of Black Friday as AI Stocks Rebound Globally - Stocks Down Under",
-   "The Dow Jones, S&amp;P 500, and Nasdaq are all in correction territory and these 3 indicators scream \u2018buying opportunity\u2019 - The Twelfth Magpie",
    "US stock market today: Nasdaq and S&amp;P 500 fall as Nvidia and AI stocks slide, Dow gains - Beinsure",
    "Wall Street trades mixed as it pares earlier losses - Seeking Alpha",
-   "Dow Reclaims 50,000 as Inflation and GDP Data Land Before Thanksgiving - Morningstar",
    "Nasdaq Plunges 4.6% Before Dramatic Rebound. Wall Street Faces A Triple Threat From AI, Inflation And Trump Tariffs. - International Business Times",
+   "If a Market Correction Is Around the Corner, I'm Making This 1 Easy Move - Yahoo Finance",
    "S&amp;P Dow Jones Indices - S&amp;P Global",
    "U.S. Stocks Extend Plunge as AI Boom Turns to Bust - WSJ",
-   "Is the stock market closed? Thanksgiving, Black Friday trading hours - Detroit Free Press"
+   "Is the stock market closed? Thanksgiving, Black Friday trading hours - Detroit Free Press",
+   "Stock Market Trading Hours For Thanksgiving And Black Friday - Investor's Business Daily"
   ]
  }
 }

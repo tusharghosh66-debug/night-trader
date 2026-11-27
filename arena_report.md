@@ -1,13 +1,13 @@
 # Strategy Arena — Leaderboard
-_Updated: 2026-11-27 10:24 IST_
+_Updated: 2026-11-27 10:26 IST_
 
-**Total equity: Rs 159,964.01** / Rs 160,000 start (-0.02%)
+**Total equity: Rs 159,964.20** / Rs 160,000 start (-0.02%)
 
 | Rank | Bot | Strategy | Equity | P&L | % | Trades | Win% | Open |
 |---|---|---|---|---|---|---|---|---|
-| 1 | x02 | RS Rotation Top-2 (council) | Rs 10,008.29 | +8.29 | +0.08% | 0 | 0% | 2 |
-| 2 | s03 | ETF Dual Momentum Rotation | Rs 10,006.29 | +6.29 | +0.06% | 0 | 0% | 1 |
-| 3 | x03 | Core Regime Trend (council) | Rs 10,004.39 | +4.39 | +0.04% | 0 | 0% | 2 |
+| 1 | x02 | RS Rotation Top-2 (council) | Rs 10,008.43 | +8.43 | +0.08% | 0 | 0% | 2 |
+| 2 | s03 | ETF Dual Momentum Rotation | Rs 10,006.46 | +6.46 | +0.06% | 0 | 0% | 1 |
+| 3 | x03 | Core Regime Trend (council) | Rs 10,004.44 | +4.44 | +0.04% | 0 | 0% | 2 |
 | 4 | s01 | St. Gallen ORB Noise-Band | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 5 | s02 | Trend-Filtered Mean Reversion | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 6 | s05 | Connors RSI(2) Pullback | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
@@ -17,9 +17,9 @@ _Updated: 2026-11-27 10:24 IST_
 | 10 | s10 | Overnight Edge + Turnaround Tue | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 11 | x01 | Vol Squeeze Breakout (council) | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 12 | s13 | Afternoon Sell-the-Rip Short | Rs 9,993.53 | -6.47 | -0.06% | 2 | 0% | 0 |
-| 13 | s04 | Multi-Market Trend Following | Rs 9,992.19 | -7.81 | -0.08% | 0 | 0% | 1 |
-| 14 | s11 | Spike & VWAP Rejection Short | Rs 9,989.22 | -10.78 | -0.11% | 2 | 0% | 1 |
+| 13 | s04 | Multi-Market Trend Following | Rs 9,992.16 | -7.84 | -0.08% | 0 | 0% | 1 |
+| 14 | s11 | Spike & VWAP Rejection Short | Rs 9,988.67 | -11.33 | -0.11% | 2 | 0% | 1 |
 | 15 | s12 | OHL + CPR Breakdown Short | Rs 9,986.67 | -13.33 | -0.13% | 1 | 0% | 1 |
-| 16 | s09 | Statistical Arbitrage Pairs | Rs 9,983.44 | -16.56 | -0.17% | 0 | 0% | 2 |
+| 16 | s09 | Statistical Arbitrage Pairs | Rs 9,983.84 | -16.16 | -0.16% | 0 | 0% | 2 |
 
 **Best so far: x02 — RS Rotation Top-2 (council) (+0.08%)**
