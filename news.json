@@ -1,18 +1,18 @@
 {
- "ts": "2026-11-28T03:28:35.134269+05:30",
+ "ts": "2026-11-28T04:28:35.153619+05:30",
  "crypto": {
-  "score": 0.004,
-  "n_headlines": 181,
+  "score": -0.005,
+  "n_headlines": 179,
   "n_sources": 6,
   "top": [
    "Bitcoin Falls Further as Inflation, Trump Tariffs and AI Selloff Rattle Markets",
    "Crypto market cap drops 3.74% as Bitcoin falls below $60K and liquidations hit $312M - Pluang",
    "Strategy and Crypto Stocks Rally as Bitcoin Rebounds Past $63,000. Is the Jump Temporary? - Barron's",
+   "August Crypto Market Review and Outlook: Bitcoin Surge Above $80,000 Sparks Broad Crypto Rally, Fed Decision to Determine If Gains Continue - TradingKey",
    "Cathie Wood\u2019s ARK Buys Anthropic as Ripple CEO Predicts Post-IPO Crypto Rally - CCN.com",
    "Bitcoin price extends gains, briefly tops $81,000 as crypto rally gathers pace - CNBC",
    "Bitcoin Holds Above $60K as Death Cross Clouds Thanksgiving Recovery",
-   "Bitcoin Price Falls as $183 Million in Liquidations Hit Ahead of $6.8 Billion Options Expiry - Benzinga",
-   "Crypto Stocks Gain After Bitcoin Tops $61K In Tech Rebound, But Analysts Want A Move Above $62K - Yahoo Finance"
+   "Bitcoin Price Falls as $183 Million in Liquidations Hit Ahead of $6.8 Billion Options Expiry - Benzinga"
   ],
   "headlines": [
    "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
@@ -42,13 +42,13 @@
    "$7 billion of bitcoin options expire Friday, and the biggest bets look starkly different from October",
    "Zcash developers want to phase out older privacy system as a precaution against future attacks",
    "Cointelegraph.com News",
+   "Here\u2019s what happened in crypto today",
    "Franklin Templeton makes room for HYPE in crypto index ETF",
    "Bitcoin whales pile into BTC despite shrinking profit cushion",
    "China sets March 2027 rollout for blockchain identity regulations",
    "Bitcoin price drops below $59K as Anthropic joins tech stock rebound",
    "What was Coinbase worth while Nasdaq was closed?",
    "Binance to launch tokenized IPO program after regulatory approval: Yi He",
-   "Here\u2019s what happened in crypto today",
    "Brazil\u2019s stock exchange pushes stablecoin launch back to 2027",
    "Austria-supervised crypto firms report 20.4B euros in H1 trading volume",
    "Bitcoin supply metric hits 11-year low as new \u2018capitulation\u2019 signal arrives",
@@ -79,8 +79,8 @@
   "fear_greed": 12
  },
  "india": {
-  "score": 0.308,
-  "n_headlines": 224,
+  "score": 0.36,
+  "n_headlines": 225,
   "n_sources": 6,
   "top": [
    "Nasdaq jumps 2%, Dow gains 600 pts as US stocks log weekly gains: Stock Market Live Updates",
@@ -156,29 +156,29 @@
   ]
  },
  "us": {
-  "score": 0.619,
-  "n_headlines": 194,
+  "score": 0.684,
+  "n_headlines": 193,
   "n_sources": 6,
   "top": [
    "Tariff Risks vs Rate Hike Fears in the Latest U.S. Stock Selloff - StoneX",
-   "US Futures Rally as Tech Rebound Gains Momentum: Markets Wrap - Bloomberg",
+   "US Futures Rally as Tech Rebound Gains Momentum: Markets Wrap - Bloomberg.com",
    "AI Stocks Rebound as Dip Buyers Pile In; All Four Major U.S. Indexes Rise, Philadelphia Semiconductor Index Soars 4.69% - BigGo Finance",
-   "UK stocks fall as banks, miners track Wall Street selloff - Reuters",
    "The S&amp;P 500 is in a correction. Bear markets and recessions don&apos;t always follow",
    "Budget airline Norse Atlantic files for bankruptcy in Europe after failing to secure funding",
    "SpaceX shares jump over 4% amid tech rally and after Musk says he will expand on Trump Account share donations",
-   "Nasdaq, S&amp;P 500 end down, but well off lows as investors buy bargains - Reuters"
+   "Nasdaq, S&amp;P 500 end down, but well off lows as investors buy bargains - Reuters",
+   "Stock Futures Jump as AI Trade Set for Rebound - WSJ"
   ],
   "headlines": [
+   "Inflation has shoppers hunting for value. That bodes well for Black Friday",
    "Trump demands probe into &apos;record setting error&apos; after third-quarter GDP data gets massive revision higher",
    "The S&amp;P 500 is in a correction. Bear markets and recessions don&apos;t always follow",
-   "AI shopping agents are having a moment, but Amazon and a growing number of sites threaten to stunt their growth",
    "Budget airline Norse Atlantic files for bankruptcy in Europe after failing to secure funding",
-   "SpaceX shares jump over 4% amid tech rally and after Musk says he will expand on Trump Account share donations",
+   "Chinese chip stocks notch biggest ever one-day gains as Beijing signals broader market support",
    "Liesman: Why Greenspan could bet on productivity \u2014 and Warsh needs to hike",
-   "Even the price of toys is on the rise. How Americans are scaling back holiday plans",
-   "EU leaders fail to break $1.7 trillion budget deadlock as political pressure mounts",
    "New car prices are at a record high. Here&apos;s where to look for deals",
+   "SpaceX shares jump over 4% amid tech rally and after Musk says he will expand on Trump Account share donations",
+   "EU leaders fail to break $1.7 trillion budget deadlock as political pressure mounts",
    "Spain\u2019s election could pull Madrid closer to Trump\u2019s Washington",
    "The Tech Download: Will Jensen Huang\u2019s return be the spark the shaky AI market needs?",
    "&apos;The Traitors&apos; ended with a $246,300 prize\u2014here&apos;s who won and what they told us about spending it",
@@ -213,23 +213,23 @@
    "Artificial intelligence usage is exploding, yet spending is stalling. Why a foundational rule of economics is breaking.",
    "Google News",
    "Stock Market Rallies, Triggers This Shift; Jensen Huang Testimony, Jobs Report Loom - Investor's Business Daily",
-   "US Futures Rally as Tech Rebound Gains Momentum: Markets Wrap - Bloomberg",
+   "US Futures Rally as Tech Rebound Gains Momentum: Markets Wrap - Bloomberg.com",
    "Nasdaq, S&amp;P 500 end down, but well off lows as investors buy bargains - Reuters",
-   "Stock Market Today: Dow, S&amp;P 500, Nasdaq 100 Futures Rise as Wall Street Returns to Wrap Up Holiday-Short - Benzinga",
-   "Stock Market Today, Nov. 27: S&amp;P 500 Posts Best Week in 19 Months as AI Stocks Rebound - The Motley Fool",
-   "Wall Street ends higher as AI stocks rebound, Nasdaq leads gains - Investing.com",
-   "Wall Street firmly in green as it looks to end volatile week on a high - Seeking Alpha",
-   "Stocks rise in abbreviated Black Friday trading as AI concerns ease - upi",
-   "Wall Street ends higher as battered AI stocks gain in volatile week - The Detroit News",
-   "Stocks rise and keep Wall Street on track to close out an erratic week with big gains - BNN Bloomberg",
-   "Dow Adds 592 Points on Black Friday as AI Fear Fades: Stock Market Today - Kiplinger",
-   "U.S. Market Closes Sharply Higher to End Volatile Week on Wall Street - TipRanks",
-   "US stocks set for weekly advance as battered AI shares hold their ground - Kitco",
-   "Dow Jones Futures Rise; Look For This Bullish Market Signal On Black Friday - Investor's Business Daily",
-   "Dow, S&amp;P 500, Nasdaq Futures Edge Higher As Tech Rebounds After Selloff: DIS, VRTX, DE, CHTR In Focus - Yahoo Finance",
-   "Stock Market Today: S&amp;P 500, Nasdaq and Dow Jones Rally on Black Friday - Coinpaper",
    "Stock Futures Jump as AI Trade Set for Rebound - WSJ",
-   "US stock market today: Dow Jones jumps 510 points, S&amp;P 500 rises 1.2%, Nasdaq gains 1.7% - CNBC TV18 - LinkedIn"
+   "Stock Market Today: Dow, S&amp;P 500, Nasdaq 100 Futures Rise as Wall Street Returns to Wrap Up Holiday-Short - Benzinga",
+   "How Far Could the Dow Jones Industrial Average, S&amp;P 500, and Nasdaq Composite Plunge? Nearly 156 Years of History Offers an Answer. - The Motley Fool",
+   "U.S. equities close on top on Black Friday - Seeking Alpha",
+   "Wall Street ends higher as AI stocks rebound, Nasdaq leads gains - Investing.com",
+   "North American stock indexes end higher as battered AI stocks gain in volatile week - The Globe and Mail",
+   "Stocks rise in abbreviated Black Friday trading as AI concerns ease - upi",
+   "Stocks rise and keep Wall Street on track to close out an erratic week with big gains - BNN Bloomberg",
+   "U.S. Market Closes Sharply Higher to End Volatile Week on Wall Street - TipRanks",
+   "Dow Adds 592 Points on Black Friday as AI Fear Fades: Stock Market Today - Kiplinger",
+   "Nasdaq Plunges 4.6% Before Dramatic Rebound. Wall Street Faces A Triple Threat From AI, Inflation And Trump Tariffs. - International Business Times",
+   "US stocks set for weekly advance as battered AI shares hold their ground - Kitco",
+   "Wall Street ends higher as battered AI stocks gain in volatile week - The Detroit News",
+   "Dow Jones Futures Rise; Look For This Bullish Market Signal On Black Friday - Investor's Business Daily",
+   "Dow, S&amp;P 500, Nasdaq Futures Edge Higher As Tech Rebounds After Selloff: DIS, VRTX, DE, CHTR In Focus - Yahoo Finance"
   ]
  }
 }

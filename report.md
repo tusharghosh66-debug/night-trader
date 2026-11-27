@@ -1,14 +1,14 @@
 # Night Trader v2 — Paper Trading Report (3 markets)
-_Updated: 2026-11-28 04:27 IST_
+_Updated: 2026-11-28 04:29 IST_
 
 ## CRYPTO (OPEN) — ₹10,040.26 | P&L +40.26 (+0.40%)
-Cash ₹10,040.26 | cycles 6270 | capital ₹10,000
+Cash ₹10,040.26 | cycles 6275 | capital ₹10,000
 _No open positions — all cash._
 Closed: 3 (1 wins), realized +40.26
 - 13:49 SELL SOL-USD @ 6827.44 pnl +64.65 (RSI 78 overbought take-profit)
 - 20:04 SELL ETH-USD @ 158507.65 pnl -6.78 (stop/trail hit (158507.65<=158554.25))
 - 20:04 SELL BTC-USD @ 5635924.12 pnl -17.61 (stop/trail hit (5635924.12<=5653353.84))
-News sentiment: +0.00 (181 headlines, 6 sources, Fear&Greed 12)
+News sentiment: -0.01 (179 headlines, 6 sources, Fear&Greed 12)
 - Bitcoin Falls Further as Inflation, Trump Tariffs and AI Selloff Rattle Markets
 - Crypto market cap drops 3.74% as Bitcoin falls below $60K and liquidations hit $312M - Pluang
 - Strategy and Crypto Stocks Rally as Bitcoin Rebounds Past $63,000. Is the Jump Temporary? - Barron's
@@ -21,7 +21,7 @@ Cash ₹6,968.32 | cycles 1495 | capital ₹10,000
 Closed: 2 (1 wins), realized -37.68
 - 09:15 SELL TCS.NS @ 2578.4 pnl +2.04 (RSI 79 overbought take-profit)
 - 15:29 SELL INFY.NS @ 1151.3 pnl -39.72 (stop/trail hit (1151.30<=1151.48))
-News sentiment: +0.31 (224 headlines, 6 sources)
+News sentiment: +0.36 (225 headlines, 6 sources)
 - Nasdaq jumps 2%, Dow gains 600 pts as US stocks log weekly gains: Stock Market Live Updates
 - Stock market today: Sensex tumbles 1,000 points, Nifty drops 277 points as TCS, Infosys, Shriram Finance lead losses
 - Why is Indian stock market falling today? Nifty down to near 25,600, Sensex crashes 900 points | Top 3 reasons explained
@@ -29,9 +29,9 @@ News sentiment: +0.31 (224 headlines, 6 sources)
 ## US (CLOSED) — ₹10,000.00 | P&L +0.00 (+0.00%)
 Cash ₹10,000.00 | cycles 1847 | capital ₹10,000
 _No open positions — all cash._
-News sentiment: +0.62 (194 headlines, 6 sources)
+News sentiment: +0.68 (193 headlines, 6 sources)
 - Tariff Risks vs Rate Hike Fears in the Latest U.S. Stock Selloff - StoneX
-- US Futures Rally as Tech Rebound Gains Momentum: Markets Wrap - Bloomberg
+- US Futures Rally as Tech Rebound Gains Momentum: Markets Wrap - Bloomberg.com
 - AI Stocks Rebound as Dip Buyers Pile In; All Four Major U.S. Indexes Rise, Philadelphia Semiconductor Index Soars 4.69% - BigGo Finance
 
 Strategy: LONG only while the market is above its 200-hour EMA, SHORT (breakdown) only while it is below —
