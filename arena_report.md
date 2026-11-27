@@ -1,7 +1,7 @@
 # Strategy Arena — Leaderboard
-_Updated: 2026-11-27 12:59 IST_
+_Updated: 2026-11-27 13:02 IST_
 
-**Total equity: Rs 159,922.04** / Rs 160,000 start (-0.05%)
+**Total equity: Rs 159,923.60** / Rs 160,000 start (-0.05%)
 
 | Rank | Bot | Strategy | Equity | P&L | % | Trades | Win% | Open |
 |---|---|---|---|---|---|---|---|---|
@@ -14,12 +14,12 @@ _Updated: 2026-11-27 12:59 IST_
 | 7 | s08 | Pre-Market High/Low Break | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 8 | s10 | Overnight Edge + Turnaround Tue | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 9 | x01 | Vol Squeeze Breakout (council) | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
-| 10 | x03 | Core Regime Trend (council) | Rs 9,998.62 | -1.38 | -0.01% | 0 | 0% | 2 |
+| 10 | x03 | Core Regime Trend (council) | Rs 9,998.87 | -1.13 | -0.01% | 0 | 0% | 2 |
 | 11 | s13 | Afternoon Sell-the-Rip Short | Rs 9,993.53 | -6.47 | -0.06% | 2 | 0% | 0 |
-| 12 | s04 | Multi-Market Trend Following | Rs 9,991.89 | -8.11 | -0.08% | 0 | 0% | 1 |
-| 13 | s11 | Spike & VWAP Rejection Short | Rs 9,991.59 | -8.41 | -0.08% | 2 | 0% | 1 |
+| 12 | s11 | Spike & VWAP Rejection Short | Rs 9,992.26 | -7.74 | -0.08% | 2 | 0% | 1 |
+| 13 | s04 | Multi-Market Trend Following | Rs 9,991.89 | -8.11 | -0.08% | 0 | 0% | 1 |
 | 14 | s12 | OHL + CPR Breakdown Short | Rs 9,986.67 | -13.33 | -0.13% | 1 | 0% | 1 |
-| 15 | s03 | ETF Dual Momentum Rotation | Rs 9,978.41 | -21.59 | -0.22% | 0 | 0% | 1 |
-| 16 | s09 | Statistical Arbitrage Pairs | Rs 9,971.55 | -28.45 | -0.28% | 0 | 0% | 2 |
+| 15 | s03 | ETF Dual Momentum Rotation | Rs 9,979.43 | -20.57 | -0.21% | 0 | 0% | 1 |
+| 16 | s09 | Statistical Arbitrage Pairs | Rs 9,971.17 | -28.83 | -0.29% | 0 | 0% | 2 |
 
 **Best so far: x02 — RS Rotation Top-2 (council) (+0.10%)**
