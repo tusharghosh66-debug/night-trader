@@ -1,7 +1,7 @@
 # Strategy Arena — Leaderboard
-_Updated: 2026-11-27 15:22 IST_
+_Updated: 2026-11-27 15:24 IST_
 
-**Total equity: Rs 159,919.49** / Rs 160,000 start (-0.05%)
+**Total equity: Rs 159,919.26** / Rs 160,000 start (-0.05%)
 
 | Rank | Bot | Strategy | Equity | P&L | % | Trades | Win% | Open |
 |---|---|---|---|---|---|---|---|---|
@@ -14,7 +14,7 @@ _Updated: 2026-11-27 15:22 IST_
 | 7 | s08 | Pre-Market High/Low Break | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 8 | s10 | Overnight Edge + Turnaround Tue | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 9 | x01 | Vol Squeeze Breakout (council) | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
-| 10 | x03 | Core Regime Trend (council) | Rs 9,996.83 | -3.17 | -0.03% | 0 | 0% | 2 |
+| 10 | x03 | Core Regime Trend (council) | Rs 9,996.60 | -3.40 | -0.03% | 0 | 0% | 2 |
 | 11 | s13 | Afternoon Sell-the-Rip Short | Rs 9,993.53 | -6.47 | -0.06% | 2 | 0% | 0 |
 | 12 | s11 | Spike & VWAP Rejection Short | Rs 9,992.61 | -7.39 | -0.07% | 2 | 0% | 1 |
 | 13 | s04 | Multi-Market Trend Following | Rs 9,991.48 | -8.52 | -0.09% | 0 | 0% | 1 |
