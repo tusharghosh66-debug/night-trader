@@ -1,18 +1,18 @@
 {
- "ts": "2026-11-28T02:28:35.109412+05:30",
+ "ts": "2026-11-28T03:28:35.134269+05:30",
  "crypto": {
-  "score": 0.052,
-  "n_headlines": 180,
+  "score": 0.004,
+  "n_headlines": 181,
   "n_sources": 6,
   "top": [
    "Bitcoin Falls Further as Inflation, Trump Tariffs and AI Selloff Rattle Markets",
+   "Crypto market cap drops 3.74% as Bitcoin falls below $60K and liquidations hit $312M - Pluang",
    "Strategy and Crypto Stocks Rally as Bitcoin Rebounds Past $63,000. Is the Jump Temporary? - Barron's",
    "Cathie Wood\u2019s ARK Buys Anthropic as Ripple CEO Predicts Post-IPO Crypto Rally - CCN.com",
    "Bitcoin price extends gains, briefly tops $81,000 as crypto rally gathers pace - CNBC",
    "Bitcoin Holds Above $60K as Death Cross Clouds Thanksgiving Recovery",
    "Bitcoin Price Falls as $183 Million in Liquidations Hit Ahead of $6.8 Billion Options Expiry - Benzinga",
-   "Crypto Stocks Gain After Bitcoin Tops $61K In Tech Rebound, But Analysts Want A Move Above $62K - Yahoo Finance",
-   "Bitcoin, crypto and tech stocks rally as Nvidia reinstates Jensen Huang as CEO; NVDA jumps 30% - The Block"
+   "Crypto Stocks Gain After Bitcoin Tops $61K In Tech Rebound, But Analysts Want A Move Above $62K - Yahoo Finance"
   ],
   "headlines": [
    "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
@@ -42,6 +42,7 @@
    "$7 billion of bitcoin options expire Friday, and the biggest bets look starkly different from October",
    "Zcash developers want to phase out older privacy system as a precaution against future attacks",
    "Cointelegraph.com News",
+   "Franklin Templeton makes room for HYPE in crypto index ETF",
    "Bitcoin whales pile into BTC despite shrinking profit cushion",
    "China sets March 2027 rollout for blockchain identity regulations",
    "Bitcoin price drops below $59K as Anthropic joins tech stock rebound",
@@ -71,26 +72,25 @@
    "7 bizarre things crypto whales spent a fortune on",
    "Vitalik Buterin calls for verifiable chips as hardware wallet threats evolve",
    "Standard Chartered\u2019s Zodia Custody suffers data breach",
-   "Bitcoin price eyes $61K as Talos warns of thin Thanksgiving liquidity",
+   "OpenAI Turns the Tables on Apple With Its Own Trade-Secret Theft Claims",
    "Could AI Break Bitcoin? Not Yet, Research Firm K33 Says",
-   "4 Scary Bitcoin Charts That Suggest This Bear Market Is Different",
-   "$7 Billion in Bitcoin Options Just Expired: Here\u2019s What It Means"
+   "4 Scary Bitcoin Charts That Suggest This Bear Market Is Different"
   ],
   "fear_greed": 12
  },
  "india": {
-  "score": 0.404,
-  "n_headlines": 223,
+  "score": 0.308,
+  "n_headlines": 224,
   "n_sources": 6,
   "top": [
-   "Gold price today 27 November 2026: MCX gold rate jumps but still 31% down from record high; is it the right time to buy?",
    "Nasdaq jumps 2%, Dow gains 600 pts as US stocks log weekly gains: Stock Market Live Updates",
    "Stock market today: Sensex tumbles 1,000 points, Nifty drops 277 points as TCS, Infosys, Shriram Finance lead losses",
    "Why is Indian stock market falling today? Nifty down to near 25,600, Sensex crashes 900 points | Top 3 reasons explained",
    "Small-cap, big jump! Waaree Renewable shares rise 14% on this order win; energy stock still 35% below 52-week high",
    "Black Friday Turns Red: Nifty Slips After a 15% Rally in Four Weeks. Is the Market Just Catching Its Breath? - NiftyTrader",
-   "Stock Market This Week: Why Sensex Lost 580 Pts Despite Strong FII Inflows and Defence Rally - The Indian Awaaz",
-   "Sensex gains nearly 400 pts in early trade as IT stocks rally, Nifty below 25,900 - DD News"
+   "Sensex gains nearly 400 pts in early trade as IT stocks rally, Nifty below 25,900 - DD News",
+   "JPMorgan Sees Nifty at 29,000 by December 2027, Cites Foreign Buying and Earnings Recovery - Kotak Neo",
+   "Stock Market Today: Sensex Crashes Over 700 Pts, Nifty Slips Below 25,700; IT Stocks Lead Sell-Off - APAC Media"
   ],
   "headlines": [
    "Economic Times",
@@ -133,6 +133,7 @@
    "ONGC Share Price Highlights: ONGC Stock Price History",
    "L&amp;T Share Price Highlights: L&amp;T Stock Price History",
    "SBI Life Share Price Highlights: SBI Life Stock Price History",
+   "Dollar Rises Toward Best Monthly Streak Since 2024 on AI Risk",
    "Canadian dollar holds on to weekly gain as investors bet on December rate hike",
    "Gold prices rise in India and China after hitting 15-month low as physical demand improves despite global rate concerns",
    "Why is RBI moving gold back to India? What Russia's frozen reserves and 1991 crisis reveal",
@@ -151,23 +152,22 @@
    "Jaipur leads jewellery searches with 78% growth, Delhi tops gold testing centre searches at 58%, says report",
    "Stock market today: Sensex tumbles 1,000 points, Nifty drops 277 points as TCS, Infosys, Shriram Finance lead losses",
    "Silver rate today 27 November: MCX Price 6% upper circuit at \u20b91.54 lakh/kg, up \u20b98,500 in a day | Right time to buy?",
-   "US stock market open or closed today Friday, 27 Nov? Check NYSE and Nasdaq trading schedule, holiday calendar",
-   "Gold ETFs vs Gold Mutual Funds: Amid ups and downs in rates, which is better instrument to buy for good returns?"
+   "US stock market open or closed today Friday, 27 Nov? Check NYSE and Nasdaq trading schedule, holiday calendar"
   ]
  },
  "us": {
-  "score": 0.591,
-  "n_headlines": 193,
+  "score": 0.619,
+  "n_headlines": 194,
   "n_sources": 6,
   "top": [
    "Tariff Risks vs Rate Hike Fears in the Latest U.S. Stock Selloff - StoneX",
    "US Futures Rally as Tech Rebound Gains Momentum: Markets Wrap - Bloomberg",
+   "AI Stocks Rebound as Dip Buyers Pile In; All Four Major U.S. Indexes Rise, Philadelphia Semiconductor Index Soars 4.69% - BigGo Finance",
+   "UK stocks fall as banks, miners track Wall Street selloff - Reuters",
    "The S&amp;P 500 is in a correction. Bear markets and recessions don&apos;t always follow",
    "Budget airline Norse Atlantic files for bankruptcy in Europe after failing to secure funding",
    "SpaceX shares jump over 4% amid tech rally and after Musk says he will expand on Trump Account share donations",
-   "Nasdaq, S&amp;P 500 end down, but well off lows as investors buy bargains - Reuters",
-   "Wall Street ends higher as AI stocks rebound, Nasdaq leads gains - Investing.com",
-   "Nasdaq, S&amp;P 500 end down, but well off lows as investors buy bargains - StreetInsider"
+   "Nasdaq, S&amp;P 500 end down, but well off lows as investors buy bargains - Reuters"
   ],
   "headlines": [
    "Trump demands probe into &apos;record setting error&apos; after third-quarter GDP data gets massive revision higher",
@@ -216,20 +216,20 @@
    "US Futures Rally as Tech Rebound Gains Momentum: Markets Wrap - Bloomberg",
    "Nasdaq, S&amp;P 500 end down, but well off lows as investors buy bargains - Reuters",
    "Stock Market Today: Dow, S&amp;P 500, Nasdaq 100 Futures Rise as Wall Street Returns to Wrap Up Holiday-Short - Benzinga",
-   "The Stock Market Is Flashing a Signal Seen Only 6 Times in 156 Years. History Suggests These Stocks Could Take the Biggest Hit. - The Motley Fool",
+   "Stock Market Today, Nov. 27: S&amp;P 500 Posts Best Week in 19 Months as AI Stocks Rebound - The Motley Fool",
    "Wall Street ends higher as AI stocks rebound, Nasdaq leads gains - Investing.com",
-   "U.S. equities close on top on Black Friday - Seeking Alpha",
-   "Dow, S&amp;P 500, Nasdaq Futures Edge Higher As Tech Rebounds After Selloff: DIS, VRTX, DE, CHTR In Focus - TradingView",
-   "US stocks set for weekly advance as battered AI shares hold their ground - The Detroit News",
+   "Wall Street firmly in green as it looks to end volatile week on a high - Seeking Alpha",
    "Stocks rise in abbreviated Black Friday trading as AI concerns ease - upi",
-   "Stocks jump to close out an erratic week that was also Wall Street\u2019s best in more than a year - BNN Bloomberg",
-   "S&amp;P 500, Nasdaq and Dow set for winning week despite AI turbulence - Quartz",
-   "US stock market today: Nasdaq and S&amp;P 500 fall as Nvidia and AI stocks slide, Dow gains - Beinsure",
+   "Wall Street ends higher as battered AI stocks gain in volatile week - The Detroit News",
+   "Stocks rise and keep Wall Street on track to close out an erratic week with big gains - BNN Bloomberg",
    "Dow Adds 592 Points on Black Friday as AI Fear Fades: Stock Market Today - Kiplinger",
    "U.S. Market Closes Sharply Higher to End Volatile Week on Wall Street - TipRanks",
-   "Nasdaq, S&amp;P 500 end down, but well off lows as investors buy bargains - StreetInsider",
+   "US stocks set for weekly advance as battered AI shares hold their ground - Kitco",
+   "Dow Jones Futures Rise; Look For This Bullish Market Signal On Black Friday - Investor's Business Daily",
+   "Dow, S&amp;P 500, Nasdaq Futures Edge Higher As Tech Rebounds After Selloff: DIS, VRTX, DE, CHTR In Focus - Yahoo Finance",
    "Stock Market Today: S&amp;P 500, Nasdaq and Dow Jones Rally on Black Friday - Coinpaper",
-   "Stock Futures Jump as AI Trade Set for Rebound - WSJ"
+   "Stock Futures Jump as AI Trade Set for Rebound - WSJ",
+   "US stock market today: Dow Jones jumps 510 points, S&amp;P 500 rises 1.2%, Nasdaq gains 1.7% - CNBC TV18 - LinkedIn"
   ]
  }
 }
