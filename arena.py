@@ -40,12 +40,22 @@ DASH_F = os.path.join(BASE, "arena_dashboard.html")
 IST = timezone(timedelta(hours=5, minutes=30))
 ET = ZoneInfo("America/New_York")
 FEE = 0.001            # 0.1% per side (crypto: genuinely that cheap)
-# US equities from India are NOT 0.1%: the broker adds a currency-conversion
-# markup (0.25-0.5% commonly, up to 1.5% at some brokers) plus a small ticket
-# fee, and it is charged on both the entry and the exit. 0.4%/side is the
-# mid-point of what an Indian broker actually takes, so the gate is priced off
-# that instead of pretending the trade is nearly free.
-US_FEE = 0.004
+# US equities from India, priced off the broker's own published schedule
+# (interactivebrokers.co.in, checked 28 Nov 2026):
+#   shares  USD 0.0035/share, MINIMUM USD 0.35/order, 18% GST on the commission
+#   currency  0.20 basis point (0.002%), MINIMUM USD 2.00 PER CONVERSION
+# The USD 2 minimum is the cost that actually hurts: a Rs 7,000 ticket would pay
+# ~3%/side if every trade converted cash. A funded USD float converts once per
+# quarter instead, so US_PRECONVERTED=True is the default; set it False to price
+# every trade as a fresh conversion.
+US_COMM_MIN = 0.35
+US_COMM_PS = 0.0035
+US_GST = 0.18
+US_FX_MIN = 2.0
+US_FX_BPS = 0.00002
+US_PRECONVERTED = True
+USDINR_FALLBACK = 93.0
+_FX = USDINR_FALLBACK
 import fees_in          # Upstox delivery charges for NSE cash trades
 CAPITAL = 100000.0     # per bot -- season 2: a Rs 10k book cannot pay Upstox fees
 CYCLE_SEC = 5 * 60
@@ -461,12 +471,54 @@ def open_position(bs, sym, side, qty, price, stop, reason, now):
                 f"{MIN_IN_NOTIONAL:.0f} so Upstox fees stay under 0.5%")
             qty = lift
             notional = abs(qty) * price
+        elif market_of(sym) == "US" and notional < MIN_US_NOTIONAL and price > 0:
+            lift = MIN_US_NOTIONAL / price
+            lift_risk = abs(lift) * abs(price - stop)
+            cap = bot_equity(bs) * MAX_TRADE_RISK_PCT / 100.0
+            if lift_risk > cap:
+                g["rfee"] += 1
+                log(f"  SKIP {sym} ({reason}): Rs {notional:.0f} < Rs "
+                    f"{MIN_US_NOTIONAL:.0f} US minimum, lifting it would risk "
+                    f"Rs {lift_risk:.0f} > Rs {cap:.0f}")
+                return False
+            log(f"  SIZE {sym} ({reason}): Rs {notional:.0f} -> Rs "
+                f"{MIN_US_NOTIONAL:.0f} so the USD 0.35 order minimum stays small")
+            qty = lift
+            notional = abs(qty) * price
         trip = trade_fee_for(sym, qty, price, price, side)
         fee_pct = 100.0 * trip / notional if notional > 0 else 0.0
         if rpct < FEE_TRIPLE * fee_pct:
             g["rfee"] += 1
             log(f"  SKIP {sym} ({reason}): move {rpct:.2f}% < {FEE_TRIPLE:.0f}x "
                 f"round-trip fee {fee_pct:.2f}%")
+            return False
+    # --- net exposure caps (council round 2, unanimous on a same-side rule) ---
+    # A per-position 30% cap cannot see that s07's SPY short and NVDA short are
+    # the same bet. Cap the market instead: 30% net, 20% same direction.
+    mk = market_of(sym)
+    if mk != "PAIR":
+        eqb = bot_equity(bs) or 1.0
+        new_n = abs(qty) * price
+        net_n = 0.0
+        same_n = 0.0
+        for s2, p2 in (bs.get("positions") or {}).items():
+            if market_of(s2) != mk:
+                continue
+            n2 = pos_notional(s2, p2)
+            net_n += n2 if p2.get("side", 1) > 0 else -n2
+            if p2.get("side", 1) == side:
+                same_n += n2
+        net_n += new_n if side > 0 else -new_n
+        same_n += new_n
+        if abs(net_n) > eqb * MAX_NET_MARKET_PCT / 100.0:
+            g["expo"] = g.get("expo", 0) + 1
+            log(f"  SKIP {sym} ({reason}): {mk} net would be "
+                f"Rs {abs(net_n):.0f} > {MAX_NET_MARKET_PCT:.0f}% of the book")
+            return False
+        if same_n > eqb * MAX_SAME_SIDE_MARKET_PCT / 100.0:
+            g["expo"] = g.get("expo", 0) + 1
+            log(f"  SKIP {sym} ({reason}): {mk} same-side would be "
+                f"Rs {same_n:.0f} > {MAX_SAME_SIDE_MARKET_PCT:.0f}% of the book")
             return False
     # NOTE: no fee is taken here. close_position() already nets BOTH legs
     # (entry + exit) out of pnl, so charging the entry fee here as well
@@ -476,6 +528,32 @@ def open_position(bs, sym, side, qty, price, stop, reason, now):
     bs["last_prices"][sym] = price
     log(f"  OPEN {sym} {'LONG' if side>0 else 'SHORT'} qty={qty:.4f} @ {price:.2f} stop={stop:.2f} ({reason})")
     return True
+
+def us_fee_side(qty, value_inr):
+    """One side of a US trade, in rupees, from the broker's published schedule."""
+    fx = _FX or USDINR_FALLBACK
+    usd_val = abs(value_inr) / fx
+    comm = max(US_COMM_MIN, US_COMM_PS * abs(qty)) * (1.0 + US_GST)
+    fx_cost = 0.0 if US_PRECONVERTED else max(US_FX_MIN, US_FX_BPS * usd_val)
+    return (comm + fx_cost) * fx
+
+
+def market_of(sym):
+    s = str(sym)
+    if "/" in s:
+        return "PAIR"
+    if is_crypto(s):
+        return "CRYPTO"
+    if is_india(s):
+        return "NSE"
+    return "US"
+
+
+def pos_notional(sym, p):
+    if "/" in str(sym):
+        return abs(p.get("qty", 0.0))
+    return abs(p.get("qty", 0.0)) * abs(p.get("entry", 0.0))
+
 
 def trade_fee_for(sym, qty, entry, exit_px, side):
     q = abs(qty)
@@ -487,13 +565,17 @@ def trade_fee_for(sym, qty, entry, exit_px, side):
         if any(leg.endswith(".NS") for leg in s.split("/")):
             return 2.0 * (fees_in.delivery_charges("BUY", q)["total"]
                           + fees_in.delivery_charges("SELL", q)["total"])
-        return 2.0 * q * (US_FEE if not is_crypto(s) else FEE)
+        if is_crypto(s):
+            return 2.0 * q * FEE
+        return 2.0 * us_fee_side(q, q)
     if s.endswith(".NS"):
         buy_v = q * (entry if side > 0 else exit_px)
         sell_v = q * (exit_px if side > 0 else entry)
         return (fees_in.delivery_charges("BUY", buy_v)["total"]
                 + fees_in.delivery_charges("SELL", sell_v)["total"])
-    return q * (entry + exit_px) * (FEE if is_crypto(s) else US_FEE)
+    if is_crypto(s):
+        return q * (entry + exit_px) * FEE
+    return us_fee_side(q, q * abs(entry)) + us_fee_side(q, q * abs(exit_px))
 
 
 def trade_fee(sym, qty, entry, exit_px, side):
@@ -1285,7 +1367,15 @@ REENTRY_COOLDOWN_MIN = 30    # same bot, same symbol: no re-entry for 30 min
 MIN_RISK_PCT = 0.30          # absolute floor: risk distance must clear the fee
 FEE_TRIPLE = 2.0             # the planned move must be >= 2x the round-trip cost
 MIN_IN_NOTIONAL = 25000.0    # NSE cash: below this the Rs 60 fixed block eats 2-7%
+MIN_US_NOTIONAL = 15000.0    # US: the USD 0.35 order minimum is 0.26%/side at 15k, 0.6% at 7k
 MAX_TRADE_RISK_PCT = 2.0     # never lift a trade to the minimum if it risks more
+# Net-exposure caps, per bot, set by council round 2 (4 of 4 wanted a same-side
+# rule; the 30% net cap alone would NOT have stopped SPY short + NVDA short).
+MAX_NET_MARKET_PCT = 30.0    # |signed notional| per market, % of that bot's equity
+MAX_SAME_SIDE_MARKET_PCT = 40.0   # gross, same direction, per market: a 30% single
+# position must stay legal, so this is a belt-and-braces guard for stacked names
+# (SPY short 30% + NVDA short 23.6% = 53.6% would be refused here even if the net
+# cap were loosened later).
 EOD_ENTRY_BLOCK_MIN = 20     # no new entries in the last 20 min before flatten
 
 
@@ -1685,6 +1775,7 @@ PAUSED_BOTS = {"s01", "s06"}
 def run_cycle(st):
     fresh_start_if_due(st)   # one-off clean book on/after FRESH_START
     fx = get_usdinr(st)
+    globals()["_FX"] = fx or USDINR_FALLBACK
     now = datetime.now(IST).isoformat()
     ctx = Ctx(fx, now)
     _CLOSED_THIS_CYCLE.clear()   # same-cycle re-open guard is per cycle
