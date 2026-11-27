@@ -1,12 +1,12 @@
 # Night Trader v2 — Paper Trading Report (3 markets)
-_Updated: 2026-11-27 15:27 IST_
+_Updated: 2026-11-27 15:29 IST_
 
-## CRYPTO (OPEN) — ₹10,131.08 | P&L +131.08 (+1.31%)
-Cash ₹4,059.56 | cycles 4715 | capital ₹10,000
+## CRYPTO (OPEN) — ₹10,132.28 | P&L +132.28 (+1.32%)
+Cash ₹4,059.56 | cycles 4720 | capital ₹10,000
 | Symbol | Side | Qty | Entry | Last | Unrealized |
 |---|---|---|---|---|---|
-| BTC-USD | LONG | 0.0005 | 5657841.90 | 5722344.41 | +34.20 |
-| ETH-USD | LONG | 0.0189 | 158549.13 | 160569.68 | +38.22 |
+| BTC-USD | LONG | 0.0005 | 5657841.90 | 5724861.77 | +35.54 |
+| ETH-USD | LONG | 0.0189 | 158549.13 | 160562.84 | +38.09 |
 Closed: 1 (1 wins), realized +64.65
 - 13:49 SELL SOL-USD @ 6827.44 pnl +64.65 (RSI 78 overbought take-profit)
 News sentiment: -0.03 (179 headlines, 6 sources, Fear&Greed 12)
@@ -14,14 +14,14 @@ News sentiment: -0.03 (179 headlines, 6 sources, Fear&Greed 12)
 - Strategy and Crypto Stocks Rally as Bitcoin Rebounds Past $63,000. Is the Jump Temporary? - Barron's
 - Bitcoin price extends gains, briefly tops $81,000 as crypto rally gathers pace - CNBC
 
-## INDIA (OPEN) — ₹9,949.84 | P&L -50.16 (-0.50%)
-Cash ₹4,005.04 | cycles 1490 | capital ₹10,000
+## INDIA (OPEN) — ₹9,939.40 | P&L -60.60 (-0.61%)
+Cash ₹6,968.32 | cycles 1495 | capital ₹10,000
 | Symbol | Side | Qty | Entry | Last | Unrealized |
 |---|---|---|---|---|---|
-| INFY.NS | LONG | 2.5764 | 1164.40 | 1154.20 | -26.28 |
 | HDFCBANK.NS | LONG | 3.4658 | 863.00 | 857.25 | -19.93 |
-Closed: 1 (1 wins), realized +2.04
+Closed: 2 (1 wins), realized -37.68
 - 09:15 SELL TCS.NS @ 2578.4 pnl +2.04 (RSI 79 overbought take-profit)
+- 15:29 SELL INFY.NS @ 1151.3 pnl -39.72 (stop/trail hit (1151.30<=1151.48))
 News sentiment: +0.61 (222 headlines, 6 sources)
 - Gold finance stocks rally! Manappuram, Muthoot Finance gain up to 4% as MCX gold prices recover - Which stock to buy?
 - Gold jumps 2%, silver hits 6% upper circuit on MCX as bullion rebounds from multi-month lows: Gold Silver Rates Live Updates

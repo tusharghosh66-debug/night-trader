@@ -7,3 +7,4 @@ time,market,symbol,side,qty,price,pnl,reason,equity_after
 2026-11-27T07:39:15.712428+05:30,crypto,SOL-USD,BUY,0.449498,6670.11,0.0,"breakout+EMA trend, RSI=69, regime_ok=True, news=-0.29",9991.0
 2026-11-27T09:15:16.079318+05:30,india,TCS.NS,SELL,1.165503,2578.4,2.04,RSI 79 overbought take-profit,10040.5
 2026-11-27T13:49:30.819898+05:30,crypto,SOL-USD,SELL,0.449498,6827.44,64.65,RSI 78 overbought take-profit,10173.25
+2026-11-27T15:29:34.429913+05:30,india,INFY.NS,SELL,2.576434,1151.3,-39.72,stop/trail hit (1151.30<=1151.48),9939.4
