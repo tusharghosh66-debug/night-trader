@@ -1,25 +1,25 @@
 # Strategy Arena — Leaderboard
-_Updated: 2026-11-27 21:44 IST_
+_Updated: 2026-11-27 21:46 IST_
 
-**Total equity: Rs 1,599,139.63** / Rs 1,600,000 start (-0.05%)
+**Total equity: Rs 1,599,163.84** / Rs 1,600,000 start (-0.05%)
 
 | Rank | Bot | Strategy | Equity | P&L | % | Trades | Win% | Open |
 |---|---|---|---|---|---|---|---|---|
-| 1 | x03 | Core Regime Trend (council) | Rs 100,079.24 | +79.24 | +0.08% | 0 | 0% | 1 |
-| 2 | x02 | RS Rotation Top-2 (council) | Rs 100,000.57 | +0.57 | +0.00% | 0 | 0% | 1 |
-| 3 | s01 | St. Gallen ORB Noise-Band | Rs 100,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
-| 4 | s02 | Trend-Filtered Mean Reversion | Rs 100,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
-| 5 | s03 | ETF Dual Momentum Rotation | Rs 100,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
-| 6 | s05 | Connors RSI(2) Pullback | Rs 100,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
-| 7 | s06 | Prev-Day High/Low Retest | Rs 100,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
-| 8 | s08 | Pre-Market High/Low Break | Rs 100,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
-| 9 | s09 | Statistical Arbitrage Pairs | Rs 100,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
-| 10 | s10 | Overnight Edge + Turnaround Tue | Rs 100,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
-| 11 | s12 | OHL + CPR Breakdown Short | Rs 100,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
-| 12 | s13 | Afternoon Sell-the-Rip Short | Rs 100,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
-| 13 | x01 | Vol Squeeze Breakout (council) | Rs 100,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
-| 14 | s11 | Spike & VWAP Rejection Short | Rs 99,908.71 | -91.29 | -0.09% | 0 | 0% | 1 |
-| 15 | s04 | Multi-Market Trend Following | Rs 99,812.55 | -187.45 | -0.19% | 0 | 0% | 1 |
-| 16 | s07 | First-Candle ORB 15m | Rs 99,338.57 | -661.43 | -0.66% | 1 | 0% | 1 |
+| 1 | x03 | Core Regime Trend (council) | Rs 100,069.02 | +69.02 | +0.07% | 0 | 0% | 1 |
+| 2 | s01 | St. Gallen ORB Noise-Band | Rs 100,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
+| 3 | s02 | Trend-Filtered Mean Reversion | Rs 100,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
+| 4 | s03 | ETF Dual Momentum Rotation | Rs 100,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
+| 5 | s05 | Connors RSI(2) Pullback | Rs 100,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
+| 6 | s06 | Prev-Day High/Low Retest | Rs 100,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
+| 7 | s08 | Pre-Market High/Low Break | Rs 100,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
+| 8 | s09 | Statistical Arbitrage Pairs | Rs 100,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
+| 9 | s10 | Overnight Edge + Turnaround Tue | Rs 100,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
+| 10 | s12 | OHL + CPR Breakdown Short | Rs 100,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
+| 11 | s13 | Afternoon Sell-the-Rip Short | Rs 100,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
+| 12 | x01 | Vol Squeeze Breakout (council) | Rs 100,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
+| 13 | x02 | RS Rotation Top-2 (council) | Rs 99,997.98 | -2.02 | -0.00% | 0 | 0% | 1 |
+| 14 | s11 | Spike & VWAP Rejection Short | Rs 99,935.06 | -64.94 | -0.06% | 0 | 0% | 1 |
+| 15 | s04 | Multi-Market Trend Following | Rs 99,813.48 | -186.52 | -0.19% | 0 | 0% | 1 |
+| 16 | s07 | First-Candle ORB 15m | Rs 99,348.30 | -651.70 | -0.65% | 1 | 0% | 1 |
 
-**Best so far: x03 — Core Regime Trend (council) (+0.08%)**
+**Best so far: x03 — Core Regime Trend (council) (+0.07%)**
