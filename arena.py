@@ -39,7 +39,13 @@ DASH_F = os.path.join(BASE, "arena_dashboard.html")
 
 IST = timezone(timedelta(hours=5, minutes=30))
 ET = ZoneInfo("America/New_York")
-FEE = 0.001            # 0.1% per side (US / crypto)
+FEE = 0.001            # 0.1% per side (crypto: genuinely that cheap)
+# US equities from India are NOT 0.1%: the broker adds a currency-conversion
+# markup (0.25-0.5% commonly, up to 1.5% at some brokers) plus a small ticket
+# fee, and it is charged on both the entry and the exit. 0.4%/side is the
+# mid-point of what an Indian broker actually takes, so the gate is priced off
+# that instead of pretending the trade is nearly free.
+US_FEE = 0.004
 import fees_in          # Upstox delivery charges for NSE cash trades
 CAPITAL = 100000.0     # per bot -- season 2: a Rs 10k book cannot pay Upstox fees
 CYCLE_SEC = 5 * 60
@@ -420,6 +426,12 @@ def open_position(bs, sym, side, qty, price, stop, reason, now):
         g["rfee"] += 1
         log(f"  SKIP {sym} ({reason}): risk {rpct:.2f}% < {MIN_RISK_PCT}% fee hurdle")
         return False
+    if not mkt_open(sym):
+        # India entries at 00:00-09:15 were filling at the previous close: the EOD
+        # gate only asked "late in the session?", never "is the session open?".
+        g["eod"] += 1
+        log(f"  SKIP {sym} ({reason}): market closed for entries")
+        return False
     em = mkt_eod_min(sym)
     if em is not None:
         hm = mkt_hm(time.time() * 1000, sym)
@@ -475,13 +487,13 @@ def trade_fee_for(sym, qty, entry, exit_px, side):
         if any(leg.endswith(".NS") for leg in s.split("/")):
             return 2.0 * (fees_in.delivery_charges("BUY", q)["total"]
                           + fees_in.delivery_charges("SELL", q)["total"])
-        return 2.0 * q * FEE
+        return 2.0 * q * (US_FEE if not is_crypto(s) else FEE)
     if s.endswith(".NS"):
         buy_v = q * (entry if side > 0 else exit_px)
         sell_v = q * (exit_px if side > 0 else entry)
         return (fees_in.delivery_charges("BUY", buy_v)["total"]
                 + fees_in.delivery_charges("SELL", sell_v)["total"])
-    return q * (entry + exit_px) * FEE
+    return q * (entry + exit_px) * (FEE if is_crypto(s) else US_FEE)
 
 
 def trade_fee(sym, qty, entry, exit_px, side):

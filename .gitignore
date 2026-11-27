@@ -14,3 +14,5 @@ bot_v1.py
 backtest*.json
 *.tmp
 site.html
+council_log.jsonl
+_council_brief.txt
