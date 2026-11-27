@@ -1,36 +1,36 @@
 # Night Trader v2 — Paper Trading Report (3 markets)
-_Updated: 2026-11-27 14:24 IST_
+_Updated: 2026-11-27 14:27 IST_
 
-## CRYPTO (OPEN) — ₹10,133.17 | P&L +133.17 (+1.33%)
-Cash ₹4,059.56 | cycles 4590 | capital ₹10,000
+## CRYPTO (OPEN) — ₹10,133.22 | P&L +133.22 (+1.33%)
+Cash ₹4,059.56 | cycles 4595 | capital ₹10,000
 | Symbol | Side | Qty | Entry | Last | Unrealized |
 |---|---|---|---|---|---|
-| BTC-USD | LONG | 0.0005 | 5657841.90 | 5726548.67 | +36.43 |
-| ETH-USD | LONG | 0.0189 | 158549.13 | 160562.22 | +38.08 |
+| BTC-USD | LONG | 0.0005 | 5657841.90 | 5725770.04 | +36.02 |
+| ETH-USD | LONG | 0.0189 | 158549.13 | 160586.66 | +38.54 |
 Closed: 1 (1 wins), realized +64.65
 - 13:49 SELL SOL-USD @ 6827.44 pnl +64.65 (RSI 78 overbought take-profit)
-News sentiment: -0.16 (181 headlines, 6 sources, Fear&Greed 12)
-- Ripple Price Forecast: XRP rises as bulls buy the dip, ETF inflows return and retail demand improves - www.tmgm.com
+News sentiment: -0.18 (181 headlines, 6 sources, Fear&Greed 12)
 - Bitcoin Falls Further as Inflation, Trump Tariffs and AI Selloff Rattle Markets
 - Strategy and Crypto Stocks Rally as Bitcoin Rebounds Past $63,000. Is the Jump Temporary? - Barron's
+- Bitcoin price extends gains, briefly tops $81,000 as crypto rally gathers pace - CNBC
 
-## INDIA (OPEN) — ₹9,990.29 | P&L -9.71 (-0.10%)
-Cash ₹4,005.04 | cycles 1365 | capital ₹10,000
+## INDIA (OPEN) — ₹9,993.16 | P&L -6.84 (-0.07%)
+Cash ₹4,005.04 | cycles 1370 | capital ₹10,000
 | Symbol | Side | Qty | Entry | Last | Unrealized |
 |---|---|---|---|---|---|
-| INFY.NS | LONG | 2.5764 | 1164.40 | 1162.50 | -4.90 |
-| HDFCBANK.NS | LONG | 3.4658 | 863.00 | 862.75 | -0.87 |
+| INFY.NS | LONG | 2.5764 | 1164.40 | 1162.00 | -6.18 |
+| HDFCBANK.NS | LONG | 3.4658 | 863.00 | 863.95 | +3.29 |
 Closed: 1 (1 wins), realized +2.04
 - 09:15 SELL TCS.NS @ 2578.4 pnl +2.04 (RSI 79 overbought take-profit)
-News sentiment: +0.63 (218 headlines, 6 sources)
-- Gold jumps 2%, silver surges 5% as bullion rebounds from multi-month lows: Gold Silver Rates Live Updates
+News sentiment: +0.64 (220 headlines, 6 sources)
+- Gold Silver Rate Today Live: Gold jumps 2%, silver surges 5% as bullion rebounds from multi-month lows: Gold Silver Rates Live Updates
 - Gold finance stocks rally! Manappuram, Muthoot Finance gain up to 4% as MCX gold prices recover - Which stock to buy?
 - Gold price today 27 November 2026: MCX gold rate jumps but still 31% down from record high; is it the right time to buy?
 
 ## US (CLOSED) — ₹10,000.00 | P&L +0.00 (+0.00%)
 Cash ₹10,000.00 | cycles 1069 | capital ₹10,000
 _No open positions — all cash._
-News sentiment: +0.14 (192 headlines, 6 sources)
+News sentiment: +0.17 (192 headlines, 6 sources)
 - S&amp;P 500, Nasdaq, Dow Forecast: Wall Street Rebound Faces Major Resistance—Bull Trap or Breakout? - StoneX
 - Norse Atlantic suspends all flights, warns it may file for bankruptcy after share price collapse
 - Nasdaq, S&amp;P 500 end down, but well off lows as investors buy bargains - Reuters
