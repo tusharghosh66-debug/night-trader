@@ -1,18 +1,18 @@
 {
- "ts": "2026-11-28T01:28:35.080999+05:30",
+ "ts": "2026-11-28T02:28:35.109412+05:30",
  "crypto": {
-  "score": 0.089,
-  "n_headlines": 179,
+  "score": 0.052,
+  "n_headlines": 180,
   "n_sources": 6,
   "top": [
    "Bitcoin Falls Further as Inflation, Trump Tariffs and AI Selloff Rattle Markets",
    "Strategy and Crypto Stocks Rally as Bitcoin Rebounds Past $63,000. Is the Jump Temporary? - Barron's",
-   "Bitcoin price extends gains, briefly tops $81,000 as crypto rally gathers pace - CNBC",
    "Cathie Wood\u2019s ARK Buys Anthropic as Ripple CEO Predicts Post-IPO Crypto Rally - CCN.com",
+   "Bitcoin price extends gains, briefly tops $81,000 as crypto rally gathers pace - CNBC",
    "Bitcoin Holds Above $60K as Death Cross Clouds Thanksgiving Recovery",
+   "Bitcoin Price Falls as $183 Million in Liquidations Hit Ahead of $6.8 Billion Options Expiry - Benzinga",
    "Crypto Stocks Gain After Bitcoin Tops $61K In Tech Rebound, But Analysts Want A Move Above $62K - Yahoo Finance",
-   "Bitcoin, crypto and tech stocks rally as Nvidia reinstates Jensen Huang as CEO; NVDA jumps 30% - The Block",
-   "Bitcoin Could Rally Sharply if AI Stocks Recover, Devere CEO Says - Cryptonews.net"
+   "Bitcoin, crypto and tech stocks rally as Nvidia reinstates Jensen Huang as CEO; NVDA jumps 30% - The Block"
   ],
   "headlines": [
    "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
@@ -72,15 +72,15 @@
    "Vitalik Buterin calls for verifiable chips as hardware wallet threats evolve",
    "Standard Chartered\u2019s Zodia Custody suffers data breach",
    "Bitcoin price eyes $61K as Talos warns of thin Thanksgiving liquidity",
+   "Could AI Break Bitcoin? Not Yet, Research Firm K33 Says",
    "4 Scary Bitcoin Charts That Suggest This Bear Market Is Different",
-   "$7 Billion in Bitcoin Options Just Expired: Here\u2019s What It Means",
-   "Hackers Hit US Air Force Cloud System Running Air-Defense and Munitions Data"
+   "$7 Billion in Bitcoin Options Just Expired: Here\u2019s What It Means"
   ],
   "fear_greed": 12
  },
  "india": {
-  "score": 0.407,
-  "n_headlines": 221,
+  "score": 0.404,
+  "n_headlines": 223,
   "n_sources": 6,
   "top": [
    "Gold price today 27 November 2026: MCX gold rate jumps but still 31% down from record high; is it the right time to buy?",
@@ -90,7 +90,7 @@
    "Small-cap, big jump! Waaree Renewable shares rise 14% on this order win; energy stock still 35% below 52-week high",
    "Black Friday Turns Red: Nifty Slips After a 15% Rally in Four Weeks. Is the Market Just Catching Its Breath? - NiftyTrader",
    "Stock Market This Week: Why Sensex Lost 580 Pts Despite Strong FII Inflows and Defence Rally - The Indian Awaaz",
-   "JPMorgan Sees Nifty at 29,000 by December 2027, Cites Foreign Buying and Earnings Recovery - Kotak Neo"
+   "Sensex gains nearly 400 pts in early trade as IT stocks rally, Nifty below 25,900 - DD News"
   ],
   "headlines": [
    "Economic Times",
@@ -156,7 +156,7 @@
   ]
  },
  "us": {
-  "score": 0.56,
+  "score": 0.591,
   "n_headlines": 193,
   "n_sources": 6,
   "top": [
@@ -201,8 +201,8 @@
    "Sovereign wealth funds are acting more like private equity giants \u2014 and inheriting their risks",
    "Microdrama apps chase profits as Hollywood moves into short-form, vertical video",
    "MarketWatch.com - Top Stories",
-   "Coming next year: Medicare Advantage plans without drug coverage for almost 640,000 people and fewer choices for the rest",
    "These stocks soared the most during a wild week highlighted by Huang&#x2019;s return to Nvidia",
+   "Coming next year: Medicare Advantage plans without drug coverage for almost 640,000 people and fewer choices for the rest",
    "The warnings behind this week&#x2019;s stock-market rally",
    "Clearing out my parents&#x2019; house was a legal nightmare. How can I downsize without putting my kids through the same ordeal?",
    "12 days of sardines and Croc charms: Are Advent calendars getting out of control?",
@@ -215,18 +215,18 @@
    "Stock Market Rallies, Triggers This Shift; Jensen Huang Testimony, Jobs Report Loom - Investor's Business Daily",
    "US Futures Rally as Tech Rebound Gains Momentum: Markets Wrap - Bloomberg",
    "Nasdaq, S&amp;P 500 end down, but well off lows as investors buy bargains - Reuters",
-   "The Stock Market Is Flashing a Signal Seen Only 6 Times in 156 Years. History Suggests These Stocks Could Take the Biggest Hit. - The Motley Fool",
    "Stock Market Today: Dow, S&amp;P 500, Nasdaq 100 Futures Rise as Wall Street Returns to Wrap Up Holiday-Short - Benzinga",
+   "The Stock Market Is Flashing a Signal Seen Only 6 Times in 156 Years. History Suggests These Stocks Could Take the Biggest Hit. - The Motley Fool",
    "Wall Street ends higher as AI stocks rebound, Nasdaq leads gains - Investing.com",
-   "Wall Street firmly in green as it looks to end volatile week on a high - Seeking Alpha",
+   "U.S. equities close on top on Black Friday - Seeking Alpha",
+   "Dow, S&amp;P 500, Nasdaq Futures Edge Higher As Tech Rebounds After Selloff: DIS, VRTX, DE, CHTR In Focus - TradingView",
    "US stocks set for weekly advance as battered AI shares hold their ground - The Detroit News",
    "Stocks rise in abbreviated Black Friday trading as AI concerns ease - upi",
    "Stocks jump to close out an erratic week that was also Wall Street\u2019s best in more than a year - BNN Bloomberg",
-   "Stock Indices Finish Off Their Lows as Dip Buyers Step In - Barchart.com",
    "S&amp;P 500, Nasdaq and Dow set for winning week despite AI turbulence - Quartz",
+   "US stock market today: Nasdaq and S&amp;P 500 fall as Nvidia and AI stocks slide, Dow gains - Beinsure",
    "Dow Adds 592 Points on Black Friday as AI Fear Fades: Stock Market Today - Kiplinger",
    "U.S. Market Closes Sharply Higher to End Volatile Week on Wall Street - TipRanks",
-   "Nasdaq Plunges 4.6% Before Dramatic Rebound. Wall Street Faces A Triple Threat From AI, Inflation And Trump Tariffs. - International Business Times",
    "Nasdaq, S&amp;P 500 end down, but well off lows as investors buy bargains - StreetInsider",
    "Stock Market Today: S&amp;P 500, Nasdaq and Dow Jones Rally on Black Friday - Coinpaper",
    "Stock Futures Jump as AI Trade Set for Rebound - WSJ"
