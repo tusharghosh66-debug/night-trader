@@ -1,12 +1,12 @@
 # Night Trader v2 — Paper Trading Report (3 markets)
-_Updated: 2026-11-27 20:01 IST_
+_Updated: 2026-11-27 20:03 IST_
 
-## CRYPTO (OPEN) — ₹10,075.28 | P&L +75.28 (+0.75%)
-Cash ₹4,059.56 | cycles 5260 | capital ₹10,000
+## CRYPTO (OPEN) — ₹10,070.75 | P&L +70.75 (+0.71%)
+Cash ₹4,059.56 | cycles 5265 | capital ₹10,000
 | Symbol | Side | Qty | Entry | Last | Unrealized |
 |---|---|---|---|---|---|
-| BTC-USD | LONG | 0.0005 | 5657841.90 | 5672869.73 | +7.97 |
-| ETH-USD | LONG | 0.0189 | 158549.13 | 159006.96 | +8.66 |
+| BTC-USD | LONG | 0.0005 | 5657841.90 | 5668501.53 | +5.65 |
+| ETH-USD | LONG | 0.0189 | 158549.13 | 158889.80 | +6.44 |
 Closed: 1 (1 wins), realized +64.65
 - 13:49 SELL SOL-USD @ 6827.44 pnl +64.65 (RSI 78 overbought take-profit)
 News sentiment: +0.03 (179 headlines, 6 sources, Fear&Greed 12)
@@ -28,7 +28,7 @@ News sentiment: +0.41 (224 headlines, 6 sources)
 - FPI Inflows Hit Record High in November 2026 as Foreign Investors Buy Indian Shares Worth over ₹1.22 Lakh Crore - Kotak Neo
 
 ## US (OPEN) — ₹10,000.00 | P&L +0.00 (+0.00%)
-Cash ₹10,000.00 | cycles 1072 | capital ₹10,000
+Cash ₹10,000.00 | cycles 1077 | capital ₹10,000
 _No open positions — all cash._
 News sentiment: +0.48 (193 headlines, 6 sources)
 - US Futures Rally as Tech Rebound Gains Momentum: Markets Wrap - Bloomberg.com
