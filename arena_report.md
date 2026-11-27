@@ -1,5 +1,5 @@
 # Strategy Arena — Leaderboard
-_Updated: 2026-11-28 00:39 IST_
+_Updated: 2026-11-28 00:42 IST_
 
 **Total equity: Rs 1,598,891.76** / Rs 1,600,000 start (-0.07%)
 
@@ -14,7 +14,7 @@ _Updated: 2026-11-28 00:39 IST_
 | 7 | s05 | Connors RSI(2) Pullback | Rs 100,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 8 | s06 | Prev-Day High/Low Retest | Rs 100,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 9 | s08 | Pre-Market High/Low Break | Rs 100,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
-| 10 | s09 | Statistical Arbitrage Pairs | Rs 100,000.00 | +0.00 | +0.00% | 0 | 0% | 1 |
+| 10 | s09 | Statistical Arbitrage Pairs | Rs 100,000.00 | +0.00 | +0.00% | 0 | 0% | 2 |
 | 11 | s10 | Overnight Edge + Turnaround Tue | Rs 100,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 12 | s12 | OHL + CPR Breakdown Short | Rs 100,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 13 | s13 | Afternoon Sell-the-Rip Short | Rs 100,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
