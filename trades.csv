@@ -5,3 +5,4 @@ time,market,symbol,side,qty,price,pnl,reason,equity_after
 2026-11-27T07:39:15.414407+05:30,crypto,BTC-USD,BUY,0.00053,5657841.9,0.0,"breakout+EMA trend, RSI=66, regime_ok=True, news=-0.29",9997.0
 2026-11-27T07:39:15.519515+05:30,crypto,ETH-USD,BUY,0.018916,158549.13,0.0,"breakout+EMA trend, RSI=65, regime_ok=True, news=-0.29",9994.0
 2026-11-27T07:39:15.712428+05:30,crypto,SOL-USD,BUY,0.449498,6670.11,0.0,"breakout+EMA trend, RSI=69, regime_ok=True, news=-0.29",9991.0
+2026-11-27T09:15:16.079318+05:30,india,TCS.NS,SELL,1.165503,2578.4,2.04,RSI 79 overbought take-profit,10040.5

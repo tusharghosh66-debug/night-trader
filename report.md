@@ -1,25 +1,26 @@
 # Night Trader v2 — Paper Trading Report (3 markets)
-_Updated: 2026-11-27 09:14 IST_
+_Updated: 2026-11-27 09:16 IST_
 
-## CRYPTO (OPEN) — ₹10,058.68 | P&L +58.68 (+0.59%)
-Cash ₹993.70 | cycles 3970 | capital ₹10,000
+## CRYPTO (OPEN) — ₹10,057.89 | P&L +57.89 (+0.58%)
+Cash ₹993.70 | cycles 3975 | capital ₹10,000
 | Symbol | Side | Qty | Entry | Last | Unrealized |
 |---|---|---|---|---|---|
-| BTC-USD | LONG | 0.0005 | 5657841.90 | 5685488.14 | +14.66 |
-| ETH-USD | LONG | 0.0189 | 158549.13 | 159836.86 | +24.36 |
-| SOL-USD | LONG | 0.4495 | 6670.11 | 6733.87 | +28.66 |
+| BTC-USD | LONG | 0.0005 | 5657841.90 | 5684672.41 | +14.23 |
+| ETH-USD | LONG | 0.0189 | 158549.13 | 159860.00 | +24.80 |
+| SOL-USD | LONG | 0.4495 | 6670.11 | 6732.11 | +27.87 |
 News sentiment: -0.22 (179 headlines, 6 sources, Fear&Greed 12)
 - Ripple Price Forecast: XRP rises as bulls buy the dip, ETF inflows return and retail demand improves - www.tmgm.com
 - Bitcoin Falls Further as Inflation, Trump Tariffs and AI Selloff Rattle Markets
 - Strategy and Crypto Stocks Rally as Bitcoin Rebounds Past $63,000. Is the Jump Temporary? - Barron's
 
-## INDIA (CLOSED) — ₹10,115.65 | P&L +115.65 (+1.16%)
-Cash ₹1,002.91 | cycles 746 | capital ₹10,000
+## INDIA (OPEN) — ₹9,996.40 | P&L -3.60 (-0.04%)
+Cash ₹4,005.04 | cycles 750 | capital ₹10,000
 | Symbol | Side | Qty | Entry | Last | Unrealized |
 |---|---|---|---|---|---|
-| INFY.NS | LONG | 2.5764 | 1164.40 | 1183.00 | +47.92 |
-| TCS.NS | LONG | 1.1655 | 2571.50 | 2640.30 | +80.19 |
-| HDFCBANK.NS | LONG | 3.4658 | 863.00 | 862.00 | -3.47 |
+| INFY.NS | LONG | 2.5764 | 1164.40 | 1164.00 | -1.03 |
+| HDFCBANK.NS | LONG | 3.4658 | 863.00 | 863.40 | +1.39 |
+Closed: 1 (1 wins), realized +2.04
+- 09:15 SELL TCS.NS @ 2578.4 pnl +2.04 (RSI 79 overbought take-profit)
 News sentiment: +0.55 (219 headlines, 6 sources)
 - Gold price today in India ₹58,500 away from record high; right time to buy amid rebound from 14-month low?
 - Sensex jumps 1,502 points, Nifty surges to 25,819 on foreign fund inflows, lower crude oil - DD News
