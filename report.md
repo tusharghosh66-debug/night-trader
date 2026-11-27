@@ -1,24 +1,24 @@
 # Night Trader v2 — Paper Trading Report (3 markets)
-_Updated: 2026-11-27 10:59 IST_
+_Updated: 2026-11-27 11:01 IST_
 
-## CRYPTO (OPEN) — ₹10,127.99 | P&L +127.99 (+1.28%)
-Cash ₹993.70 | cycles 4180 | capital ₹10,000
+## CRYPTO (OPEN) — ₹10,152.12 | P&L +152.12 (+1.52%)
+Cash ₹993.70 | cycles 4185 | capital ₹10,000
 | Symbol | Side | Qty | Entry | Last | Unrealized |
 |---|---|---|---|---|---|
-| BTC-USD | LONG | 0.0005 | 5657841.90 | 5715671.00 | +30.66 |
-| ETH-USD | LONG | 0.0189 | 158549.13 | 161597.60 | +57.66 |
-| SOL-USD | LONG | 0.4495 | 6670.11 | 6778.37 | +48.66 |
+| BTC-USD | LONG | 0.0005 | 5657841.90 | 5730230.65 | +38.38 |
+| ETH-USD | LONG | 0.0189 | 158549.13 | 161984.59 | +64.98 |
+| SOL-USD | LONG | 0.4495 | 6670.11 | 6798.59 | +57.75 |
 News sentiment: -0.20 (178 headlines, 6 sources, Fear&Greed 12)
 - Ripple Price Forecast: XRP rises as bulls buy the dip, ETF inflows return and retail demand improves - www.tmgm.com
 - Bitcoin Falls Further as Inflation, Trump Tariffs and AI Selloff Rattle Markets
 - Strategy and Crypto Stocks Rally as Bitcoin Rebounds Past $63,000. Is the Jump Temporary? - Barron's
 
-## INDIA (OPEN) — ₹9,971.20 | P&L -28.80 (-0.29%)
-Cash ₹4,005.04 | cycles 955 | capital ₹10,000
+## INDIA (OPEN) — ₹9,970.18 | P&L -29.82 (-0.30%)
+Cash ₹4,005.04 | cycles 960 | capital ₹10,000
 | Symbol | Side | Qty | Entry | Last | Unrealized |
 |---|---|---|---|---|---|
-| INFY.NS | LONG | 2.5764 | 1164.40 | 1155.90 | -21.90 |
-| HDFCBANK.NS | LONG | 3.4658 | 863.00 | 862.15 | -2.95 |
+| INFY.NS | LONG | 2.5764 | 1164.40 | 1155.10 | -23.96 |
+| HDFCBANK.NS | LONG | 3.4658 | 863.00 | 862.45 | -1.91 |
 Closed: 1 (1 wins), realized +2.04
 - 09:15 SELL TCS.NS @ 2578.4 pnl +2.04 (RSI 79 overbought take-profit)
 News sentiment: +0.47 (221 headlines, 6 sources)
