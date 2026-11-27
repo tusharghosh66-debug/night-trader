@@ -733,13 +733,13 @@ def s04(bs, ctx):
         av = a[i] or (c[i] * 0.02)
         if c[i] >= hi200:
             qty = size_by_risk(eq, px, 6 * av, 0.25, 0.01)
-            if qty > 0:
-                open_position(bs, sym, 1, qty, px, px - 6 * av, "donchian200-high", ctx.now)
+            # open_position can refuse (EOD window, cooldown, fee hurdle, paused),
+            # so the trail bookkeeping must only run when the fill really happened.
+            if qty > 0 and open_position(bs, sym, 1, qty, px, px - 6 * av, "donchian200-high", ctx.now):
                 bs["positions"][sym]["extreme"] = px
         elif c[i] <= lo200:
             qty = size_by_risk(eq, px, 6 * av, 0.25, 0.01)
-            if qty > 0:
-                open_position(bs, sym, -1, qty, px, px + 6 * av, "donchian200-low", ctx.now)
+            if qty > 0 and open_position(bs, sym, -1, qty, px, px + 6 * av, "donchian200-low", ctx.now):
                 bs["positions"][sym]["extreme"] = px
 
 # ---- s05: Larry Connors RSI(2) Pullback (daily, index ETFs) ----
