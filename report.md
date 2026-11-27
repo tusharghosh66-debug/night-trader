@@ -1,12 +1,12 @@
 # Night Trader v2 — Paper Trading Report (3 markets)
-_Updated: 2026-11-27 15:19 IST_
+_Updated: 2026-11-27 15:22 IST_
 
-## CRYPTO (OPEN) — ₹10,135.12 | P&L +135.12 (+1.35%)
-Cash ₹4,059.56 | cycles 4700 | capital ₹10,000
+## CRYPTO (OPEN) — ₹10,141.64 | P&L +141.64 (+1.42%)
+Cash ₹4,059.56 | cycles 4705 | capital ₹10,000
 | Symbol | Side | Qty | Entry | Last | Unrealized |
 |---|---|---|---|---|---|
-| BTC-USD | LONG | 0.0005 | 5657841.90 | 5725819.58 | +36.04 |
-| ETH-USD | LONG | 0.0189 | 158549.13 | 160685.85 | +40.42 |
+| BTC-USD | LONG | 0.0005 | 5657841.90 | 5732561.81 | +39.62 |
+| ETH-USD | LONG | 0.0189 | 158549.13 | 160841.82 | +43.37 |
 Closed: 1 (1 wins), realized +64.65
 - 13:49 SELL SOL-USD @ 6827.44 pnl +64.65 (RSI 78 overbought take-profit)
 News sentiment: -0.18 (181 headlines, 6 sources, Fear&Greed 12)
@@ -15,7 +15,7 @@ News sentiment: -0.18 (181 headlines, 6 sources, Fear&Greed 12)
 - Bitcoin price extends gains, briefly tops $81,000 as crypto rally gathers pace - CNBC
 
 ## INDIA (OPEN) — ₹9,949.84 | P&L -50.16 (-0.50%)
-Cash ₹4,005.04 | cycles 1475 | capital ₹10,000
+Cash ₹4,005.04 | cycles 1480 | capital ₹10,000
 | Symbol | Side | Qty | Entry | Last | Unrealized |
 |---|---|---|---|---|---|
 | INFY.NS | LONG | 2.5764 | 1164.40 | 1154.20 | -26.28 |
