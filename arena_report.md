@@ -1,11 +1,11 @@
 # Strategy Arena — Leaderboard
-_Updated: 2026-11-27 13:32 IST_
+_Updated: 2026-11-27 13:34 IST_
 
-**Total equity: Rs 159,921.93** / Rs 160,000 start (-0.05%)
+**Total equity: Rs 159,922.39** / Rs 160,000 start (-0.05%)
 
 | Rank | Bot | Strategy | Equity | P&L | % | Trades | Win% | Open |
 |---|---|---|---|---|---|---|---|---|
-| 1 | x02 | RS Rotation Top-2 (council) | Rs 10,009.60 | +9.60 | +0.10% | 0 | 0% | 2 |
+| 1 | x02 | RS Rotation Top-2 (council) | Rs 10,009.65 | +9.65 | +0.10% | 0 | 0% | 2 |
 | 2 | s01 | St. Gallen ORB Noise-Band | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 3 | s02 | Trend-Filtered Mean Reversion | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 4 | s05 | Connors RSI(2) Pullback | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
@@ -14,12 +14,12 @@ _Updated: 2026-11-27 13:32 IST_
 | 7 | s08 | Pre-Market High/Low Break | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 8 | s10 | Overnight Edge + Turnaround Tue | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 9 | x01 | Vol Squeeze Breakout (council) | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
-| 10 | x03 | Core Regime Trend (council) | Rs 9,996.86 | -3.14 | -0.03% | 0 | 0% | 2 |
+| 10 | x03 | Core Regime Trend (council) | Rs 9,998.18 | -1.82 | -0.02% | 0 | 0% | 2 |
 | 11 | s13 | Afternoon Sell-the-Rip Short | Rs 9,993.53 | -6.47 | -0.06% | 2 | 0% | 0 |
-| 12 | s11 | Spike & VWAP Rejection Short | Rs 9,993.03 | -6.97 | -0.07% | 2 | 0% | 1 |
-| 13 | s04 | Multi-Market Trend Following | Rs 9,991.92 | -8.08 | -0.08% | 0 | 0% | 1 |
+| 12 | s11 | Spike & VWAP Rejection Short | Rs 9,993.05 | -6.95 | -0.07% | 2 | 0% | 1 |
+| 13 | s04 | Multi-Market Trend Following | Rs 9,991.91 | -8.09 | -0.08% | 0 | 0% | 1 |
 | 14 | s12 | OHL + CPR Breakdown Short | Rs 9,986.67 | -13.33 | -0.13% | 1 | 0% | 1 |
-| 15 | s09 | Statistical Arbitrage Pairs | Rs 9,976.16 | -23.84 | -0.24% | 0 | 0% | 2 |
-| 16 | s03 | ETF Dual Momentum Rotation | Rs 9,974.16 | -25.84 | -0.26% | 0 | 0% | 1 |
+| 15 | s03 | ETF Dual Momentum Rotation | Rs 9,975.86 | -24.14 | -0.24% | 0 | 0% | 1 |
+| 16 | s09 | Statistical Arbitrage Pairs | Rs 9,973.54 | -26.46 | -0.26% | 0 | 0% | 2 |
 
 **Best so far: x02 — RS Rotation Top-2 (council) (+0.10%)**
