@@ -1,13 +1,13 @@
 # Night Trader v2 — Paper Trading Report (3 markets)
-_Updated: 2026-11-27 08:16 IST_
+_Updated: 2026-11-27 08:19 IST_
 
-## CRYPTO (OPEN) — ₹10,017.33 | P&L +17.33 (+0.17%)
-Cash ₹993.70 | cycles 3855 | capital ₹10,000
+## CRYPTO (OPEN) — ₹10,021.26 | P&L +21.26 (+0.21%)
+Cash ₹993.70 | cycles 3860 | capital ₹10,000
 | Symbol | Side | Qty | Entry | Last | Unrealized |
 |---|---|---|---|---|---|
-| BTC-USD | LONG | 0.0005 | 5657841.90 | 5672078.74 | +7.55 |
-| ETH-USD | LONG | 0.0189 | 158549.13 | 159190.63 | +12.13 |
-| SOL-USD | LONG | 0.4495 | 6670.11 | 6684.90 | +6.65 |
+| BTC-USD | LONG | 0.0005 | 5657841.90 | 5672026.05 | +7.52 |
+| ETH-USD | LONG | 0.0189 | 158549.13 | 159246.09 | +13.18 |
+| SOL-USD | LONG | 0.4495 | 6670.11 | 6691.37 | +9.56 |
 News sentiment: -0.29 (180 headlines, 6 sources, Fear&Greed 12)
 - Ripple Price Forecast: XRP rises as bulls buy the dip, ETF inflows return and retail demand improves - www.tmgm.com
 - Bitcoin Falls Further as Inflation, Trump Tariffs and AI Selloff Rattle Markets
