@@ -1,15 +1,15 @@
 # Night Trader v2 — Paper Trading Report (3 markets)
-_Updated: 2026-11-27 19:26 IST_
+_Updated: 2026-11-27 19:28 IST_
 
-## CRYPTO (OPEN) — ₹10,117.16 | P&L +117.16 (+1.17%)
-Cash ₹4,059.56 | cycles 5190 | capital ₹10,000
+## CRYPTO (OPEN) — ₹10,113.51 | P&L +113.51 (+1.14%)
+Cash ₹4,059.56 | cycles 5195 | capital ₹10,000
 | Symbol | Side | Qty | Entry | Last | Unrealized |
 |---|---|---|---|---|---|
-| BTC-USD | LONG | 0.0005 | 5657841.90 | 5707937.86 | +26.56 |
-| ETH-USD | LONG | 0.0189 | 158549.13 | 160237.90 | +31.94 |
+| BTC-USD | LONG | 0.0005 | 5657841.90 | 5705513.96 | +25.28 |
+| ETH-USD | LONG | 0.0189 | 158549.13 | 160112.52 | +29.57 |
 Closed: 1 (1 wins), realized +64.65
 - 13:49 SELL SOL-USD @ 6827.44 pnl +64.65 (RSI 78 overbought take-profit)
-News sentiment: -0.04 (178 headlines, 6 sources, Fear&Greed 12)
+News sentiment: +0.03 (179 headlines, 6 sources, Fear&Greed 12)
 - Bitcoin Falls Further as Inflation, Trump Tariffs and AI Selloff Rattle Markets
 - Strategy and Crypto Stocks Rally as Bitcoin Rebounds Past $63,000. Is the Jump Temporary? - Barron's
 - Bitcoin price extends gains, briefly tops $81,000 as crypto rally gathers pace - CNBC
@@ -22,18 +22,18 @@ Cash ₹6,968.32 | cycles 1495 | capital ₹10,000
 Closed: 2 (1 wins), realized -37.68
 - 09:15 SELL TCS.NS @ 2578.4 pnl +2.04 (RSI 79 overbought take-profit)
 - 15:29 SELL INFY.NS @ 1151.3 pnl -39.72 (stop/trail hit (1151.30<=1151.48))
-News sentiment: +0.38 (222 headlines, 6 sources)
+News sentiment: +0.41 (224 headlines, 6 sources)
 - Gold finance stocks rally! Manappuram, Muthoot Finance gain up to 4% as MCX gold prices recover - Which stock to buy?
-- Gold jumps 3%, silver hits 6% upper circuit on MCX as bullion rebounds from multi-month lows: Gold Silver Rates Live Updates
 - Gold price today 27 November 2026: MCX gold rate jumps but still 31% down from record high; is it the right time to buy?
+- FPI Inflows Hit Record High in November 2026 as Foreign Investors Buy Indian Shares Worth over ₹1.22 Lakh Crore - Kotak Neo
 
 ## US (CLOSED) — ₹10,000.00 | P&L +0.00 (+0.00%)
 Cash ₹10,000.00 | cycles 1069 | capital ₹10,000
 _No open positions — all cash._
-News sentiment: +0.55 (191 headlines, 6 sources)
+News sentiment: +0.48 (193 headlines, 6 sources)
 - US Futures Rally as Tech Rebound Gains Momentum: Markets Wrap - Bloomberg.com
 - S&amp;P 500, Nasdaq, Dow Forecast: Wall Street Rebound Faces Major Resistance—Bull Trap or Breakout? - StoneX
-- SpaceX shares jump 4% amid tech rally and after Musk says he will expand on Trump Account share donations
+- The S&amp;P 500 is in a correction. Bear markets and recessions don&apos;t always follow
 
 Strategy: LONG only while the market is above its 200-hour EMA, SHORT (breakdown) only while it is below —
 so a falling market is traded instead of leaving two thirds of the capital idle.
