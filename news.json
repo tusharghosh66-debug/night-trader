@@ -1,8 +1,8 @@
 {
- "ts": "2026-11-27T08:26:45.185334+05:30",
+ "ts": "2026-11-27T09:26:45.185586+05:30",
  "crypto": {
-  "score": -0.216,
-  "n_headlines": 179,
+  "score": -0.192,
+  "n_headlines": 178,
   "n_sources": 6,
   "top": [
    "Ripple Price Forecast: XRP rises as bulls buy the dip, ETF inflows return and retail demand improves - www.tmgm.com",
@@ -79,27 +79,28 @@
   "fear_greed": 12
  },
  "india": {
-  "score": 0.548,
-  "n_headlines": 219,
+  "score": 0.584,
+  "n_headlines": 221,
   "n_sources": 6,
   "top": [
    "Gold price today in India \u20b958,500 away from record high; right time to buy amid rebound from 14-month low?",
    "Sensex jumps 1,502 points, Nifty surges to 25,819 on foreign fund inflows, lower crude oil - DD News",
    "FPI Inflows Hit Record High in November 2026 as Foreign Investors Buy Indian Shares Worth over \u20b91.22 Lakh Crore - Kotak Neo",
-   "BSE shares gain 3%, hit 4-month high on HDFC Securities' upgrade to 'Buy' - Business Standard",
    "Spike in oil prices partly reverses rupee rally, forward premiums surge",
    "Indian shares set to open higher, eye fifth weekly gain as inflows boost momentum",
    "Nifty surges over 12% in November, eyes biggest monthly gain in six years; BSE, Eternal, Trent among top gainers",
-   "Small-cap stock under \u20b9100: Metal stock jumps following stock market rally; do you own?"
+   "Small-cap stock under \u20b9100: Metal stock jumps following stock market rally; do you own?",
+   "Allied Blenders shares: After 50% jump in 6 months, Elara Securities sees 25% more returns; assigns Buy rating | Target"
   ],
   "headlines": [
    "Economic Times",
+   "Bharat Coking Coal among 5 stocks showing RSI trending up",
    "Dubai seals deal for $159 billion Islamic banking giant",
    "Brent trades near month's high as Mideast conflict threatens supply",
    "Dollar lingers near 22-month peak as AI worries simmer",
    "Gold steady, heads for weekly gain as markets await Fed signals",
    "Gold Prices Fall: Is India\u2019s \u20b923 Lakh Crore Gold Loan Market at Risk? | The Morning Brief Decode",
-   "Sensex Today | Nifty 50 | Stock Market Live Updates: GIFT Nifty signals a negative start; Asian shares trade higher",
+   "Stock Market Live Updates: GIFT Nifty signals a negative start; Asian shares trade higher",
    "Global Market Today: Asian stocks rise for second day, crude oil gains",
    "SC asks HDFC Bank, three others to ok staff prosecution",
    "Ashiana Housing JV buys 10-acre land in Chennai for senior living project, eyes Rs 1,100 cr revenue",
@@ -131,7 +132,6 @@
    "ONGC Share Price Highlights: ONGC Stock Price History",
    "IndusInd Bank Share Price Highlights: IndusInd Bank Stock Price History",
    "Hero MotoCorp Share Price Highlights: Hero MotoCorp Stock Price History",
-   "Infosys Share Price Highlights: Infosys Stock Price History",
    "Indian shares set to open higher, eye fifth weekly gain as inflows boost momentum",
    "Tata Power: Opportunity or value trap as ambitious growth plans meet execution risks?",
    "Mahanadi Coalfields Set for Mumbai Debut After $969 Million IPO",
@@ -156,8 +156,8 @@
   ]
  },
  "us": {
-  "score": 0.062,
-  "n_headlines": 192,
+  "score": 0.094,
+  "n_headlines": 191,
   "n_sources": 6,
   "top": [
    "S&amp;P 500, Nasdaq, Dow Forecast: Wall Street Rebound Faces Major Resistance\u2014Bull Trap or Breakout? - StoneX",
@@ -170,25 +170,26 @@
    "Trump demands probe into \u2018record setting error\u2019 after third-quarter GDP data gets massive revision higher"
   ],
   "headlines": [
-   "Trump demands probe into \u2018record setting error\u2019 after third-quarter GDP data gets massive revision higher",
+   "Two Italians killed in Kuwait drone attack; Trump says Iran war ends \u2018whenever I want it\u2019",
    "Sovereign wealth funds are acting more like private equity giants \u2014 and inheriting their risks",
+   "Trump demands probe into \u2018record setting error\u2019 after third-quarter GDP data gets massive revision higher",
    "U.S. tariff-hike threats pile pressure on partners to sign trade deals",
-   "China industrial profits growth surges to a 5-month high of 20.1% in October",
    "Nvidia chip buyers told to rule out Chinese renters to purchase GPUs, sources say",
+   "China industrial profits growth surges to a 5-month high of 20.1% in October",
    "Semiconductor chips are the new oil. Here&apos;s why",
-   "Buyer beware? Nvidia&apos;s volatile swings expose risks of single-stock ETFs",
    "How Trump\u2019s latest tariff moves hand India an edge over rival Asian exporters",
    "Planes, trains and automobiles: The best ways to beat travel fatigue\u2014so you can come home feeling rested and fulfilled",
+   "Buyer beware? Nvidia&apos;s volatile swings expose risks of single-stock ETFs",
    "Liesman: Why Greenspan could bet on productivity \u2014 and Warsh needs to hike",
    "Even the price of toys is on the rise. How Americans are scaling back holiday plans",
    "Microdrama apps chase profits as Hollywood moves into short-form, vertical video",
    "Spain\u2019s Pablo Hern\u00e1ndez de Cos set to lead European Central Bank",
-   "SpaceX, Musk pledge to donate a share each to active Trump Accounts",
    "Nvidia sellers seek new buyers as U.S. curbs China AI chip access, sources tell CNBC",
    "Inside India newsletter: Roaring economy, foreign investors\u2019 return and now record auto sales",
+   "SpaceX, Musk pledge to donate a share each to active Trump Accounts",
    "Trump, NATO chief caution Russia as attacks on Ukraine\u2019s energy infrastructure intensify",
-   "Robots could be doing household chores in just 1-2 years, Chinese EV firm says",
    "Anthropic&apos;s stock has been a clunker post-IPO. Why that matters for the AI trade",
+   "Robots could be doing household chores in just 1-2 years, Chinese EV firm says",
    "What is \u2018texture-maxxing\u2019? The food trend putting crunch on the menu",
    "Secondhand shopping is going mainstream this holiday season as consumers seek value",
    "Switzerland\u2019s biggest bank set for showdown with lawmakers as capital fight intensifies amid crisis planning",
@@ -199,7 +200,6 @@
    "S&amp;P warns Nvidia credit rating could be cut over &apos;rising&apos; management and governance risk",
    "Latin America has the copper and energy the AI build-out needs. Infrastructure is the test",
    "Taking on Starlink: Europe\u2019s largest satellite factory opens in push to rival Musk",
-   "U.S. proposes new tariffs on 14 trading partners, including China and the EU",
    "MarketWatch.com - Top Stories",
    "I hate that Jensen Huang is back at Nvidia, but I love what it&#x2019;s done for my 401(k). Am I a hypocrite?",
    "I&#x2019;ve been married for 58 years. It&#x2019;s &#x2018;our&#x2019; money, not &#x2018;his&#x2019; and &#x2018;hers.&#x2019; Why do so many couples keep their finances separate?",
@@ -215,21 +215,21 @@
    "Stocks, Nasdaq Futures Climb as AI Trade Rebounds: Markets Wrap - Bloomberg.com",
    "Dow Jones Futures Rise; Look For This Bullish Market Signal On Black Friday - Investor's Business Daily",
    "Nasdaq, S&amp;P 500 end down, but well off lows as investors buy bargains - Reuters",
-   "Stocks Are Plunging Right Now. Here's What History Says Investors Should Do. - The Motley Fool",
+   "Even Without Warren Buffett as CEO, Berkshire Hathaway Is Outperforming the S&amp;P 500, Nasdaq, and Dow by the Widest Margin Since 2022. History Says This Is What Happens Next. - The Motley Fool",
    "Nasdaq, S&amp;P 500 close lower, giving up some Nvidia-fueled gains - NBC News",
    "Dow closes higher after erasing 1,100-point loss as S&amp;P 500, Nasdaq slip - Fox Business",
-   "U.S. stock futures rise in holiday-thinned trade; tech rebound in focus - Investing.com",
+   "U.S. stock futures rise sharply; Nasdaq up 1.7% in holiday-thinned trade - Investing.com",
    "Stock Market Today: Dow, S&amp;P 500, Nasdaq Futures Fall as Traders Bet on December Fed Hike; Trump Tells Hu - Benzinga",
    "Dow, S&amp;P 500, Nasdaq Futures Edge Higher As Tech Rebounds After Selloff: DIS, VRTX, DE, CHTR In Focus - TradingView",
    "US Stock Market Futures Rise Ahead of Black Friday as AI Stocks Rebound Globally - Stocks Down Under",
+   "The Dow Jones, S&amp;P 500, and Nasdaq are all in correction territory and these 3 indicators scream \u2018buying opportunity\u2019 - The Twelfth Magpie",
    "US stock market today: Nasdaq and S&amp;P 500 fall as Nvidia and AI stocks slide, Dow gains - Beinsure",
-   "Nasdaq plunges 3% as tech stocks face renewed pressure (SP500:) - Seeking Alpha",
+   "Wall Street trades mixed as it pares earlier losses - Seeking Alpha",
    "Dow Reclaims 50,000 as Inflation and GDP Data Land Before Thanksgiving - Morningstar",
-   "Stocks Rally Off Lows Despite Inflation and AI Gloom: Stock Market Today - Kiplinger",
-   "Stocks Finish Mostly Lower Ahead of U.S. Thanksgiving - TipRanks",
-   "Wall Street recovers most early losses as pullback in AI stocks eases - Inquirer.com",
+   "Nasdaq Plunges 4.6% Before Dramatic Rebound. Wall Street Faces A Triple Threat From AI, Inflation And Trump Tariffs. - International Business Times",
    "S&amp;P Dow Jones Indices - S&amp;P Global",
-   "U.S. Stocks Extend Plunge as AI Boom Turns to Bust - WSJ"
+   "U.S. Stocks Extend Plunge as AI Boom Turns to Bust - WSJ",
+   "Is the stock market closed? Thanksgiving, Black Friday trading hours - Detroit Free Press"
   ]
  }
 }

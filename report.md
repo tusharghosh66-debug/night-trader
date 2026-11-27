@@ -1,27 +1,27 @@
 # Night Trader v2 — Paper Trading Report (3 markets)
-_Updated: 2026-11-27 09:24 IST_
+_Updated: 2026-11-27 09:26 IST_
 
-## CRYPTO (OPEN) — ₹10,054.62 | P&L +54.62 (+0.55%)
-Cash ₹993.70 | cycles 3990 | capital ₹10,000
+## CRYPTO (OPEN) — ₹10,044.61 | P&L +44.61 (+0.45%)
+Cash ₹993.70 | cycles 3995 | capital ₹10,000
 | Symbol | Side | Qty | Entry | Last | Unrealized |
 |---|---|---|---|---|---|
-| BTC-USD | LONG | 0.0005 | 5657841.90 | 5683200.15 | +13.45 |
-| ETH-USD | LONG | 0.0189 | 158549.13 | 159873.02 | +25.04 |
-| SOL-USD | LONG | 0.4495 | 6670.11 | 6726.02 | +25.13 |
-News sentiment: -0.22 (179 headlines, 6 sources, Fear&Greed 12)
+| BTC-USD | LONG | 0.0005 | 5657841.90 | 5678262.97 | +10.83 |
+| ETH-USD | LONG | 0.0189 | 158549.13 | 159737.91 | +22.49 |
+| SOL-USD | LONG | 0.4495 | 6670.11 | 6715.25 | +20.29 |
+News sentiment: -0.19 (178 headlines, 6 sources, Fear&Greed 12)
 - Ripple Price Forecast: XRP rises as bulls buy the dip, ETF inflows return and retail demand improves - www.tmgm.com
 - Bitcoin Falls Further as Inflation, Trump Tariffs and AI Selloff Rattle Markets
 - Strategy and Crypto Stocks Rally as Bitcoin Rebounds Past $63,000. Is the Jump Temporary? - Barron's
 
-## INDIA (OPEN) — ₹9,975.32 | P&L -24.68 (-0.25%)
-Cash ₹4,005.04 | cycles 765 | capital ₹10,000
+## INDIA (OPEN) — ₹9,972.11 | P&L -27.89 (-0.28%)
+Cash ₹4,005.04 | cycles 770 | capital ₹10,000
 | Symbol | Side | Qty | Entry | Last | Unrealized |
 |---|---|---|---|---|---|
-| INFY.NS | LONG | 2.5764 | 1164.40 | 1157.70 | -17.26 |
-| HDFCBANK.NS | LONG | 3.4658 | 863.00 | 862.00 | -3.47 |
+| INFY.NS | LONG | 2.5764 | 1164.40 | 1157.80 | -17.00 |
+| HDFCBANK.NS | LONG | 3.4658 | 863.00 | 861.00 | -6.93 |
 Closed: 1 (1 wins), realized +2.04
 - 09:15 SELL TCS.NS @ 2578.4 pnl +2.04 (RSI 79 overbought take-profit)
-News sentiment: +0.55 (219 headlines, 6 sources)
+News sentiment: +0.58 (221 headlines, 6 sources)
 - Gold price today in India ₹58,500 away from record high; right time to buy amid rebound from 14-month low?
 - Sensex jumps 1,502 points, Nifty surges to 25,819 on foreign fund inflows, lower crude oil - DD News
 - FPI Inflows Hit Record High in November 2026 as Foreign Investors Buy Indian Shares Worth over ₹1.22 Lakh Crore - Kotak Neo
@@ -29,7 +29,7 @@ News sentiment: +0.55 (219 headlines, 6 sources)
 ## US (CLOSED) — ₹10,000.00 | P&L +0.00 (+0.00%)
 Cash ₹10,000.00 | cycles 1069 | capital ₹10,000
 _No open positions — all cash._
-News sentiment: +0.06 (192 headlines, 6 sources)
+News sentiment: +0.09 (191 headlines, 6 sources)
 - S&amp;P 500, Nasdaq, Dow Forecast: Wall Street Rebound Faces Major Resistance—Bull Trap or Breakout? - StoneX
 - Norse Atlantic suspends all flights, warns it may file for bankruptcy after share price collapse
 - Nasdaq, S&amp;P 500 end down, but well off lows as investors buy bargains - Reuters
