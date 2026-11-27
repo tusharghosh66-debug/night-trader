@@ -1,12 +1,12 @@
 # Night Trader v2 — Paper Trading Report (3 markets)
-_Updated: 2026-11-27 14:42 IST_
+_Updated: 2026-11-27 14:44 IST_
 
-## CRYPTO (OPEN) — ₹10,138.51 | P&L +138.51 (+1.39%)
-Cash ₹4,059.56 | cycles 4625 | capital ₹10,000
+## CRYPTO (OPEN) — ₹10,135.37 | P&L +135.37 (+1.35%)
+Cash ₹4,059.56 | cycles 4630 | capital ₹10,000
 | Symbol | Side | Qty | Entry | Last | Unrealized |
 |---|---|---|---|---|---|
-| BTC-USD | LONG | 0.0005 | 5657841.90 | 5732035.77 | +39.34 |
-| ETH-USD | LONG | 0.0189 | 158549.13 | 160690.84 | +40.51 |
+| BTC-USD | LONG | 0.0005 | 5657841.90 | 5728348.15 | +37.39 |
+| ETH-USD | LONG | 0.0189 | 158549.13 | 160628.25 | +39.33 |
 Closed: 1 (1 wins), realized +64.65
 - 13:49 SELL SOL-USD @ 6827.44 pnl +64.65 (RSI 78 overbought take-profit)
 News sentiment: -0.18 (181 headlines, 6 sources, Fear&Greed 12)
@@ -14,12 +14,12 @@ News sentiment: -0.18 (181 headlines, 6 sources, Fear&Greed 12)
 - Strategy and Crypto Stocks Rally as Bitcoin Rebounds Past $63,000. Is the Jump Temporary? - Barron's
 - Bitcoin price extends gains, briefly tops $81,000 as crypto rally gathers pace - CNBC
 
-## INDIA (OPEN) — ₹9,986.10 | P&L -13.90 (-0.14%)
-Cash ₹4,005.04 | cycles 1400 | capital ₹10,000
+## INDIA (OPEN) — ₹9,977.66 | P&L -22.34 (-0.22%)
+Cash ₹4,005.04 | cycles 1405 | capital ₹10,000
 | Symbol | Side | Qty | Entry | Last | Unrealized |
 |---|---|---|---|---|---|
-| INFY.NS | LONG | 2.5764 | 1164.40 | 1160.00 | -11.34 |
-| HDFCBANK.NS | LONG | 3.4658 | 863.00 | 863.40 | +1.39 |
+| INFY.NS | LONG | 2.5764 | 1164.40 | 1157.80 | -17.00 |
+| HDFCBANK.NS | LONG | 3.4658 | 863.00 | 862.60 | -1.39 |
 Closed: 1 (1 wins), realized +2.04
 - 09:15 SELL TCS.NS @ 2578.4 pnl +2.04 (RSI 79 overbought take-profit)
 News sentiment: +0.64 (220 headlines, 6 sources)
