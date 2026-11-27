@@ -283,7 +283,7 @@ function renderBot(id){
       "<div class='w-11 h-11 rounded-full flex items-center justify-center border border-[#464554]/50' style='background: radial-gradient(circle at 30% 30%, " + avatar(b.id) + "55, #13131B)'>" +
       "<span class='font-headline text-[14px] font-semibold'>" + code(b.id) + "</span></div>" +
       "<div><h1 class='font-headline text-[22px] font-bold tracking-tight'>" + b.id + " \u00b7 " + esc(b.name) + "</h1>" +
-      "<div class='text-[12px] text-[#C7C4D7]'>" + esc(b.tf) + " \u00b7 " + esc(b.market) + " \u00b7 book " + money(10000) +
+      "<div class='text-[12px] text-[#C7C4D7]'>" + esc(b.tf) + " \u00b7 " + esc(b.market) + " \u00b7 book " + money((D.capital || 100000)) +
       (b.council ? " \u00b7 council experiment" : "") + "</div></div>" +
       "<span class='ml-auto font-label text-[11px] px-2 py-0.5 rounded-full " + (b.paused ? "bg-[#34343D] text-[#FBBF24]" : "bg-[#064E3B]/70 text-[#A7F3D0]") + "'>" +
       (b.paused ? "Paused" : "Active") + "</span></div>" +
@@ -292,7 +292,7 @@ function renderBot(id){
       kpi("Closed trades", b.trades) + kpi("Win rate", b.trades >= 5 ? b.wr.toFixed(0) + "%" : "-") + "</div>" +
     "<div class='rounded-2xl bg-[#1F1F27]/55 border border-[#464554]/40 p-4'><div class='w-full h-32'>" + chart(b.spark, 900, 120, "big" + b.id) + "</div>" +
       "<div class='flex flex-wrap gap-5 mt-3 font-label text-[12px] text-[#C7C4D7]'>" +
-      "<span>Start <b class='mono text-[#E4E1ED]'>" + money(10000) + "</b></span>" +
+      "<span>Start <b class='mono text-[#E4E1ED]'>" + money((D.capital || 100000)) + "</b></span>" +
       "<span>Realized <b class='mono text-[#E4E1ED]'>" + money2(b.cash) + "</b></span>" +
       "<span>In market <b class='mono text-[#E4E1ED]'>" + money2(b.in_market) + "</b></span>" +
       "<span>Unrealized <b class='mono " + cls(b.upnl) + "'>" + signed(b.upnl, money2) + "</b></span>" +
@@ -449,7 +449,7 @@ function sharpeOf(series){
   if(!sd) return null;
   return (r.reduce((x, y) => x + y, 0) / r.length) / sd;
 }
-function sparkOf(b){ return b.spark && b.spark.length > 1 ? b.spark : [10000, b.eq]; }
+function sparkOf(b){ return b.spark && b.spark.length > 1 ? b.spark : [(D.capital || 100000), b.eq]; }
 function pctOf(series){ return series.length > 1 && series[0] ? (series[series.length - 1] / series[0] - 1) * 100 : 0; }
 function barLine(pct, tone){
   return "<div class='h-1.5 w-full rounded-full bg-[#34343D] overflow-hidden'><div class='h-full rounded-full " + tone + "' style='width:" + Math.max(0, Math.min(100, pct)).toFixed(1) + "%'></div></div>";
@@ -673,7 +673,7 @@ function buildCandidate(){
   return {
     key: key, family: fam.name, name: r.name, thesis: r.thesis, entry: r.entry, exit: r.exit,
     tf: tfMap[W.tf] || "1h", market: W.market, universe: W.universe,
-    risk: W.risk, freq: W.freq, capital: 10000,
+    risk: W.risk, freq: W.freq, capital: (D.capital || 100000),
     sizing: "qty = (" + W.risk.toFixed(2) + "% of equity) / stop distance, capped at 30% notional per position",
     kill: "Stop the book if equity falls 6% below start, or after 20 closed trades if the edge is not positive",
     evidence: fam, coverage: coverage()
@@ -690,7 +690,7 @@ function scoreSeats(c){
     84 - (c.freq > 10 ? 16 : 0) - (dupPairs ? 6 : 0) - (c.market === "Crypto" ? 8 : 0) + (c.key === "rotation" || c.key === "trend" ? 6 : 0))));
   const seats = [
     {name: "Risk chair", icon: "shield", score: riskScore,
-      notes: [c.risk.toFixed(2) + "% per trade means about " + money(10000 * c.risk / 100) + " at risk per position",
+      notes: [c.risk.toFixed(2) + "% per trade means about " + money((D.capital || 100000) * c.risk / 100) + " at risk per position",
               riskScore < 60 ? "sizing is aggressive for a book this young" : "sizing sits inside the 0.3-1.0% comfort band"]},
     {name: "Evidence chair", icon: "query_stats", score: evidenceScore,
       notes: [ev.tr + " live closed trades in " + ev.name.toLowerCase() + " (" + (ev.wr == null ? "no win rate yet" : ev.wr.toFixed(0) + "% wins") + ")",

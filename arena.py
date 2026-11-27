@@ -39,10 +39,9 @@ DASH_F = os.path.join(BASE, "arena_dashboard.html")
 
 IST = timezone(timedelta(hours=5, minutes=30))
 ET = ZoneInfo("America/New_York")
-FEE = 0.001            # 0.1% per side (US / crypto, and the frozen daily bots)
+FEE = 0.001            # 0.1% per side (US / crypto)
 import fees_in          # Upstox delivery charges for NSE cash trades
-FROZEN_FEE_BOTS = {"s02", "s03", "s05"}   # user asked: do not touch these books
-CAPITAL = 10000.0      # per bot
+CAPITAL = 100000.0     # per bot -- season 2: a Rs 10k book cannot pay Upstox fees
 CYCLE_SEC = 5 * 60
 VERSION = 1
 
@@ -286,7 +285,7 @@ def new_state():
 # On/after FRESH_START (IST) every bot starts again at CAPITAL. The old trade log is
 # ARCHIVED, not deleted, and any paper position still open is closed into it at the
 # last known price first, so the archived history stays honest.
-FRESH_START = "2026-11-26"
+FRESH_START = "2026-11-27"   # season 2: Rs 1,00,000 per bot, fee-aware gates
 
 def fresh_start_if_due(st):
     """Reset the arena book once, mutating st in place. No-op before FRESH_START."""
@@ -422,6 +421,35 @@ def open_position(bs, sym, side, qty, price, stop, reason, now):
             g["eod"] += 1
             log(f"  SKIP {sym} ({reason}): within {EOD_ENTRY_BLOCK_MIN}m of EOD flatten")
             return False
+    # --- fee economy (India cash) -------------------------------------------
+    # The Rs 60 fixed block (2x Rs 20 brokerage + Rs 20 DP) plus STT/GST means a
+    # Rs 1,000 trade pays ~7% round trip and Rs 25,000 pays ~0.5%. Positions are
+    # therefore lifted to the minimum economical size, and skipped if the move
+    # being played is not at least FEE_TRIPLE x the real round-trip cost.
+    is_pair = "/" in str(sym)
+    if not is_pair:
+        notional = abs(qty) * price
+        if sym.endswith(".NS") and notional < MIN_IN_NOTIONAL and price > 0:
+            lift = MIN_IN_NOTIONAL / price
+            lift_risk = abs(lift) * abs(price - stop)
+            cap = bot_equity(bs) * MAX_TRADE_RISK_PCT / 100.0
+            if lift_risk > cap:
+                g["rfee"] += 1
+                log(f"  SKIP {sym} ({reason}): Rs {notional:.0f} < Rs "
+                    f"{MIN_IN_NOTIONAL:.0f} min, lifting it would risk "
+                    f"Rs {lift_risk:.0f} > Rs {cap:.0f}")
+                return False
+            log(f"  SIZE {sym} ({reason}): Rs {notional:.0f} -> Rs "
+                f"{MIN_IN_NOTIONAL:.0f} so Upstox fees stay under 0.5%")
+            qty = lift
+            notional = abs(qty) * price
+        trip = trade_fee_for(sym, qty, price, price, side)
+        fee_pct = 100.0 * trip / notional if notional > 0 else 0.0
+        if rpct < FEE_TRIPLE * fee_pct:
+            g["rfee"] += 1
+            log(f"  SKIP {sym} ({reason}): move {rpct:.2f}% < {FEE_TRIPLE:.0f}x "
+                f"round-trip fee {fee_pct:.2f}%")
+            return False
     # NOTE: no fee is taken here. close_position() already nets BOTH legs
     # (entry + exit) out of pnl, so charging the entry fee here as well
     # double-taxed every round trip by 0.1% of notional.
@@ -431,9 +459,9 @@ def open_position(bs, sym, side, qty, price, stop, reason, now):
     log(f"  OPEN {sym} {'LONG' if side>0 else 'SHORT'} qty={qty:.4f} @ {price:.2f} stop={stop:.2f} ({reason})")
     return True
 
-def trade_fee_for(sym, qty, entry, exit_px, side, frozen=False):
+def trade_fee_for(sym, qty, entry, exit_px, side):
     q = abs(qty)
-    if str(sym).endswith(".NS") and not frozen:
+    if str(sym).endswith(".NS"):
         buy_v = q * (entry if side > 0 else exit_px)
         sell_v = q * (exit_px if side > 0 else entry)
         return (fees_in.delivery_charges("BUY", buy_v)["total"]
@@ -445,7 +473,7 @@ def trade_fee(sym, qty, entry, exit_px, side):
     # round-trip cost of one position. NSE cash = real Upstox delivery charges
     # (brokerage 20/order + STT 0.1% + stamp + exchange + IPFT + SEBI + DP 20 on
     # sell + GST); everything else keeps the flat 0.1%/side model.
-    return trade_fee_for(sym, qty, entry, exit_px, side, _ACTIVE_BOT in FROZEN_FEE_BOTS)
+    return trade_fee_for(sym, qty, entry, exit_px, side)
 
 
 def close_position(bs, sym, price, reason, now):
@@ -454,7 +482,7 @@ def close_position(bs, sym, price, reason, now):
     if "legs" in p:
         # pairs (s09): qty is a rupee notional and "price" is a LOG-SPREAD, so a
         # qty*price*FEE term is ~0.001 of nothing. Charge both legs on notional.
-        if str(sym).endswith(".NS") and _ACTIVE_BOT not in FROZEN_FEE_BOTS:
+        if str(sym).endswith(".NS"):
             fee = 2.0 * (fees_in.delivery_charges("BUY", p["qty"])["total"]
                          + fees_in.delivery_charges("SELL", p["qty"])["total"])
         else:
@@ -1235,7 +1263,10 @@ EOD_HOLD_MAX = 3         # at most 3 sessions, then flatten regardless
 # (b) 26% of stop-outs had a risk distance under 0.3%, i.e. smaller than the
 # 0.2% round trip. Both are now blocked at the single entry funnel.
 REENTRY_COOLDOWN_MIN = 30    # same bot, same symbol: no re-entry for 30 min
-MIN_RISK_PCT = 0.30          # risk distance must clear the fee (0.3% -> 2R = 0.6%)
+MIN_RISK_PCT = 0.30          # absolute floor: risk distance must clear the fee
+FEE_TRIPLE = 2.0             # the planned move must be >= 2x the round-trip cost
+MIN_IN_NOTIONAL = 25000.0    # NSE cash: below this the Rs 60 fixed block eats 2-7%
+MAX_TRADE_RISK_PCT = 2.0     # never lift a trade to the minimum if it risks more
 EOD_ENTRY_BLOCK_MIN = 20     # no new entries in the last 20 min before flatten
 
 
@@ -1951,18 +1982,19 @@ def write_site(st):
                             "entry": p["entry"], "now": px, "stop": p.get("stop", p["entry"]),
                             "upnl": round(u, 2)})
             closed = bs.get("closed_trades", [])
-            # same model as the fills: Upstox delivery charges on NSE unless the
-            # book is one of the frozen daily bots, flat 0.1%/side elsewhere.
-            frozen = sid in FROZEN_FEE_BOTS
+            # same model as the fills: Upstox delivery charges on NSE, flat
+            # 0.1%/side everywhere else.
             fees = 0.0
             for t in closed:
                 if len(t) <= 8:
                     continue
-                if str(t[2]).endswith(".NS"):
-                    side = 1 if t[3] == "LONG" else -1
-                    fees += trade_fee_for(t[2], t[4], t[5], t[6], side, frozen)
+                if "/" in str(t[2]) and str(t[2]).endswith(".NS"):
+                    # pair row: qty is rupee notional per leg, so charge both legs
+                    fees += 2.0 * (fees_in.delivery_charges("BUY", t[4])["total"]
+                                   + fees_in.delivery_charges("SELL", t[4])["total"])
                 else:
-                    fees += 0.001 * t[4] * (t[5] + t[6])
+                    side = 1 if t[3] == "LONG" else -1
+                    fees += trade_fee_for(t[2], t[4], t[5], t[6], side)
             wins = sum(1 for t in closed if t[7] > 0)
             sparkv = [h.get(sid) for h in hist if h.get(sid) is not None]
             if len(sparkv) < 2:
@@ -1994,7 +2026,8 @@ def write_site(st):
         fids = [i for i in fam_ids if i in st["bots"]]
         if fids:
             hfam[key] = [round(sum(float(r_.get(i, CAPITAL)) for i in fids), 2) for r_ in hp]
-    data = {"gen": now, "pool": CAPITAL * len(allb), "groups": groups, "bots": bots,
+    data = {"gen": now, "pool": CAPITAL * len(allb), "capital": CAPITAL,
+            "groups": groups, "bots": bots,
             "hist": {"t": [r_.get("t", "")[11:16] for r_ in hp], "total": htotal, "fam": hfam},
             "bots_all": [{"id": b["id"], "name": b["name"], "pct": b["pct"], "eq": b["eq"],
                           "paused": b["paused"]} for b in allb],
