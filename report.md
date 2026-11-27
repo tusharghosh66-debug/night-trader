@@ -1,13 +1,13 @@
 # Night Trader v2 — Paper Trading Report (3 markets)
-_Updated: 2026-11-27 07:24 IST_
+_Updated: 2026-11-27 07:26 IST_
 
 ## CRYPTO (OPEN) — ₹10,000.00 | P&L +0.00 (+0.00%)
-Cash ₹10,000.00 | cycles 3750 | capital ₹10,000
+Cash ₹10,000.00 | cycles 3755 | capital ₹10,000
 _No open positions — all cash._
-News sentiment: -0.34 (180 headlines, 6 sources, Fear&Greed 12)
-- Bitcoin falls toward $57K amid US tariff fears, hot PCE data as Nasdaq drops 4%
+News sentiment: -0.29 (180 headlines, 6 sources, Fear&Greed 12)
 - Ripple Price Forecast: XRP rises as bulls buy the dip, ETF inflows return and retail demand improves - www.tmgm.com
 - Bitcoin Falls Further as Inflation, Trump Tariffs and AI Selloff Rattle Markets
+- Strategy and Crypto Stocks Rally as Bitcoin Rebounds Past $63,000. Is the Jump Temporary? - Barron's
 
 ## INDIA (CLOSED) — ₹10,115.65 | P&L +115.65 (+1.16%)
 Cash ₹1,002.91 | cycles 746 | capital ₹10,000
@@ -16,7 +16,7 @@ Cash ₹1,002.91 | cycles 746 | capital ₹10,000
 | INFY.NS | LONG | 2.5764 | 1164.40 | 1183.00 | +47.92 |
 | TCS.NS | LONG | 1.1655 | 2571.50 | 2640.30 | +80.19 |
 | HDFCBANK.NS | LONG | 3.4658 | 863.00 | 862.00 | -3.47 |
-News sentiment: +0.65 (221 headlines, 6 sources)
+News sentiment: +0.56 (221 headlines, 6 sources)
 - Gold price today in India ₹58,500 away from record high; right time to buy amid rebound from 14-month low?
 - Sensex Jumps 1,502 Points; Nifty Surges 470 on FII Buying - HDFC Sky
 - FPI Inflows Hit Record High in November 2026 as Foreign Investors Buy Indian Shares Worth over ₹1.22 Lakh Crore - Kotak Neo
@@ -24,7 +24,7 @@ News sentiment: +0.65 (221 headlines, 6 sources)
 ## US (CLOSED) — ₹10,000.00 | P&L +0.00 (+0.00%)
 Cash ₹10,000.00 | cycles 1069 | capital ₹10,000
 _No open positions — all cash._
-News sentiment: -0.08 (193 headlines, 6 sources)
+News sentiment: -0.06 (193 headlines, 6 sources)
 - S&amp;P 500, Nasdaq, Dow Forecast: Wall Street Rebound Faces Major Resistance—Bull Trap or Breakout? - StoneX
 - Norse Atlantic suspends all flights, warns it may file for bankruptcy after share price collapse
 - Nasdaq, S&amp;P 500 end down, but well off lows as investors buy bargains - Reuters
