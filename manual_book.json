@@ -1,16 +1,7 @@
 {
- "cash": 546165.4188000001,
+ "cash": 1000989.8391000001,
  "start_cash": 1000000.0,
- "positions": {
-  "MSFT": {
-   "qty": 10,
-   "avg": 45338.12,
-   "last": 45338.12,
-   "name": "Microsoft Corporation",
-   "y": "MSFT",
-   "opened": "2026-11-26 19:13"
-  }
- },
+ "positions": {},
  "trades": [
   {
    "sym": "MSFT",
@@ -21,8 +12,18 @@
    "note": "open position",
    "t": "2026-11-26 13:43:47",
    "value": 453381.2
+  },
+  {
+   "sym": "MSFT",
+   "side": "SELL",
+   "qty": 10,
+   "px": 45527.97,
+   "fee": 455.28,
+   "note": "close position",
+   "t": "2026-11-27 06:15:58",
+   "value": 455279.7
   }
  ],
- "realised": 0.0,
+ "realised": 989.8390999999854,
  "started": "2026-11-26T12:26:40"
 }
