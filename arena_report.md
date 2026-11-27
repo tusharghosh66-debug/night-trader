@@ -1,7 +1,7 @@
 # Strategy Arena — Leaderboard
-_Updated: 2026-11-28 02:14 IST_
+_Updated: 2026-11-28 02:17 IST_
 
-**Total equity: Rs 1,598,891.76** / Rs 1,600,000 start (-0.07%)
+**Total equity: Rs 1,598,814.95** / Rs 1,600,000 start (-0.07%)
 
 | Rank | Bot | Strategy | Equity | P&L | % | Trades | Win% | Open |
 |---|---|---|---|---|---|---|---|---|
@@ -20,6 +20,6 @@ _Updated: 2026-11-28 02:14 IST_
 | 13 | s13 | Afternoon Sell-the-Rip Short | Rs 100,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 14 | x01 | Vol Squeeze Breakout (council) | Rs 100,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 15 | s04 | Multi-Market Trend Following | Rs 99,780.74 | -219.26 | -0.22% | 0 | 0% | 1 |
-| 16 | s07 | First-Candle ORB 15m | Rs 98,939.06 | -1,060.94 | -1.06% | 1 | 0% | 1 |
+| 16 | s07 | First-Candle ORB 15m | Rs 98,862.26 | -1,137.74 | -1.14% | 2 | 0% | 0 |
 
 **Best so far: x03 — Core Regime Trend (council) (+0.08%)**
