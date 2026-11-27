@@ -1,19 +1,19 @@
 # Strategy Arena — Leaderboard
-_Updated: 2026-11-27 20:16 IST_
+_Updated: 2026-11-27 20:18 IST_
 
-**Total equity: Rs 1,599,996.16** / Rs 1,600,000 start (-0.00%)
+**Total equity: Rs 1,600,021.03** / Rs 1,600,000 start (+0.00%)
 
 | Rank | Bot | Strategy | Equity | P&L | % | Trades | Win% | Open |
 |---|---|---|---|---|---|---|---|---|
 | 1 | s11 | Spike & VWAP Rejection Short | Rs 100,102.32 | +102.32 | +0.10% | 0 | 0% | 1 |
-| 2 | x02 | RS Rotation Top-2 (council) | Rs 100,061.48 | +61.48 | +0.06% | 0 | 0% | 1 |
-| 3 | x03 | Core Regime Trend (council) | Rs 100,039.93 | +39.93 | +0.04% | 0 | 0% | 1 |
-| 4 | s01 | St. Gallen ORB Noise-Band | Rs 100,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
-| 5 | s02 | Trend-Filtered Mean Reversion | Rs 100,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
-| 6 | s03 | ETF Dual Momentum Rotation | Rs 100,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
-| 7 | s05 | Connors RSI(2) Pullback | Rs 100,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
-| 8 | s06 | Prev-Day High/Low Retest | Rs 100,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
-| 9 | s07 | First-Candle ORB 15m | Rs 100,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
+| 2 | x02 | RS Rotation Top-2 (council) | Rs 100,061.30 | +61.30 | +0.06% | 0 | 0% | 1 |
+| 3 | x03 | Core Regime Trend (council) | Rs 100,052.67 | +52.67 | +0.05% | 0 | 0% | 1 |
+| 4 | s07 | First-Candle ORB 15m | Rs 100,012.32 | +12.32 | +0.01% | 0 | 0% | 1 |
+| 5 | s01 | St. Gallen ORB Noise-Band | Rs 100,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
+| 6 | s02 | Trend-Filtered Mean Reversion | Rs 100,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
+| 7 | s03 | ETF Dual Momentum Rotation | Rs 100,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
+| 8 | s05 | Connors RSI(2) Pullback | Rs 100,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
+| 9 | s06 | Prev-Day High/Low Retest | Rs 100,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 10 | s08 | Pre-Market High/Low Break | Rs 100,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 11 | s09 | Statistical Arbitrage Pairs | Rs 100,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 12 | s10 | Overnight Edge + Turnaround Tue | Rs 100,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
