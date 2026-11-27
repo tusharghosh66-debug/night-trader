@@ -1,13 +1,13 @@
 # Strategy Arena — Leaderboard
-_Updated: 2026-11-27 10:01 IST_
+_Updated: 2026-11-27 10:04 IST_
 
-**Total equity: Rs 159,968.15** / Rs 160,000 start (-0.02%)
+**Total equity: Rs 159,961.39** / Rs 160,000 start (-0.02%)
 
 | Rank | Bot | Strategy | Equity | P&L | % | Trades | Win% | Open |
 |---|---|---|---|---|---|---|---|---|
-| 1 | s03 | ETF Dual Momentum Rotation | Rs 10,011.39 | +11.39 | +0.11% | 0 | 0% | 1 |
-| 2 | x02 | RS Rotation Top-2 (council) | Rs 10,005.81 | +5.81 | +0.06% | 0 | 0% | 2 |
-| 3 | x03 | Core Regime Trend (council) | Rs 10,004.68 | +4.68 | +0.05% | 0 | 0% | 2 |
+| 1 | s03 | ETF Dual Momentum Rotation | Rs 10,010.37 | +10.37 | +0.10% | 0 | 0% | 1 |
+| 2 | x02 | RS Rotation Top-2 (council) | Rs 10,006.37 | +6.37 | +0.06% | 0 | 0% | 2 |
+| 3 | x03 | Core Regime Trend (council) | Rs 10,005.02 | +5.02 | +0.05% | 0 | 0% | 2 |
 | 4 | s01 | St. Gallen ORB Noise-Band | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 5 | s02 | Trend-Filtered Mean Reversion | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 6 | s05 | Connors RSI(2) Pullback | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
@@ -17,9 +17,9 @@ _Updated: 2026-11-27 10:01 IST_
 | 10 | s10 | Overnight Edge + Turnaround Tue | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 11 | x01 | Vol Squeeze Breakout (council) | Rs 10,000.00 | +0.00 | +0.00% | 0 | 0% | 0 |
 | 12 | s13 | Afternoon Sell-the-Rip Short | Rs 9,993.53 | -6.47 | -0.06% | 2 | 0% | 0 |
-| 13 | s04 | Multi-Market Trend Following | Rs 9,992.68 | -7.32 | -0.07% | 0 | 0% | 1 |
-| 14 | s09 | Statistical Arbitrage Pairs | Rs 9,987.04 | -12.96 | -0.13% | 0 | 0% | 2 |
+| 13 | s04 | Multi-Market Trend Following | Rs 9,992.57 | -7.43 | -0.07% | 0 | 0% | 1 |
+| 14 | s11 | Spike & VWAP Rejection Short | Rs 9,987.10 | -12.90 | -0.13% | 2 | 0% | 1 |
 | 15 | s12 | OHL + CPR Breakdown Short | Rs 9,986.67 | -13.33 | -0.13% | 1 | 0% | 1 |
-| 16 | s11 | Spike & VWAP Rejection Short | Rs 9,986.35 | -13.65 | -0.14% | 2 | 0% | 1 |
+| 16 | s09 | Statistical Arbitrage Pairs | Rs 9,979.76 | -20.24 | -0.20% | 0 | 0% | 2 |
 
-**Best so far: s03 — ETF Dual Momentum Rotation (+0.11%)**
+**Best so far: s03 — ETF Dual Momentum Rotation (+0.10%)**
