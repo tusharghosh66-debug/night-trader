@@ -1,8 +1,8 @@
 {
- "ts": "2026-11-28T16:28:35.493046+05:30",
+ "ts": "2026-11-28T17:28:35.511988+05:30",
  "crypto": {
-  "score": -0.03,
-  "n_headlines": 180,
+  "score": -0.158,
+  "n_headlines": 179,
   "n_sources": 6,
   "top": [
    "Bitcoin Falls Further as Inflation, Trump Tariffs and AI Selloff Rattle Markets",
@@ -11,8 +11,8 @@
    "Bitcoin price extends gains, briefly tops $81,000 as crypto rally gathers pace - CNBC",
    "Cathie Wood\u2019s ARK Buys Anthropic as Ripple CEO Predicts Post-IPO Crypto Rally - CCN.com",
    "Bitcoin Holds Above $60K as Death Cross Clouds Thanksgiving Recovery",
-   "Hunton Insurance Recovery Blog: Lloyds Jumps Into The Cryptocurrency Market, Insuring Part Of Kingdom Trust's $12 Billion Assets - Legal 500",
-   "Crypto Stocks Gain After Bitcoin Tops $61K In Tech Rebound, But Analysts Want A Move Above $62K - TradingView"
+   "Bitcoin falls 3.4% to around $59,600 amid $389M ETF outflows and Wall Street's strong week - Pluang",
+   "Bitcoin falls below $59K as $7B options expiry triggers sharp market sell-off - Pluang"
   ],
   "headlines": [
    "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
@@ -79,21 +79,22 @@
   "fear_greed": 10
  },
  "india": {
-  "score": 0.717,
-  "n_headlines": 226,
+  "score": 0.726,
+  "n_headlines": 223,
   "n_sources": 6,
   "top": [
-   "FPI Inflows Hit Record High in November 2026 as Foreign Investors Buy Indian Shares Worth over \u20b91.22 Lakh Crore - Kotak Neo",
    "Nasdaq jumps 2%, Dow gains 600 pts as US stocks log weekly gains: Stock Market Live Updates",
    "Defence stocks set for fresh rally? BEL, Solar Industries, HAL - Motilal Oswal names 3 shares to buy as big orders loom",
    "Best 3 stocks to buy under \u20b9200: NCC, Geojit Financial, Patel Engineering shares by Mehul Kothari of Anand Rathi",
    "Sensex Slips 0.69%, Nifty Slips 0.75% Over the Week as Crude Oil Surge and Rupee Weakness End Four-Week Rally - HDFC Sky",
    "Midweek recovery rally fizzles out, Sensex, Nifty end week in the red - The New Indian Express",
    "Sensex gains nearly 400 pts in early trade as IT stocks rally, Nifty below 25,900 - DD News",
-   "Market weekly wrap: NIFTY50, SENSEX end 4-week rally; Tata Steel lags, TCS leads gains - Upstox"
+   "Market weekly wrap: NIFTY50, SENSEX end 4-week rally; Tata Steel lags, TCS leads gains - Upstox",
+   "Market outlook: Indian markets rebounded in Nov, but sustaining gains in 2027 will depend on growth, says - The Times of India"
   ],
   "headlines": [
    "Economic Times",
+   "Dalal Street Week Ahead: Nifty faces crucial 26,000\u201326,300 hurdle; eyes further consolidation",
    "Jaiprakash Power Ventures, CarTrade Tech among 11 smallcap stocks that plunged the most in a year, but mutual funds raised stakes",
    "Concurrent Gainers: 9 stocks that gain for 5 days in a row",
    "LIC portfolio stocks! 10 stocks where LIC had the highest stake in Q2. How many do you own?",
@@ -131,7 +132,9 @@
    "Tata Consumer Share Price Highlights: Tata Consumer Stock Price History",
    "Bharti Airtel Share Price Highlights: Bharti Airtel Stock Price History",
    "Cipla Share Price Highlights: Cipla Stock Price History",
-   "HCL Tech Share Price Highlights: HCL Tech Stock Price History",
+   "Gold jewellery in UAE: Who buys it and what holds shoppers back? Key findings from World Gold Council",
+   "Should you buy NSE shares for long-term as NSE overtakes LSE and Deutsche Boerse to become 3rd largest listed exchange",
+   "Mint Money Festival | Why Rajeev Thakkar, S. Naren see FIIs favouring large-cap stocks",
    "After an 85% surge in 6 months, HSBC sees another 28% upside in jewellery stock Kalyan Jewellers; up 878% in 5 years",
    "Binance's Bhutan Bet, and Richard Teng on the $6.3 Bn Hack",
    "China Spurs Biggest Stock Gain Since 2024 on Rare Midday Vow",
@@ -149,25 +152,22 @@
    "Suzlon Energy shares: Down 36% in 6 months! Will it rebound after winning wind repowering project from Tata Group?",
    "Defence stocks set for fresh rally? BEL, Solar Industries, HAL - Motilal Oswal names 3 shares to buy as big orders loom",
    "Multibagger defence stock to buy: 200% YTD returns! Why is share rising? Experts explain with 4 reasons | Target, SL",
-   "Upcoming stock split, bonus issue record dates next week, Nov 30-Dec 4: Tech Mahindra, Indus Finance, Interarch, Beeyu",
-   "Best 3 stocks to buy: Manappuram Finance, BEL, SBI Life by Sumeet Bagadia | Targets, stoploss, Nifty, Bank Nifty outlook",
-   "Bitcoin slips back below $60,000, missing out on Wall Street rally from Thanksgiving break",
-   "Five Indian stocks with critical ties to Nvidia's AI ecosystem"
+   "Upcoming stock split, bonus issue record dates next week, Nov 30-Dec 4: Tech Mahindra, Indus Finance, Interarch, Beeyu"
   ]
  },
  "us": {
-  "score": 0.644,
-  "n_headlines": 191,
+  "score": 0.575,
+  "n_headlines": 193,
   "n_sources": 6,
   "top": [
-   "Tariff Risks vs Rate Hike Fears in the Latest U.S. Stock Selloff - StoneX",
    "US Futures Rally as Tech Rebound Gains Momentum: Markets Wrap - Bloomberg.com",
    "S&amp;P 500, Nasdaq, Dow Forecast: Wall Street Rebound Faces Major Resistance\u2014Bull Trap or Breakout? - StoneX",
    "The S&amp;P 500 is in a correction. Bear markets and recessions don&apos;t always follow",
    "Budget airline Norse Atlantic files for bankruptcy in Europe after failing to secure funding",
    "SpaceX shares jump over 4% amid tech rally and after Musk says he will expand on Trump Account share donations",
-   "Stock Futures Jump as AI Trade Set for Rebound - WSJ",
-   "Wall Street ends higher as AI stocks rebound, Nasdaq leads gains - Investing.com"
+   "Wall Street ends higher as AI stocks rebound, Nasdaq leads gains - Investing.com",
+   "Dow soars 600 points, Nasdaq over 2% as battered AI stocks gain after Thanksgiving - The Economic Times",
+   "Stock Futures Jump as AI Trade Set for Rebound - WSJ"
   ],
   "headlines": [
    "Inflation has shoppers hunting for value. That bodes well for Black Friday",
@@ -215,21 +215,21 @@
    "US Futures Rally as Tech Rebound Gains Momentum: Markets Wrap - Bloomberg.com",
    "Wall Street ends higher as battered AI stocks gain in volatile week - Reuters",
    "Wall Street stages major comeback during Thanksgiving-shortened trading week - Fox Business",
-   "Stock Futures Jump as AI Trade Set for Rebound - WSJ",
-   "Stocks jump to close out an erratic week that was also Wall Street's best in more than a year - KSL",
+   "Stocks jump to close out an erratic week that was also Wall Street's best in more than a year - KSL News",
    "ANALYSIS | Investors grow wary of Trump's attempts to move markets - CBC",
-   "New Inflation Data Brings Worrisome News to President Donald Trump's Economy and the AI-Fueled Stock Market - The Motley Fool",
-   "Wall Street firmly in green as it looks to end volatile week on a high - Seeking Alpha",
    "Stock Market Today: Dow, S&amp;P 500, Nasdaq 100 Futures Rise as Wall Street Returns to Wrap Up Holiday-Short - Benzinga",
+   "How Far Could the Dow Jones Industrial Average, S&amp;P 500, and Nasdaq Composite Plunge? Nearly 156 Years of History Offers an Answer. - The Motley Fool",
+   "Wall Street firmly in green as it looks to end volatile week on a high - Seeking Alpha",
    "Wall Street ends higher as AI stocks rebound, Nasdaq leads gains - Investing.com",
-   "North American stock indexes end higher as battered AI stocks gain in volatile week - The Globe and Mail",
-   "Dow Adds 592 Points on Black Friday as AI Fear Fades: Stock Market Today - Kiplinger",
-   "Stocks rise and keep Wall Street on track to close out an erratic week with big gains - BNN Bloomberg",
-   "U.S. Market Closes Sharply Higher to End Volatile Week on Wall Street - TipRanks",
    "Dow soars 600 points, Nasdaq over 2% as battered AI stocks gain after Thanksgiving - The Economic Times",
+   "Stocks rise and keep Wall Street on track to close out an erratic week with big gains - BNN Bloomberg",
+   "Dow Adds 592 Points on Black Friday as AI Fear Fades: Stock Market Today - Kiplinger",
+   "U.S. Market Closes Sharply Higher to End Volatile Week on Wall Street - TipRanks",
    "Wall Street ends higher as battered AI stocks gain in volatile week - The Detroit News",
-   "Dow, S&amp;P 500, Nasdaq Futures Edge Higher As Tech Rebounds After Selloff: DIS, VRTX, DE, CHTR In Focus - Yahoo Finance",
-   "U.S. Stocks Extend Plunge as AI Boom Turns to Bust - WSJ"
+   "Dow Jones Futures Rise; Look For This Bullish Market Signal On Black Friday - Investor's Business Daily",
+   "Wall Street Futures Signal Strong Opening as Technology Stocks Continue Recovery: Dow Jones, S&amp;P, Nasdaq - Yahoo Finance",
+   "US Stock Futures Climb as Technology Shares Lead Post-Thanksgiving Recovery: Dow Jones, S&amp;P, Nasdaq, Wall Street - Yahoo Finance UK",
+   "S&amp;P 500, Nasdaq End Best Week In Over A Year As AI Optimism Makes Comeback \u2014 VZ, ANT, ADBE, TSLA In Focus - Yahoo Finance"
   ]
  }
 }
