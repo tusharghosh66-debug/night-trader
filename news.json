@@ -1,21 +1,22 @@
 {
- "ts": "2026-11-28T21:28:35.587890+05:30",
+ "ts": "2026-11-28T22:28:35.610829+05:30",
  "crypto": {
-  "score": -0.193,
-  "n_headlines": 179,
+  "score": -0.345,
+  "n_headlines": 180,
   "n_sources": 6,
   "top": [
    "Bitcoin Falls Further as Inflation, Trump Tariffs and AI Selloff Rattle Markets",
    "Crypto market cap drops 2% as Bitcoin and Ether fall amid Fed rate hike expectations - Pluang",
    "Bitcoin dips near $59,000 amid ETF outflows and Fed rate hike fears ahead of December. - Pluang",
-   "Strategy and Crypto Stocks Rally as Bitcoin Rebounds Past $63,000. Is the Jump Temporary? - Barron's",
-   "August Crypto Market Review and Outlook: Bitcoin Surge Above $80,000 Sparks Broad Crypto Rally, Fed Decision to Determine If Gains Continue - TradingKey",
+   "Crypto market cap drops 3.74% as Bitcoin falls below $60K and liquidations hit $312M - Pluang",
    "Bitcoin price extends gains, briefly tops $81,000 as crypto rally gathers pace - CNBC",
    "Cathie Wood\u2019s ARK Buys Anthropic as Ripple CEO Predicts Post-IPO Crypto Rally - CCN.com",
-   "Bitcoin Holds Above $60K as Death Cross Clouds Thanksgiving Recovery"
+   "Bitcoin Holds Above $60K as Death Cross Clouds Thanksgiving Recovery",
+   "MemeCore price surges 12% but can the rally hold through December? - Crypto News"
   ],
   "headlines": [
    "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+   "Tether adds $10 million in Bitdeer stock after holding through an 87% drop",
    "Bybit\u2019s $1.4 billion hack postmortem is ready. You won\u2019t get to see it.",
    "Bitcoin not delivering: The bear market has digital asset veteran questioning BTC's value",
    "Trump-linked crypto token WLFI plunges 50% to record lows",
@@ -40,7 +41,6 @@
    "Bitcoin ETFs are bleeding cash and the Fed is unlikely to help",
    "Hong Kong-based crypto trading firm Auros is winding down operations",
    "Bitcoin little changed, DeFi tokens lead the bounce as U.S. marks Thanksgiving",
-   "Nvidia shipment freeze and U.S. chip curbs put AI stocks under pressure",
    "Cointelegraph.com News",
    "Here\u2019s what happened in crypto today",
    "Justin Sun calls for Trump family-linked WLFI token to be delisted",
@@ -79,7 +79,7 @@
   "fear_greed": 10
  },
  "india": {
-  "score": 0.646,
+  "score": 0.74,
   "n_headlines": 223,
   "n_sources": 6,
   "top": [
@@ -156,7 +156,7 @@
   ]
  },
  "us": {
-  "score": 0.628,
+  "score": 0.534,
   "n_headlines": 191,
   "n_sources": 6,
   "top": [
@@ -167,7 +167,7 @@
    "Budget airline Norse Atlantic files for bankruptcy in Europe after failing to secure funding",
    "SpaceX shares jump over 4% amid tech rally and after Musk says he will expand on Trump Account share donations",
    "Wall Street ends higher as AI stocks rebound, Nasdaq leads gains - Investing.com",
-   "Nasdaq, S&amp;P 500 end down, but well off lows as investors buy bargains - Reuters"
+   "US Stock Futures Rally as AI Shares Recover, Chip Export Restrictions Disrupt Financing and Oil Supply Risks Persist: Dow Jones, S&amp;P, Nasdaq, Wall Street - Yahoo Finance"
   ],
   "headlines": [
    "The Iran war could shatter rising expectations of surplus oil supply in coming months",
@@ -201,6 +201,7 @@
    "Semiconductor chips are the new oil. Here&apos;s why",
    "Switzerland\u2019s biggest bank set for showdown with lawmakers as capital fight intensifies amid crisis planning",
    "MarketWatch.com - Top Stories",
+   "We are living in perilous times if Nvidia CEO Jensen Huang dictates your 401(k) balance",
    "I&#x2019;ve been married for 58 years. It&#x2019;s &#x2018;our&#x2019; money, not &#x2018;his&#x2019; and &#x2018;hers.&#x2019; Why do so many couples keep their finances separate?",
    "I&#x2019;m in my 70s and buying a new BMW X1. Should I put my only son on the title?",
    "What&#x2019;s the most tax-efficient way to donate to charity?",
@@ -210,7 +211,6 @@
    "These tech stocks may let you play defense without giving up on AI",
    "These stocks soared the most during a wild week highlighted by Huang&#x2019;s return to Nvidia",
    "Coming next year: Medicare Advantage plans without drug coverage for almost 640,000 people and fewer choices for the rest",
-   "The warnings behind this week&#x2019;s stock-market rally",
    "Google News",
    "Stocks are chasing a rare buy signal as markets brace for a potential Fed hike: Chart of the Day - Yahoo Finance",
    "ANALYSIS | Investors grow wary of Trump's attempts to move markets - CBC",
@@ -221,15 +221,15 @@
    "Stocks jump to close out an erratic week that was also Wall Street's best in more than a year - KSL",
    "Wall Street firmly in green as it looks to end volatile week on a high - Seeking Alpha",
    "Stock Market Today: Dow, S&amp;P 500, Nasdaq 100 Futures Rise as Wall Street Returns to Wrap Up Holiday-Short - Benzinga",
-   "Dow Adds 592 Points on Black Friday as AI Fear Fades: Stock Market Today - Kiplinger",
    "Stocks Settle Sharply Higher as Chipmakers and AI Stocks Rebound - Barchart.com",
+   "Dow Adds 592 Points on Black Friday as AI Fear Fades: Stock Market Today - Kiplinger",
    "Wall Street ends higher as AI stocks rebound, Nasdaq leads gains - Investing.com",
    "U.S. Market Closes Sharply Higher to End Volatile Week on Wall Street - TipRanks",
    "Wall Street ends higher as battered AI stocks gain in volatile week - The Detroit News",
-   "Dow, S&amp;P 500, Nasdaq Futures Edge Higher As Tech Rebounds After Selloff: DIS, VRTX, DE, CHTR In Focus - Yahoo Finance",
-   "Nasdaq, S&amp;P 500 end down, but well off lows as investors buy bargains - Reuters",
    "Dow Jones Futures Rise; Look For This Bullish Market Signal On Black Friday - Investor's Business Daily",
-   "The Dow Jones Just Had Its Best Week Since October 2022 - Yahoo Finance"
+   "The Dow Jones Just Had Its Best Week Since October 2022 - Yahoo Finance",
+   "Apple, Amgen Lead 5 Dow Jones Stocks Near Buy Points - Investor's Business Daily",
+   "Wall Street Futures Signal Strong Opening as Technology Stocks Continue Recovery: Dow Jones, S&amp;P, Nasdaq - Yahoo Finance"
   ]
  }
 }
