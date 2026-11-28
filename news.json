@@ -1,18 +1,18 @@
 {
- "ts": "2026-11-28T23:28:35.623163+05:30",
+ "ts": "2026-11-29T00:28:35.640189+05:30",
  "crypto": {
-  "score": -0.311,
-  "n_headlines": 179,
+  "score": -0.205,
+  "n_headlines": 180,
   "n_sources": 6,
   "top": [
    "Bitcoin Falls Further as Inflation, Trump Tariffs and AI Selloff Rattle Markets",
    "Crypto market cap drops 2% as Bitcoin and Ether fall amid Fed rate hike expectations - Pluang",
    "Bitcoin dips near $59,000 amid ETF outflows and Fed rate hike fears ahead of December. - Pluang",
-   "Crypto market cap drops 3.74% as Bitcoin falls below $60K and liquidations hit $312M - Pluang",
    "Strategy and Crypto Stocks Rally as Bitcoin Rebounds Past $63,000. Is the Jump Temporary? - Barron's",
    "August Crypto Market Review and Outlook: Bitcoin Surge Above $80,000 Sparks Broad Crypto Rally, Fed Decision to Determine If Gains Continue - TradingKey",
    "Bitcoin price extends gains, briefly tops $81,000 as crypto rally gathers pace - CNBC",
-   "Cathie Wood\u2019s ARK Buys Anthropic as Ripple CEO Predicts Post-IPO Crypto Rally - CCN.com"
+   "Cathie Wood\u2019s ARK Buys Anthropic as Ripple CEO Predicts Post-IPO Crypto Rally - CCN.com",
+   "Bitcoin Holds Above $60K as Death Cross Clouds Thanksgiving Recovery"
   ],
   "headlines": [
    "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
@@ -72,14 +72,14 @@
    "BIS chief Pablo Hern\u00e1ndez de Cos set to become next ECB president: FT",
    "How EU brokers could lose access to Kyrgyz crypto exchanges",
    "Nasdaq exec pushes for common EU rules on tokenized securities",
+   "AI Usage Is Soaring But Spending Has Stalled. Here&#39;s What It Means",
    "Bank of Japan Explores Bringing Stablecoins and Tokenized Finance Into Traditional Banking",
-   "Russia Is Turning Pigeons Into Cyborg Drones\u2014and You Can Now Hire Them",
-   "OpenAI Turns the Tables on Apple With Its Own Trade-Secret Theft Claims"
+   "Russia Is Turning Pigeons Into Cyborg Drones\u2014and You Can Now Hire Them"
   ],
   "fear_greed": 10
  },
  "india": {
-  "score": 0.743,
+  "score": 0.73,
   "n_headlines": 222,
   "n_sources": 6,
   "top": [
@@ -132,6 +132,7 @@
    "Tata Consumer Share Price Highlights: Tata Consumer Stock Price History",
    "Bharti Airtel Share Price Highlights: Bharti Airtel Stock Price History",
    "Cipla Share Price Highlights: Cipla Stock Price History",
+   "Groww plans pre-orders for more global IPOs after 1 lakh users showed interest in Anthropic shares; Here's what we know",
    "US markets week ahead: Investors eye jobs data, manufacturing &amp; services reports; Salesforce &amp; Marvell earnings in focus",
    "Gold, silver and platinum prices rise as demand for precious metals strengthens; key levels to watch",
    "Gold price forecast: Can precious metal fall below \u20b91,00,000 per 10 grams in the near-term? Experts' views",
@@ -151,12 +152,11 @@
    "Mint Money Festival | Gold is less volatile than other asset classes despite the correction: WGC's Sachin Jain",
    "TBZ, PC Jewellers, Kalyan, Titan: Gold price down 30% from peak but these jewellery stocks soar up to 244% in 2026 YTD",
    "Top stocks to buy on Monday, 30 Nov: Choice Broking's Kkunal V recommends three shares for next week | Target, stop loss",
-   "Mint Money Festival | Trust is the wealth that keeps Indian markets moving: NSE CEO Ashish Chauhan",
-   "Gold, silver prices stage stunning comeback after 15-month low: Can the rally sustain? Key levels, trading strategy"
+   "Mint Money Festival | Trust is the wealth that keeps Indian markets moving: NSE CEO Ashish Chauhan"
   ]
  },
  "us": {
-  "score": 0.675,
+  "score": 0.644,
   "n_headlines": 191,
   "n_sources": 6,
   "top": [
@@ -201,6 +201,8 @@
    "Semiconductor chips are the new oil. Here&apos;s why",
    "Switzerland\u2019s biggest bank set for showdown with lawmakers as capital fight intensifies amid crisis planning",
    "MarketWatch.com - Top Stories",
+   "My husband spent $80,000 on a boat, yet says my plans for a $100,000 pottery studio are irresponsible. Who&#x2019;s right?",
+   "A 66-year-old nurse is facing down retirement with just $500 saved. Who&#x2019;s to blame?",
    "We are living in perilous times if Nvidia CEO Jensen Huang dictates your 401(k) balance",
    "I&#x2019;ve been married for 58 years. It&#x2019;s &#x2018;our&#x2019; money, not &#x2018;his&#x2019; and &#x2018;hers.&#x2019; Why do so many couples keep their finances separate?",
    "I&#x2019;m in my 70s and buying a new BMW X1. Should I put my only son on the title?",
@@ -209,11 +211,9 @@
    "I hate that Jensen Huang is back at Nvidia, but I love what it&#x2019;s done for my 401(k). Am I a hypocrite?",
    "Clearing out my parents&#x2019; house was a legal nightmare. How can I downsize without putting my kids through the same ordeal?",
    "These tech stocks may let you play defense without giving up on AI",
-   "These stocks soared the most during a wild week highlighted by Huang&#x2019;s return to Nvidia",
-   "Coming next year: Medicare Advantage plans without drug coverage for almost 640,000 people and fewer choices for the rest",
    "Google News",
    "Stocks are chasing a rare buy signal as markets brace for a potential Fed hike: Chart of the Day - Yahoo Finance",
-   "ANALYSIS | Investors grow wary of Trump's attempts to move markets - CBC",
+   "Trump has outsized influence in stock markets, but investors grow wary - CBC",
    "US Futures Rally as Tech Rebound Gains Momentum: Markets Wrap - Bloomberg.com",
    "Wall Street ends higher as battered AI stocks gain in volatile week - Reuters",
    "Wall Street stages major comeback during Thanksgiving-shortened trading week - Fox Business",
@@ -226,8 +226,8 @@
    "Wall Street ends higher as AI stocks rebound, Nasdaq leads gains - Investing.com",
    "U.S. Market Closes Sharply Higher to End Volatile Week on Wall Street - TipRanks",
    "Wall Street ends higher as battered AI stocks gain in volatile week - The Detroit News",
-   "Stock Futures Jump as AI Trade Set for Rebound - WSJ",
    "Dow Jones Futures Rise; Look For This Bullish Market Signal On Black Friday - Investor's Business Daily",
+   "Stock Futures Jump as AI Trade Set for Rebound - WSJ",
    "The Dow Jones Just Had Its Best Week Since October 2022 - Yahoo Finance",
    "Apple, Amgen Lead 5 Dow Jones Stocks Near Buy Points - Investor's Business Daily"
   ]
