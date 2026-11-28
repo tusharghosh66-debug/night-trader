@@ -1,18 +1,18 @@
 {
- "ts": "2026-11-28T22:28:35.610829+05:30",
+ "ts": "2026-11-28T23:28:35.623163+05:30",
  "crypto": {
-  "score": -0.345,
-  "n_headlines": 180,
+  "score": -0.311,
+  "n_headlines": 179,
   "n_sources": 6,
   "top": [
    "Bitcoin Falls Further as Inflation, Trump Tariffs and AI Selloff Rattle Markets",
    "Crypto market cap drops 2% as Bitcoin and Ether fall amid Fed rate hike expectations - Pluang",
    "Bitcoin dips near $59,000 amid ETF outflows and Fed rate hike fears ahead of December. - Pluang",
    "Crypto market cap drops 3.74% as Bitcoin falls below $60K and liquidations hit $312M - Pluang",
+   "Strategy and Crypto Stocks Rally as Bitcoin Rebounds Past $63,000. Is the Jump Temporary? - Barron's",
+   "August Crypto Market Review and Outlook: Bitcoin Surge Above $80,000 Sparks Broad Crypto Rally, Fed Decision to Determine If Gains Continue - TradingKey",
    "Bitcoin price extends gains, briefly tops $81,000 as crypto rally gathers pace - CNBC",
-   "Cathie Wood\u2019s ARK Buys Anthropic as Ripple CEO Predicts Post-IPO Crypto Rally - CCN.com",
-   "Bitcoin Holds Above $60K as Death Cross Clouds Thanksgiving Recovery",
-   "MemeCore price surges 12% but can the rally hold through December? - Crypto News"
+   "Cathie Wood\u2019s ARK Buys Anthropic as Ripple CEO Predicts Post-IPO Crypto Rally - CCN.com"
   ],
   "headlines": [
    "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
@@ -72,15 +72,15 @@
    "BIS chief Pablo Hern\u00e1ndez de Cos set to become next ECB president: FT",
    "How EU brokers could lose access to Kyrgyz crypto exchanges",
    "Nasdaq exec pushes for common EU rules on tokenized securities",
+   "Bank of Japan Explores Bringing Stablecoins and Tokenized Finance Into Traditional Banking",
    "Russia Is Turning Pigeons Into Cyborg Drones\u2014and You Can Now Hire Them",
-   "OpenAI Turns the Tables on Apple With Its Own Trade-Secret Theft Claims",
-   "Could AI Break Bitcoin? Not Yet, Research Firm K33 Says"
+   "OpenAI Turns the Tables on Apple With Its Own Trade-Secret Theft Claims"
   ],
   "fear_greed": 10
  },
  "india": {
-  "score": 0.74,
-  "n_headlines": 223,
+  "score": 0.743,
+  "n_headlines": 222,
   "n_sources": 6,
   "top": [
    "Nasdaq jumps 2%, Dow gains 600 pts as US stocks log weekly gains: Stock Market Live Updates",
@@ -132,6 +132,7 @@
    "Tata Consumer Share Price Highlights: Tata Consumer Stock Price History",
    "Bharti Airtel Share Price Highlights: Bharti Airtel Stock Price History",
    "Cipla Share Price Highlights: Cipla Stock Price History",
+   "US markets week ahead: Investors eye jobs data, manufacturing &amp; services reports; Salesforce &amp; Marvell earnings in focus",
    "Gold, silver and platinum prices rise as demand for precious metals strengthens; key levels to watch",
    "Gold price forecast: Can precious metal fall below \u20b91,00,000 per 10 grams in the near-term? Experts' views",
    "Mint Money Festival | Vijay Kedia outlines 10 investing rules for younger investors",
@@ -151,12 +152,11 @@
    "TBZ, PC Jewellers, Kalyan, Titan: Gold price down 30% from peak but these jewellery stocks soar up to 244% in 2026 YTD",
    "Top stocks to buy on Monday, 30 Nov: Choice Broking's Kkunal V recommends three shares for next week | Target, stop loss",
    "Mint Money Festival | Trust is the wealth that keeps Indian markets moving: NSE CEO Ashish Chauhan",
-   "Gold, silver prices stage stunning comeback after 15-month low: Can the rally sustain? Key levels, trading strategy",
-   "Gold price prediction 2027: Should investors buy yellow metal after the recent correction? Experts' views"
+   "Gold, silver prices stage stunning comeback after 15-month low: Can the rally sustain? Key levels, trading strategy"
   ]
  },
  "us": {
-  "score": 0.534,
+  "score": 0.675,
   "n_headlines": 191,
   "n_sources": 6,
   "top": [
@@ -167,7 +167,7 @@
    "Budget airline Norse Atlantic files for bankruptcy in Europe after failing to secure funding",
    "SpaceX shares jump over 4% amid tech rally and after Musk says he will expand on Trump Account share donations",
    "Wall Street ends higher as AI stocks rebound, Nasdaq leads gains - Investing.com",
-   "US Stock Futures Rally as AI Shares Recover, Chip Export Restrictions Disrupt Financing and Oil Supply Risks Persist: Dow Jones, S&amp;P, Nasdaq, Wall Street - Yahoo Finance"
+   "Stock Futures Jump as AI Trade Set for Rebound - WSJ"
   ],
   "headlines": [
    "The Iran war could shatter rising expectations of surplus oil supply in coming months",
@@ -226,10 +226,10 @@
    "Wall Street ends higher as AI stocks rebound, Nasdaq leads gains - Investing.com",
    "U.S. Market Closes Sharply Higher to End Volatile Week on Wall Street - TipRanks",
    "Wall Street ends higher as battered AI stocks gain in volatile week - The Detroit News",
+   "Stock Futures Jump as AI Trade Set for Rebound - WSJ",
    "Dow Jones Futures Rise; Look For This Bullish Market Signal On Black Friday - Investor's Business Daily",
    "The Dow Jones Just Had Its Best Week Since October 2022 - Yahoo Finance",
-   "Apple, Amgen Lead 5 Dow Jones Stocks Near Buy Points - Investor's Business Daily",
-   "Wall Street Futures Signal Strong Opening as Technology Stocks Continue Recovery: Dow Jones, S&amp;P, Nasdaq - Yahoo Finance"
+   "Apple, Amgen Lead 5 Dow Jones Stocks Near Buy Points - Investor's Business Daily"
   ]
  }
 }
