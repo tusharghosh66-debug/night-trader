@@ -1,11 +1,11 @@
 # Night Trader v2 — Paper Trading Report (3 markets)
-_Updated: 2026-11-28 19:09 IST_
+_Updated: 2026-11-28 19:12 IST_
 
-## CRYPTO (OPEN) — ₹10,042.38 | P&L +42.38 (+0.42%)
-Cash ₹10,037.25 | cycles 8035 | capital ₹10,000
+## CRYPTO (OPEN) — ₹10,037.25 | P&L +37.25 (+0.37%)
+Cash ₹10,037.25 | cycles 8040 | capital ₹10,000
 | Symbol | Side | Qty | Entry | Last | Unrealized |
 |---|---|---|---|---|---|
-| SOL-USD | SHORT | 0.4600 | 6547.43 | 6536.27 | +5.13 |
+| SOL-USD | SHORT | 0.4600 | 6547.43 | 6547.43 | -0.00 |
 Closed: 3 (1 wins), realized +40.26
 - 13:49 SELL SOL-USD @ 6827.44 pnl +64.65 (RSI 78 overbought take-profit)
 - 20:04 SELL ETH-USD @ 158507.65 pnl -6.78 (stop/trail hit (158507.65<=158554.25))
