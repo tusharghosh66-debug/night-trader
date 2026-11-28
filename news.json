@@ -1,7 +1,7 @@
 {
- "ts": "2026-11-28T07:28:35.214299+05:30",
+ "ts": "2026-11-28T08:28:35.232224+05:30",
  "crypto": {
-  "score": -0.041,
+  "score": 0.053,
   "n_headlines": 179,
   "n_sources": 6,
   "top": [
@@ -11,7 +11,7 @@
    "Bitcoin price extends gains, briefly tops $81,000 as crypto rally gathers pace - CNBC",
    "Cathie Wood\u2019s ARK Buys Anthropic as Ripple CEO Predicts Post-IPO Crypto Rally - CCN.com",
    "Bitcoin Holds Above $60K as Death Cross Clouds Thanksgiving Recovery",
-   "Bitcoin Price Falls as $183 Million in Liquidations Hit Ahead of $6.8 Billion Options Expiry - Benzinga",
+   "Hunton Insurance Recovery Blog: Lloyds Jumps Into The Cryptocurrency Market, Insuring Part Of Kingdom Trust's $12 Billion Assets - Legal 500",
    "Crypto Stocks Gain After Bitcoin Tops $61K In Tech Rebound, But Analysts Want A Move Above $62K - TradingView"
   ],
   "headlines": [
@@ -79,15 +79,15 @@
   "fear_greed": 10
  },
  "india": {
-  "score": 0.332,
+  "score": 0.358,
   "n_headlines": 226,
   "n_sources": 6,
   "top": [
+   "FPI Inflows Hit Record High in November 2026 as Foreign Investors Buy Indian Shares Worth over \u20b91.22 Lakh Crore - Kotak Neo",
    "Nasdaq jumps 2%, Dow gains 600 pts as US stocks log weekly gains: Stock Market Live Updates",
    "Best 3 stocks to buy under \u20b9200: NCC, Geojit Financial, Patel Engineering shares by Mehul Kothari of Anand Rathi",
    "Stock market today: Sensex tumbles 1,000 points, Nifty drops 277 points as TCS, Infosys, Shriram Finance lead losses",
    "Why is Indian stock market falling today? Nifty down to near 25,600, Sensex crashes 900 points | Top 3 reasons explained",
-   "Sensex gains nearly 400 pts in early trade as IT stocks rally, Nifty below 25,900 - DD News",
    "Black Friday Turns Red: Nifty Slips After a 15% Rally in Four Weeks. Is the Market Just Catching Its Breath? - NiftyTrader",
    "Stock Market Today: Sensex Crashes Over 700 Pts, Nifty Slips Below 25,700; IT Stocks Lead Sell-Off - APAC Media",
    "JPMorgan Sees Nifty at 29,000 by December 2027, Cites Foreign Buying and Earnings Recovery - Kotak Neo"
@@ -156,18 +156,18 @@
   ]
  },
  "us": {
-  "score": 0.723,
-  "n_headlines": 195,
+  "score": 0.541,
+  "n_headlines": 194,
   "n_sources": 6,
   "top": [
    "Tariff Risks vs Rate Hike Fears in the Latest U.S. Stock Selloff - StoneX",
    "US Futures Rally as Tech Rebound Gains Momentum: Markets Wrap - Bloomberg.com",
-   "AI Stocks Rebound as Dip Buyers Pile In; All Four Major U.S. Indexes Rise, Philadelphia Semiconductor Index Soars 4.69% - BigGo Finance",
-   "S&amp;P 500, Nasdaq, Dow Forecast: Wall Street Rebound Faces Major Resistance\u2014Bull Trap or Breakout? - StoneX",
    "The S&amp;P 500 is in a correction. Bear markets and recessions don&apos;t always follow",
    "Budget airline Norse Atlantic files for bankruptcy in Europe after failing to secure funding",
    "SpaceX shares jump over 4% amid tech rally and after Musk says he will expand on Trump Account share donations",
-   "Nasdaq, S&amp;P 500 end down, but well off lows as investors buy bargains - Reuters"
+   "Nasdaq, S&amp;P 500 end down, but well off lows as investors buy bargains - Reuters",
+   "Wall Street ends higher as AI stocks rebound, Nasdaq leads gains - Investing.com",
+   "Nasdaq, S&amp;P 500 end down, but well off lows as investors buy bargains - StreetInsider"
   ],
   "headlines": [
    "Inflation has shoppers hunting for value. That bodes well for Black Friday",
@@ -212,24 +212,24 @@
    "I&#x2019;ve been married for 58 years. It&#x2019;s &#x2018;our&#x2019; money, not &#x2018;his&#x2019; and &#x2018;hers.&#x2019; Why do so many couples keep their finances separate?",
    "My husband secretly sends his ex-wife $1,500 a month after she lost her job. We have $2.4 million saved. Has he lied by omission?",
    "Google News",
+   "Wall Street stages major comeback during Thanksgiving-shortened trading week - Fox Business",
    "US Futures Rally as Tech Rebound Gains Momentum: Markets Wrap - Bloomberg.com",
    "Dow Jones Futures Rise; Look For This Bullish Market Signal On Black Friday - Investor's Business Daily",
    "Nasdaq, S&amp;P 500 end down, but well off lows as investors buy bargains - Reuters",
    "How Far Could the Dow Jones Industrial Average, S&amp;P 500, and Nasdaq Composite Plunge? Nearly 156 Years of History Offers an Answer. - The Motley Fool",
-   "Stock Market Today: Dow, S&amp;P 500, Nasdaq 100 Futures Rise as Wall Street Returns to Wrap Up Holiday-Short - Benzinga",
    "Wall Street firmly in green as it looks to end volatile week on a high - Seeking Alpha",
+   "Stock Market Today: Dow, S&amp;P 500, Nasdaq 100 Futures Rise as Wall Street Returns to Wrap Up Holiday-Short - Benzinga",
    "Wall Street ends higher as AI stocks rebound, Nasdaq leads gains - Investing.com",
-   "Dow, S&amp;P 500, Nasdaq Futures Edge Higher As Tech Rebounds After Selloff: DIS, VRTX, DE, CHTR In Focus - TradingView",
    "Stocks Settle Sharply Higher as Chipmakers and AI Stocks Rebound - Barchart.com",
-   "Dow Adds 592 Points on Black Friday as AI Fear Fades: Stock Market Today - Kiplinger",
-   "Stocks rise in abbreviated Black Friday trading as AI concerns ease - upi",
-   "US stock market today: Nasdaq and S&amp;P 500 fall as Nvidia and AI stocks slide, Dow gains - Beinsure",
    "Stocks rise and keep Wall Street on track to close out an erratic week with big gains - BNN Bloomberg",
+   "Dow Adds 592 Points on Black Friday as AI Fear Fades: Stock Market Today - Kiplinger",
    "U.S. Market Closes Sharply Higher to End Volatile Week on Wall Street - TipRanks",
    "Wall Street ends higher as battered AI stocks gain in volatile week - The Detroit News",
    "Nasdaq, S&amp;P 500 end down, but well off lows as investors buy bargains - StreetInsider",
-   "Stock Futures Jump as AI Trade Set for Rebound - WSJ",
-   "Stock Market Today: S&amp;P 500, Nasdaq and Dow Jones Rally on Black Friday - Coinpaper"
+   "Dow, S&amp;P 500, Nasdaq Futures Edge Higher As Tech Rebounds After Selloff: DIS, VRTX, DE, CHTR In Focus - Yahoo Finance",
+   "Stock Market Rallies, Triggers This Shift; Jensen Huang Testimony, Jobs Report Loom - Investor's Business Daily",
+   "The New York Stock Exchange | NYSE - NYSE",
+   "Stock Futures Jump as AI Trade Set for Rebound - WSJ"
   ]
  }
 }
