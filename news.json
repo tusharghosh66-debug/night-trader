@@ -1,8 +1,8 @@
 {
- "ts": "2026-11-28T12:28:35.305480+05:30",
+ "ts": "2026-11-28T13:28:35.341520+05:30",
  "crypto": {
-  "score": -0.111,
-  "n_headlines": 179,
+  "score": 0.017,
+  "n_headlines": 180,
   "n_sources": 6,
   "top": [
    "Bitcoin Falls Further as Inflation, Trump Tariffs and AI Selloff Rattle Markets",
@@ -12,7 +12,7 @@
    "Cathie Wood\u2019s ARK Buys Anthropic as Ripple CEO Predicts Post-IPO Crypto Rally - CCN.com",
    "Bitcoin price extends gains, briefly tops $81,000 as crypto rally gathers pace - CNBC",
    "Bitcoin Holds Above $60K as Death Cross Clouds Thanksgiving Recovery",
-   "Bitcoin falls below $59K as $7B options expiry triggers sharp market sell-off - Pluang"
+   "Hunton Insurance Recovery Blog: Lloyds Jumps Into The Cryptocurrency Market, Insuring Part Of Kingdom Trust's $12 Billion Assets - Legal 500"
   ],
   "headlines": [
    "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
@@ -42,6 +42,7 @@
    "$7 billion of bitcoin options expire Friday, and the biggest bets look starkly different from October",
    "Zcash developers want to phase out older privacy system as a precaution against future attacks",
    "Cointelegraph.com News",
+   "Binance receives in-principle approval, plans Asia hub in Bhutan",
    "Here\u2019s what happened in crypto today",
    "Franklin Templeton makes room for HYPE in crypto index ETF",
    "Bitcoin whales pile into BTC despite shrinking profit cushion",
@@ -71,7 +72,6 @@
    "Nasdaq exec pushes for common EU rules on tokenized securities",
    "7 bizarre things crypto whales spent a fortune on",
    "Vitalik Buterin calls for verifiable chips as hardware wallet threats evolve",
-   "Standard Chartered\u2019s Zodia Custody suffers data breach",
    "OpenAI Turns the Tables on Apple With Its Own Trade-Secret Theft Claims",
    "Could AI Break Bitcoin? Not Yet, Research Firm K33 Says",
    "4 Scary Bitcoin Charts That Suggest This Bear Market Is Different"
@@ -79,8 +79,8 @@
   "fear_greed": 10
  },
  "india": {
-  "score": 0.536,
-  "n_headlines": 224,
+  "score": 0.605,
+  "n_headlines": 223,
   "n_sources": 6,
   "top": [
    "Nasdaq jumps 2%, Dow gains 600 pts as US stocks log weekly gains: Stock Market Live Updates",
@@ -94,6 +94,8 @@
   ],
   "headlines": [
    "Economic Times",
+   "Concurrent Gainers: 9 stocks that gain for 5 days in a row",
+   "LIC portfolio stocks! 10 stocks where LIC had the highest stake in Q2. How many do you own?",
    "Bond market to stay cautious ahead of RBI policy: Equirus",
    "From war premium to demand concerns: What is driving the sharp fall in crude oil prices?",
    "Microcap winners: Greaves Cotton, Thomas Cook among 10 stocks with gains of up to 50%",
@@ -130,8 +132,8 @@
    "Cipla Share Price Highlights: Cipla Stock Price History",
    "HCL Tech Share Price Highlights: HCL Tech Stock Price History",
    "HUL Share Price Highlights: HUL Stock Price History",
-   "Bajaj Finserv Share Price Highlights: Bajaj Finserv Stock Price History",
-   "JSW Steel Share Price Highlights: JSW Steel Stock Price History",
+   "Gold, silver prices stage stunning comeback after 15-month low: Can the rally sustain? Key levels, trading strategy",
+   "Gold price prediction 2027: Should investors buy yellow metal after the recent correction? Experts' views",
    "Multibagger circuit-to-circuit stock jumps 2350% in 2026, hits 5% upper circuit for 14 days in a row | Do you own?",
    "Top stocks to watch on Monday, Nov 30: Suzlon, Zee, Tata Group stocks, KEC, Bosch, APL Apollo, among 10 shares in focus",
    "Suzlon Energy shares: Down 36% in 6 months! Will it rebound after winning wind repowering project from Tata Group?",
@@ -150,9 +152,7 @@
    "Zee Entertainment \u20b9600 crore buyback opens on December 1; what eligible shareholders need to know",
    "Sebi to recast rulebook to fund India's growth: Tuhin Kanta Pandey",
    "Pulse of the Street: Profit booking snaps four-week rally; markets brace consolidation?",
-   "SanDisk, AMD and Broadcom shares rebound as investors return to battered AI shares; what changed on Wall Street?",
-   "Sebi allows FPIs to trade in physically settled non-agri commodity derivatives",
-   "MCX gold prices rebound over \u20b98,300 in two sessions, set to snap 2-week losing streak; what lifted sentiment?"
+   "SanDisk, AMD and Broadcom shares rebound as investors return to battered AI shares; what changed on Wall Street?"
   ]
  },
  "us": {
@@ -175,15 +175,15 @@
    "The S&amp;P 500 is in a correction. Bear markets and recessions don&apos;t always follow",
    "Saudi Arabia shifts Vision 2030 spending amid economic and security pressure",
    "Africa\u2019s richest man is taking his mega-refinery public in a blockbuster IPO",
-   "Budget airline Norse Atlantic files for bankruptcy in Europe after failing to secure funding",
    "Liesman: Why Greenspan could bet on productivity \u2014 and Warsh needs to hike",
    "New car prices are at a record high. Here&apos;s where to look for deals",
+   "Budget airline Norse Atlantic files for bankruptcy in Europe after failing to secure funding",
    "Chinese chip stocks notch biggest ever one-day gains as Beijing signals broader market support",
    "SpaceX shares jump over 4% amid tech rally and after Musk says he will expand on Trump Account share donations",
    "EU leaders fail to break $1.7 trillion budget deadlock as political pressure mounts",
    "Spain\u2019s election could pull Madrid closer to Trump\u2019s Washington",
-   "The Tech Download: Will Jensen Huang\u2019s return be the spark the shaky AI market needs?",
    "Jensen Huang&apos;s return did little to ease AI jitters. We used the weakness to buy",
+   "The Tech Download: Will Jensen Huang\u2019s return be the spark the shaky AI market needs?",
    "&apos;The Traitors&apos; ended with a $246,300 prize\u2014here&apos;s who won and what they told us about spending it",
    "It\u2019s not just you: Durable goods are getting less reliable, from sputtering cars to glitching smart TVs",
    "Two Italians killed in Kuwait drone attack; Trump says Iran war ends \u2018whenever I want it\u2019",
@@ -221,14 +221,14 @@
    "Wall Street firmly in green as it looks to end volatile week on a high - Seeking Alpha",
    "North American stock indexes end higher as battered AI stocks gain in volatile week - The Globe and Mail",
    "Wall Street ends higher as AI stocks rebound, Nasdaq leads gains - Investing.com",
+   "Dow, S&amp;P 500, Nasdaq Futures Edge Higher As Tech Rebounds After Selloff: DIS, VRTX, DE, CHTR In Focus - TradingView",
    "Stocks Settle Sharply Higher as Chipmakers and AI Stocks Rebound - Barchart.com",
    "Dow Adds 592 Points on Black Friday as AI Fear Fades: Stock Market Today - Kiplinger",
    "Stocks rise and keep Wall Street on track to close out an erratic week with big gains - BNN Bloomberg",
    "U.S. Market Closes Sharply Higher to End Volatile Week on Wall Street - TipRanks",
    "Dow soars 600 points, Nasdaq over 2% as battered AI stocks gain after Thanksgiving - The Economic Times",
-   "S&amp;P 500, Nasdaq End Best Week In Over A Year As AI Optimism Makes Comeback \u2014 VZ, ANT, ADBE, TSLA In Focus - Yahoo Finance",
    "Wall Street ends higher as battered AI stocks gain in volatile week - The Detroit News",
-   "Dow, S&amp;P 500, Nasdaq Futures Edge Higher As Tech Rebounds After Selloff: DIS, VRTX, DE, CHTR In Focus - Yahoo Finance",
+   "S&amp;P 500, Nasdaq End Best Week In Over A Year As AI Optimism Makes Comeback \u2014 VZ, ANT, ADBE, TSLA In Focus - Yahoo Finance",
    "U.S. Stocks Extend Plunge as AI Boom Turns to Bust - WSJ"
   ]
  }
