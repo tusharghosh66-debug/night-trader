@@ -1,5 +1,5 @@
 {
- "ts": "2026-11-28T15:28:35.472097+05:30",
+ "ts": "2026-11-28T16:28:35.493046+05:30",
  "crypto": {
   "score": -0.03,
   "n_headlines": 180,
@@ -42,7 +42,8 @@
    "New York Attorney General wins $1.4 billion ruling against founders of crypto trading firm NovaTech",
    "$7 billion of bitcoin options expire Friday, and the biggest bets look starkly different from October",
    "Cointelegraph.com News",
-   "Binance receives in-principle approval, plans Asia hub in Bhutan",
+   "ASEAN+3 agrees on initiative to explore crypto payments cooperation",
+   "Binance plans Asia hub in Bhutan, receives preliminary approval",
    "Here\u2019s what happened in crypto today",
    "Franklin Templeton makes room for HYPE in crypto index ETF",
    "Bitcoin whales pile into BTC despite shrinking profit cushion",
@@ -71,7 +72,6 @@
    "How EU brokers could lose access to Kyrgyz crypto exchanges",
    "Nasdaq exec pushes for common EU rules on tokenized securities",
    "7 bizarre things crypto whales spent a fortune on",
-   "Vitalik Buterin calls for verifiable chips as hardware wallet threats evolve",
    "OpenAI Turns the Tables on Apple With Its Own Trade-Secret Theft Claims",
    "Could AI Break Bitcoin? Not Yet, Research Firm K33 Says",
    "4 Scary Bitcoin Charts That Suggest This Bear Market Is Different"
@@ -79,18 +79,18 @@
   "fear_greed": 10
  },
  "india": {
-  "score": 0.733,
-  "n_headlines": 225,
+  "score": 0.717,
+  "n_headlines": 226,
   "n_sources": 6,
   "top": [
+   "FPI Inflows Hit Record High in November 2026 as Foreign Investors Buy Indian Shares Worth over \u20b91.22 Lakh Crore - Kotak Neo",
    "Nasdaq jumps 2%, Dow gains 600 pts as US stocks log weekly gains: Stock Market Live Updates",
    "Defence stocks set for fresh rally? BEL, Solar Industries, HAL - Motilal Oswal names 3 shares to buy as big orders loom",
    "Best 3 stocks to buy under \u20b9200: NCC, Geojit Financial, Patel Engineering shares by Mehul Kothari of Anand Rathi",
    "Sensex Slips 0.69%, Nifty Slips 0.75% Over the Week as Crude Oil Surge and Rupee Weakness End Four-Week Rally - HDFC Sky",
    "Midweek recovery rally fizzles out, Sensex, Nifty end week in the red - The New Indian Express",
    "Sensex gains nearly 400 pts in early trade as IT stocks rally, Nifty below 25,900 - DD News",
-   "Market weekly wrap: NIFTY50, SENSEX end 4-week rally; Tata Steel lags, TCS leads gains - Upstox",
-   "Market outlook: Indian markets rebounded in Nov, but sustaining gains in 2027 will depend on growth, says - The Times of India"
+   "Market weekly wrap: NIFTY50, SENSEX end 4-week rally; Tata Steel lags, TCS leads gains - Upstox"
   ],
   "headlines": [
    "Economic Times",
@@ -132,6 +132,11 @@
    "Bharti Airtel Share Price Highlights: Bharti Airtel Stock Price History",
    "Cipla Share Price Highlights: Cipla Stock Price History",
    "HCL Tech Share Price Highlights: HCL Tech Stock Price History",
+   "After an 85% surge in 6 months, HSBC sees another 28% upside in jewellery stock Kalyan Jewellers; up 878% in 5 years",
+   "Binance's Bhutan Bet, and Richard Teng on the $6.3 Bn Hack",
+   "China Spurs Biggest Stock Gain Since 2024 on Rare Midday Vow",
+   "Copper Surges Most in Seven Months as Risk Appetite Returns",
+   "Mint Money Festival | Investors must brace for deeper market corrections, warn fund managers",
    "Top defence stock to buy: Elara Capital recommends this share with 31% upside potential | Check target, rationale",
    "Mint Money Festival | Gold is less volatile than other asset classes despite the correction: WGC's Sachin Jain",
    "TBZ, PC Jewellers, Kalyan, Titan: Gold price down 30% from peak but these jewellery stocks soar up to 244% in 2026 YTD",
@@ -147,17 +152,12 @@
    "Upcoming stock split, bonus issue record dates next week, Nov 30-Dec 4: Tech Mahindra, Indus Finance, Interarch, Beeyu",
    "Best 3 stocks to buy: Manappuram Finance, BEL, SBI Life by Sumeet Bagadia | Targets, stoploss, Nifty, Bank Nifty outlook",
    "Bitcoin slips back below $60,000, missing out on Wall Street rally from Thanksgiving break",
-   "Five Indian stocks with critical ties to Nvidia's AI ecosystem",
-   "Best 3 stocks to buy under \u20b9200: NCC, Geojit Financial, Patel Engineering shares by Mehul Kothari of Anand Rathi",
-   "Dollar Rises Toward Best Monthly Streak Since 2024 on AI Risk",
-   "Canadian dollar holds on to weekly gain as investors bet on December rate hike",
-   "Gold prices rise in India and China after hitting 15-month low as physical demand improves despite global rate concerns",
-   "Why is RBI moving gold back to India? What Russia's frozen reserves and 1991 crisis reveal"
+   "Five Indian stocks with critical ties to Nvidia's AI ecosystem"
   ]
  },
  "us": {
-  "score": 0.711,
-  "n_headlines": 190,
+  "score": 0.644,
+  "n_headlines": 191,
   "n_sources": 6,
   "top": [
    "Tariff Risks vs Rate Hike Fears in the Latest U.S. Stock Selloff - StoneX",
@@ -166,8 +166,8 @@
    "The S&amp;P 500 is in a correction. Bear markets and recessions don&apos;t always follow",
    "Budget airline Norse Atlantic files for bankruptcy in Europe after failing to secure funding",
    "SpaceX shares jump over 4% amid tech rally and after Musk says he will expand on Trump Account share donations",
-   "Wall Street ends higher as AI stocks rebound, Nasdaq leads gains - Investing.com",
-   "Dow soars 600 points, Nasdaq over 2% as battered AI stocks gain after Thanksgiving - The Economic Times"
+   "Stock Futures Jump as AI Trade Set for Rebound - WSJ",
+   "Wall Street ends higher as AI stocks rebound, Nasdaq leads gains - Investing.com"
   ],
   "headlines": [
    "Inflation has shoppers hunting for value. That bodes well for Black Friday",
@@ -212,14 +212,15 @@
    "I&#x2019;ve been married for 58 years. It&#x2019;s &#x2018;our&#x2019; money, not &#x2018;his&#x2019; and &#x2018;hers.&#x2019; Why do so many couples keep their finances separate?",
    "My husband secretly sends his ex-wife $1,500 a month after she lost her job. We have $2.4 million saved. Has he lied by omission?",
    "Google News",
-   "ANALYSIS | Investors grow wary of Trump's attempts to move markets - CBC",
    "US Futures Rally as Tech Rebound Gains Momentum: Markets Wrap - Bloomberg.com",
    "Wall Street ends higher as battered AI stocks gain in volatile week - Reuters",
    "Wall Street stages major comeback during Thanksgiving-shortened trading week - Fox Business",
+   "Stock Futures Jump as AI Trade Set for Rebound - WSJ",
    "Stocks jump to close out an erratic week that was also Wall Street's best in more than a year - KSL",
+   "ANALYSIS | Investors grow wary of Trump's attempts to move markets - CBC",
    "New Inflation Data Brings Worrisome News to President Donald Trump's Economy and the AI-Fueled Stock Market - The Motley Fool",
-   "Stock Market Today: Dow, S&amp;P 500, Nasdaq 100 Futures Rise as Wall Street Returns to Wrap Up Holiday-Short - Benzinga",
    "Wall Street firmly in green as it looks to end volatile week on a high - Seeking Alpha",
+   "Stock Market Today: Dow, S&amp;P 500, Nasdaq 100 Futures Rise as Wall Street Returns to Wrap Up Holiday-Short - Benzinga",
    "Wall Street ends higher as AI stocks rebound, Nasdaq leads gains - Investing.com",
    "North American stock indexes end higher as battered AI stocks gain in volatile week - The Globe and Mail",
    "Dow Adds 592 Points on Black Friday as AI Fear Fades: Stock Market Today - Kiplinger",
@@ -228,8 +229,7 @@
    "Dow soars 600 points, Nasdaq over 2% as battered AI stocks gain after Thanksgiving - The Economic Times",
    "Wall Street ends higher as battered AI stocks gain in volatile week - The Detroit News",
    "Dow, S&amp;P 500, Nasdaq Futures Edge Higher As Tech Rebounds After Selloff: DIS, VRTX, DE, CHTR In Focus - Yahoo Finance",
-   "U.S. Stocks Extend Plunge as AI Boom Turns to Bust - WSJ",
-   "Stock Market Today: S&amp;P 500, Nasdaq and Dow Jones Rally on Black Friday - Coinpaper"
+   "U.S. Stocks Extend Plunge as AI Boom Turns to Bust - WSJ"
   ]
  }
 }
