@@ -1,7 +1,7 @@
 {
- "ts": "2026-11-28T13:28:35.341520+05:30",
+ "ts": "2026-11-28T14:28:35.452086+05:30",
  "crypto": {
-  "score": 0.017,
+  "score": -0.065,
   "n_headlines": 180,
   "n_sources": 6,
   "top": [
@@ -12,7 +12,7 @@
    "Cathie Wood\u2019s ARK Buys Anthropic as Ripple CEO Predicts Post-IPO Crypto Rally - CCN.com",
    "Bitcoin price extends gains, briefly tops $81,000 as crypto rally gathers pace - CNBC",
    "Bitcoin Holds Above $60K as Death Cross Clouds Thanksgiving Recovery",
-   "Hunton Insurance Recovery Blog: Lloyds Jumps Into The Cryptocurrency Market, Insuring Part Of Kingdom Trust's $12 Billion Assets - Legal 500"
+   "Bitcoin falls below $59K as $7B options expiry triggers sharp market sell-off - Pluang"
   ],
   "headlines": [
    "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
@@ -79,18 +79,18 @@
   "fear_greed": 10
  },
  "india": {
-  "score": 0.605,
-  "n_headlines": 223,
+  "score": 0.723,
+  "n_headlines": 224,
   "n_sources": 6,
   "top": [
+   "FPI Inflows Hit Record High in November 2026 as Foreign Investors Buy Indian Shares Worth over \u20b91.22 Lakh Crore - Kotak Neo",
    "Nasdaq jumps 2%, Dow gains 600 pts as US stocks log weekly gains: Stock Market Live Updates",
    "Defence stocks set for fresh rally? BEL, Solar Industries, HAL - Motilal Oswal names 3 shares to buy as big orders loom",
    "Best 3 stocks to buy under \u20b9200: NCC, Geojit Financial, Patel Engineering shares by Mehul Kothari of Anand Rathi",
    "Stock market today: Sensex tumbles 1,000 points, Nifty drops 277 points as TCS, Infosys, Shriram Finance lead losses",
    "Sensex Slips 0.69%, Nifty Slips 0.75% Over the Week as Crude Oil Surge and Rupee Weakness End Four-Week Rally - HDFC Sky",
    "Midweek recovery rally fizzles out, Sensex, Nifty end week in the red - The New Indian Express",
-   "Sensex gains nearly 400 pts in early trade as IT stocks rally, Nifty below 25,900 - DD News",
-   "Market weekly wrap: NIFTY50, SENSEX end 4-week rally; Tata Steel lags, TCS leads gains - Upstox"
+   "Sensex gains nearly 400 pts in early trade as IT stocks rally, Nifty below 25,900 - DD News"
   ],
   "headlines": [
    "Economic Times",
@@ -132,6 +132,8 @@
    "Cipla Share Price Highlights: Cipla Stock Price History",
    "HCL Tech Share Price Highlights: HCL Tech Stock Price History",
    "HUL Share Price Highlights: HUL Stock Price History",
+   "Top stocks to buy on Monday, 30 Nov: Choice Broking's Kkunal V recommends three shares for next week | Target, stop loss",
+   "Mint Money Festival | Trust is the wealth that keeps Indian markets moving: NSE CEO Ashish Chauhan",
    "Gold, silver prices stage stunning comeback after 15-month low: Can the rally sustain? Key levels, trading strategy",
    "Gold price prediction 2027: Should investors buy yellow metal after the recent correction? Experts' views",
    "Multibagger circuit-to-circuit stock jumps 2350% in 2026, hits 5% upper circuit for 14 days in a row | Do you own?",
@@ -150,24 +152,22 @@
    "Why is RBI moving gold back to India? What Russia's frozen reserves and 1991 crisis reveal",
    "Upcoming IPO: Swara Baby Products\u2019 public offering date, price band, fundraising and other key things to know",
    "Zee Entertainment \u20b9600 crore buyback opens on December 1; what eligible shareholders need to know",
-   "Sebi to recast rulebook to fund India's growth: Tuhin Kanta Pandey",
-   "Pulse of the Street: Profit booking snaps four-week rally; markets brace consolidation?",
-   "SanDisk, AMD and Broadcom shares rebound as investors return to battered AI shares; what changed on Wall Street?"
+   "Sebi to recast rulebook to fund India's growth: Tuhin Kanta Pandey"
   ]
  },
  "us": {
-  "score": 0.622,
-  "n_headlines": 193,
+  "score": 0.641,
+  "n_headlines": 192,
   "n_sources": 6,
   "top": [
    "Tariff Risks vs Rate Hike Fears in the Latest U.S. Stock Selloff - StoneX",
    "US Futures Rally as Tech Rebound Gains Momentum: Markets Wrap - Bloomberg.com",
    "S&amp;P 500, Nasdaq, Dow Forecast: Wall Street Rebound Faces Major Resistance\u2014Bull Trap or Breakout? - StoneX",
+   "Why the Stock Market Rose Today: Dow Gains 592 Points, Nasdaq Jumps 2.3% as Tech Stocks Rebound - Around Prague",
    "The S&amp;P 500 is in a correction. Bear markets and recessions don&apos;t always follow",
    "Budget airline Norse Atlantic files for bankruptcy in Europe after failing to secure funding",
    "SpaceX shares jump over 4% amid tech rally and after Musk says he will expand on Trump Account share donations",
-   "Wall Street ends higher as AI stocks rebound, Nasdaq leads gains - Investing.com",
-   "Dow soars 600 points, Nasdaq over 2% as battered AI stocks gain after Thanksgiving - The Economic Times"
+   "Wall Street ends higher as AI stocks rebound, Nasdaq leads gains - Investing.com"
   ],
   "headlines": [
    "Inflation has shoppers hunting for value. That bodes well for Black Friday",
@@ -221,15 +221,15 @@
    "Wall Street firmly in green as it looks to end volatile week on a high - Seeking Alpha",
    "North American stock indexes end higher as battered AI stocks gain in volatile week - The Globe and Mail",
    "Wall Street ends higher as AI stocks rebound, Nasdaq leads gains - Investing.com",
-   "Dow, S&amp;P 500, Nasdaq Futures Edge Higher As Tech Rebounds After Selloff: DIS, VRTX, DE, CHTR In Focus - TradingView",
-   "Stocks Settle Sharply Higher as Chipmakers and AI Stocks Rebound - Barchart.com",
    "Dow Adds 592 Points on Black Friday as AI Fear Fades: Stock Market Today - Kiplinger",
    "Stocks rise and keep Wall Street on track to close out an erratic week with big gains - BNN Bloomberg",
    "U.S. Market Closes Sharply Higher to End Volatile Week on Wall Street - TipRanks",
    "Dow soars 600 points, Nasdaq over 2% as battered AI stocks gain after Thanksgiving - The Economic Times",
    "Wall Street ends higher as battered AI stocks gain in volatile week - The Detroit News",
+   "Dow, S&amp;P 500, Nasdaq Futures Edge Higher As Tech Rebounds After Selloff: DIS, VRTX, DE, CHTR In Focus - Yahoo Finance",
    "S&amp;P 500, Nasdaq End Best Week In Over A Year As AI Optimism Makes Comeback \u2014 VZ, ANT, ADBE, TSLA In Focus - Yahoo Finance",
-   "U.S. Stocks Extend Plunge as AI Boom Turns to Bust - WSJ"
+   "U.S. Stocks Extend Plunge as AI Boom Turns to Bust - WSJ",
+   "Stock Market Today: S&amp;P 500, Nasdaq and Dow Jones Rally on Black Friday - Coinpaper"
   ]
  }
 }
