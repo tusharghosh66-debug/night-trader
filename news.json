@@ -1,21 +1,22 @@
 {
- "ts": "2026-11-28T14:28:35.452086+05:30",
+ "ts": "2026-11-28T15:28:35.472097+05:30",
  "crypto": {
-  "score": -0.065,
+  "score": -0.03,
   "n_headlines": 180,
   "n_sources": 6,
   "top": [
    "Bitcoin Falls Further as Inflation, Trump Tariffs and AI Selloff Rattle Markets",
    "Crypto market cap drops 3.74% as Bitcoin falls below $60K and liquidations hit $312M - Pluang",
    "Strategy and Crypto Stocks Rally as Bitcoin Rebounds Past $63,000. Is the Jump Temporary? - Barron's",
-   "August Crypto Market Review and Outlook: Bitcoin Surge Above $80,000 Sparks Broad Crypto Rally, Fed Decision to Determine If Gains Continue - TradingKey",
-   "Cathie Wood\u2019s ARK Buys Anthropic as Ripple CEO Predicts Post-IPO Crypto Rally - CCN.com",
    "Bitcoin price extends gains, briefly tops $81,000 as crypto rally gathers pace - CNBC",
+   "Cathie Wood\u2019s ARK Buys Anthropic as Ripple CEO Predicts Post-IPO Crypto Rally - CCN.com",
    "Bitcoin Holds Above $60K as Death Cross Clouds Thanksgiving Recovery",
-   "Bitcoin falls below $59K as $7B options expiry triggers sharp market sell-off - Pluang"
+   "Hunton Insurance Recovery Blog: Lloyds Jumps Into The Cryptocurrency Market, Insuring Part Of Kingdom Trust's $12 Billion Assets - Legal 500",
+   "Crypto Stocks Gain After Bitcoin Tops $61K In Tech Rebound, But Analysts Want A Move Above $62K - TradingView"
   ],
   "headlines": [
    "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+   "Trump-linked crypto token WLFI plunges 50% to record lows",
    "Kalshi turns to small businesses as legal battles threaten forecasts on sports",
    "Bitcoin 'death cross' is coming. Here's what happened after previous 13.",
    "Bitcoin on course to end seven-week losing streak while trailing stock rebound",
@@ -40,7 +41,6 @@
    "Nvidia shipment freeze and U.S. chip curbs put AI stocks under pressure",
    "New York Attorney General wins $1.4 billion ruling against founders of crypto trading firm NovaTech",
    "$7 billion of bitcoin options expire Friday, and the biggest bets look starkly different from October",
-   "Zcash developers want to phase out older privacy system as a precaution against future attacks",
    "Cointelegraph.com News",
    "Binance receives in-principle approval, plans Asia hub in Bhutan",
    "Here\u2019s what happened in crypto today",
@@ -79,21 +79,22 @@
   "fear_greed": 10
  },
  "india": {
-  "score": 0.723,
-  "n_headlines": 224,
+  "score": 0.733,
+  "n_headlines": 225,
   "n_sources": 6,
   "top": [
-   "FPI Inflows Hit Record High in November 2026 as Foreign Investors Buy Indian Shares Worth over \u20b91.22 Lakh Crore - Kotak Neo",
    "Nasdaq jumps 2%, Dow gains 600 pts as US stocks log weekly gains: Stock Market Live Updates",
    "Defence stocks set for fresh rally? BEL, Solar Industries, HAL - Motilal Oswal names 3 shares to buy as big orders loom",
    "Best 3 stocks to buy under \u20b9200: NCC, Geojit Financial, Patel Engineering shares by Mehul Kothari of Anand Rathi",
-   "Stock market today: Sensex tumbles 1,000 points, Nifty drops 277 points as TCS, Infosys, Shriram Finance lead losses",
    "Sensex Slips 0.69%, Nifty Slips 0.75% Over the Week as Crude Oil Surge and Rupee Weakness End Four-Week Rally - HDFC Sky",
    "Midweek recovery rally fizzles out, Sensex, Nifty end week in the red - The New Indian Express",
-   "Sensex gains nearly 400 pts in early trade as IT stocks rally, Nifty below 25,900 - DD News"
+   "Sensex gains nearly 400 pts in early trade as IT stocks rally, Nifty below 25,900 - DD News",
+   "Market weekly wrap: NIFTY50, SENSEX end 4-week rally; Tata Steel lags, TCS leads gains - Upstox",
+   "Market outlook: Indian markets rebounded in Nov, but sustaining gains in 2027 will depend on growth, says - The Times of India"
   ],
   "headlines": [
    "Economic Times",
+   "Jaiprakash Power Ventures, CarTrade Tech among 11 smallcap stocks that plunged the most in a year, but mutual funds raised stakes",
    "Concurrent Gainers: 9 stocks that gain for 5 days in a row",
    "LIC portfolio stocks! 10 stocks where LIC had the highest stake in Q2. How many do you own?",
    "Bond market to stay cautious ahead of RBI policy: Equirus",
@@ -131,7 +132,9 @@
    "Bharti Airtel Share Price Highlights: Bharti Airtel Stock Price History",
    "Cipla Share Price Highlights: Cipla Stock Price History",
    "HCL Tech Share Price Highlights: HCL Tech Stock Price History",
-   "HUL Share Price Highlights: HUL Stock Price History",
+   "Top defence stock to buy: Elara Capital recommends this share with 31% upside potential | Check target, rationale",
+   "Mint Money Festival | Gold is less volatile than other asset classes despite the correction: WGC's Sachin Jain",
+   "TBZ, PC Jewellers, Kalyan, Titan: Gold price down 30% from peak but these jewellery stocks soar up to 244% in 2026 YTD",
    "Top stocks to buy on Monday, 30 Nov: Choice Broking's Kkunal V recommends three shares for next week | Target, stop loss",
    "Mint Money Festival | Trust is the wealth that keeps Indian markets moving: NSE CEO Ashish Chauhan",
    "Gold, silver prices stage stunning comeback after 15-month low: Can the rally sustain? Key levels, trading strategy",
@@ -149,25 +152,22 @@
    "Dollar Rises Toward Best Monthly Streak Since 2024 on AI Risk",
    "Canadian dollar holds on to weekly gain as investors bet on December rate hike",
    "Gold prices rise in India and China after hitting 15-month low as physical demand improves despite global rate concerns",
-   "Why is RBI moving gold back to India? What Russia's frozen reserves and 1991 crisis reveal",
-   "Upcoming IPO: Swara Baby Products\u2019 public offering date, price band, fundraising and other key things to know",
-   "Zee Entertainment \u20b9600 crore buyback opens on December 1; what eligible shareholders need to know",
-   "Sebi to recast rulebook to fund India's growth: Tuhin Kanta Pandey"
+   "Why is RBI moving gold back to India? What Russia's frozen reserves and 1991 crisis reveal"
   ]
  },
  "us": {
-  "score": 0.641,
-  "n_headlines": 192,
+  "score": 0.711,
+  "n_headlines": 190,
   "n_sources": 6,
   "top": [
    "Tariff Risks vs Rate Hike Fears in the Latest U.S. Stock Selloff - StoneX",
    "US Futures Rally as Tech Rebound Gains Momentum: Markets Wrap - Bloomberg.com",
    "S&amp;P 500, Nasdaq, Dow Forecast: Wall Street Rebound Faces Major Resistance\u2014Bull Trap or Breakout? - StoneX",
-   "Why the Stock Market Rose Today: Dow Gains 592 Points, Nasdaq Jumps 2.3% as Tech Stocks Rebound - Around Prague",
    "The S&amp;P 500 is in a correction. Bear markets and recessions don&apos;t always follow",
    "Budget airline Norse Atlantic files for bankruptcy in Europe after failing to secure funding",
    "SpaceX shares jump over 4% amid tech rally and after Musk says he will expand on Trump Account share donations",
-   "Wall Street ends higher as AI stocks rebound, Nasdaq leads gains - Investing.com"
+   "Wall Street ends higher as AI stocks rebound, Nasdaq leads gains - Investing.com",
+   "Dow soars 600 points, Nasdaq over 2% as battered AI stocks gain after Thanksgiving - The Economic Times"
   ],
   "headlines": [
    "Inflation has shoppers hunting for value. That bodes well for Black Friday",
@@ -212,22 +212,22 @@
    "I&#x2019;ve been married for 58 years. It&#x2019;s &#x2018;our&#x2019; money, not &#x2018;his&#x2019; and &#x2018;hers.&#x2019; Why do so many couples keep their finances separate?",
    "My husband secretly sends his ex-wife $1,500 a month after she lost her job. We have $2.4 million saved. Has he lied by omission?",
    "Google News",
+   "ANALYSIS | Investors grow wary of Trump's attempts to move markets - CBC",
    "US Futures Rally as Tech Rebound Gains Momentum: Markets Wrap - Bloomberg.com",
    "Wall Street ends higher as battered AI stocks gain in volatile week - Reuters",
    "Wall Street stages major comeback during Thanksgiving-shortened trading week - Fox Business",
    "Stocks jump to close out an erratic week that was also Wall Street's best in more than a year - KSL",
-   "How Far Could the Dow Jones Industrial Average, S&amp;P 500, and Nasdaq Composite Plunge? Nearly 156 Years of History Offers an Answer. - The Motley Fool",
+   "New Inflation Data Brings Worrisome News to President Donald Trump's Economy and the AI-Fueled Stock Market - The Motley Fool",
    "Stock Market Today: Dow, S&amp;P 500, Nasdaq 100 Futures Rise as Wall Street Returns to Wrap Up Holiday-Short - Benzinga",
    "Wall Street firmly in green as it looks to end volatile week on a high - Seeking Alpha",
-   "North American stock indexes end higher as battered AI stocks gain in volatile week - The Globe and Mail",
    "Wall Street ends higher as AI stocks rebound, Nasdaq leads gains - Investing.com",
+   "North American stock indexes end higher as battered AI stocks gain in volatile week - The Globe and Mail",
    "Dow Adds 592 Points on Black Friday as AI Fear Fades: Stock Market Today - Kiplinger",
    "Stocks rise and keep Wall Street on track to close out an erratic week with big gains - BNN Bloomberg",
    "U.S. Market Closes Sharply Higher to End Volatile Week on Wall Street - TipRanks",
    "Dow soars 600 points, Nasdaq over 2% as battered AI stocks gain after Thanksgiving - The Economic Times",
    "Wall Street ends higher as battered AI stocks gain in volatile week - The Detroit News",
    "Dow, S&amp;P 500, Nasdaq Futures Edge Higher As Tech Rebounds After Selloff: DIS, VRTX, DE, CHTR In Focus - Yahoo Finance",
-   "S&amp;P 500, Nasdaq End Best Week In Over A Year As AI Optimism Makes Comeback \u2014 VZ, ANT, ADBE, TSLA In Focus - Yahoo Finance",
    "U.S. Stocks Extend Plunge as AI Boom Turns to Bust - WSJ",
    "Stock Market Today: S&amp;P 500, Nasdaq and Dow Jones Rally on Black Friday - Coinpaper"
   ]
