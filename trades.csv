@@ -11,3 +11,5 @@ time,market,symbol,side,qty,price,pnl,reason,equity_after
 2026-11-27T20:04:19.521739+05:30,crypto,ETH-USD,SELL,0.018916,158507.65,-6.78,stop/trail hit (158507.65<=158554.25),10054.28
 2026-11-27T20:04:49.340043+05:30,crypto,BTC-USD,SELL,0.00053,5635924.12,-17.61,stop/trail hit (5635924.12<=5653353.84),10040.26
 2026-11-28T19:08:06.277645+05:30,crypto,SOL-USD,SHORT,0.46004,6547.43,0.0,"breakdown+EMA down, RSI=35, regime_ok=False, news=-0.11",10037.25
+2026-11-28T19:13:05.768380+05:30,crypto,BTC-USD,SHORT,0.00055,5483200.92,0.0,"breakdown+EMA down, RSI=30, regime_ok=False, news=-0.11",10041.08
+2026-11-28T19:13:05.974489+05:30,crypto,ETH-USD,SHORT,0.019768,152383.64,0.0,"breakdown+EMA down, RSI=29, regime_ok=False, news=-0.11",10038.07
