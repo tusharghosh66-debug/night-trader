@@ -1,7 +1,7 @@
 {
- "ts": "2026-11-28T18:28:35.526191+05:30",
+ "ts": "2026-11-28T19:28:35.549667+05:30",
  "crypto": {
-  "score": -0.112,
+  "score": -0.182,
   "n_headlines": 180,
   "n_sources": 6,
   "top": [
@@ -9,13 +9,14 @@
    "Crypto market cap drops 2% as Bitcoin and Ether fall amid Fed rate hike expectations - Pluang",
    "Crypto market cap drops 3.74% as Bitcoin falls below $60K and liquidations hit $312M - Pluang",
    "Strategy and Crypto Stocks Rally as Bitcoin Rebounds Past $63,000. Is the Jump Temporary? - Barron's",
-   "August Crypto Market Review and Outlook: Bitcoin Surge Above $80,000 Sparks Broad Crypto Rally, Fed Decision to Determine If Gains Continue - TradingKey",
    "Bitcoin price extends gains, briefly tops $81,000 as crypto rally gathers pace - CNBC",
    "Cathie Wood\u2019s ARK Buys Anthropic as Ripple CEO Predicts Post-IPO Crypto Rally - CCN.com",
-   "Bitcoin Holds Above $60K as Death Cross Clouds Thanksgiving Recovery"
+   "Bitcoin Holds Above $60K as Death Cross Clouds Thanksgiving Recovery",
+   "Bitcoin falls 3.4% to around $59,600 amid $389M ETF outflows and Wall Street's strong week - Pluang"
   ],
   "headlines": [
    "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
+   "Bitcoin not delivering: The bear market has digital asset veteran questioning BTC's value",
    "Trump-linked crypto token WLFI plunges 50% to record lows",
    "Kalshi turns to small businesses as legal battles threaten forecasts on sports",
    "Bitcoin 'death cross' is coming. Here's what happened after previous 13.",
@@ -40,8 +41,8 @@
    "Bitcoin little changed, DeFi tokens lead the bounce as U.S. marks Thanksgiving",
    "Nvidia shipment freeze and U.S. chip curbs put AI stocks under pressure",
    "New York Attorney General wins $1.4 billion ruling against founders of crypto trading firm NovaTech",
-   "$7 billion of bitcoin options expire Friday, and the biggest bets look starkly different from October",
    "Cointelegraph.com News",
+   "Justin Sun calls for Trump family-linked WLFI token to be delisted",
    "ASEAN+3 agrees on initiative to explore crypto payments cooperation",
    "Binance plans Asia hub in Bhutan, receives preliminary approval",
    "Here\u2019s what happened in crypto today",
@@ -71,7 +72,6 @@
    "BIS chief Pablo Hern\u00e1ndez de Cos set to become next ECB president: FT",
    "How EU brokers could lose access to Kyrgyz crypto exchanges",
    "Nasdaq exec pushes for common EU rules on tokenized securities",
-   "7 bizarre things crypto whales spent a fortune on",
    "OpenAI Turns the Tables on Apple With Its Own Trade-Secret Theft Claims",
    "Could AI Break Bitcoin? Not Yet, Research Firm K33 Says",
    "4 Scary Bitcoin Charts That Suggest This Bear Market Is Different"
@@ -79,7 +79,7 @@
   "fear_greed": 10
  },
  "india": {
-  "score": 0.696,
+  "score": 0.683,
   "n_headlines": 224,
   "n_sources": 6,
   "top": [
@@ -132,6 +132,7 @@
    "Tata Consumer Share Price Highlights: Tata Consumer Stock Price History",
    "Bharti Airtel Share Price Highlights: Bharti Airtel Stock Price History",
    "Cipla Share Price Highlights: Cipla Stock Price History",
+   "Why Tata Steel and APL Apollo Tubes shares will remain in focus on Monday? Check targets, key levels",
    "Why your gold loan terms may get tougher: Lenders demand extra collateral as bullion prices fall and repayments slip",
    "SEBI planning new exchange for pre-IPO shares; consultation paper soon? What we know from SEBI chief statement",
    "Gold jewellery in UAE: Who buys it and what holds shoppers back? Key findings from World Gold Council",
@@ -151,13 +152,12 @@
    "Gold price prediction 2027: Should investors buy yellow metal after the recent correction? Experts' views",
    "Multibagger circuit-to-circuit stock jumps 2350% in 2026, hits 5% upper circuit for 14 days in a row | Do you own?",
    "Top stocks to watch on Monday, Nov 30: Suzlon, Zee, Tata Group stocks, KEC, Bosch, APL Apollo, among 10 shares in focus",
-   "Suzlon Energy shares: Down 36% in 6 months! Will it rebound after winning wind repowering project from Tata Group?",
-   "Defence stocks set for fresh rally? BEL, Solar Industries, HAL - Motilal Oswal names 3 shares to buy as big orders loom"
+   "Suzlon Energy shares: Down 36% in 6 months! Will it rebound after winning wind repowering project from Tata Group?"
   ]
  },
  "us": {
-  "score": 0.594,
-  "n_headlines": 192,
+  "score": 0.758,
+  "n_headlines": 190,
   "n_sources": 6,
   "top": [
    "Tariff Risks vs Rate Hike Fears in the Latest U.S. Stock Selloff - StoneX",
@@ -175,14 +175,15 @@
    "The S&amp;P 500 is in a correction. Bear markets and recessions don&apos;t always follow",
    "Saudi Arabia shifts Vision 2030 spending amid economic and security pressure",
    "Africa\u2019s richest man is taking his mega-refinery public in a blockbuster IPO",
-   "Liesman: Why Greenspan could bet on productivity \u2014 and Warsh needs to hike",
+   "The doctor, the patient and the smartwatch: What physicians think of the third voice at your appointment",
    "New car prices are at a record high. Here&apos;s where to look for deals",
+   "Liesman: Why Greenspan could bet on productivity \u2014 and Warsh needs to hike",
    "Budget airline Norse Atlantic files for bankruptcy in Europe after failing to secure funding",
    "Chinese chip stocks notch biggest ever one-day gains as Beijing signals broader market support",
    "SpaceX shares jump over 4% amid tech rally and after Musk says he will expand on Trump Account share donations",
+   "Jensen Huang&apos;s return did little to ease AI jitters. We used the weakness to buy",
    "EU leaders fail to break $1.7 trillion budget deadlock as political pressure mounts",
    "Spain\u2019s election could pull Madrid closer to Trump\u2019s Washington",
-   "Jensen Huang&apos;s return did little to ease AI jitters. We used the weakness to buy",
    "The Tech Download: Will Jensen Huang\u2019s return be the spark the shaky AI market needs?",
    "&apos;The Traitors&apos; ended with a $246,300 prize\u2014here&apos;s who won and what they told us about spending it",
    "It\u2019s not just you: Durable goods are getting less reliable, from sputtering cars to glitching smart TVs",
@@ -199,12 +200,11 @@
    "Spain\u2019s Pablo Hern\u00e1ndez de Cos set to lead European Central Bank",
    "Nvidia chip buyers told to rule out Chinese renters to purchase GPUs, sources say",
    "Latin America has the copper and energy the AI build-out needs. Infrastructure is the test",
-   "Fast cars, big money: Why sportswear races into Formula 1 as sponsorship spending soars 75%",
    "MarketWatch.com - Top Stories",
-   "These tech stocks may let you play defense without giving up on AI",
-   "I&#x2019;m in my 70s and buying a new BMW X1. Should I put my only son on the title?",
    "I hate that Jensen Huang is back at Nvidia, but I love what it&#x2019;s done for my 401(k). Am I a hypocrite?",
    "Clearing out my parents&#x2019; house was a legal nightmare. How can I downsize without putting my kids through the same ordeal?",
+   "These tech stocks may let you play defense without giving up on AI",
+   "I&#x2019;m in my 70s and buying a new BMW X1. Should I put my only son on the title?",
    "These stocks soared the most during a wild week highlighted by Huang&#x2019;s return to Nvidia",
    "Coming next year: Medicare Advantage plans without drug coverage for almost 640,000 people and fewer choices for the rest",
    "The warnings behind this week&#x2019;s stock-market rally",
@@ -212,24 +212,24 @@
    "A 66-year-old nurse is facing down retirement with just $500 saved. Who&#x2019;s to blame?",
    "I&#x2019;ve been married for 58 years. It&#x2019;s &#x2018;our&#x2019; money, not &#x2018;his&#x2019; and &#x2018;hers.&#x2019; Why do so many couples keep their finances separate?",
    "Google News",
-   "ANALYSIS | Investors grow wary of Trump's attempts to move markets - CBC",
+   "Trump has outsized influence in stock markets, but investors grow wary - CBC",
    "US Futures Rally as Tech Rebound Gains Momentum: Markets Wrap - Bloomberg.com",
-   "Wall Street stages major comeback during Thanksgiving-shortened trading week - Fox Business",
    "Wall Street ends higher as battered AI stocks gain in volatile week - Reuters",
+   "Wall Street stages major comeback during Thanksgiving-shortened trading week - Fox Business",
    "New Inflation Data Brings Worrisome News to President Donald Trump's Economy and the AI-Fueled Stock Market - The Motley Fool",
    "Stocks jump to close out an erratic week that was also Wall Street's best in more than a year - KSL News",
    "Wall Street firmly in green as it looks to end volatile week on a high - Seeking Alpha",
    "Stock Market Today: Dow, S&amp;P 500, Nasdaq 100 Futures Rise as Wall Street Returns to Wrap Up Holiday-Short - Benzinga",
-   "Wall Street ends higher as AI stocks rebound, Nasdaq leads gains - Investing.com",
-   "North American stock indexes end higher as battered AI stocks gain in volatile week - The Globe and Mail",
-   "Dow soars 600 points, Nasdaq over 2% as battered AI stocks gain after Thanksgiving - The Economic Times",
    "Dow Adds 592 Points on Black Friday as AI Fear Fades: Stock Market Today - Kiplinger",
+   "North American stock indexes end higher as battered AI stocks gain in volatile week - The Globe and Mail",
+   "Wall Street ends higher as AI stocks rebound, Nasdaq leads gains - Investing.com",
+   "Dow soars 600 points, Nasdaq over 2% as battered AI stocks gain after Thanksgiving - The Economic Times",
    "Stocks rise and keep Wall Street on track to close out an erratic week with big gains - BNN Bloomberg",
    "U.S. Market Closes Sharply Higher to End Volatile Week on Wall Street - TipRanks",
    "Wall Street ends higher as battered AI stocks gain in volatile week - The Detroit News",
    "Dow, S&amp;P 500, Nasdaq Futures Edge Higher As Tech Rebounds After Selloff: DIS, VRTX, DE, CHTR In Focus - Yahoo Finance",
    "Nasdaq, S&amp;P 500 end down, but well off lows as investors buy bargains - Reuters",
-   "Stock Market Today: S&amp;P 500, Nasdaq and Dow Jones Rally on Black Friday - Coinpaper"
+   "The New York Stock Exchange | NYSE - NYSE"
   ]
  }
 }

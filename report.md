@@ -1,18 +1,18 @@
 # Night Trader v2 — Paper Trading Report (3 markets)
-_Updated: 2026-11-28 19:27 IST_
+_Updated: 2026-11-28 19:29 IST_
 
-## CRYPTO (OPEN) — ₹10,027.20 | P&L +27.20 (+0.27%)
-Cash ₹10,031.22 | cycles 8070 | capital ₹10,000
+## CRYPTO (OPEN) — ₹10,034.29 | P&L +34.29 (+0.34%)
+Cash ₹10,031.22 | cycles 8075 | capital ₹10,000
 | Symbol | Side | Qty | Entry | Last | Unrealized |
 |---|---|---|---|---|---|
-| SOL-USD | SHORT | 0.4600 | 6547.43 | 6534.41 | +5.99 |
-| BTC-USD | SHORT | 0.0005 | 5483200.92 | 5493234.54 | -5.51 |
-| ETH-USD | SHORT | 0.0198 | 152383.64 | 152611.47 | -4.50 |
+| SOL-USD | SHORT | 0.4600 | 6547.43 | 6527.90 | +8.98 |
+| BTC-USD | SHORT | 0.0005 | 5483200.92 | 5489785.54 | -3.62 |
+| ETH-USD | SHORT | 0.0198 | 152383.64 | 152499.88 | -2.30 |
 Closed: 3 (1 wins), realized +40.26
 - 13:49 SELL SOL-USD @ 6827.44 pnl +64.65 (RSI 78 overbought take-profit)
 - 20:04 SELL ETH-USD @ 158507.65 pnl -6.78 (stop/trail hit (158507.65<=158554.25))
 - 20:04 SELL BTC-USD @ 5635924.12 pnl -17.61 (stop/trail hit (5635924.12<=5653353.84))
-News sentiment: -0.11 (180 headlines, 6 sources, Fear&Greed 10)
+News sentiment: -0.18 (180 headlines, 6 sources, Fear&Greed 10)
 - Bitcoin Falls Further as Inflation, Trump Tariffs and AI Selloff Rattle Markets
 - Crypto market cap drops 2% as Bitcoin and Ether fall amid Fed rate hike expectations - Pluang
 - Crypto market cap drops 3.74% as Bitcoin falls below $60K and liquidations hit $312M - Pluang
@@ -25,7 +25,7 @@ Cash ₹6,968.32 | cycles 1495 | capital ₹10,000
 Closed: 2 (1 wins), realized -37.68
 - 09:15 SELL TCS.NS @ 2578.4 pnl +2.04 (RSI 79 overbought take-profit)
 - 15:29 SELL INFY.NS @ 1151.3 pnl -39.72 (stop/trail hit (1151.30<=1151.48))
-News sentiment: +0.70 (224 headlines, 6 sources)
+News sentiment: +0.68 (224 headlines, 6 sources)
 - Nasdaq jumps 2%, Dow gains 600 pts as US stocks log weekly gains: Stock Market Live Updates
 - Defence stocks set for fresh rally? BEL, Solar Industries, HAL - Motilal Oswal names 3 shares to buy as big orders loom
 - Best 3 stocks to buy under ₹200: NCC, Geojit Financial, Patel Engineering shares by Mehul Kothari of Anand Rathi
@@ -33,7 +33,7 @@ News sentiment: +0.70 (224 headlines, 6 sources)
 ## US (CLOSED) — ₹10,000.00 | P&L +0.00 (+0.00%)
 Cash ₹10,000.00 | cycles 1847 | capital ₹10,000
 _No open positions — all cash._
-News sentiment: +0.59 (192 headlines, 6 sources)
+News sentiment: +0.76 (190 headlines, 6 sources)
 - Tariff Risks vs Rate Hike Fears in the Latest U.S. Stock Selloff - StoneX
 - US Futures Rally as Tech Rebound Gains Momentum: Markets Wrap - Bloomberg.com
 - S&amp;P 500, Nasdaq, Dow Forecast: Wall Street Rebound Faces Major Resistance—Bull Trap or Breakout? - StoneX
