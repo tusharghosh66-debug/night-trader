@@ -1,18 +1,18 @@
 {
- "ts": "2026-11-28T05:28:35.176447+05:30",
+ "ts": "2026-11-28T06:28:35.198786+05:30",
  "crypto": {
-  "score": 0.032,
-  "n_headlines": 178,
+  "score": -0.003,
+  "n_headlines": 177,
   "n_sources": 6,
   "top": [
    "Bitcoin Falls Further as Inflation, Trump Tariffs and AI Selloff Rattle Markets",
    "Crypto market cap drops 3.74% as Bitcoin falls below $60K and liquidations hit $312M - Pluang",
    "Strategy and Crypto Stocks Rally as Bitcoin Rebounds Past $63,000. Is the Jump Temporary? - Barron's",
-   "Bitcoin price extends gains, briefly tops $81,000 as crypto rally gathers pace - CNBC",
+   "August Crypto Market Review and Outlook: Bitcoin Surge Above $80,000 Sparks Broad Crypto Rally, Fed Decision to Determine If Gains Continue - TradingKey",
    "Cathie Wood\u2019s ARK Buys Anthropic as Ripple CEO Predicts Post-IPO Crypto Rally - CCN.com",
+   "Bitcoin price extends gains, briefly tops $81,000 as crypto rally gathers pace - CNBC",
    "Bitcoin Holds Above $60K as Death Cross Clouds Thanksgiving Recovery",
-   "Bitcoin Price Falls as $183 Million in Liquidations Hit Ahead of $6.8 Billion Options Expiry - Benzinga",
-   "Hunton Insurance Recovery Blog: Lloyds Jumps Into The Cryptocurrency Market, Insuring Part Of Kingdom Trust's $12 Billion Assets - Legal 500"
+   "Bitcoin Price Falls as $183 Million in Liquidations Hit Ahead of $6.8 Billion Options Expiry - Benzinga"
   ],
   "headlines": [
    "CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data",
@@ -76,10 +76,10 @@
    "Could AI Break Bitcoin? Not Yet, Research Firm K33 Says",
    "4 Scary Bitcoin Charts That Suggest This Bear Market Is Different"
   ],
-  "fear_greed": 12
+  "fear_greed": 10
  },
  "india": {
-  "score": 0.362,
+  "score": 0.348,
   "n_headlines": 224,
   "n_sources": 6,
   "top": [
@@ -87,9 +87,9 @@
    "Best 3 stocks to buy under \u20b9200: NCC, Geojit Financial, Patel Engineering shares by Mehul Kothari of Anand Rathi",
    "Stock market today: Sensex tumbles 1,000 points, Nifty drops 277 points as TCS, Infosys, Shriram Finance lead losses",
    "Why is Indian stock market falling today? Nifty down to near 25,600, Sensex crashes 900 points | Top 3 reasons explained",
-   "Small-cap, big jump! Waaree Renewable shares rise 14% on this order win; energy stock still 35% below 52-week high",
-   "Black Friday Turns Red: Nifty Slips After a 15% Rally in Four Weeks. Is the Market Just Catching Its Breath? - NiftyTrader",
    "Sensex gains nearly 400 pts in early trade as IT stocks rally, Nifty below 25,900 - DD News",
+   "Black Friday Turns Red: Nifty Slips After a 15% Rally in Four Weeks. Is the Market Just Catching Its Breath? - NiftyTrader",
+   "Stock Market Today: Sensex Crashes Over 700 Pts, Nifty Slips Below 25,700; IT Stocks Lead Sell-Off - APAC Media",
    "JPMorgan Sees Nifty at 29,000 by December 2027, Cites Foreign Buying and Earnings Recovery - Kotak Neo"
   ],
   "headlines": [
@@ -133,6 +133,7 @@
    "ONGC Share Price Highlights: ONGC Stock Price History",
    "L&amp;T Share Price Highlights: L&amp;T Stock Price History",
    "SBI Life Share Price Highlights: SBI Life Stock Price History",
+   "Five Indian stocks with critical ties to Nvidia's AI ecosystem",
    "Best 3 stocks to buy under \u20b9200: NCC, Geojit Financial, Patel Engineering shares by Mehul Kothari of Anand Rathi",
    "Dollar Rises Toward Best Monthly Streak Since 2024 on AI Risk",
    "Canadian dollar holds on to weekly gain as investors bet on December rate hike",
@@ -151,13 +152,12 @@
    "RBI rolls back tighter daily CRR requirement as banking liquidity slips into deficit",
    "Gokaldas Exports to Trident: Textile stocks gain up to 8% as global brands turn to India; what's the opportunity?",
    "Jaipur leads jewellery searches with 78% growth, Delhi tops gold testing centre searches at 58%, says report",
-   "Stock market today: Sensex tumbles 1,000 points, Nifty drops 277 points as TCS, Infosys, Shriram Finance lead losses",
-   "Silver rate today 27 November: MCX Price 6% upper circuit at \u20b91.54 lakh/kg, up \u20b98,500 in a day | Right time to buy?"
+   "Stock market today: Sensex tumbles 1,000 points, Nifty drops 277 points as TCS, Infosys, Shriram Finance lead losses"
   ]
  },
  "us": {
-  "score": 0.637,
-  "n_headlines": 193,
+  "score": 0.708,
+  "n_headlines": 195,
   "n_sources": 6,
   "top": [
    "Tariff Risks vs Rate Hike Fears in the Latest U.S. Stock Selloff - StoneX",
@@ -201,6 +201,7 @@
    "Sovereign wealth funds are acting more like private equity giants \u2014 and inheriting their risks",
    "Microdrama apps chase profits as Hollywood moves into short-form, vertical video",
    "MarketWatch.com - Top Stories",
+   "I&#x2019;m in my 70s and buying a new BMW X1. Should I put my only son on the title?",
    "I hate that Jensen Huang is back at Nvidia, but I love what it&#x2019;s done for my 401(k). Am I a hypocrite?",
    "Clearing out my parents&#x2019; house was a legal nightmare. How can I downsize without putting my kids through the same ordeal?",
    "These stocks soared the most during a wild week highlighted by Huang&#x2019;s return to Nvidia",
@@ -210,26 +211,25 @@
    "A 66-year-old nurse is facing down retirement with just $500 saved. Who&#x2019;s to blame?",
    "I&#x2019;ve been married for 58 years. It&#x2019;s &#x2018;our&#x2019; money, not &#x2018;his&#x2019; and &#x2018;hers.&#x2019; Why do so many couples keep their finances separate?",
    "My husband secretly sends his ex-wife $1,500 a month after she lost her job. We have $2.4 million saved. Has he lied by omission?",
-   "My friends play &#x2018;credit-card roulette&#x2019; to see who pays for dinner &#x2014; but one &#x2018;winner&#x2019; still Venmoed me afterward. Should I say something?",
    "Google News",
    "US Futures Rally as Tech Rebound Gains Momentum: Markets Wrap - Bloomberg.com",
    "Dow Jones Futures Rise; Look For This Bullish Market Signal On Black Friday - Investor's Business Daily",
    "Nasdaq, S&amp;P 500 end down, but well off lows as investors buy bargains - Reuters",
-   "Stock Futures Jump as AI Trade Set for Rebound - WSJ",
-   "North American stock indexes end higher as battered AI stocks gain in volatile week - The Globe and Mail",
    "How Far Could the Dow Jones Industrial Average, S&amp;P 500, and Nasdaq Composite Plunge? Nearly 156 Years of History Offers an Answer. - The Motley Fool",
    "Stock Market Today: Dow, S&amp;P 500, Nasdaq 100 Futures Rise as Wall Street Returns to Wrap Up Holiday-Short - Benzinga",
    "Wall Street firmly in green as it looks to end volatile week on a high - Seeking Alpha",
    "Wall Street ends higher as AI stocks rebound, Nasdaq leads gains - Investing.com",
+   "Dow, S&amp;P 500, Nasdaq Futures Edge Higher As Tech Rebounds After Selloff: DIS, VRTX, DE, CHTR In Focus - TradingView",
    "Stocks rise in abbreviated Black Friday trading as AI concerns ease - upi",
-   "Stocks rise and keep Wall Street on track to close out an erratic week with big gains - BNN Bloomberg",
    "Dow Adds 592 Points on Black Friday as AI Fear Fades: Stock Market Today - Kiplinger",
+   "US stock market today: Nasdaq and S&amp;P 500 fall as Nvidia and AI stocks slide, Dow gains - Beinsure",
+   "Stocks rise and keep Wall Street on track to close out an erratic week with big gains - BNN Bloomberg",
    "U.S. Market Closes Sharply Higher to End Volatile Week on Wall Street - TipRanks",
+   "Wall Street ends higher as battered AI stocks gain in volatile week - The Detroit News",
    "Nasdaq Plunges 4.6% Before Dramatic Rebound. Wall Street Faces A Triple Threat From AI, Inflation And Trump Tariffs. - International Business Times",
-   "US stocks set for weekly advance as battered AI shares hold their ground - Kitco",
-   "Dow, S&amp;P 500, Nasdaq Futures Edge Higher As Tech Rebounds After Selloff: DIS, VRTX, DE, CHTR In Focus - Yahoo Finance",
+   "Stock Futures Jump as AI Trade Set for Rebound - WSJ",
    "Stock Market Today: S&amp;P 500, Nasdaq and Dow Jones Rally on Black Friday - Coinpaper",
-   "US stock market today: Dow Jones jumps 510 points, S&amp;P 500 rises 1.2%, Nasdaq gains 1.7% - CNBC TV18 - LinkedIn"
+   "U.S. Stocks Extend Plunge as AI Boom Turns to Bust - WSJ"
   ]
  }
 }
